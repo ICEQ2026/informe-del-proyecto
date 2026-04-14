@@ -172,13 +172,42 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
 - ¿Qué condiciones o características debería tener una solución de monitoreo para que su organización decida adoptarla o evaluarla seriamente?
 - ¿Qué beneficios esperaría obtener su organización al implementar un sistema digital de monitoreo de temperatura y control de cadena de frío?
 
-### 2.2.2 Registro de entrevista
+### 2.2.2 Registro de Entrevistas
 
-Pendiente de completar.
+<h3>Segmento: Minimarkets o puestos de mercado</h3>
 
-### 2.2.3 Análisis de entrevista
-
-Pendiente de completar.
+<table border="1" style="width:100%; border-collapse:collapse;">
+  <colgroup>
+    <col style="width:12%;">
+    <col style="width:18%;">
+    <col style="width:22%;">
+    <col style="width:48%;">
+  </colgroup>
+  <tr>
+    <th align="left">Entrevista</th>
+    <th align="left">Datos</th>
+    <th align="left">Evidencia</th>
+    <th align="left">Resumen</th>
+  </tr>
+  <tr>
+    <td valign="center" align="left"><strong>Entrevista N°1</strong></td>
+    <td valign="center" align="left"><strong>Nombre:</strong> Sara Lopez<br><strong>Edad:</strong> 53 años<br><strong>Distrito:</strong> San Martín de Porres</td>
+    <td valign="center" align="left"><strong>Video (Microsoft Stream):</strong> <a href="LINK_AQUI">Ver video</a><br><strong>Inicio:</strong> 00:00:00<br><strong>Duración:</strong> 05:30<br><br><img src="assets/entrevista1.png" alt="Screenshot entrevista 1" width="180"></td>
+    <td valign="center" align="left">La entrevistada es una microempresaria que gestiona un negocio de productos perecibles que dependen del correcto funcionamiento de equipos de refrigeración. Actualmente, el control de temperatura se realiza de forma manual y basada en la experiencia, sin registros ni monitoreo constante, lo que evidencia una falta de herramientas tecnológicas. Los problemas no son diarios, pero ocurren ante fallas técnicas o cortes de energía, y suelen detectarse tarde, cuando los productos ya han sido afectados.<br><br>Estas situaciones generan pérdidas económicas y riesgos para la salud de los clientes, por lo que la entrevistada actúa de manera reactiva, descartando productos dañados y recurriendo a técnicos. Asimismo, valora soluciones simples e intuitivas que le permitan recibir alertas en tiempo real, tener información clara y organizada, identificar patrones de fallas y contar con respaldo para auditorías, lo que refleja la necesidad de un sistema de monitoreo eficiente.</td>
+  </tr>
+  <tr>
+    <td valign="center" align="left"><strong>Entrevista N°2</strong></td>
+    <td valign="center" align="left"><strong>Nombre:</strong> Pendiente<br><strong>Edad:</strong> Pendiente<br><strong>Distrito:</strong> Pendiente</td>
+    <td valign="center" align="left"><strong>Video (Microsoft Stream):</strong> Pendiente<br><strong>Inicio:</strong> Pendiente<br><strong>Duración:</strong> Pendiente</td>
+    <td valign="center" align="left">Pendiente de completar.</td>
+  </tr>
+  <tr>
+    <td valign="center" align="left"><strong>Entrevista N°3</strong></td>
+    <td valign="center" align="left"><strong>Nombre:</strong> Pendiente<br><strong>Edad:</strong> Pendiente<br><strong>Distrito:</strong> Pendiente</td>
+    <td valign="center" align="left"><strong>Video (Microsoft Stream):</strong> Pendiente<br><strong>Inicio:</strong> Pendiente<br><strong>Duración:</strong> Pendiente</td>
+    <td valign="center" align="left">Pendiente de completar.</td>
+  </tr>
+</table>
 
 ## 2.3 Needfinding
 
