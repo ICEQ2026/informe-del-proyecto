@@ -184,11 +184,45 @@ Pendiente de completar.
 
 ### 2.3.1 User Personas
 
-Pendiente de completar.
+1. **Segmento de minimarkets o pequeños negocios con productos perecibles**
+
+   <img src="assets/user-personas/segmento-1-gustavo-fernandez.png" alt="User Persona del segmento de minimarkets o pequeños negocios con productos perecibles" width="760">
+
+2. **Segmento de responsables de operaciones y control de calidad en negocios con cadena de frío**
+
+   <img src="assets/user-personas/segmento-2-sofia-ramirez.png" alt="User Persona del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío" width="760">
 
 ### 2.3.2 User Task Matrix
 
-Pendiente de completar.
+La User Task Matrix es una herramienta que nos permite identificar las tareas clave que nuestros usuarios necesitan realizar dentro de la solución propuesta. A partir de estas tareas, podemos comprender mejor sus necesidades y expectativas, lo que ayuda a orientar el diseño de una experiencia más clara, útil y alineada con el contexto de uso de ColdTrace. Debido a que esta matriz se elaboró antes de completar las entrevistas, su contenido debe considerarse preliminar.
+
+**User Task Matrix: Primer Segmento Objetivo**
+
+**Segmento:** Minimarkets o pequeños negocios con productos perecibles  
+**Persona:** Gustavo Fernández
+
+| Tareas | Frecuencia | Importancia |
+| --- | --- | --- |
+| Verificar que la temperatura de la refrigeradora o cámara esté dentro del rango seguro. | Alta | Alta |
+| Recibir alertas ante una falla de refrigeración o una temperatura fuera del rango permitido. | Media | Alta |
+| Revisar el historial de temperatura del día o del turno anterior. | Media | Media |
+| Configurar el rango seguro de temperatura según el tipo de producto almacenado. | Baja | Alta |
+| Generar un reporte básico de condiciones para mostrar ante una inspección sanitaria. | Baja | Alta |
+| Consultar desde el celular el estado de la refrigeradora o cámara cuando no está en el local. | Media | Media |
+
+**User Task Matrix: Segundo Segmento Objetivo**
+
+**Segmento:** Responsables de operaciones y control de calidad en negocios con cadena de frío  
+**Persona:** Sofía Ramírez
+
+| Tareas | Frecuencia | Importancia |
+| --- | --- | --- |
+| Monitorear en tiempo real el estado de múltiples equipos, ambientes o unidades con cadena de frío. | Alta | Alta |
+| Recibir y revisar alertas automáticas ante desviaciones de temperatura. | Media | Alta |
+| Generar reportes de trazabilidad para auditorías, control interno o seguimiento operativo. | Media | Alta |
+| Revisar el historial de incidencias por equipo, área o sede. | Alta | Alta |
+| Configurar rangos de temperatura y humedad según el tipo de producto o ambiente. | Baja | Alta |
+| Consultar un dashboard consolidado para tomar decisiones operativas. | Media | Alta |
 
 ### 2.3.3 User Journey Mapping
 
