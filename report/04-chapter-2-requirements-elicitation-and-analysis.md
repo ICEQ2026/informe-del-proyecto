@@ -259,7 +259,15 @@ La User Task Matrix es una herramienta que nos permite identificar las tareas cl
 
 ### 2.3.3 User Journey Mapping
 
-Pendiente de completar.
+El User Journey Map es una representación visual del flujo de pasos, necesidades y emociones que experimenta un usuario para alcanzar un objetivo específico. Para este análisis, se han desarrollado versiones As-Is de los mapas de viaje, las cuales ilustran la situación actual de los usuarios antes de la implementación de la solución ColdTrace. Este mapeo permite diagnosticar los puntos de fricción técnica, los riesgos de inocuidad alimentaria y las ineficiencias de los procesos manuales predominantes en el mercado peruano.
+
+**User Journey Map: Gustavo Fernández (As-Is)**
+
+<img src="assets/journey-maps/journey-map1.png" alt="User Journey Map de Gustavo Fernández" width="760">
+
+**User Journey Map: Sofía Ramírez (As-Is)**
+
+<img src="assets/journey-maps/journey-map2.png" alt="User Journey Map de Sofía Ramírez" width="760">
 
 ### 2.3.4 Empathy Mapping
 
