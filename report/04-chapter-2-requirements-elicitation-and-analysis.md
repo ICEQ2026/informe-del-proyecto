@@ -215,6 +215,8 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
 
 ### 2.3.1 User Personas
 
+La creación de User Personas nos permite humanizar los datos recopilados durante la investigación de campo, transformando estadísticas y notas de entrevistas en perfiles representativos con objetivos, habilidades y frustraciones específicas. En el contexto de ColdTrace, hemos identificado dos arquetipos críticos que interactúan con la cadena de frío de maneras distintas: el dueño de negocio que busca rentabilidad y la profesional de calidad que persigue el cumplimiento normativo. A continuación, se presentan las fichas detalladas elaboradas en la herramienta UXPressia.
+
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
    <img src="assets/user-personas/segmento-1-gustavo-fernandez.png" alt="User Persona del segmento de minimarkets o pequeños negocios con productos perecibles" width="760">
