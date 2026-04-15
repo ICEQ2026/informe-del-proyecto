@@ -174,7 +174,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
 
 ### 2.2.2 Registro de Entrevistas
 
-<h3>Segmento: Minimarkets o puestos de mercado</h3>
+**Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
 <table border="1" style="width:100%; border-collapse:collapse;">
   <colgroup>
@@ -209,15 +209,17 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
   </tr>
 </table>
 
+**Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
+
 ## 2.3 Needfinding
 
 ### 2.3.1 User Personas
 
-1. **Segmento de minimarkets o pequeños negocios con productos perecibles**
+**Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
    <img src="assets/user-personas/segmento-1-gustavo-fernandez.png" alt="User Persona del segmento de minimarkets o pequeños negocios con productos perecibles" width="760">
 
-2. **Segmento de responsables de operaciones y control de calidad en negocios con cadena de frío**
+**Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
    <img src="assets/user-personas/segmento-2-sofia-ramirez.png" alt="User Persona del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío" width="760">
 
@@ -227,7 +229,7 @@ La User Task Matrix es una herramienta que nos permite identificar las tareas cl
 
 **User Task Matrix: Primer Segmento Objetivo**
 
-**Segmento:** Minimarkets o pequeños negocios con productos perecibles  
+**Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 **Persona:** Gustavo Fernández
 
 | Tareas | Frecuencia | Importancia |
@@ -241,7 +243,7 @@ La User Task Matrix es una herramienta que nos permite identificar las tareas cl
 
 **User Task Matrix: Segundo Segmento Objetivo**
 
-**Segmento:** Responsables de operaciones y control de calidad en negocios con cadena de frío  
+**Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 **Persona:** Sofía Ramírez
 
 | Tareas | Frecuencia | Importancia |
