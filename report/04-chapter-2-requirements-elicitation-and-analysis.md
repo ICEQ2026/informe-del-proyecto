@@ -271,7 +271,15 @@ El User Journey Map es una representación visual del flujo de pasos, necesidade
 
 ### 2.3.4 Empathy Mapping
 
-Pendiente de completar.
+El Empathy Map nos permite profundizar en el mundo interno y sensorial del usuario, capturando lo que ven, oyen, dicen, hacen, piensan y sienten durante su jornada laboral. Esta herramienta es fundamental para identificar las motivaciones profundas que impulsan el comportamiento humano y para validar los "puntos de dolor" (Pains) y las "ganancias esperadas" (Gains).
+
+**Empathy Map: Gustavo Fernández**
+
+<img src="assets/empathy-maps/empathy-map1.png" alt="Empathy Map de Gustavo Fernández" width="760">
+
+**Empathy Map: Sofía Ramírez**
+
+<img src="assets/empathy-maps/empathy-map2.png" alt="Empathy Map de Sofía Ramírez" width="760">
 
 ## 2.4 Big Picture Event Storming
 
