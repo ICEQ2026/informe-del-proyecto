@@ -283,7 +283,7 @@ El Empathy Map nos permite profundizar en el mundo interno y sensorial del usuar
 
 ## 2.4 Big Picture Event Storming
 
-Pendiente de completar.
+<img src="assets/eventstorming/eventstorming.png" alt="Event Storming Phase 10" width="760">
 
 ## 2.5 Ubiquitous Language
 
