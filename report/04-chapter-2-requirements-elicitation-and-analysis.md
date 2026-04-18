@@ -287,4 +287,6 @@ El Empathy Map nos permite profundizar en el mundo interno y sensorial del usuar
 
 ## 2.5 Ubiquitous Language
 
-- **Activo:** Cámara, almacén o transporte monitoreado  
+- **Activo:** Cámara, almacén o transporte monitoreado
+
+- **Auditoría:** Verificación de cumplimiento  
