@@ -287,6 +287,13 @@ El Empathy Map nos permite profundizar en el mundo interno y sensorial del usuar
 
 ## 2.5 Ubiquitous Language
 
-- **Activo:** Cámara, almacén o transporte monitoreado
-
+- **Activo:** Cámara, almacén o transporte monitoreado  
+- **Sensor:** Dispositivo IoT que mide temperatura/humedad  
+- **Medición:** Dato registrado por el sensor  
+- **Rango seguro:** Límites permitidos  
+- **Desviación:** Valor fuera del rango  
+- **Alerta:** Notificación ante desviación  
+- **Incidencia:** Problema derivado de una alerta  
+- **Reporte:** Documento con datos históricos  
+- **Auditoría:** Verificación de cumplimiento  
 
