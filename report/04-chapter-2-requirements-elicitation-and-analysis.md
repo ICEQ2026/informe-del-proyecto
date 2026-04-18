@@ -289,4 +289,4 @@ El Empathy Map nos permite profundizar en el mundo interno y sensorial del usuar
 
 - **Activo:** Cámara, almacén o transporte monitoreado
 
-- **Auditoría:** Verificación de cumplimiento  
+
