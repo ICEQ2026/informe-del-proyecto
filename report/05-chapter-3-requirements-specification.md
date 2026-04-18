@@ -1,9 +1,6 @@
 # Chapter III: Requirements Specification
 
 ## 3.1 User Stories
-
-Para elaborar user stories que pertenezcan a una épica, primero se definieron las principales épicas funcionales del sistema. A continuación, se presentan las épicas consideradas para ColdTrace, construidas a partir de los segmentos objetivo, las entrevistas preliminares y el entendimiento actual del dominio del problema.
-
 <table style="width: 100%; table-layout: fixed;">
   <colgroup>
     <col style="width: 14%;">
@@ -480,11 +477,11 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   </tr>
   <tr>
     <td>US025</td>
-    <td>Exportar reporte HACCP</td>
-    <td>Como responsable de calidad, <strong>Quiero</strong> exportar un reporte HACCP (Análisis de Peligros y Puntos Críticos de Control) con la información relevante de monitoreo y control, <strong>Para</strong> utilizarlo como soporte documental en procesos internos o auditorías sanitarias.</td>
+    <td>Exportar reporte de cumplimiento sanitario</td>
+    <td>Como responsable de calidad, <strong>Quiero</strong> exportar un reporte de cumplimiento sanitario con la información relevante de monitoreo y control, <strong>Para</strong> utilizarlo como soporte documental en procesos internos o auditorías vinculadas al control sanitario.</td>
     <td>
       <strong>Happy Path:</strong> <strong>Given</strong> el usuario selecciona un periodo y un activo con información suficiente para reportar.<br>
-      <strong>When</strong> solicita la exportación del reporte HACCP.<br>
+      <strong>When</strong> solicita la exportación del reporte de cumplimiento sanitario.<br>
       <strong>Then</strong> el sistema genera el documento con los datos de monitoreo y cumplimiento correspondientes.<br><br>
       <strong>Unhappy Path:</strong> <strong>Given</strong> el rango seleccionado no contiene información mínima para construir el reporte.<br>
       <strong>When</strong> el usuario intenta exportarlo.<br>
@@ -772,8 +769,8 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   <tr>
     <td>19</td>
     <td>US025</td>
-    <td>Exportar reporte HACCP</td>
-    <td><strong>Como</strong> responsable de calidad, <strong>deseo</strong> exportar un reporte HACCP (Análisis de Peligros y Puntos Críticos de Control) con la información relevante de monitoreo y control <strong>para</strong> utilizarlo como soporte documental en procesos internos o auditorías sanitarias.</td>
+    <td>Exportar reporte de cumplimiento sanitario</td>
+    <td><strong>Como</strong> responsable de calidad, <strong>deseo</strong> exportar un reporte de cumplimiento sanitario con la información relevante de monitoreo y control <strong>para</strong> utilizarlo como soporte documental en procesos internos o auditorías vinculadas al control sanitario.</td>
     <td>5</td>
   </tr>
   <tr>
