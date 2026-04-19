@@ -1,7 +1,44 @@
 # Capítulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management
 ### 5.1.1. Software Development Environment Configuration
-[pending content]
+
+En esta sección se describen las herramientas de software utilizadas por el equipo para el desarrollo colaborativo del proyecto. Estas plataformas permiten organizar el trabajo, diseñar la experiencia de usuario, modelar procesos, gestionar el código fuente y documentar el avance del producto durante su ciclo de vida. La selección de estas herramientas responde a la necesidad de mantener un entorno de trabajo colaborativo, accesible y alineado con las prácticas del curso.
+
+### Github
+
+Plataforma utilizada para el guardar versiones del proyecto.
+
+[GitHub](https://github.com/)
+
+![GitHub](assets/chapter-05/development_environment/Github.png)
+
+
+### Uxpressia
+
+Herramiento usada para la elabnoracion de user personas y impact mapping.
+
+[UXPressia](https://uxpressia.com/)
+
+![UXPressia](assets/chapter-05/development_environment/Uxpressia.png)
+
+### Miro
+
+Plataforma usada para el eventstorming.
+
+[Miro](https://miro.com/)
+
+![Miro](assets/chapter-05/development_environment/Miro.png)
+
+
+### Figma
+
+La herramienta usada para desarrollo conjunto de wireframes y mockups.
+
+[Figma](https://www.figma.com/)
+
+![Figma](assets/chapter-05/development_environment/Figma.png)
+
+
 ### 5.1.2. Source Code Management
 [pending content]
 ### 5.1.3. Source Code Style Guide & Conventions
