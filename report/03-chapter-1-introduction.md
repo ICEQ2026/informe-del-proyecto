@@ -24,7 +24,7 @@ Consolidarnos como una referencia regional en monitoreo digital de cadena de fr�
 |  | Espinoza Paredes, Frezzia | Ingeniería de Software |  |  |
 |  | Morales Venegas, David Joel | Ingeniería de Software |  |  |
 |  | Pajés León, Mauricio Luis | Ingeniería de Software |  |  |
-|  | Videl Ventura, Jorge Joseph | Ingeniería de Software |  |  |
+|  | Videla Ventura, Jorge Joseph | Ingeniería de Software |  |  |
 
 ## 1.2 Solution Profile
 
