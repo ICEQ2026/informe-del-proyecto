@@ -266,4 +266,4 @@ Pendiente de completar.
 ## 4.8. Database Design.
 
 ### 4.8.1. Database Diagrams.
-Pendiente de completar.
+<img src="assets/chapter-04/databasediagram/databasediagram.png" width="760">
