@@ -34,8 +34,8 @@
   </tr>
   <tr>
     <td>EP005</td>
-    <td>Reportes, trazabilidad y cumplimiento</td>
-    <td>Como responsable de operaciones y control de calidad, <strong>Quiero</strong> consultar historiales, exportar reportes y acceder a evidencia de trazabilidad, <strong>Para</strong> facilitar auditorías, demostrar cumplimiento y mejorar la toma de decisiones basadas en datos.</td>
+    <td>Reportes, historial de eventos y cumplimiento</td>
+    <td>Como responsable de operaciones y control de calidad, <strong>Quiero</strong> consultar historiales de lecturas, alertas e incidencias, exportar reportes y reunir evidencia operativa, <strong>Para</strong> facilitar auditorías, demostrar cumplimiento y mejorar la toma de decisiones basadas en datos.</td>
   </tr>
   <tr>
     <td>EP006</td>
@@ -172,7 +172,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   <tr>
     <td>US007</td>
     <td>Registrar unidad de transporte</td>
-    <td>Como responsable logístico, <strong>Quiero</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace, <strong>Para</strong> monitorear sus condiciones térmicas y mantener trazabilidad sobre su operación.</td>
+    <td>Como responsable logístico, <strong>Quiero</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace, <strong>Para</strong> monitorear sus condiciones térmicas y conservar un historial de mediciones e incidencias durante su operación.</td>
     <td>
       <strong>Happy Path:</strong> <strong>Given</strong> el usuario tiene acceso al módulo de activos.<br>
       <strong>When</strong> registra una unidad de transporte con sus datos de identificación y operación.<br>
@@ -342,7 +342,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   <tr>
     <td>US017</td>
     <td>Sincronizar datos almacenados offline</td>
-    <td>Como usuario de la plataforma, <strong>Quiero</strong> que los datos capturados durante una pérdida de conexión se sincronicen cuando el sistema recupere conectividad, <strong>Para</strong> no perder trazabilidad sobre las lecturas registradas durante ese periodo.</td>
+    <td>Como usuario de la plataforma, <strong>Quiero</strong> que los datos capturados durante una pérdida de conexión se sincronicen cuando el sistema recupere conectividad, <strong>Para</strong> conservar el historial completo de las lecturas registradas durante ese periodo.</td>
     <td>
       <strong>Happy Path:</strong> <strong>Given</strong> hubo una interrupción de red y el dispositivo almacenó lecturas de forma local.<br>
       <strong>When</strong> la conectividad se restablece.<br>
@@ -427,7 +427,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   <tr>
     <td>US022</td>
     <td>Registrar acción correctiva y cerrar incidencia</td>
-    <td>Como usuario responsable de la atención de incidencias, <strong>Quiero</strong> registrar la acción correctiva aplicada y cerrar la incidencia cuando la condición se estabilice, <strong>Para</strong> mantener trazabilidad del evento y confirmar que el riesgo fue resuelto.</td>
+    <td>Como usuario responsable de la atención de incidencias, <strong>Quiero</strong> registrar la acción correctiva aplicada y cerrar la incidencia cuando la condición se estabilice, <strong>Para</strong> dejar registro de la medida aplicada, confirmar que el riesgo fue resuelto y conservar el historial del caso.</td>
     <td>
       <strong>Happy Path:</strong> <strong>Given</strong> existe una incidencia abierta y el usuario ya tomó una medida correctiva sobre el activo afectado.<br>
       <strong>When</strong> registra la acción ejecutada y el sistema confirma la estabilización de la temperatura.<br>
@@ -460,17 +460,17 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   </tr>
   <tr>
     <td>US024</td>
-    <td>Consultar historial de trazabilidad</td>
-    <td>Como responsable de operaciones y control de calidad, <strong>Quiero</strong> consultar el historial de trazabilidad de un activo, incidencia o periodo operativo, <strong>Para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.</td>
+    <td>Consultar historial de lecturas, alertas e incidencias</td>
+    <td>Como responsable de operaciones y control de calidad, <strong>Quiero</strong> consultar el historial de lecturas, alertas e incidencias de un activo o periodo operativo, <strong>Para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.</td>
     <td>
-      <strong>Happy Path:</strong> <strong>Given</strong> el sistema dispone de lecturas, incidencias y eventos asociados al activo consultado.<br>
-      <strong>When</strong> el usuario accede al historial de trazabilidad.<br>
+      <strong>Happy Path:</strong> <strong>Given</strong> el sistema dispone de lecturas, alertas e incidencias asociadas al activo consultado.<br>
+      <strong>When</strong> el usuario accede al historial del activo o periodo operativo.<br>
       <strong>Then</strong> la plataforma muestra de forma ordenada los eventos relevantes del activo o periodo seleccionado.<br><br>
       <strong>Unhappy Path:</strong> <strong>Given</strong> no existen eventos registrados para el criterio solicitado.<br>
-      <strong>When</strong> el usuario intenta consultar la trazabilidad.<br>
+      <strong>When</strong> el usuario intenta consultar el historial.<br>
       <strong>Then</strong> el sistema indica que no hay información disponible para ese caso.<br><br>
       <strong>Unhappy Path:</strong> <strong>Given</strong> el usuario no tiene permisos suficientes para acceder a esa información histórica.<br>
-      <strong>When</strong> intenta visualizar la trazabilidad.<br>
+      <strong>When</strong> intenta visualizar el historial.<br>
       <strong>Then</strong> la plataforma restringe el acceso y muestra un mensaje de autorización insuficiente.
     </td>
     <td>EP005</td>
@@ -597,7 +597,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   <tr>
     <td>US032</td>
     <td>Solicitar y cerrar servicio técnico</td>
-    <td>Como usuario responsable del activo, <strong>Quiero</strong> solicitar servicio técnico y cerrar la atención una vez completada la intervención, <strong>Para</strong> mantener trazabilidad del mantenimiento correctivo y devolver el equipo a operación de forma controlada.</td>
+    <td>Como usuario responsable del activo, <strong>Quiero</strong> solicitar servicio técnico y cerrar la atención una vez completada la intervención, <strong>Para</strong> conservar el registro de la intervención técnica y devolver el equipo a operación de forma controlada.</td>
     <td>
       <strong>Happy Path:</strong> <strong>Given</strong> el activo presenta una falla o requiere atención técnica correctiva.<br>
       <strong>When</strong> el usuario registra la solicitud de servicio técnico y posteriormente documenta la reparación realizada.<br>
@@ -742,7 +742,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>15</td>
     <td>US022</td>
     <td>Registrar acción correctiva y cerrar incidencia</td>
-    <td><strong>Como</strong> usuario responsable de la atención de incidencias, <strong>deseo</strong> registrar la acción correctiva aplicada y cerrar la incidencia cuando la condición se estabilice <strong>para</strong> mantener trazabilidad del evento y confirmar que el riesgo fue resuelto.</td>
+    <td><strong>Como</strong> usuario responsable de la atención de incidencias, <strong>deseo</strong> registrar la acción correctiva aplicada y cerrar la incidencia cuando la condición se estabilice <strong>para</strong> dejar registro de la medida aplicada, confirmar que el riesgo fue resuelto y conservar el historial del caso.</td>
     <td>3</td>
   </tr>
   <tr>
@@ -755,8 +755,8 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   <tr>
     <td>17</td>
     <td>US024</td>
-    <td>Consultar historial de trazabilidad</td>
-    <td><strong>Como</strong> responsable de operaciones y control de calidad, <strong>deseo</strong> consultar el historial de trazabilidad de un activo, incidencia o periodo operativo <strong>para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.</td>
+    <td>Consultar historial de lecturas, alertas e incidencias</td>
+    <td><strong>Como</strong> responsable de operaciones y control de calidad, <strong>deseo</strong> consultar el historial de lecturas, alertas e incidencias de un activo o periodo operativo <strong>para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.</td>
     <td>3</td>
   </tr>
   <tr>
@@ -812,7 +812,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>25</td>
     <td>US032</td>
     <td>Solicitar y cerrar servicio técnico</td>
-    <td><strong>Como</strong> usuario responsable del activo, <strong>deseo</strong> solicitar servicio técnico y cerrar la atención una vez completada la intervención <strong>para</strong> mantener trazabilidad del mantenimiento correctivo y devolver el equipo a operación de forma controlada.</td>
+    <td><strong>Como</strong> usuario responsable del activo, <strong>deseo</strong> solicitar servicio técnico y cerrar la atención una vez completada la intervención <strong>para</strong> conservar el registro de la intervención técnica y devolver el equipo a operación de forma controlada.</td>
     <td>5</td>
   </tr>
   <tr>
@@ -840,7 +840,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>29</td>
     <td>US017</td>
     <td>Sincronizar datos almacenados offline</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que los datos capturados durante una pérdida de conexión se sincronicen cuando el sistema recupere conectividad <strong>para</strong> no perder trazabilidad sobre las lecturas registradas durante ese periodo.</td>
+    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que los datos capturados durante una pérdida de conexión se sincronicen cuando el sistema recupere conectividad <strong>para</strong> conservar el historial completo de las lecturas registradas durante ese periodo.</td>
     <td>8</td>
   </tr>
   <tr>
@@ -861,7 +861,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>32</td>
     <td>US007</td>
     <td>Registrar unidad de transporte</td>
-    <td><strong>Como</strong> responsable logístico, <strong>deseo</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace <strong>para</strong> monitorear sus condiciones térmicas y mantener trazabilidad sobre su operación.</td>
+    <td><strong>Como</strong> responsable logístico, <strong>deseo</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace <strong>para</strong> monitorear sus condiciones térmicas y conservar un historial de mediciones e incidencias durante su operación.</td>
     <td>3</td>
   </tr>
 </table>
