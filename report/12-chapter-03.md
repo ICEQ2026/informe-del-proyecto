@@ -615,6 +615,8 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
 
 ## 3.2 Impact Mapping
 
+El Impact Mapping es una técnica de planificación estratégica que permite alinear el desarrollo de ColdTrace con los objetivos de negocio de ICEQ. Este análisis visual permite establecer un puente claro entre las metas de la startup y la entrega de valor real a los usuarios:
+
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
    <img src="assets/chapter-03/impact maps/impact-map1.png" alt="Impact map del segmento de minimarkets o pequeños negocios con productos perecibles" width="900">
