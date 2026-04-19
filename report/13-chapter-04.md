@@ -246,20 +246,21 @@ La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta 
 Pendiente de completar.
 
 ### 4.6.2. Software Architecture Context Diagram.
-<img src="assets/contextdiagram/contextdiagram.png"  width="760">
+<img src="assets/chapter-04/contextdiagram/contextdiagram.png"  width="760">
 
 ### 4.6.3. Software Architecture Container Diagrams.
-<img src="assets/containerdiagram/containerdiagram.png" width="760">
+<img src="assets/chapter-04/containerdiagram/containerdiagram.png" width="760">
 
 ### 4.6.4. Software Architecture Components Diagrams.
-<img src="assets/diagramcomponents/diagramcomponents.png" width="760">
+<img src="assets/chapter-04/diagramcomponents/diagramcomponents.png" width="760">
 
 ---
 
 ## 4.7. Software Object-Oriented Design.
 
 ### 4.7.1. Class Diagrams.
-<img src="assets/classdiagram/classdiagram.png" width="760">
+<img src="assets/chapter-04/classdiagram/classdiagram.png" width="760">
+
 ---
 
 ## 4.8. Database Design.
