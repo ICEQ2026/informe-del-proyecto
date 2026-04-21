@@ -40,7 +40,61 @@ La herramienta usada para desarrollo conjunto de wireframes y mockups.
 
 
 ### 5.1.2. Source Code Management
-[pending content]
+
+La gestión del código fuente del proyecto se realizó mediante la plataforma GitHub, la cual permitió organizar, controlar y dar seguimiento a los cambios realizados durante el desarrollo del informe.
+
+Los repositorios usados fueron:
+
+- Repositorio del proyecto: https://github.com/ICEQ2026/informe-del-proyecto  
+
+Este repositorio contiene la estructura completa del informe, organizada por capítulos, lo que permite una gestión modular y colaborativa del contenido.
+
+### Workflow de Control de Versiones
+
+Para la gestión del desarrollo se utilizó un flujo de trabajo basado en ramas, donde cada integrante del equipo trabajó de manera independiente sobre una rama específica antes de integrar sus cambios a la rama principal.
+
+Las ramas identificadas en el repositorio son:
+
+- **main**: rama principal que contiene la versión estable del proyecto.
+- **feature/**: ramas utilizadas para el desarrollo de secciones específicas del informe.
+
+### Convenciones de Ramas
+
+Se utilizó una convención de nombres basada en el contenido desarrollado, lo cual se evidencia en las siguientes ramas:
+
+- feature/14-chapter-05  
+- feature/13-chapter-04  
+- feature/12-chapter-03  
+- feature/15-chapter-06  
+- feature/99-bibliography  
+
+Cada rama representa un capítulo o sección del informe, permitiendo que los integrantes trabajen de forma paralela sin interferir en el trabajo de otros.
+
+Este enfoque facilita la organización del proyecto y permite una integración más controlada de los cambios.
+
+### Conventional Commits
+
+Para estandarizar los mensajes de commits, se utilizó la convención de Conventional Commits, permitiendo clasificar los cambios realizados y mejorar la trazabilidad del repositorio.
+
+Los tipos de commits utilizados incluyen:
+
+- feat: incorporación de nuevo contenido  
+- docs: modificaciones en la documentación  
+- fix: corrección de errores  
+- chore: tareas de mantenimiento  
+
+El uso de estas convenciones facilita la comprensión del historial de cambios y mejora la colaboración entre los integrantes del equipo.
+
+<p align="center">
+  <img src="../assets/development_environment/github-branches.png" width="700"/>
+</p>
+
+<p align="center">
+  Ramas del repositorio del proyecto, evidenciando el uso de ramas feature para el desarrollo independiente de cada sección.
+</p>
+
+La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feature, permitiendo una correcta organización del desarrollo y facilitando la integración de los aportes de cada integrante.
+
 ### 5.1.3. Source Code Style Guide & Conventions
 [pending content]
 ### 5.1.4. Software Deployment Configuration
