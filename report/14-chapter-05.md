@@ -58,6 +58,14 @@ Las ramas identificadas en el repositorio son:
 - **main**: rama principal que contiene la versión estable del proyecto.
 - **feature/**: ramas utilizadas para el desarrollo de secciones específicas del informe.
 
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/github-branches.png" width="700"/>
+</p>
+
+<p align="center">
+  Ramas del repositorio del proyecto, evidenciando el uso de ramas feature para el desarrollo independiente de cada sección.
+</p>
+
 ### Convenciones de Ramas
 
 Se utilizó una convención de nombres basada en el contenido desarrollado, lo cual se evidencia en las siguientes ramas:
@@ -76,6 +84,14 @@ Este enfoque facilita la organización del proyecto y permite una integración m
 
 Para estandarizar los mensajes de commits, se utilizó la convención de Conventional Commits, permitiendo clasificar los cambios realizados y mejorar la trazabilidad del repositorio.
 
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/github-commits.png" width="700"/>
+</p>
+
+<p align="center">
+  Comitts realizdos evidenciando el uso de conventional commits para clasificar los tipos de cambios.
+</p>
+
 Los tipos de commits utilizados incluyen:
 
 - feat: incorporación de nuevo contenido  
@@ -84,14 +100,6 @@ Los tipos de commits utilizados incluyen:
 - chore: tareas de mantenimiento  
 
 El uso de estas convenciones facilita la comprensión del historial de cambios y mejora la colaboración entre los integrantes del equipo.
-
-<p align="center">
-  <img src="../assets/development_environment/github-branches.png" width="700"/>
-</p>
-
-<p align="center">
-  Ramas del repositorio del proyecto, evidenciando el uso de ramas feature para el desarrollo independiente de cada sección.
-</p>
 
 La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feature, permitiendo una correcta organización del desarrollo y facilitando la integración de los aportes de cada integrante.
 
