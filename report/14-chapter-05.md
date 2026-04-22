@@ -94,36 +94,218 @@ Para estandarizar los mensajes de commits, se utilizó la convención de Convent
 
 Los tipos de commits utilizados incluyen:
 
-- feat: incorporación de nuevo contenido  
-- docs: modificaciones en la documentación  
-- fix: corrección de errores  
-- chore: tareas de mantenimiento  
+- **feat**: incorporación de nuevo contenido  
+- **docs**: modificaciones en la documentación  
+- **fix**: corrección de errores  
+- **chore**: tareas de mantenimiento  
 
 El uso de estas convenciones facilita la comprensión del historial de cambios y mejora la colaboración entre los integrantes del equipo.
 
 La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feature, permitiendo una correcta organización del desarrollo y facilitando la integración de los aportes de cada integrante.
 
 ### 5.1.3. Source Code Style Guide & Conventions
+
 [pending content]
+
 ### 5.1.4. Software Deployment Configuration
+
 [pending content]
+
 ## 5.2. Landing Page, Services & Applications Implementation
-### 5.2.X. Sprint n
-#### 5.2.X.1.
+
+### 5.2.1. Sprint 1
+
+#### 5.2.1.1. Sprint Planning 1
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Sprint #</th>
+    <td>Sprint n</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Sprint Planning Background</th>
+  </tr>
+
+  <tr>
+    <th>Date</th>
+    <td>YYYY-MM-DD</td>
+  </tr>
+
+  <tr>
+    <th>Time</th>
+    <td>HH:MM AM/PM</td>
+  </tr>
+
+  <tr>
+    <th>Location</th>
+    <td>(Descripción de la ubicación de la reunión, física o virtual)</td>
+  </tr>
+
+  <tr>
+    <th>Prepared By</th>
+    <td>Jiménez Rosas, Arturo Eduardo</td>
+  </tr>
+
+  <tr>
+    <th>Attendees (to planning meeting)</th>
+    <td>Jiménez Rosas, Arturo Eduardo / Rodríguez Peña, Jorge Andrés / ...</td>
+  </tr>
+
+  <tr>
+    <th>Sprint n − 1 Review Summary</th>
+    <td>(Resumen del Sprint anterior, en términos de resultados alcanzados a nivel de productos de software, opiniones de miembros y feedback de product owner.)</td>
+  </tr>
+
+  <tr>
+    <th>Sprint n − 1 Retrospective Summary</th>
+    <td>(Resumen del Sprint anterior, en términos de opiniones de miembros del equipo sobre aciertos u oportunidades de mejora en su forma de trabajo)</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Sprint Goal & User Stories</th>
+  </tr>
+
+  <tr>
+    <th>Sprint n Goal</th>
+    <td>(Definir el Goal del Sprint n y la métrica de cumplimiento.)</td>
+  </tr>
+
+  <tr>
+    <th>Sprint n Velocity</th>
+    <td>(Definir el Velocity establecido para el Sprint n, es decir cuántos Story Points puede aceptar el equipo para este Sprint n.)</td>
+  </tr>
+
+  <tr>
+    <th>Sum of Story Points</th>
+    <td>(Colocar la suma de los Story Points para los User Stories que se están incluyendo en este Sprint n.)</td>
+  </tr>
+</table>
+
+#### 5.2.1.2. Aspect Leaders and Collaborators.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Team Member (Last Name, First Name)</th>
+    <th>GitHub Username</th>
+    <th>Aspect Name 1<br>Leader (L) / Collaborator (C)</th>
+    <th>Aspect Name 2<br>Leader (L) / Collaborator (C)</th>
+    <th>...</th>
+    <th>Aspect Name n<br>Leader (L) / Collaborator (C)</th>
+  </tr>
+
+  <tr>
+    <td>Jiménez Rosas, Arturo Eduardo</td>
+    <td>ajimenezrosas</td>
+    <td>L</td>
+    <td>C</td>
+    <td>...</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>Rodríguez Peña, Jorge Andrés</td>
+    <td>Japr91</td>
+    <td>C</td>
+    <td>C</td>
+    <td>...</td>
+    <td>L</td>
+  </tr>
+</table>
+
+### 5.2.1.3. Sprint Backlog 1.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+  
+  <!-- Sprint -->
+  <tr>
+    <th>Sprint #</th>
+    <td colspan="7">Sprint n</td>
+  </tr>
+
+  <!-- Encabezados principales -->
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+
+  <!-- Subencabezados -->
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Estimation (Hours)</th>
+    <th>Assigned To</th>
+    <th>Status (To-do / In-Process / To-Review / Done)</th>
+  </tr>
+
+  <!-- Filas de ejemplo -->
+  <tr>
+    <td>US-01</td>
+    <td>Lorem Ipsum</td>
+    <td>T-01</td>
+    <td>Diseñar UI</td>
+    <td>Crear interfaz de login</td>
+    <td>4</td>
+    <td>Arturo</td>
+    <td>To-do</td>
+  </tr>
+
+  <tr>
+    <td>US-01</td>
+    <td>Lorem Ipsum</td>
+    <td>T-02</td>
+    <td>Validación backend</td>
+    <td>Implementar autenticación</td>
+    <td>6</td>
+    <td>Jorge</td>
+    <td>In-Process</td>
+  </tr>
+
+  <tr>
+    <td>US-02</td>
+    <td>Lorem Ipsum</td>
+    <td>T-03</td>
+    <td>Formulario registro</td>
+    <td>Crear formulario</td>
+    <td>5</td>
+    <td>Arturo</td>
+    <td>Done</td>
+  </tr>
+
+</table>
+
+### 5.2.1.4. Development Evidence for Sprint Review.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+  
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit Id</th>
+    <th>Commit Message</th>
+    <th>Commit Message Body</th>
+    <th>Committed on (Date)</th>
+  </tr>
+
+  <tr>
+    <td>user/repositoryname</td>
+    <td>feature/loremipsum</td>
+    <td>14ca4e3</td>
+    <td>feat: consectetur adipiscing elit</td>
+    <td>Curabitur quis placerat nulla. Fusce malesuada faucibus quam, ut condimentum velit rutrum ut.</td>
+    <td>04/09/2021</td>
+  </tr>
+  
+### 5.2.1.5. Execution Evidence for Sprint Review.
 [pending content]
-#### 5.2.X.2.
+### 5.2.1.6. Services Documentation Evidence for Sprint Review.
 [pending content]
-#### 5.2.X.3.
+### 5.2.1.7. Software Deployment Evidence for Sprint Review.
 [pending content]
-#### 5.2.X.4.
-[pending content]
-#### 5.2.X.5.
-[pending content]
-#### 5.2.X.6.
-[pending content]
-#### 5.2.X.7.
-[pending content]
-#### 5.2.X.8.
+### 5.2.1.8. Team Collaboration Insights during Sprint
 [pending content]
 ## 5.3. Sprint Planning n
 [pending content]
