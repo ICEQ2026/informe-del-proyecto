@@ -1,5 +1,7 @@
 # Capítulo V: Product Implementation, Validation & Deployment
+
 ## 5.1. Software Configuration Management
+
 ### 5.1.1. Software Development Environment Configuration
 
 En esta sección se describen las herramientas de software utilizadas por el equipo para el desarrollo colaborativo del proyecto. Estas plataformas permiten organizar el trabajo, diseñar la experiencia de usuario, modelar procesos, gestionar el código fuente y documentar el avance del producto durante su ciclo de vida. La selección de estas herramientas responde a la necesidad de mantener un entorno de trabajo colaborativo, accesible y alineado con las prácticas del curso.
@@ -280,7 +282,6 @@ La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feat
 ### 5.2.1.4. Development Evidence for Sprint Review.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
-  
   <tr>
     <th>Repository</th>
     <th>Branch</th>
@@ -289,7 +290,6 @@ La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feat
     <th>Commit Message Body</th>
     <th>Committed on (Date)</th>
   </tr>
-
   <tr>
     <td>user/repositoryname</td>
     <td>feature/loremipsum</td>
@@ -298,15 +298,29 @@ La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feat
     <td>Curabitur quis placerat nulla. Fusce malesuada faucibus quam, ut condimentum velit rutrum ut.</td>
     <td>04/09/2021</td>
   </tr>
+</table>
+
+### 5.2.1.5. Execution Evidence for Sprint Review.
+
+[pending content]
   
 ### 5.2.1.5. Execution Evidence for Sprint Review.
+
 [pending content]
+
 ### 5.2.1.6. Services Documentation Evidence for Sprint Review.
+
 [pending content]
+
 ### 5.2.1.7. Software Deployment Evidence for Sprint Review.
+
 [pending content]
+
 ### 5.2.1.8. Team Collaboration Insights during Sprint
+
 [pending content]
+
+
 ## 5.3. Sprint Planning n
 [pending content]
 ### Aspect Leaders and Collaborators
