@@ -309,7 +309,11 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ## 4.5. Web Applications Prototyping.
 
-**Pendiente de completar**
+[Ver Prototipo de la Aplicación (Video)](https://upcedupe-my.sharepoint.com/personal/u202410093_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202410093%5Fupc%5Fedu%5Fpe%2FDocuments%2FApplication%20Prototyping%2Ewebm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2fbd59b3%2Dc21c%2D4852%2Db443%2D3a377f870464)
+
+<p align="center">
+<img src="assets/chapter-04/prototype/Prototyping.png"  width="760">
+</p>
 
 ---
 ## 4.6. Domain-Driven Software Architecture.
