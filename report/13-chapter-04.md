@@ -304,6 +304,7 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 <p align="center">
   <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png"/>
 </p>
+
 ---
 
 ## 4.5. Web Applications Prototyping.
