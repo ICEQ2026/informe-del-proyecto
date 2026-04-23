@@ -256,6 +256,9 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
+<p align="center">
+  <img src="/report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png"/>
+</p>
 
 ---
 
