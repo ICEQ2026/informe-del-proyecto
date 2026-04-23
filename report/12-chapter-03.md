@@ -47,6 +47,31 @@
     <td>Configuración operativa y mantenimiento</td>
     <td>Como usuario administrativo de la plataforma, <strong>Quiero</strong> configurar rangos de seguridad, gestionar parámetros operativos y dar seguimiento a necesidades de mantenimiento, <strong>Para</strong> asegurar el funcionamiento continuo del sistema y adaptar ColdTrace al contexto real de cada operación.</td>
   </tr>
+  <tr>
+    <td>EP008</td>
+    <td>RESTful API - Autenticación</td>
+    <td>Como developer, <strong>Quiero</strong> contar con endpoints de autenticación y acceso, <strong>Para</strong> permitir que el frontend gestione el registro, inicio de sesión y validación de usuarios dentro de ColdTrace.</td>
+  </tr>
+  <tr>
+    <td>EP009</td>
+    <td>RESTful API - Equipos y sensores</td>
+    <td>Como developer, <strong>Quiero</strong> exponer endpoints para registrar y administrar equipos monitoreados y sensores, <strong>Para</strong> permitir que el frontend configure la infraestructura de monitoreo de la operación.</td>
+  </tr>
+  <tr>
+    <td>EP010</td>
+    <td>RESTful API - Lecturas y monitoreo</td>
+    <td>Como developer, <strong>Quiero</strong> disponer de endpoints para registrar y consultar lecturas de monitoreo, <strong>Para</strong> soportar la visualización histórica y el seguimiento térmico en la plataforma.</td>
+  </tr>
+  <tr>
+    <td>EP011</td>
+    <td>RESTful API - Alertas e incidencias</td>
+    <td>Como developer, <strong>Quiero</strong> implementar endpoints para consultar alertas y gestionar incidencias, <strong>Para</strong> permitir que el frontend responda a eventos críticos dentro de la operación.</td>
+  </tr>
+  <tr>
+    <td>EP012</td>
+    <td>RESTful API - Reportes y cumplimiento</td>
+    <td>Como developer, <strong>Quiero</strong> ofrecer endpoints para generar bitácoras y reportes de cumplimiento, <strong>Para</strong> facilitar la consulta, descarga y uso documental de la información operativa.</td>
+  </tr>
 </table>
 
 Luego de definir las épicas principales del sistema, se desarrollan las historias de usuario correspondientes a cada una de ellas. A continuación, se presentan las user stories del proyecto, organizadas según las épicas definidas para ColdTrace.
@@ -938,6 +963,206 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     </td>
     <td>EP007</td>
   </tr>
+  <tr>
+    <td>TS01</td>
+    <td>Endpoint de registro de usuario</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint POST para registrar usuarios,<br>
+      <strong>Para</strong> que el frontend pueda crear nuevas cuentas desde el formulario de registro.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud POST con datos válidos de usuario.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 201 y el objeto del usuario creado sin incluir la contraseña.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud POST con un correo ya existente.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 400 y un mensaje indicando que el correo ya está en uso.
+    </td>
+    <td>EP008</td>
+  </tr>
+  <tr>
+    <td>TS02</td>
+    <td>Endpoint de inicio de sesión</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint POST para autenticar usuarios,<br>
+      <strong>Para</strong> que el frontend pueda iniciar sesión y recibir un token de acceso.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía credenciales válidas.<br>
+      <strong>When</strong> el servidor las valida.<br>
+      <strong>Then</strong> responde con status 200 y un token junto con los datos básicos del usuario.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía credenciales inválidas.<br>
+      <strong>When</strong> el servidor las valida.<br>
+      <strong>Then</strong> responde con status 401 y un mensaje indicando que las credenciales son incorrectas.
+    </td>
+    <td>EP008</td>
+  </tr>
+  <tr>
+    <td>TS03</td>
+    <td>Endpoint para registrar equipo monitoreado</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint POST para registrar equipos monitoreados,<br>
+      <strong>Para</strong> que el frontend pueda crear cámaras frigoríficas o unidades de operación dentro del sistema.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud POST con nombre, tipo y ubicación válidos.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 201 y el objeto del equipo creado con su identificador generado.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud POST sin algún campo obligatorio.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 400 y un mensaje indicando los campos requeridos.
+    </td>
+    <td>EP009</td>
+  </tr>
+  <tr>
+    <td>TS04</td>
+    <td>Endpoint para registrar y vincular sensores</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint POST para registrar sensores y asociarlos a un equipo monitoreado,<br>
+      <strong>Para</strong> que el frontend pueda configurar dispositivos de monitoreo dentro de la operación.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud POST con datos válidos del sensor y un equipo existente.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 201 y confirma la asociación del sensor al equipo.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud con un equipo inexistente.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 404 y un mensaje indicando que el equipo no fue encontrado.
+    </td>
+    <td>EP009</td>
+  </tr>
+  <tr>
+    <td>TS05</td>
+    <td>Endpoint para registrar lecturas de sensor</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint POST para registrar lecturas de temperatura y humedad enviadas por los sensores,<br>
+      <strong>Para</strong> que el sistema pueda almacenarlas y procesarlas para monitoreo y alertas.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud POST con sensor, temperatura y humedad válidos.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 201 y el objeto de la lectura creada con su timestamp.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud POST con un sensor inexistente.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 404 y un mensaje indicando que el sensor no fue encontrado.
+    </td>
+    <td>EP010</td>
+  </tr>
+  <tr>
+    <td>TS06</td>
+    <td>Endpoint para obtener historial de lecturas</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint GET para obtener el historial de lecturas por equipo y rango de fechas,<br>
+      <strong>Para</strong> que el frontend pueda mostrar gráficos y datos históricos al usuario.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud GET con un equipo válido y fechas correctas.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 200 y un arreglo con las lecturas ordenadas por fecha.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud GET con parámetros de fecha inconsistentes.<br>
+      <strong>When</strong> el servidor valida los parámetros.<br>
+      <strong>Then</strong> responde con status 400 y un mensaje indicando el error en la consulta.
+    </td>
+    <td>EP010</td>
+  </tr>
+  <tr>
+    <td>TS07</td>
+    <td>Endpoint para obtener alertas activas</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint GET para obtener las alertas activas de una organización,<br>
+      <strong>Para</strong> que el frontend pueda mostrarlas dentro del panel de monitoreo.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud GET con una organización válida.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 200 y un arreglo con las alertas activas registradas.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud GET para una organización sin alertas activas.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 200 y un arreglo vacío.
+    </td>
+    <td>EP011</td>
+  </tr>
+  <tr>
+    <td>TS08</td>
+    <td>Endpoint para reconocer y cerrar incidencias</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint PUT para actualizar el estado de una incidencia y registrar su atención,<br>
+      <strong>Para</strong> que el frontend pueda reconocer alertas, documentar acciones correctivas y cerrar casos.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud PUT con un identificador de incidencia válido y un estado permitido.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 200 y la incidencia actualizada con su nuevo estado.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud PUT con una incidencia inexistente.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 404 y un mensaje indicando que la incidencia no fue encontrada.
+    </td>
+    <td>EP011</td>
+  </tr>
+  <tr>
+    <td>TS09</td>
+    <td>Endpoint para generar bitácora diaria</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint GET para generar la bitácora diaria de monitoreo,<br>
+      <strong>Para</strong> que el frontend pueda consultar y descargar el consolidado operativo del día.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud GET con una fecha válida y datos disponibles.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 200 y la bitácora generada para el periodo consultado.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud para un periodo sin información consolidada.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 404 o 400 indicando que no se pudo generar la bitácora.
+    </td>
+    <td>EP012</td>
+  </tr>
+  <tr>
+    <td>TS10</td>
+    <td>Endpoint para exportar reporte de cumplimiento sanitario</td>
+    <td>
+      <strong>Como</strong> developer,<br>
+      <strong>Quiero</strong> un endpoint GET para exportar reportes de cumplimiento sanitario,<br>
+      <strong>Para</strong> que el frontend pueda solicitar evidencia documental lista para descarga o auditoría.
+    </td>
+    <td>
+      <strong>Happy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud GET con un periodo y criterios válidos.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 200 y el archivo o recurso del reporte generado.<br><br>
+      <strong>Unhappy Path:</strong><br>
+      <strong>Given</strong> el developer envía una solicitud con parámetros inválidos o sin información suficiente.<br>
+      <strong>When</strong> el servidor procesa la solicitud.<br>
+      <strong>Then</strong> responde con status 400 o 404 indicando que no fue posible exportar el reporte.
+    </td>
+    <td>EP012</td>
+  </tr>
 </table>
 
 ## 3.2 Impact Mapping
@@ -1234,5 +1459,75 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
     <td>Registrar unidad de transporte</td>
     <td><strong>Como</strong> responsable logístico, <strong>deseo</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace <strong>para</strong> monitorear sus condiciones térmicas y conservar un historial de mediciones e incidencias durante su operación.</td>
     <td>3</td>
+  </tr>
+  <tr>
+    <td>39</td>
+    <td>TS01</td>
+    <td>Endpoint de registro de usuario</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar usuarios <strong>para</strong> que el frontend pueda crear nuevas cuentas desde el formulario de registro.</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>TS02</td>
+    <td>Endpoint de inicio de sesión</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para autenticar usuarios <strong>para</strong> que el frontend pueda iniciar sesión y recibir un token de acceso.</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td>TS03</td>
+    <td>Endpoint para registrar equipo monitoreado</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar equipos monitoreados <strong>para</strong> que el frontend pueda crear cámaras frigoríficas o unidades de operación dentro del sistema.</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>42</td>
+    <td>TS04</td>
+    <td>Endpoint para registrar y vincular sensores</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar sensores y asociarlos a un equipo monitoreado <strong>para</strong> que el frontend pueda configurar dispositivos de monitoreo dentro de la operación.</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td>TS05</td>
+    <td>Endpoint para registrar lecturas de sensor</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar lecturas de temperatura y humedad enviadas por los sensores <strong>para</strong> que el sistema pueda almacenarlas y procesarlas para monitoreo y alertas.</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>44</td>
+    <td>TS06</td>
+    <td>Endpoint para obtener historial de lecturas</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para obtener el historial de lecturas por equipo y rango de fechas <strong>para</strong> que el frontend pueda mostrar gráficos y datos históricos al usuario.</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>45</td>
+    <td>TS07</td>
+    <td>Endpoint para obtener alertas activas</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para obtener las alertas activas de una organización <strong>para</strong> que el frontend pueda mostrarlas dentro del panel de monitoreo.</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>46</td>
+    <td>TS08</td>
+    <td>Endpoint para reconocer y cerrar incidencias</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint PUT para actualizar el estado de una incidencia y registrar su atención <strong>para</strong> que el frontend pueda reconocer alertas, documentar acciones correctivas y cerrar casos.</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>47</td>
+    <td>TS09</td>
+    <td>Endpoint para generar bitácora diaria</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para generar la bitácora diaria de monitoreo <strong>para</strong> que el frontend pueda consultar y descargar el consolidado operativo del día.</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>48</td>
+    <td>TS10</td>
+    <td>Endpoint para exportar reporte de cumplimiento sanitario</td>
+    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para exportar reportes de cumplimiento sanitario <strong>para</strong> que el frontend pueda solicitar evidencia documental lista para descarga o auditoría.</td>
+    <td>5</td>
   </tr>
 </table>
