@@ -14,31 +14,36 @@
   </tr>
   <tr>
     <td>EP001</td>
+    <td>Landing page y captación de visitantes</td>
+    <td>Como visitante de ColdTrace, <strong>Quiero</strong> recorrer la landing page y comprender la propuesta de valor del producto, <strong>Para</strong> evaluar si la solución es relevante para mi negocio antes de registrarme o contactarme.</td>
+  </tr>
+  <tr>
+    <td>EP002</td>
     <td>Gestión de usuarios y acceso</td>
     <td>Como usuario o administrador de la plataforma, <strong>Quiero</strong> registrar cuentas, autenticar accesos y gestionar permisos dentro del sistema, <strong>Para</strong> asegurar que cada persona utilice ColdTrace de acuerdo con su rol y pueda ingresar de forma segura a la operación.</td>
   </tr>
   <tr>
-    <td>EP002</td>
+    <td>EP003</td>
     <td>Gestión de equipos y sensores</td>
     <td>Como responsable de la operación, <strong>Quiero</strong> registrar cámaras frigoríficas, unidades de transporte, sensores y gateways dentro del sistema, <strong>Para</strong> mantener organizada la infraestructura de monitoreo y asociar correctamente cada activo con su ubicación y estado.</td>
   </tr>
   <tr>
-    <td>EP003</td>
+    <td>EP004</td>
     <td>Monitoreo de temperatura y humedad</td>
     <td>Como usuario de la plataforma, <strong>Quiero</strong> visualizar en tiempo real la temperatura, humedad y estado de mis equipos o ambientes monitoreados, <strong>Para</strong> detectar variaciones oportunamente y reducir el riesgo de pérdida de productos perecibles.</td>
   </tr>
   <tr>
-    <td>EP004</td>
+    <td>EP005</td>
     <td>Alertas e incidencias</td>
     <td>Como encargado de negocio o responsable de operaciones, <strong>Quiero</strong> recibir alertas automáticas y registrar incidencias cuando ocurra una desviación térmica o un evento crítico, <strong>Para</strong> actuar rápidamente y minimizar el impacto operativo o económico.</td>
   </tr>
   <tr>
-    <td>EP005</td>
+    <td>EP006</td>
     <td>Reportes, historial de eventos y cumplimiento</td>
     <td>Como responsable de operaciones y control de calidad, <strong>Quiero</strong> consultar historiales de lecturas, alertas e incidencias, exportar reportes y reunir evidencia operativa, <strong>Para</strong> facilitar auditorías, demostrar cumplimiento y mejorar la toma de decisiones basadas en datos.</td>
   </tr>
   <tr>
-    <td>EP006</td>
+    <td>EP007</td>
     <td>Configuración operativa y mantenimiento</td>
     <td>Como usuario administrativo de la plataforma, <strong>Quiero</strong> configurar rangos de seguridad, gestionar parámetros operativos y dar seguimiento a necesidades de mantenimiento, <strong>Para</strong> asegurar el funcionamiento continuo del sistema y adaptar ColdTrace al contexto real de cada operación.</td>
   </tr>
@@ -63,6 +68,102 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   </tr>
   <tr>
     <td>US001</td>
+    <td>Ver propuesta de valor en la landing page</td>
+    <td>
+      <strong>Como</strong> visitante,<br>
+      <strong>Quiero</strong> ver en la página principal qué problema resuelve ColdTrace y cómo lo soluciona,<br>
+      <strong>Para</strong> evaluar si es relevante para mi negocio antes de registrarme.
+    </td>
+    <td>
+      <strong>Escenario 1: Carga exitosa de la propuesta de valor.</strong><br>
+      <strong>Given</strong> el visitante accede a la landing page de ColdTrace.<br>
+      <strong>When</strong> la página carga correctamente.<br>
+      <strong>Then</strong> el sistema muestra el problema, la solución y los beneficios clave del producto en la sección principal.
+    </td>
+    <td>EP001</td>
+  </tr>
+  <tr>
+    <td>US002</td>
+    <td>Ver sección de funcionalidades</td>
+    <td>
+      <strong>Como</strong> visitante,<br>
+      <strong>Quiero</strong> ver una sección con las funcionalidades del producto,<br>
+      <strong>Para</strong> entender qué incluye ColdTrace antes de tomar una decisión de registro o contacto.
+    </td>
+    <td>
+      <strong>Escenario 1: Sección visible al hacer scroll.</strong><br>
+      <strong>Given</strong> el visitante está en la landing page.<br>
+      <strong>When</strong> hace scroll hacia la sección de funcionalidades.<br>
+      <strong>Then</strong> el sistema muestra bloques con cada funcionalidad principal y su descripción breve.
+    </td>
+    <td>EP001</td>
+  </tr>
+  <tr>
+    <td>US003</td>
+    <td>Ver sección de plataforma y funcionamiento</td>
+    <td>
+      <strong>Como</strong> visitante,<br>
+      <strong>Quiero</strong> ver cómo se presenta la plataforma y cómo funciona ColdTrace,<br>
+      <strong>Para</strong> comprender de manera general cómo opera la solución antes de continuar.
+    </td>
+    <td>
+      <strong>Escenario 1: Visualización de la sección del producto.</strong><br>
+      <strong>Given</strong> el visitante navega por la landing page.<br>
+      <strong>When</strong> llega a la sección de plataforma y funcionamiento.<br>
+      <strong>Then</strong> el sistema muestra una explicación general del funcionamiento de ColdTrace y una vista representativa de la plataforma.
+    </td>
+    <td>EP001</td>
+  </tr>
+  <tr>
+    <td>US004</td>
+    <td>Acceder a la sección de contacto o registro</td>
+    <td>
+      <strong>Como</strong> visitante,<br>
+      <strong>Quiero</strong> acceder fácilmente a la sección de contacto o registro desde la landing page,<br>
+      <strong>Para</strong> continuar con el proceso de interés en la solución.
+    </td>
+    <td>
+      <strong>Escenario 1: Acceso exitoso a la sección de contacto o registro.</strong><br>
+      <strong>Given</strong> el visitante se encuentra navegando en la landing page.<br>
+      <strong>When</strong> selecciona la opción de contacto, registro o llamada a la acción correspondiente.<br>
+      <strong>Then</strong> el sistema lo dirige correctamente a la sección o flujo asociado.
+    </td>
+    <td>EP001</td>
+  </tr>
+  <tr>
+    <td>US005</td>
+    <td>Navegar con menú fijo</td>
+    <td>
+      <strong>Como</strong> visitante,<br>
+      <strong>Quiero</strong> que el menú de navegación permanezca visible al hacer scroll,<br>
+      <strong>Para</strong> poder acceder a cualquier sección de la landing en cualquier momento sin tener que volver al inicio.
+    </td>
+    <td>
+      <strong>Escenario 1: Menú fijo durante el scroll.</strong><br>
+      <strong>Given</strong> el visitante hace scroll hacia abajo en la landing page.<br>
+      <strong>When</strong> el menú llega al borde superior de la pantalla.<br>
+      <strong>Then</strong> el sistema mantiene el menú fijo y visible durante todo el desplazamiento de la página.
+    </td>
+    <td>EP001</td>
+  </tr>
+  <tr>
+    <td>US006</td>
+    <td>Ver landing page en dispositivo móvil</td>
+    <td>
+      <strong>Como</strong> visitante que accede desde un celular,<br>
+      <strong>Quiero</strong> que la landing page se adapte correctamente a mi pantalla,<br>
+      <strong>Para</strong> poder navegar y leer el contenido sin problemas.
+    </td>
+    <td>
+      <strong>Escenario 1: Visualización correcta en móvil.</strong><br>
+      <strong>Given</strong> el visitante accede a la landing page desde un dispositivo móvil.<br>
+      <strong>When</strong> la página carga.<br>
+      <strong>Then</strong> el sistema muestra el contenido adaptado a la resolución del dispositivo sin elementos cortados ni superpuestos.
+    </td>
+    <td>EP001</td>
+  </tr>
+  <tr>
+    <td>US007</td>
     <td>Crear cuenta de usuario</td>
     <td>
       <strong>Como</strong> usuario nuevo de la plataforma,<br>
@@ -83,10 +184,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta completar el registro.<br>
       <strong>Then</strong> el sistema valida la información y solicita corregir los campos antes de continuar.
     </td>
-    <td>EP001</td>
+    <td>EP002</td>
   </tr>
   <tr>
-    <td>US002</td>
+    <td>US008</td>
     <td>Verificar identidad por correo</td>
     <td>
       <strong>Como</strong> usuario registrado,<br>
@@ -107,10 +208,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta acceder a funciones restringidas de la plataforma.<br>
       <strong>Then</strong> el sistema le indica que primero debe validar su cuenta.
     </td>
-    <td>EP001</td>
+    <td>EP002</td>
   </tr>
   <tr>
-    <td>US003</td>
+    <td>US009</td>
     <td>Iniciar sesión</td>
     <td>
       <strong>Como</strong> usuario registrado,<br>
@@ -131,10 +232,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta ingresar a la plataforma.<br>
       <strong>Then</strong> el sistema bloquea el acceso e informa que la cuenta no tiene permisos vigentes.
     </td>
-    <td>EP001</td>
+    <td>EP002</td>
   </tr>
   <tr>
-    <td>US004</td>
+    <td>US010</td>
     <td>Recuperar contraseña</td>
     <td>
       <strong>Como</strong> usuario de la plataforma,<br>
@@ -159,10 +260,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta usarlo.<br>
       <strong>Then</strong> el sistema solicita generar un nuevo proceso de recuperación.
     </td>
-    <td>EP001</td>
+    <td>EP002</td>
   </tr>
   <tr>
-    <td>US005</td>
+    <td>US011</td>
     <td>Asignar roles y permisos</td>
     <td>
       <strong>Como</strong> administrador de la organización,<br>
@@ -187,10 +288,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> accede a esa funcionalidad.<br>
       <strong>Then</strong> el sistema restringe la acción y muestra un mensaje de acceso denegado.
     </td>
-    <td>EP001</td>
+    <td>EP002</td>
   </tr>
   <tr>
-    <td>US006</td>
+    <td>US012</td>
     <td>Registrar cámara frigorífica</td>
     <td>
       <strong>Como</strong> responsable de la operación,<br>
@@ -211,10 +312,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta crear un nuevo registro duplicado.<br>
       <strong>Then</strong> el sistema informa que el activo ya existe y evita la duplicidad.
     </td>
-    <td>EP002</td>
+    <td>EP003</td>
   </tr>
   <tr>
-    <td>US007</td>
+    <td>US013</td>
     <td>Registrar unidad de transporte</td>
     <td>
       <strong>Como</strong> responsable logístico,<br>
@@ -235,10 +336,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta crear la unidad de transporte.<br>
       <strong>Then</strong> el sistema restringe la acción y muestra un mensaje de acceso denegado.
     </td>
-    <td>EP002</td>
+    <td>EP003</td>
   </tr>
   <tr>
-    <td>US008</td>
+    <td>US014</td>
     <td>Vincular sensor IoT a un activo</td>
     <td>
       <strong>Como</strong> responsable de la configuración del sistema,<br>
@@ -259,10 +360,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta completar la asociación.<br>
       <strong>Then</strong> el sistema impide la operación y solicita elegir un activo válido.
     </td>
-    <td>EP002</td>
+    <td>EP003</td>
   </tr>
   <tr>
-    <td>US009</td>
+    <td>US015</td>
     <td>Emparejar gateway de red</td>
     <td>
       <strong>Como</strong> usuario administrativo de la plataforma,<br>
@@ -283,10 +384,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta reutilizarlo sin realizar ajustes previos.<br>
       <strong>Then</strong> el sistema advierte la incompatibilidad y solicita revisar la configuración.
     </td>
-    <td>EP002</td>
+    <td>EP003</td>
   </tr>
   <tr>
-    <td>US010</td>
+    <td>US016</td>
     <td>Verificar calibración del sensor</td>
     <td>
       <strong>Como</strong> responsable de calidad u operación,<br>
@@ -307,10 +408,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta validarlo dentro del sistema.<br>
       <strong>Then</strong> la plataforma indica que el estado del sensor no puede considerarse conforme.
     </td>
-    <td>EP002</td>
+    <td>EP003</td>
   </tr>
   <tr>
-    <td>US011</td>
+    <td>US017</td>
     <td>Actualizar ubicación y estado del activo</td>
     <td>
       <strong>Como</strong> responsable de la operación,<br>
@@ -331,10 +432,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta modificarlo manualmente.<br>
       <strong>Then</strong> el sistema advierte la restricción y evita una actualización inconsistente.
     </td>
-    <td>EP002</td>
+    <td>EP003</td>
   </tr>
   <tr>
-    <td>US012</td>
+    <td>US018</td>
     <td>Visualizar temperatura en tiempo real</td>
     <td>
       <strong>Como</strong> usuario de la plataforma,<br>
@@ -355,10 +456,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario accede al monitoreo del equipo.<br>
       <strong>Then</strong> la plataforma indica que el activo aún no puede ser monitoreado.
     </td>
-    <td>EP003</td>
+    <td>EP004</td>
   </tr>
   <tr>
-    <td>US013</td>
+    <td>US019</td>
     <td>Visualizar humedad en tiempo real</td>
     <td>
       <strong>Como</strong> usuario de la plataforma,<br>
@@ -379,10 +480,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario revisa el panel de monitoreo.<br>
       <strong>Then</strong> el sistema muestra el estado de dato no disponible o inconsistente.
     </td>
-    <td>EP003</td>
+    <td>EP004</td>
   </tr>
   <tr>
-    <td>US014</td>
+    <td>US020</td>
     <td>Consultar historial de lecturas</td>
     <td>
       <strong>Como</strong> encargado de negocio o responsable de operaciones,<br>
@@ -403,10 +504,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta consultar el historial.<br>
       <strong>Then</strong> la plataforma solicita corregir los criterios de búsqueda antes de procesar la consulta.
     </td>
-    <td>EP003</td>
+    <td>EP004</td>
   </tr>
   <tr>
-    <td>US015</td>
+    <td>US021</td>
     <td>Detectar temperatura fuera de rango</td>
     <td>
       <strong>Como</strong> usuario de la plataforma,<br>
@@ -427,10 +528,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el sistema intenta procesarla.<br>
       <strong>Then</strong> la lectura es descartada y queda registrada como inválida.
     </td>
-    <td>EP003</td>
+    <td>EP004</td>
   </tr>
   <tr>
-    <td>US016</td>
+    <td>US022</td>
     <td>Visualizar estado de conectividad</td>
     <td>
       <strong>Como</strong> responsable de monitoreo,<br>
@@ -451,10 +552,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario consulta el panel.<br>
       <strong>Then</strong> la plataforma muestra el estado como desconocido o pendiente de actualización.
     </td>
-    <td>EP003</td>
+    <td>EP004</td>
   </tr>
   <tr>
-    <td>US017</td>
+    <td>US023</td>
     <td>Sincronizar datos almacenados offline</td>
     <td>
       <strong>Como</strong> usuario de la plataforma,<br>
@@ -475,10 +576,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el sistema procesa la sincronización.<br>
       <strong>Then</strong> la plataforma registra los paquetes inválidos y sincroniza únicamente la información válida.
     </td>
-    <td>EP003</td>
+    <td>EP004</td>
   </tr>
   <tr>
-    <td>US018</td>
+    <td>US024</td>
     <td>Crear incidencia térmica</td>
     <td>
       <strong>Como</strong> usuario de la plataforma,<br>
@@ -499,10 +600,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> se procesa una nueva lectura equivalente.<br>
       <strong>Then</strong> el sistema evita crear una duplicidad y actualiza la incidencia ya existente.
     </td>
-    <td>EP004</td>
+    <td>EP005</td>
   </tr>
   <tr>
-    <td>US019</td>
+    <td>US025</td>
     <td>Disparar notificaciones de alerta</td>
     <td>
       <strong>Como</strong> encargado de negocio o responsable de operaciones,<br>
@@ -523,10 +624,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> se dispara una alerta crítica.<br>
       <strong>Then</strong> el sistema informa que la notificación no pudo completarse correctamente.
     </td>
-    <td>EP004</td>
+    <td>EP005</td>
   </tr>
   <tr>
-    <td>US020</td>
+    <td>US026</td>
     <td>Escalar alerta no atendida</td>
     <td>
       <strong>Como</strong> responsable de la operación,<br>
@@ -547,10 +648,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el sistema intenta aplicar la regla.<br>
       <strong>Then</strong> la plataforma registra la ausencia de configuración y mantiene el incidente en seguimiento.
     </td>
-    <td>EP004</td>
+    <td>EP005</td>
   </tr>
   <tr>
-    <td>US021</td>
+    <td>US027</td>
     <td>Reconocer alerta crítica</td>
     <td>
       <strong>Como</strong> usuario responsable del monitoreo,<br>
@@ -571,10 +672,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta reconocer la alerta.<br>
       <strong>Then</strong> el sistema rechaza la acción e informa acceso denegado.
     </td>
-    <td>EP004</td>
+    <td>EP005</td>
   </tr>
   <tr>
-    <td>US022</td>
+    <td>US028</td>
     <td>Registrar acción correctiva y cerrar incidencia</td>
     <td>
       <strong>Como</strong> usuario responsable de la atención de incidencias,<br>
@@ -595,10 +696,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta cerrar la incidencia manualmente.<br>
       <strong>Then</strong> el sistema advierte que el evento sigue activo y evita un cierre inconsistente.
     </td>
-    <td>EP004</td>
+    <td>EP005</td>
   </tr>
   <tr>
-    <td>US023</td>
+    <td>US029</td>
     <td>Generar bitácora diaria</td>
     <td>
       <strong>Como</strong> responsable de operaciones o calidad,<br>
@@ -619,10 +720,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> se ejecuta la generación de la bitácora.<br>
       <strong>Then</strong> el sistema marca las inconsistencias y reporta observaciones sobre la integridad de la información.
     </td>
-    <td>EP005</td>
+    <td>EP006</td>
   </tr>
   <tr>
-    <td>US024</td>
+    <td>US030</td>
     <td>Consultar historial de lecturas, alertas e incidencias</td>
     <td>
       <strong>Como</strong> responsable de operaciones y control de calidad,<br>
@@ -643,10 +744,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta visualizar el historial.<br>
       <strong>Then</strong> la plataforma restringe el acceso y muestra un mensaje de autorización insuficiente.
     </td>
-    <td>EP005</td>
+    <td>EP006</td>
   </tr>
   <tr>
-    <td>US025</td>
+    <td>US031</td>
     <td>Exportar reporte de cumplimiento sanitario</td>
     <td>
       <strong>Como</strong> responsable de calidad,<br>
@@ -667,10 +768,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> ejecuta la acción.<br>
       <strong>Then</strong> el sistema bloquea la operación y notifica la restricción de acceso.
     </td>
-    <td>EP005</td>
+    <td>EP006</td>
   </tr>
   <tr>
-    <td>US026</td>
+    <td>US032</td>
     <td>Descargar reporte mensual</td>
     <td>
       <strong>Como</strong> usuario administrativo de la plataforma,<br>
@@ -691,10 +792,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el sistema intenta construir el reporte.<br>
       <strong>Then</strong> la plataforma informa el fallo y solicita intentar nuevamente.
     </td>
-    <td>EP005</td>
+    <td>EP006</td>
   </tr>
   <tr>
-    <td>US027</td>
+    <td>US033</td>
     <td>Detectar faltantes o incumplimientos</td>
     <td>
       <strong>Como</strong> responsable de calidad y cumplimiento,<br>
@@ -715,10 +816,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> realiza la acción sobre el hallazgo.<br>
       <strong>Then</strong> el sistema restringe la modificación y conserva la evidencia registrada.
     </td>
-    <td>EP005</td>
+    <td>EP006</td>
   </tr>
   <tr>
-    <td>US028</td>
+    <td>US034</td>
     <td>Preparar evidencia para auditoría</td>
     <td>
       <strong>Como</strong> responsable de auditoría interna o control de calidad,<br>
@@ -739,10 +840,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta consolidar la evidencia.<br>
       <strong>Then</strong> la plataforma restringe la operación y conserva la seguridad de acceso.
     </td>
-    <td>EP005</td>
+    <td>EP006</td>
   </tr>
   <tr>
-    <td>US029</td>
+    <td>US035</td>
     <td>Configurar rango de seguridad</td>
     <td>
       <strong>Como</strong> usuario administrativo de la plataforma,<br>
@@ -763,10 +864,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> intenta modificar los rangos definidos.<br>
       <strong>Then</strong> el sistema bloquea la acción y muestra un mensaje de acceso restringido.
     </td>
-    <td>EP006</td>
+    <td>EP007</td>
   </tr>
   <tr>
-    <td>US030</td>
+    <td>US036</td>
     <td>Actualizar parámetros operativos</td>
     <td>
       <strong>Como</strong> responsable de la operación,<br>
@@ -787,10 +888,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario confirma la actualización.<br>
       <strong>Then</strong> la plataforma informa el fallo y mantiene los parámetros operativos anteriores.
     </td>
-    <td>EP006</td>
+    <td>EP007</td>
   </tr>
   <tr>
-    <td>US031</td>
+    <td>US037</td>
     <td>Programar mantenimiento preventivo</td>
     <td>
       <strong>Como</strong> responsable de calidad u operación,<br>
@@ -811,10 +912,10 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta registrar una nueva programación equivalente.<br>
       <strong>Then</strong> el sistema advierte la duplicidad y evita generar un seguimiento redundante.
     </td>
-    <td>EP006</td>
+    <td>EP007</td>
   </tr>
   <tr>
-    <td>US032</td>
+    <td>US038</td>
     <td>Solicitar y cerrar servicio técnico</td>
     <td>
       <strong>Como</strong> usuario responsable del activo,<br>
@@ -835,7 +936,7 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
       <strong>When</strong> el usuario intenta cerrar la atención técnica.<br>
       <strong>Then</strong> el sistema mantiene el servicio abierto y marca el activo como pendiente de nueva revisión.
     </td>
-    <td>EP006</td>
+    <td>EP007</td>
   </tr>
 </table>
 
@@ -871,223 +972,265 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
   <tr>
     <td>1</td>
     <td>US001</td>
-    <td>Crear cuenta de usuario</td>
-    <td><strong>Como</strong> usuario nuevo de la plataforma, <strong>deseo</strong> registrar una cuenta con mis datos básicos de acceso <strong>para</strong> poder ingresar a ColdTrace y utilizar las funcionalidades disponibles según mi rol.</td>
-    <td>3</td>
+    <td>Ver propuesta de valor en la landing page</td>
+    <td><strong>Como</strong> visitante, <strong>deseo</strong> ver en la página principal qué problema resuelve ColdTrace y cómo lo soluciona <strong>para</strong> evaluar si es relevante para mi negocio antes de registrarme.</td>
+    <td>2</td>
   </tr>
   <tr>
     <td>2</td>
     <td>US002</td>
-    <td>Verificar identidad por correo</td>
-    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> recibir un correo de verificación y confirmar mi identidad <strong>para</strong> activar mi cuenta y asegurar que solo usuarios válidos accedan a la plataforma.</td>
+    <td>Ver sección de funcionalidades</td>
+    <td><strong>Como</strong> visitante, <strong>deseo</strong> ver una sección con las funcionalidades del producto <strong>para</strong> entender qué incluye ColdTrace antes de tomar una decisión de registro o contacto.</td>
     <td>2</td>
   </tr>
   <tr>
     <td>3</td>
     <td>US003</td>
-    <td>Iniciar sesión</td>
-    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> iniciar sesión con mis credenciales <strong>para</strong> acceder a mi cuenta y utilizar las funciones de monitoreo y gestión disponibles en ColdTrace.</td>
+    <td>Ver sección de plataforma y funcionamiento</td>
+    <td><strong>Como</strong> visitante, <strong>deseo</strong> ver cómo se presenta la plataforma y cómo funciona ColdTrace <strong>para</strong> comprender de manera general cómo opera la solución antes de continuar.</td>
     <td>2</td>
   </tr>
   <tr>
     <td>4</td>
     <td>US004</td>
+    <td>Acceder a la sección de contacto o registro</td>
+    <td><strong>Como</strong> visitante, <strong>deseo</strong> acceder fácilmente a la sección de contacto o registro desde la landing page <strong>para</strong> continuar con el proceso de interés en la solución.</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>US005</td>
+    <td>Navegar con menú fijo</td>
+    <td><strong>Como</strong> visitante, <strong>deseo</strong> que el menú de navegación permanezca visible al hacer scroll <strong>para</strong> poder acceder a cualquier sección de la landing en cualquier momento sin tener que volver al inicio.</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>US006</td>
+    <td>Ver landing page en dispositivo móvil</td>
+    <td><strong>Como</strong> visitante que accede desde un celular, <strong>deseo</strong> que la landing page se adapte correctamente a mi pantalla <strong>para</strong> poder navegar y leer el contenido sin problemas.</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>US007</td>
+    <td>Crear cuenta de usuario</td>
+    <td><strong>Como</strong> usuario nuevo de la plataforma, <strong>deseo</strong> registrar una cuenta con mis datos básicos de acceso <strong>para</strong> poder ingresar a ColdTrace y utilizar las funcionalidades disponibles según mi rol.</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>US008</td>
+    <td>Verificar identidad por correo</td>
+    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> recibir un correo de verificación y confirmar mi identidad <strong>para</strong> activar mi cuenta y asegurar que solo usuarios válidos accedan a la plataforma.</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>US009</td>
+    <td>Iniciar sesión</td>
+    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> iniciar sesión con mis credenciales <strong>para</strong> acceder a mi cuenta y utilizar las funciones de monitoreo y gestión disponibles en ColdTrace.</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>US010</td>
     <td>Recuperar contraseña</td>
     <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> restablecer mi contraseña cuando no pueda acceder a mi cuenta <strong>para</strong> recuperar el ingreso al sistema de manera segura y sin depender de soporte manual.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>5</td>
-    <td>US005</td>
+    <td>11</td>
+    <td>US011</td>
     <td>Asignar roles y permisos</td>
     <td><strong>Como</strong> administrador de la organización, <strong>deseo</strong> asignar roles y permisos a los usuarios del sistema <strong>para</strong> controlar qué acciones puede realizar cada persona dentro de ColdTrace según su responsabilidad operativa.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>6</td>
-    <td>US006</td>
+    <td>12</td>
+    <td>US012</td>
     <td>Registrar cámara frigorífica</td>
     <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> registrar una cámara frigorífica en la plataforma con sus datos principales <strong>para</strong> monitorear su funcionamiento y asociarla correctamente a la operación de la organización.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>7</td>
-    <td>US008</td>
+    <td>13</td>
+    <td>US014</td>
     <td>Vincular sensor IoT a un activo</td>
     <td><strong>Como</strong> responsable de la configuración del sistema, <strong>deseo</strong> vincular un sensor IoT a una cámara frigorífica o unidad de transporte <strong>para</strong> comenzar a capturar datos de temperatura y humedad del activo correcto.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>8</td>
-    <td>US009</td>
+    <td>14</td>
+    <td>US015</td>
     <td>Emparejar gateway de red</td>
     <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> emparejar un gateway de red con los sensores de mi operación <strong>para</strong> asegurar la transmisión de datos desde los activos hacia el sistema.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>9</td>
-    <td>US029</td>
+    <td>15</td>
+    <td>US035</td>
     <td>Configurar rango de seguridad</td>
     <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> configurar rangos seguros de temperatura y humedad para cada activo o tipo de producto <strong>para</strong> adaptar el monitoreo a las condiciones reales de conservación que requiere la operación.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>10</td>
-    <td>US012</td>
+    <td>16</td>
+    <td>US018</td>
     <td>Visualizar temperatura en tiempo real</td>
     <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> visualizar en tiempo real la temperatura de mis equipos o ambientes monitoreados <strong>para</strong> detectar rápidamente cualquier variación que pueda comprometer la conservación de los productos.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>11</td>
-    <td>US015</td>
+    <td>17</td>
+    <td>US021</td>
     <td>Detectar temperatura fuera de rango</td>
     <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que el sistema identifique automáticamente cuando la temperatura de un activo salga del rango seguro <strong>para</strong> reconocer oportunamente una condición de riesgo dentro de la operación.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>12</td>
-    <td>US018</td>
+    <td>18</td>
+    <td>US024</td>
     <td>Crear incidencia térmica</td>
     <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que el sistema cree una incidencia térmica cuando detecte una condición crítica en un activo <strong>para</strong> iniciar el seguimiento formal del evento y evitar que el problema pase desapercibido.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>13</td>
-    <td>US019</td>
+    <td>19</td>
+    <td>US025</td>
     <td>Disparar notificaciones de alerta</td>
     <td><strong>Como</strong> encargado de negocio o responsable de operaciones, <strong>deseo</strong> recibir notificaciones automáticas cuando ocurra una incidencia crítica <strong>para</strong> reaccionar de manera oportuna antes de que el problema afecte los productos o la operación.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>14</td>
-    <td>US021</td>
+    <td>20</td>
+    <td>US027</td>
     <td>Reconocer alerta crítica</td>
     <td><strong>Como</strong> usuario responsable del monitoreo, <strong>deseo</strong> reconocer una alerta crítica dentro de la plataforma <strong>para</strong> dejar constancia de que el incidente está siendo atendido por una persona responsable.</td>
     <td>2</td>
   </tr>
   <tr>
-    <td>15</td>
-    <td>US022</td>
+    <td>21</td>
+    <td>US028</td>
     <td>Registrar acción correctiva y cerrar incidencia</td>
     <td><strong>Como</strong> usuario responsable de la atención de incidencias, <strong>deseo</strong> registrar la acción correctiva aplicada y cerrar la incidencia cuando la condición se estabilice <strong>para</strong> dejar registro de la medida aplicada, confirmar que el riesgo fue resuelto y conservar el historial del caso.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>16</td>
-    <td>US014</td>
+    <td>22</td>
+    <td>US020</td>
     <td>Consultar historial de lecturas</td>
     <td><strong>Como</strong> encargado de negocio o responsable de operaciones, <strong>deseo</strong> consultar el historial de lecturas de temperatura y humedad de un activo <strong>para</strong> revisar su comportamiento en el tiempo y analizar incidencias pasadas.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>17</td>
-    <td>US024</td>
+    <td>23</td>
+    <td>US030</td>
     <td>Consultar historial de lecturas, alertas e incidencias</td>
     <td><strong>Como</strong> responsable de operaciones y control de calidad, <strong>deseo</strong> consultar el historial de lecturas, alertas e incidencias de un activo o periodo operativo <strong>para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>18</td>
-    <td>US023</td>
+    <td>24</td>
+    <td>US029</td>
     <td>Generar bitácora diaria</td>
     <td><strong>Como</strong> responsable de operaciones o calidad, <strong>deseo</strong> generar una bitácora diaria con las lecturas registradas por los activos monitoreados <strong>para</strong> contar con evidencia ordenada del control térmico realizado en la operación.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>19</td>
-    <td>US025</td>
+    <td>25</td>
+    <td>US031</td>
     <td>Exportar reporte de cumplimiento sanitario</td>
     <td><strong>Como</strong> responsable de calidad, <strong>deseo</strong> exportar un reporte de cumplimiento sanitario con la información relevante de monitoreo y control <strong>para</strong> utilizarlo como soporte documental en procesos internos o auditorías vinculadas al control sanitario.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>20</td>
-    <td>US028</td>
+    <td>26</td>
+    <td>US034</td>
     <td>Preparar evidencia para auditoría</td>
     <td><strong>Como</strong> responsable de auditoría interna o control de calidad, <strong>deseo</strong> reunir la evidencia documental de monitoreo, incidencias y acciones correctivas <strong>para</strong> sustentar el cumplimiento de la operación ante revisiones internas o externas.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>21</td>
-    <td>US027</td>
+    <td>27</td>
+    <td>US033</td>
     <td>Detectar faltantes o incumplimientos</td>
     <td><strong>Como</strong> responsable de calidad y cumplimiento, <strong>deseo</strong> identificar registros faltantes o posibles incumplimientos normativos dentro de la operación <strong>para</strong> corregirlos oportunamente antes de una revisión o auditoría formal.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>22</td>
-    <td>US011</td>
+    <td>28</td>
+    <td>US017</td>
     <td>Actualizar ubicación y estado del activo</td>
     <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> actualizar la ubicación física y el estado operativo de un activo registrado <strong>para</strong> mantener información precisa sobre su disponibilidad, condición y contexto de uso.</td>
     <td>2</td>
   </tr>
   <tr>
-    <td>23</td>
-    <td>US010</td>
+    <td>29</td>
+    <td>US016</td>
     <td>Verificar calibración del sensor</td>
     <td><strong>Como</strong> responsable de calidad u operación, <strong>deseo</strong> verificar el estado de calibración de los sensores instalados <strong>para</strong> asegurar que las lecturas registradas sean confiables y útiles para control y cumplimiento.</td>
     <td>2</td>
   </tr>
   <tr>
-    <td>24</td>
-    <td>US031</td>
+    <td>30</td>
+    <td>US037</td>
     <td>Programar mantenimiento preventivo</td>
     <td><strong>Como</strong> responsable de calidad u operación, <strong>deseo</strong> programar el mantenimiento preventivo de sensores o equipos de frío <strong>para</strong> reducir el riesgo de fallas operativas y mantener la confiabilidad del monitoreo.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>25</td>
-    <td>US032</td>
+    <td>31</td>
+    <td>US038</td>
     <td>Solicitar y cerrar servicio técnico</td>
     <td><strong>Como</strong> usuario responsable del activo, <strong>deseo</strong> solicitar servicio técnico y cerrar la atención una vez completada la intervención <strong>para</strong> conservar el registro de la intervención técnica y devolver el equipo a operación de forma controlada.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>26</td>
-    <td>US030</td>
+    <td>32</td>
+    <td>US036</td>
     <td>Actualizar parámetros operativos</td>
     <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> actualizar parámetros operativos del monitoreo, como intervalos de lectura o criterios de evaluación, <strong>para</strong> ajustar el comportamiento del sistema al contexto y nivel de criticidad de cada activo.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>27</td>
-    <td>US013</td>
+    <td>33</td>
+    <td>US019</td>
     <td>Visualizar humedad en tiempo real</td>
     <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> visualizar en tiempo real los valores de humedad de mis ambientes o equipos monitoreados <strong>para</strong> complementar el control de conservación y evaluar mejor las condiciones del activo.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>28</td>
-    <td>US016</td>
+    <td>34</td>
+    <td>US022</td>
     <td>Visualizar estado de conectividad</td>
     <td><strong>Como</strong> responsable de monitoreo, <strong>deseo</strong> visualizar el estado de conectividad de los sensores y gateways <strong>para</strong> identificar si un activo está enviando información de forma continua o si existe un problema de transmisión.</td>
     <td>2</td>
   </tr>
   <tr>
-    <td>29</td>
-    <td>US017</td>
+    <td>35</td>
+    <td>US023</td>
     <td>Sincronizar datos almacenados offline</td>
     <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que los datos capturados durante una pérdida de conexión se sincronicen cuando el sistema recupere conectividad <strong>para</strong> conservar el historial completo de las lecturas registradas durante ese periodo.</td>
     <td>8</td>
   </tr>
   <tr>
-    <td>30</td>
-    <td>US020</td>
+    <td>36</td>
+    <td>US026</td>
     <td>Escalar alerta no atendida</td>
     <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> que el sistema escale una alerta que no ha sido atendida en el tiempo esperado <strong>para</strong> asegurar que el incidente reciba seguimiento y no quede sin respuesta.</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>31</td>
-    <td>US026</td>
+    <td>37</td>
+    <td>US032</td>
     <td>Descargar reporte mensual</td>
     <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> descargar reportes mensuales consolidados de monitoreo e incidencias <strong>para</strong> evaluar el desempeño de la operación y tomar decisiones basadas en datos históricos.</td>
     <td>3</td>
   </tr>
   <tr>
-    <td>32</td>
-    <td>US007</td>
+    <td>38</td>
+    <td>US013</td>
     <td>Registrar unidad de transporte</td>
     <td><strong>Como</strong> responsable logístico, <strong>deseo</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace <strong>para</strong> monitorear sus condiciones térmicas y conservar un historial de mediciones e incidencias durante su operación.</td>
     <td>3</td>
