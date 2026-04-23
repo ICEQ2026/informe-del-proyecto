@@ -14,13 +14,13 @@ La solución integra sensores IoT con una aplicación web accesible desde navega
 
 ### 1.1.2 Perfiles de integrantes del equipo
 
-| Foto de perfil | Nombre Completo | Carrera | Acerca de | Habilidades |
+| Foto de perfil | Nombre Completo | Carrera | Habilidades |
 |:--------------:|:----------------|:-------:|:----------|:------------|
-| [pendiente] | **Cabrera Novoa, Leonardo Moisés** | Ingeniería de Software | | |
-| [pendiente] | **Espinoza Paredes, Frezzia** | Ingeniería de Software | | |
-| [pendiente] | **Morales Venegas, David Joel** | Ingeniería de Software | | |
-| [pendiente] | **Pajés León, Mauricio Luis** | Ingeniería de Software | | |
-| [pendiente] | **Videla Ventura, Jorge Joseph** | Ingeniería de Software | | |
+| [pendiente] | **Cabrera Novoa, Leonardo Moisés** | Ingeniería de Software | ||
+| [pendiente] | **Espinoza Paredes, Frezzia** | Ingeniería de Software | | 
+| [pendiente] | **Morales Venegas, David Joel** | Ingeniería de Software | | 
+| [pendiente] | **Pajés León, Mauricio Luis** | Ingeniería de Software | | 
+| [pendiente] | **Videla Ventura, Jorge Joseph** | Ingeniería de Software | | 
 
 ---
 
