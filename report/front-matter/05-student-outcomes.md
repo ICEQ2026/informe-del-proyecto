@@ -51,7 +51,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       <strong>Est. 5</strong> — AV1 / TB1 / AV2
     </td>
     <td>
-      <strong>AV1:</strong> [Conclusión]<br>
+      <strong>Videla Ventura, Jorge Joseph</strong><br>
+<strong>AV1:</strong> Se evidenció la creación de un entorno colaborativo e inclusivo mediante la participación activa de todos los integrantes en las actividades de análisis y diseño del sistema, fomentando el intercambio de ideas y la construcción conjunta del conocimiento. Asimismo, el equipo estableció objetivos claros y alcanzables, organizando el trabajo de manera estructurada y distribuyendo responsabilidades de forma equitativa. Esta dinámica permitió una planificación efectiva de las tareas y el cumplimiento oportuno de los entregables, demostrando un alto nivel de coordinación, compromiso y responsabilidad compartida en el desarrollo del proyecto.<br>
       <strong>TB1:</strong> [Conclusión]<br>
       <strong>AV2:</strong> [Conclusión]
     </td>
