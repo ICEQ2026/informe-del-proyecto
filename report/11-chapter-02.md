@@ -347,41 +347,47 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
       <td colspan="4" align="center"><strong>Entrevista N.° 2</strong></td>
     </tr>
     <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-02/interviews/1-2-interview.png" alt="Entrevista 1" height="350">
+      </td>
+    </tr>
+    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Sebastian Vasquez</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Smartphone (Android)</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>27 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Android / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Administrador de local comercial / Emprendedor</td>
       <td><strong>Canales digitales de comunicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>WhatsApp Business y Facebook Messenger</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Surquillo, Lima</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Microsoft Excel y Apps de banca móvil</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> [pendiente de completar]</td>
-      <td colspan="2"><strong>URL de grabación:</strong> [pendiente de completar]</td>
+      <td colspan="2"><strong>Duración:</strong> 6:45</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://1drv.ms/v/c/e4b7fac9c36527d1/IQCXJC9Wb_08Sq4Yxii4Ss8sAa0B6B-J1qubYWNzRyFuXzw?e=tOkK43">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
-        Pendiente de completar.
+        Sebastian gestiona un negocio con productos críticos como embutidos, lácteos y helados, cuya rentabilidad depende de una cadena de frío ininterrumpida. Actualmente, el monitoreo se realiza de forma manual y empírica ("al tanteo"), verificando la firmeza de los productos o la escarcha en los equipos, lo que genera una detección tardía de fallas, especialmente durante el verano.<br><br>
+        El entrevistado describe una respuesta reactiva ante emergencias, trasladando mercadería a equipos no aptos. Valora la propuesta de ColdTrace principalmente por la tranquilidad que le brindaría recibir alertas en tiempo real en su celular, permitiéndole actuar antes de perder su inversión mensual. Identifica como principales barreras el costo de los sensores para un negocio pequeño y la complejidad de la configuración técnica, pero destaca que contar con un historial digital le facilitaría el cumplimiento de auditorías municipales.
       </td>
     </tr>
   </tbody>
