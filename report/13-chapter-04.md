@@ -199,13 +199,33 @@ La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta 
 
 ### 4.3.1. Landing Page Wireframe.
 
-**Pendiente de completar**
+Los wireframes de la Landing Page fueron diseñados con el objetivo de definir la estructura inicial del sitio, priorizando la organización del contenido y la experiencia del usuario.
+En esta etapa se establecieron las principales secciones del sitio, como el encabezado de navegación, la sección principal (hero), características del producto, beneficios, testimonios y formulario de contacto.
+Asimismo, se consideró una versión responsive, adaptando la distribución de los elementos para dispositivos móviles, garantizando una navegación clara y accesible en diferentes tamaños de pantalla.
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png"/>
+</p>
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png"/>
+</p>
 
 ---
 
 ### 4.3.2. Landing Page Mock-up.
 
-**Pendiente de completar**
+Los mockups de la Landing Page representan la versión visual final del diseño, incorporando colores, tipografías y estilos definidos en el sistema de diseño.
+En esta etapa se aplicaron los lineamientos de branding del proyecto, incluyendo el uso de colores principales, jerarquía tipográfica y elementos visuales que refuerzan la identidad del producto.
+Además, se mantuvo consistencia entre la versión desktop y mobile, asegurando una experiencia uniforme para el usuario en cualquier dispositivo.
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png"/>
+</p>
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png"/>
+</p>
 
 ---
 
@@ -213,20 +233,48 @@ La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta 
 
 ### 4.4.1. Web Applications Wireframes.
 
-**Pendiente de completar**
+Los wireframes de la aplicación web fueron diseñados para definir la estructura funcional de las principales pantallas del sistema.
+En esta etapa se identificaron los elementos clave de interacción, como paneles de control, visualización de datos, navegación entre secciones y componentes necesarios para la gestión del sistema.
+Estos wireframes permiten validar la distribución de información antes de la implementación visual, asegurando que las funcionalidades respondan a las necesidades del usuario.
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png"/>
+</p>
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png"/>
+</p>
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png"/>
+</p>
 
 ---
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
 
-**Pendiente de completar**
+Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
+Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
 ---
 
 ### 4.4.3. Web Applications Mock-ups.
 
-**Pendiente de completar**
+Los mockups de la aplicación web muestran la representación visual final de las interfaces del sistema, incorporando estilos, colores y componentes definidos en el diseño.
+En esta etapa se buscó mantener consistencia visual con la Landing Page, asegurando una identidad unificada del producto.
+Asimismo, se priorizó la claridad en la presentación de información y la facilidad de uso, permitiendo que el usuario interactúe de manera intuitiva con las funcionalidades del sistema.
 
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png"/>
+</p>
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png"/>
+</p>
+
+<p align="center">
+  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png"/>
+</p>
 ---
 
 ### 4.4.4. Web Applications User Flow Diagrams.
