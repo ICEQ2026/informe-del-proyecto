@@ -243,7 +243,7 @@ La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta 
 ## 4.6. Domain-Driven Software Architecture.
 
 ### 4.6.1. Design-Level Event Storming.
-Pendiente de completar.
+<img src="assets/chapter-04/boundedcontext/boundedcontext.png"  width="760">
 
 ### 4.6.2. Software Architecture Context Diagram.
 <img src="assets/chapter-04/contextdiagram/contextdiagram.png"  width="760">
