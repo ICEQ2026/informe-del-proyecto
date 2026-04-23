@@ -25,7 +25,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       <strong>Videla Ventura, Jorge Joseph</strong><br>
       AV1: Participación activa en la explicación del Big Picture Event Storming, comunicando de manera estructurada los eventos clave del negocio, sus relaciones y el flujo de la cadena de frío, facilitando la comprensión del dominio tanto para miembros técnicos como no técnicos del equipo.<br>
       Presentación de los artefactos UX/UI (wireframes, wireflows y mockups), explicando la lógica de navegación, interacción del usuario y organización de la información, adaptando el lenguaje según la audiencia y promoviendo la retroalimentación del equipo para la mejora continua del diseño.<br><br>
-      <strong>Est. 2</strong> — AV1 / TB1 / AV2<br>
+      <strong>Cabrera Novoa, Leonardo Moises</strong><br>
+      AV1: Utilicé los wireflow y user flow diagrams como herramienta principal para comunicar la navegación y lógica de la aplicación al equipo. Validé que el mensaje fuera comprendido satisfactoriamente mediante sesiones de feedback, asegurando que todos los integrantes estuviéramos alineados con los objetivos de la presentación de resultados.<br><br>
       <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 5</strong> — AV1 / TB1 / AV2
@@ -42,8 +43,9 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos
     </td>
     <td>
-      <strong>Est. 1</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 2</strong> — AV1 / TB1 / AV2<br>
+      <strong>Est. 1</strong> — AV1 / TB1 / AV2<br><br>
+      <strong>Cabrera Novoa, Leonardo Moises</strong><br>
+      AV1: Elaboré documentación técnica detallada que sintetiza los conceptos básicos de la experiencia de usuario de acuerdo con nuestro público objetivo. Redacté estos informes siguiendo los estándares de calidad establecidos para el curso, garantizando una redacción clara y una estructura profesional en la entrega final.<br><br> 
       <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 5</strong> — AV1 / TB1 / AV2
