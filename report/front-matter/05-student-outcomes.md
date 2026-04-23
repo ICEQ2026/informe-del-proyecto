@@ -21,7 +21,9 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Trabaja en equipo para proporcionar liderazgo en forma conjunta
     </td>
     <td>
-      <strong>Est. 1</strong> — AV1 / TB1 / AV2<br>
+      <strong>Videla Ventura, Jorge Joseph</strong> — AV1: Participación activa en sesiones de Big Picture Event Storming, identificando y organizando eventos clave del negocio.<br>
+Definición del Ubiquitous Language para estandarizar términos del dominio.<br>
+Diseño de artefactos UX/UI (wireframes, wireflows y mockups), contribuyendo en la estructura e interacción del sistema.<br>
       <strong>Est. 2</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
