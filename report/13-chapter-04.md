@@ -256,23 +256,6 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
-### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
-
-<p align="center">
-  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram1.png"/>
-</p>
-
-### User Flow 2 : Obtener reportes para supervisión y control.
-
-<p align="center">
-  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram2.png"/>
-</p>
-
-### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
-
-<p align="center">
-  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png"/>
-</p>
 
 ---
 
@@ -297,8 +280,26 @@ Asimismo, se priorizó la claridad en la presentación de información y la faci
 
 ### 4.4.4. Web Applications User Flow Diagrams.
 
-**Pendiente de completar**
+Los User Flow Diagrams representan el recorrido que sigue el usuario dentro de la aplicación para cumplir objetivos específicos, considerando las distintas interacciones y decisiones que se presentan en cada etapa.
+Estos diagramas integran las vistas principales del sistema con los flujos de navegación, permitiendo visualizar tanto la ruta esperada (happy path) como posibles escenarios alternativos (unhappy paths). De esta manera, se facilita la comprensión del comportamiento del usuario y se asegura coherencia con los wireflows y mockups previamente definidos.
 
+### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
+
+<p align="center">
+  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram1.png"/>
+</p>
+
+### User Flow 2 : Obtener reportes para supervisión y control.
+
+<p align="center">
+  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram2.png"/>
+</p>
+
+### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
+
+<p align="center">
+  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png"/>
+</p>
 ---
 
 ## 4.5. Web Applications Prototyping.
