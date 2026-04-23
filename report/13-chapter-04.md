@@ -244,8 +244,8 @@ La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta 
 
 ### 4.6.1. Design-Level Event Storming.
 <img src="assets/chapter-04/boundedcontext/boundedcontext.png"  width="760">
-## 1. Bounded Context: Autenticación
 
+## 1. Bounded Context: Autenticación
 ### Explicación
 Este contexto gestiona el acceso de los usuarios al sistema mediante el inicio y cierre de sesión. Se encarga de validar credenciales, controlar sesiones activas y generar eventos como usuario autenticado o sesión iniciada/cerrada.
 
