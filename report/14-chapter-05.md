@@ -47,7 +47,8 @@ La gestión del código fuente del proyecto se realizó mediante la plataforma G
 
 Los repositorios usados fueron:
 
-- Repositorio del proyecto: https://github.com/ICEQ2026/informe-del-proyecto  
+- Repositorio del proyecto: https://github.com/ICEQ2026/informe-del-proyecto
+- Repositorio de la landing page: https://github.com/ICEQ2026/landingpage-coldtrace
 
 Este repositorio contiene la estructura completa del informe, organizada por capítulos, lo que permite una gestión modular y colaborativa del contenido.
 
@@ -61,7 +62,7 @@ Las ramas identificadas en el repositorio son:
 - **feature/**: ramas utilizadas para el desarrollo de secciones específicas del informe.
 
 <p align="center">
-  <img src="/report/assets/chapter-05/development_environment/github-branches.png" width="700"/>
+  <img src="/report/assets/chapter-05/development_environment/github-branches.png"/>
 </p>
 
 <p align="center">
@@ -87,7 +88,7 @@ Este enfoque facilita la organización del proyecto y permite una integración m
 Para estandarizar los mensajes de commits, se utilizó la convención de Conventional Commits, permitiendo clasificar los cambios realizados y mejorar la trazabilidad del repositorio.
 
 <p align="center">
-  <img src="/report/assets/chapter-05/development_environment/github-commits.png" width="700"/>
+  <img src="/report/assets/chapter-05/development_environment/github-commits.png"/>
 </p>
 
 <p align="center">
@@ -184,7 +185,57 @@ La implementación de internacionalización permite que la aplicación sea escal
 
 ### 5.1.4. Software Deployment Configuration
 
-[pending content]
+En esta sección se describe la configuración del despliegue de la solución, incluyendo los pasos necesarios para que, a partir del repositorio de código fuente, se logre la publicación satisfactoria de la Landing Page del proyecto.
+
+El despliegue de la solución se realizó utilizando GitHub, aprovechando sus funcionalidades para la publicación de sitios web estáticos.
+
+### Configuración del despliegue de la Landing Page
+
+1. Para el despliegue de la Landing Page se creo un repositorio en la organizacion alojada en GitHub, el cual contiene todos los archivos del proyecto desarrollados en HTML, CSS y JavaScript.
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/repoLanding.png"/>
+</p>
+
+<p align="center">
+  Repositorio de la Landing Page utilizado para el despliegue del proyecto.
+</p>
+
+2. Se hizo un push al repositorio al subir todo los archivos que contenian la landing page
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/structureLanding.png"/>
+</p>
+
+<p align="center">
+  Uso de ramas para el desarrollo e integración de cambios antes del despliegue.
+</p>   
+
+3. Se creo branches para la actualización continua del repositorio, donde cada cambio realizado por el equipo eventualmente sera agregado en la rama principal.
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/branchesLanding.png"/>
+</p>
+
+<p align="center">
+  Uso de ramas para el desarrollo e integración de cambios antes del despliegue.
+</p>
+
+Una vez integrados los cambios en la rama principal (`main`), se configuró GitHub Pages para publicar automáticamente el contenido del repositorio, permitiendo que la Landing Page sea accesible mediante una URL pública.
+
+Este proceso permite que cada actualización realizada mediante commits y pushes al repositorio se refleje automáticamente en la versión desplegada del sitio web.
+
+### Validación del despliegue
+
+Después del despliegue, se realizaron pruebas para asegurar el correcto funcionamiento de la Landing Page, verificando:
+
+- la carga adecuada del sitio web;
+- la navegación entre secciones;
+- la correcta ejecución de scripts en JavaScript;
+- la adaptación a distintos dispositivos (responsive design);
+- la consistencia del contenido multilenguaje.
+
+El uso de GitHub como plataforma de control de versiones y despliegue permite mantener una trazabilidad completa de los cambios, facilitando la colaboración del equipo y asegurando una publicación continua del proyecto.
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
