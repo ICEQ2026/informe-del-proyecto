@@ -11,7 +11,7 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
 
 ## Tabla de Student Outcome
 
-<table style="width:100%; border-collapse: collapse;">
+<table border="1" style="width:100%; border-collapse: collapse;">
   <tr>
     <th style="width:25%;">Criterio específico</th>
     <th style="width:45%;">Acciones realizadas</th>
