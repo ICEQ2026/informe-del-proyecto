@@ -69,7 +69,7 @@ Este análisis permite identificar cómo se posiciona ColdTrace frente a platafo
     </tr>
     <tr>
       <td>Precios & Costos</td>
-      <td>Suscripción mensual proyectada y más accesible que suites enterprise; precio final aún por definir.</td>
+      <td>Suscripción mensual escalable y más accesible que suites enterprise, orientada a pymes y operaciones medianas según la cantidad de equipos monitoreados.</td>
       <td>Cotización personalizada bajo modelo per-asset pricing all-inclusive; no publica tarifa estándar.</td>
       <td>iMonnit Basic gratis; iMonnit Premiere desde US$45/año hasta 6 sensores y US$325/año hasta 100 sensores.</td>
       <td>Cotización personalizada y contacto comercial; no muestra precios públicos en el sitio oficial.</td>
@@ -307,29 +307,29 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
       <td><strong>Nombre completo</strong></td>
       <td>Sara Lopez</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Smartphone (Android)</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
       <td>53 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Android / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
       <td>Microempresaria / encargada de negocio con productos perecibles</td>
       <td><strong>Canales digitales de comunicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>WhatsApp y llamadas telefónicas</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
       <td>San Martín de Porres, Lima</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Microsoft Excel y aplicaciones de mensajería</td>
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 05:30</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="#">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
@@ -357,7 +357,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Sebastian Vasquez</td>
+      <td>Sebastián Vásquez</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>Smartphone (Android)</td>
     </tr>
@@ -381,7 +381,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 6:45</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://1drv.ms/v/c/e4b7fac9c36527d1/IQCXJC9Wb_08Sq4Yxii4Ss8sAa0B6B-J1qubYWNzRyFuXzw?e=tOkK43">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
@@ -399,41 +399,47 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
       <td colspan="4" align="center"><strong>Entrevista N.° 3</strong></td>
     </tr>
     <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-02/interviews/1-3-interview.png" alt="Entrevista 3" height="350">
+      </td>
+    </tr>
+    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Jean Pool Coaguila</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Smartphone (Android)</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>29 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Android / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Encargado de minimarket familiar</td>
       <td><strong>Canales digitales de comunicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>WhatsApp y llamadas telefónicas</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Lima Norte</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Microsoft Excel y aplicaciones de mensajería</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> [pendiente de completar]</td>
-      <td colspan="2"><strong>URL de grabación:</strong> [pendiente de completar]</td>
+      <td colspan="2"><strong>Duración:</strong> 03:51</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
-        Pendiente de completar.
+        Jean Pool administra un minimarket familiar que comercializa lácteos, embutidos, bebidas frías y productos congelados. El control de la temperatura en sus equipos se realiza de forma manual, revisando los indicadores de las refrigeradoras o inspeccionando visualmente el estado de los productos, sin contar con alertas automáticas ni historial digital de mediciones. Las fallas suelen originarse por cortes de luz, puertas mal cerradas o problemas técnicos en los equipos, y normalmente se detectan cuando la mercadería ya está en riesgo.<br><br>
+        El entrevistado señala que estas incidencias generan pérdidas económicas y desorden operativo, ya que debe mover productos entre equipos o recurrir a soporte técnico de forma reactiva. Valora especialmente la posibilidad de recibir alertas en tiempo real y consultar un historial simple desde el celular, aunque advierte que el costo y la facilidad de uso serán factores decisivos para adoptar una solución como ColdTrace en un negocio pequeño.
       </td>
     </tr>
   </tbody>
@@ -447,41 +453,47 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
       <td colspan="4" align="center"><strong>Entrevista N.° 4</strong></td>
     </tr>
     <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-02/interviews/2-1-interview.png" alt="Entrevista 4" height="350">
+      </td>
+    </tr>
+    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Rodrigo Vasquez</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Laptop corporativa y smartphone</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>30 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Windows / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Supervisor de operaciones</td>
       <td><strong>Canales digitales de comunicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Correo corporativo y WhatsApp</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Lima Metropolitana</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Microsoft Excel y Google Sheets</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> [pendiente de completar]</td>
-      <td colspan="2"><strong>URL de grabación:</strong> [pendiente de completar]</td>
+      <td colspan="2"><strong>Duración:</strong> 06:43</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
-        Pendiente de completar.
+        Rodrigo supervisa operaciones de almacenamiento y despacho de productos perecibles en un entorno donde la cadena de frío es crítica. Actualmente, la verificación de temperaturas se realiza mediante controles manuales y registros periódicos que luego se consolidan en archivos internos, lo que reduce la visibilidad inmediata del estado de cada equipo o ambiente monitoreado. Señala que una parte importante del riesgo operativo surge cuando la información llega tarde o no se concentra en un solo punto de consulta.<br><br>
+        Desde su perspectiva, una plataforma como ColdTrace sería útil si centraliza alertas, historial de temperatura e incidencias en un solo lugar, permitiendo reaccionar más rápido y revisar los eventos con mayor orden. También considera clave que la solución sea clara de usar y no agregue fricción a la operación diaria, ya que el valor principal está en reducir pérdidas y mejorar el control frente a auditorías o revisiones internas.
       </td>
     </tr>
   </tbody>
@@ -493,41 +505,47 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
       <td colspan="4" align="center"><strong>Entrevista N.° 5</strong></td>
     </tr>
     <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-02/interviews/2-2-interview.png" alt="Entrevista 5" height="350">
+      </td>
+    </tr>
+    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Kamil Diaz</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Laptop corporativa</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>27 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Windows / Microsoft Edge</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Analista de control de calidad</td>
       <td><strong>Canales digitales de comunicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Correo corporativo y Microsoft Teams</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Lima Metropolitana</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Microsoft Excel y Power BI</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> [pendiente de completar]</td>
-      <td colspan="2"><strong>URL de grabación:</strong> [pendiente de completar]</td>
+      <td colspan="2"><strong>Duración:</strong> 03:59</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
-        Pendiente de completar.
+        Kamil participa en el control de calidad de una operación con productos perecibles y trabaja de forma constante con registros térmicos, incidencias y revisiones internas. Explica que la principal dificultad del proceso actual es la dispersión de la información, ya que los registros se mantienen en distintos formatos y eso complica detectar de forma rápida desviaciones o consolidar evidencia cuando se requiere una revisión formal.<br><br>
+        Considera que ColdTrace aportaría valor si centraliza alertas, historial de temperatura e incidencias en una sola plataforma, con información clara y exportable para auditorías y seguimiento interno. Destaca que la solución debe ser confiable, fácil de revisar y útil para generar evidencia estructurada sin incrementar la carga administrativa del equipo.
       </td>
     </tr>
   </tbody>
@@ -539,41 +557,47 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
       <td colspan="4" align="center"><strong>Entrevista N.° 6</strong></td>
     </tr>
     <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-02/interviews/2-3-interview.png" alt="Entrevista 6" height="350">
+      </td>
+    </tr>
+    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Zayd Ayasata</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Laptop corporativa y smartphone</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>31 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Windows / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Coordinador logístico</td>
       <td><strong>Canales digitales de comunicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>WhatsApp, correo corporativo y llamadas</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Callao</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>[pendiente de completar]</td>
+      <td>Microsoft Excel y sistema interno de inventario</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> [pendiente de completar]</td>
-      <td colspan="2"><strong>URL de grabación:</strong> [pendiente de completar]</td>
+      <td colspan="2"><strong>Duración:</strong> 03:25</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
-        Pendiente de completar.
+        Zayd coordina actividades logísticas vinculadas a productos perecibles y debe supervisar distintos puntos donde la cadena de frío puede verse afectada. Señala que actualmente la información se registra en formatos dispersos y que el control depende de verificaciones periódicas, lo cual dificulta detectar problemas de forma oportuna y revisar con claridad qué ocurrió en cada momento de la operación.<br><br>
+        Para él, una solución como ColdTrace sería valiosa si permite centralizar alertas, historial de eventos y registros de temperatura, facilitando el seguimiento operativo y la documentación frente a incidencias. También considera importante que la herramienta se integre con rapidez al flujo de trabajo actual y reduzca la dependencia de controles manuales para mejorar la visibilidad del proceso.
       </td>
     </tr>
   </tbody>
@@ -599,17 +623,17 @@ Este segmento agrupa a jefes de calidad, supervisores logísticos, responsables 
 
 | Característica | Sustento estadístico | Evidencia en entrevistas | Relación con el arquetipo |
 |:---|:---|:---|:---|
-| **Control manual de temperatura sin registros** | [pendiente de completar] | **Entrevista 1:** Sara Lopez realiza el control de temperatura de forma manual y basada en la experiencia, sin sistemas de registro continuo. | Define el comportamiento actual del usuario y justifica la necesidad de una plataforma que automatice el monitoreo y genere historial sin intervención manual. |
-| **Detección tardía de fallas de refrigeración** | [pendiente de completar] | **Entrevista 1:** Los problemas se detectan cuando los productos ya han sido afectados, no de manera preventiva. | Establece el principal gap operativo del segmento y valida la necesidad de alertas en tiempo real como funcionalidad central de ColdTrace. |
-| **Impacto económico directo ante fallas** | [pendiente de completar] | **Entrevista 1:** La entrevistada descarta productos dañados y recurre a técnicos de manera reactiva, generando pérdidas no planificadas. | Aporta la motivación de compra del arquetipo: adoptarán la solución si demuestra prevenir pérdidas económicas y reducir urgencias. |
+| **Control manual de temperatura sin registros** | Agraria.pe (2019) evidencia que en el canal minorista aún persisten prácticas manuales de control de calidad y conservación, especialmente en negocios pequeños con baja digitalización. | **Entrevistas 1, 2 y 3:** Sara Lopez, Sebastián Vásquez y Jean Pool Coaguila describen controles manuales basados en revisión visual, experiencia o verificación puntual del equipo, sin registro continuo automatizado. | Define el comportamiento actual del usuario y justifica la necesidad de una plataforma que automatice el monitoreo y genere historial sin intervención manual. |
+| **Detección tardía de fallas de refrigeración** | FAO (2021) advierte que la interrupción de la cadena de frío y la detección tardía de desviaciones térmicas incrementan significativamente el riesgo de pérdida de alimentos perecibles. | **Entrevistas 1, 2 y 3:** Los entrevistados coinciden en que los problemas suelen detectarse cuando los productos ya fueron afectados o cuando el daño es visible, no de forma preventiva. | Establece el principal gap operativo del segmento y valida la necesidad de alertas en tiempo real como funcionalidad central de ColdTrace. |
+| **Impacto económico directo ante fallas** | FAO (2021) asocia las deficiencias en conservación y monitoreo con pérdidas relevantes de alimentos y afectación económica en la cadena de valor. | **Entrevistas 1, 2 y 3:** Los entrevistados mencionan descarte de mercadería, traslado reactivo de productos y gastos no planificados por soporte técnico ante fallas de refrigeración. | Aporta la motivación de compra del arquetipo: adoptarán la solución si demuestra prevenir pérdidas económicas y reducir urgencias. |
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
 | Característica | Sustento estadístico | Evidencia en entrevistas | Relación con el arquetipo |
 |:---|:---|:---|:---|
-| **Supervisión de múltiples activos sin centralización** | [pendiente de completar] | **Entrevistas 4, 5 y 6:** Los entrevistados gestionan varios equipos, áreas o sedes sin una plataforma unificada, lo que genera revisiones dispersas y tiempo operativo perdido. | Define la necesidad central del arquetipo: un dashboard centralizado que permita visualizar el estado de todos los activos en un solo lugar. |
-| **Registro manual o en hojas de cálculo** | [pendiente de completar] | **Entrevistas 4, 5 y 6:** El registro de temperaturas se realiza en formatos físicos o archivos Excel sin actualización automática ni alertas integradas. | Establece la línea base tecnológica del segmento y justifica la necesidad de un sistema con registro automático y trazabilidad continua. |
-| **Dependencia de revisiones periódicas, no continuas** | [pendiente de completar] | **Entrevistas 4, 5 y 6:** El monitoreo se realiza en rondas de inspección programadas, no en tiempo real, lo que deja ventanas de riesgo sin cobertura. | Valida la necesidad de monitoreo continuo con alertas automáticas como diferencial clave frente al proceso actual del segmento. |
+| **Supervisión de múltiples activos sin centralización** | FAO (2021) resalta que las operaciones con cadena de frío involucran múltiples puntos de control, por lo que la falta de monitoreo unificado reduce la capacidad de respuesta ante desvíos. | **Entrevistas 4, 5 y 6:** Los entrevistados gestionan varios equipos, áreas o sedes sin una plataforma unificada, lo que genera revisiones dispersas y tiempo operativo perdido. | Define la necesidad central del arquetipo: un dashboard centralizado que permita visualizar el estado de todos los activos en un solo lugar. |
+| **Registro manual o en hojas de cálculo** | Agraria.pe (2019) y la realidad operativa del sector muestran que muchas organizaciones aún dependen de registros manuales o planillas para control térmico y evidencias de calidad. | **Entrevistas 4, 5 y 6:** El registro de temperaturas se realiza en formatos físicos o archivos Excel sin actualización automática ni alertas integradas. | Establece la línea base tecnológica del segmento y justifica la necesidad de un sistema con registro automático y trazabilidad continua. |
+| **Dependencia de revisiones periódicas, no continuas** | FAO (2021) recomienda monitoreo continuo en operaciones con productos perecibles debido a que los controles por rondas dejan ventanas de riesgo sin supervisión efectiva. | **Entrevistas 4, 5 y 6:** El monitoreo se realiza en rondas de inspección programadas, no en tiempo real, lo que deja ventanas de riesgo sin cobertura. | Valida la necesidad de monitoreo continuo con alertas automáticas como diferencial clave frente al proceso actual del segmento. |
 
 ##### 3. Características subjetivas del segmento
 
@@ -617,16 +641,16 @@ Este segmento agrupa a jefes de calidad, supervisores logísticos, responsables 
 
 | Característica | Sustento estadístico | Evidencia en entrevistas | Relación con el arquetipo |
 |:---|:---|:---|:---|
-| **Valoración de simplicidad e intuitividad** | [pendiente de completar] | **Entrevista 1:** Sara Lopez valora soluciones simples e intuitivas con información clara y organizada. | Define el requisito de usabilidad del arquetipo: la plataforma debe poder adoptarse sin capacitación técnica y sin procesos complejos. |
-| **Necesidad de respaldo para auditorías** | [pendiente de completar] | **Entrevista 1:** La entrevistada menciona la importancia de contar con historial para control o auditoría sanitaria. | Establece un caso de uso clave del arquetipo más allá del monitoreo operativo: la trazabilidad como evidencia ante inspecciones de DIGESA o MINSA. |
+| **Valoración de simplicidad e intuitividad** | La baja madurez digital observada en pequeños negocios alimentarios hace que la facilidad de uso sea un criterio decisivo de adopción para nuevas herramientas de monitoreo. | **Entrevistas 1, 2 y 3:** Los entrevistados valoran soluciones simples, intuitivas y con información clara, priorizando rapidez de uso sobre complejidad técnica. | Define el requisito de usabilidad del arquetipo: la plataforma debe poder adoptarse sin capacitación técnica y sin procesos complejos. |
+| **Necesidad de respaldo para auditorías** | DIGESA y MINSA exigen evidencia verificable de conservación adecuada y control sanitario, lo que vuelve valioso contar con registros históricos ordenados. | **Entrevistas 1, 2 y 3:** Los entrevistados mencionan la utilidad de contar con historial para control, inspecciones o auditorías sanitarias. | Establece un caso de uso clave del arquetipo más allá del monitoreo operativo: la trazabilidad como evidencia ante inspecciones de DIGESA o MINSA. |
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
 | Característica | Sustento estadístico | Evidencia en entrevistas | Relación con el arquetipo |
 |:---|:---|:---|:---|
-| **Alta preocupación por el cumplimiento normativo** | [pendiente de completar] | **Entrevistas 4, 5 y 6:** Los entrevistados mencionan la presión por cumplir con estándares sanitarios y demostrar trazabilidad ante auditorías de DIGESA, MINSA u otros organismos. | Define una motivación clave del arquetipo: adoptarán ColdTrace si la plataforma les permite generar reportes y evidencia de cumplimiento de forma rápida y estructurada. |
-| **Frustración por la falta de visibilidad en tiempo real** | [pendiente de completar] | **Entrevistas 4, 5 y 6:** Los responsables expresan incomodidad por no saber el estado de sus activos refrigerados fuera de los momentos de inspección manual. | Establece el principal dolor del arquetipo: la ansiedad operativa ante la incertidumbre y la incapacidad de reaccionar a tiempo ante desviaciones. |
-| **Necesidad de tomar decisiones basadas en datos históricos** | [pendiente de completar] | **Entrevistas 4, 5 y 6:** Los entrevistados valoran poder revisar el historial de condiciones para identificar patrones, justificar decisiones operativas y sustentar incidencias ante proveedores o clientes. | Aporta al caso de uso de reportes e historial de ColdTrace, validando que la trazabilidad no es solo un requisito normativo sino también una herramienta de gestión activa. |
+| **Alta preocupación por el cumplimiento normativo** | DIGESA, MINSA y las prácticas de auditoría del sector requieren evidencia estructurada sobre conservación y control térmico, lo que convierte el cumplimiento en un driver operativo real. | **Entrevistas 4, 5 y 6:** Los entrevistados mencionan la presión por cumplir con estándares sanitarios y demostrar trazabilidad ante auditorías de DIGESA, MINSA u otros organismos. | Define una motivación clave del arquetipo: adoptarán ColdTrace si la plataforma les permite generar reportes y evidencia de cumplimiento de forma rápida y estructurada. |
+| **Frustración por la falta de visibilidad en tiempo real** | FAO (2021) sostiene que la ausencia de monitoreo continuo dificulta la intervención temprana y eleva el riesgo operativo en la cadena de frío. | **Entrevistas 4, 5 y 6:** Los responsables expresan incomodidad por no saber el estado de sus activos refrigerados fuera de los momentos de inspección manual. | Establece el principal dolor del arquetipo: la ansiedad operativa ante la incertidumbre y la incapacidad de reaccionar a tiempo ante desviaciones. |
+| **Necesidad de tomar decisiones basadas en datos históricos** | La disponibilidad de registros históricos es clave para auditoría, análisis de incidentes y seguimiento de desempeño operativo en sistemas de cadena de frío. | **Entrevistas 4, 5 y 6:** Los entrevistados valoran poder revisar el historial de condiciones para identificar patrones, justificar decisiones operativas y sustentar incidencias ante proveedores o clientes. | Aporta al caso de uso de reportes e historial de ColdTrace, validando que la trazabilidad no es solo un requisito normativo sino también una herramienta de gestión activa. |
 
 ##### 4. Hallazgos principales
 
