@@ -20,7 +20,11 @@ La solución integra sensores IoT con una aplicación web accesible desde navega
 | [pendiente]    | **Espinoza Paredes, Frezzia**             | Ingeniería de Software  | [pendiente] |
 | [pendiente]    | **Morales Venegas, David Joel**           | Ingeniería de Software  | [pendiente] |
 | [pendiente]    | **Pajés León, Mauricio Luis**             | Ingeniería de Software  | [pendiente] |
-|   <img src="/report/assets/chapter-01/team/Jorge.png"/>    | **Videla Ventura, Jorge Joseph**          | Ingeniería de Software  | [pendiente] |
+|   <img src="/report/assets/chapter-01/team/Jorge.png"/>    | **Videla Ventura, Jorge Joseph**          | Ingeniería de Software  | ### (U202220648)
+
+Estudiante de Ingeniería de Software en la UPC (4.º ciclo), con experiencia en C++ y Python, enfocado en algoritmos y resolución de problemas.  
+
+Me considero responsable, comprometido y con buena disposición para el trabajo en equipo. Busco aplicar mis conocimientos, seguir aprendiendo y contribuir activamente al logro de los objetivos del proyecto. |
 ---
 
 ## 1.2 Solution Profile
