@@ -16,7 +16,7 @@ La solución integra sensores IoT con una aplicación web accesible desde navega
 
 | Foto de perfil | Nombre Completo                          | Carrera                 | Habilidades |
 |:--------------:|:------------------------------------------|:------------------------|:------------|
-| [pendiente]    | **Cabrera Novoa, Leonardo Moisés**        | Ingeniería de Software  | [pendiente] |
+| <img src="/report/assets/chapter-01/team/Leonardo.png" width=280/>    | **Cabrera Novoa, Leonardo Moisés**        | Ingeniería de Software  | **(U202415820)**<br>Estudiante de 5to ciclo con experiencia en C++ y recientemente en C#.<br> Me enfoco en el desarrollo colaborativo, aportando compromiso y adaptabilidad para lograr los objetivos de cada sprint.  |
 | [pendiente]    | **Espinoza Paredes, Frezzia**             | Ingeniería de Software  | [pendiente] |
 | [pendiente]    | **Morales Venegas, David Joel**           | Ingeniería de Software  | [pendiente] |
 | [pendiente]    | **Pajés León, Mauricio Luis**             | Ingeniería de Software  | [pendiente] |
