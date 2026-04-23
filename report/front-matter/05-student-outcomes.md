@@ -20,19 +20,16 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
     <td>
       Trabaja en equipo para proporcionar liderazgo en forma conjunta
     </td>
-    <td>
-      **Videla Ventura, Jorge Joseph**  
-AV1: Participación activa en la explicación del Big Picture Event Storming, comunicando de manera estructurada los eventos clave del negocio, sus relaciones y el flujo de la cadena de frío, facilitando la comprensión del dominio tanto para miembros técnicos como no técnicos del equipo.<br>
-Presentación de los artefactos UX/UI (wireframes, wireflows y mockups), explicando la lógica de navegación, interacción del usuario y organización de la información, adaptando el lenguaje según la audiencia y promoviendo la retroalimentación del equipo para la mejora continua del diseño.
-      <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 5</strong> — AV1 / TB1 / AV2<br>
-    </td>
-    <td>
-      <strong>AV1:</strong> [Conclusión]<br>
-      <strong>TB1:</strong> [Conclusión]<br>
-      <strong>AV2:</strong> [Conclusión]
-    </td>
+<td>
+  <strong>Videla Ventura, Jorge Joseph</strong><br>
+  AV1: Participación activa en la explicación del Big Picture Event Storming, comunicando de manera estructurada los eventos clave del negocio, sus relaciones y el flujo de la cadena de frío, facilitando la comprensión del dominio tanto para miembros técnicos como no técnicos del equipo.<br>
+  Presentación de los artefactos UX/UI (wireframes, wireflows y mockups), explicando la lógica de navegación, interacción del usuario y organización de la información, adaptando el lenguaje según la audiencia y promoviendo la retroalimentación del equipo para la mejora continua del diseño.<br><br>
+
+  <strong>Est. 2</strong> — AV1 / TB1 / AV2<br>
+  <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
+  <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
+  <strong>Est. 5</strong> — AV1 / TB1 / AV2
+</td>
   </tr>
   <tr>
     <td>
