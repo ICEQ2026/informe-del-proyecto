@@ -244,6 +244,99 @@ La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta 
 
 ### 4.6.1. Design-Level Event Storming.
 <img src="assets/chapter-04/boundedcontext/boundedcontext.png"  width="760">
+## 1. Bounded Context: Autenticación
+
+### Explicación
+Este contexto gestiona el acceso de los usuarios al sistema mediante el inicio y cierre de sesión. Se encarga de validar credenciales, controlar sesiones activas y generar eventos como usuario autenticado o sesión iniciada/cerrada.
+
+### Justificación
+Se separa este contexto porque la seguridad es un aspecto crítico y transversal en cualquier sistema. Al aislar la autenticación:
+- Se reduce el riesgo de accesos no autorizados.
+- Se facilita la implementación de mecanismos avanzados como OAuth, JWT o autenticación multifactor.
+- Se evita mezclar la lógica de seguridad con la lógica de negocio principal.
+- Permite escalar y mantener este módulo de forma independiente.
+
+
+## 2. Bounded Context: Gestión de Sensores
+
+### Explicación
+Este contexto administra todo el ciclo de vida de los sensores: registro, configuración, activación y vinculación con activos. Además, define parámetros clave como rangos de temperatura, humedad y frecuencia de medición.
+
+### Justificación
+Se separa porque la configuración de sensores define el comportamiento del sistema. Al aislarlo:
+- Se centraliza la lógica de configuración.
+- Se reducen errores por parámetros mal definidos.
+- Se permite modificar reglas sin afectar otros contextos.
+- Facilita la reutilización en otros sistemas IoT.
+
+
+## 3. Bounded Context: Monitoreo
+
+### Explicación
+Es el núcleo del sistema. Aquí se reciben las mediciones del sensor, se registran, validan y se verifica si están dentro o fuera de los rangos definidos. Finalmente, las mediciones se almacenan.
+
+### Justificación
+Se separa porque es el proceso principal del negocio. Este contexto:
+- Maneja alta carga de datos en tiempo real.
+- Requiere eficiencia y baja latencia.
+- Permite escalar de forma independiente (por ejemplo, usando streaming).
+- Evita mezclar procesamiento de datos con visualización o alertas.
+
+
+## 4. Bounded Context: Alertas
+
+### Explicación
+Se encarga de generar notificaciones cuando una medición está fuera de los rangos establecidos. También gestiona la visualización de alertas en el sistema.
+
+### Justificación
+Se desacopla para permitir una respuesta rápida ante eventos críticos:
+- Permite implementar distintos canales de notificación (email, SMS, etc.).
+- Evita sobrecargar el contexto de monitoreo.
+- Facilita la extensión del sistema sin afectar la lógica principal.
+
+
+## 5. Bounded Context: Reportes
+
+### Explicación
+Gestiona la generación, visualización y exportación de reportes. Incluye dashboards, historial de mediciones y visualización en tiempo real.
+
+### Justificación
+Se separa porque el análisis de datos tiene necesidades distintas al procesamiento:
+- Requiere consultas complejas y agregaciones.
+- Puede optimizarse con técnicas como caching o data warehousing.
+- Evita afectar el rendimiento del monitoreo en tiempo real.
+- Permite escalar de forma independiente.
+
+
+## 6. Bounded Context: Auditoría
+
+### Explicación
+Este contexto controla el cumplimiento del sistema mediante auditorías. Permite iniciar auditorías, registrar resultados, validar cumplimiento y generar evidencias exportables.
+
+### Justificación
+Se aísla porque la auditoría responde a necesidades de control y cumplimiento:
+- Garantiza trazabilidad de las acciones del sistema.
+- Permite cumplir con normativas o estándares.
+- Facilita la generación de evidencia sin afectar otros procesos.
+- Puede evolucionar hacia automatización completa sin impactar otros contextos.
+
+
+## Problemas Identificados y Relación con Contextos
+
+- Datos inconsistentes del sensor → Monitoreo  
+- Validación insuficiente → Monitoreo  
+- Configuración manual del sensor → Gestión de Sensores  
+- Parámetros mal definidos → Gestión de Sensores  
+- Generación de reportes lenta → Reportes  
+- Proceso de auditoría manual → Auditoría  
+
+### Justificación General
+Estos problemas evidencian la necesidad de separar responsabilidades. La aplicación de Bounded Contexts permite:
+- Reducir el acoplamiento entre módulos.
+- Mejorar la mantenibilidad del sistema.
+- Escalar componentes de forma independiente.
+- Aplicar principios de Domain-Driven Design de manera efectiva.
+
 
 ### 4.6.2. Software Architecture Context Diagram.
 <img src="assets/chapter-04/contextdiagram/contextdiagram.png"  width="760">
