@@ -107,7 +107,80 @@ La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feat
 
 ### 5.1.3. Source Code Style Guide & Conventions
 
-[pending content]
+Con el objetivo de garantizar la consistencia, legibilidad y mantenibilidad del proyecto, el equipo definió una guía de estilo basada en la estructura real de la Landing Page y en buenas prácticas de desarrollo web. Estas convenciones permiten que todos los integrantes trabajen de manera ordenada, facilitan la colaboración en el repositorio y mejoran la escalabilidad del producto.
+
+Siguiendo lo solicitado por el curso, se adoptó el uso de nomenclatura en inglés para los elementos del código fuente. Además, se establecieron criterios comunes para la organización de archivos, definición de estilos, escritura de scripts y manejo de contenidos multilenguaje.
+
+#### Naming conventions
+
+Se utilizó nomenclatura en inglés para todos los elementos del código. Los archivos fueron nombrados según su funcionalidad, lo que facilita su comprensión y mantenimiento.
+
+Ejemplos del proyecto:
+
+- `navigation.js` → manejo de navegación  
+- `scroll-reveal.js` → animaciones  
+- `variables.css` → variables de diseño  
+- `en-US.json` → traducciones en inglés  
+
+Estas convenciones permiten identificar rápidamente el propósito de cada archivo.
+
+#### CSS Style Guide
+
+Para mantener la consistencia visual, se definieron variables globales en CSS que permiten reutilizar colores, tipografías y espaciados en toda la aplicación:
+
+```css
+:root {
+  --color-primary: #1b59f8;
+  --color-secondary-purple: #b899eb;
+
+  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --spacing-md: 16px;
+  --spacing-xl: 48px;
+
+  --radius-md: 8px;
+}
+```
+
+El uso de variables CSS permite centralizar el diseño visual, evitando duplicidad de valores y facilitando futuras modificaciones.
+
+#### JavaScript Conventions
+
+Los archivos JavaScript fueron organizados por funcionalidad, promoviendo la modularidad del código. Se utilizaron funciones con nombres descriptivos en inglés y estructuras claras.
+
+Ejemplo del proyecto:
+
+```js
+const toggleMobileMenu = () => {
+  if (!moreButton || !mobileMenu) return;
+
+  if (mobileMenu.classList.contains('is-open')) {
+    closeMobileMenu();
+    return;
+  }
+
+  openMobileMenu();
+};
+```
+
+Este enfoque mejora la legibilidad del código y facilita su mantenimiento.
+
+#### Internacionalización (i18n)
+
+El proyecto incluye soporte para múltiples idiomas mediante archivos JSON ubicados en `assets/locales/`. Cada archivo contiene las traducciones utilizadas en la interfaz.
+
+Ejemplo:
+
+```json
+{
+  "hero": {
+    "title": "All your storage infrastructure under a single intelligent platform",
+    "ctaDemo": "Try a demo"
+  }
+}
+```
+
+La implementación de internacionalización permite que la aplicación sea escalable a diferentes mercados y mejora la experiencia del usuario.
 
 ### 5.1.4. Software Deployment Configuration
 
