@@ -1,4 +1,5 @@
 # Student Outcome
+
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
 **ABET – EAC - Student Outcome 5**  
@@ -20,32 +21,43 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
     <td>
       Trabaja en equipo para proporcionar liderazgo en forma conjunta
     </td>
-<td>
-  <strong>Videla Ventura, Jorge Joseph</strong><br>
-  AV1: Participación activa en la explicación del Big Picture Event Storming, comunicando de manera estructurada los eventos clave del negocio, sus relaciones y el flujo de la cadena de frío, facilitando la comprensión del dominio tanto para miembros técnicos como no técnicos del equipo.<br>
-  Presentación de los artefactos UX/UI (wireframes, wireflows y mockups), explicando la lógica de navegación, interacción del usuario y organización de la información, adaptando el lenguaje según la audiencia y promoviendo la retroalimentación del equipo para la mejora continua del diseño.<br><br>
+    <td>
+      <strong>Videla Ventura, Jorge Joseph</strong><br>
+      AV1: Participación activa en el Big Picture Event Storming, identificando eventos clave del negocio y colaborando en la construcción del flujo de la cadena de frío.<br>
+      Definición del Ubiquitous Language para estandarizar términos del dominio.<br>
+      Desarrollo de artefactos UX/UI (wireframes, wireflows y mockups), contribuyendo en la estructura e interacción del sistema.<br><br>
 
-  <strong>Est. 2</strong> — AV1 / TB1 / AV2<br>
-  <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
-  <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
-  <strong>Est. 5</strong> — AV1 / TB1 / AV2
-</td>
+      <strong>Est. 2</strong> — AV1 / TB1 / AV2<br>
+      <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
+      <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
+      <strong>Est. 5</strong> — AV1 / TB1 / AV2
+    </td>
+    <td>
+      <strong>AV1:</strong> Se evidenció liderazgo compartido y participación activa en la construcción del conocimiento del dominio.<br>
+      <strong>TB1:</strong> Se fortaleció la coordinación y alineación del equipo mediante un lenguaje común.<br>
+      <strong>AV2:</strong> Se consolidó la toma de decisiones conjunta en el diseño del sistema.
+    </td>
   </tr>
+
   <tr>
     <td>
       Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos
     </td>
     <td>
-      <strong>Est. 1</strong> — AV1 / TB1 / AV2<br>
+      <strong>Videla Ventura, Jorge Joseph</strong><br>
+      AV1: Participación en la organización del dominio y definición del alcance del sistema.<br>
+      Definición del Ubiquitous Language para mejorar la comunicación del equipo.<br>
+      Desarrollo de wireframes, wireflows y mockups cumpliendo con los entregables establecidos.<br><br>
+
       <strong>Est. 2</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
       <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 5</strong> — AV1 / TB1 / AV2<br>
+      <strong>Est. 5</strong> — AV1 / TB1 / AV2
     </td>
     <td>
-      <strong>AV1:</strong> [Conclusión]<br>
-      <strong>TB1:</strong> [Conclusión]<br>
-      <strong>AV2:</strong> [Conclusión]
+      <strong>AV1:</strong> Se estableció un entorno colaborativo que facilitó la comprensión del problema.<br>
+      <strong>TB1:</strong> Se evidenció planificación y organización del trabajo en equipo.<br>
+      <strong>AV2:</strong> Se cumplieron los objetivos del proyecto de manera efectiva.
     </td>
   </tr>
 </table>
