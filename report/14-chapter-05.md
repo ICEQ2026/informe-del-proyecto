@@ -581,23 +581,97 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 
 </table>
 
-### 5.2.1.5. Execution Evidence for Sprint Review.
 
-[pending content]
-  
-### 5.2.1.5. Execution Evidence for Sprint Review.
+#### 5.2.1.5. Execution Evidence for Sprint Review
 
-[pending content]
+Durante el Sprint 1 se desarrolló una versión funcional de la landing page de ColdTrace, permitiendo visualizar la propuesta de valor del producto, así como una simulación de las principales funcionalidades del sistema, como monitoreo y alertas.
 
-### 5.2.1.6. Services Documentation Evidence for Sprint Review.
+A continuación, se presentan evidencias visuales de la implementación:
 
-[pending content]
+**Landing Page – Sección principal**
 
-### 5.2.1.7. Software Deployment Evidence for Sprint Review.
+![Landing Hero](assets/chapter-05/execution/executionlanding1.png)
 
-[pending content]
+![Features Section](assets/chapter-05/execution/executionlanding2.png)
 
-### 5.2.1.8. Team Collaboration Insights during Sprint
+![Dashboard Alerts](assets/chapter-05/execution/executionlanding3.png)
 
-[pending content]
+La navegación entre secciones se realiza mediante un menú fijo (navbar), facilitando la experiencia del usuario. Asimismo, la interfaz es responsive, adaptándose a distintos dispositivos.
+#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 1, no se implementaron Web Services ni endpoints documentados, debido a que el alcance del sprint estuvo enfocado en el desarrollo de la landing page y la simulación de funcionalidades del sistema ColdTrace a nivel frontend.
+
+Sin embargo, como parte del diseño del sistema, se definieron de manera conceptual los principales endpoints que serán implementados en futuros sprints para soportar funcionalidades clave como monitoreo en tiempo real, gestión de alertas y registro de usuarios.
+
+A continuación, se presentan los endpoints identificados:
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Endpoint</th>
+    <th>Method</th>
+    <th>Descripción</th>
+    <th>Ejemplo de respuesta</th>
+  </tr>
+
+  <tr>
+    <td>/api/temperature</td>
+    <td>GET</td>
+    <td>Obtiene los datos de temperatura registrados por los sensores</td>
+    <td>{ "sensorId": "001", "temperature": 5.6, "timestamp": "2026-04-23" }</td>
+  </tr>
+
+  <tr>
+    <td>/api/alerts</td>
+    <td>GET</td>
+    <td>Lista las alertas generadas por el sistema</td>
+    <td>{ "alert": "Temperatura fuera de rango", "value": -5.3 }</td>
+  </tr>
+
+  <tr>
+    <td>/api/users</td>
+    <td>POST</td>
+    <td>Permite registrar nuevos usuarios en la plataforma</td>
+    <td>{ "status": "User created successfully" }</td>
+  </tr>
+
+</table>
+
+La documentación formal de estos endpoints mediante OpenAPI, así como su implementación en Web Services, será desarrollada en los siguientes sprints del proyecto.
+
+Asimismo, se prevé la integración con una arquitectura backend que permita la gestión de datos en tiempo real y la persistencia de información generada por los sensores IoT.
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 1 se realizó el despliegue de la landing page utilizando GitHub Pages, permitiendo publicar el proyecto en un entorno accesible desde la web.
+
+El proceso incluyó la configuración del repositorio, la integración de cambios mediante Pull Requests y la automatización del despliegue.
+
+** Deployment en GitHub Pages**
+
+![Deployment](assets/chapter-05/deployment/deployement.png)
+
+Se evidencia el despliegue exitoso del proyecto en GitHub Pages, mostrando el estado activo del entorno y la publicación reciente de la landing page.
+
+**URL de despliegue:**
+https://iceq2026.github.io/landingpage-coldtrace/
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 1, el equipo trabajó de manera colaborativa utilizando GitHub como herramienta principal de control de versiones.
+
+Se utilizaron ramas feature para desarrollar funcionalidades de forma independiente, integrando cambios mediante Pull Requests hacia la rama principal.
+
+---
+
+**Analíticos de colaboración en GitHub**
+
+![GitHub Insights](assets/chapter-05/collaboration/insights.png)
+
+Se observa la actividad del repositorio, incluyendo commits realizados, pull requests y participación de los integrantes del equipo. Esto evidencia un trabajo colaborativo activo durante el Sprint.
+
+---
+
+El uso de Conventional Commits permitió mantener un historial organizado, diferenciando claramente entre funcionalidades (feat), documentación (docs) y configuración (chore).
+
+Estas prácticas facilitaron la coordinación del equipo y la integración eficiente del desarrollo.
 
