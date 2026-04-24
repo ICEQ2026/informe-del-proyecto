@@ -1,0 +1,571 @@
+@startuml ColdTrace-ClassDiagram-Stage1-DDD
+
+title Etapa 1: Diagrama de Clases con enfoque DDD - ColdTrace
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 50
+skinparam ranksep 50
+
+' Contexto de autenticación
+
+class Usuario {
+  - id: UUID
+  - idOrganizacion: UUID
+  - email: String
+  - nombreUsuario: String
+  - passwordHash: String
+  - estado: EstadoUsuario
+  - fechaCreacion: LocalDateTime
+  - fechaVerificacion: LocalDateTime
+  + registrar(): void
+  + verificarCuenta(token: String): boolean
+  + iniciarSesion(pwd: String): Sesion
+  + cerrarSesion(): void
+  + solicitarRecuperacion(): void
+  + asignarRol(rol: Rol): void
+}
+
+class Sesion {
+  - idSesion: UUID
+  - token: String
+  - creadaEn: LocalDateTime
+  - expiraEn: LocalDateTime
+  + estaVigente(): boolean
+  + invalidar(): void
+}
+
+class Rol {
+  - idRol: UUID
+  - nombre: String
+  - descripcion: String
+}
+
+class Permiso {
+  - nombre: String
+  - recurso: String
+  - accion: String
+}
+
+enum EstadoUsuario <<enum>> {
+  PENDIENTE_VERIFICACION
+  ACTIVO
+  SUSPENDIDO
+  ELIMINADO
+}
+
+class Organizacion {
+  - idOrganizacion: UUID
+  - razonSocial: String
+  - ruc: String
+  - direccion: String
+  + agregarUsuario(u: Usuario): void
+  + eliminarUsuario(id: UUID): void
+}
+
+class Suscripcion {
+  - idSuscripcion: UUID
+  - plan: String
+  - estado: EstadoSuscripcion
+  - fechaInicio: LocalDate
+  - fechaFin: LocalDate
+  + estaVigente(): boolean
+  + renovar(): void
+  + cancelar(): void
+}
+
+enum EstadoSuscripcion <<enum>> {
+  ACTIVA
+  VENCIDA
+  CANCELADA
+  EN_PRUEBA
+}
+
+class PreferenciaNotificacion {
+  - idPreferencia: UUID
+  - canalesHabilitados: Set<String>
+  - horarioInicio: LocalTime
+  - horarioFin: LocalTime
+  - severidadMinima: Severidad
+  + actualizar(): void
+  + aceptaCanal(canal: String): boolean
+}
+
+class UsuarioRepository {
+  + buscarPorNombreUsuario(nombre: String): Optional<Usuario>
+  + buscarPorEmail(email: String): Optional<Usuario>
+  + obtenerCredencial(id: UUID): Optional<String>
+  + guardarSesion(s: Sesion): void
+  + invalidarSesion(id: UUID): void
+  + guardar(u: Usuario): void
+}
+
+Usuario "1" o-- "*" Sesion
+Usuario "*" -- "*" Rol
+Rol "*" o-- "*" Permiso
+Organizacion "1" *-- "1" Suscripcion
+Organizacion "1" o-- "*" Usuario
+Usuario "1" *-- "1" PreferenciaNotificacion
+Usuario ..> EstadoUsuario
+Suscripcion ..> EstadoSuscripcion
+UsuarioRepository ..> Usuario
+
+' Contexto de gestión de sensores
+
+class Ubicacion {
+  - direccion: String
+  - latitud: double
+  - longitud: double
+  - esMovil: boolean
+  + distanciaA(otra: Ubicacion): double
+}
+
+class Activo {
+  - idActivo: UUID
+  - idOrganizacion: UUID
+  - nombre: String
+  - descripcion: String
+  - tipo: TipoActivo
+  - estado: EstadoActivo
+  + registrar(): void
+  + asignarSensor(s: Sensor): void
+  + desvincularSensor(id: UUID): void
+  + actualizarUbicacion(u: Ubicacion): void
+}
+
+enum TipoActivo <<enum>> {
+  CAMARA_FRIGORIFICA
+  ALMACEN_REFRIGERADO
+  UNIDAD_TRANSPORTE
+  VITRINA
+}
+
+enum EstadoActivo <<enum>> {
+  OPERATIVO
+  INACTIVO
+  EN_MANTENIMIENTO
+}
+
+class Sensor {
+  - idSensor: UUID
+  - idActivo: UUID
+  - idGateway: UUID
+  - modelo: String
+  - tipo: TipoSensor
+  - frecuenciaLecturaSeg: int
+  - estado: EstadoSensor
+  + configurarRangoTemperatura(r: RangoTemperatura): void
+  + configurarRangoHumedad(r: RangoHumedad): void
+  + configurarFrecuencia(segundos: int): void
+  + activar(): void
+  + desactivar(): void
+}
+
+enum TipoSensor <<enum>> {
+  TEMPERATURA
+  HUMEDAD
+  TEMPERATURA_HUMEDAD
+}
+
+enum EstadoSensor <<enum>> {
+  ACTIVO
+  DESCONECTADO
+  CALIBRANDO
+  FALLA
+}
+
+class Gateway {
+  - idGateway: UUID
+  - idOrganizacion: UUID
+  - modelo: String
+  - ip: String
+  - protocolo: String
+  - estado: EstadoGateway
+  + conectar(): void
+  + desconectar(): void
+  + registrarSensor(s: Sensor): void
+}
+
+enum EstadoGateway <<enum>> {
+  CONECTADO
+  DESCONECTADO
+}
+
+class RangoTemperatura {
+  - minCelsius: double
+  - maxCelsius: double
+  + validar(valor: double): boolean
+}
+
+class RangoHumedad {
+  - minPorcentaje: double
+  - maxPorcentaje: double
+  + validar(valor: double): boolean
+}
+
+' Patron Builder para construccion de Activos
+interface Constructor <<interfaz>> {
+  + conNombre(n: String): Constructor
+  + conTipo(t: TipoActivo): Constructor
+  + conUbicacion(u: Ubicacion): Constructor
+  + agregarSensor(s: Sensor): Constructor
+  + construir(): Activo
+}
+
+class ActivoBuilder {
+  - nombre: String
+  - tipo: TipoActivo
+  - ubicacion: Ubicacion
+  - sensores: List<Sensor>
+  + conNombre(n: String): Constructor
+  + conTipo(t: TipoActivo): Constructor
+  + conUbicacion(u: Ubicacion): Constructor
+  + agregarSensor(s: Sensor): Constructor
+  + construir(): Activo
+}
+
+class ActivoDirector {
+  - builder: Constructor
+  + setBuilder(b: Constructor): void
+  + construirCamaraFrigorifica(nombre: String, u: Ubicacion): Activo
+  + construirAlmacen(nombre: String, u: Ubicacion): Activo
+  + construirUnidadTransporte(nombre: String, u: Ubicacion): Activo
+}
+
+Activo "1" *-- "1" Ubicacion
+Activo "1" o-- "*" Sensor
+Gateway "1" o-- "*" Sensor
+Sensor "1" o-- "0..1" RangoTemperatura
+Sensor "1" o-- "0..1" RangoHumedad
+Activo ..> TipoActivo
+Activo ..> EstadoActivo
+Sensor ..> TipoSensor
+Sensor ..> EstadoSensor
+Gateway ..> EstadoGateway
+ActivoBuilder ..|> Constructor
+ActivoDirector o-- Constructor
+
+' Contexto de monitoreo
+
+abstract class Medicion {
+  # idMedicion: UUID
+  # idSensor: UUID
+  # timestamp: LocalDateTime
+  # valor: double
+  # unidad: String
+  + {abstract} obtenerTipo(): TipoSensor
+  + obtenerEstado(): EstadoMedicion
+}
+
+class LecturaTemperatura {
+  - valorCelsius: double
+  + convertirAFahrenheit(): double
+  + validarContra(r: RangoTemperatura): boolean
+  + obtenerTipo(): TipoSensor
+}
+
+class LecturaHumedad {
+  - valorPorcentaje: double
+  + esAmbienteSeco(): boolean
+  + validarContra(r: RangoHumedad): boolean
+  + obtenerTipo(): TipoSensor
+}
+
+enum EstadoMedicion <<enum>> {
+  NORMAL
+  ADVERTENCIA
+  CRITICA
+}
+
+Medicion <|-- LecturaTemperatura
+Medicion <|-- LecturaHumedad
+Medicion ..> EstadoMedicion
+
+' Contexto de alertas
+
+class ReglaAlerta {
+  - idRegla: UUID
+  - idSensor: UUID
+  - tipo: TipoAlerta
+  - umbralValor: double
+  - duracionMinSeg: int
+  - severidad: Severidad
+  - activa: boolean
+  + evaluar(m: Medicion): boolean
+  + generarAlerta(m: Medicion): Alerta
+  + activar(): void
+  + desactivar(): void
+}
+
+class Alerta {
+  - idAlerta: UUID
+  - idOrganizacion: UUID
+  - idRegla: UUID
+  - idSensor: UUID
+  - idActivo: UUID
+  - idMedicion: UUID
+  - tipo: TipoAlerta
+  - severidad: Severidad
+  - estado: EstadoAlerta
+  - fechaGeneracion: LocalDateTime
+  - fechaCierre: LocalDateTime
+  - mensaje: String
+  + generar(): void
+  + confirmar(idUsuario: UUID): void
+  + escalar(): void
+  + cerrar(accion: String): void
+}
+
+enum TipoAlerta <<enum>> {
+  TEMPERATURA_ALTA
+  TEMPERATURA_BAJA
+  HUMEDAD_ALTA
+  HUMEDAD_BAJA
+  DESCONEXION_SENSOR
+  FALLA_HARDWARE
+}
+
+enum Severidad <<enum>> {
+  BAJA
+  MEDIA
+  ALTA
+  CRITICA
+}
+
+enum EstadoAlerta <<enum>> {
+  ACTIVA
+  CONFIRMADA
+  EN_ATENCION
+  CERRADA
+}
+
+class Incidencia {
+  - idIncidencia: UUID
+  - idAlerta: UUID
+  - descripcion: String
+  - accionTomada: String
+  - idResponsable: UUID
+  - fechaAccion: LocalDateTime
+  + registrar(): void
+  + cerrar(): void
+}
+
+' Canales de notificacion (similar a la interfaz Alerta de Ecomind)
+interface CanalNotificacion <<interfaz>> {
+  + enviar(destinatario: String, mensaje: String): boolean
+  + obtenerNombre(): String
+}
+
+class CanalEmail {
+  + enviar(destinatario: String, mensaje: String): boolean
+  + obtenerNombre(): String
+}
+
+class CanalPush {
+  + enviar(destinatario: String, mensaje: String): boolean
+  + obtenerNombre(): String
+}
+
+class CanalWhatsApp {
+  + enviar(destinatario: String, mensaje: String): boolean
+  + obtenerNombre(): String
+}
+
+class Notificacion {
+  - destinatario: String
+  - canal: String
+  - mensaje: String
+  - fechaEnvio: LocalDateTime
+  - entregada: boolean
+}
+
+Alerta "1" o-- "*" Incidencia
+Alerta "1" o-- "*" Notificacion
+Alerta ..> TipoAlerta
+Alerta ..> Severidad
+Alerta ..> EstadoAlerta
+ReglaAlerta ..> TipoAlerta
+ReglaAlerta ..> Severidad
+ReglaAlerta ..> Alerta : "genera"
+CanalEmail ..|> CanalNotificacion
+CanalPush ..|> CanalNotificacion
+CanalWhatsApp ..|> CanalNotificacion
+
+' Contexto de reportes
+
+abstract class Reporte {
+  # idReporte: UUID
+  # idOrganizacion: UUID
+  # idUsuarioGenerador: UUID
+  # nombre: String
+  # tipo: TipoReporte
+  # fechaGeneracion: LocalDateTime
+  # rangoDesde: LocalDateTime
+  # rangoHasta: LocalDateTime
+  # formato: FormatoExportacion
+  + {abstract} generar(): void
+  + exportar(): byte[]
+}
+
+class ReporteHistorico {
+  - idsActivos: List<UUID>
+  - mediciones: List<Medicion>
+  + calcularPromedio(): double
+  + detectarDesviaciones(): List<Medicion>
+  + generar(): void
+}
+
+class ReporteBitacora {
+  - incidencias: List<Incidencia>
+  + agregarIncidencia(i: Incidencia): void
+  + generar(): void
+}
+
+class ReporteCumplimiento {
+  - criterios: List<String>
+  - resultado: EstadoCumplimiento
+  + evaluarCumplimiento(): EstadoCumplimiento
+  + generar(): void
+}
+
+class Dashboard {
+  - idDashboard: UUID
+  - idOrganizacion: UUID
+  - idUsuario: UUID
+  - nombre: String
+  + agregarWidget(w: Widget): void
+  + actualizar(): void
+}
+
+class Widget {
+  - tipo: String
+  - titulo: String
+  - configuracion: Map<String, Object>
+}
+
+enum FormatoExportacion <<enum>> {
+  PDF
+  CSV
+  EXCEL
+}
+
+enum TipoReporte <<enum>> {
+  HISTORICO
+  BITACORA
+  CUMPLIMIENTO
+  DASHBOARD
+}
+
+Reporte <|-- ReporteHistorico
+Reporte <|-- ReporteBitacora
+Reporte <|-- ReporteCumplimiento
+Reporte ..> FormatoExportacion
+Reporte ..> TipoReporte
+Dashboard "1" o-- "*" Widget
+
+' Contexto de auditoría
+
+class Auditoria {
+  - idAuditoria: UUID
+  - idOrganizacion: UUID
+  - idAuditor: UUID
+  - tipo: TipoAuditoria
+  - fechaInicio: LocalDate
+  - fechaFin: LocalDate
+  - estado: EstadoAuditoria
+  - resultado: EstadoCumplimiento
+  + iniciar(): void
+  + validarCumplimiento(): EstadoCumplimiento
+  + cerrar(): void
+}
+
+class Evidencia {
+  - idEvidencia: UUID
+  - idAuditoria: UUID
+  - idReporte: UUID
+  - tipo: String
+  - ruta: String
+  - fechaCaptura: LocalDateTime
+  + adjuntar(): void
+  + exportar(): byte[]
+}
+
+class CriterioCumplimiento {
+  - idCriterio: UUID
+  - norma: String
+  - descripcion: String
+  - resultado: EstadoCumplimiento
+  + evaluar(): EstadoCumplimiento
+}
+
+enum TipoAuditoria <<enum>> {
+  INTERNA
+  DIGESA
+  MINSA
+}
+
+enum EstadoAuditoria <<enum>> {
+  PLANIFICADA
+  EN_CURSO
+  CERRADA
+}
+
+enum EstadoCumplimiento <<enum>> {
+  CONFORME
+  NO_CONFORME
+  PARCIAL
+  PENDIENTE
+}
+
+Auditoria "1" o-- "*" Evidencia
+Auditoria "1" o-- "*" CriterioCumplimiento
+Auditoria ..> TipoAuditoria
+Auditoria ..> EstadoAuditoria
+Auditoria ..> EstadoCumplimiento
+
+' Relaciones entre contextos
+
+' Autenticacion  <-->  Gestion de Sensores
+Organizacion "1" o-- "*" Activo
+Organizacion "1" o-- "*" Gateway
+Usuario "1" --> "*" Activo
+
+' Gestion de Sensores  -->  Monitoreo
+Sensor "1" o-- "*" Medicion
+LecturaTemperatura ..> RangoTemperatura
+LecturaHumedad ..> RangoHumedad
+
+' Monitoreo  -->  Alertas  (via ReglaAlerta)
+ReglaAlerta ..> Medicion
+Alerta "*" --> "1" Medicion
+
+' Gestion de Sensores  <--  Alertas
+Alerta "*" --> "1" Activo
+Alerta "*" --> "1" Sensor
+ReglaAlerta "*" --> "1" Sensor
+
+' Autenticacion  <--  Alertas
+Incidencia "*" --> "1" Usuario
+Alerta "*" --> "0..1" Usuario
+PreferenciaNotificacion ..> CanalNotificacion
+
+' Monitoreo  <--  Reportes
+ReporteHistorico "*" o-- "*" Medicion
+
+' Alertas  <--  Reportes
+ReporteBitacora "*" o-- "*" Incidencia
+
+' Autenticacion  <--  Reportes
+Reporte "*" --> "1" Usuario
+Reporte "*" --> "1" Organizacion
+Dashboard "*" --> "1" Usuario
+Dashboard "*" --> "1" Organizacion
+
+' Reportes  <--  Auditoria
+Evidencia "*" --> "1" Reporte
+Auditoria "*" ..> "*" ReporteCumplimiento
+
+' Autenticacion  <--  Auditoria
+Auditoria "*" --> "1" Usuario
+Auditoria "*" --> "1" Organizacion
+
+@enduml

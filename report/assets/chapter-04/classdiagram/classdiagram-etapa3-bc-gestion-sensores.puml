@@ -1,0 +1,151 @@
+@startuml ColdTrace-Stage3-BC-Gestion-Sensores
+
+title Etapa 3 - BC Gestion de Sensores
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+
+package "BC Gestion de Sensores" #FADBD8 {
+
+  class Activo <<Aggregate>> #FADBD8 {
+    - idActivo: UUID
+    - idOrganizacion: UUID
+    - nombre: String
+    - descripcion: String
+    - tipo: TipoActivo
+    - estado: EstadoActivo
+    + registrar(): void
+    + asignarSensor(s: Sensor): void
+    + desvincularSensor(id: UUID): void
+    + actualizarUbicacion(u: Ubicacion): void
+  }
+
+  class Gateway <<Aggregate>> #FADBD8 {
+    - idGateway: UUID
+    - idOrganizacion: UUID
+    - modelo: String
+    - ip: String
+    - protocolo: String
+    - estado: EstadoGateway
+    + conectar(): void
+    + desconectar(): void
+    + registrarSensor(s: Sensor): void
+  }
+
+  class Sensor <<Entity>> {
+    - idSensor: UUID
+    - idActivo: UUID
+    - idGateway: UUID
+    - modelo: String
+    - tipo: TipoSensor
+    - frecuenciaLecturaSeg: int
+    - estado: EstadoSensor
+    + configurarRangoTemperatura(r: RangoTemperatura): void
+    + configurarRangoHumedad(r: RangoHumedad): void
+    + configurarFrecuencia(segundos: int): void
+    + activar(): void
+    + desactivar(): void
+  }
+
+  class Ubicacion <<ValueObject>> #FCF3CF {
+    - direccion: String
+    - latitud: double
+    - longitud: double
+    - esMovil: boolean
+    + distanciaA(otra: Ubicacion): double
+  }
+
+  class RangoTemperatura <<ValueObject>> #FCF3CF {
+    - minCelsius: double
+    - maxCelsius: double
+    + validar(valor: double): boolean
+  }
+
+  class RangoHumedad <<ValueObject>> #FCF3CF {
+    - minPorcentaje: double
+    - maxPorcentaje: double
+    + validar(valor: double): boolean
+  }
+
+  class OrganizacionId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  interface Constructor <<interfaz>> {
+    + conNombre(n: String): Constructor
+    + conTipo(t: TipoActivo): Constructor
+    + conUbicacion(u: Ubicacion): Constructor
+    + agregarSensor(s: Sensor): Constructor
+    + construir(): Activo
+  }
+
+  class ActivoBuilder <<Entity>> {
+    - nombre: String
+    - tipo: TipoActivo
+    - ubicacion: Ubicacion
+    - sensores: List<Sensor>
+    + conNombre(n: String): Constructor
+    + conTipo(t: TipoActivo): Constructor
+    + conUbicacion(u: Ubicacion): Constructor
+    + agregarSensor(s: Sensor): Constructor
+    + construir(): Activo
+  }
+
+  class ActivoDirector <<Entity>> {
+    - builder: Constructor
+    + setBuilder(b: Constructor): void
+    + construirCamaraFrigorifica(nombre: String, u: Ubicacion): Activo
+    + construirAlmacen(nombre: String, u: Ubicacion): Activo
+    + construirUnidadTransporte(nombre: String, u: Ubicacion): Activo
+  }
+
+  enum TipoActivo <<enum>> {
+    CAMARA_FRIGORIFICA
+    ALMACEN_REFRIGERADO
+    UNIDAD_TRANSPORTE
+    VITRINA
+  }
+
+  enum EstadoActivo <<enum>> {
+    OPERATIVO
+    INACTIVO
+    EN_MANTENIMIENTO
+  }
+
+  enum TipoSensor <<enum>> {
+    TEMPERATURA
+    HUMEDAD
+    TEMPERATURA_HUMEDAD
+  }
+
+  enum EstadoSensor <<enum>> {
+    ACTIVO
+    DESCONECTADO
+    CALIBRANDO
+    FALLA
+  }
+
+  enum EstadoGateway <<enum>> {
+    CONECTADO
+    DESCONECTADO
+  }
+
+  Activo "1" *-- "1" Ubicacion
+  Activo "1" o-- "*" Sensor
+  Gateway "1" o-- "*" Sensor
+  Sensor "1" o-- "0..1" RangoTemperatura
+  Sensor "1" o-- "0..1" RangoHumedad
+  Activo ..> OrganizacionId
+  Gateway ..> OrganizacionId
+  Activo ..> TipoActivo
+  Activo ..> EstadoActivo
+  Sensor ..> TipoSensor
+  Sensor ..> EstadoSensor
+  Gateway ..> EstadoGateway
+  ActivoBuilder ..|> Constructor
+  ActivoDirector o-- Constructor
+}
+
+@enduml

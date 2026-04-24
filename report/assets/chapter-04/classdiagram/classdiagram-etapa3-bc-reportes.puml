@@ -1,0 +1,100 @@
+@startuml ColdTrace-Stage3-BC-Reportes
+
+title Etapa 3 - BC Reportes
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+
+package "BC Reportes" #E8DAEF {
+
+  abstract class Reporte <<Aggregate>> #FADBD8 {
+    # idReporte: UUID
+    # idOrganizacion: UUID
+    # idUsuarioGenerador: UUID
+    # nombre: String
+    # tipo: TipoReporte
+    # fechaGeneracion: LocalDateTime
+    # rangoDesde: LocalDateTime
+    # rangoHasta: LocalDateTime
+    # formato: FormatoExportacion
+    + {abstract} generar(): void
+    + exportar(): byte[]
+  }
+
+  class Dashboard <<Aggregate>> #FADBD8 {
+    - idDashboard: UUID
+    - idOrganizacion: UUID
+    - idUsuario: UUID
+    - nombre: String
+    + agregarWidget(w: Widget): void
+    + actualizar(): void
+  }
+
+  class ReporteHistorico <<Entity>> {
+    - idsActivos: List<UUID>
+    - mediciones: List<Medicion>
+    + calcularPromedio(): double
+    + detectarDesviaciones(): List<Medicion>
+    + generar(): void
+  }
+
+  class ReporteBitacora <<Entity>> {
+    - incidencias: List<Incidencia>
+    + agregarIncidencia(i: Incidencia): void
+    + generar(): void
+  }
+
+  class ReporteCumplimiento <<Entity>> {
+    - criterios: List<String>
+    - resultado: EstadoCumplimiento
+    + evaluarCumplimiento(): EstadoCumplimiento
+    + generar(): void
+  }
+
+  class Widget <<Entity>> {
+    - tipo: String
+    - titulo: String
+    - configuracion: Map<String, Object>
+  }
+
+  class UsuarioId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class OrganizacionId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class MedicionId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  enum TipoReporte <<enum>> {
+    HISTORICO
+    BITACORA
+    CUMPLIMIENTO
+    DASHBOARD
+  }
+
+  enum FormatoExportacion <<enum>> {
+    PDF
+    CSV
+    EXCEL
+  }
+
+  Reporte <|-- ReporteHistorico
+  Reporte <|-- ReporteBitacora
+  Reporte <|-- ReporteCumplimiento
+  Reporte ..> UsuarioId
+  Reporte ..> OrganizacionId
+  Reporte ..> TipoReporte
+  Reporte ..> FormatoExportacion
+  ReporteHistorico ..> MedicionId
+  Dashboard "1" o-- "*" Widget
+  Dashboard ..> UsuarioId
+  Dashboard ..> OrganizacionId
+}
+
+@enduml

@@ -1,0 +1,52 @@
+@startuml ColdTrace-Stage3-BC-Monitoreo
+
+title Etapa 3 - BC Monitoreo
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+
+package "BC Monitoreo" #D5F5E3 {
+
+  abstract class Medicion <<Aggregate>> #FADBD8 {
+    # idMedicion: UUID
+    # idSensor: UUID
+    # timestamp: LocalDateTime
+    # valor: double
+    # unidad: String
+    + {abstract} obtenerTipo(): TipoSensor
+    + obtenerEstado(): EstadoMedicion
+  }
+
+  class LecturaTemperatura <<Entity>> {
+    - valorCelsius: double
+    + convertirAFahrenheit(): double
+    + validarContra(r: RangoTemperatura): boolean
+    + obtenerTipo(): TipoSensor
+  }
+
+  class LecturaHumedad <<Entity>> {
+    - valorPorcentaje: double
+    + esAmbienteSeco(): boolean
+    + validarContra(r: RangoHumedad): boolean
+    + obtenerTipo(): TipoSensor
+  }
+
+  class SensorId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  enum EstadoMedicion <<enum>> {
+    NORMAL
+    ADVERTENCIA
+    CRITICA
+  }
+
+  Medicion <|-- LecturaTemperatura
+  Medicion <|-- LecturaHumedad
+  Medicion ..> SensorId
+  Medicion ..> EstadoMedicion
+}
+
+@enduml

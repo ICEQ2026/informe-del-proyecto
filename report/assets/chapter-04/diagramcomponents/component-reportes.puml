@@ -1,0 +1,56 @@
+@startuml ColdTrace-Component-Reportes
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component View - ColdTrace - Reportes Bounded Context
+caption Componentes del BC Reportes alineados con EP006
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+' Entradas y actores externos
+Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+
+Container_Ext(monitor_bc, "Monitoreo Bounded Context", "Spring Boot", "Provee mediciones historicas de temperatura y humedad")
+Container_Ext(alerts_bc, "Alertas Bounded Context", "Spring Boot", "Provee incidencias y bitacora de alertas")
+
+Person_Ext(auditor, "Auditor Sanitario (DIGESA / MINSA)", "Recibe reportes exportados [EP006, BC Auditoria]")
+
+' Componentes del contexto de reportes
+Container_Boundary(reports, "Reportes Bounded Context") {
+
+    Component(rep_ctrl, "Reportes Controller", "Controller", "Controlador de dashboards, historial, bitacoras y exportacion de reportes [EP006]")
+
+    Component(rep_monitor_facade, "Reportes Monitoreo Context Facade", "ContextFacade", "Recibe mediciones historicas desde el BC Monitoreo")
+
+    Component(rep_alerts_facade, "Reportes Alertas Context Facade", "ContextFacade", "Recibe incidencias y bitacora desde el BC Alertas")
+
+    Component(rep_cmd, "Reportes Command Service", "Service", "Recibe comandos de generacion, programacion y exportacion de reportes")
+
+    Component(rep_query, "Reportes Query Service", "Service", "Recibe consultas de dashboards, historial, bitacoras y reportes generados")
+
+    Component(rep_repo, "Reportes Repositorio", "Repository", "Repositorio de reportes generados, bitacoras y descargas historicas")
+
+    Component(rep_export_ext, "Reportes Export External Service", "ExternalService", "Reenvia reportes exportables en formato PDF y CSV al auditor")
+}
+
+ContainerDb(db_reports, "DB Reportes", "PostgreSQL", "Reportes generados, bitacoras y descargas historicas")
+
+' Relaciones principales
+Rel(gateway, rep_ctrl, "Redirige a reportes")
+
+Rel(monitor_bc, rep_monitor_facade, "Provee mediciones historicas")
+Rel(alerts_bc, rep_alerts_facade, "Provee incidencias y bitacora")
+Rel(rep_monitor_facade, rep_query, "Entrega mediciones para reportes")
+Rel(rep_alerts_facade, rep_query, "Entrega incidencias para bitacora")
+
+Rel(rep_ctrl, rep_cmd, "Envia comandos")
+Rel(rep_ctrl, rep_query, "Envia consultas")
+
+Rel(rep_cmd, rep_repo, "Llamada a repositorio")
+Rel(rep_query, rep_repo, "Llamada a repositorio")
+Rel(rep_repo, db_reports, "Lee / Escribe", "JDBC")
+
+Rel(rep_cmd, rep_export_ext, "Exporta reporte")
+Rel(rep_export_ext, auditor, "Entrega reporte", "PDF / CSV")
+
+@enduml

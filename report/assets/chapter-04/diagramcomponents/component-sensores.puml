@@ -1,0 +1,52 @@
+@startuml ColdTrace-Component-Sensores
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component View - ColdTrace - Gestion de Sensores Bounded Context
+caption Componentes del BC Gestion de Sensores alineados con EP003 y EP007
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+' Entradas y contextos externos
+Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+
+Container_Ext(auth_bc, "Autenticacion Bounded Context", "Spring Boot", "Valida sesion, roles y permisos antes de permitir cambios en activos y sensores")
+
+Container_Ext(monitor_bc, "Monitoreo Bounded Context", "Spring Boot", "Consume rangos y configuracion para validar lecturas en tiempo real")
+
+' Componentes del contexto de gestión de sensores
+Container_Boundary(sensors, "Gestion de Sensores Bounded Context") {
+
+    Component(sen_ctrl, "Sensores Controller", "Controller", "Controlador de registro de activos, sensores, gateways y configuracion de rangos [EP003, EP007]")
+
+    Component(sen_auth_facade, "Sensores Auth Context Facade", "ContextFacade", "Recibe validacion de sesion y permisos desde el BC Autenticacion")
+
+    Component(sen_cmd, "Sensores Command Service", "Service", "Recibe comandos de registro, actualizacion y eliminacion de activos, sensores, gateways y rangos")
+
+    Component(sen_query, "Sensores Query Service", "Service", "Recibe consultas de activos, sensores, gateways y configuraciones registradas")
+
+    Component(sen_repo, "Sensores Repositorio", "Repository", "Repositorio de activos, sensores, gateways, rangos y configuraciones")
+
+    Component(sen_monitor_ext, "Sensores Monitoreo External Service", "ExternalService", "Publica cambios de rangos y configuraciones hacia el BC Monitoreo")
+}
+
+ContainerDb(db_sensors, "DB Sensores", "PostgreSQL", "Activos, sensores, gateways, rangos y configuraciones")
+
+' Relaciones principales
+Rel(gateway, sen_ctrl, "Redirige a gestion de sensores")
+
+Rel(auth_bc, sen_auth_facade, "Valida sesion y permisos")
+Rel(sen_auth_facade, sen_cmd, "Autoriza comandos")
+Rel(sen_auth_facade, sen_query, "Autoriza consultas")
+
+Rel(sen_ctrl, sen_cmd, "Envia comandos")
+Rel(sen_ctrl, sen_query, "Envia consultas")
+
+Rel(sen_cmd, sen_repo, "Llamada a repositorio")
+Rel(sen_query, sen_repo, "Llamada a repositorio")
+Rel(sen_repo, db_sensors, "Lee / Escribe", "JDBC")
+
+Rel(sen_cmd, sen_monitor_ext, "Notifica cambio de rangos")
+Rel(sen_monitor_ext, monitor_bc, "Envia nuevos rangos y configuraciones")
+
+@enduml

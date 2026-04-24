@@ -1,0 +1,599 @@
+@startuml ColdTrace-ClassDiagram-Stage3-VO-Entity-Aggregate
+
+title Etapa 3: Identificacion de Value Object, Entity y Aggregate - ColdTrace
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 50
+skinparam ranksep 60
+skinparam packageStyle rectangle
+
+' Contexto de autenticación
+package "BC Autenticacion" #D6EAF8 {
+
+  class Usuario <<Aggregate>> #FADBD8 {
+    - id: UUID
+    - idOrganizacion: UUID
+    - email: String
+    - nombreUsuario: String
+    - passwordHash: String
+    - estado: EstadoUsuario
+    - fechaCreacion: LocalDateTime
+    - fechaVerificacion: LocalDateTime
+    + registrar(): void
+    + verificarCuenta(token: String): boolean
+    + iniciarSesion(pwd: String): Sesion
+    + cerrarSesion(): void
+    + solicitarRecuperacion(): void
+    + asignarRol(rol: Rol): void
+  }
+
+  class Organizacion <<Aggregate>> #FADBD8 {
+    - idOrganizacion: UUID
+    - razonSocial: String
+    - ruc: String
+    - direccion: String
+    + agregarUsuario(u: Usuario): void
+    + eliminarUsuario(id: UUID): void
+  }
+
+  class Sesion <<Entity>> {
+    - idSesion: UUID
+    - token: String
+    - creadaEn: LocalDateTime
+    - expiraEn: LocalDateTime
+    + estaVigente(): boolean
+    + invalidar(): void
+  }
+
+  class Rol <<Entity>> {
+    - idRol: UUID
+    - nombre: String
+    - descripcion: String
+  }
+
+  class Suscripcion <<Entity>> {
+    - idSuscripcion: UUID
+    - plan: String
+    - estado: EstadoSuscripcion
+    - fechaInicio: LocalDate
+    - fechaFin: LocalDate
+    + estaVigente(): boolean
+    + renovar(): void
+    + cancelar(): void
+  }
+
+  class Permiso <<ValueObject>> #FCF3CF {
+    - nombre: String
+    - recurso: String
+    - accion: String
+  }
+
+  class PreferenciaNotificacion <<ValueObject>> #FCF3CF {
+    - canalesHabilitados: Set<String>
+    - horarioInicio: LocalTime
+    - horarioFin: LocalTime
+    - severidadMinima: Severidad
+    + aceptaCanal(canal: String): boolean
+  }
+
+  enum EstadoUsuario <<enum>> {
+    PENDIENTE_VERIFICACION
+    ACTIVO
+    SUSPENDIDO
+    ELIMINADO
+  }
+
+  enum EstadoSuscripcion <<enum>> {
+    ACTIVA
+    VENCIDA
+    CANCELADA
+    EN_PRUEBA
+  }
+
+  class UsuarioRepository {
+    + buscarPorNombreUsuario(nombre: String): Optional<Usuario>
+    + buscarPorEmail(email: String): Optional<Usuario>
+    + obtenerCredencial(id: UUID): Optional<String>
+    + guardarSesion(s: Sesion): void
+    + invalidarSesion(id: UUID): void
+    + guardar(u: Usuario): void
+  }
+
+  Usuario "1" o-- "*" Sesion
+  Usuario "*" -- "*" Rol
+  Rol "*" o-- "*" Permiso
+  Organizacion "1" *-- "1" Suscripcion
+  Organizacion "1" o-- "*" Usuario
+  Usuario "1" *-- "1" PreferenciaNotificacion
+  Usuario ..> EstadoUsuario
+  Suscripcion ..> EstadoSuscripcion
+  UsuarioRepository ..> Usuario
+}
+
+' Contexto de gestión de sensores
+package "BC Gestion de Sensores" #FADBD8 {
+
+  class Activo <<Aggregate>> #FADBD8 {
+    - idActivo: UUID
+    - idOrganizacion: UUID
+    - nombre: String
+    - descripcion: String
+    - tipo: TipoActivo
+    - estado: EstadoActivo
+    + registrar(): void
+    + asignarSensor(s: Sensor): void
+    + desvincularSensor(id: UUID): void
+    + actualizarUbicacion(u: Ubicacion): void
+  }
+
+  class Gateway <<Aggregate>> #FADBD8 {
+    - idGateway: UUID
+    - idOrganizacion: UUID
+    - modelo: String
+    - ip: String
+    - protocolo: String
+    - estado: EstadoGateway
+    + conectar(): void
+    + desconectar(): void
+    + registrarSensor(s: Sensor): void
+  }
+
+  class Sensor <<Entity>> {
+    - idSensor: UUID
+    - idActivo: UUID
+    - idGateway: UUID
+    - modelo: String
+    - tipo: TipoSensor
+    - frecuenciaLecturaSeg: int
+    - estado: EstadoSensor
+    + configurarRangoTemperatura(r: RangoTemperatura): void
+    + configurarRangoHumedad(r: RangoHumedad): void
+    + configurarFrecuencia(segundos: int): void
+    + activar(): void
+    + desactivar(): void
+  }
+
+  class Ubicacion <<ValueObject>> #FCF3CF {
+    - direccion: String
+    - latitud: double
+    - longitud: double
+    - esMovil: boolean
+    + distanciaA(otra: Ubicacion): double
+  }
+
+  class RangoTemperatura <<ValueObject>> #FCF3CF {
+    - minCelsius: double
+    - maxCelsius: double
+    + validar(valor: double): boolean
+  }
+
+  class RangoHumedad <<ValueObject>> #FCF3CF {
+    - minPorcentaje: double
+    - maxPorcentaje: double
+    + validar(valor: double): boolean
+  }
+
+  class OrganizacionId_GS <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  interface Constructor <<interfaz>> {
+    + conNombre(n: String): Constructor
+    + conTipo(t: TipoActivo): Constructor
+    + conUbicacion(u: Ubicacion): Constructor
+    + agregarSensor(s: Sensor): Constructor
+    + construir(): Activo
+  }
+
+  class ActivoBuilder <<Entity>> {
+    - nombre: String
+    - tipo: TipoActivo
+    - ubicacion: Ubicacion
+    - sensores: List<Sensor>
+    + conNombre(n: String): Constructor
+    + conTipo(t: TipoActivo): Constructor
+    + conUbicacion(u: Ubicacion): Constructor
+    + agregarSensor(s: Sensor): Constructor
+    + construir(): Activo
+  }
+
+  class ActivoDirector <<Entity>> {
+    - builder: Constructor
+    + setBuilder(b: Constructor): void
+    + construirCamaraFrigorifica(nombre: String, u: Ubicacion): Activo
+    + construirAlmacen(nombre: String, u: Ubicacion): Activo
+    + construirUnidadTransporte(nombre: String, u: Ubicacion): Activo
+  }
+
+  enum TipoActivo <<enum>> {
+    CAMARA_FRIGORIFICA
+    ALMACEN_REFRIGERADO
+    UNIDAD_TRANSPORTE
+    VITRINA
+  }
+
+  enum EstadoActivo <<enum>> {
+    OPERATIVO
+    INACTIVO
+    EN_MANTENIMIENTO
+  }
+
+  enum TipoSensor <<enum>> {
+    TEMPERATURA
+    HUMEDAD
+    TEMPERATURA_HUMEDAD
+  }
+
+  enum EstadoSensor <<enum>> {
+    ACTIVO
+    DESCONECTADO
+    CALIBRANDO
+    FALLA
+  }
+
+  enum EstadoGateway <<enum>> {
+    CONECTADO
+    DESCONECTADO
+  }
+
+  Activo "1" *-- "1" Ubicacion
+  Activo "1" o-- "*" Sensor
+  Gateway "1" o-- "*" Sensor
+  Sensor "1" o-- "0..1" RangoTemperatura
+  Sensor "1" o-- "0..1" RangoHumedad
+  Activo ..> OrganizacionId_GS
+  Gateway ..> OrganizacionId_GS
+  Activo ..> TipoActivo
+  Activo ..> EstadoActivo
+  Sensor ..> TipoSensor
+  Sensor ..> EstadoSensor
+  Gateway ..> EstadoGateway
+  ActivoBuilder ..|> Constructor
+  ActivoDirector o-- Constructor
+}
+
+' Contexto de monitoreo
+package "BC Monitoreo" #D5F5E3 {
+
+  abstract class Medicion <<Aggregate>> #FADBD8 {
+    # idMedicion: UUID
+    # idSensor: UUID
+    # timestamp: LocalDateTime
+    # valor: double
+    # unidad: String
+    + {abstract} obtenerTipo(): TipoSensor
+    + obtenerEstado(): EstadoMedicion
+  }
+
+  class LecturaTemperatura <<Entity>> {
+    - valorCelsius: double
+    + convertirAFahrenheit(): double
+    + validarContra(r: RangoTemperatura): boolean
+    + obtenerTipo(): TipoSensor
+  }
+
+  class LecturaHumedad <<Entity>> {
+    - valorPorcentaje: double
+    + esAmbienteSeco(): boolean
+    + validarContra(r: RangoHumedad): boolean
+    + obtenerTipo(): TipoSensor
+  }
+
+  class SensorId_Mon <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  enum EstadoMedicion <<enum>> {
+    NORMAL
+    ADVERTENCIA
+    CRITICA
+  }
+
+  Medicion <|-- LecturaTemperatura
+  Medicion <|-- LecturaHumedad
+  Medicion ..> SensorId_Mon
+  Medicion ..> EstadoMedicion
+}
+
+' Contexto de alertas
+package "BC Alertas" #FCF3CF {
+
+  class Alerta <<Aggregate>> #FADBD8 {
+    - idAlerta: UUID
+    - idOrganizacion: UUID
+    - idRegla: UUID
+    - idSensor: UUID
+    - idActivo: UUID
+    - idMedicion: UUID
+    - tipo: TipoAlerta
+    - severidad: Severidad
+    - estado: EstadoAlerta
+    - fechaGeneracion: LocalDateTime
+    - fechaCierre: LocalDateTime
+    - mensaje: String
+    + generar(): void
+    + confirmar(idUsuario: UUID): void
+    + escalar(): void
+    + cerrar(accion: String): void
+  }
+
+  class ReglaAlerta <<Aggregate>> #FADBD8 {
+    - idRegla: UUID
+    - idSensor: UUID
+    - tipo: TipoAlerta
+    - umbralValor: double
+    - duracionMinSeg: int
+    - severidad: Severidad
+    - activa: boolean
+    + evaluar(m: Medicion): boolean
+    + generarAlerta(m: Medicion): Alerta
+    + activar(): void
+    + desactivar(): void
+  }
+
+  class Incidencia <<Entity>> {
+    - idIncidencia: UUID
+    - idAlerta: UUID
+    - descripcion: String
+    - accionTomada: String
+    - idResponsable: UUID
+    - fechaAccion: LocalDateTime
+    + registrar(): void
+    + cerrar(): void
+  }
+
+  class Notificacion <<Entity>> {
+    - destinatario: String
+    - canal: String
+    - mensaje: String
+    - fechaEnvio: LocalDateTime
+    - entregada: boolean
+  }
+
+  class CanalEmail <<Entity>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  class CanalPush <<Entity>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  class CanalWhatsApp <<Entity>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  class SensorId_Ale <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class ActivoId_Ale <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class MedicionId_Ale <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class UsuarioId_Ale <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  interface CanalNotificacion <<interfaz>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  enum TipoAlerta <<enum>> {
+    TEMPERATURA_ALTA
+    TEMPERATURA_BAJA
+    HUMEDAD_ALTA
+    HUMEDAD_BAJA
+    DESCONEXION_SENSOR
+    FALLA_HARDWARE
+  }
+
+  enum Severidad <<enum>> {
+    BAJA
+    MEDIA
+    ALTA
+    CRITICA
+  }
+
+  enum EstadoAlerta <<enum>> {
+    ACTIVA
+    CONFIRMADA
+    EN_ATENCION
+    CERRADA
+  }
+
+  Alerta "1" o-- "*" Incidencia
+  Alerta "1" o-- "*" Notificacion
+  Alerta ..> SensorId_Ale
+  Alerta ..> ActivoId_Ale
+  Alerta ..> MedicionId_Ale
+  Alerta ..> UsuarioId_Ale
+  Alerta ..> TipoAlerta
+  Alerta ..> Severidad
+  Alerta ..> EstadoAlerta
+  ReglaAlerta ..> SensorId_Ale
+  ReglaAlerta ..> TipoAlerta
+  ReglaAlerta ..> Severidad
+  ReglaAlerta ..> Alerta : "genera"
+  Incidencia ..> UsuarioId_Ale
+  CanalEmail ..|> CanalNotificacion
+  CanalPush ..|> CanalNotificacion
+  CanalWhatsApp ..|> CanalNotificacion
+}
+
+' Contexto de reportes
+package "BC Reportes" #E8DAEF {
+
+  abstract class Reporte <<Aggregate>> #FADBD8 {
+    # idReporte: UUID
+    # idOrganizacion: UUID
+    # idUsuarioGenerador: UUID
+    # nombre: String
+    # tipo: TipoReporte
+    # fechaGeneracion: LocalDateTime
+    # rangoDesde: LocalDateTime
+    # rangoHasta: LocalDateTime
+    # formato: FormatoExportacion
+    + {abstract} generar(): void
+    + exportar(): byte[]
+  }
+
+  class Dashboard <<Aggregate>> #FADBD8 {
+    - idDashboard: UUID
+    - idOrganizacion: UUID
+    - idUsuario: UUID
+    - nombre: String
+    + agregarWidget(w: Widget): void
+    + actualizar(): void
+  }
+
+  class ReporteHistorico <<Entity>> {
+    - idsActivos: List<UUID>
+    - mediciones: List<Medicion>
+    + calcularPromedio(): double
+    + detectarDesviaciones(): List<Medicion>
+    + generar(): void
+  }
+
+  class ReporteBitacora <<Entity>> {
+    - incidencias: List<Incidencia>
+    + agregarIncidencia(i: Incidencia): void
+    + generar(): void
+  }
+
+  class ReporteCumplimiento <<Entity>> {
+    - criterios: List<String>
+    - resultado: EstadoCumplimiento
+    + evaluarCumplimiento(): EstadoCumplimiento
+    + generar(): void
+  }
+
+  class Widget <<Entity>> {
+    - tipo: String
+    - titulo: String
+    - configuracion: Map<String, Object>
+  }
+
+  class UsuarioId_Rep <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class OrganizacionId_Rep <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class MedicionId_Rep <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  enum TipoReporte <<enum>> {
+    HISTORICO
+    BITACORA
+    CUMPLIMIENTO
+    DASHBOARD
+  }
+
+  enum FormatoExportacion <<enum>> {
+    PDF
+    CSV
+    EXCEL
+  }
+
+  Reporte <|-- ReporteHistorico
+  Reporte <|-- ReporteBitacora
+  Reporte <|-- ReporteCumplimiento
+  Reporte ..> UsuarioId_Rep
+  Reporte ..> OrganizacionId_Rep
+  Reporte ..> TipoReporte
+  Reporte ..> FormatoExportacion
+  ReporteHistorico ..> MedicionId_Rep
+  Dashboard "1" o-- "*" Widget
+  Dashboard ..> UsuarioId_Rep
+  Dashboard ..> OrganizacionId_Rep
+}
+
+' Contexto de auditoría
+package "BC Auditoria" #FDEBD0 {
+
+  class Auditoria <<Aggregate>> #FADBD8 {
+    - idAuditoria: UUID
+    - idOrganizacion: UUID
+    - idAuditor: UUID
+    - tipo: TipoAuditoria
+    - fechaInicio: LocalDate
+    - fechaFin: LocalDate
+    - estado: EstadoAuditoria
+    - resultado: EstadoCumplimiento
+    + iniciar(): void
+    + validarCumplimiento(): EstadoCumplimiento
+    + cerrar(): void
+  }
+
+  class Evidencia <<Entity>> {
+    - idEvidencia: UUID
+    - idAuditoria: UUID
+    - idReporte: UUID
+    - tipo: String
+    - ruta: String
+    - fechaCaptura: LocalDateTime
+    + adjuntar(): void
+    + exportar(): byte[]
+  }
+
+  class CriterioCumplimiento <<Entity>> {
+    - idCriterio: UUID
+    - norma: String
+    - descripcion: String
+    - resultado: EstadoCumplimiento
+    + evaluar(): EstadoCumplimiento
+  }
+
+  class UsuarioId_Aud <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class OrganizacionId_Aud <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class ReporteId_Aud <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  enum TipoAuditoria <<enum>> {
+    INTERNA
+    DIGESA
+    MINSA
+  }
+
+  enum EstadoAuditoria <<enum>> {
+    PLANIFICADA
+    EN_CURSO
+    CERRADA
+  }
+
+  enum EstadoCumplimiento <<enum>> {
+    CONFORME
+    NO_CONFORME
+    PARCIAL
+    PENDIENTE
+  }
+
+  Auditoria "1" o-- "*" Evidencia
+  Auditoria "1" o-- "*" CriterioCumplimiento
+  Auditoria ..> UsuarioId_Aud
+  Auditoria ..> OrganizacionId_Aud
+  Evidencia ..> ReporteId_Aud
+  Auditoria ..> TipoAuditoria
+  Auditoria ..> EstadoAuditoria
+  Auditoria ..> EstadoCumplimiento
+}
+
+@enduml
