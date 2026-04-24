@@ -7,43 +7,57 @@ Un Style Guideline constituye un conjunto de normas y directrices destinadas a e
 ### 4.1.1. General Style Guidelines.
 
 **Brand Overview**  
-ColdTrace es una plataforma digital orientada al monitoreo de temperatura y humedad en la cadena de frío alimentaria. Su diseño visual busca transmitir confianza, control, precisión y simplicidad, pilares fundamentales para la gestión de productos perecibles y la toma de decisiones en tiempo real.
+ColdTrace es una plataforma digital orientada al monitoreo de temperatura y humedad en la cadena de frío alimentaria. La propuesta visual busca transmitir control, claridad y confianza, utilizando una interfaz limpia, moderna y cercana a dashboards operativos.
 
 **Brand Name**  
-El nombre "ColdTrace" combina el concepto de frío (“Cold”) con trazabilidad (“Trace”), enfatizando el seguimiento continuo de las condiciones térmicas en activos como cámaras frigoríficas, almacenes y transporte refrigerado.
+El nombre "ColdTrace" combina el concepto de frío ("Cold") con seguimiento y control ("Trace"), reforzando la idea de monitoreo continuo de condiciones térmicas en activos refrigerados.
 
 **Typography**  
-Para mantener una experiencia accesible y operativa, se usarán tipografías modernas y legibles como:
+La landing page utiliza dos tipografías principales para mantener una identidad visual clara y consistente:
 
-Headings: Montserrat Bold  
-Body text: Open Sans Regular  
-Buttons: Open Sans Semibold  
-Links: Open Sans Italic
+- `Varela Round` para títulos, encabezados y elementos de alto impacto visual.
+- `Inter` para texto general, botones, navegación y contenido operativo.
 
-**Colors:**
+**Colors**
+
+La paleta parte de una base neutra de blancos y grises suaves, combinada con un azul primario que representa tecnología, monitoreo y confianza.
 
 | **Color**            | **Código HEX** | **Significado**                              |
 |---------------------|----------------|----------------------------------------------|
-| Azul Tecnológico    | `#1A73E8`      | Confianza, monitoreo, precisión               |
-| Verde Seguro        | `#34A853`      | Estado estable, cumplimiento                  |
-| Rojo Alerta         | `#EA4335`      | Riesgo, desviación térmica                    |
-| Amarillo Preventivo | `#FBBC05`      | Advertencia, posible falla                    |
-| Blanco              | `#FFFFFF`      | Claridad, limpieza, accesibilidad             |
-| Gris Neutro         | `#E0E0E0`      | Neutralidad, información secundaria           |
-| Negro               | `#212121`      | Lectura clara                                 |
+| Azul primario       | `#1B59F8`      | Tecnología, confianza y acción principal      |
+| Azul oscuro         | `#0F3FC4`      | Hover y refuerzo visual de acciones           |
+| Verde               | `#71DD8C`      | Monitoreo estable y estados positivos         |
+| Azul claro          | `#7DBBFF`      | Datos, monitoreo y visuales informativos      |
+| Morado              | `#B899EB`      | Apoyo visual en badges y acentos secundarios  |
+| Amarillo            | `#FFCC00`      | Advertencia o énfasis                         |
+| Blanco              | `#FFFFFF`      | Limpieza y claridad visual                    |
+| Gris claro          | `#F4F5F8`      | Fondo general de secciones                    |
+| Texto principal     | `#191919`      | Lectura principal                             |
+| Texto secundario    | `#525256`      | Texto descriptivo y apoyo visual              |
+
+**Visual Style**  
+La landing mantiene un estilo visual basado en:
+
+- superficies claras y fondos neutros
+- cards con bordes redondeados y sombras suaves
+- secciones amplias con buena separación vertical
+- mockups y composiciones tipo dashboard en el hero
+- acentos cromáticos por bloque funcional, como verde para monitoreo, rojo para alertas, naranja para historial y azul para vista multisede
 
 ---
 
 ### 4.1.2. Web Style Guidelines.
 
-La plataforma será completamente responsive, adaptándose a móviles, tablets y escritorios. Se seguirá el patrón de lectura en Z para guiar la mirada del usuario desde el estado general del sistema, pasando por los activos monitoreados y terminando en las acciones críticas.
+La landing page fue construida bajo una lógica responsive, adaptándose a escritorio, tablet y móvil. La estructura visual prioriza una lectura clara del contenido, iniciando por la propuesta de valor, continuando con funcionalidades, muestra del producto, testimonios, overview y formulario final de contacto.
 
-El diseño prioriza una experiencia clara y operativa, con:
+La implementación visual considera los siguientes lineamientos:
 
-- Alto contraste visual (especialmente para alertas)
-- Uso de colores semánticos (verde, amarillo, rojo)
-- Botones claros y accesibles
-- Interfaces simples para usuarios no técnicos
+- barra de navegación fija con fondo translúcido y efecto blur
+- botones primarios y secundarios con esquinas redondeadas
+- uso de colores semánticos para reforzar monitoreo, alertas, historial y cumplimiento
+- animaciones ligeras de aparición, desplazamiento y hover
+- componentes visuales consistentes entre desktop y mobile
+- interfaz clara para usuarios no técnicos, manteniendo una imagen tecnológica y profesional
 
 ---
 
@@ -308,7 +322,13 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ## 4.5. Web Applications Prototyping.
 
-**Pendiente de completar**
+En esta sección se presenta el prototipo navegable de la aplicación web de ColdTrace, el cual permite simular la interacción del usuario con las principales vistas del sistema y validar la navegación definida previamente en los wireflows y user flows.
+
+El prototipo integra las pantallas clave del producto, como monitoreo, alertas, reportes y gestión general de la operación, manteniendo coherencia con los lineamientos visuales y funcionales definidos en las etapas anteriores del diseño.
+
+<img src="assets/chapter-04/prototyping/prototype-navigation-sprint-1.png" width="760">
+
+[Ver video demostrativo del prototipo de navegación – ColdTrace](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDF6wu_w86bRIH68kr6ehziAe9K_FC1ARRsa-i6G07RpXk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FXKoP5)
 
 ---
 ## 4.6. Domain-Driven Software Architecture.
