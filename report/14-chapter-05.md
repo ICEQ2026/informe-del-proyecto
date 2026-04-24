@@ -506,6 +506,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 ### 5.2.1.4. Development Evidence for Sprint Review.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+
   <tr>
     <th>Repository</th>
     <th>Branch</th>
@@ -514,14 +515,70 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
     <th>Commit Message Body</th>
     <th>Committed on (Date)</th>
   </tr>
+
   <tr>
-    <td>user/repositoryname</td>
-    <td>feature/loremipsum</td>
-    <td>14ca4e3</td>
-    <td>feat: consectetur adipiscing elit</td>
-    <td>Curabitur quis placerat nulla. Fusce malesuada faucibus quam, ut condimentum velit rutrum ut.</td>
-    <td>04/09/2021</td>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>main</td>
+    <td>084f1ec</td>
+    <td>Initial commit</td>
+    <td>Creación inicial del repositorio del proyecto</td>
+    <td>21/04/2026</td>
   </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/header-hero</td>
+    <td>a388ed9</td>
+    <td>feat(header-hero): add header navbar and hero section</td>
+    <td>Implementación del header, navbar y sección principal de la landing</td>
+    <td>22/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/app-features</td>
+    <td>b3ab8b8</td>
+    <td>feat(landing-page): adding app features section</td>
+    <td>Desarrollo de la sección de funcionalidades del producto</td>
+    <td>22/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/showcase-why</td>
+    <td>e440ecd</td>
+    <td>feat(landing-page): add product showcase and testimonials sections</td>
+    <td>Implementación de secciones de presentación del producto y testimonios</td>
+    <td>23/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/overview-signup</td>
+    <td>889c23a</td>
+    <td>feat(overview-signup): add pricing overview and signup form sections</td>
+    <td>Implementación de sección de precios y formulario de registro</td>
+    <td>23/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/footer</td>
+    <td>fa060dc</td>
+    <td>feat(landing-page): add site footer with brand, social links and nav columns</td>
+    <td>Desarrollo del footer con enlaces y estructura de navegación</td>
+    <td>23/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>docs/update-readme</td>
+    <td>e18ba06</td>
+    <td>docs(readme): add project overview, structure and team info</td>
+    <td>Documentación del proyecto incluyendo estructura y equipo</td>
+    <td>23/04/2026</td>
+  </tr>
+
 </table>
 
 ### 5.2.1.5. Execution Evidence for Sprint Review.
