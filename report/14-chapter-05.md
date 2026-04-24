@@ -378,19 +378,16 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
   
-  <!-- Sprint -->
   <tr>
     <th>Sprint #</th>
-    <td colspan="7">Sprint n</td>
+    <td colspan="7">Sprint 1</td>
   </tr>
 
-  <!-- Encabezados principales -->
   <tr>
     <th colspan="2">User Story</th>
     <th colspan="6">Work-Item / Task</th>
   </tr>
 
-  <!-- Subencabezados -->
   <tr>
     <th>Id</th>
     <th>Title</th>
@@ -399,40 +396,108 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
     <th>Description</th>
     <th>Estimation (Hours)</th>
     <th>Assigned To</th>
-    <th>Status (To-do / In-Process / To-Review / Done)</th>
+    <th>Status</th>
   </tr>
 
-  <!-- Filas de ejemplo -->
+  <!-- LANDING -->
   <tr>
-    <td>US-01</td>
-    <td>Lorem Ipsum</td>
+    <td>US001</td>
+    <td>Propuesta de valor</td>
     <td>T-01</td>
-    <td>Diseñar UI</td>
-    <td>Crear interfaz de login</td>
+    <td>Hero Section</td>
+    <td>Implementar header, navbar y hero section</td>
     <td>4</td>
-    <td>Arturo</td>
-    <td>To-do</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
   </tr>
 
   <tr>
-    <td>US-01</td>
-    <td>Lorem Ipsum</td>
+    <td>US002</td>
+    <td>Funcionalidades</td>
     <td>T-02</td>
-    <td>Validación backend</td>
-    <td>Implementar autenticación</td>
-    <td>6</td>
-    <td>Jorge</td>
-    <td>In-Process</td>
+    <td>Features Section</td>
+    <td>Desarrollar sección de funcionalidades del sistema</td>
+    <td>4</td>
+    <td>Frezzia Espinoza</td>
+    <td>Done</td>
   </tr>
 
   <tr>
-    <td>US-02</td>
-    <td>Lorem Ipsum</td>
+    <td>US003</td>
+    <td>Cómo funciona</td>
     <td>T-03</td>
-    <td>Formulario registro</td>
-    <td>Crear formulario</td>
+    <td>Showcase Section</td>
+    <td>Implementar secciones de producto y testimonios</td>
+    <td>3</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US004</td>
+    <td>Contacto</td>
+    <td>T-04</td>
+    <td>Signup Section</td>
+    <td>Agregar formulario de registro y pricing overview</td>
+    <td>3</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US005</td>
+    <td>Navegación</td>
+    <td>T-05</td>
+    <td>Navbar Behavior</td>
+    <td>Implementar navegación y estructura del header</td>
+    <td>3</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US006</td>
+    <td>Responsive</td>
+    <td>T-06</td>
+    <td>Responsive UI</td>
+    <td>Adaptar landing page a dispositivos móviles</td>
+    <td>4</td>
+    <td>Leonardo Cabrera</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- DASHBOARD -->
+  <tr>
+    <td>US018</td>
+    <td>Monitoreo</td>
+    <td>T-07</td>
+    <td>Dashboard UI</td>
+    <td>Simular dashboard con datos de temperatura</td>
     <td>5</td>
-    <td>Arturo</td>
+    <td>Jorge Videla</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US021</td>
+    <td>Alertas</td>
+    <td>T-08</td>
+    <td>Alerts UI</td>
+    <td>Implementar alertas visuales en la interfaz</td>
+    <td>4</td>
+    <td>Frezzia Espinoza</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- REPO -->
+  <tr>
+    <td>-</td>
+    <td>Repositorio</td>
+    <td>T-09</td>
+    <td>GitHub Setup</td>
+    <td>Configurar repositorio, ramas y estructura del proyecto</td>
+    <td>2</td>
+    <td>Leonardo Cabrera</td>
     <td>Done</td>
   </tr>
 
