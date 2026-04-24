@@ -316,28 +316,61 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
   <tr>
     <th>Team Member (Last Name, First Name)</th>
     <th>GitHub Username</th>
-    <th>Aspect Name 1<br>Leader (L) / Collaborator (C)</th>
-    <th>Aspect Name 2<br>Leader (L) / Collaborator (C)</th>
-    <th>...</th>
-    <th>Aspect Name n<br>Leader (L) / Collaborator (C)</th>
+    <th>Landing Page Development</th>
+    <th>Dashboard & Monitoring Views</th>
+    <th>Alerts Simulation</th>
+    <th>Frontend Styling (CSS & UI)</th>
+    <th>Repository & Version Control</th>
   </tr>
 
   <tr>
-    <td>Jiménez Rosas, Arturo Eduardo</td>
-    <td>ajimenezrosas</td>
-    <td>L</td>
+    <td>Cabrera Novoa, Leonardo Moisés</td>
+    <td>[u202415820]</td>
     <td>C</td>
-    <td>...</td>
-    <td></td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+    <td>L</td>
   </tr>
 
   <tr>
-    <td>Rodríguez Peña, Jorge Andrés</td>
-    <td>Japr91</td>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>[fflushh]</td>
     <td>C</td>
-    <td>C</td>
-    <td>...</td>
     <td>L</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+  </tr>
+
+  <tr>
+    <td>Morales Venegas, David Joel</td>
+    <td>[David-std2]</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+  </tr>
+
+  <tr>
+    <td>Pajés León, Mauricio Luis</td>
+    <td>[mauricio-pajes]</td>
+    <td>L</td>
+    <td>C</td>
+    <td>L</td>
+    <td>L</td>
+    <td>C</td>
+  </tr>
+
+  <tr>
+    <td>Videla Ventura, Jorge Joseph</td>
+    <td>[JorgeVidVen]</td>
+    <td>C</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
   </tr>
 </table>
 
