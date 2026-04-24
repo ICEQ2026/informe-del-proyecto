@@ -1,0 +1,50 @@
+@startuml ColdTrace-Component-Autenticacion
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component View - ColdTrace - Autenticacion Bounded Context
+caption Componentes del BC Autenticacion alineados con EP002 y US007 - US011
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+' Entradas y servicios externos
+Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+
+System_Ext(email, "Servicio de Correo Electronico", "Verificacion de cuenta [US008] y recuperacion de contrasena [US010]")
+System_Ext(pagos, "Pasarela de Pagos", "Valida y procesa suscripcion mensual SaaS [Cap. I]")
+
+' Componentes del contexto de autenticación
+Container_Boundary(auth, "Autenticacion Bounded Context") {
+
+    Component(auth_ctrl, "Autenticacion Controller", "Controller", "Controlador de registro, verificacion, login, recuperacion, cierre de sesion y gestion de usuarios [US007, US008, US009, US010, US011]")
+
+    Component(auth_cmd, "Autenticacion Command Service", "Service", "Recibe comandos de registro, verificacion, login, cierre de sesion y asignacion de roles y permisos")
+
+    Component(auth_query, "Autenticacion Query Service", "Service", "Recibe consultas de sesion, perfil, roles, permisos y validacion de suscripcion activa")
+
+    Component(auth_repo, "Autenticacion Repositorio", "Repository", "Repositorio de usuarios, roles, permisos, sesiones y suscripciones")
+
+    Component(auth_email_ext, "Auth Email External Service", "ExternalService", "Reenvia correos de verificacion y recuperacion hacia el proveedor de correo")
+
+    Component(auth_pagos_ext, "Auth Pagos External Service", "ExternalService", "Reenvia validacion y procesamiento de suscripcion hacia la pasarela de pagos")
+}
+
+ContainerDb(db_auth, "DB Autenticacion", "PostgreSQL", "Usuarios, roles, permisos, sesiones y suscripciones")
+
+' Relaciones principales
+Rel(gateway, auth_ctrl, "Redirige a autenticacion")
+
+Rel(auth_ctrl, auth_cmd, "Envia comandos")
+Rel(auth_ctrl, auth_query, "Envia consultas")
+
+Rel(auth_cmd, auth_repo, "Llamada a repositorio")
+Rel(auth_query, auth_repo, "Llamada a repositorio")
+Rel(auth_repo, db_auth, "Lee / Escribe", "JDBC")
+
+Rel(auth_cmd, auth_email_ext, "Solicita envio de correo")
+Rel(auth_cmd, auth_pagos_ext, "Solicita validacion de suscripcion")
+
+Rel(auth_email_ext, email, "Envia correo", "SMTP / REST")
+Rel(auth_pagos_ext, pagos, "Procesa suscripcion", "REST / HTTPS")
+
+@enduml

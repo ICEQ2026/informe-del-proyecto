@@ -1,0 +1,55 @@
+@startuml ColdTrace-Context-Diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title System Context Diagram - ColdTrace (ICEQ)
+caption Contexto general del sistema ColdTrace para monitoreo de cadena de frio alimentaria
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+' Actores principales del sistema
+' Alineados con los segmentos objetivo y con los contextos principales del dominio.
+Person(duenio, "Dueno o Encargado de Negocio", "Segmento 1 (Gustavo). Gestiona minimarkets, carnicerias, pescaderias o restaurantes. Monitorea temperatura y atiende alertas desde el celular.")
+
+Person(responsable, "Responsable de Operaciones o Calidad", "Segmento 2 (Sofia). Supervisa multiples activos refrigerados, configura rangos, genera reportes y sustenta auditorias.")
+
+Person(admin, "Administrador de la Organizacion", "Gestiona usuarios, roles y permisos dentro de la cuenta empresarial [US011].")
+
+Person_Ext(auditor, "Auditor Sanitario (DIGESA / MINSA)", "Actor externo que recibe reportes exportados y evidencia de trazabilidad para sustentar el cumplimiento normativo [EP006, BC Auditoria].")
+
+' Sistema principal
+System(coldtrace, "ColdTrace", "Plataforma web de monitoreo en tiempo real de temperatura y humedad para la cadena de frio alimentaria. Centraliza activos, mediciones, alertas, historial y reportes.")
+
+' Servicios y sistemas externos
+System_Ext(sensores, "Sensores IoT", "Dispositivos fisicos en camaras frigorificas, almacenes y unidades de transporte. Capturan temperatura y humedad [EP003, EP004, BC Monitoreo].")
+
+System_Ext(email, "Servicio de Correo Electronico", "Proveedor externo (ej. SendGrid / Mailgun). Verificacion de cuenta [US008], recuperacion de contrasena [US010] y alertas [EP005].")
+
+System_Ext(push, "Servicio de Notificaciones Push", "Entrega alertas criticas en tiempo real al navegador y movil del usuario [EP005, container diagram 'Email y Push'].")
+
+System_Ext(whatsapp, "Servicio de Mensajeria (WhatsApp Business API)", "Canal complementario de alertas. Cap. I: 'alertas por correo o mensajeria'. Entrevistas: WhatsApp Business como canal habitual [EP005].")
+
+System_Ext(pagos, "Pasarela de Pagos", "Procesador externo (ej. Culqi / Stripe / Yape). Gestiona el cobro mensual de la suscripcion SaaS [Cap. I: modelo de negocio por suscripcion].")
+
+' Relaciones principales
+
+' Actores internos hacia ColdTrace
+Rel(duenio, coldtrace, "Consulta estado de activos y atiende alertas", "HTTPS / Web responsive")
+Rel(responsable, coldtrace, "Monitorea operacion, configura rangos y genera reportes", "HTTPS / Web")
+Rel(admin, coldtrace, "Gestiona usuarios, roles y permisos", "HTTPS / Web")
+
+' Entrega de información a actores externos
+Rel(coldtrace, auditor, "Entrega reportes de cumplimiento y evidencia de trazabilidad", "PDF / CSV exportados")
+
+' Ingreso de lecturas desde sensores
+Rel(sensores, coldtrace, "Envia lecturas de temperatura y humedad", "MQTT / HTTP")
+
+' Salida hacia servicios de notificación
+Rel(coldtrace, email, "Envia correos de verificacion, recuperacion y alertas", "SMTP / API REST")
+Rel(coldtrace, push, "Entrega notificaciones en tiempo real ante desviaciones", "Web Push / FCM")
+Rel(coldtrace, whatsapp, "Envia alertas criticas por mensajeria", "API REST")
+
+' Integración con la pasarela de pagos
+Rel(coldtrace, pagos, "Procesa pagos de suscripcion mensual", "API REST / HTTPS")
+
+@enduml

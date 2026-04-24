@@ -1,0 +1,54 @@
+@startuml ColdTrace-Component-Monitoreo
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component View - ColdTrace - Monitoreo Bounded Context
+caption Componentes del BC Monitoreo alineados con EP004
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+' Entradas y contextos externos
+Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+
+Container(iot_gateway, "IoT Gateway", "MQTT / HTTP", "Recibe y normaliza lecturas de sensores fisicos antes de enviarlas al BC Monitoreo")
+
+Container_Ext(sensors_bc, "Gestion de Sensores Bounded Context", "Spring Boot", "Provee rangos y configuracion de sensores")
+
+Container_Ext(alerts_bc, "Alertas Bounded Context", "Spring Boot", "Recibe lecturas fuera de rango para generar alertas")
+
+' Componentes del contexto de monitoreo
+Container_Boundary(monitor, "Monitoreo Bounded Context") {
+
+    Component(mon_ctrl, "Monitoreo Controller", "Controller", "Controlador de mediciones en tiempo real y consultas de estado [EP004]")
+
+    Component(mon_sensors_facade, "Monitoreo Sensores Context Facade", "ContextFacade", "Recibe configuracion de rangos y sensores desde el BC Gestion de Sensores para validar cada lectura")
+
+    Component(mon_cmd, "Monitoreo Command Service", "Service", "Recibe comandos de registro y validacion de lecturas de temperatura y humedad, verifica rangos y detecta desviaciones")
+
+    Component(mon_query, "Monitoreo Query Service", "Service", "Recibe consultas de lecturas en tiempo real, historicas y estados de activos")
+
+    Component(mon_repo, "Monitoreo Repositorio", "Repository", "Repositorio de serie de tiempo de mediciones de temperatura y humedad")
+
+    Component(mon_alerts_ext, "Monitoreo Alertas External Service", "ExternalService", "Publica eventos de lecturas fuera de rango hacia el BC Alertas")
+}
+
+ContainerDb(db_monitor, "DB Monitoreo", "PostgreSQL / TimescaleDB", "Serie de tiempo de mediciones de temperatura y humedad")
+
+' Relaciones principales
+Rel(gateway, mon_ctrl, "Redirige consultas de monitoreo")
+Rel(iot_gateway, mon_cmd, "Reenvia lecturas normalizadas", "HTTP / mensajeria interna")
+
+Rel(sensors_bc, mon_sensors_facade, "Envia configuracion de rangos y sensores")
+Rel(mon_sensors_facade, mon_cmd, "Provee rangos para validacion")
+
+Rel(mon_ctrl, mon_cmd, "Envia comandos")
+Rel(mon_ctrl, mon_query, "Envia consultas")
+
+Rel(mon_cmd, mon_repo, "Llamada a repositorio")
+Rel(mon_query, mon_repo, "Llamada a repositorio")
+Rel(mon_repo, db_monitor, "Lee / Escribe", "JDBC")
+
+Rel(mon_cmd, mon_alerts_ext, "Notifica lectura fuera de rango")
+Rel(mon_alerts_ext, alerts_bc, "Envia evento de desviacion")
+
+@enduml

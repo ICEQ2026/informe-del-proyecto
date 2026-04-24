@@ -1,0 +1,86 @@
+@startuml ColdTrace-Stage3-BC-Auditoria
+
+title Etapa 3 - BC Auditoria
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+
+package "BC Auditoria" #FDEBD0 {
+
+  class Auditoria <<Aggregate>> #FADBD8 {
+    - idAuditoria: UUID
+    - idOrganizacion: UUID
+    - idAuditor: UUID
+    - tipo: TipoAuditoria
+    - fechaInicio: LocalDate
+    - fechaFin: LocalDate
+    - estado: EstadoAuditoria
+    - resultado: EstadoCumplimiento
+    + iniciar(): void
+    + validarCumplimiento(): EstadoCumplimiento
+    + cerrar(): void
+  }
+
+  class Evidencia <<Entity>> {
+    - idEvidencia: UUID
+    - idAuditoria: UUID
+    - idReporte: UUID
+    - tipo: String
+    - ruta: String
+    - fechaCaptura: LocalDateTime
+    + adjuntar(): void
+    + exportar(): byte[]
+  }
+
+  class CriterioCumplimiento <<Entity>> {
+    - idCriterio: UUID
+    - norma: String
+    - descripcion: String
+    - resultado: EstadoCumplimiento
+    + evaluar(): EstadoCumplimiento
+  }
+
+  class UsuarioId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class OrganizacionId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class ReporteId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  enum TipoAuditoria <<enum>> {
+    INTERNA
+    DIGESA
+    MINSA
+  }
+
+  enum EstadoAuditoria <<enum>> {
+    PLANIFICADA
+    EN_CURSO
+    CERRADA
+  }
+
+  enum EstadoCumplimiento <<enum>> {
+    CONFORME
+    NO_CONFORME
+    PARCIAL
+    PENDIENTE
+  }
+
+  Auditoria "1" o-- "*" Evidencia
+  Auditoria "1" o-- "*" CriterioCumplimiento
+  Auditoria ..> UsuarioId
+  Auditoria ..> OrganizacionId
+  Evidencia ..> ReporteId
+  Auditoria ..> TipoAuditoria
+  Auditoria ..> EstadoAuditoria
+  Auditoria ..> EstadoCumplimiento
+}
+
+@enduml

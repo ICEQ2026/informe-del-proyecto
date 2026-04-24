@@ -1,0 +1,142 @@
+@startuml ColdTrace-Stage3-BC-Alertas
+
+title Etapa 3 - BC Alertas
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+
+package "BC Alertas" #FCF3CF {
+
+  class Alerta <<Aggregate>> #FADBD8 {
+    - idAlerta: UUID
+    - idOrganizacion: UUID
+    - idRegla: UUID
+    - idSensor: UUID
+    - idActivo: UUID
+    - idMedicion: UUID
+    - tipo: TipoAlerta
+    - severidad: Severidad
+    - estado: EstadoAlerta
+    - fechaGeneracion: LocalDateTime
+    - fechaCierre: LocalDateTime
+    - mensaje: String
+    + generar(): void
+    + confirmar(idUsuario: UUID): void
+    + escalar(): void
+    + cerrar(accion: String): void
+  }
+
+  class ReglaAlerta <<Aggregate>> #FADBD8 {
+    - idRegla: UUID
+    - idSensor: UUID
+    - tipo: TipoAlerta
+    - umbralValor: double
+    - duracionMinSeg: int
+    - severidad: Severidad
+    - activa: boolean
+    + evaluar(m: Medicion): boolean
+    + generarAlerta(m: Medicion): Alerta
+    + activar(): void
+    + desactivar(): void
+  }
+
+  class Incidencia <<Entity>> {
+    - idIncidencia: UUID
+    - idAlerta: UUID
+    - descripcion: String
+    - accionTomada: String
+    - idResponsable: UUID
+    - fechaAccion: LocalDateTime
+    + registrar(): void
+    + cerrar(): void
+  }
+
+  class Notificacion <<Entity>> {
+    - destinatario: String
+    - canal: String
+    - mensaje: String
+    - fechaEnvio: LocalDateTime
+    - entregada: boolean
+  }
+
+  class CanalEmail <<Entity>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  class CanalPush <<Entity>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  class CanalWhatsApp <<Entity>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  class SensorId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class ActivoId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class MedicionId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  class UsuarioId <<ValueObject>> #FCF3CF {
+    - valor: UUID
+  }
+
+  interface CanalNotificacion <<interfaz>> {
+    + enviar(destinatario: String, mensaje: String): boolean
+    + obtenerNombre(): String
+  }
+
+  enum TipoAlerta <<enum>> {
+    TEMPERATURA_ALTA
+    TEMPERATURA_BAJA
+    HUMEDAD_ALTA
+    HUMEDAD_BAJA
+    DESCONEXION_SENSOR
+    FALLA_HARDWARE
+  }
+
+  enum Severidad <<enum>> {
+    BAJA
+    MEDIA
+    ALTA
+    CRITICA
+  }
+
+  enum EstadoAlerta <<enum>> {
+    ACTIVA
+    CONFIRMADA
+    EN_ATENCION
+    CERRADA
+  }
+
+  Alerta "1" o-- "*" Incidencia
+  Alerta "1" o-- "*" Notificacion
+  Alerta ..> SensorId
+  Alerta ..> ActivoId
+  Alerta ..> MedicionId
+  Alerta ..> UsuarioId
+  Alerta ..> TipoAlerta
+  Alerta ..> Severidad
+  Alerta ..> EstadoAlerta
+  ReglaAlerta ..> SensorId
+  ReglaAlerta ..> TipoAlerta
+  ReglaAlerta ..> Severidad
+  ReglaAlerta ..> Alerta : "genera"
+  Incidencia ..> UsuarioId
+  CanalEmail ..|> CanalNotificacion
+  CanalPush ..|> CanalNotificacion
+  CanalWhatsApp ..|> CanalNotificacion
+}
+
+@enduml
