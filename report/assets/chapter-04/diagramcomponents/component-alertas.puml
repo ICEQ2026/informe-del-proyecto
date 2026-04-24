@@ -1,0 +1,62 @@
+@startuml ColdTrace-Component-Alertas
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component View - ColdTrace - Alertas Bounded Context
+caption Componentes del BC Alertas alineados con EP005
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+' Entradas y servicios externos
+Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+
+Container_Ext(monitor_bc, "Monitoreo Bounded Context", "Spring Boot", "Publica lecturas fuera de rango para generar alertas")
+
+System_Ext(email, "Servicio de Correo Electronico", "Canal de alertas por correo [EP005]")
+System_Ext(push, "Servicio de Notificaciones Push", "Canal en tiempo real para alertas criticas [EP005]")
+System_Ext(whatsapp, "Servicio de Mensajeria WhatsApp", "Canal complementario de alertas criticas [EP005, Cap. I]")
+
+' Componentes del contexto de alertas
+Container_Boundary(alerts, "Alertas Bounded Context") {
+
+    Component(ale_ctrl, "Alertas Controller", "Controller", "Controlador de alertas, incidencias y acciones [EP005]")
+
+    Component(ale_monitor_facade, "Alertas Monitoreo Context Facade", "ContextFacade", "Recibe eventos de lecturas fuera de rango desde el BC Monitoreo")
+
+    Component(ale_cmd, "Alertas Command Service", "Service", "Recibe comandos de generacion, confirmacion, escalamiento y cierre de alertas e incidencias")
+
+    Component(ale_query, "Alertas Query Service", "Service", "Recibe consultas de alertas activas, historial, estados y acciones tomadas")
+
+    Component(ale_repo, "Alertas Repositorio", "Repository", "Repositorio de alertas, incidencias, estados y acciones")
+
+    Component(ale_email_ext, "Alertas Email External Service", "ExternalService", "Reenvia alertas criticas por correo")
+
+    Component(ale_push_ext, "Alertas Push External Service", "ExternalService", "Reenvia notificaciones push en tiempo real")
+
+    Component(ale_wa_ext, "Alertas WhatsApp External Service", "ExternalService", "Reenvia alertas criticas por mensajeria WhatsApp")
+}
+
+ContainerDb(db_alerts, "DB Alertas", "PostgreSQL", "Alertas activas, incidencias, estados y acciones tomadas")
+
+' Relaciones principales
+Rel(gateway, ale_ctrl, "Redirige a alertas")
+
+Rel(monitor_bc, ale_monitor_facade, "Publica desviaciones")
+Rel(ale_monitor_facade, ale_cmd, "Dispara generacion de alerta")
+
+Rel(ale_ctrl, ale_cmd, "Envia comandos")
+Rel(ale_ctrl, ale_query, "Envia consultas")
+
+Rel(ale_cmd, ale_repo, "Llamada a repositorio")
+Rel(ale_query, ale_repo, "Llamada a repositorio")
+Rel(ale_repo, db_alerts, "Lee / Escribe", "JDBC")
+
+Rel(ale_cmd, ale_email_ext, "Solicita envio de correo")
+Rel(ale_cmd, ale_push_ext, "Solicita envio push")
+Rel(ale_cmd, ale_wa_ext, "Solicita envio WhatsApp")
+
+Rel(ale_email_ext, email, "Envia alerta", "SMTP / REST")
+Rel(ale_push_ext, push, "Envia notificacion", "Web Push / FCM")
+Rel(ale_wa_ext, whatsapp, "Envia mensaje", "REST")
+
+@enduml

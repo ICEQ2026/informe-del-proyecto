@@ -1,0 +1,52 @@
+@startuml ColdTrace-Component-Auditoria
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component View - ColdTrace - Auditoria Bounded Context
+caption Componentes del BC Auditoria alineados con el BC Auditoria y la entrega de evidencia a auditores externos
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+' Entradas y actores externos
+Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+
+Container_Ext(reports_bc, "Reportes Bounded Context", "Spring Boot", "Provee reportes y bitacoras utilizadas como evidencia de cumplimiento")
+
+Person_Ext(auditor, "Auditor Sanitario (DIGESA / MINSA)", "Recibe evidencia de cumplimiento y trazabilidad [BC Auditoria]")
+
+' Componentes del contexto de auditoría
+Container_Boundary(audit, "Auditoria Bounded Context") {
+
+    Component(aud_ctrl, "Auditoria Controller", "Controller", "Controlador de inicio, seguimiento, cierre y entrega de auditorias [BC Auditoria]")
+
+    Component(aud_reports_facade, "Auditoria Reportes Context Facade", "ContextFacade", "Recibe reportes y bitacoras desde el BC Reportes como evidencia de cumplimiento")
+
+    Component(aud_cmd, "Auditoria Command Service", "Service", "Recibe comandos de inicio, cierre de auditoria y validacion de cumplimiento")
+
+    Component(aud_query, "Auditoria Query Service", "Service", "Recibe consultas de auditorias, evidencias y resultados de cumplimiento")
+
+    Component(aud_repo, "Auditoria Repositorio", "Repository", "Repositorio de auditorias, evidencias y resultados de cumplimiento")
+
+    Component(aud_evidence_ext, "Auditoria Evidence External Service", "ExternalService", "Reenvia evidencia exportable al auditor externo")
+}
+
+ContainerDb(db_audit, "DB Auditoria", "PostgreSQL", "Auditorias, evidencias y resultados de cumplimiento")
+
+' Relaciones principales
+Rel(gateway, aud_ctrl, "Redirige a auditoria")
+
+Rel(reports_bc, aud_reports_facade, "Provee reportes y bitacoras como evidencia")
+Rel(aud_reports_facade, aud_cmd, "Entrega evidencia para validacion")
+Rel(aud_reports_facade, aud_query, "Entrega evidencia para consulta")
+
+Rel(aud_ctrl, aud_cmd, "Envia comandos")
+Rel(aud_ctrl, aud_query, "Envia consultas")
+
+Rel(aud_cmd, aud_repo, "Llamada a repositorio")
+Rel(aud_query, aud_repo, "Llamada a repositorio")
+Rel(aud_repo, db_audit, "Lee / Escribe", "JDBC")
+
+Rel(aud_cmd, aud_evidence_ext, "Exporta evidencia")
+Rel(aud_evidence_ext, auditor, "Entrega evidencia de cumplimiento", "PDF / CSV")
+
+@enduml

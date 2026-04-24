@@ -1,0 +1,384 @@
+@startuml ColdTrace-ERD
+
+title ColdTrace - Diagrama Entidad-Relacion (3FN)
+caption Modelo relacional normalizado hasta Tercera Forma Normal, agrupado por Bounded Context
+
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 40
+skinparam ranksep 55
+
+' Tablas del contexto de autenticación
+
+entity "organizaciones" as organizaciones #D6EAF8 {
+  * id_organizacion : UUID <<PK>>
+  --
+  razon_social : VARCHAR(150) NOT NULL
+  ruc : VARCHAR(11) NOT NULL <<UK>>
+  direccion : VARCHAR(255)
+  fecha_registro : TIMESTAMP NOT NULL
+}
+
+entity "suscripciones" as suscripciones #D6EAF8 {
+  * id_suscripcion : UUID <<PK>>
+  --
+  # id_organizacion : UUID <<FK, UK>>
+  plan : VARCHAR(50) NOT NULL
+  estado : VARCHAR(20) NOT NULL
+  fecha_inicio : DATE NOT NULL
+  fecha_fin : DATE
+}
+
+entity "usuarios" as usuarios #D6EAF8 {
+  * id_usuario : UUID <<PK>>
+  --
+  # id_organizacion : UUID <<FK>>
+  email : VARCHAR(100) NOT NULL <<UK>>
+  nombre_usuario : VARCHAR(50) NOT NULL <<UK>>
+  password_hash : VARCHAR(255) NOT NULL
+  estado : VARCHAR(30) NOT NULL
+  fecha_creacion : TIMESTAMP NOT NULL
+  fecha_verificacion : TIMESTAMP
+}
+
+entity "sesiones" as sesiones #D6EAF8 {
+  * id_sesion : UUID <<PK>>
+  --
+  # id_usuario : UUID <<FK>>
+  token : VARCHAR(255) NOT NULL <<UK>>
+  creada_en : TIMESTAMP NOT NULL
+  expira_en : TIMESTAMP NOT NULL
+  activa : BOOLEAN NOT NULL
+}
+
+entity "roles" as roles #D6EAF8 {
+  * id_rol : UUID <<PK>>
+  --
+  nombre : VARCHAR(50) NOT NULL <<UK>>
+  descripcion : VARCHAR(255)
+}
+
+entity "permisos" as permisos #D6EAF8 {
+  * id_permiso : UUID <<PK>>
+  --
+  recurso : VARCHAR(50) NOT NULL
+  accion : VARCHAR(30) NOT NULL
+  descripcion : VARCHAR(255)
+  --
+  UK (recurso, accion)
+}
+
+entity "usuario_rol" as usuario_rol #D6EAF8 {
+  * # id_usuario : UUID <<PK, FK>>
+  * # id_rol : UUID <<PK, FK>>
+  --
+  fecha_asignacion : TIMESTAMP NOT NULL
+}
+
+entity "rol_permiso" as rol_permiso #D6EAF8 {
+  * # id_rol : UUID <<PK, FK>>
+  * # id_permiso : UUID <<PK, FK>>
+}
+
+entity "preferencias_notificacion" as preferencias_notificacion #D6EAF8 {
+  * id_preferencia : UUID <<PK>>
+  --
+  # id_usuario : UUID <<FK, UK>>
+  horario_inicio : TIME NOT NULL
+  horario_fin : TIME NOT NULL
+  severidad_minima : VARCHAR(20) NOT NULL
+}
+
+entity "preferencia_canal" as preferencia_canal #D6EAF8 {
+  * # id_preferencia : UUID <<PK, FK>>
+  * canal : VARCHAR(20) <<PK>>
+}
+
+' Tablas del contexto de gestión de sensores
+
+entity "activos" as activos #FADBD8 {
+  * id_activo : UUID <<PK>>
+  --
+  # id_organizacion : UUID <<FK>>
+  nombre : VARCHAR(100) NOT NULL
+  descripcion : VARCHAR(255)
+  tipo : VARCHAR(30) NOT NULL
+  estado : VARCHAR(30) NOT NULL
+  ubic_direccion : VARCHAR(255)
+  ubic_latitud : DECIMAL(9,6)
+  ubic_longitud : DECIMAL(9,6)
+  ubic_es_movil : BOOLEAN NOT NULL
+}
+
+entity "gateways" as gateways #FADBD8 {
+  * id_gateway : UUID <<PK>>
+  --
+  modelo : VARCHAR(50) NOT NULL
+  ip : VARCHAR(45)
+  protocolo : VARCHAR(20) NOT NULL
+  estado : VARCHAR(20) NOT NULL
+}
+
+entity "sensores" as sensores #FADBD8 {
+  * id_sensor : UUID <<PK>>
+  --
+  # id_activo : UUID <<FK>>
+  # id_gateway : UUID <<FK>>
+  modelo : VARCHAR(50) NOT NULL
+  tipo : VARCHAR(30) NOT NULL
+  frecuencia_lectura_seg : INT NOT NULL
+  estado : VARCHAR(20) NOT NULL
+}
+
+entity "sensor_rango_temperatura" as sensor_rango_temperatura #FADBD8 {
+  * # id_sensor : UUID <<PK, FK>>
+  --
+  min_celsius : DECIMAL(5,2) NOT NULL
+  max_celsius : DECIMAL(5,2) NOT NULL
+}
+
+entity "sensor_rango_humedad" as sensor_rango_humedad #FADBD8 {
+  * # id_sensor : UUID <<PK, FK>>
+  --
+  min_porcentaje : DECIMAL(5,2) NOT NULL
+  max_porcentaje : DECIMAL(5,2) NOT NULL
+}
+
+' Tablas del contexto de monitoreo
+
+entity "mediciones" as mediciones #D5F5E3 {
+  * id_medicion : UUID <<PK>>
+  --
+  # id_sensor : UUID <<FK>>
+  timestamp : TIMESTAMP NOT NULL
+  tipo : VARCHAR(20) NOT NULL
+  valor : DECIMAL(8,3) NOT NULL
+  estado : VARCHAR(20) NOT NULL
+}
+
+' Tablas del contexto de alertas
+
+entity "reglas_alerta" as reglas_alerta #FCF3CF {
+  * id_regla : UUID <<PK>>
+  --
+  # id_sensor : UUID <<FK>>
+  tipo : VARCHAR(30) NOT NULL
+  umbral_valor : DECIMAL(8,3) NOT NULL
+  duracion_min_seg : INT NOT NULL
+  severidad : VARCHAR(20) NOT NULL
+  activa : BOOLEAN NOT NULL
+}
+
+entity "evaluacion_alerta" as evaluacion_alerta #FCF3CF {
+  * id_evaluacion : UUID <<PK>>
+  --
+  # id_regla : UUID <<FK, NOT NULL>>
+  # id_medicion : UUID <<FK, NOT NULL>>
+  fecha_evaluacion : TIMESTAMP NOT NULL
+  cumple_regla : BOOLEAN NOT NULL
+}
+
+entity "alertas" as alertas #FCF3CF {
+  * id_alerta : UUID <<PK>>
+  --
+  # id_evaluacion : UUID <<FK, UK, NOT NULL>>
+  # id_usuario_confirmacion : UUID <<FK, NULL>>
+  tipo : VARCHAR(30) NOT NULL
+  severidad : VARCHAR(20) NOT NULL
+  estado : VARCHAR(20) NOT NULL
+  fecha_generacion : TIMESTAMP NOT NULL
+  fecha_cierre : TIMESTAMP
+  mensaje : VARCHAR(500)
+}
+
+entity "incidencias" as incidencias #FCF3CF {
+  * id_incidencia : UUID <<PK>>
+  --
+  # id_alerta : UUID <<FK>>
+  # id_responsable : UUID <<FK>>
+  descripcion : VARCHAR(500) NOT NULL
+  accion_tomada : VARCHAR(500)
+  fecha_accion : TIMESTAMP NOT NULL
+}
+
+entity "notificaciones" as notificaciones #FCF3CF {
+  * id_notificacion : UUID <<PK>>
+  --
+  # id_alerta : UUID <<FK>>
+  destinatario : VARCHAR(100) NOT NULL
+  canal : VARCHAR(20) NOT NULL
+  mensaje : VARCHAR(500) NOT NULL
+  fecha_envio : TIMESTAMP NOT NULL
+  entregada : BOOLEAN NOT NULL
+}
+
+' Tablas del contexto de reportes
+
+entity "reportes" as reportes #E8DAEF {
+  * id_reporte : UUID <<PK>>
+  --
+  # id_organizacion : UUID <<FK>>
+  nombre : VARCHAR(100) NOT NULL
+  tipo : VARCHAR(20) NOT NULL
+  rango_desde : TIMESTAMP NOT NULL
+  rango_hasta : TIMESTAMP NOT NULL
+  formato : VARCHAR(10) NOT NULL
+}
+
+entity "reporte_generacion" as reporte_generacion #E8DAEF {
+  * # id_reporte : UUID <<PK, FK>>
+  --
+  # id_usuario : UUID <<FK>>
+  fecha_generacion : TIMESTAMP NOT NULL
+}
+
+entity "reportes_cumplimiento" as reportes_cumplimiento #E8DAEF {
+  * # id_reporte : UUID <<PK, FK>>
+  --
+  resultado : VARCHAR(20) NOT NULL
+}
+
+entity "reporte_activo" as reporte_activo #E8DAEF {
+  * # id_reporte : UUID <<PK, FK>>
+  * # id_activo : UUID <<PK, FK>>
+}
+
+entity "reporte_medicion" as reporte_medicion #E8DAEF {
+  * # id_reporte : UUID <<PK, FK>>
+  * # id_medicion : UUID <<PK, FK>>
+}
+
+entity "reporte_incidencia" as reporte_incidencia #E8DAEF {
+  * # id_reporte : UUID <<PK, FK>>
+  * # id_incidencia : UUID <<PK, FK>>
+}
+
+entity "reporte_criterio" as reporte_criterio #E8DAEF {
+  * # id_reporte : UUID <<PK, FK>>
+  * criterio : VARCHAR(100) <<PK>>
+}
+
+entity "dashboards" as dashboards #E8DAEF {
+  * id_dashboard : UUID <<PK>>
+  --
+  # id_usuario : UUID <<FK>>
+  nombre : VARCHAR(100) NOT NULL
+  fecha_creacion : TIMESTAMP NOT NULL
+}
+
+entity "widgets" as widgets #E8DAEF {
+  * id_widget : UUID <<PK>>
+  --
+  # id_dashboard : UUID <<FK>>
+  tipo : VARCHAR(30) NOT NULL
+  titulo : VARCHAR(100) NOT NULL
+  configuracion : JSON
+  orden : INT NOT NULL
+}
+
+' Tablas del contexto de auditoría
+
+entity "auditorias" as auditorias #FDEBD0 {
+  * id_auditoria : UUID <<PK>>
+  --
+  # id_organizacion : UUID <<FK>>
+  tipo : VARCHAR(20) NOT NULL
+  fecha_inicio : DATE NOT NULL
+  fecha_fin : DATE
+  estado : VARCHAR(20) NOT NULL
+  resultado : VARCHAR(20)
+}
+
+entity "auditoria_responsable" as auditoria_responsable #FDEBD0 {
+  * # id_auditoria : UUID <<PK, FK>>
+  --
+  # id_usuario : UUID <<FK>>
+  fecha_asignacion : TIMESTAMP NOT NULL
+}
+
+entity "evidencias" as evidencias #FDEBD0 {
+  * id_evidencia : UUID <<PK>>
+  --
+  # id_auditoria : UUID <<FK>>
+  # id_reporte : UUID <<FK>>
+  tipo : VARCHAR(30) NOT NULL
+  ruta : VARCHAR(500) NOT NULL
+  fecha_captura : TIMESTAMP NOT NULL
+}
+
+entity "criterios_cumplimiento" as criterios_cumplimiento #FDEBD0 {
+  * id_criterio : UUID <<PK>>
+  --
+  # id_auditoria : UUID <<FK>>
+  norma : VARCHAR(100) NOT NULL
+  descripcion : VARCHAR(500)
+  resultado : VARCHAR(20) NOT NULL
+}
+
+' Relaciones entre tablas
+
+' Relaciones del contexto de autenticación
+organizaciones ||--|| suscripciones
+organizaciones ||--o{ usuarios
+usuarios ||--o{ sesiones
+usuarios ||--|| preferencias_notificacion
+preferencias_notificacion ||--o{ preferencia_canal
+usuarios ||--o{ usuario_rol
+roles ||--o{ usuario_rol
+roles ||--o{ rol_permiso
+permisos ||--o{ rol_permiso
+
+' Relaciones del contexto de gestión de sensores
+organizaciones ||--o{ activos
+activos ||--o{ sensores
+gateways ||--o{ sensores
+sensores ||--o| sensor_rango_temperatura
+sensores ||--o| sensor_rango_humedad
+
+' Relaciones del contexto de monitoreo
+sensores ||--o{ mediciones
+
+' Relaciones del contexto de alertas
+sensores ||--o{ reglas_alerta
+reglas_alerta ||--o{ evaluacion_alerta
+mediciones ||--o{ evaluacion_alerta
+evaluacion_alerta ||--o| alertas
+usuarios ||--o{ alertas
+alertas ||--o{ incidencias
+usuarios ||--o{ incidencias
+alertas ||--o{ notificaciones
+
+' Relaciones del contexto de reportes
+organizaciones ||--o{ reportes
+reportes ||--|| reporte_generacion
+usuarios ||--o{ reporte_generacion
+reportes ||--o| reportes_cumplimiento
+reportes ||--o{ reporte_activo
+activos ||--o{ reporte_activo
+reportes ||--o{ reporte_medicion
+mediciones ||--o{ reporte_medicion
+reportes ||--o{ reporte_incidencia
+incidencias ||--o{ reporte_incidencia
+reportes ||--o{ reporte_criterio
+usuarios ||--o{ dashboards
+dashboards ||--o{ widgets
+
+' Relaciones del contexto de auditoría
+organizaciones ||--o{ auditorias
+auditorias ||--|| auditoria_responsable
+usuarios ||--o{ auditoria_responsable
+auditorias ||--o{ evidencias
+reportes ||--o{ evidencias
+auditorias ||--o{ criterios_cumplimiento
+
+note right of evaluacion_alerta
+Regla de integridad de dominio:
+la regla y la medicion de una
+evaluacion deben corresponder
+al mismo sensor.
+Se valida en la capa de dominio
+o con soporte especifico del motor.
+end note
+
+@enduml

@@ -1,0 +1,677 @@
+# Capítulo V: Product Implementation, Validation & Deployment
+
+## 5.1. Software Configuration Management
+
+### 5.1.1. Software Development Environment Configuration
+
+En esta sección se describen las herramientas de software utilizadas por el equipo para el desarrollo colaborativo del proyecto. Estas plataformas permiten organizar el trabajo, diseñar la experiencia de usuario, modelar procesos, gestionar el código fuente y documentar el avance del producto durante su ciclo de vida. La selección de estas herramientas responde a la necesidad de mantener un entorno de trabajo colaborativo, accesible y alineado con las prácticas del curso.
+
+### Github
+
+Plataforma utilizada para el guardar versiones del proyecto.
+
+[GitHub](https://github.com/)
+
+![GitHub](assets/chapter-05/development_environment/Github.png)
+
+
+### Uxpressia
+
+Herramiento usada para la elabnoracion de user personas y impact mapping.
+
+[UXPressia](https://uxpressia.com/)
+
+![UXPressia](assets/chapter-05/development_environment/Uxpressia.png)
+
+### Miro
+
+Plataforma usada para el eventstorming.
+
+[Miro](https://miro.com/)
+
+![Miro](assets/chapter-05/development_environment/Miro.png)
+
+
+### Figma
+
+La herramienta usada para desarrollo conjunto de wireframes y mockups.
+
+[Figma](https://www.figma.com/)
+
+![Figma](assets/chapter-05/development_environment/Figma.png)
+
+
+### 5.1.2. Source Code Management
+
+La gestión del código fuente del proyecto se realizó mediante la plataforma GitHub, la cual permitió organizar, controlar y dar seguimiento a los cambios realizados durante el desarrollo del informe.
+
+Los repositorios usados fueron:
+
+- Repositorio del proyecto: https://github.com/ICEQ2026/informe-del-proyecto
+- Repositorio de la landing page: https://github.com/ICEQ2026/landingpage-coldtrace
+
+Este repositorio contiene la estructura completa del informe, organizada por capítulos, lo que permite una gestión modular y colaborativa del contenido.
+
+### Workflow de Control de Versiones
+
+Para la gestión del desarrollo se utilizó un flujo de trabajo basado en ramas, donde cada integrante del equipo trabajó de manera independiente sobre una rama específica antes de integrar sus cambios a la rama principal.
+
+Las ramas identificadas en el repositorio son:
+
+- **main**: rama principal que contiene la versión estable del proyecto.
+- **feature/**: ramas utilizadas para el desarrollo de secciones específicas del informe.
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/github-branches.png"/>
+</p>
+
+<p align="center">
+  Ramas del repositorio del proyecto, evidenciando el uso de ramas feature para el desarrollo independiente de cada sección.
+</p>
+
+### Convenciones de Ramas
+
+Se utilizó una convención de nombres basada en el contenido desarrollado, lo cual se evidencia en las siguientes ramas:
+
+- feature/14-chapter-05  
+- feature/13-chapter-04  
+- feature/12-chapter-03  
+- feature/15-chapter-06  
+- feature/99-bibliography  
+
+Cada rama representa un capítulo o sección del informe, permitiendo que los integrantes trabajen de forma paralela sin interferir en el trabajo de otros.
+
+Este enfoque facilita la organización del proyecto y permite una integración más controlada de los cambios.
+
+### Conventional Commits
+
+Para estandarizar los mensajes de commits, se utilizó la convención de Conventional Commits, permitiendo clasificar los cambios realizados y mejorar la trazabilidad del repositorio.
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/github-commits.png"/>
+</p>
+
+<p align="center">
+  Comitts realizdos evidenciando el uso de conventional commits para clasificar los tipos de cambios.
+</p>
+
+Los tipos de commits utilizados incluyen:
+
+- **feat**: incorporación de nuevo contenido  
+- **docs**: modificaciones en la documentación  
+- **fix**: corrección de errores  
+- **chore**: tareas de mantenimiento  
+
+El uso de estas convenciones facilita la comprensión del historial de cambios y mejora la colaboración entre los integrantes del equipo.
+
+La evidencia mostrada refleja el uso de un flujo de trabajo basado en ramas feature, permitiendo una correcta organización del desarrollo y facilitando la integración de los aportes de cada integrante.
+
+### 5.1.3. Source Code Style Guide & Conventions
+
+Con el objetivo de garantizar la consistencia, legibilidad y mantenibilidad del proyecto, el equipo definió una guía de estilo basada en la estructura real de la Landing Page y en buenas prácticas de desarrollo web. Estas convenciones permiten que todos los integrantes trabajen de manera ordenada, facilitan la colaboración en el repositorio y mejoran la escalabilidad del producto.
+
+Siguiendo lo solicitado por el curso, se adoptó el uso de nomenclatura en inglés para los elementos del código fuente. Además, se establecieron criterios comunes para la organización de archivos, definición de estilos, escritura de scripts y manejo de contenidos multilenguaje.
+
+#### Naming conventions
+
+Se utilizó nomenclatura en inglés para todos los elementos del código. Los archivos fueron nombrados según su funcionalidad, lo que facilita su comprensión y mantenimiento.
+
+Ejemplos del proyecto:
+
+- `navigation.js` → manejo de navegación  
+- `scroll-reveal.js` → animaciones  
+- `variables.css` → variables de diseño  
+- `en-US.json` → traducciones en inglés  
+
+Estas convenciones permiten identificar rápidamente el propósito de cada archivo.
+
+#### CSS Style Guide
+
+Para mantener la consistencia visual, se definieron variables globales en CSS que permiten reutilizar colores, tipografías y espaciados en toda la aplicación:
+
+```css
+:root {
+  --color-primary: #1b59f8;
+  --color-secondary-purple: #b899eb;
+
+  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --spacing-md: 16px;
+  --spacing-xl: 48px;
+
+  --radius-md: 8px;
+}
+```
+
+El uso de variables CSS permite centralizar el diseño visual, evitando duplicidad de valores y facilitando futuras modificaciones.
+
+#### JavaScript Conventions
+
+Los archivos JavaScript fueron organizados por funcionalidad, promoviendo la modularidad del código. Se utilizaron funciones con nombres descriptivos en inglés y estructuras claras.
+
+Ejemplo del proyecto:
+
+```js
+const toggleMobileMenu = () => {
+  if (!moreButton || !mobileMenu) return;
+
+  if (mobileMenu.classList.contains('is-open')) {
+    closeMobileMenu();
+    return;
+  }
+
+  openMobileMenu();
+};
+```
+
+Este enfoque mejora la legibilidad del código y facilita su mantenimiento.
+
+#### Internacionalización (i18n)
+
+El proyecto incluye soporte para múltiples idiomas mediante archivos JSON ubicados en `assets/locales/`. Cada archivo contiene las traducciones utilizadas en la interfaz.
+
+Ejemplo:
+
+```json
+{
+  "hero": {
+    "title": "All your storage infrastructure under a single intelligent platform",
+    "ctaDemo": "Try a demo"
+  }
+}
+```
+
+La implementación de internacionalización permite que la aplicación sea escalable a diferentes mercados y mejora la experiencia del usuario.
+
+### 5.1.4. Software Deployment Configuration
+
+En esta sección se describe la configuración del despliegue de la solución, incluyendo los pasos necesarios para que, a partir del repositorio de código fuente, se logre la publicación satisfactoria de la Landing Page del proyecto.
+
+El despliegue de la solución se realizó utilizando GitHub, aprovechando sus funcionalidades para la publicación de sitios web estáticos.
+
+### Configuración del despliegue de la Landing Page
+
+1. Para el despliegue de la Landing Page se creo un repositorio en la organizacion alojada en GitHub, el cual contiene todos los archivos del proyecto desarrollados en HTML, CSS y JavaScript.
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/repoLanding.png"/>
+</p>
+
+<p align="center">
+  Repositorio de la Landing Page utilizado para el despliegue del proyecto.
+</p>
+
+2. Se hizo un push al repositorio al subir todo los archivos que contenian la landing page
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/structureLanding.png"/>
+</p>
+
+<p align="center">
+  Uso de ramas para el desarrollo e integración de cambios antes del despliegue.
+</p>   
+
+3. Se creo branches para la actualización continua del repositorio, donde cada cambio realizado por el equipo eventualmente sera agregado en la rama principal.
+
+<p align="center">
+  <img src="/report/assets/chapter-05/development_environment/branchesLanding.png"/>
+</p>
+
+<p align="center">
+  Uso de ramas para el desarrollo e integración de cambios antes del despliegue.
+</p>
+
+Una vez integrados los cambios en la rama principal (`main`), se configuró GitHub Pages para publicar automáticamente el contenido del repositorio, permitiendo que la Landing Page sea accesible mediante una URL pública.
+
+Este proceso permite que cada actualización realizada mediante commits y pushes al repositorio se refleje automáticamente en la versión desplegada del sitio web.
+
+### Validación del despliegue
+
+Después del despliegue, se realizaron pruebas para asegurar el correcto funcionamiento de la Landing Page, verificando:
+
+- la carga adecuada del sitio web;
+- la navegación entre secciones;
+- la correcta ejecución de scripts en JavaScript;
+- la adaptación a distintos dispositivos (responsive design);
+- la consistencia del contenido multilenguaje.
+
+El uso de GitHub como plataforma de control de versiones y despliegue permite mantener una trazabilidad completa de los cambios, facilitando la colaboración del equipo y asegurando una publicación continua del proyecto.
+
+## 5.2. Landing Page, Services & Applications Implementation
+
+### 5.2.1. Sprint 1
+
+#### 5.2.1.1. Sprint Planning 1
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Sprint #</th>
+    <td>Sprint 1</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Sprint Planning Background</th>
+  </tr>
+
+  <tr>
+    <th>Date</th>
+    <td>2026-04-20</td>
+  </tr>
+
+  <tr>
+    <th>Time</th>
+    <td>08:00 PM</td>
+  </tr>
+
+  <tr>
+    <th>Location</th>
+    <td>Reunión virtual vía Google Meet</td>
+  </tr>
+
+  <tr>
+    <th>Prepared By</th>
+    <td>Pajés León, Mauricio Luis</td>
+  </tr>
+
+  <tr>
+    <th>Attendees (to planning meeting)</th>
+    <td>Morales Venegas, David Joel / Espinoza Paredes, Frezzia / Cabrera Novoa, Leonardo Moisés / Videla Ventura, Jorge Joseph</td>
+  </tr>
+
+  <tr>
+    <th>Sprint 1 Review Summary</th>
+    <td>Como punto de partida, el equipo logró definir el alcance del producto ColdTrace, estructurar los capítulos iniciales del informe y desarrollar una primera versión funcional de la landing page con secciones clave y vistas básicas como dashboard, monitoreo y alertas. Esto permitió validar la dirección del proyecto y asegurar coherencia entre la propuesta de valor y la implementación inicial.
+</td>
+  </tr>
+
+  <tr>
+    <th>Sprint 1 Retrospective Summary</th>
+    <td>Durante este primer sprint, el equipo identificó oportunidades de mejora relacionadas con la organización del tiempo y la coordinación entre integrantes. Si bien se lograron avances importantes en el desarrollo de la landing page, la distribución de tareas pudo ser más equilibrada. Como mejora, se propone fortalecer la comunicación, definir entregables más claros por integrante y establecer reuniones más frecuentes para hacer seguimiento al avance del proyecto.
+</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Sprint Goal & User Stories</th>
+  </tr>
+
+  <tr>
+    <th>Sprint 1 Goal</th>
+    <td>Desarrollar una primera versión funcional de la landing page de ColdTrace e implementar vistas básicas del sistema (dashboard, monitoreo y alertas) que permitan simular el flujo de monitoreo de la cadena de frío. El cumplimiento se medirá mediante la correcta visualización de la landing page y la navegación entre secciones funcionales.</td>
+  </tr>
+
+  <tr>
+    <th>Sprint 1 Velocity</th>
+    <td>20 Story Points</td>
+  </tr>
+
+  <tr>
+    <th>Sum of Story Points</th>
+    <td>20 Story Points</td>
+  </tr>
+</table>
+
+#### 5.2.1.2. Aspect Leaders and Collaborators.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Team Member (Last Name, First Name)</th>
+    <th>GitHub Username</th>
+    <th>Landing Page Development</th>
+    <th>Dashboard & Monitoring Views</th>
+    <th>Alerts Simulation</th>
+    <th>Frontend Styling (CSS & UI)</th>
+    <th>Repository & Version Control</th>
+  </tr>
+
+  <tr>
+    <td>Cabrera Novoa, Leonardo Moisés</td>
+    <td>[u202415820]</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+    <td>L</td>
+  </tr>
+
+  <tr>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>[fflushh]</td>
+    <td>C</td>
+    <td>L</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+  </tr>
+
+  <tr>
+    <td>Morales Venegas, David Joel</td>
+    <td>[David-std2]</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+  </tr>
+
+  <tr>
+    <td>Pajés León, Mauricio Luis</td>
+    <td>[mauricio-pajes]</td>
+    <td>L</td>
+    <td>C</td>
+    <td>L</td>
+    <td>L</td>
+    <td>C</td>
+  </tr>
+
+  <tr>
+    <td>Videla Ventura, Jorge Joseph</td>
+    <td>[JorgeVidVen]</td>
+    <td>C</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+  </tr>
+</table>
+
+### 5.2.1.3. Sprint Backlog 1.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+  
+  <tr>
+    <th>Sprint #</th>
+    <td colspan="7">Sprint 1</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Estimation (Hours)</th>
+    <th>Assigned To</th>
+    <th>Status</th>
+  </tr>
+
+  <!-- LANDING -->
+  <tr>
+    <td>US001</td>
+    <td>Propuesta de valor</td>
+    <td>T-01</td>
+    <td>Hero Section</td>
+    <td>Implementar header, navbar y hero section</td>
+    <td>4</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US002</td>
+    <td>Funcionalidades</td>
+    <td>T-02</td>
+    <td>Features Section</td>
+    <td>Desarrollar sección de funcionalidades del sistema</td>
+    <td>4</td>
+    <td>Frezzia Espinoza</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US003</td>
+    <td>Cómo funciona</td>
+    <td>T-03</td>
+    <td>Showcase Section</td>
+    <td>Implementar secciones de producto y testimonios</td>
+    <td>3</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US004</td>
+    <td>Contacto</td>
+    <td>T-04</td>
+    <td>Signup Section</td>
+    <td>Agregar formulario de registro y pricing overview</td>
+    <td>3</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US005</td>
+    <td>Navegación</td>
+    <td>T-05</td>
+    <td>Navbar Behavior</td>
+    <td>Implementar navegación y estructura del header</td>
+    <td>3</td>
+    <td>Mauricio Pajés</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US006</td>
+    <td>Responsive</td>
+    <td>T-06</td>
+    <td>Responsive UI</td>
+    <td>Adaptar landing page a dispositivos móviles</td>
+    <td>4</td>
+    <td>Leonardo Cabrera</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- DASHBOARD -->
+  <tr>
+    <td>US018</td>
+    <td>Monitoreo</td>
+    <td>T-07</td>
+    <td>Dashboard UI</td>
+    <td>Simular dashboard con datos de temperatura</td>
+    <td>5</td>
+    <td>Jorge Videla</td>
+    <td>Done</td>
+  </tr>
+
+  <tr>
+    <td>US021</td>
+    <td>Alertas</td>
+    <td>T-08</td>
+    <td>Alerts UI</td>
+    <td>Implementar alertas visuales en la interfaz</td>
+    <td>4</td>
+    <td>Frezzia Espinoza</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- REPO -->
+  <tr>
+    <td>-</td>
+    <td>Repositorio</td>
+    <td>T-09</td>
+    <td>GitHub Setup</td>
+    <td>Configurar repositorio, ramas y estructura del proyecto</td>
+    <td>2</td>
+    <td>Leonardo Cabrera</td>
+    <td>Done</td>
+  </tr>
+
+</table>
+
+### 5.2.1.4. Development Evidence for Sprint Review.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit Id</th>
+    <th>Commit Message</th>
+    <th>Commit Message Body</th>
+    <th>Committed on (Date)</th>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>main</td>
+    <td>084f1ec</td>
+    <td>Initial commit</td>
+    <td>Creación inicial del repositorio del proyecto</td>
+    <td>21/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/header-hero</td>
+    <td>a388ed9</td>
+    <td>feat(header-hero): add header navbar and hero section</td>
+    <td>Implementación del header, navbar y sección principal de la landing</td>
+    <td>22/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/app-features</td>
+    <td>b3ab8b8</td>
+    <td>feat(landing-page): adding app features section</td>
+    <td>Desarrollo de la sección de funcionalidades del producto</td>
+    <td>22/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/showcase-why</td>
+    <td>e440ecd</td>
+    <td>feat(landing-page): add product showcase and testimonials sections</td>
+    <td>Implementación de secciones de presentación del producto y testimonios</td>
+    <td>23/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/overview-signup</td>
+    <td>889c23a</td>
+    <td>feat(overview-signup): add pricing overview and signup form sections</td>
+    <td>Implementación de sección de precios y formulario de registro</td>
+    <td>23/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>feature/footer</td>
+    <td>fa060dc</td>
+    <td>feat(landing-page): add site footer with brand, social links and nav columns</td>
+    <td>Desarrollo del footer con enlaces y estructura de navegación</td>
+    <td>23/04/2026</td>
+  </tr>
+
+  <tr>
+    <td>ICEQ2026/landingpage-coldtrace</td>
+    <td>docs/update-readme</td>
+    <td>e18ba06</td>
+    <td>docs(readme): add project overview, structure and team info</td>
+    <td>Documentación del proyecto incluyendo estructura y equipo</td>
+    <td>23/04/2026</td>
+  </tr>
+
+</table>
+
+
+#### 5.2.1.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 1 se desarrolló una versión funcional de la landing page de ColdTrace, permitiendo visualizar la propuesta de valor del producto, así como una simulación de las principales funcionalidades del sistema, como monitoreo y alertas.
+
+A continuación, se presentan evidencias visuales de la implementación:
+
+**Landing Page – Sección principal**
+
+![Landing Hero](assets/chapter-05/development_environment/executionlanding1.png)
+
+![Features Section](assets/chapter-05/development_environment/executionlanding2.png)
+
+![Dashboard Alerts](assets/chapter-05/development_environment/executionlanding3.png)
+
+La navegación entre secciones se realiza mediante un menú fijo (navbar), facilitando la experiencia del usuario. Asimismo, la interfaz es responsive, adaptándose a distintos dispositivos.
+#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 1, no se implementaron Web Services ni endpoints documentados, debido a que el alcance del sprint estuvo enfocado en el desarrollo de la landing page y la simulación de funcionalidades del sistema ColdTrace a nivel frontend.
+
+Sin embargo, como parte del diseño del sistema, se definieron de manera conceptual los principales endpoints que serán implementados en futuros sprints para soportar funcionalidades clave como monitoreo en tiempo real, gestión de alertas y registro de usuarios.
+
+A continuación, se presentan los endpoints identificados:
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Endpoint</th>
+    <th>Method</th>
+    <th>Descripción</th>
+    <th>Ejemplo de respuesta</th>
+  </tr>
+
+  <tr>
+    <td>/api/temperature</td>
+    <td>GET</td>
+    <td>Obtiene los datos de temperatura registrados por los sensores</td>
+    <td>{ "sensorId": "001", "temperature": 5.6, "timestamp": "2026-04-23" }</td>
+  </tr>
+
+  <tr>
+    <td>/api/alerts</td>
+    <td>GET</td>
+    <td>Lista las alertas generadas por el sistema</td>
+    <td>{ "alert": "Temperatura fuera de rango", "value": -5.3 }</td>
+  </tr>
+
+  <tr>
+    <td>/api/users</td>
+    <td>POST</td>
+    <td>Permite registrar nuevos usuarios en la plataforma</td>
+    <td>{ "status": "User created successfully" }</td>
+  </tr>
+
+</table>
+
+La documentación formal de estos endpoints mediante OpenAPI, así como su implementación en Web Services, será desarrollada en los siguientes sprints del proyecto.
+
+Asimismo, se prevé la integración con una arquitectura backend que permita la gestión de datos en tiempo real y la persistencia de información generada por los sensores IoT.
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 1 se realizó el despliegue de la landing page utilizando GitHub Pages, permitiendo publicar el proyecto en un entorno accesible desde la web.
+
+El proceso incluyó la configuración del repositorio, la integración de cambios mediante Pull Requests y la automatización del despliegue.
+
+** Deployment en GitHub Pages**
+
+![Deployment](assets/chapter-05/development_environment/deployement.png)
+
+Se evidencia el despliegue exitoso del proyecto en GitHub Pages, mostrando el estado activo del entorno y la publicación reciente de la landing page.
+
+**URL de despliegue:**
+https://iceq2026.github.io/landingpage-coldtrace/
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 1, el equipo trabajó de manera colaborativa utilizando GitHub como herramienta principal de control de versiones.
+
+Se utilizaron ramas feature para desarrollar funcionalidades de forma independiente, integrando cambios mediante Pull Requests hacia la rama principal.
+
+---
+
+**Analíticos de colaboración en GitHub**
+
+![GitHub Insights](assets/chapter-05/development_environment/insights.png)
+
+Se observa la actividad del repositorio, incluyendo commits realizados, pull requests y participación de los integrantes del equipo. Esto evidencia un trabajo colaborativo activo durante el Sprint.
+
+---
+
+El uso de Conventional Commits permitió mantener un historial organizado, diferenciando claramente entre funcionalidades (feat), documentación (docs) y configuración (chore).
+
+Estas prácticas facilitaron la coordinación del equipo y la integración eficiente del desarrollo.
+
