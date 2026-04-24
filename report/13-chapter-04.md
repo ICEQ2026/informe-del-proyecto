@@ -293,6 +293,7 @@ Asimismo, se priorizó la claridad en la presentación de información y la faci
 <p align="center">
   <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png"/>
 </p>
+
 ---
 
 ### 4.4.4. Web Applications User Flow Diagrams.
