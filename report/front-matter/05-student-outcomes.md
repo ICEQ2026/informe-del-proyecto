@@ -2,10 +2,10 @@
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
-**ABET – EAC - Student Outcome 5**  
-**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+**ABET – EAC - Student Outcome 3**  
+**Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
 
-En el siguiente cuadro se describen las acciones realizadas y las conclusiones del equipo, que permiten sustentar el logro del ABET – EAC - Student Outcome 5.
+En el siguiente cuadro se describen las acciones realizadas y las conclusiones del equipo, que permiten sustentar el logro del ABET – EAC - Student Outcome 3.
 
 ---
 
@@ -19,42 +19,54 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
   </tr>
   <tr>
     <td>
-      Trabaja en equipo para proporcionar liderazgo en forma conjunta
+      Comunica oralmente con efectividad a diferentes rangos de audiencia
     </td>
     <td>
-      <strong>Videla Ventura, Jorge Joseph</strong><br>
-      AV1: Participación activa en la explicación del Big Picture Event Storming, comunicando de manera estructurada los eventos clave del negocio, sus relaciones y el flujo de la cadena de frío, facilitando la comprensión del dominio tanto para miembros técnicos como no técnicos del equipo.<br>
-      Presentación de los artefactos UX/UI (wireframes, wireflows y mockups), explicando la lógica de navegación, interacción del usuario y organización de la información, adaptando el lenguaje según la audiencia y promoviendo la retroalimentación del equipo para la mejora continua del diseño.<br><br>
-      <strong>Cabrera Novoa, Leonardo Moises</strong><br>
-      AV1: Utilicé los wireflow y user flow diagrams como herramienta principal para comunicar la navegación y lógica de la aplicación al equipo. Validé que el mensaje fuera comprendido satisfactoriamente mediante sesiones de feedback, asegurando que todos los integrantes estuviéramos alineados con los objetivos de la presentación de resultados.<br><br>
-      <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 5</strong> — AV1 / TB1 / AV2
+      <strong>Videl Ventura, Jorge Joseph</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Explicó el contexto de la startup, la problemática, los segmentos objetivo, el análisis competitivo, las entrevistas, el needfinding y el Big Picture Event Storming del proyecto.<br><br>
+      <strong>Pajés León, Mauricio Luis</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Sustentó los requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, además de la landing page del producto.<br><br>
+      <strong>Espinoza Paredes, Frezzia</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Explicó los diagramas de arquitectura de software, los diagramas de clases, el diseño de base de datos y participó también en la sustentación de la landing page.<br><br>
+      <strong>Morales Venegas, David Joel</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Sustentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
+      <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Explicó los mockups finales de la aplicación, el prototipado, la configuración del entorno de desarrollo y los aspectos de implementación del sistema.
     </td>
     <td>
-    <strong>Videla Ventura, Jorge Joseph</strong><br>
-      <strong>AV1:</strong> Se evidenció la creación de un entorno colaborativo e inclusivo mediante la participación activa de todos los integrantes en las actividades de análisis y diseño del sistema, fomentando el intercambio de ideas y la construcción conjunta del conocimiento. Asimismo, el equipo estableció objetivos claros y alcanzables, organizando el trabajo de manera estructurada y distribuyendo responsabilidades de forma equitativa. Esta dinámica permitió una planificación efectiva de las tareas y el cumplimiento oportuno de los entregables, demostrando un alto nivel de coordinación, compromiso y responsabilidad compartida en el desarrollo del proyecto.<br>
-      <strong>TB1:</strong> Se fortaleció la coordinación del equipo a través de una comunicación clara y alineada.<br>
-      <strong>AV2:</strong> Se consolidó la toma de decisiones conjunta en el desarrollo del sistema.
+      <strong>AV1 / TB1 / AV2:</strong><br>
+      El equipo logró comunicar de manera clara y estructurada los componentes principales del proyecto, adaptando la explicación según el tipo de contenido presentado, ya sea de negocio, UX o técnico. Se evidenció coherencia en la exposición y dominio progresivo del alcance del producto.
     </td>
   </tr>
   <tr>
     <td>
-      Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos
+      Comunica por escrito con efectividad a diferentes rangos de audiencia
     </td>
     <td>
-      <strong>Est. 1</strong> — AV1 / TB1 / AV2<br><br>
-      <strong>Cabrera Novoa, Leonardo Moises</strong><br>
-      AV1: Elaboré documentación técnica detallada que sintetiza los conceptos básicos de la experiencia de usuario de acuerdo con nuestro público objetivo. Redacté estos informes siguiendo los estándares de calidad establecidos para el curso, garantizando una redacción clara y una estructura profesional en la entrega final.<br><br> 
-      <strong>Est. 3</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 4</strong> — AV1 / TB1 / AV2<br>
-      <strong>Est. 5</strong> — AV1 / TB1 / AV2
+      <strong>Videl Ventura, Jorge Joseph</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Redactó el contexto de la startup, la problemática, los segmentos objetivo, el análisis competitivo, las entrevistas, el needfinding y la documentación asociada al Event Storming del proyecto.<br><br>
+      <strong>Pajés León, Mauricio Luis</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Elaboró la documentación de requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, y participó en la documentación y desarrollo de la landing page.<br><br>
+      <strong>Espinoza Paredes, Frezzia</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Redactó la documentación de arquitectura de software, diagramas de clases y diseño de base de datos, y participó también en la documentación de la landing page.<br><br>
+      <strong>Morales Venegas, David Joel</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Documentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
+      <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
+      <em>AV1 / TB1 / AV2</em><br>
+      Redactó el contenido relacionado con mockups finales, prototipado, configuración del entorno de desarrollo e implementación del sistema.
     </td>
     <td>
-      <strong>Videla Ventura, Jorge Joseph</strong><br>
-      <strong>AV1:</strong> Se evidenció la creación de un entorno colaborativo e inclusivo mediante la participación activa de todos los integrantes en las actividades de análisis y diseño del sistema, fomentando el intercambio de ideas y la construcción conjunta del conocimiento. Asimismo, el equipo estableció objetivos claros y alcanzables, organizando el trabajo de manera estructurada y distribuyendo responsabilidades de forma equitativa. Esta dinámica permitió una planificación efectiva de las tareas y el cumplimiento oportuno de los entregables, demostrando un alto nivel de coordinación, compromiso y responsabilidad compartida en el desarrollo del proyecto.<br>
-      <strong>TB1:</strong> [Conclusión]<br>
-      <strong>AV2:</strong> [Conclusión]
+      <strong>AV1 / TB1 / AV2:</strong><br>
+      El equipo desarrolló documentación escrita clara, organizada y consistente, cubriendo aspectos de negocio, experiencia de usuario y arquitectura técnica. La redacción mantuvo coherencia entre secciones y permitió sustentar adecuadamente la propuesta del proyecto.
     </td>
   </tr>
 </table>
