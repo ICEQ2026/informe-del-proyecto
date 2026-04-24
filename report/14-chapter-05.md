@@ -246,7 +246,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 <table border="1" cellpadding="6" cellspacing="0">
   <tr>
     <th>Sprint #</th>
-    <td>Sprint n</td>
+    <td>Sprint 1</td>
   </tr>
 
   <tr>
@@ -255,37 +255,39 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 
   <tr>
     <th>Date</th>
-    <td>YYYY-MM-DD</td>
+    <td>2026-04-20</td>
   </tr>
 
   <tr>
     <th>Time</th>
-    <td>HH:MM AM/PM</td>
+    <td>08:00 PM</td>
   </tr>
 
   <tr>
     <th>Location</th>
-    <td>(Descripción de la ubicación de la reunión, física o virtual)</td>
+    <td>Reunión virtual vía Google Meet</td>
   </tr>
 
   <tr>
     <th>Prepared By</th>
-    <td>Jiménez Rosas, Arturo Eduardo</td>
+    <td>Pajés León, Mauricio Luis</td>
   </tr>
 
   <tr>
     <th>Attendees (to planning meeting)</th>
-    <td>Jiménez Rosas, Arturo Eduardo / Rodríguez Peña, Jorge Andrés / ...</td>
+    <td>Morales Venegas, David Joel / Espinoza Paredes, Frezzia / Cabrera Novoa, Leonardo Moisés / Videla Ventura, Jorge Joseph</td>
   </tr>
 
   <tr>
-    <th>Sprint n − 1 Review Summary</th>
-    <td>(Resumen del Sprint anterior, en términos de resultados alcanzados a nivel de productos de software, opiniones de miembros y feedback de product owner.)</td>
+    <th>Sprint 1 Review Summary</th>
+    <td>Como punto de partida, el equipo logró definir el alcance del producto ColdTrace, estructurar los capítulos iniciales del informe y desarrollar una primera versión funcional de la landing page con secciones clave y vistas básicas como dashboard, monitoreo y alertas. Esto permitió validar la dirección del proyecto y asegurar coherencia entre la propuesta de valor y la implementación inicial.
+</td>
   </tr>
 
   <tr>
-    <th>Sprint n − 1 Retrospective Summary</th>
-    <td>(Resumen del Sprint anterior, en términos de opiniones de miembros del equipo sobre aciertos u oportunidades de mejora en su forma de trabajo)</td>
+    <th>Sprint 1 Retrospective Summary</th>
+    <td>Durante este primer sprint, el equipo identificó oportunidades de mejora relacionadas con la organización del tiempo y la coordinación entre integrantes. Si bien se lograron avances importantes en el desarrollo de la landing page, la distribución de tareas pudo ser más equilibrada. Como mejora, se propone fortalecer la comunicación, definir entregables más claros por integrante y establecer reuniones más frecuentes para hacer seguimiento al avance del proyecto.
+</td>
   </tr>
 
   <tr>
@@ -293,18 +295,18 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
   </tr>
 
   <tr>
-    <th>Sprint n Goal</th>
-    <td>(Definir el Goal del Sprint n y la métrica de cumplimiento.)</td>
+    <th>Sprint 1 Goal</th>
+    <td>Desarrollar una primera versión funcional de la landing page de ColdTrace e implementar vistas básicas del sistema (dashboard, monitoreo y alertas) que permitan simular el flujo de monitoreo de la cadena de frío. El cumplimiento se medirá mediante la correcta visualización de la landing page y la navegación entre secciones funcionales.</td>
   </tr>
 
   <tr>
-    <th>Sprint n Velocity</th>
-    <td>(Definir el Velocity establecido para el Sprint n, es decir cuántos Story Points puede aceptar el equipo para este Sprint n.)</td>
+    <th>Sprint 1 Velocity</th>
+    <td>20 Story Points</td>
   </tr>
 
   <tr>
     <th>Sum of Story Points</th>
-    <td>(Colocar la suma de los Story Points para los User Stories que se están incluyendo en este Sprint n.)</td>
+    <td>20 Story Points</td>
   </tr>
 </table>
 
@@ -444,29 +446,3 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 
 [pending content]
 
-
-## 5.3. Sprint Planning n
-[pending content]
-### Aspect Leaders and Collaborators
-[pending content]
-### Sprint Backlog n
-[pending content]
-### Development Evidence for Sprint Review
-[pending content]
-### Execution Evidence for Sprint Review
-[pending content]
-### Services Documentation Evidence for Sprint Review
-[pending content]
-### Software Deployment Evidence for Sprint Review
-[pending content]
-### Team Collaboration Insights during Sprint
-[pending content]
-### Validation Interviews
-#### 5.3.1. Diseño de Entrevistas
-[pending content]
-#### 5.3.2. Registro de Entrevistas
-[pending content]
-#### 5.3.3. Evaluaciones según heurísticas
-[pending content]
-## 5.4. Video About-the-Product
-[pending content]
