@@ -33,10 +33,10 @@ System_Boundary(coldtrace, "Sistema ColdTrace") {
     ' Capa de presentación
     Container(landing, "Landing Page", "HTML, CSS, JavaScript", "Propuesta de valor, funcionalidades, CTA de registro [EP001, US001-US006].")
 
-    Container(webapp, "Web Application", "React / Angular", "Dashboard de monitoreo en tiempo real, gestion de activos, alertas, reportes e historial. Responsive desktop y movil.")
+    Container(webapp, "Web Application", "Angular", "Dashboard de monitoreo en tiempo real, gestion de activos, alertas, reportes e historial. Responsive desktop y movil.")
 
     ' Gateways
-    Container(apigateway, "API Gateway", "Node.js / Nginx", "Punto de entrada unico al backend. Enrutamiento, autenticacion y rate limiting.")
+    Container(apigateway, "API Gateway", "Spring Cloud Gateway", "Punto de entrada unico al backend. Enrutamiento, autenticacion y rate limiting.")
 
     Container(iotgateway, "IoT Gateway", "MQTT / HTTP", "Recibe y normaliza lecturas de sensores fisicos antes de reenviarlas al BC de Monitoreo.")
 
