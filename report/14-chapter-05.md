@@ -590,11 +590,11 @@ A continuación, se presentan evidencias visuales de la implementación:
 
 **Landing Page – Sección principal**
 
-![Landing Hero](assets/chapter-05/execution/executionlanding1.png)
+![Landing Hero](assets/chapter-05/development_environment/executionlanding1.png)
 
-![Features Section](assets/chapter-05/execution/executionlanding2.png)
+![Features Section](assets/chapter-05/development_environment/executionlanding2.png)
 
-![Dashboard Alerts](assets/chapter-05/execution/executionlanding3.png)
+![Dashboard Alerts](assets/chapter-05/development_environment/executionlanding3.png)
 
 La navegación entre secciones se realiza mediante un menú fijo (navbar), facilitando la experiencia del usuario. Asimismo, la interfaz es responsive, adaptándose a distintos dispositivos.
 #### 5.2.1.6. Services Documentation Evidence for Sprint Review
@@ -648,7 +648,7 @@ El proceso incluyó la configuración del repositorio, la integración de cambio
 
 ** Deployment en GitHub Pages**
 
-![Deployment](assets/chapter-05/deployment/deployement.png)
+![Deployment](assets/chapter-05/development_environment/deployement.png)
 
 Se evidencia el despliegue exitoso del proyecto en GitHub Pages, mostrando el estado activo del entorno y la publicación reciente de la landing page.
 
@@ -665,7 +665,7 @@ Se utilizaron ramas feature para desarrollar funcionalidades de forma independie
 
 **Analíticos de colaboración en GitHub**
 
-![GitHub Insights](assets/chapter-05/collaboration/insights.png)
+![GitHub Insights](assets/chapter-05/development_environment/insights.png)
 
 Se observa la actividad del repositorio, incluyendo commits realizados, pull requests y participación de los integrantes del equipo. Esto evidencia un trabajo colaborativo activo durante el Sprint.
 
