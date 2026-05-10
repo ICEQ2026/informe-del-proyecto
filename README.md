@@ -66,7 +66,7 @@
     </tr>
     <tr>
       <td align="center">U202220648</td>
-      <td align="left">Videl Ventura, Jorge Joseph</td>
+      <td align="left">Videla Ventura, Jorge Joseph</td>
     </tr>
   </tbody>
 </table>
