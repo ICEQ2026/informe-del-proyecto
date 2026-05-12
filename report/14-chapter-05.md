@@ -819,7 +819,14 @@ Los aspectos principales del Sprint 2 fueron los siguientes:
 
 #### 5.2.2.3. Sprint Backlog 2
 
-El objetivo principal del Sprint 2 fue implementar y desplegar la primera versión completa de la Frontend Web Application de ColdTrace, habilitando los flujos de autenticación, gestión de activos, monitoreo operacional y consulta de reportes de cumplimiento. El equipo gestionó el Sprint Backlog mediante Linear App, organizando las tareas por épica y bounded context. A continuación se presenta la tabla de control de estado del sprint.
+El objetivo principal del Sprint 2 fue implementar y desplegar la primera versión completa de la Frontend Web Application de ColdTrace, habilitando los flujos de autenticación, gestión de activos, monitoreo operacional y consulta de reportes de cumplimiento. El equipo gestionó el Sprint Backlog mediante Linear App, organizando las tareas por épica y bounded context.
+
+A continuación se presenta una captura del backlog gestionado en Linear App:
+
+![Sprint 2 Backlog – Linear App](assets/chapter-05/sprint-2/linear-backlog.png)
+*Figura 5.2.2.3.1: Sprint Backlog del Sprint 2 en Linear App (46 issues Done, 1 In Progress, 7 Backlog).*
+
+A continuación se presenta la tabla de control de estado del sprint.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
   <tr>
@@ -1036,7 +1043,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
     <td>Implementar vista de creación de incidencia térmica al detectar desviación</td>
     <td>4</td>
     <td>Videla Ventura, Jorge</td>
-    <td>In-Process</td>
+    <td>Done</td>
   </tr>
   <tr>
     <td>US025</td>
@@ -1056,7 +1063,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
     <td>Implementar vista de escalamiento de alertas no atendidas</td>
     <td>4</td>
     <td>Videla Ventura, Jorge</td>
-    <td>In-Process</td>
+    <td>To-do</td>
   </tr>
   <tr>
     <td>US027</td>
@@ -1323,6 +1330,30 @@ Durante el Sprint 2 se realizó la implementación completa de la Frontend Web A
   </tr>
   <tr>
     <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>57c2200</td>
+    <td>feat: implement asset monitoring dashboard</td>
+    <td>Implementación del dashboard de monitoreo de activos</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>5d84982</td>
+    <td>chore: sync db.json</td>
+    <td>Sincronización de base de datos JSON del servidor provisional</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>dd74863</td>
+    <td>feat(shared): implement accordion toggle for access menu in sidebar</td>
+    <td>Implementación del toggle tipo accordion para el menú de acceso en la barra lateral</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
     <td>feature/US029-daily-log</td>
     <td>e531330</td>
     <td>feat(reports): add reports bounded context with daily log</td>
@@ -1372,25 +1403,9 @@ Durante el Sprint 2 se realizó la implementación completa de la Frontend Web A
   <tr>
     <td>ICEQ2026/coldtrace-frontend</td>
     <td>feature/US027-recognize-critical-alert</td>
-    <td>80bb0bb</td>
-    <td>fix(US027): merge develop and scope incidents</td>
-    <td>Integración de develop y definición del alcance del módulo de incidencias</td>
-    <td>12/05/2026</td>
-  </tr>
-  <tr>
-    <td>ICEQ2026/coldtrace-frontend</td>
-    <td>feature/US027-recognize-critical-alert</td>
-    <td>a72a32d</td>
-    <td>fix(US027): use shared layout for incidents view</td>
-    <td>Implementación de vista de incidencias usando el layout compartido del dashboard</td>
-    <td>12/05/2026</td>
-  </tr>
-  <tr>
-    <td>ICEQ2026/coldtrace-frontend</td>
-    <td>feature/US038-technical-service</td>
-    <td>a1d171f</td>
-    <td>feat: implement corrective actions and technical service workflow</td>
-    <td>Implementación del flujo de acciones correctivas y servicio técnico</td>
+    <td>859ae1d</td>
+    <td>feat: implement recognize critical alert feature including domain, infrastructure, application and presentation layers</td>
+    <td>Implementación completa del feature de reconocimiento de alerta crítica con capas de dominio, infraestructura, aplicación y presentación</td>
     <td>12/05/2026</td>
   </tr>
   <tr>
@@ -1452,24 +1467,52 @@ Al término del Sprint 2, se desplegó la primera versión funcional de la Front
 La plataforma cuenta con vistas de creación de cuenta, inicio de sesión y recuperación de contraseña, así como una pantalla de administración de roles y permisos para usuarios con perfil administrador.
 
 ![Sign-In View](assets/chapter-05/sprint-2/sign-in.png)
+*Figura 5.2.2.5.1: Vista de Inicio de Sesión (Sign-In).*
+
+![Create Account View](assets/chapter-05/sprint-2/create-account.png)
+*Figura 5.2.2.5.2: Vista de Registro de Cuenta (Sign-Up).*
+
+![Password Recovery View](assets/chapter-05/sprint-2/password-recovery.png)
+*Figura 5.2.2.5.3: Vista de Recuperación de Contraseña.*
+
+![Roles & Permissions View](assets/chapter-05/sprint-2/roles-permissions.png)
+*Figura 5.2.2.5.4: Administración de Roles y Permisos.*
 
 **Asset Management – Gestión de activos e infraestructura IoT**
 
 Se implementó el módulo completo de gestión de activos, incluyendo el registro de cámaras frigoríficas, unidades de transporte, vinculación de sensores IoT, emparejamiento de gateways, calibración y configuración avanzada de parámetros de dispositivos.
 
 ![Cold Room List View](assets/chapter-05/sprint-2/cold-room-list.png)
+*Figura 5.2.2.5.5: Listado y Gestión de Cámaras Frigoríficas.*
+
+![Transport Unit List View](assets/chapter-05/sprint-2/transport-units.png)
+*Figura 5.2.2.5.6: Registro de Unidades de Transporte.*
+
+![Sensor Linking & Gateway Pairing View](assets/chapter-05/sprint-2/sensor-pairing.png)
+*Figura 5.2.2.5.7: Vinculación de Sensores y Gateways IoT.*
+
+![Asset Settings & IoT Configuration View](assets/chapter-05/sprint-2/asset-settings.png)
+*Figura 5.2.2.5.8: Configuración Avanzada y Parámetros Operativos.*
 
 **Monitoring – Dashboard operacional (US039)**
 
 El dashboard operacional muestra en tiempo real el estado de los activos monitoreados, KPIs de temperatura, alertas activas y telemetría de sensores. Los datos se consumen desde el servidor JSON configurado como backend provisional.
 
 ![Operational Dashboard View](assets/chapter-05/sprint-2/operational-dashboard.png)
+*Figura 5.2.2.5.9: Dashboard Operacional con Telemetría en Tiempo Real.*
 
 **Reports – Reportes y cumplimiento normativo (US029–US034)**
 
 El módulo de reportes incluye seis vistas: bitácora diaria, historial de eventos operacionales, exportación de reportes sanitarios, descarga de reportes mensuales, hallazgos de cumplimiento y evidencia de auditoría.
 
 ![Reports Daily Log View](assets/chapter-05/sprint-2/daily-log.png)
+*Figura 5.2.2.5.10: Bitácora Diaria de Operaciones.*
+
+![Operational History View](assets/chapter-05/sprint-2/operational-history.png)
+*Figura 5.2.2.5.11: Historial de Eventos Operacionales.*
+
+![Compliance Findings & Audit Evidence View](assets/chapter-05/sprint-2/compliance-audit.png)
+*Figura 5.2.2.5.12: Hallazgos de Cumplimiento y Evidencia de Auditoría.*
 
 > **Video de navegación del producto:** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-2] — *[URL pendiente de subir a Microsoft Stream]*
 
@@ -1569,7 +1612,13 @@ Durante el Sprint 2 se configuró el despliegue continuo de la Frontend Web Appl
 **URL de despliegue del frontend:**
 https://coldtrace-frontend-liard.vercel.app
 
-> *[Screenshot del dashboard de Vercel mostrando los deployments — pendiente de captura]*
+A continuación se presenta la evidencia del despliegue en Vercel:
+
+![Vercel Active Branches](assets/chapter-05/sprint-2/vercel-active-branches.png)
+*Figura 5.2.2.7.1: Branches activos con sus Preview Deployments en Vercel, mostrando los PRs #16–#28 y los contributors por branch.*
+
+![Vercel Production Deployment](assets/chapter-05/sprint-2/vercel-production-deployment.png)
+*Figura 5.2.2.7.2: Production Deployment overview en Vercel — Status Ready, dominio coldtrace-frontend-liard.vercel.app.*
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
 
@@ -1599,8 +1648,8 @@ A continuación se presenta el resumen de participación por integrante basado e
   <tr>
     <td>Morales Venegas, David Joel</td>
     <td>David-std2</td>
-    <td>~2</td>
-    <td>EP004 Operational Monitoring Dashboard</td>
+    <td>~5</td>
+    <td>EP004 Operational Monitoring Dashboard (US039, monitoring dashboard, sidebar)</td>
   </tr>
   <tr>
     <td>Espinoza Paredes, Frezzia</td>
@@ -1611,13 +1660,12 @@ A continuación se presenta el resumen de participación por integrante basado e
   <tr>
     <td>Videla Ventura, Jorge Joseph</td>
     <td>JorgeVidVen</td>
-    <td>~3</td>
-    <td>EP005 Alerts &amp; Incidents (US027, US028)</td>
+    <td>1</td>
+    <td>EP005 Alerts &amp; Incidents (US027 – recognize critical alert)</td>
   </tr>
 </table>
 
-> **GitHub Insights — Contributors Graph:** *[Screenshot pendiente de captura]*
+![GitHub Contributors Insights](assets/chapter-05/sprint-2/github-insights.png)
+*Figura 5.2.2.8.1: Gráfico de contribuciones por integrante – repositorio coldtrace-frontend (contributors to main branch).*
 
-> **GitHub Insights — Commit Activity:** *[Screenshot pendiente de captura]*
-
-El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 22 PRs mergeados durante el sprint.
+El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 22 PRs mergeados durante el sprint. El uso de Conventional Commits permitió mantener un historial organizado, diferenciando claramente entre funcionalidades nuevas (`feat`), correcciones (`fix`), configuración (`chore`) y documentación (`docs`).
