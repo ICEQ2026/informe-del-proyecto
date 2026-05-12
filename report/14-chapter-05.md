@@ -955,35 +955,135 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
     <td>Done</td>
   </tr>
 
-  <!-- EP004 - MONITORING -->
+  <!-- EP004 - MONITORING (David) -->
+  <tr>
+    <td>US018</td>
+    <td>Visualizar temperatura en tiempo real</td>
+    <td>T-21</td>
+    <td>Real-Time Temperature View</td>
+    <td>Implementar vista de monitoreo de temperatura en tiempo real por activo</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US019</td>
+    <td>Visualizar humedad en tiempo real</td>
+    <td>T-22</td>
+    <td>Real-Time Humidity View</td>
+    <td>Implementar vista de monitoreo de humedad en tiempo real por activo</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US020</td>
+    <td>Consultar historial de lecturas</td>
+    <td>T-23</td>
+    <td>Readings History View</td>
+    <td>Implementar vista de historial de lecturas de temperatura y humedad</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US021</td>
+    <td>Detectar temperatura fuera de rango</td>
+    <td>T-24</td>
+    <td>Out-of-Range Detection View</td>
+    <td>Implementar indicadores visuales de detección de temperatura fuera de rango seguro</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US022</td>
+    <td>Visualizar estado de conectividad</td>
+    <td>T-25</td>
+    <td>Connectivity Status View</td>
+    <td>Implementar vista del estado de conectividad de sensores y gateways</td>
+    <td>4</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US023</td>
+    <td>Sincronizar datos almacenados offline</td>
+    <td>T-26</td>
+    <td>Offline Sync View</td>
+    <td>Implementar vista de sincronización de datos almacenados sin conexión</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
   <tr>
     <td>US039</td>
-    <td>Visualizar dashboard operativo</td>
-    <td>T-21</td>
+    <td>Visualizar dashboard operativo inicial</td>
+    <td>T-27</td>
     <td>Operational Dashboard UI</td>
-    <td>Implementar dashboard con telemetría en vivo, KPIs y estado de activos monitoreados</td>
+    <td>Implementar dashboard operacional con telemetría en vivo, KPIs y estado de activos monitoreados</td>
     <td>8</td>
     <td>Morales Venegas, David / Pajés León, Mauricio</td>
     <td>Done</td>
   </tr>
 
-  <!-- EP005 - ALERTS (navigation structure) -->
+  <!-- EP005 - ALERTS (Jorge) -->
   <tr>
     <td>US024</td>
     <td>Crear incidencia térmica</td>
-    <td>T-22</td>
-    <td>Alerts Module – Navigation Structure</td>
-    <td>Implementar estructura de navegación y rutas base del módulo de alertas e incidencias</td>
-    <td>3</td>
+    <td>T-28</td>
+    <td>Thermal Incident Creation UI</td>
+    <td>Implementar vista de creación de incidencia térmica al detectar desviación</td>
+    <td>4</td>
     <td>Videla Ventura, Jorge</td>
     <td>In-Process</td>
   </tr>
+  <tr>
+    <td>US025</td>
+    <td>Disparar notificaciones de alerta</td>
+    <td>T-29</td>
+    <td>Alert Notification UI</td>
+    <td>Implementar vista de notificaciones de alerta automáticas</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>In-Process</td>
+  </tr>
+  <tr>
+    <td>US026</td>
+    <td>Escalar alerta no atendida</td>
+    <td>T-30</td>
+    <td>Alert Escalation UI</td>
+    <td>Implementar vista de escalamiento de alertas no atendidas</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>In-Process</td>
+  </tr>
+  <tr>
+    <td>US027</td>
+    <td>Reconocer alerta crítica</td>
+    <td>T-31</td>
+    <td>Critical Alert Acknowledgement UI</td>
+    <td>Implementar vista de reconocimiento de alertas críticas</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US028</td>
+    <td>Registrar acción correctiva y cerrar incidencia</td>
+    <td>T-32</td>
+    <td>Corrective Action UI</td>
+    <td>Implementar vista de registro de acción correctiva y cierre de incidencia</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>Done</td>
+  </tr>
 
-  <!-- EP006 - REPORTS -->
+  <!-- EP006 - REPORTS (Leonardo) -->
   <tr>
     <td>US029</td>
     <td>Generar bitácora diaria</td>
-    <td>T-23</td>
+    <td>T-33</td>
     <td>Daily Log View</td>
     <td>Implementar vista de bitácora diaria de lecturas y eventos del sistema</td>
     <td>4</td>
@@ -993,7 +1093,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US030</td>
     <td>Consultar historial de eventos</td>
-    <td>T-24</td>
+    <td>T-34</td>
     <td>Operational History View</td>
     <td>Implementar vista de historial de eventos operacionales</td>
     <td>4</td>
@@ -1003,7 +1103,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US031</td>
     <td>Exportar reporte sanitario</td>
-    <td>T-25</td>
+    <td>T-35</td>
     <td>Sanitary Compliance Export</td>
     <td>Implementar vista de exportación de reporte de cumplimiento sanitario</td>
     <td>4</td>
@@ -1013,7 +1113,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US032</td>
     <td>Descargar reporte mensual</td>
-    <td>T-26</td>
+    <td>T-36</td>
     <td>Monthly Report Download</td>
     <td>Implementar descarga de reporte mensual consolidado</td>
     <td>4</td>
@@ -1023,7 +1123,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US033</td>
     <td>Detectar faltantes o incumplimientos</td>
-    <td>T-27</td>
+    <td>T-37</td>
     <td>Compliance Findings View</td>
     <td>Implementar vista de hallazgos y faltantes de cumplimiento normativo</td>
     <td>4</td>
@@ -1033,7 +1133,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US034</td>
     <td>Preparar evidencia para auditoría</td>
-    <td>T-28</td>
+    <td>T-38</td>
     <td>Audit Evidence View</td>
     <td>Implementar vista de evidencia de auditoría con registros descargables</td>
     <td>4</td>
@@ -1045,7 +1145,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US035</td>
     <td>Configurar rangos de seguridad</td>
-    <td>T-30</td>
+    <td>T-39</td>
     <td>Safety Range Settings UI</td>
     <td>Implementar vista de configuración de rangos seguros de temperatura y humedad por activo</td>
     <td>4</td>
@@ -1055,7 +1155,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US036</td>
     <td>Actualizar parámetros operativos</td>
-    <td>T-31</td>
+    <td>T-40</td>
     <td>Operational Parameters UI</td>
     <td>Implementar vista de actualización de parámetros operativos del monitoreo</td>
     <td>4</td>
@@ -1065,7 +1165,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US037</td>
     <td>Programar mantenimiento preventivo</td>
-    <td>T-32</td>
+    <td>T-41</td>
     <td>Preventive Maintenance UI</td>
     <td>Implementar vista de programación y seguimiento de mantenimiento preventivo</td>
     <td>4</td>
@@ -1075,7 +1175,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>US038</td>
     <td>Solicitar y cerrar servicio técnico</td>
-    <td>T-33</td>
+    <td>T-42</td>
     <td>Technical Service UI</td>
     <td>Implementar vista de solicitud y cierre de servicio técnico</td>
     <td>4</td>
@@ -1087,7 +1187,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
   <tr>
     <td>-</td>
     <td>Despliegue continuo</td>
-    <td>T-29</td>
+    <td>T-43</td>
     <td>Vercel CI/CD &amp; JSON Server Setup</td>
     <td>Configurar despliegue automático en Vercel con preview por branch y servidor JSON hospedado</td>
     <td>3</td>
@@ -1267,6 +1367,30 @@ Durante el Sprint 2 se realizó la implementación completa de la Frontend Web A
     <td>eeed5c6</td>
     <td>feat(reports): add US034 audit evidence view</td>
     <td>Implementación de la vista de evidencia de auditoría</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US027-recognize-critical-alert</td>
+    <td>80bb0bb</td>
+    <td>fix(US027): merge develop and scope incidents</td>
+    <td>Integración de develop y definición del alcance del módulo de incidencias</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US027-recognize-critical-alert</td>
+    <td>a72a32d</td>
+    <td>fix(US027): use shared layout for incidents view</td>
+    <td>Implementación de vista de incidencias usando el layout compartido del dashboard</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US038-technical-service</td>
+    <td>a1d171f</td>
+    <td>feat: implement corrective actions and technical service workflow</td>
+    <td>Implementación del flujo de acciones correctivas y servicio técnico</td>
     <td>12/05/2026</td>
   </tr>
   <tr>
@@ -1487,15 +1611,13 @@ A continuación se presenta el resumen de participación por integrante basado e
   <tr>
     <td>Videla Ventura, Jorge Joseph</td>
     <td>JorgeVidVen</td>
-    <td>—</td>
-    <td>EP005 Alerts &amp; Incidents (en progreso)</td>
+    <td>~3</td>
+    <td>EP005 Alerts &amp; Incidents (US027, US028)</td>
   </tr>
 </table>
-
-> **Nota sobre commit IDs de EP007:** Los branches `feature/US035-safety-range-settings`, `feature/US036-operational-parameters`, `feature/US037-preventive-maintenance` y `feature/US038-technical-service` fueron pusheados por Espinoza Paredes, Frezzia durante el sprint con PRs #23–#26. Los commit IDs exactos se obtienen directamente desde el repositorio en GitHub una vez mergeados a `develop`.
 
 > **GitHub Insights — Contributors Graph:** *[Screenshot pendiente de captura]*
 
 > **GitHub Insights — Commit Activity:** *[Screenshot pendiente de captura]*
 
-El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 22 PRs mergeados durante el sprint. El uso de Conventional Commits permitió mantener un historial organizado, diferenciando claramente entre funcionalidades nuevas (`feat`), correcciones (`fix`), configuración (`chore`) y documentación (`docs`).
+El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 22 PRs mergeados durante el sprint.
