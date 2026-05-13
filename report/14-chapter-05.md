@@ -1514,7 +1514,7 @@ El módulo de reportes incluye seis vistas: bitácora diaria, historial de event
 ![Compliance Findings & Audit Evidence View](assets/chapter-05/sprint-2/compliance-audit.png)
 *Figura 5.2.2.5.12: Hallazgos de Cumplimiento y Evidencia de Auditoría.*
 
-> **Video de navegación del producto:** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-2] — *[URL pendiente de subir a Microsoft Stream]*
+**Video de navegación del producto:** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQAb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
