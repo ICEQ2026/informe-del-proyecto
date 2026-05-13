@@ -85,6 +85,7 @@
 | 1.3.0 | 21/04/26 | Mauricio Pajés León | Definición de requisitos funcionales del sistema: épicas, user stories, impact mapping y product backlog, además de ajustes funcionales de la landing page. |
 | 1.4.0 | 22/04/26 | David Joel Morales Venegas, Leonardo Moisés Cabrera Novoa | Documentación de lineamientos de estilo, arquitectura de información, wireframes, wireflows, mockups, user flows y prototipado de la solución. |
 | 1.5.0 | 23/04/26 | Frezzia Espinoza Paredes, Mauricio Pajés León, Jorge Joseph Videl Ventura | Consolidación de arquitectura y diseño técnico: event storming, diagramas C4, diagramas de componentes, diagramas de clases, diseño de base de datos y cierre final del informe. |
+| 1.6.0 | 13/05/26 | Mauricio Pajés León | Actualización del README del informe, incluyendo ajustes de user stories, documentación técnica y Student Outcome de TB1 según las responsabilidades reales asumidas por épica. |
 
 
 # Project Report Collaboration Insights
@@ -244,25 +245,37 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Comunica oralmente con efectividad a diferentes rangos de audiencia
     </td>
     <td>
-      <strong>Videl Ventura, Jorge Joseph</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>Videla Ventura, Jorge Joseph</strong><br>
+      <strong>AV1</strong><br>
       Explicó el contexto de la startup, la problemática, los segmentos objetivo, el análisis competitivo, las entrevistas, el needfinding y el Big Picture Event Storming del proyecto.<br><br>
+      <strong>TB1</strong><br>
+      Sustentó la épica de alertas e incidencias, explicando cómo ColdTrace identifica eventos críticos, permite reconocer alertas, registrar acciones correctivas y mantener trazabilidad sobre incidentes operativos.<br><br>
       <strong>Pajés León, Mauricio Luis</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>AV1</strong><br>
       Sustentó los requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, además de la landing page del producto.<br><br>
+      <strong>TB1</strong><br>
+      Expuso las épicas de gestión de usuarios, acceso, equipos y sensores, detallando la autenticación, roles, permisos, registro de activos, sensores y gateways, además de la relación entre gateway, ubicación y activo dentro de la fake API.<br><br>
       <strong>Espinoza Paredes, Frezzia</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>AV1</strong><br>
       Explicó los diagramas de arquitectura de software, los diagramas de clases, el diseño de base de datos y participó también en la sustentación de la landing page.<br><br>
+      <strong>TB1</strong><br>
+      Presentó la épica de configuración operativa y mantenimiento, explicando la configuración de rangos seguros, parámetros operativos, mantenimiento preventivo y servicio técnico como soporte para adaptar ColdTrace a cada operación.<br><br>
       <strong>Morales Venegas, David Joel</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>AV1</strong><br>
       Sustentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Expuso la épica de monitoreo de temperatura y humedad, detallando las vistas de monitoreo operacional y por activo, la lectura de temperatura, humedad, conectividad, estado de sensores y consistencia visual con el layout principal de la aplicación.<br><br>
       <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
-      Explicó los mockups finales de la aplicación, el prototipado, la configuración del entorno de desarrollo y los aspectos de implementación del sistema.
+      <strong>AV1</strong><br>
+      Explicó los mockups finales de la aplicación, el prototipado, la configuración del entorno de desarrollo y los aspectos de implementación del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Sustentó la épica de reportes, historial de eventos y cumplimiento, explicando la generación de bitácoras diarias, reportes históricos, reportes mensuales y evidencia descargable para auditoría y toma de decisiones.
     </td>
     <td>
-      <strong>AV1 / TB1 / AV2:</strong><br>
-      El equipo logró comunicar de manera clara y estructurada los componentes principales del proyecto, adaptando la explicación según el tipo de contenido presentado, ya sea de negocio, UX o técnico. Se evidenció coherencia en la exposición y dominio progresivo del alcance del producto.
+      <strong>AV1:</strong><br>
+      El equipo logró comunicar de manera clara y estructurada los componentes principales del proyecto, adaptando la explicación según el tipo de contenido presentado, ya sea de negocio, UX o técnico. Se evidenció coherencia en la exposición y dominio progresivo del alcance del producto.<br><br>
+      <strong>TB1:</strong><br>
+      El equipo demostró capacidad para comunicar oralmente el avance funcional de ColdTrace por responsabilidades de épica, explicando autenticación, gestión de activos, monitoreo, alertas, reportes y configuración operativa de forma comprensible para audiencias técnicas y no técnicas.
     </td>
   </tr>
   <tr>
@@ -270,25 +283,37 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Comunica por escrito con efectividad a diferentes rangos de audiencia
     </td>
     <td>
-      <strong>Videl Ventura, Jorge Joseph</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>Videla Ventura, Jorge Joseph</strong><br>
+      <strong>AV1</strong><br>
       Redactó el contexto de la startup, la problemática, los segmentos objetivo, el análisis competitivo, las entrevistas, el needfinding y la documentación asociada al Event Storming del proyecto.<br><br>
+      <strong>TB1</strong><br>
+      Documentó la épica de alertas e incidencias, incluyendo el flujo de detección de eventos críticos, reconocimiento de alertas, cierre con acciones correctivas y evidencia de seguimiento operativo.<br><br>
       <strong>Pajés León, Mauricio Luis</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>AV1</strong><br>
       Elaboró la documentación de requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, y participó en la documentación y desarrollo de la landing page.<br><br>
+      <strong>TB1</strong><br>
+      Documentó las épicas de gestión de usuarios, acceso, equipos y sensores, incluyendo autenticación, roles, permisos, activos, sensores, gateways, ubicación derivada y criterios de consistencia de datos desde la fake API.<br><br>
       <strong>Espinoza Paredes, Frezzia</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>AV1</strong><br>
       Redactó la documentación de arquitectura de software, diagramas de clases y diseño de base de datos, y participó también en la documentación de la landing page.<br><br>
+      <strong>TB1</strong><br>
+      Redactó la documentación de configuración operativa y mantenimiento, abarcando rangos seguros, frecuencia de lectura, criterios de evaluación, mantenimiento preventivo y solicitudes de servicio técnico.<br><br>
       <strong>Morales Venegas, David Joel</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
+      <strong>AV1</strong><br>
       Documentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Registró la documentación de monitoreo de temperatura y humedad, incluyendo lecturas actuales, historial de mediciones, conectividad de sensores y gateways, y sincronización de datos simulados.<br><br>
       <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
-      <em>AV1 / TB1 / AV2</em><br>
-      Redactó el contenido relacionado con mockups finales, prototipado, configuración del entorno de desarrollo e implementación del sistema.
+      <strong>AV1</strong><br>
+      Redactó el contenido relacionado con mockups finales, prototipado, configuración del entorno de desarrollo e implementación del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Elaboró la documentación de reportes, historial de eventos y cumplimiento, incluyendo bitácoras diarias, reportes históricos, reportes mensuales, exportación de evidencias y trazabilidad de datos para auditoría.
     </td>
     <td>
-      <strong>AV1 / TB1 / AV2:</strong><br>
-      El equipo desarrolló documentación escrita clara, organizada y consistente, cubriendo aspectos de negocio, experiencia de usuario y arquitectura técnica. La redacción mantuvo coherencia entre secciones y permitió sustentar adecuadamente la propuesta del proyecto.
+      <strong>AV1:</strong><br>
+      El equipo desarrolló documentación escrita clara, organizada y consistente, cubriendo aspectos de negocio, experiencia de usuario y arquitectura técnica. La redacción mantuvo coherencia entre secciones y permitió sustentar adecuadamente la propuesta del proyecto.<br><br>
+      <strong>TB1:</strong><br>
+      El equipo produjo documentación funcional y técnica organizada para TB1, evidenciando la distribución real de trabajo por épicas, la implementación de los bounded contexts principales y la relación entre responsabilidades individuales, evidencias funcionales y criterios técnicos verificables.
     </td>
   </tr>
 </table>
@@ -1448,20 +1473,20 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Crear cuenta de usuario</td>
     <td>
       <strong>Como</strong> usuario nuevo de la plataforma,<br>
-      <strong>Quiero</strong> registrar una cuenta con mis datos básicos de acceso,<br>
-      <strong>Para</strong> poder ingresar a ColdTrace y utilizar las funcionalidades disponibles según mi rol.
+      <strong>Quiero</strong> registrar una cuenta asociada a una organización,<br>
+      <strong>Para</strong> ingresar a ColdTrace como usuario fundador y comenzar a operar con permisos administrativos.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario completa correctamente el formulario de registro.<br>
+      <strong>Given</strong> el usuario completa correctamente el formulario de registro con datos de organización y acceso.<br>
       <strong>When</strong> envía sus datos para crear la cuenta.<br>
-      <strong>Then</strong> el sistema registra la cuenta y muestra una confirmación de creación exitosa.<br><br>
+      <strong>Then</strong> el sistema registra la organización, crea el usuario fundador con rol de super administrador y muestra una confirmación de creación exitosa.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> el usuario intenta registrarse con un correo ya existente.<br>
       <strong>When</strong> envía el formulario de registro.<br>
       <strong>Then</strong> el sistema muestra un mensaje indicando que el correo ya se encuentra registrado.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario deja campos obligatorios vacíos o ingresa datos inválidos.<br>
+      <strong>Given</strong> el usuario deja campos obligatorios vacíos, no acepta los términos o ingresa contraseñas que no coinciden.<br>
       <strong>When</strong> intenta completar el registro.<br>
       <strong>Then</strong> el sistema valida la información y solicita corregir los campos antes de continuar.
     </td>
@@ -1469,25 +1494,25 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   </tr>
   <tr>
     <td>US008</td>
-    <td>Verificar identidad por correo</td>
+    <td>Representar verificación de cuenta por correo</td>
     <td>
       <strong>Como</strong> usuario registrado,<br>
-      <strong>Quiero</strong> recibir un correo de verificación y confirmar mi identidad,<br>
-      <strong>Para</strong> activar mi cuenta y asegurar que solo usuarios válidos accedan a la plataforma.
+      <strong>Quiero</strong> visualizar el estado de verificación de mi cuenta,<br>
+      <strong>Para</strong> entender si mi acceso está habilitado sin depender de un envío real de correo durante la versión frontend del proyecto.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario ya creó su cuenta y recibió el correo de verificación.<br>
-      <strong>When</strong> selecciona el enlace de confirmación enviado por el sistema.<br>
-      <strong>Then</strong> la cuenta queda verificada y habilitada para iniciar sesión.<br><br>
+      <strong>Given</strong> el usuario crea una cuenta en el alcance actual del frontend.<br>
+      <strong>When</strong> el registro se completa correctamente.<br>
+      <strong>Then</strong> la cuenta queda habilitada para iniciar sesión y el sistema trata la verificación como completada para efectos de la demostración.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el enlace de verificación ha expirado o no es válido.<br>
-      <strong>When</strong> el usuario intenta confirmar su cuenta.<br>
-      <strong>Then</strong> el sistema informa que el enlace no puede utilizarse y ofrece reenviar una nueva verificación.<br><br>
+      <strong>Given</strong> el usuario consulta un estado de verificación pendiente o expirado simulado.<br>
+      <strong>When</strong> intenta continuar desde ese estado.<br>
+      <strong>Then</strong> la plataforma muestra el mensaje correspondiente y evita prometer un envío real de correo.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario no ha completado la verificación de identidad.<br>
-      <strong>When</strong> intenta acceder a funciones restringidas de la plataforma.<br>
-      <strong>Then</strong> el sistema le indica que primero debe validar su cuenta.
+      <strong>Given</strong> ocurre un error al consultar los datos locales de cuenta.<br>
+      <strong>When</strong> el usuario intenta validar su estado.<br>
+      <strong>Then</strong> el sistema informa que no pudo completar la verificación simulada.
     </td>
     <td>EP002</td>
   </tr>
@@ -1496,20 +1521,20 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Iniciar sesión</td>
     <td>
       <strong>Como</strong> usuario registrado,<br>
-      <strong>Quiero</strong> iniciar sesión con mis credenciales,<br>
-      <strong>Para</strong> acceder a mi cuenta y utilizar las funciones de monitoreo y gestión disponibles en ColdTrace.
+      <strong>Quiero</strong> iniciar sesión con mi correo y una contraseña de demostración,<br>
+      <strong>Para</strong> acceder a la experiencia principal de ColdTrace con la organización y rol asociados a mi cuenta.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario tiene una cuenta verificada y credenciales válidas.<br>
+      <strong>Given</strong> el usuario existe en los datos locales y usa credenciales válidas de demostración.<br>
       <strong>When</strong> ingresa su correo y contraseña y selecciona la opción de iniciar sesión.<br>
-      <strong>Then</strong> el sistema autentica al usuario y le permite acceder a la plataforma.<br><br>
+      <strong>Then</strong> el sistema carga su organización, rol y permisos y lo redirige al dashboard.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> el usuario ingresa una contraseña incorrecta o un correo no reconocido.<br>
       <strong>When</strong> intenta iniciar sesión.<br>
       <strong>Then</strong> el sistema rechaza el acceso y muestra un mensaje de credenciales inválidas.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el acceso del usuario ha sido revocado.<br>
+      <strong>Given</strong> el acceso del usuario ha sido revocado o simulado como bloqueado.<br>
       <strong>When</strong> intenta ingresar a la plataforma.<br>
       <strong>Then</strong> el sistema bloquea el acceso e informa que la cuenta no tiene permisos vigentes.
     </td>
@@ -1520,24 +1545,24 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Recuperar contraseña</td>
     <td>
       <strong>Como</strong> usuario de la plataforma,<br>
-      <strong>Quiero</strong> restablecer mi contraseña cuando no pueda acceder a mi cuenta,<br>
-      <strong>Para</strong> recuperar el ingreso al sistema de manera segura y sin depender de soporte manual.
+      <strong>Quiero</strong> solicitar un flujo de recuperación de contraseña desde mi correo registrado,<br>
+      <strong>Para</strong> validar la experiencia de restablecimiento sin requerir envío real de correos ni tokens backend.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario olvidó su contraseña pero recuerda su correo registrado.<br>
+      <strong>Given</strong> el usuario recuerda un correo registrado en la plataforma.<br>
       <strong>When</strong> solicita el restablecimiento de contraseña.<br>
-      <strong>Then</strong> el sistema envía un enlace seguro para crear una nueva contraseña.<br><br>
+      <strong>Then</strong> el sistema confirma visualmente el envío simulado del enlace de recuperación.<br><br>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario accede correctamente al enlace recibido.<br>
-      <strong>When</strong> registra una nueva contraseña válida.<br>
-      <strong>Then</strong> el sistema actualiza la contraseña y confirma el cambio exitoso.<br><br>
+      <strong>Given</strong> el usuario accede a la pantalla de nueva contraseña con un enlace válido simulado.<br>
+      <strong>When</strong> registra una nueva contraseña válida y coincidente.<br>
+      <strong>Then</strong> el sistema confirma el cambio dentro del flujo frontend.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario ingresa un correo no asociado a ninguna cuenta.<br>
+      <strong>Given</strong> el usuario ingresa un correo no asociado a ninguna cuenta local.<br>
       <strong>When</strong> solicita recuperar la contraseña.<br>
       <strong>Then</strong> el sistema informa que no existe una cuenta vinculada a ese correo.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el enlace de recuperación ha expirado.<br>
+      <strong>Given</strong> el enlace de recuperación ha expirado de forma simulada.<br>
       <strong>When</strong> el usuario intenta usarlo.<br>
       <strong>Then</strong> el sistema solicita generar un nuevo proceso de recuperación.
     </td>
@@ -1548,26 +1573,26 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Asignar roles y permisos</td>
     <td>
       <strong>Como</strong> administrador de la organización,<br>
-      <strong>Quiero</strong> asignar roles y permisos a los usuarios del sistema,<br>
+      <strong>Quiero</strong> gestionar usuarios, roles y permisos dentro de la organización activa,<br>
       <strong>Para</strong> controlar qué acciones puede realizar cada persona dentro de ColdTrace según su responsabilidad operativa.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
       <strong>Given</strong> el administrador visualiza la lista de usuarios registrados de su organización.<br>
-      <strong>When</strong> asigna un rol válido a un usuario.<br>
-      <strong>Then</strong> el sistema actualiza sus permisos y habilita el acceso correspondiente.<br><br>
+      <strong>When</strong> crea un usuario interno o asigna un rol válido a un usuario existente.<br>
+      <strong>Then</strong> el sistema actualiza sus permisos y habilita el acceso correspondiente dentro de la organización activa.<br><br>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> un usuario ya tiene un rol activo.<br>
-      <strong>When</strong> el administrador modifica sus permisos según un nuevo nivel de responsabilidad.<br>
-      <strong>Then</strong> el sistema actualiza el acceso sin afectar la integridad de la cuenta.<br><br>
+      <strong>Given</strong> un rol operativo tiene permisos configurables.<br>
+      <strong>When</strong> el administrador ajusta su matriz de permisos.<br>
+      <strong>Then</strong> el sistema refleja los cambios en la interfaz sin afectar el rol fundador de super administrador.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el administrador intenta asignar un rol no permitido o incompleto.<br>
-      <strong>When</strong> guarda la configuración de permisos.<br>
-      <strong>Then</strong> el sistema rechaza la operación y solicita seleccionar un rol válido.<br><br>
+      <strong>Given</strong> el administrador intenta asignar un rol no permitido, incompleto o duplicar un correo existente.<br>
+      <strong>When</strong> guarda la configuración de acceso.<br>
+      <strong>Then</strong> el sistema rechaza la operación y solicita corregir los datos.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> un usuario sin privilegios administrativos intenta modificar permisos.<br>
+      <strong>Given</strong> un usuario sin privilegios administrativos intenta modificar usuarios, roles o permisos.<br>
       <strong>When</strong> accede a esa funcionalidad.<br>
-      <strong>Then</strong> el sistema restringe la acción y muestra un mensaje de acceso denegado.
+      <strong>Then</strong> el sistema muestra la información en modo de solo lectura o restringe la acción.
     </td>
     <td>EP002</td>
   </tr>
@@ -1984,38 +2009,38 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Generar bitácora diaria</td>
     <td>
       <strong>Como</strong> responsable de operaciones o calidad,<br>
-      <strong>Quiero</strong> generar una bitácora diaria con las lecturas registradas por los activos monitoreados,<br>
-      <strong>Para</strong> contar con evidencia ordenada del control térmico realizado en la operación.
+      <strong>Quiero</strong> generar una bitácora diaria por fecha y activo monitoreado,<br>
+      <strong>Para</strong> contar con evidencia ordenada del control térmico realizado en la operación y detectar lecturas incompletas.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existen lecturas válidas registradas durante la jornada.<br>
-      <strong>When</strong> el usuario solicita la generación de la bitácora diaria.<br>
-      <strong>Then</strong> el sistema consolida las lecturas del periodo y genera la bitácora correspondiente.<br><br>
+      <strong>Given</strong> existen lecturas registradas para la organización durante el día seleccionado.<br>
+      <strong>When</strong> el usuario filtra por fecha y, opcionalmente, por activo y solicita la generación de la bitácora diaria.<br>
+      <strong>Then</strong> el sistema consolida lecturas, promedios, desviaciones, cumplimiento y estado de completitud por activo.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> no existen datos suficientes para el día consultado.<br>
       <strong>When</strong> el usuario intenta generar la bitácora.<br>
       <strong>Then</strong> la plataforma informa que no es posible completar el registro diario por ausencia de datos.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> algunas lecturas del periodo están incompletas o corruptas.<br>
+      <strong>Given</strong> algunos activos tienen menos lecturas que las esperadas según su frecuencia operativa.<br>
       <strong>When</strong> se ejecuta la generación de la bitácora.<br>
-      <strong>Then</strong> el sistema marca las inconsistencias y reporta observaciones sobre la integridad de la información.
+      <strong>Then</strong> el sistema marca los activos incompletos, muestra lecturas faltantes y conserva la observación en el resumen.
     </td>
     <td>EP006</td>
   </tr>
   <tr>
     <td>US030</td>
-    <td>Consultar historial de lecturas, alertas e incidencias</td>
+    <td>Consultar historial de eventos operativos</td>
     <td>
       <strong>Como</strong> responsable de operaciones y control de calidad,<br>
-      <strong>Quiero</strong> consultar el historial de lecturas, alertas e incidencias de un activo o periodo operativo,<br>
+      <strong>Quiero</strong> consultar el historial de lecturas, alertas e incidencias por activo, periodo y tipo de evento,<br>
       <strong>Para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
       <strong>Given</strong> el sistema dispone de lecturas, alertas e incidencias asociadas al activo consultado.<br>
-      <strong>When</strong> el usuario accede al historial del activo o periodo operativo.<br>
-      <strong>Then</strong> la plataforma muestra de forma ordenada los eventos relevantes del activo o periodo seleccionado.<br><br>
+      <strong>When</strong> el usuario filtra por periodo, activo y tipo de evento.<br>
+      <strong>Then</strong> la plataforma muestra una línea histórica ordenada con totales, severidad y detalle de cada evento.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> no existen eventos registrados para el criterio solicitado.<br>
       <strong>When</strong> el usuario intenta consultar el historial.<br>
@@ -2032,14 +2057,14 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Exportar reporte de cumplimiento sanitario</td>
     <td>
       <strong>Como</strong> responsable de calidad,<br>
-      <strong>Quiero</strong> exportar un reporte de cumplimiento sanitario con la información relevante de monitoreo y control,<br>
-      <strong>Para</strong> utilizarlo como soporte documental en procesos internos o auditorías vinculadas al control sanitario.
+      <strong>Quiero</strong> exportar un reporte de cumplimiento sanitario filtrado por periodo y activo,<br>
+      <strong>Para</strong> utilizar evidencia descargable de monitoreo y control en procesos internos o auditorías vinculadas al control sanitario.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
       <strong>Given</strong> el usuario selecciona un periodo y un activo con información suficiente para reportar.<br>
       <strong>When</strong> solicita la exportación del reporte de cumplimiento sanitario.<br>
-      <strong>Then</strong> el sistema genera el documento con los datos de monitoreo y cumplimiento correspondientes.<br><br>
+      <strong>Then</strong> el sistema genera un archivo CSV con nombre basado en la organización, el periodo y el activo cuando corresponda.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> el rango seleccionado no contiene información mínima para construir el reporte.<br>
       <strong>When</strong> el usuario intenta exportarlo.<br>
@@ -2056,14 +2081,14 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Descargar reporte mensual</td>
     <td>
       <strong>Como</strong> usuario administrativo de la plataforma,<br>
-      <strong>Quiero</strong> descargar reportes mensuales consolidados de monitoreo e incidencias,<br>
+      <strong>Quiero</strong> descargar reportes mensuales consolidados y acceder rápidamente al reporte del mes actual,<br>
       <strong>Para</strong> evaluar el desempeño de la operación y tomar decisiones basadas en datos históricos.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
       <strong>Given</strong> existe información consolidada del mes seleccionado.<br>
-      <strong>When</strong> el usuario solicita la descarga del reporte mensual.<br>
-      <strong>Then</strong> el sistema genera el archivo y lo deja disponible para descarga.<br><br>
+      <strong>When</strong> el usuario solicita la descarga desde la vista mensual o desde el acceso directo del dashboard.<br>
+      <strong>Then</strong> el sistema genera un archivo CSV con nombre basado en la organización y el mes consultado.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> el periodo solicitado aún no cuenta con información consolidada suficiente.<br>
       <strong>When</strong> el usuario intenta descargar el reporte.<br>
@@ -2080,20 +2105,20 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Detectar faltantes o incumplimientos</td>
     <td>
       <strong>Como</strong> responsable de calidad y cumplimiento,<br>
-      <strong>Quiero</strong> identificar registros faltantes o posibles incumplimientos normativos dentro de la operación,<br>
+      <strong>Quiero</strong> identificar registros faltantes, observaciones y posibles incumplimientos por activo y periodo,<br>
       <strong>Para</strong> corregirlos oportunamente antes de una revisión o auditoría formal.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
       <strong>Given</strong> el sistema evalúa los registros de monitoreo frente a las reglas de control definidas.<br>
-      <strong>When</strong> detecta faltantes de temperatura, vacíos en la bitácora o inconsistencias documentales.<br>
-      <strong>Then</strong> la plataforma marca la situación como observación o incumplimiento potencial.<br><br>
+      <strong>When</strong> detecta faltantes de temperatura, vacíos en la bitácora, incidencias abiertas o inconsistencias documentales.<br>
+      <strong>Then</strong> la plataforma marca la situación como observación o incumplimiento potencial y permite filtrarla por estado.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> la información del periodo es incompleta y no puede evaluarse con certeza.<br>
       <strong>When</strong> el sistema intenta verificar el cumplimiento.<br>
       <strong>Then</strong> la plataforma registra la limitación e informa que el análisis no pudo completarse totalmente.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta ignorar o cerrar la observación sin permisos apropiados.<br>
+      <strong>Given</strong> el usuario intenta cerrar la observación sin permisos apropiados.<br>
       <strong>When</strong> realiza la acción sobre el hallazgo.<br>
       <strong>Then</strong> el sistema restringe la modificación y conserva la evidencia registrada.
     </td>
@@ -2104,14 +2129,14 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Preparar evidencia para auditoría</td>
     <td>
       <strong>Como</strong> responsable de auditoría interna o control de calidad,<br>
-      <strong>Quiero</strong> reunir la evidencia documental de monitoreo, incidencias y acciones correctivas,<br>
+      <strong>Quiero</strong> reunir y exportar evidencia documental de monitoreo, reportes, hallazgos e incidencias,<br>
       <strong>Para</strong> sustentar el cumplimiento de la operación ante revisiones internas o externas.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existen registros históricos, incidencias cerradas y reportes generados en el sistema.<br>
-      <strong>When</strong> el usuario solicita preparar la evidencia para auditoría.<br>
-      <strong>Then</strong> la plataforma consolida la documentación relevante para su consulta o exportación.<br><br>
+      <strong>Given</strong> existen registros históricos, incidencias, hallazgos y reportes generados en el sistema.<br>
+      <strong>When</strong> el usuario filtra por periodo y activo y solicita preparar la evidencia para auditoría.<br>
+      <strong>Then</strong> la plataforma consolida un checklist de completitud y permite exportar la evidencia disponible en CSV.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> faltan documentos clave o registros obligatorios para el periodo evaluado.<br>
       <strong>When</strong> el usuario intenta preparar la evidencia.<br>
@@ -2125,23 +2150,23 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
   </tr>
   <tr>
     <td>US035</td>
-    <td>Configurar rango de seguridad</td>
+    <td>Configurar rangos de seguridad</td>
     <td>
       <strong>Como</strong> usuario administrativo de la plataforma,<br>
-      <strong>Quiero</strong> configurar rangos seguros de temperatura y humedad para cada activo o tipo de producto,<br>
-      <strong>Para</strong> adaptar el monitoreo a las condiciones reales de conservación que requiere la operación.
+      <strong>Quiero</strong> configurar rangos seguros de temperatura y humedad por defecto o por activo monitoreado,<br>
+      <strong>Para</strong> adaptar la evaluación del monitoreo a las condiciones reales de conservación que requiere la operación.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo ya se encuentra registrado y cuenta con monitoreo habilitado.<br>
-      <strong>When</strong> el usuario define límites válidos de temperatura y humedad y guarda la configuración.<br>
-      <strong>Then</strong> el sistema registra el rango de seguridad y lo utiliza como referencia para evaluar futuras lecturas.<br><br>
+      <strong>Given</strong> la organización cuenta con activos registrados y datos de monitoreo.<br>
+      <strong>When</strong> el usuario define límites válidos de temperatura y humedad para el alcance seleccionado y guarda la configuración.<br>
+      <strong>Then</strong> el sistema registra el perfil de seguridad y lo utiliza como referencia para evaluar futuras lecturas y reportes.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario ingresa valores inconsistentes o fuera de un rango permitido.<br>
+      <strong>Given</strong> el usuario ingresa valores inconsistentes, como temperatura mínima mayor que la máxima o humedad fuera del rango permitido.<br>
       <strong>When</strong> intenta guardar la configuración.<br>
       <strong>Then</strong> la plataforma rechaza los datos y solicita corregir los parámetros ingresados.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario no tiene permisos de configuración sobre ese activo.<br>
+      <strong>Given</strong> el usuario no tiene permisos de configuración sobre los activos.<br>
       <strong>When</strong> intenta modificar los rangos definidos.<br>
       <strong>Then</strong> el sistema bloquea la acción y muestra un mensaje de acceso restringido.
     </td>
@@ -2152,22 +2177,22 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Actualizar parámetros operativos</td>
     <td>
       <strong>Como</strong> responsable de la operación,<br>
-      <strong>Quiero</strong> actualizar parámetros operativos del monitoreo, como intervalos de lectura o criterios de evaluación,<br>
-      <strong>Para</strong> ajustar el comportamiento del sistema al contexto y nivel de criticidad de cada activo.
+      <strong>Quiero</strong> actualizar la frecuencia de lectura y los criterios de evaluación de un dispositivo asociado a un activo,<br>
+      <strong>Para</strong> ajustar el comportamiento del monitoreo al contexto y nivel de criticidad de cada activo.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo dispone de una configuración operativa activa.<br>
-      <strong>When</strong> el usuario modifica parámetros válidos del monitoreo y guarda los cambios.<br>
-      <strong>Then</strong> la plataforma actualiza la configuración y aplica los nuevos valores en las lecturas siguientes.<br><br>
+      <strong>Given</strong> el activo dispone de un dispositivo IoT asociado y una configuración operativa activa.<br>
+      <strong>When</strong> el usuario modifica la frecuencia de lectura y selecciona criterios compatibles de evaluación.<br>
+      <strong>Then</strong> la plataforma actualiza la configuración y muestra el nuevo perfil operativo en la tabla de dispositivos configurados.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario define parámetros incompatibles con la configuración del sensor o gateway.<br>
+      <strong>Given</strong> el usuario define una frecuencia fuera del rango permitido o deja criterios obligatorios sin seleccionar.<br>
       <strong>When</strong> intenta guardar los cambios.<br>
-      <strong>Then</strong> el sistema rechaza la actualización y señala la incompatibilidad detectada.<br><br>
+      <strong>Then</strong> el sistema rechaza la actualización y solicita corregir los parámetros.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> se produce un error al aplicar la configuración sobre el activo.<br>
-      <strong>When</strong> el usuario confirma la actualización.<br>
-      <strong>Then</strong> la plataforma informa el fallo y mantiene los parámetros operativos anteriores.
+      <strong>Given</strong> el usuario selecciona criterios incompatibles con las capacidades del sensor o gateway.<br>
+      <strong>When</strong> confirma la actualización.<br>
+      <strong>Then</strong> la plataforma informa la incompatibilidad y mantiene los parámetros operativos anteriores.
     </td>
     <td>EP007</td>
   </tr>
@@ -2176,20 +2201,20 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Programar mantenimiento preventivo</td>
     <td>
       <strong>Como</strong> responsable de calidad u operación,<br>
-      <strong>Quiero</strong> programar el mantenimiento preventivo de sensores o equipos de frío,<br>
+      <strong>Quiero</strong> programar mantenimientos preventivos para activos o dispositivos IoT,<br>
       <strong>Para</strong> reducir el riesgo de fallas operativas y mantener la confiabilidad del monitoreo.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo o sensor requiere seguimiento periódico.<br>
-      <strong>When</strong> el usuario registra una programación de mantenimiento preventivo con fecha y observaciones.<br>
-      <strong>Then</strong> el sistema agenda la intervención y marca el activo para seguimiento.<br><br>
+      <strong>Given</strong> el activo o dispositivo requiere seguimiento periódico.<br>
+      <strong>When</strong> el usuario registra una programación de mantenimiento preventivo con fecha futura y observaciones.<br>
+      <strong>Then</strong> el sistema agenda la intervención, la muestra en la tabla de mantenimientos y marca el activo para seguimiento.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta programar mantenimiento para un activo inexistente o inactivo.<br>
+      <strong>Given</strong> el usuario intenta programar mantenimiento para un activo inexistente, inactivo o con fecha inválida.<br>
       <strong>When</strong> guarda la solicitud.<br>
-      <strong>Then</strong> la plataforma rechaza la operación y solicita seleccionar un activo válido.<br><br>
+      <strong>Then</strong> la plataforma rechaza la operación y solicita seleccionar datos válidos.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> ya existe un mantenimiento pendiente para el mismo activo en el mismo periodo.<br>
+      <strong>Given</strong> ya existe un mantenimiento pendiente para el mismo activo o dispositivo en el mismo periodo.<br>
       <strong>When</strong> el usuario intenta registrar una nueva programación equivalente.<br>
       <strong>Then</strong> el sistema advierte la duplicidad y evita generar un seguimiento redundante.
     </td>
@@ -2200,18 +2225,18 @@ Luego de definir las épicas principales del sistema, se desarrollan las histori
     <td>Solicitar y cerrar servicio técnico</td>
     <td>
       <strong>Como</strong> usuario responsable del activo,<br>
-      <strong>Quiero</strong> solicitar servicio técnico y cerrar la atención una vez completada la intervención,<br>
-      <strong>Para</strong> conservar el registro de la intervención técnica y devolver el equipo a operación de forma controlada.
+      <strong>Quiero</strong> registrar solicitudes de servicio técnico y cerrar la atención con evidencia de intervención,<br>
+      <strong>Para</strong> conservar el historial técnico y devolver el equipo a operación de forma controlada.
     </td>
     <td>
       <strong>Happy Path:</strong><br>
       <strong>Given</strong> el activo presenta una falla o requiere atención técnica correctiva.<br>
-      <strong>When</strong> el usuario registra la solicitud de servicio técnico y posteriormente documenta la reparación realizada.<br>
-      <strong>Then</strong> el sistema crea el seguimiento del servicio y permite cerrar el caso cuando la intervención ha finalizado correctamente.<br><br>
+      <strong>When</strong> el usuario registra una solicitud con prioridad y descripción, y posteriormente documenta intervención, resultado y prueba funcional exitosa.<br>
+      <strong>Then</strong> el sistema crea el seguimiento del servicio y permite cerrar el caso correctamente.<br><br>
       <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta cerrar el servicio sin registrar la intervención técnica ni el resultado obtenido.<br>
+      <strong>Given</strong> el usuario intenta cerrar el servicio sin registrar intervención, resultado o evidencia mínima.<br>
       <strong>When</strong> confirma el cierre del caso.<br>
-      <strong>Then</strong> la plataforma exige completar la evidencia mínima antes de finalizar el ticket.<br><br>
+      <strong>Then</strong> la plataforma exige completar la información antes de finalizar el ticket.<br><br>
       <strong>Unhappy Path:</strong><br>
       <strong>Given</strong> la prueba de funcionamiento posterior al mantenimiento resulta fallida.<br>
       <strong>When</strong> el usuario intenta cerrar la atención técnica.<br>
@@ -2496,35 +2521,35 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
     <td>7</td>
     <td>US007</td>
     <td>Crear cuenta de usuario</td>
-    <td><strong>Como</strong> usuario nuevo de la plataforma, <strong>deseo</strong> registrar una cuenta con mis datos básicos de acceso <strong>para</strong> poder ingresar a ColdTrace y utilizar las funcionalidades disponibles según mi rol.</td>
+    <td><strong>Como</strong> usuario nuevo de la plataforma, <strong>deseo</strong> registrar una cuenta asociada a una organización <strong>para</strong> ingresar a ColdTrace como usuario fundador con permisos administrativos.</td>
     <td>3</td>
   </tr>
   <tr>
     <td>8</td>
     <td>US008</td>
-    <td>Verificar identidad por correo</td>
-    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> recibir un correo de verificación y confirmar mi identidad <strong>para</strong> activar mi cuenta y asegurar que solo usuarios válidos accedan a la plataforma.</td>
+    <td>Representar verificación de cuenta por correo</td>
+    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> visualizar el estado de verificación de mi cuenta <strong>para</strong> entender si mi acceso está habilitado sin depender de un envío real de correo durante la versión frontend.</td>
     <td>2</td>
   </tr>
   <tr>
     <td>9</td>
     <td>US009</td>
     <td>Iniciar sesión</td>
-    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> iniciar sesión con mis credenciales <strong>para</strong> acceder a mi cuenta y utilizar las funciones de monitoreo y gestión disponibles en ColdTrace.</td>
+    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> iniciar sesión con mi correo y una contraseña de demostración <strong>para</strong> acceder a la experiencia principal de ColdTrace con la organización y rol asociados a mi cuenta.</td>
     <td>2</td>
   </tr>
   <tr>
     <td>10</td>
     <td>US010</td>
     <td>Recuperar contraseña</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> restablecer mi contraseña cuando no pueda acceder a mi cuenta <strong>para</strong> recuperar el ingreso al sistema de manera segura y sin depender de soporte manual.</td>
+    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> solicitar un flujo de recuperación desde mi correo registrado <strong>para</strong> validar la experiencia de restablecimiento sin envío real de correos ni tokens backend.</td>
     <td>3</td>
   </tr>
   <tr>
     <td>11</td>
     <td>US011</td>
     <td>Asignar roles y permisos</td>
-    <td><strong>Como</strong> administrador de la organización, <strong>deseo</strong> asignar roles y permisos a los usuarios del sistema <strong>para</strong> controlar qué acciones puede realizar cada persona dentro de ColdTrace según su responsabilidad operativa.</td>
+    <td><strong>Como</strong> administrador de la organización, <strong>deseo</strong> gestionar usuarios, roles y permisos dentro de la organización activa <strong>para</strong> controlar las acciones disponibles según la responsabilidad operativa de cada persona.</td>
     <td>5</td>
   </tr>
   <tr>
@@ -2551,8 +2576,8 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
   <tr>
     <td>15</td>
     <td>US035</td>
-    <td>Configurar rango de seguridad</td>
-    <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> configurar rangos seguros de temperatura y humedad para cada activo o tipo de producto <strong>para</strong> adaptar el monitoreo a las condiciones reales de conservación que requiere la operación.</td>
+    <td>Configurar rangos de seguridad</td>
+    <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> configurar rangos seguros de temperatura y humedad por defecto o por activo monitoreado <strong>para</strong> adaptar la evaluación del monitoreo a la operación.</td>
     <td>3</td>
   </tr>
   <tr>
@@ -2607,36 +2632,36 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
   <tr>
     <td>23</td>
     <td>US030</td>
-    <td>Consultar historial de lecturas, alertas e incidencias</td>
-    <td><strong>Como</strong> responsable de operaciones y control de calidad, <strong>deseo</strong> consultar el historial de lecturas, alertas e incidencias de un activo o periodo operativo <strong>para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.</td>
+    <td>Consultar historial de eventos operativos</td>
+    <td><strong>Como</strong> responsable de operaciones y control de calidad, <strong>deseo</strong> consultar el historial de lecturas, alertas e incidencias por activo, periodo y tipo de evento <strong>para</strong> reconstruir eventos pasados.</td>
     <td>3</td>
   </tr>
   <tr>
     <td>24</td>
     <td>US029</td>
     <td>Generar bitácora diaria</td>
-    <td><strong>Como</strong> responsable de operaciones o calidad, <strong>deseo</strong> generar una bitácora diaria con las lecturas registradas por los activos monitoreados <strong>para</strong> contar con evidencia ordenada del control térmico realizado en la operación.</td>
+    <td><strong>Como</strong> responsable de operaciones o calidad, <strong>deseo</strong> generar una bitácora diaria por fecha y activo monitoreado <strong>para</strong> contar con evidencia ordenada del control térmico y detectar lecturas incompletas.</td>
     <td>3</td>
   </tr>
   <tr>
     <td>25</td>
     <td>US031</td>
     <td>Exportar reporte de cumplimiento sanitario</td>
-    <td><strong>Como</strong> responsable de calidad, <strong>deseo</strong> exportar un reporte de cumplimiento sanitario con la información relevante de monitoreo y control <strong>para</strong> utilizarlo como soporte documental en procesos internos o auditorías vinculadas al control sanitario.</td>
+    <td><strong>Como</strong> responsable de calidad, <strong>deseo</strong> exportar un reporte de cumplimiento sanitario filtrado por periodo y activo <strong>para</strong> utilizar evidencia descargable en procesos internos o auditorías.</td>
     <td>5</td>
   </tr>
   <tr>
     <td>26</td>
     <td>US034</td>
     <td>Preparar evidencia para auditoría</td>
-    <td><strong>Como</strong> responsable de auditoría interna o control de calidad, <strong>deseo</strong> reunir la evidencia documental de monitoreo, incidencias y acciones correctivas <strong>para</strong> sustentar el cumplimiento de la operación ante revisiones internas o externas.</td>
+    <td><strong>Como</strong> responsable de auditoría interna o control de calidad, <strong>deseo</strong> reunir y exportar evidencia documental de monitoreo, reportes, hallazgos e incidencias <strong>para</strong> sustentar el cumplimiento operativo.</td>
     <td>5</td>
   </tr>
   <tr>
     <td>27</td>
     <td>US033</td>
     <td>Detectar faltantes o incumplimientos</td>
-    <td><strong>Como</strong> responsable de calidad y cumplimiento, <strong>deseo</strong> identificar registros faltantes o posibles incumplimientos normativos dentro de la operación <strong>para</strong> corregirlos oportunamente antes de una revisión o auditoría formal.</td>
+    <td><strong>Como</strong> responsable de calidad y cumplimiento, <strong>deseo</strong> identificar registros faltantes, observaciones y posibles incumplimientos por activo y periodo <strong>para</strong> corregirlos antes de una auditoría.</td>
     <td>5</td>
   </tr>
   <tr>
@@ -2657,21 +2682,21 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
     <td>30</td>
     <td>US037</td>
     <td>Programar mantenimiento preventivo</td>
-    <td><strong>Como</strong> responsable de calidad u operación, <strong>deseo</strong> programar el mantenimiento preventivo de sensores o equipos de frío <strong>para</strong> reducir el riesgo de fallas operativas y mantener la confiabilidad del monitoreo.</td>
+    <td><strong>Como</strong> responsable de calidad u operación, <strong>deseo</strong> programar mantenimientos preventivos para activos o dispositivos IoT <strong>para</strong> reducir fallas operativas y mantener la confiabilidad del monitoreo.</td>
     <td>3</td>
   </tr>
   <tr>
     <td>31</td>
     <td>US038</td>
     <td>Solicitar y cerrar servicio técnico</td>
-    <td><strong>Como</strong> usuario responsable del activo, <strong>deseo</strong> solicitar servicio técnico y cerrar la atención una vez completada la intervención <strong>para</strong> conservar el registro de la intervención técnica y devolver el equipo a operación de forma controlada.</td>
+    <td><strong>Como</strong> usuario responsable del activo, <strong>deseo</strong> registrar solicitudes de servicio técnico y cerrar la atención con evidencia de intervención <strong>para</strong> conservar el historial técnico del activo.</td>
     <td>5</td>
   </tr>
   <tr>
     <td>32</td>
     <td>US036</td>
     <td>Actualizar parámetros operativos</td>
-    <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> actualizar parámetros operativos del monitoreo, como intervalos de lectura o criterios de evaluación, <strong>para</strong> ajustar el comportamiento del sistema al contexto y nivel de criticidad de cada activo.</td>
+    <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> actualizar la frecuencia de lectura y los criterios de evaluación de un dispositivo asociado a un activo <strong>para</strong> ajustar el monitoreo a su criticidad.</td>
     <td>3</td>
   </tr>
   <tr>
@@ -2706,7 +2731,7 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
     <td>37</td>
     <td>US032</td>
     <td>Descargar reporte mensual</td>
-    <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> descargar reportes mensuales consolidados de monitoreo e incidencias <strong>para</strong> evaluar el desempeño de la operación y tomar decisiones basadas en datos históricos.</td>
+    <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> descargar reportes mensuales consolidados y acceder rápidamente al reporte del mes actual <strong>para</strong> evaluar el desempeño de la operación.</td>
     <td>3</td>
   </tr>
   <tr>
@@ -4149,4 +4174,3 @@ Agraria.pe. (2019, junio 26). *Perú pierde más del 33% de los alimentos que pr
 FAO. (2021). *Más de 12 millones de toneladas de alimentos se pierden a lo largo de la cadena productiva en el Perú*. Organización de las Naciones Unidas para la Alimentación y la Agricultura. https://www.fao.org/peru/noticias/detail-events/en/c/1712376/
 
 Gestión. (2025, septiembre 21). *Mercado de almacenes en frío en Perú crecerá a US$ 510 millones en 2025: ¿qué lo impulsa?* Gestión. https://gestion.pe/economia/empresas/mercado-de-almacenes-en-frio-en-peru-crecera-a-us-510-millones-en-2025-que-lo-impulsa-noticia/
-
