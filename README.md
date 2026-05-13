@@ -76,15 +76,16 @@
 **Lima, abril de 2026**
 </div>
 
+
 # Registro de versiones del informe
 | Versión | Fecha | Autores | Descripción              |
 | :--- | :--- | :--- |:-------------------------|
 | 1.0.0 | 08/04/26 | Mauricio Pajés León | Estructuración inicial del repositorio del informe y organización base de archivos del proyecto. |
 | 1.1.0 | 19/04/26 | David Joel Morales Venegas | Incorporación del front matter: portada, tabla de contenido, registro de versiones, student outcomes y collaboration insights. |
-| 1.2.0 | 20/04/26 | Jorge Joseph Videl Ventura | Desarrollo del contexto del producto: startup profile, problemática, segmentos objetivo, análisis competitivo, entrevistas y needfinding. |
+| 1.2.0 | 20/04/26 | Jorge Joseph Videla Ventura | Desarrollo del contexto del producto: startup profile, problemática, segmentos objetivo, análisis competitivo, entrevistas y needfinding. |
 | 1.3.0 | 21/04/26 | Mauricio Pajés León | Definición de requisitos funcionales del sistema: épicas, user stories, impact mapping y product backlog, además de ajustes funcionales de la landing page. |
 | 1.4.0 | 22/04/26 | David Joel Morales Venegas, Leonardo Moisés Cabrera Novoa | Documentación de lineamientos de estilo, arquitectura de información, wireframes, wireflows, mockups, user flows y prototipado de la solución. |
-| 1.5.0 | 23/04/26 | Frezzia Espinoza Paredes, Mauricio Pajés León, Jorge Joseph Videl Ventura | Consolidación de arquitectura y diseño técnico: event storming, diagramas C4, diagramas de componentes, diagramas de clases, diseño de base de datos y cierre final del informe. |
+| 1.5.0 | 23/04/26 | Frezzia Espinoza Paredes, Mauricio Pajés León, Jorge Joseph Videla Ventura | Consolidación de arquitectura y diseño técnico: event storming, diagramas C4, diagramas de componentes, diagramas de clases, diseño de base de datos y cierre final del informe. |
 | 1.6.0 | 13/05/26 | Mauricio Pajés León | Actualización del README del informe, incluyendo ajustes de user stories, documentación técnica y Student Outcome de TB1 según las responsabilidades reales asumidas por épica. |
 
 
@@ -4158,6 +4159,1000 @@ El uso de Conventional Commits permitió mantener un historial organizado, difer
 
 Estas prácticas facilitaron la coordinación del equipo y la integración eficiente del desarrollo.
 
+### 5.2.2. Sprint 2
+
+#### 5.2.2.1. Sprint Planning 2
+
+El Sprint 2 tuvo como objetivo principal desplegar la primera versión funcional de la Frontend Web Application de ColdTrace, cubriendo los bounded contexts de Identity & Access Management, Asset Management, Monitoring y Reports. A continuación se presenta el resumen del Sprint Planning Meeting realizado al inicio de este sprint.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Sprint #</th>
+    <td>Sprint 2</td>
+  </tr>
+  <tr>
+    <th colspan="2">Sprint Planning Background</th>
+  </tr>
+  <tr>
+    <th>Date</th>
+    <td>2026-05-07</td>
+  </tr>
+  <tr>
+    <th>Time</th>
+    <td>08:00 PM</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>Reunión virtual vía Google Meet</td>
+  </tr>
+  <tr>
+    <th>Prepared By</th>
+    <td>Pajés León, Mauricio Luis</td>
+  </tr>
+  <tr>
+    <th>Attendees (to planning meeting)</th>
+    <td>Morales Venegas, David Joel / Espinoza Paredes, Frezzia / Cabrera Novoa, Leonardo Moisés / Videla Ventura, Jorge Joseph / Pajés León, Mauricio Luis</td>
+  </tr>
+  <tr>
+    <th>Sprint 1 Review Summary</th>
+    <td>En el Sprint 1 se completó una primera versión funcional de la landing page de ColdTrace desplegada en GitHub Pages, con secciones de hero, features, showcase, pricing y footer. Se implementaron además las vistas básicas de dashboard, monitoreo y alertas como prueba de concepto del sistema. El equipo logró cumplir con el Sprint Goal y asegurar la coherencia visual entre la landing y la aplicación web. El despliegue fue exitoso y la landing page quedó accesible públicamente.</td>
+  </tr>
+  <tr>
+    <th>Sprint 1 Retrospective Summary</th>
+    <td>El equipo identificó que la distribución de tareas en el Sprint 1 fue desigual y que la comunicación entre integrantes podría mejorar. Como acción de mejora para el Sprint 2 se acordó dividir el trabajo por épicas y bounded contexts, asignar un responsable por aspecto funcional, e incorporar a todos los integrantes en la implementación del frontend distribuida según las épicas del product backlog.</td>
+  </tr>
+  <tr>
+    <th colspan="2">Sprint Goal & User Stories</th>
+  </tr>
+  <tr>
+    <th>Sprint 2 Goal</th>
+    <td>Our focus is on delivering a fully navigable and deployed Frontend Web Application for ColdTrace operators and administrators. We believe it delivers a usable digital experience to cold chain operations managers and quality control staff, enabling them to manage assets, monitor temperature conditions, and consult operational reports. This will be confirmed when the application is accessible via its public Vercel URL and users can navigate across Identity & Access, Asset Management, Monitoring, and Reports modules without errors.</td>
+  </tr>
+  <tr>
+    <th>Sprint 2 Velocity</th>
+    <td>40 Story Points</td>
+  </tr>
+  <tr>
+    <th>Sum of Story Points</th>
+    <td>40 Story Points</td>
+  </tr>
+</table>
+
+#### 5.2.2.2. Aspect Leaders and Collaborators
+
+Durante el Sprint 2, el equipo organizó el trabajo en torno a los principales aspectos funcionales de la Frontend Web Application de ColdTrace. Cada aspecto corresponde a una épica del product backlog o a un conjunto de features dentro de un bounded context. Se designó un líder (L) por aspecto para asegurar la coherencia técnica y la toma de decisiones dentro de cada módulo, y se asignaron colaboradores (C) entre los demás integrantes del equipo.
+
+Los aspectos principales del Sprint 2 fueron los siguientes:
+
+- **Authentication & User Access (EP002):** Vistas de creación de cuenta, inicio de sesión, recuperación de contraseña y gestión de roles y permisos.
+- **Asset Registration & Configuration (EP003):** Registro de cámaras frigoríficas, unidades de transporte, vinculación de sensores, emparejamiento de gateways, calibración y configuración avanzada de activos.
+- **Operational Monitoring Dashboard (EP004):** Dashboard operacional con telemetría en tiempo real, KPIs y estado de activos monitoreados (US039).
+- **Alerts & Incidents UI (EP005):** Estructura de navegación y vistas base para el módulo de alertas e incidencias.
+- **Reports & Compliance (EP006):** Vistas de bitácora diaria, historial de eventos operacionales, exportación de reportes sanitarios, descarga mensual, hallazgos de cumplimiento y evidencia de auditoría (US029–US034).
+- **Operative Configuration & Maintenance (EP007):** Configuración de rangos de seguridad, parámetros operativos del monitoreo y flujos de mantenimiento preventivo (US035–US038).
+- **Deployment & Infrastructure:** Configuración del pipeline CI/CD en Vercel, servidor JSON hospedado y configuración del entorno de producción.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Team Member (Last Name, First Name)</th>
+    <th>GitHub Username</th>
+    <th>Authentication &amp; User Access (EP002)</th>
+    <th>Asset Registration &amp; Configuration (EP003)</th>
+    <th>Operational Monitoring Dashboard (EP004)</th>
+    <th>Alerts &amp; Incidents UI (EP005)</th>
+    <th>Reports &amp; Compliance (EP006)</th>
+    <th>Operative Configuration (EP007)</th>
+    <th>Deployment &amp; Infrastructure</th>
+  </tr>
+  <tr>
+    <td>Cabrera Novoa, Leonardo Moisés</td>
+    <td>u202415820</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+  </tr>
+  <tr>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>fflushh</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+    <td>C</td>
+  </tr>
+  <tr>
+    <td>Morales Venegas, David Joel</td>
+    <td>David-std2</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+  </tr>
+  <tr>
+    <td>Pajés León, Mauricio Luis</td>
+    <td>mauricio-pajes</td>
+    <td>L</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+  </tr>
+  <tr>
+    <td>Videla Ventura, Jorge Joseph</td>
+    <td>JorgeVidVen</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+    <td>L</td>
+    <td>C</td>
+    <td>C</td>
+    <td>C</td>
+  </tr>
+</table>
+
+#### 5.2.2.3. Sprint Backlog 2
+
+El objetivo principal del Sprint 2 fue implementar y desplegar la primera versión completa de la Frontend Web Application de ColdTrace, habilitando los flujos de autenticación, gestión de activos, monitoreo operacional y consulta de reportes de cumplimiento. El equipo gestionó el Sprint Backlog mediante Linear App, organizando las tareas por épica y bounded context.
+
+A continuación se presenta una captura del backlog gestionado en Linear App:
+
+![Sprint 2 Backlog – Linear App](report/assets/chapter-05/sprint-2/linear-backlog.png)
+*Figura 5.2.2.3.1: Sprint Backlog del Sprint 2 en Linear App (46 issues Done, 1 In Progress, 7 Backlog).*
+
+A continuación se presenta la tabla de control de estado del sprint.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+  <tr>
+    <th>Sprint #</th>
+    <td colspan="7">Sprint 2</td>
+  </tr>
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Estimation (Hours)</th>
+    <th>Assigned To</th>
+    <th>Status</th>
+  </tr>
+
+  <!-- EP002 - IDENTITY & ACCESS -->
+  <tr>
+    <td>US007</td>
+    <td>Crear cuenta</td>
+    <td>T-10</td>
+    <td>Create Account UI</td>
+    <td>Implementar formulario de creación de cuenta de usuario</td>
+    <td>4</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US008</td>
+    <td>Iniciar sesión</td>
+    <td>T-11</td>
+    <td>Sign-In UI</td>
+    <td>Implementar vista de inicio de sesión con validación de credenciales</td>
+    <td>3</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US009</td>
+    <td>Recuperar contraseña</td>
+    <td>T-12</td>
+    <td>Password Recovery UI</td>
+    <td>Implementar flujo de recuperación de contraseña por email</td>
+    <td>3</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US010</td>
+    <td>Gestionar roles y permisos</td>
+    <td>T-13</td>
+    <td>Roles &amp; Permissions UI</td>
+    <td>Implementar vista de administración de roles y permisos de usuario</td>
+    <td>5</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- EP003 - ASSET MANAGEMENT -->
+  <tr>
+    <td>US012</td>
+    <td>Registrar cámara frigorífica</td>
+    <td>T-14</td>
+    <td>Cold Room Registration UI</td>
+    <td>Implementar formulario de registro y listado de cámaras frigoríficas</td>
+    <td>5</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US013</td>
+    <td>Registrar unidad de transporte</td>
+    <td>T-15</td>
+    <td>Transport Unit UI</td>
+    <td>Implementar registro de unidades de transporte refrigerado</td>
+    <td>4</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US014</td>
+    <td>Vincular sensor a activo</td>
+    <td>T-16</td>
+    <td>Sensor Linking UI</td>
+    <td>Implementar flujo de vinculación de sensores IoT a activos registrados</td>
+    <td>4</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US015</td>
+    <td>Emparejar gateway</td>
+    <td>T-17</td>
+    <td>Gateway Pairing UI</td>
+    <td>Implementar emparejamiento de gateway con la plataforma</td>
+    <td>4</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US016</td>
+    <td>Calibrar sensor</td>
+    <td>T-18</td>
+    <td>Sensor Calibration UI</td>
+    <td>Implementar revisión y registro de calibración de sensores</td>
+    <td>3</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US017</td>
+    <td>Actualizar activo</td>
+    <td>T-19</td>
+    <td>Asset Update UI</td>
+    <td>Implementar flujo de actualización de datos y estado de activos</td>
+    <td>4</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US035</td>
+    <td>Configurar parámetros de activo</td>
+    <td>T-20</td>
+    <td>Asset Settings &amp; IoT Params UI</td>
+    <td>Implementar pantalla de configuración avanzada de activos y parámetros IoT</td>
+    <td>5</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- EP004 - MONITORING (David) -->
+  <tr>
+    <td>US018</td>
+    <td>Visualizar temperatura en tiempo real</td>
+    <td>T-21</td>
+    <td>Real-Time Temperature View</td>
+    <td>Implementar vista de monitoreo de temperatura en tiempo real por activo</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US019</td>
+    <td>Visualizar humedad en tiempo real</td>
+    <td>T-22</td>
+    <td>Real-Time Humidity View</td>
+    <td>Implementar vista de monitoreo de humedad en tiempo real por activo</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US020</td>
+    <td>Consultar historial de lecturas</td>
+    <td>T-23</td>
+    <td>Readings History View</td>
+    <td>Implementar vista de historial de lecturas de temperatura y humedad</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US021</td>
+    <td>Detectar temperatura fuera de rango</td>
+    <td>T-24</td>
+    <td>Out-of-Range Detection View</td>
+    <td>Implementar indicadores visuales de detección de temperatura fuera de rango seguro</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US022</td>
+    <td>Visualizar estado de conectividad</td>
+    <td>T-25</td>
+    <td>Connectivity Status View</td>
+    <td>Implementar vista del estado de conectividad de sensores y gateways</td>
+    <td>4</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US023</td>
+    <td>Sincronizar datos almacenados offline</td>
+    <td>T-26</td>
+    <td>Offline Sync View</td>
+    <td>Implementar vista de sincronización de datos almacenados sin conexión</td>
+    <td>5</td>
+    <td>Morales Venegas, David</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US039</td>
+    <td>Visualizar dashboard operativo inicial</td>
+    <td>T-27</td>
+    <td>Operational Dashboard UI</td>
+    <td>Implementar dashboard operacional con telemetría en vivo, KPIs y estado de activos monitoreados</td>
+    <td>8</td>
+    <td>Morales Venegas, David / Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- EP005 - ALERTS (Jorge) -->
+  <tr>
+    <td>US024</td>
+    <td>Crear incidencia térmica</td>
+    <td>T-28</td>
+    <td>Thermal Incident Creation UI</td>
+    <td>Implementar vista de creación de incidencia térmica al detectar desviación</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US025</td>
+    <td>Disparar notificaciones de alerta</td>
+    <td>T-29</td>
+    <td>Alert Notification UI</td>
+    <td>Implementar vista de notificaciones de alerta automáticas</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>In-Process</td>
+  </tr>
+  <tr>
+    <td>US026</td>
+    <td>Escalar alerta no atendida</td>
+    <td>T-30</td>
+    <td>Alert Escalation UI</td>
+    <td>Implementar vista de escalamiento de alertas no atendidas</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>To-do</td>
+  </tr>
+  <tr>
+    <td>US027</td>
+    <td>Reconocer alerta crítica</td>
+    <td>T-31</td>
+    <td>Critical Alert Acknowledgement UI</td>
+    <td>Implementar vista de reconocimiento de alertas críticas</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US028</td>
+    <td>Registrar acción correctiva y cerrar incidencia</td>
+    <td>T-32</td>
+    <td>Corrective Action UI</td>
+    <td>Implementar vista de registro de acción correctiva y cierre de incidencia</td>
+    <td>4</td>
+    <td>Videla Ventura, Jorge</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- EP006 - REPORTS (Leonardo) -->
+  <tr>
+    <td>US029</td>
+    <td>Generar bitácora diaria</td>
+    <td>T-33</td>
+    <td>Daily Log View</td>
+    <td>Implementar vista de bitácora diaria de lecturas y eventos del sistema</td>
+    <td>4</td>
+    <td>Cabrera Novoa, Leonardo</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US030</td>
+    <td>Consultar historial de eventos</td>
+    <td>T-34</td>
+    <td>Operational History View</td>
+    <td>Implementar vista de historial de eventos operacionales</td>
+    <td>4</td>
+    <td>Cabrera Novoa, Leonardo</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US031</td>
+    <td>Exportar reporte sanitario</td>
+    <td>T-35</td>
+    <td>Sanitary Compliance Export</td>
+    <td>Implementar vista de exportación de reporte de cumplimiento sanitario</td>
+    <td>4</td>
+    <td>Cabrera Novoa, Leonardo</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US032</td>
+    <td>Descargar reporte mensual</td>
+    <td>T-36</td>
+    <td>Monthly Report Download</td>
+    <td>Implementar descarga de reporte mensual consolidado</td>
+    <td>4</td>
+    <td>Cabrera Novoa, Leonardo</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US033</td>
+    <td>Detectar faltantes o incumplimientos</td>
+    <td>T-37</td>
+    <td>Compliance Findings View</td>
+    <td>Implementar vista de hallazgos y faltantes de cumplimiento normativo</td>
+    <td>4</td>
+    <td>Cabrera Novoa, Leonardo</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US034</td>
+    <td>Preparar evidencia para auditoría</td>
+    <td>T-38</td>
+    <td>Audit Evidence View</td>
+    <td>Implementar vista de evidencia de auditoría con registros descargables</td>
+    <td>4</td>
+    <td>Cabrera Novoa, Leonardo</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- EP007 - OPERATIVE CONFIG -->
+  <tr>
+    <td>US035</td>
+    <td>Configurar rangos de seguridad</td>
+    <td>T-39</td>
+    <td>Safety Range Settings UI</td>
+    <td>Implementar vista de configuración de rangos seguros de temperatura y humedad por activo</td>
+    <td>4</td>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US036</td>
+    <td>Actualizar parámetros operativos</td>
+    <td>T-40</td>
+    <td>Operational Parameters UI</td>
+    <td>Implementar vista de actualización de parámetros operativos del monitoreo</td>
+    <td>4</td>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US037</td>
+    <td>Programar mantenimiento preventivo</td>
+    <td>T-41</td>
+    <td>Preventive Maintenance UI</td>
+    <td>Implementar vista de programación y seguimiento de mantenimiento preventivo</td>
+    <td>4</td>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US038</td>
+    <td>Solicitar y cerrar servicio técnico</td>
+    <td>T-42</td>
+    <td>Technical Service UI</td>
+    <td>Implementar vista de solicitud y cierre de servicio técnico</td>
+    <td>4</td>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- DEPLOYMENT -->
+  <tr>
+    <td>-</td>
+    <td>Despliegue continuo</td>
+    <td>T-43</td>
+    <td>Vercel CI/CD &amp; JSON Server Setup</td>
+    <td>Configurar despliegue automático en Vercel con preview por branch y servidor JSON hospedado</td>
+    <td>3</td>
+    <td>Pajés León, Mauricio</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+#### 5.2.2.4. Development Evidence for Sprint Review
+
+Durante el Sprint 2 se realizó la implementación completa de la Frontend Web Application de ColdTrace utilizando Angular Framework, aplicando la arquitectura de bounded contexts definida en el diseño de la solución. Todos los commits se realizaron en el repositorio `ICEQ2026/coldtrace-frontend` aplicando Conventional Commits y GitFlow con ramas `feature/` por cada User Story.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit Id</th>
+    <th>Commit Message</th>
+    <th>Commit Message Body</th>
+    <th>Committed on (Date)</th>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/create-account-ui</td>
+    <td>0e1dc25</td>
+    <td>feat(identity-access): add create account UI</td>
+    <td>Implementación del formulario de creación de cuenta de usuario</td>
+    <td>07/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/sign-in-up</td>
+    <td>7805078</td>
+    <td>feat(identity-access): add sign-in UI</td>
+    <td>Implementación de la vista de inicio de sesión</td>
+    <td>08/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/password-recovery-ui</td>
+    <td>600c8bb</td>
+    <td>feat(identity-access): add password recovery UI</td>
+    <td>Implementación del flujo de recuperación de contraseña</td>
+    <td>08/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/roles-permissions-ui</td>
+    <td>ac9cf25</td>
+    <td>feat(identity-access): add roles permissions ui</td>
+    <td>Implementación de vista de administración de roles y permisos</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/cold-room-ui</td>
+    <td>6b973b6</td>
+    <td>feat(asset-management): add cold room registration</td>
+    <td>Implementación del registro de cámaras frigoríficas</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/transport-unit-ui</td>
+    <td>8271aac</td>
+    <td>feat(asset-management): add transport unit registration</td>
+    <td>Implementación del registro de unidades de transporte refrigerado</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/sensor-linking-ui</td>
+    <td>7e3c90b</td>
+    <td>feat(asset-management): add sensor asset linking</td>
+    <td>Implementación del flujo de vinculación de sensores a activos</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/gateway-pairing-ui</td>
+    <td>56b97d3</td>
+    <td>feat(asset-management): add gateway pairing</td>
+    <td>Implementación del emparejamiento de gateway</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/sensor-calibration-ui</td>
+    <td>7fa8b62</td>
+    <td>feat(asset-management): add sensor calibration review</td>
+    <td>Implementación de la revisión y registro de calibración de sensores</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/asset-update-ui</td>
+    <td>7c3afb8</td>
+    <td>feat(asset-management): add asset update flow</td>
+    <td>Implementación del flujo de actualización de activos</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/asset-settings-ui</td>
+    <td>789ea56</td>
+    <td>feat(asset-management): add asset settings UI</td>
+    <td>Implementación de pantalla de configuración avanzada de activos</td>
+    <td>09/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/iot-device-parameters</td>
+    <td>c33ad7e</td>
+    <td>feat(asset-management): support iot device parameters</td>
+    <td>Adición de soporte para parámetros de dispositivos IoT</td>
+    <td>11/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US039-operational-dashboard</td>
+    <td>e51c9da</td>
+    <td>feat(monitoring): add data-driven operational dashboard and refactor visual components</td>
+    <td>Implementación del dashboard con datos reales y refactorización de componentes visuales</td>
+    <td>11/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US039-operational-dashboard</td>
+    <td>b5198ae</td>
+    <td>feat(monitoring): operational dashboard with live telemetry (US039)</td>
+    <td>Implementación del dashboard operacional con telemetría en vivo</td>
+    <td>11/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>57c2200</td>
+    <td>feat: implement asset monitoring dashboard</td>
+    <td>Implementación del dashboard de monitoreo de activos</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>5d84982</td>
+    <td>chore: sync db.json</td>
+    <td>Sincronización de base de datos JSON del servidor provisional</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>dd74863</td>
+    <td>feat(shared): implement accordion toggle for access menu in sidebar</td>
+    <td>Implementación del toggle tipo accordion para el menú de acceso en la barra lateral</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US029-daily-log</td>
+    <td>e531330</td>
+    <td>feat(reports): add reports bounded context with daily log</td>
+    <td>Creación del bounded context de reportes con la vista de bitácora diaria</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US030-history-events</td>
+    <td>83ed5a3</td>
+    <td>feat(reports): add US030 operational history events view</td>
+    <td>Implementación de la vista de historial de eventos operacionales</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US031-sanitary-compliance-export</td>
+    <td>3222041</td>
+    <td>feat(reports): add US031 sanitary compliance export view</td>
+    <td>Implementación de la vista de exportación de reporte sanitario</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US032-monthly-report-download</td>
+    <td>3cfaef3</td>
+    <td>feat(reports): add US032 monthly report download view</td>
+    <td>Implementación de la descarga de reporte mensual consolidado</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US033-compliance-findings</td>
+    <td>f546d40</td>
+    <td>feat(reports): add US033 compliance findings view</td>
+    <td>Implementación de la vista de hallazgos de cumplimiento normativo</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US034-audit-evidence</td>
+    <td>eeed5c6</td>
+    <td>feat(reports): add US034 audit evidence view</td>
+    <td>Implementación de la vista de evidencia de auditoría</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US027-recognize-critical-alert</td>
+    <td>859ae1d</td>
+    <td>feat: implement recognize critical alert feature including domain, infrastructure, application and presentation layers</td>
+    <td>Implementación completa del feature de reconocimiento de alerta crítica con capas de dominio, infraestructura, aplicación y presentación</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US035-safety-range-settings</td>
+    <td>—</td>
+    <td>feat(asset-management): add safety range settings UI</td>
+    <td>Implementación de la vista de configuración de rangos seguros de temperatura y humedad</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US036-operational-parameters</td>
+    <td>—</td>
+    <td>feat(asset-management): add operational parameters UI</td>
+    <td>Implementación de la vista de actualización de parámetros operativos del monitoreo</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US037-preventive-maintenance</td>
+    <td>—</td>
+    <td>feat(asset-management): add preventive maintenance UI</td>
+    <td>Implementación de la vista de programación de mantenimiento preventivo</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>feature/US038-technical-service</td>
+    <td>—</td>
+    <td>feat(asset-management): add technical service request UI</td>
+    <td>Implementación de la vista de solicitud y cierre de servicio técnico</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>069b6cf</td>
+    <td>chore(deploy): configure hosted json server</td>
+    <td>Configuración del servidor JSON hospedado para soporte de datos en el despliegue</td>
+    <td>12/05/2026</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend</td>
+    <td>develop</td>
+    <td>b5dfe86</td>
+    <td>docs: document frontend implementation</td>
+    <td>Documentación de la implementación del frontend en el README del repositorio</td>
+    <td>12/05/2026</td>
+  </tr>
+</table>
+
+#### 5.2.2.5. Execution Evidence for Sprint Review
+
+Al término del Sprint 2, se desplegó la primera versión funcional de la Frontend Web Application de ColdTrace en Vercel, accesible públicamente. La aplicación permite navegar a través de los módulos de autenticación, gestión de activos, monitoreo operacional y reportes de cumplimiento. A continuación se presentan las principales vistas implementadas durante el sprint.
+
+**Identity & Access – Autenticación y gestión de usuarios**
+
+La plataforma cuenta con vistas de creación de cuenta, inicio de sesión y recuperación de contraseña, así como una pantalla de administración de roles y permisos para usuarios con perfil administrador.
+
+![Sign-In View](report/assets/chapter-05/sprint-2/sign-in.png)
+*Figura 5.2.2.5.1: Vista de Inicio de Sesión (Sign-In).*
+
+![Create Account View](report/assets/chapter-05/sprint-2/create-account.png)
+*Figura 5.2.2.5.2: Vista de Registro de Cuenta (Sign-Up).*
+
+![Password Recovery View](report/assets/chapter-05/sprint-2/password-recovery.png)
+*Figura 5.2.2.5.3: Vista de Recuperación de Contraseña.*
+
+![Roles & Permissions View](report/assets/chapter-05/sprint-2/roles-permissions.png)
+*Figura 5.2.2.5.4: Administración de Roles y Permisos.*
+
+**Asset Management – Gestión de activos e infraestructura IoT**
+
+Se implementó el módulo completo de gestión de activos, incluyendo el registro de cámaras frigoríficas, unidades de transporte, vinculación de sensores IoT, emparejamiento de gateways, calibración y configuración avanzada de parámetros de dispositivos.
+
+![Cold Room List View](report/assets/chapter-05/sprint-2/cold-room-list.png)
+*Figura 5.2.2.5.5: Listado y Gestión de Cámaras Frigoríficas.*
+
+![Transport Unit List View](report/assets/chapter-05/sprint-2/transport-units.png)
+*Figura 5.2.2.5.6: Registro de Unidades de Transporte.*
+
+![Sensor Linking & Gateway Pairing View](report/assets/chapter-05/sprint-2/sensor-pairing.png)
+*Figura 5.2.2.5.7: Vinculación de Sensores y Gateways IoT.*
+
+![Asset Settings & IoT Configuration View](report/assets/chapter-05/sprint-2/asset-settings.png)
+*Figura 5.2.2.5.8: Configuración Avanzada y Parámetros Operativos.*
+
+**Monitoring – Dashboard operacional (US039)**
+
+El dashboard operacional muestra en tiempo real el estado de los activos monitoreados, KPIs de temperatura, alertas activas y telemetría de sensores. Los datos se consumen desde el servidor JSON configurado como backend provisional.
+
+![Operational Dashboard View](report/assets/chapter-05/sprint-2/operational-dashboard.png)
+*Figura 5.2.2.5.9: Dashboard Operacional con Telemetría en Tiempo Real.*
+
+**Reports – Reportes y cumplimiento normativo (US029–US034)**
+
+El módulo de reportes incluye seis vistas: bitácora diaria, historial de eventos operacionales, exportación de reportes sanitarios, descarga de reportes mensuales, hallazgos de cumplimiento y evidencia de auditoría.
+
+![Reports Daily Log View](report/assets/chapter-05/sprint-2/daily-log.png)
+*Figura 5.2.2.5.10: Bitácora Diaria de Operaciones.*
+
+![Operational History View](report/assets/chapter-05/sprint-2/operational-history.png)
+*Figura 5.2.2.5.11: Historial de Eventos Operacionales.*
+
+![Compliance Findings & Audit Evidence View](report/assets/chapter-05/sprint-2/compliance-audit.png)
+*Figura 5.2.2.5.12: Hallazgos de Cumplimiento y Evidencia de Auditoría.*
+
+**Video de navegación del producto:** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQAb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 2 no se desplegaron Web Services propios (RESTful API), dado que el alcance del sprint estuvo centrado en la implementación del frontend. Para soportar el funcionamiento de la aplicación en producción, el equipo configuró un servidor JSON hospedado (`json-server`) que actúa como API provisional, permitiendo que el frontend consuma datos estructurados mediante endpoints REST simulados.
+
+A continuación se documentan los principales endpoints del servidor JSON que el frontend consume durante este sprint:
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Endpoint</th>
+    <th>Verb HTTP</th>
+    <th>Descripción</th>
+    <th>Ejemplo de Response</th>
+  </tr>
+  <tr>
+    <td>/assets</td>
+    <td>GET</td>
+    <td>Retorna la lista de activos registrados (cámaras frigoríficas, unidades de transporte)</td>
+    <td>{ "id": "1", "name": "Cámara 01", "type": "cold_room", "status": "active" }</td>
+  </tr>
+  <tr>
+    <td>/assets/:id</td>
+    <td>GET</td>
+    <td>Retorna el detalle de un activo específico por ID</td>
+    <td>{ "id": "1", "name": "Cámara 01", "temperature": 4.2, "humidity": 78 }</td>
+  </tr>
+  <tr>
+    <td>/assets</td>
+    <td>POST</td>
+    <td>Registra un nuevo activo en la plataforma</td>
+    <td>{ "id": "5", "name": "Unidad Truck-03", "type": "transport_unit" }</td>
+  </tr>
+  <tr>
+    <td>/gateways</td>
+    <td>GET</td>
+    <td>Retorna la lista de gateways IoT registrados y su estado de conectividad</td>
+    <td>{ "id": "g1", "name": "Gateway A", "status": "connected" }</td>
+  </tr>
+  <tr>
+    <td>/iot-devices</td>
+    <td>GET</td>
+    <td>Retorna la lista de sensores IoT vinculados a activos</td>
+    <td>{ "id": "s1", "assetId": "1", "type": "temperature", "lastReading": 4.2 }</td>
+  </tr>
+  <tr>
+    <td>/telemetry</td>
+    <td>GET</td>
+    <td>Retorna lecturas de telemetría para el dashboard operacional</td>
+    <td>{ "assetId": "1", "temperature": 4.1, "humidity": 79, "timestamp": "2026-05-12T20:00:00Z" }</td>
+  </tr>
+  <tr>
+    <td>/reports/daily-log</td>
+    <td>GET</td>
+    <td>Retorna entradas de la bitácora diaria de operaciones</td>
+    <td>{ "date": "2026-05-12", "asset": "Cámara 01", "event": "Lectura normal", "value": 4.2 }</td>
+  </tr>
+  <tr>
+    <td>/reports/compliance</td>
+    <td>GET</td>
+    <td>Retorna el reporte de cumplimiento sanitario del periodo</td>
+    <td>{ "period": "2026-05", "status": "compliant", "findings": 0 }</td>
+  </tr>
+  <tr>
+    <td>/users</td>
+    <td>GET</td>
+    <td>Retorna la lista de usuarios registrados en la plataforma</td>
+    <td>{ "id": "u1", "name": "Admin", "role": "administrator" }</td>
+  </tr>
+  <tr>
+    <td>/roles</td>
+    <td>GET</td>
+    <td>Retorna los roles definidos en el sistema y sus permisos asociados</td>
+    <td>{ "id": "r1", "name": "operator", "permissions": ["read:assets", "read:reports"] }</td>
+  </tr>
+</table>
+
+La implementación formal del RESTful API con Spring Boot será abordada en el Sprint 3, donde se desarrollarán y documentarán los endpoints reales mediante OpenAPI/Swagger.
+
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 2 se configuró el despliegue continuo de la Frontend Web Application de ColdTrace mediante Vercel, integrando el repositorio `ICEQ2026/coldtrace-frontend` con un pipeline de CI/CD automático. Cada push a una rama `feature/` genera un Preview Deployment, mientras que los merges a `develop` actualizan el entorno de desarrollo. Al cierre del sprint el repositorio acumuló 135 deployments exitosos.
+
+**Pasos realizados para el despliegue:**
+
+1. Se conectó el repositorio `ICEQ2026/coldtrace-frontend` al proyecto en Vercel desde el dashboard de la plataforma.
+
+2. Se configuró el proyecto Angular para que Vercel detecte automáticamente el framework y ejecute `ng build` como comando de construcción, apuntando a `dist/coldtrace-frontend/browser` como directorio de salida.
+
+3. Se habilitó la integración con GitHub Actions para que cada Pull Request exponga el URL del Preview Deployment como status check en el repositorio, facilitando la revisión visual de cada feature antes de su merge.
+
+4. Se configuró un servidor JSON hospedado como backend provisional, desplegado también en Vercel, para que el frontend consuma datos estructurados desde producción.
+
+5. Se verificó el correcto funcionamiento del build en producción, incluyendo el enrutamiento de Angular con `redirects` configurados en `vercel.json`.
+
+**URL de despliegue del frontend:**
+https://coldtrace-frontend-liard.vercel.app
+
+A continuación se presenta la evidencia del despliegue en Vercel:
+
+![Vercel Active Branches](report/assets/chapter-05/sprint-2/vercel-active-branches.png)
+*Figura 5.2.2.7.1: Branches activos con sus Preview Deployments en Vercel, mostrando los PRs #16–#28 y los contributors por branch.*
+
+![Vercel Production Deployment](report/assets/chapter-05/sprint-2/vercel-production-deployment.png)
+*Figura 5.2.2.7.2: Production Deployment overview en Vercel — Status Ready, dominio coldtrace-frontend-liard.vercel.app.*
+
+#### 5.2.2.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2, el equipo trabajó de forma colaborativa en el repositorio `ICEQ2026/coldtrace-frontend`, aplicando GitFlow con ramas `feature/` por cada User Story y fusionando los cambios hacia `develop` mediante Pull Requests revisados. La distribución del trabajo refleja la organización por épicas acordada en el Sprint Planning: Mauricio Pajés lideró la implementación de EP002 (Identity & Access) y EP003 (Asset Management), David Morales encabezó el desarrollo del dashboard operacional de EP004, y Leonardo Cabrera implementó la totalidad del bounded context de reportes EP006 (US029–US034).
+
+A continuación se presenta el resumen de participación por integrante basado en el historial de commits del repositorio:
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Integrante</th>
+    <th>GitHub Username</th>
+    <th>Commits (Sprint 2)</th>
+    <th>Épicas / Bounded Contexts trabajados</th>
+  </tr>
+  <tr>
+    <td>Pajés León, Mauricio Luis</td>
+    <td>mauricio-pajes</td>
+    <td>~33</td>
+    <td>EP002 Identity &amp; Access, EP003 Asset Management, EP004 Monitoring, Deployment</td>
+  </tr>
+  <tr>
+    <td>Cabrera Novoa, Leonardo Moisés</td>
+    <td>u202415820</td>
+    <td>~19</td>
+    <td>EP006 Reports &amp; Compliance (US029–US034)</td>
+  </tr>
+  <tr>
+    <td>Morales Venegas, David Joel</td>
+    <td>David-std2</td>
+    <td>~5</td>
+    <td>EP004 Operational Monitoring Dashboard (US039, monitoring dashboard, sidebar)</td>
+  </tr>
+  <tr>
+    <td>Espinoza Paredes, Frezzia</td>
+    <td>fflushh</td>
+    <td>4</td>
+    <td>EP007 Operative Configuration &amp; Maintenance (US035–US038)</td>
+  </tr>
+  <tr>
+    <td>Videla Ventura, Jorge Joseph</td>
+    <td>JorgeVidVen</td>
+    <td>1</td>
+    <td>EP005 Alerts &amp; Incidents (US027 – recognize critical alert)</td>
+  </tr>
+</table>
+
+![GitHub Contributors Insights](report/assets/chapter-05/sprint-2/github-insights.png)
+*Figura 5.2.2.8.1: Gráfico de contribuciones por integrante – repositorio coldtrace-frontend (contributors to main branch).*
+
+El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 22 PRs mergeados durante el sprint. El uso de Conventional Commits permitió mantener un historial organizado, diferenciando claramente entre funcionalidades nuevas (`feat`), correcciones (`fix`), configuración (`chore`) y documentación (`docs`).
 
 
 # Capítulo VI: Conclusions
