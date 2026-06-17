@@ -8,7 +8,9 @@ El presente apartado tiene como finalidad evidenciar el trabajo colaborativo rea
 
 A partir de este repositorio, se analiza la participación de los integrantes del equipo mediante indicadores como número de commits, frecuencia de contribuciones y actividad general registrada en la plataforma.
 
-En el contexto de la entrega correspondiente a la TB1, TP1, TB2 y TF1, se presenta un análisis de colaboración que permite visualizar el nivel de aporte individual de cada miembro del equipo, sustentado en los registros de GitHub. Este análisis busca demostrar la distribución del trabajo, la constancia en el desarrollo del informe y el cumplimiento de las actividades asignadas.
+## AV1
+
+Durante el desarrollo de la entrega AV1, el equipo organizó la elaboración del informe mediante la asignación de responsabilidades por secciones, lo que permitió un trabajo colaborativo y paralelo entre los integrantes. Cada miembro contribuyó en función de su área asignada, abarcando aspectos de experiencia de usuario, análisis de negocio y arquitectura del sistema.
 
 ## TB1
 
@@ -22,11 +24,10 @@ Asimismo, todos los integrantes participaron activamente en la elaboración del 
 
 <img src="../assets/common/collaboration-insights/tb1-contributors.png" width="900" alt="GitHub Contributors - Commits over time TB1">
 
-## TP1
-[pending content]
+## AV2
+
+Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo colaborativo en el informe, enfocándose en la implementación de la RESTful API backend de ColdTrace utilizando Spring Boot con una arquitectura hexagonal y Domain-Driven Design. Esta fase representó la consolidación técnica del proyecto, al implementar 16 Technical Stories que cubren todos los bounded contexts de la plataforma. La colaboración se evidencia en los analíticos de GitHub del repositorio `ICEQ2026/coldtrace-platform`.
 
 ## TB2
-[pending content]
 
-## TF1
 [pending content]
