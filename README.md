@@ -5876,7 +5876,7 @@ Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el re
 
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
-Al término del Sprint 3, la RESTful API de ColdTrace fue desplegada exitosamente en Google Cloud Run, accesible públicamente con documentación OpenAPI habilitada mediante Swagger UI. La API expone 46 endpoints REST organizados en 6 bounded contexts, todos documentados con anotaciones Swagger y validación Jakarta.
+Al término del Sprint 3, la RESTful API de ColdTrace fue desplegada exitosamente en Google Cloud Run, accesible públicamente con documentación OpenAPI habilitada mediante Swagger UI. La API expone 51 operaciones REST organizadas en 6 bounded contexts, todas documentadas con anotaciones Swagger y validación Jakarta.
 
 **Arquitectura de la API implementada:**
 
@@ -5885,14 +5885,14 @@ La API sigue una arquitectura hexagonal (puertos y adaptadores) donde cada bound
 
 **Bounded contexts implementados:**
 
-| Bounded Context | Technical Stories | Endpoints | Paquete base |
+| Bounded Context | Technical Stories | Operaciones REST | Paquete base |
 |---|---|---|---|
-| Identity & Access | TS01, TS03, TS12 | 9 endpoints | `identityaccess` |
-| Asset Management | TS04, TS05, TS06, TS13, TS17 | 18 endpoints | `assetmanagement` |
-| Monitoring | TS07 | 4 endpoints | `monitoring` |
-| Alerts | TS08, TS09 | 10 endpoints | `alerts` |
-| Reports | TS10 | 3 endpoints | `reports` |
-| Maintenance | TS14, TS15 | 5 endpoints | `maintenancemanagement` |
+| Identity & Access | TS01, TS03, TS12 | 7 operaciones | `identityaccess` |
+| Asset Management | TS04, TS05, TS06, TS13, TS17 | 20 operaciones | `assetmanagement` |
+| Monitoring | TS07 | 4 operaciones | `monitoring` |
+| Alerts | TS08, TS09 | 9 operaciones | `alerts` |
+| Reports | TS10 | 3 operaciones | `reports` |
+| Maintenance | TS14, TS15 | 8 operaciones | `maintenancemanagement` |
 
 **Recursos disponibles:**
 
@@ -5902,6 +5902,20 @@ La API sigue una arquitectura hexagonal (puertos y adaptadores) donde cada bound
 - **Repositorio:** https://github.com/ICEQ2026/coldtrace-platform
 
 **Video de navegación del producto (Sprint 3):** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+A continuación se presenta la evidencia de despliegue en Google Cloud Run, los parámetros activos del contenedor y la instancia de Cloud SQL utilizada por la API:
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/cloud-run-parameters.png" alt="Google Cloud Run Service Settings" width="900">
+</p>
+
+*Figura 5.2.3.5.1: Panel de Google Cloud Run con los parámetros de configuración y variables de entorno del backend de ColdTrace.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/cloud-sql-instance.png" alt="Google Cloud SQL MySQL Instance" width="900">
+</p>
+
+*Figura 5.2.3.5.2: Instancia de Google Cloud SQL para MySQL utilizada como base de datos de producción de la RESTful API de ColdTrace.*
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
@@ -6157,19 +6171,27 @@ Durante el Sprint 3 se implementó y documentó la RESTful API completa de ColdT
 
 La especificación OpenAPI completa está disponible en Swagger UI, permitiendo probar cada endpoint directamente desde el navegador. La documentación incluye descripciones detalladas de cada operación, schemas de request/response y códigos de respuesta HTTP esperados (200, 201, 400, 404, 409, 500).
 
+A continuación se muestra la documentación interactiva de la API disponible en Swagger UI:
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/swagger-ui-endpoints.png" alt="Swagger UI OpenAPI Docs" width="900">
+</p>
+
+*Figura 5.2.3.6.1: Documentación interactiva de Swagger UI con los endpoints RESTful expuestos.*
+
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace en Google Cloud Run, utilizando Docker para la contenerización de la aplicación Spring Boot y GitHub Actions como pipeline de CI/CD.
+Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace en Google Cloud Run, utilizando Docker para la contenerización de la aplicación Spring Boot y Cloud Build como mecanismo de despliegue continuo desde el repositorio.
 
 **Pasos realizados para el despliegue:**
 
 1. Se creó un Dockerfile multi-stage para compilar y empaquetar la aplicación Spring Boot en una imagen Linux optimizada.
 
-2. Se configuró el archivo `application-prod.properties` con las credenciales de Google Cloud SQL (MySQL) como base de datos de producción.
+2. Se configuró el archivo `application-prod.properties` para resolver la conexión a Google Cloud SQL (MySQL) mediante variables de entorno de producción.
 
 3. Se desplegó manualmente la primera versión en Cloud Run desde la consola de Google Cloud, configurando variables de entorno para la conexión a la base de datos y el perfil activo de Spring.
 
-4. Se configuró GitHub Actions para ejecutar el build y despliegue automático ante cada push a la rama `main`, utilizando Workload Identity Federation para autenticación contra Google Cloud.
+4. Se configuró Cloud Build para ejecutar el build y despliegue automático ante cada push a la rama `main`, utilizando la integración de Cloud Run con el repositorio de GitHub.
 
 5. Se verificó el correcto funcionamiento del health check de Cloud Run y la accesibilidad pública de la API, incluyendo Swagger UI y los endpoints REST.
 
@@ -6181,6 +6203,20 @@ Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace e
 - **Repositorio backend:** https://github.com/ICEQ2026/coldtrace-platform
 - **Repositorio frontend (Vercel):** https://coldtrace-frontend-liard.vercel.app
 - **Repositorio landing page:** https://iceq2026.github.io/landingpage-coldtrace
+
+A continuación se presenta la evidencia del flujo de despliegue continuo en Google Cloud Build y el estado activo del servicio en Google Cloud Run:
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/cloud-build-deployment-pipeline.png" alt="Google Cloud Build Deployment Pipeline" width="900">
+</p>
+
+*Figura 5.2.3.7.1: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/cloud-run-deployment-status.png" alt="Google Cloud Run Service Status" width="900">
+</p>
+
+*Figura 5.2.3.7.2: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
@@ -6298,7 +6334,7 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 3. **Colaboración efectiva del equipo:** El uso de GitFlow con ramas feature, Conventional Commits y Pull Requests revisados permitió una integración ordenada y continua del trabajo de los 5 integrantes del equipo. La organización del trabajo por épicas y Technical Stories aseguró que cada miembro tuviera responsabilidades claras y que el avance fuera medible en cada sprint.
 
-4. **RESTful API completa y desplegada:** La implementación de 16 Technical Stories resultó en 46 endpoints REST documentados con OpenAPI/Swagger UI, cubriendo los flujos completos de registro de organizaciones, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos y de cumplimiento, y mantenimiento. La API fue desplegada exitosamente en Google Cloud Run con CI/CD mediante GitHub Actions.
+4. **RESTful API completa y desplegada:** La implementación de 16 Technical Stories resultó en 51 operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo los flujos completos de registro de organizaciones, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos y de cumplimiento, y mantenimiento. La API fue desplegada exitosamente en Google Cloud Run con despliegue continuo mediante Google Cloud Build.
 
 5. **Plataforma desplegada en tres frentes:** ColdTrace cuenta con una Landing Page informativa en GitHub Pages, una Frontend Web Application funcional en Vercel y una RESTful API con documentación OpenAPI en Google Cloud Run. Esta arquitectura de tres capas permite una experiencia de usuario completa, desde la captación de visitantes hasta la operación diaria de monitoreo de cadena de frío.
 
