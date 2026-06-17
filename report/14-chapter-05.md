@@ -1674,7 +1674,7 @@ El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un t
 
 #### 5.2.3.1. Sprint Planning 3
 
-El Sprint 3 tuvo como objetivo principal diseñar, implementar y desplegar la RESTful API de ColdTrace utilizando Spring Boot, siguiendo una arquitectura hexagonal (DDD) con bounded contexts alineados a los definidos en el frontend. El equipo trabajó en 16 Technical Stories que cubren todos los módulos de la plataforma, desde el registro de organizaciones hasta la gestión de incidencias y reportes de cumplimiento. A continuación se presenta el resumen del Sprint Planning Meeting.
+El Sprint 3 tuvo como objetivo principal diseñar, implementar y desplegar la RESTful API de ColdTrace utilizando Spring Boot, siguiendo una arquitectura hexagonal (DDD) con bounded contexts alineados a los definidos en el frontend. El equipo trabajó en 15 Technical Stories más tareas transversales que cubren todos los módulos de la plataforma, desde el registro de organizaciones hasta la gestión de incidencias y reportes de cumplimiento. A continuación se presenta el resumen del Sprint Planning Meeting.
 
 <table border="1" cellpadding="6" cellspacing="0">
   <tr>
@@ -2150,7 +2150,7 @@ A continuación, se presenta el tablero de Linear App correspondiente al backlog
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
-Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el repositorio `ICEQ2026/coldtrace-platform`, siguiendo una arquitectura hexagonal con DDD. Todos los commits aplicaron Conventional Commits (`feat`, `fix`, `refactor`, `docs`, `chore`) y GitFlow con ramas `feature/TS*` por cada Technical Story. Cada Technical Story incluyó su modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST.
+Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el repositorio `ICEQ2026/coldtrace-platform`, siguiendo una arquitectura hexagonal con DDD. Todos los commits aplicaron Conventional Commits (`feat`, `fix`, `refactor`, `docs`, `chore`) y GitFlow con ramas `feature/TS*` para las Technical Stories desarrolladas como cambios dedicados. TS16 quedó documentada en Linear como base de organizaciones ya presente dentro del contexto de Identity & Access. Cada Technical Story incluyó su modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST cuando correspondía a una implementación dedicada.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
   <tr>
@@ -2237,7 +2237,7 @@ Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el re
     <td>ICEQ2026/coldtrace-platform</td>
     <td>feature/TS12-role-assignment-api</td>
     <td>d7a2bc1</td>
-    <td>feat(TS12): integrate role assignment api</td>
+    <td>merge(TS12): integrate role assignment api</td>
     <td>Integración de API de asignación de roles a usuarios</td>
     <td>09/06/2026</td>
   </tr>
@@ -2301,7 +2301,7 @@ Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el re
     <td>ICEQ2026/coldtrace-platform</td>
     <td>feature/TS03-users-api</td>
     <td>6208dcc</td>
-    <td>feat(TS03): validate organization existence, add Jakarta validation to create user request</td>
+    <td>feat(TS03): validate organization existence on user list, add Jakarta validation to create user request</td>
     <td>Implementación de API de usuarios con validaciones Jakarta</td>
     <td>12/06/2026</td>
   </tr>
@@ -2703,7 +2703,7 @@ A continuación se presenta la evidencia del flujo de despliegue continuo en Goo
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
-Durante el Sprint 3, el equipo trabajó de forma colaborativa en el repositorio `ICEQ2026/coldtrace-platform`, implementando 16 Technical Stories más tareas transversales de arquitectura, documentación y despliegue. Cada Technical Story fue desarrollada en una rama `feature/TS*` independiente y fusionada mediante Pull Requests revisados por al menos un integrante del equipo.
+Durante el Sprint 3, el equipo trabajó de forma colaborativa en el repositorio `ICEQ2026/coldtrace-platform`, implementando 15 Technical Stories más tareas transversales de arquitectura, documentación y despliegue. Las Technical Stories desarrolladas como cambios dedicados fueron trabajadas en ramas `feature/TS*` independientes y fusionadas mediante Pull Requests revisados por al menos un integrante del equipo.
 
 **Distribución del trabajo:**
 

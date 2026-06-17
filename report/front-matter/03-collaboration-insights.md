@@ -26,7 +26,7 @@ Asimismo, todos los integrantes participaron activamente en la elaboración del 
 
 ## AV2
 
-Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo colaborativo en el informe, enfocándose en la implementación de la RESTful API backend de ColdTrace utilizando Spring Boot con una arquitectura hexagonal y Domain-Driven Design. Esta fase representó la consolidación técnica del proyecto, al implementar 16 Technical Stories que cubren todos los bounded contexts de la plataforma. La colaboración se evidencia en los analíticos de GitHub del repositorio `ICEQ2026/coldtrace-platform`.
+Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo colaborativo en el informe, enfocándose en la implementación de la RESTful API backend de ColdTrace utilizando Spring Boot con una arquitectura hexagonal y Domain-Driven Design. Esta fase representó la consolidación técnica del proyecto, al implementar 15 Technical Stories más tareas transversales que cubren todos los bounded contexts de la plataforma. La colaboración se evidencia en los analíticos de GitHub del repositorio `ICEQ2026/coldtrace-platform`.
 
 ## TB2
 

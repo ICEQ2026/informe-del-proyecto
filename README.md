@@ -119,7 +119,7 @@ Asimismo, todos los integrantes participaron activamente en la elaboración del 
 
 ## AV2
 
-Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo colaborativo en el informe, enfocándose en la implementación de la RESTful API backend de ColdTrace utilizando Spring Boot con una arquitectura hexagonal y Domain-Driven Design. Esta fase representó la consolidación técnica del proyecto, al implementar 16 Technical Stories que cubren todos los bounded contexts de la plataforma. La colaboración se evidencia en los analíticos de GitHub del repositorio `ICEQ2026/coldtrace-platform`.
+Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo colaborativo en el informe, enfocándose en la implementación de la RESTful API backend de ColdTrace utilizando Spring Boot con una arquitectura hexagonal y Domain-Driven Design. Esta fase representó la consolidación técnica del proyecto, al implementar 15 Technical Stories más tareas transversales que cubren todos los bounded contexts de la plataforma. La colaboración se evidencia en los analíticos de GitHub del repositorio `ICEQ2026/coldtrace-platform`.
 
 ## TB2
 
@@ -360,7 +360,7 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
        <strong>TB1:</strong><br>
        El equipo produjo documentación funcional y técnica organizada para TB1, evidenciando la distribución real de trabajo por épicas, la implementación de los bounded contexts principales y la relación entre responsabilidades individuales, evidencias funcionales y criterios técnicos verificables.<br><br>
        <strong>AV2:</strong><br>
-        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 16 Technical Stories con sus endpoints REST, estimaciones y responsables asignados.
+        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 15 Technical Stories más tareas transversales con sus endpoints REST, estimaciones y responsables asignados.
     </td>
   </tr>
 </table>
@@ -5204,7 +5204,7 @@ El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un t
 
 #### 5.2.3.1. Sprint Planning 3
 
-El Sprint 3 tuvo como objetivo principal diseñar, implementar y desplegar la RESTful API de ColdTrace utilizando Spring Boot, siguiendo una arquitectura hexagonal (DDD) con bounded contexts alineados a los definidos en el frontend. El equipo trabajó en 16 Technical Stories que cubren todos los módulos de la plataforma, desde el registro de organizaciones hasta la gestión de incidencias y reportes de cumplimiento. A continuación se presenta el resumen del Sprint Planning Meeting.
+El Sprint 3 tuvo como objetivo principal diseñar, implementar y desplegar la RESTful API de ColdTrace utilizando Spring Boot, siguiendo una arquitectura hexagonal (DDD) con bounded contexts alineados a los definidos en el frontend. El equipo trabajó en 15 Technical Stories más tareas transversales que cubren todos los módulos de la plataforma, desde el registro de organizaciones hasta la gestión de incidencias y reportes de cumplimiento. A continuación se presenta el resumen del Sprint Planning Meeting.
 
 <table border="1" cellpadding="6" cellspacing="0">
   <tr>
@@ -5680,7 +5680,7 @@ A continuación, se presenta el tablero de Linear App correspondiente al backlog
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
-Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el repositorio `ICEQ2026/coldtrace-platform`, siguiendo una arquitectura hexagonal con DDD. Todos los commits aplicaron Conventional Commits (`feat`, `fix`, `refactor`, `docs`, `chore`) y GitFlow con ramas `feature/TS*` por cada Technical Story. Cada Technical Story incluyó su modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST.
+Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el repositorio `ICEQ2026/coldtrace-platform`, siguiendo una arquitectura hexagonal con DDD. Todos los commits aplicaron Conventional Commits (`feat`, `fix`, `refactor`, `docs`, `chore`) y GitFlow con ramas `feature/TS*` para las Technical Stories desarrolladas como cambios dedicados. TS16 quedó documentada en Linear como base de organizaciones ya presente dentro del contexto de Identity & Access. Cada Technical Story incluyó su modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST cuando correspondía a una implementación dedicada.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
   <tr>
@@ -5767,7 +5767,7 @@ Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el re
     <td>ICEQ2026/coldtrace-platform</td>
     <td>feature/TS12-role-assignment-api</td>
     <td>d7a2bc1</td>
-    <td>feat(TS12): integrate role assignment api</td>
+    <td>merge(TS12): integrate role assignment api</td>
     <td>Integración de API de asignación de roles a usuarios</td>
     <td>09/06/2026</td>
   </tr>
@@ -5831,7 +5831,7 @@ Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el re
     <td>ICEQ2026/coldtrace-platform</td>
     <td>feature/TS03-users-api</td>
     <td>6208dcc</td>
-    <td>feat(TS03): validate organization existence, add Jakarta validation to create user request</td>
+    <td>feat(TS03): validate organization existence on user list, add Jakarta validation to create user request</td>
     <td>Implementación de API de usuarios con validaciones Jakarta</td>
     <td>12/06/2026</td>
   </tr>
@@ -6233,7 +6233,7 @@ A continuación se presenta la evidencia del flujo de despliegue continuo en Goo
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
-Durante el Sprint 3, el equipo trabajó de forma colaborativa en el repositorio `ICEQ2026/coldtrace-platform`, implementando 16 Technical Stories más tareas transversales de arquitectura, documentación y despliegue. Cada Technical Story fue desarrollada en una rama `feature/TS*` independiente y fusionada mediante Pull Requests revisados por al menos un integrante del equipo.
+Durante el Sprint 3, el equipo trabajó de forma colaborativa en el repositorio `ICEQ2026/coldtrace-platform`, implementando 15 Technical Stories más tareas transversales de arquitectura, documentación y despliegue. Las Technical Stories desarrolladas como cambios dedicados fueron trabajadas en ramas `feature/TS*` independientes y fusionadas mediante Pull Requests revisados por al menos un integrante del equipo.
 
 **Distribución del trabajo:**
 
@@ -6574,7 +6574,7 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 3. **Colaboración efectiva del equipo:** El uso de GitFlow con ramas feature, Conventional Commits y Pull Requests revisados permitió una integración ordenada y continua del trabajo de los 5 integrantes del equipo. La gestión del backlog mediante Linear App con tickets OPE y la organización del trabajo por Technical Stories aseguró que cada miembro tuviera responsabilidades claras y que el avance fuera medible en cada sprint.
 
-4. **RESTful API completa y desplegada:** La implementación de 16 Technical Stories resultó en 51 operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo los flujos completos de registro de organizaciones, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos y de cumplimiento, y mantenimiento. La API fue desplegada exitosamente en Google Cloud Run con despliegue continuo mediante Google Cloud Build.
+4. **RESTful API completa y desplegada:** La implementación de 15 Technical Stories más tareas transversales resultó en 51 operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo los flujos completos de registro de organizaciones, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos y de cumplimiento, y mantenimiento. La API fue desplegada exitosamente en Google Cloud Run con despliegue continuo mediante Google Cloud Build.
 
 5. **Plataforma desplegada en tres frentes:** ColdTrace cuenta con una Landing Page informativa en GitHub Pages, una Frontend Web Application funcional en Vercel y una RESTful API con documentación OpenAPI en Google Cloud Run. Esta arquitectura de tres capas permite una experiencia de usuario completa, desde la captación de visitantes hasta la operación diaria de monitoreo de cadena de frío.
 

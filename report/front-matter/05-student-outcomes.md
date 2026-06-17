@@ -114,7 +114,7 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
        <strong>TB1:</strong><br>
        El equipo produjo documentación funcional y técnica organizada para TB1, evidenciando la distribución real de trabajo por épicas, la implementación de los bounded contexts principales y la relación entre responsabilidades individuales, evidencias funcionales y criterios técnicos verificables.<br><br>
        <strong>AV2:</strong><br>
-        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 16 Technical Stories con sus endpoints REST, estimaciones y responsables asignados.
+        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 15 Technical Stories más tareas transversales con sus endpoints REST, estimaciones y responsables asignados.
     </td>
   </tr>
 </table>
