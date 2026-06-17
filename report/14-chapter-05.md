@@ -2139,6 +2139,15 @@ El objetivo principal del Sprint 3 fue implementar la RESTful API de ColdTrace u
   </tr>
 </table>
 
+A continuación, se presenta el tablero de Linear App correspondiente al backlog del Sprint 3:
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/linear-backlog-sprint-3.png" alt="Tablero de Linear App - Sprint 3" width="900">
+</p>
+
+*Figura 5.2.3.3.1: Tablero de backlog de Linear App para el Sprint 3.*
+
+
 #### 5.2.3.4. Development Evidence for Sprint Review
 
 Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el repositorio `ICEQ2026/coldtrace-platform`, siguiendo una arquitectura hexagonal con DDD. Todos los commits aplicaron Conventional Commits (`feat`, `fix`, `refactor`, `docs`, `chore`) y GitFlow con ramas `feature/TS*` por cada Technical Story. Cada Technical Story incluyó su modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST.
@@ -2348,7 +2357,7 @@ Durante el Sprint 3 se implementó la RESTful API completa de ColdTrace en el re
 
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
-Al término del Sprint 3, la RESTful API de ColdTrace fue desplegada exitosamente en Google Cloud Run, accesible públicamente con documentación OpenAPI habilitada mediante Swagger UI. La API expone 46 endpoints REST organizados en 6 bounded contexts, todos documentados con anotaciones Swagger y validación Jakarta.
+Al término del Sprint 3, la RESTful API de ColdTrace fue desplegada exitosamente en Google Cloud Run, accesible públicamente con documentación OpenAPI habilitada mediante Swagger UI. La API expone 51 operaciones REST organizadas en 6 bounded contexts, todas documentadas con anotaciones Swagger y validación Jakarta.
 
 **Arquitectura de la API implementada:**
 
@@ -2356,14 +2365,14 @@ La API sigue una arquitectura hexagonal (puertos y adaptadores) donde cada bound
 
 **Bounded contexts implementados:**
 
-| Bounded Context | Technical Stories | Endpoints | Paquete base |
+| Bounded Context | Technical Stories | Operaciones REST | Paquete base |
 |---|---|---|---|
-| Identity & Access | TS01, TS03, TS12 | 9 endpoints | `identityaccess` |
-| Asset Management | TS04, TS05, TS06, TS13, TS17 | 18 endpoints | `assetmanagement` |
-| Monitoring | TS07 | 4 endpoints | `monitoring` |
-| Alerts | TS08, TS09 | 10 endpoints | `alerts` |
-| Reports | TS10 | 3 endpoints | `reports` |
-| Maintenance | TS14, TS15 | 5 endpoints | `maintenancemanagement` |
+| Identity & Access | TS01, TS03, TS12 | 7 operaciones | `identityaccess` |
+| Asset Management | TS04, TS05, TS06, TS13, TS17 | 20 operaciones | `assetmanagement` |
+| Monitoring | TS07 | 4 operaciones | `monitoring` |
+| Alerts | TS08, TS09 | 9 operaciones | `alerts` |
+| Reports | TS10 | 3 operaciones | `reports` |
+| Maintenance | TS14, TS15 | 8 operaciones | `maintenancemanagement` |
 
 **Recursos disponibles:**
 
@@ -2373,6 +2382,21 @@ La API sigue una arquitectura hexagonal (puertos y adaptadores) donde cada bound
 - **Repositorio:** https://github.com/ICEQ2026/coldtrace-platform
 
 **Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+A continuación se presenta la evidencia de despliegue en Google Cloud Run, los parámetros activos del contenedor y la instancia de Cloud SQL utilizada por la API:
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/cloud-run-parameters.png" alt="Google Cloud Run Service Settings" width="900">
+</p>
+
+*Figura 5.2.3.5.1: Panel de Google Cloud Run con los parámetros de configuración y variables de entorno del backend de ColdTrace.*
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/cloud-sql-instance.png" alt="Google Cloud SQL MySQL Instance" width="900">
+</p>
+
+*Figura 5.2.3.5.2: Instancia de Google Cloud SQL para MySQL utilizada como base de datos de producción de la RESTful API de ColdTrace.*
+
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
@@ -2628,19 +2652,28 @@ Durante el Sprint 3 se implementó y documentó la RESTful API completa de ColdT
 
 La especificación OpenAPI completa está disponible en Swagger UI, permitiendo probar cada endpoint directamente desde el navegador. La documentación incluye descripciones detalladas de cada operación, schemas de request/response y códigos de respuesta HTTP esperados (200, 201, 400, 404, 409, 500).
 
+A continuación se muestra la documentación interactiva de la API disponible en Swagger UI:
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/swagger-ui-endpoints.png" alt="Swagger UI OpenAPI Docs" width="900">
+</p>
+
+*Figura 5.2.3.6.1: Documentación interactiva de Swagger UI con los endpoints RESTful expuestos.*
+
+
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace en Google Cloud Run, utilizando Docker para la contenerización de la aplicación Spring Boot y GitHub Actions como pipeline de CI/CD.
+Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace en Google Cloud Run, utilizando Docker para la contenerización de la aplicación Spring Boot y Cloud Build como mecanismo de despliegue continuo desde el repositorio.
 
 **Pasos realizados para el despliegue:**
 
 1. Se creó un Dockerfile multi-stage para compilar y empaquetar la aplicación Spring Boot en una imagen Linux optimizada.
 
-2. Se configuró el archivo `application-prod.properties` con las credenciales de Google Cloud SQL (MySQL) como base de datos de producción.
+2. Se configuró el archivo `application-prod.properties` para resolver la conexión a Google Cloud SQL (MySQL) mediante variables de entorno de producción.
 
 3. Se desplegó manualmente la primera versión en Cloud Run desde la consola de Google Cloud, configurando variables de entorno para la conexión a la base de datos y el perfil activo de Spring.
 
-4. Se configuró GitHub Actions para ejecutar el build y despliegue automático ante cada push a la rama `main`, utilizando Workload Identity Federation para autenticación contra Google Cloud.
+4. Se configuró Cloud Build para ejecutar el build y despliegue automático ante cada push a la rama `main`, utilizando la integración de Cloud Run con el repositorio de GitHub.
 
 5. Se verificó el correcto funcionamiento del health check de Cloud Run y la accesibilidad pública de la API, incluyendo Swagger UI y los endpoints REST.
 
@@ -2652,6 +2685,21 @@ Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace e
 - **Repositorio backend:** https://github.com/ICEQ2026/coldtrace-platform
 - **Repositorio frontend (Vercel):** https://coldtrace-frontend-liard.vercel.app
 - **Landing Page (GitHub Pages):** https://iceq2026.github.io/landingpage-coldtrace
+
+A continuación se presenta la evidencia del flujo de despliegue continuo en Google Cloud Build y el estado activo del servicio en Google Cloud Run:
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/cloud-build-deployment-pipeline.png" alt="Google Cloud Build Deployment Pipeline" width="900">
+</p>
+
+*Figura 5.2.3.7.1: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/cloud-run-deployment-status.png" alt="Google Cloud Run Service Status" width="900">
+</p>
+
+*Figura 5.2.3.7.2: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
+
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
@@ -2702,6 +2750,19 @@ A continuación se presenta el resumen de participación por integrante basado e
   </tr>
 </table>
 
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/github-insights-sprint-3.png" alt="GitHub Contributors Insights Sprint 3" width="900">
+</p>
+
+*Figura 5.2.3.8.1: Gráfico de contribuciones por integrante – repositorio coldtrace-platform.*
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/github-insights2-sprint-3.png" alt="GitHub Pulse Commits Sprint 3" width="900">
+</p>
+
+*Figura 5.2.3.8.2: Captura de la sección Pulse de GitHub mostrando los commits activos del Sprint 3.*
+
+
 El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 18 PRs mergeados durante el sprint. El uso de Conventional Commits permitió mantener un historial organizado con tipos como `feat`, `fix`, `refactor`, `style`, `docs`, `chore` y `build`. La implementación de la arquitectura hexagonal (v2) unificó todos los bounded contexts bajo el mismo patrón de puertos y adaptadores, mejorando la mantenibilidad y testabilidad del código.
 
 Con la finalización del Sprint 3, el equipo cuenta con una RESTful API completa y desplegada en producción (Cloud Run), una Frontend Web Application desplegada en Vercel y una Landing Page desplegada en GitHub Pages, formando el ecosistema completo de ColdTrace.
@@ -2737,6 +2798,215 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
 | María Fernanda López | Jefa de calidad en empresa de distribución de alimentos | La generación de reportes de cumplimiento y la trazabilidad de incidencias fueron destacadas como esenciales para auditorías sanitarias. | Permitir la exportación de reportes en formatos adicionales (PDF, Excel). |
 | Carlos Gutiérrez | Encargado de operaciones en almacén refrigerado | La configuración de rangos de seguridad y la programación de mantenimiento preventivo fueron consideradas herramientas útiles para la operación diaria. | Desarrollar vistas móviles para consulta rápida de estado de activos. |
 | Ana Torres | Administradora de restaurante con cámaras frigoríficas | La facilidad de uso de la plataforma y la claridad de las alertas fueron bien recibidas. Sugirió incluir notificaciones por WhatsApp. | Integrar canales de notificación adicionales (WhatsApp, SMS). |
+
+<br>
+
+**Registro Detallado de Entrevistas de Validación**
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 1</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-05/validation/validation-interview-1.png" alt="Entrevista de Validación 1" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Juan Carlos Mendoza</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Smartphone (Android) y Laptop (Windows)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>45 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Dueño de Minimarket "Mendoza & Hijos"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y llamadas telefónicas</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Santiago de Surco, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel y Apps bancarias</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 05:40</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        El entrevistado evaluó la interfaz web de ColdTrace y destacó la facilidad de navegación y la claridad de la información de los activos de refrigeración. Mencionó que la gestión de activos en tiempo real les permitiría reaccionar ante fallas operativas de sus congeladoras. Recomendó incorporar una vista de dashboard tipo resumen rápido (resumen ejecutivo) que permita ver la salud de todos los activos sin tener que entrar al detalle de cada uno.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 2</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-05/validation/validation-interview-2.png" alt="Entrevista de Validación 2" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>María Fernanda López</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop Corporativa y Tablet Android</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>34 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Jefa de Calidad Alimentaria en "Logística del Frío S.A."</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Microsoft Teams y correo corporativo</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Callao</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel, Power BI</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 06:15</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        La entrevistada se enfocó en el módulo de reportes y cumplimiento de ColdTrace. Valoró la bitácora diaria y el reporte de cumplimiento sanitario, ya que facilita enormemente la consolidación de evidencia para las auditorías de DIGESA. Recomendó que las exportaciones no solo estén disponibles como datos tabulares, sino que se habilite la exportación en formatos amigables como PDF y Excel con plantillas de presentación.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-05/validation/validation-interview-3.png" alt="Entrevista de Validación 3" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Carlos Gutiérrez</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Tablet corporativa y Laptop Windows</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>38 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Microsoft Edge</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Encargado de Operaciones de Almacén Frigorífico "AeroFrío"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Correo corporativo y WhatsApp</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>San Luis, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>ERP interno y Microsoft Excel</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 04:50</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        El entrevistado valoró la vista de configuración de rangos seguros de temperatura y la programación de mantenimientos preventivos para los sensores IoT. Consideró que es de gran utilidad para evitar fallas imprevistas. Sugirió desarrollar una aplicación móvil o una interfaz móvil optimizada que les permita a los operadores en campo verificar rápidamente el estado de los sensores y equipos.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-05/validation/validation-interview-4.png" alt="Entrevista de Validación 4" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Ana Torres</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>iPhone (iOS) y iPad</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>31 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>iOS / Safari</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Administradora de Restaurante "El Buen Gusto"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y iMessage</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Miraflores, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Sistema POS de comandas y Microsoft Excel</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 04:10</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 5.3.3. Conclusiones de las Entrevistas de Validación
 
