@@ -3536,9 +3536,9 @@ Para el planteamiento de la base de datos de ColdTrace se identificaron primero 
 
 En esta sección se describen las herramientas de software utilizadas por el equipo para el desarrollo colaborativo del proyecto. Estas plataformas permiten organizar el trabajo, diseñar la experiencia de usuario, modelar procesos, gestionar el código fuente y documentar el avance del producto durante su ciclo de vida. La selección de estas herramientas responde a la necesidad de mantener un entorno de trabajo colaborativo, accesible y alineado con las prácticas del curso.
 
-### Github
+### GitHub
 
-Plataforma utilizada para el guardar versiones del proyecto.
+Plataforma utilizada para guardar las versiones del proyecto y gestionar la colaboración mediante ramas, commits y pull requests.
 
 [GitHub](https://github.com/)
 
@@ -3547,7 +3547,7 @@ Plataforma utilizada para el guardar versiones del proyecto.
 
 ### Uxpressia
 
-Herramiento usada para la elabnoracion de user personas y impact mapping.
+Herramienta utilizada para la elaboración de user personas e impact mapping.
 
 [UXPressia](https://uxpressia.com/)
 
@@ -3555,7 +3555,7 @@ Herramiento usada para la elabnoracion de user personas y impact mapping.
 
 ### Miro
 
-Plataforma usada para el eventstorming.
+Plataforma utilizada para el event storming y la organización visual de ideas del proyecto.
 
 [Miro](https://miro.com/)
 
@@ -3573,14 +3573,16 @@ La herramienta usada para desarrollo conjunto de wireframes y mockups.
 
 ### 5.1.2. Source Code Management
 
-La gestión del código fuente del proyecto se realizó mediante la plataforma GitHub, la cual permitió organizar, controlar y dar seguimiento a los cambios realizados durante el desarrollo del informe.
+La gestión del código fuente del proyecto se realizó mediante la plataforma GitHub, la cual permitió organizar, controlar y dar seguimiento a los cambios realizados durante el desarrollo de los productos de software y del informe.
 
 Los repositorios usados fueron:
 
-- Repositorio del proyecto: https://github.com/ICEQ2026/informe-del-proyecto
+- Repositorio del informe del proyecto: https://github.com/ICEQ2026/informe-del-proyecto
 - Repositorio de la landing page: https://github.com/ICEQ2026/landingpage-coldtrace
+- Repositorio de la Frontend Web Application: https://github.com/ICEQ2026/coldtrace-frontend
+- Repositorio del Server Side Software / RESTful API: https://github.com/ICEQ2026/coldtrace-platform
 
-Este repositorio contiene la estructura completa del informe, organizada por capítulos, lo que permite una gestión modular y colaborativa del contenido.
+Estos repositorios cubren los productos de software definidos en el alcance del proyecto: Landing Page, Frontend Web Application y Server Side Software. El repositorio del informe contiene la estructura completa de la documentación, organizada por capítulos, lo que permite una gestión modular y colaborativa del contenido.
 
 ### Workflow de Control de Versiones
 
@@ -3622,7 +3624,7 @@ Para estandarizar los mensajes de commits, se utilizó la convención de Convent
 </p>
 
 <p align="center">
-  Comitts realizdos evidenciando el uso de conventional commits para clasificar los tipos de cambios.
+  Commits realizados evidenciando el uso de Conventional Commits para clasificar los tipos de cambios.
 </p>
 
 Los tipos de commits utilizados incluyen:
@@ -3721,7 +3723,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
 
 ### Configuración del despliegue de la Landing Page
 
-1. Para el despliegue de la Landing Page se creo un repositorio en la organizacion alojada en GitHub, el cual contiene todos los archivos del proyecto desarrollados en HTML, CSS y JavaScript.
+1. Para el despliegue de la Landing Page se creó un repositorio en la organización alojada en GitHub, el cual contiene todos los archivos del proyecto desarrollados en HTML, CSS y JavaScript.
 
 <p align="center">
   <img src="report/assets/chapter-05/development_environment/repoLanding.png"/>
@@ -3731,7 +3733,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
   Repositorio de la Landing Page utilizado para el despliegue del proyecto.
 </p>
 
-2. Se hizo un push al repositorio al subir todo los archivos que contenian la landing page
+2. Se realizó un push al repositorio con todos los archivos que contenían la Landing Page.
 
 <p align="center">
   <img src="report/assets/chapter-05/development_environment/structureLanding.png"/>
@@ -3741,7 +3743,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
   Uso de ramas para el desarrollo e integración de cambios antes del despliegue.
 </p>   
 
-3. Se creo branches para la actualización continua del repositorio, donde cada cambio realizado por el equipo eventualmente sera agregado en la rama principal.
+3. Se crearon branches para la actualización continua del repositorio, donde cada cambio realizado por el equipo eventualmente será agregado a la rama principal.
 
 <p align="center">
   <img src="report/assets/chapter-05/development_environment/branchesLanding.png"/>
@@ -3906,6 +3908,8 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 
 ### 5.2.1.3. Sprint Backlog 1.
 
+Para cumplir con la descomposición de User Stories en Engineering Tasks, los work items del Sprint 1 fueron documentados con estimaciones entre 4 y 8 horas. Esta granularidad permite evidenciar tareas suficientemente pequeñas para seguimiento diario, pero con alcance claro para desarrollo, revisión y cierre dentro del sprint.
+
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
   
   <tr>
@@ -3958,7 +3962,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
     <td>T-03</td>
     <td>Showcase Section</td>
     <td>Implementar secciones de producto y testimonios</td>
-    <td>3</td>
+    <td>4</td>
     <td>Mauricio Pajés</td>
     <td>Done</td>
   </tr>
@@ -3969,7 +3973,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
     <td>T-04</td>
     <td>Signup Section</td>
     <td>Agregar formulario de registro y pricing overview</td>
-    <td>3</td>
+    <td>4</td>
     <td>Mauricio Pajés</td>
     <td>Done</td>
   </tr>
@@ -3980,7 +3984,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
     <td>T-05</td>
     <td>Navbar Behavior</td>
     <td>Implementar navegación y estructura del header</td>
-    <td>3</td>
+    <td>4</td>
     <td>Mauricio Pajés</td>
     <td>Done</td>
   </tr>
@@ -4026,7 +4030,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
     <td>T-09</td>
     <td>GitHub Setup</td>
     <td>Configurar repositorio, ramas y estructura del proyecto</td>
-    <td>2</td>
+    <td>4</td>
     <td>Leonardo Cabrera</td>
     <td>Done</td>
   </tr>
@@ -4127,6 +4131,7 @@ A continuación, se presentan evidencias visuales de la implementación:
 ![Dashboard Alerts](report/assets/chapter-05/development_environment/executionlanding3.png)
 
 La navegación entre secciones se realiza mediante un menú fijo (navbar), facilitando la experiencia del usuario. Asimismo, la interfaz es responsive, adaptándose a distintos dispositivos.
+
 #### 5.2.1.6. Services Documentation Evidence for Sprint Review
 
 Durante el Sprint 1, no se implementaron Web Services ni endpoints documentados, debido a que el alcance del sprint estuvo enfocado en el desarrollo de la landing page y la simulación de funcionalidades del sistema ColdTrace a nivel frontend.
@@ -4349,7 +4354,7 @@ Los aspectos principales del Sprint 2 fueron los siguientes:
 
 #### 5.2.2.3. Sprint Backlog 2
 
-El objetivo principal del Sprint 2 fue implementar y desplegar la primera versión completa de la Frontend Web Application de ColdTrace, habilitando los flujos de autenticación, gestión de activos, monitoreo operacional y consulta de reportes de cumplimiento. El equipo gestionó el Sprint Backlog mediante Linear App, organizando las tareas por épica y bounded context.
+El objetivo principal del Sprint 2 fue implementar y desplegar la primera versión completa de la Frontend Web Application de ColdTrace, habilitando los flujos de autenticación, gestión de activos, monitoreo operacional y consulta de reportes de cumplimiento. El equipo gestionó el Sprint Backlog mediante Linear App, organizando las tareas por épica y bounded context. Las Engineering Tasks se documentaron con estimaciones entre 4 y 8 horas para asegurar seguimiento claro y una descomposición consistente del trabajo.
 
 A continuación se presenta una captura del backlog gestionado en Linear App:
 
@@ -4395,7 +4400,7 @@ A continuación se presenta la tabla de control de estado del sprint.
     <td>T-11</td>
     <td>Sign-In UI</td>
     <td>Implementar vista de inicio de sesión con validación de credenciales</td>
-    <td>3</td>
+    <td>4</td>
     <td>Pajés León, Mauricio</td>
     <td>Done</td>
   </tr>
@@ -4405,7 +4410,7 @@ A continuación se presenta la tabla de control de estado del sprint.
     <td>T-12</td>
     <td>Password Recovery UI</td>
     <td>Implementar flujo de recuperación de contraseña por email</td>
-    <td>3</td>
+    <td>4</td>
     <td>Pajés León, Mauricio</td>
     <td>Done</td>
   </tr>
@@ -4467,7 +4472,7 @@ A continuación se presenta la tabla de control de estado del sprint.
     <td>T-18</td>
     <td>Sensor Calibration UI</td>
     <td>Implementar revisión y registro de calibración de sensores</td>
-    <td>3</td>
+    <td>4</td>
     <td>Pajés León, Mauricio</td>
     <td>Done</td>
   </tr>
@@ -4727,7 +4732,7 @@ A continuación se presenta la tabla de control de estado del sprint.
     <td>T-43</td>
     <td>Vercel CI/CD &amp; JSON Server Setup</td>
     <td>Configurar despliegue automático en Vercel con preview por branch y servidor JSON hospedado</td>
-    <td>3</td>
+    <td>4</td>
     <td>Pajés León, Mauricio</td>
     <td>Done</td>
   </tr>
@@ -5400,7 +5405,7 @@ Los Technical Stories del Sprint 3 fueron los siguientes:
 
 #### 5.2.3.3. Sprint Backlog 3
 
-El objetivo principal del Sprint 3 fue implementar la RESTful API de ColdTrace utilizando Spring Boot con una arquitectura hexagonal (puertos y adaptadores) y DDD. El equipo gestionó el backlog mediante Linear App, donde cada Technical Story fue registrada como un ticket con estimaciones en horas y Story Points. A continuación se presentan los tickets del Sprint Backlog 3.
+El objetivo principal del Sprint 3 fue implementar la RESTful API de ColdTrace utilizando Spring Boot con una arquitectura hexagonal (puertos y adaptadores) y DDD. El equipo gestionó el backlog mediante Linear App, donde cada Technical Story fue registrada como un ticket con estimaciones en horas y Story Points. Cada work item del Sprint Backlog 3 se mantuvo entre 4 y 8 horas para conservar una granularidad adecuada de seguimiento, revisión y cierre. A continuación se presentan los tickets del Sprint Backlog 3.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
   <tr>
@@ -5597,7 +5602,7 @@ El objetivo principal del Sprint 3 fue implementar la RESTful API de ColdTrace u
     <td>OPE-78</td>
     <td>Organizations API Base</td>
     <td>Endpoint para crear una organización</td>
-    <td>2</td>
+    <td>4</td>
     <td>Pajés, Mauricio</td>
     <td>Done</td>
   </tr>
@@ -6297,6 +6302,16 @@ El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un t
 
 Con la finalización del Sprint 3, el equipo cuenta con una RESTful API completa y desplegada en producción (Cloud Run), una Frontend Web Application desplegada en Vercel y una Landing Page desplegada en GitHub Pages, formando el ecosistema completo de ColdTrace.
 
+**Resumen de evidencias colaborativas por actividad**
+
+| Actividad colaborativa | Evidencia documentada | Repositorio o herramienta |
+|---|---|---|
+| Development | Implementación de Technical Stories en ramas `feature/TS*`, commits convencionales y Pull Requests revisados antes de la integración. | `ICEQ2026/coldtrace-platform`, `ICEQ2026/coldtrace-frontend`, GitHub |
+| Execution | Validación de la RESTful API desplegada, Swagger UI público, frontend en Vercel y landing page en GitHub Pages. | Google Cloud Run, Cloud Build, Vercel, GitHub Pages |
+| Documentation | Actualización del Sprint Backlog 3, documentación de endpoints REST, evidencias de despliegue y sincronización del informe unificado. Frezzia Espinoza participó en la documentación del Sprint Backlog 3 y revisión de endpoints. | Linear App, `ICEQ2026/informe-del-proyecto`, Swagger UI |
+| Deployment | Despliegue continuo del backend mediante Cloud Build hacia Cloud Run, con conexión a Cloud SQL y verificación del servicio público. | Google Cloud Build, Google Cloud Run, Cloud SQL |
+| Agile tracking | Seguimiento evolutivo de estados To Do, In Progress, To Review y Done para tickets OPE del Sprint 3. | Linear App |
+
 ---
 
 ## 5.3. Validation Interviews
@@ -6324,14 +6339,14 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
 
 | Entrevistado | Perfil | Hallazgos principales | Recomendaciones |
 |---|---|---|---|
-| Juan Carlos Mendoza | Dueño de minimarket con cadena de frío propia | La gestión de activos y el monitoreo en tiempo real son las funcionalidades más valoradas. Se identificó la necesidad de alertas más tempranas. | Incorporar un dashboard resumen con indicadores críticos visibles sin necesidad de navegación. |
-| María Fernanda López | Jefa de calidad en empresa de distribución de alimentos | La generación de reportes de cumplimiento y la trazabilidad de incidencias fueron destacadas como esenciales para auditorías sanitarias. | Permitir la exportación de reportes en formatos adicionales (PDF, Excel). |
-| Carlos Gutiérrez | Encargado de operaciones en almacén refrigerado | La configuración de rangos de seguridad y la programación de mantenimiento preventivo fueron consideradas herramientas útiles para la operación diaria. | Desarrollar vistas móviles para consulta rápida de estado de activos. |
-| Ana Torres | Administradora de restaurante con cámaras frigoríficas | La facilidad de uso de la plataforma y la claridad de las alertas fueron bien recibidas. Sugirió incluir notificaciones por WhatsApp. | Integrar canales de notificación adicionales (WhatsApp, SMS). |
+| Entrevistado 1 | Dueño de minimarket con cadena de frío propia | La gestión de activos y el monitoreo en tiempo real son las funcionalidades más valoradas. Se identificó la necesidad de alertas más tempranas. | Incorporar un dashboard resumen con indicadores críticos visibles sin necesidad de navegación. |
+| Entrevistado 2 | Jefa de calidad en empresa de distribución de alimentos | La generación de reportes de cumplimiento y la trazabilidad de incidencias fueron destacadas como esenciales para auditorías sanitarias. | Permitir la exportación de reportes en formatos adicionales (PDF, Excel). |
+| Entrevistado 3 | Encargado de operaciones en almacén refrigerado | La configuración de rangos de seguridad y la programación de mantenimiento preventivo fueron consideradas herramientas útiles para la operación diaria. | Desarrollar vistas móviles para consulta rápida de estado de activos. |
+| Entrevistado 4 | Administradora de restaurante con cámaras frigoríficas | La facilidad de uso de la plataforma y la claridad de las alertas fueron bien recibidas. Sugirió incluir notificaciones por WhatsApp. | Integrar canales de notificación adicionales (WhatsApp, SMS). |
 
 <br>
 
-**Registro Detallado de Entrevistas de Validación**
+**Registro de Entrevistas de Validación**
 
 <table style="width:100%; border-collapse:collapse;">
   <tbody>
@@ -6349,7 +6364,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Juan Carlos Mendoza</td>
+      <td>Entrevistado 1</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>Smartphone (Android) y Laptop (Windows)</td>
     </tr>
@@ -6400,7 +6415,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>María Fernanda López</td>
+      <td>Entrevistado 2</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>Laptop Corporativa y Tablet Android</td>
     </tr>
@@ -6451,7 +6466,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Carlos Gutiérrez</td>
+      <td>Entrevistado 3</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>Tablet corporativa y Laptop Windows</td>
     </tr>
@@ -6502,7 +6517,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Ana Torres</td>
+      <td>Entrevistado 4</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>iPhone (iOS) y iPad</td>
     </tr>
