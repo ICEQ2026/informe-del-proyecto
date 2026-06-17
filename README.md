@@ -77,8 +77,6 @@
 </div>
 
 
-
-
 # Registro de versiones del informe
 | Versión | Fecha | Autores | Descripción              |
 | :--- | :--- | :--- |:-------------------------|
@@ -90,8 +88,6 @@
 | 1.5.0 | 23/04/26 | Espinoza Paredes, Frezzia / Pajés León, Mauricio Luis / Videla Ventura, Jorge Joseph | Consolidación de arquitectura y diseño técnico: event storming, diagramas C4, diagramas de componentes, diagramas de clases, diseño de base de datos y cierre final del informe. |
 | 1.6.0 | 13/05/26 | Pajés León, Mauricio Luis | Actualización del README del informe, incluyendo ajustes de user stories, documentación técnica y Student Outcome de TB1 según las responsabilidades reales asumidas por épica. |
 | 1.7.0 | 17/06/26 | Pajés León, Mauricio Luis / Morales Venegas, David Joel | Adición del Sprint 3 con tickets de Linear (OPE), assignees y estimaciones, commits del backend y URLs de Cloud Run actualizadas. Actualización de Collaboration Insights y adición de secciones AV2. |
-
-
 
 
 
@@ -113,6 +109,10 @@ Durante el desarrollo de la entrega AV1, el equipo organizó la elaboración del
 
 Durante el desarrollo de la entrega TB1, el equipo organizó la elaboración del informe mediante la asignación de responsabilidades por secciones, lo que permitió un trabajo colaborativo y paralelo entre los integrantes. Cada miembro contribuyó en función de su área asignada, abarcando aspectos de experiencia de usuario, análisis de negocio y arquitectura del sistema.
 
+El proceso de desarrollo del informe se realizó de manera incremental, integrando progresivamente los contenidos conforme se avanzaba en el proyecto. Esto se refleja en el Registro de Versiones del Informe, donde se evidencia la evolución del documento desde la estructura inicial hasta la incorporación de elementos como Lean UX, análisis competitivo, user stories, arquitectura de software, wireframes y flujos de interacción.
+
+Asimismo, todos los integrantes participaron activamente en la elaboración del informe, realizando aportes continuos que permitieron consolidar una documentación coherente y alineada entre sus distintas secciones. Esta colaboración se evidencia en los analíticos de contribución y commits, los cuales reflejan la participación distribuida del equipo.
+
 <img src="report/assets/common/collaboration-insights/tb1-pulse-overview.png" width="900" alt="GitHub Pulse - Overview TB1">
 
 <img src="report/assets/common/collaboration-insights/tb1-contributors.png" width="900" alt="GitHub Contributors - Commits over time TB1">
@@ -124,7 +124,6 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 ## TB2
 
 [pending content]
-
 
 
 # Contenido
@@ -205,15 +204,33 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
     - [5.1.3. Source Code Style Guide & Conventions.](#513-source-code-style-guide--conventions)
     - [5.1.4. Software Deployment Configuration.](#514-software-deployment-configuration)
 - [5.2. Landing Page, Services & Applications Implementation.](#52-landing-page-services--applications-implementation)
-    - [5.2.X. Sprint n](#52x-sprint-n)
-        - [5.2.X.1. Sprint Planning n.](#52x1-sprint-planning-n)
-        - [5.2.X.2. Aspect Leaders and Collaborators.](#52x2-aspect-leaders-and-collaborators)
-        - [5.2.X.3. Sprint Backlog n.](#52x3-sprint-backlog-n)
-        - [5.2.X.4. Development Evidence for Sprint Review.](#52x4-development-evidence-for-sprint-review)
-        - [5.2.X.5. Execution Evidence for Sprint Review.](#52x5-execution-evidence-for-sprint-review)
-        - [5.2.X.6. Services Documentation Evidence for Sprint Review.](#52x6-services-documentation-evidence-for-sprint-review)
-        - [5.2.X.7. Software Deployment Evidence for Sprint Review.](#52x7-software-deployment-evidence-for-sprint-review)
-        - [5.2.X.8. Team Collaboration Insights during Sprint.](#52x8-team-collaboration-insights-during-sprint)
+    - [5.2.1. Sprint 1](#521-sprint-1)
+        - [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
+        - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+        - [5.2.1.3. Sprint Backlog 1](#5213-sprint-backlog-1)
+        - [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
+        - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+        - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+        - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+        - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+    - [5.2.2. Sprint 2](#522-sprint-2)
+        - [5.2.2.1. Sprint Planning 2](#5221-sprint-planning-2)
+        - [5.2.2.2. Aspect Leaders and Collaborators](#5222-aspect-leaders-and-collaborators)
+        - [5.2.2.3. Sprint Backlog 2](#5223-sprint-backlog-2)
+        - [5.2.2.4. Development Evidence for Sprint Review](#5224-development-evidence-for-sprint-review)
+        - [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review)
+        - [5.2.2.6. Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
+        - [5.2.2.7. Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
+        - [5.2.2.8. Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
+    - [5.2.3. Sprint 3](#523-sprint-3)
+        - [5.2.3.1. Sprint Planning 3](#5231-sprint-planning-3)
+        - [5.2.3.2. Aspect Leaders and Collaborators](#5232-aspect-leaders-and-collaborators)
+        - [5.2.3.3. Sprint Backlog 3](#5233-sprint-backlog-3)
+        - [5.2.3.4. Development Evidence for Sprint Review](#5234-development-evidence-for-sprint-review)
+        - [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review)
+        - [5.2.3.6. Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
+        - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
+        - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
 - [5.3. Validation Interviews](#53-validation-interviews)
     - [5.3.1. Diseño de Entrevistas de Validación](#531-diseño-de-entrevistas-de-validación)
     - [5.3.2. Resultados de las Entrevistas de Validación](#532-resultados-de-las-entrevistas-de-validación)
@@ -226,8 +243,6 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 
 ## Bibliografía
 - [Bibliografía.](#bibliografía)
-
-
 
 # Student Outcome
 
@@ -291,12 +306,11 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
     </td>
     <td>
       <strong>AV1:</strong><br>
-      El equipo logró comunicar de manera clara y estructurada los componentes principales del proyecto, adaptando la explicación según el tipo de contenido presentado, ya sea de negocio, UX o técnico. Se evidenció coherencia en la exposición y dominio progresivo del alcance del producto.<br><br>
-      <strong>TB1:</strong><br>
-      El equipo demostró capacidad para comunicar oralmente el avance funcional de ColdTrace por responsabilidades de épica, explicando autenticación, gestión de activos, monitoreo, alertas, reportes y configuración operativa de forma comprensible para audiencias técnicas y no técnicas.<br><br>
-      <strong>AV2:</strong><br>
-      El equipo sustentó la implementación del backend Spring Boot con arquitectura hexagonal DDD, exponiendo con claridad la estructura de bounded contexts, el uso de endpoints REST por Technical Story, el despliegue en Google Cloud Run con documentación OpenAPI y la correlación de las responsabilidades individuales con los registros reales de commits y tickets Linear (OPE).
-    </td>
+       El equipo logró comunicar de manera clara y estructurada los componentes principales del proyecto, adaptando la explicación según el tipo de contenido presentado, ya sea de negocio, UX o técnico. Se evidenció coherencia en la exposición y dominio progresivo del alcance del producto.<br><br>
+       <strong>TB1:</strong><br>
+       El equipo demostró capacidad para comunicar oralmente el avance funcional de ColdTrace por responsabilidades de épica, explicando autenticación, gestión de activos, monitoreo, alertas, reportes y configuración operativa de forma comprensible para audiencias técnicas y no técnicas.<br><br>
+       <strong>AV2:</strong><br>
+       El equipo demostró capacidad para comunicar oralmente la implementación técnica del backend Spring Boot, explicando la arquitectura hexagonal, los bounded contexts, los endpoints REST, el despliegue en Cloud Run y la documentación OpenAPI. Cada integrante sustentó sus Technical Stories asignados, evidenciando comprensión del dominio y de las decisiones técnicas adoptadas.
     </td>
   </tr>
   <tr>
@@ -310,7 +324,7 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       <strong>TB1</strong><br>
       Documentó la épica de alertas e incidencias, incluyendo el flujo de detección de eventos críticos, reconocimiento de alertas, cierre con acciones correctivas y evidencia de seguimiento operativo.<br><br>
       <strong>AV2</strong><br>
-      Documentó la implementación de la IoT Devices API (TS05), describiendo los endpoints REST para el registro y administración de dispositivos IoT, el modelo de dominio y la integración con el contexto de gestión de activos en el backend.<br><br>
+      Documentó la implementación de la IoT Devices API (TS05), incluyendo el modelo de dominio, los endpoints REST y la integración con el bounded context de Asset Management en el backend Spring Boot.<br><br>
       <strong>Pajés León, Mauricio Luis</strong><br>
       <strong>AV1</strong><br>
       Elaboró la documentación de requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, y participó en la documentación y desarrollo de la landing page.<br><br>
@@ -342,16 +356,14 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
     </td>
     <td>
       <strong>AV1:</strong><br>
-      El equipo desarrolló documentación escrita clara, organizada y consistente, cubriendo aspectos de negocio, experiencia de usuario y arquitectura técnica. La redacción mantuvo coherencia entre secciones y permitió sustentar adecuadamente la propuesta del proyecto.<br><br>
-      <strong>TB1:</strong><br>
-      El equipo produjo documentación funcional y técnica organizada para TB1, evidenciando la distribución real de trabajo por épicas, la implementación de los bounded contexts principales y la relación entre responsabilidades individuales, evidencias funcionales y criterios técnicos verificables.<br><br>
-      <strong>AV2:</strong><br>
-      El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 16 Technical Stories con sus endpoints REST, estimaciones y responsables asignados.
+       El equipo desarrolló documentación escrita clara, organizada y consistente, cubriendo aspectos de negocio, experiencia de usuario y arquitectura técnica. La redacción mantuvo coherencia entre secciones y permitió sustentar adecuadamente la propuesta del proyecto.<br><br>
+       <strong>TB1:</strong><br>
+       El equipo produjo documentación funcional y técnica organizada para TB1, evidenciando la distribución real de trabajo por épicas, la implementación de los bounded contexts principales y la relación entre responsabilidades individuales, evidencias funcionales y criterios técnicos verificables.<br><br>
+       <strong>AV2:</strong><br>
+        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 16 Technical Stories con sus endpoints REST, estimaciones y responsables asignados.
     </td>
   </tr>
 </table>
-
-
 
 
 # Capítulo I: Introducción
@@ -529,8 +541,6 @@ En función de la problemática identificada y del tipo de solución que propone
 |:------------------|:-----------------------------|:------------------------------------|
 | **Minimarkets o puestos de mercado** | **Edad:** adultos de 25 años a más.<br>**Cargo:** dueños, administradores o encargados de minimarkets, carnicerías, pescaderías, verdulerías y otros comercios minoristas con productos perecibles y sistemas de refrigeración.<br>**Ubicación:** zonas urbanas o comerciales con alta rotación de productos frescos.<br>**Interés:** reducir merma, asegurar la inocuidad de los alimentos, evitar observaciones de DIGESA o MINSA y contar con una solución simple para monitorear refrigeración. | Según Agraria.pe (2019), en el Perú se pierde más del 33% de los alimentos producidos por deficiencias en la cadena de frío. Para pequeños comercios alimentarios, una falla de refrigeración puede traducirse en pérdida inmediata de mercadería y en menor rentabilidad del negocio. |
 | **Responsables de operaciones y control de calidad** | **Edad:** adultos de 21 años a más.<br>**Cargo:** jefes de operaciones, responsables de calidad, supervisores logísticos, encargados de almacén e ingenieros industriales en empresas que manipulan productos refrigerados.<br>**Ubicación:** centros de distribución, almacenes, supermercados, cámaras frigoríficas y operadores logísticos en zonas urbanas.<br>**Interés:** centralizar el monitoreo de la cadena de frío, responder con rapidez ante incidencias, mejorar trazabilidad, facilitar auditorías y tomar decisiones operativas con base en datos históricos. | Según la FAO (2021), en el Perú se desperdician más de 12 millones de toneladas de alimentos a lo largo de la cadena productiva. Esto refuerza la necesidad de que las áreas de operaciones, calidad y logística cuenten con herramientas de monitoreo continuo para prevenir pérdidas y elevar el control sobre la cadena de frío. |
-
-
 
 
 # Capítulo II: Requirements Elicitation & Analysis
@@ -1314,8 +1324,6 @@ Para diseñar un sistema robusto, primero es necesario entender el negocio como 
 - Improves technical alignment: Ensures that database tables and UI labels match the business reality.
 - Avoids ambiguities: Clearly distinguishes between an internal "Requisition" and an external "Purchase Order," preventing procurement errors.
 - Ensures consistency: Guarantees that documentation, mobile interfaces, and project reports use the same professional terminology.
-
-
 
 
 # Chapter III: Requirements Specification
@@ -2853,8 +2861,6 @@ El Impact Mapping es una técnica de planificación estratégica que permite ali
 </table>
 
 
-
-
 # CAPÍTULO IV. PRODUCT UX/UI DESIGN
 
 ## 4.1. Style Guidelines.
@@ -3520,8 +3526,6 @@ Para el planteamiento de la base de datos de ColdTrace se identificaron primero 
 </p>
 
 > El código fuente en PlantUML se encuentra en [`assets/chapter-04/databasediagram/databasediagram.puml`](report/assets/chapter-04/databasediagram/databasediagram.puml). Para regenerar la imagen se puede renderizar localmente con `plantuml databasediagram.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
-
-
 
 
 # Capítulo V: Product Implementation, Validation & Deployment
@@ -5664,8 +5668,15 @@ El objetivo principal del Sprint 3 fue implementar la RESTful API de ColdTrace u
     <td>Done</td>
   </tr>
 </table>
-  </tr>
-</table>
+
+A continuación, se presenta el tablero de Linear App correspondiente al backlog del Sprint 3:
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/linear-backlog-sprint-3.png" alt="Tablero de Linear App - Sprint 3" width="900">
+</p>
+
+*Figura 5.2.3.3.1: Tablero de backlog de Linear App para el Sprint 3.*
+
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
@@ -5880,7 +5891,6 @@ Al término del Sprint 3, la RESTful API de ColdTrace fue desplegada exitosament
 
 **Arquitectura de la API implementada:**
 
-
 La API sigue una arquitectura hexagonal (puertos y adaptadores) donde cada bounded context está aislado en su propio paquete con capas de dominio (agregados, value objects, repositorios), aplicación (servicios de comandos y consultas), infraestructura (persistencia JPA) e interfaces (controladores REST con assemblers DTO). El proyecto utiliza Spring Boot 4.0.6 con Java 26, MySQL como base de datos y SpringDoc OpenAPI 3.0 para documentación.
 
 **Bounded contexts implementados:**
@@ -5901,7 +5911,7 @@ La API sigue una arquitectura hexagonal (puertos y adaptadores) donde cada bound
 - **OpenAPI Spec:** https://coldtrace-platform-dtbzbm7bta-uc.a.run.app/v3/api-docs
 - **Repositorio:** https://github.com/ICEQ2026/coldtrace-platform
 
-**Video de navegación del producto (Sprint 3):** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+**Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 A continuación se presenta la evidencia de despliegue en Google Cloud Run, los parámetros activos del contenedor y la instancia de Cloud SQL utilizada por la API:
 
@@ -5916,6 +5926,7 @@ A continuación se presenta la evidencia de despliegue en Google Cloud Run, los 
 </p>
 
 *Figura 5.2.3.5.2: Instancia de Google Cloud SQL para MySQL utilizada como base de datos de producción de la RESTful API de ColdTrace.*
+
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
@@ -6179,6 +6190,7 @@ A continuación se muestra la documentación interactiva de la API disponible en
 
 *Figura 5.2.3.6.1: Documentación interactiva de Swagger UI con los endpoints RESTful expuestos.*
 
+
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
 Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace en Google Cloud Run, utilizando Docker para la contenerización de la aplicación Spring Boot y Cloud Build como mecanismo de despliegue continuo desde el repositorio.
@@ -6202,7 +6214,7 @@ Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace e
 - **OpenAPI Spec:** https://coldtrace-platform-dtbzbm7bta-uc.a.run.app/v3/api-docs
 - **Repositorio backend:** https://github.com/ICEQ2026/coldtrace-platform
 - **Repositorio frontend (Vercel):** https://coldtrace-frontend-liard.vercel.app
-- **Repositorio landing page:** https://iceq2026.github.io/landingpage-coldtrace
+- **Landing Page (GitHub Pages):** https://iceq2026.github.io/landingpage-coldtrace
 
 A continuación se presenta la evidencia del flujo de despliegue continuo en Google Cloud Build y el estado activo del servicio en Google Cloud Run:
 
@@ -6218,13 +6230,14 @@ A continuación se presenta la evidencia del flujo de despliegue continuo en Goo
 
 *Figura 5.2.3.7.2: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
 
+
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
 Durante el Sprint 3, el equipo trabajó de forma colaborativa en el repositorio `ICEQ2026/coldtrace-platform`, implementando 16 Technical Stories más tareas transversales de arquitectura, documentación y despliegue. Cada Technical Story fue desarrollada en una rama `feature/TS*` independiente y fusionada mediante Pull Requests revisados por al menos un integrante del equipo.
 
 **Distribución del trabajo:**
 
-Mauricio Pajés lideró la implementación de la fundación del proyecto Spring Boot, los Technical Stories de Organization Sign-Up (TS01), Users API (TS03), Incident Lifecycle Fields API (TS09), Gateways API (TS13), Locations API (TS17) y Organizations API Base (TS16), además de las tareas transversales de arquitectura hexagonal (v2), internacionalización de errores (OPE-67), despliegue en Cloud Run y validación de flujos. David Morales implementó los Technical Stories de Assets API (TS04), Asset Settings API (TS06), Incidents & Notifications API (TS08), Reports API (TS10) y Role Assignment API (TS12). Leonardo Cabrera desarrolló Sensor Readings API (TS07), Maintenance Schedules API (TS14) y Technical Service Requests API (TS15). Jorge Videla implementó IoT Devices API (TS05). Frezzia Espinoza colaboró en la revisión de endpoints y en la documentación del Sprint Backlog 3.
+Mauricio Pajés lideró la implementación de la fundación del proyecto Spring Boot, los Technical Stories de Organization Sign-Up (TS01), Users API (TS03), Incident Lifecycle Fields API (TS09), Gateways API (TS13), Locations API (TS17) y Organizations API Base (TS16), además de las tareas transversales de arquitectura hexagonal (v2), internacionalización de errores (OPE-67), despliegue en Cloud Run y validación de flujos. David Morales implementó los Technical Stories de Assets API (TS04), Asset Settings API (TS06), Incidents & Notifications API (TS08), Reports API (TS10) y Role Assignment API (TS12). Leonardo Cabrera desarrolló Sensor Readings API (TS07), Maintenance Schedules API (TS14) y Technical Service Requests API (TS15). Jorge Videla implementó IoT Devices API (TS05). Frezzia Espinoza documentó el Sprint Backlog 3 y revisó los endpoints REST.
 
 A continuación se presenta el resumen de participación por integrante basado en el historial de commits del repositorio:
 
@@ -6267,9 +6280,24 @@ A continuación se presenta el resumen de participación por integrante basado e
   </tr>
 </table>
 
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/github-insights-sprint-3.png" alt="GitHub Contributors Insights Sprint 3" width="900">
+</p>
+
+*Figura 5.2.3.8.1: Gráfico de contribuciones por integrante – repositorio coldtrace-platform.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/github-insights2-sprint-3.png" alt="GitHub Pulse Commits Sprint 3" width="900">
+</p>
+
+*Figura 5.2.3.8.2: Captura de la sección Pulse de GitHub mostrando los commits activos del Sprint 3.*
+
+
 El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 18 PRs mergeados durante el sprint. El uso de Conventional Commits permitió mantener un historial organizado con tipos como `feat`, `fix`, `refactor`, `style`, `docs`, `chore` y `build`. La implementación de la arquitectura hexagonal (v2) unificó todos los bounded contexts bajo el mismo patrón de puertos y adaptadores, mejorando la mantenibilidad y testabilidad del código.
 
 Con la finalización del Sprint 3, el equipo cuenta con una RESTful API completa y desplegada en producción (Cloud Run), una Frontend Web Application desplegada en Vercel y una Landing Page desplegada en GitHub Pages, formando el ecosistema completo de ColdTrace.
+
+---
 
 ## 5.3. Validation Interviews
 
@@ -6301,6 +6329,215 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
 | Carlos Gutiérrez | Encargado de operaciones en almacén refrigerado | La configuración de rangos de seguridad y la programación de mantenimiento preventivo fueron consideradas herramientas útiles para la operación diaria. | Desarrollar vistas móviles para consulta rápida de estado de activos. |
 | Ana Torres | Administradora de restaurante con cámaras frigoríficas | La facilidad de uso de la plataforma y la claridad de las alertas fueron bien recibidas. Sugirió incluir notificaciones por WhatsApp. | Integrar canales de notificación adicionales (WhatsApp, SMS). |
 
+<br>
+
+**Registro Detallado de Entrevistas de Validación**
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 1</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-1.png" alt="Entrevista de Validación 1" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Juan Carlos Mendoza</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Smartphone (Android) y Laptop (Windows)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>45 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Dueño de Minimarket "Mendoza & Hijos"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y llamadas telefónicas</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Santiago de Surco, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel y Apps bancarias</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 05:40</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        El entrevistado evaluó la interfaz web de ColdTrace y destacó la facilidad de navegación y la claridad de la información de los activos de refrigeración. Mencionó que la gestión de activos en tiempo real les permitiría reaccionar ante fallas operativas de sus congeladoras. Recomendó incorporar una vista de dashboard tipo resumen rápido (resumen ejecutivo) que permita ver la salud de todos los activos sin tener que entrar al detalle de cada uno.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 2</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-2.png" alt="Entrevista de Validación 2" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>María Fernanda López</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop Corporativa y Tablet Android</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>34 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Jefa de Calidad Alimentaria en "Logística del Frío S.A."</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Microsoft Teams y correo corporativo</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Callao</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel, Power BI</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 06:15</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        La entrevistada se enfocó en el módulo de reportes y cumplimiento de ColdTrace. Valoró la bitácora diaria y el reporte de cumplimiento sanitario, ya que facilita enormemente la consolidación de evidencia para las auditorías de DIGESA. Recomendó que las exportaciones no solo estén disponibles como datos tabulares, sino que se habilite la exportación en formatos amigables como PDF y Excel con plantillas de presentación.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-3.png" alt="Entrevista de Validación 3" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Carlos Gutiérrez</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Tablet corporativa y Laptop Windows</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>38 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Microsoft Edge</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Encargado de Operaciones de Almacén Frigorífico "AeroFrío"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Correo corporativo y WhatsApp</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>San Luis, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>ERP interno y Microsoft Excel</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 04:50</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        El entrevistado valoró la vista de configuración de rangos seguros de temperatura y la programación de mantenimientos preventivos para los sensores IoT. Consideró que es de gran utilidad para evitar fallas imprevistas. Sugirió desarrollar una aplicación móvil o una interfaz móvil optimizada que les permita a los operadores en campo verificar rápidamente el estado de los sensores y equipos.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-4.png" alt="Entrevista de Validación 4" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Ana Torres</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>iPhone (iOS) y iPad</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>31 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>iOS / Safari</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Administradora de Restaurante "El Buen Gusto"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y iMessage</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Miraflores, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Sistema POS de comandas y Microsoft Excel</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 04:10</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 ### 5.3.3. Conclusiones de las Entrevistas de Validación
 
 Las entrevistas de validación confirmaron que la solución ColdTrace responde a las necesidades reales de los segmentos objetivo identificados. Los principales aprendizajes fueron:
@@ -6310,6 +6547,8 @@ Las entrevistas de validación confirmaron que la solución ColdTrace responde a
 3. Existe interés en canales de notificación adicionales y en vistas optimizadas para dispositivos móviles.
 4. La documentación OpenAPI y Swagger UI facilitan la comprensión y prueba de los endpoints por parte de los entrevistados con perfil técnico.
 5. Las recomendaciones recogidas serán consideradas para la evolución futura del producto.
+
+---
 
 ## 5.4. Video About-the-Product
 
@@ -6321,18 +6560,19 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 **Video About-the-Product (AV2):** [Enlace al video próximamente]
 
-**Video de navegación del producto (Sprint 3):** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+**Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
 
 # Capítulo VI: Conclusions
 ## 6.1. Conclusiones y recomendaciones
 
 ### Conclusiones
 
-1. **Monitoreo continuo de cadena de frío:** ColdTrace demuestra que es posible centralizar la supervisión de temperatura y humedad en activos refrigerados mediante una plataforma web accesible desde cualquier navegador, eliminando la dependencia de controles manuales y registros dispersos. La implementación del dashboard operacional con telemetría en tiempo real (US039) validó la capacidad de la plataforma para ofrecer visibilidad continua del estado de los activos monitoreados.
+1. **Monitoreo continuo de cadena de frío:** ColdTrace demuestra que es posible centralizar la supervisión de temperatura y humedad en activos refrigerados mediante una plataforma web accesible desde cualquier navegador, eliminando la dependencia de controles manuales y registros dispersos. La implementación del dashboard operacional con telemetría en tiempo real (US039) y la RESTful API backend con endpoints de sensor readings validaron la capacidad de la plataforma para ofrecer visibilidad continua del estado de los activos monitoreados.
 
-2. **Arquitectura escalable basada en DDD:** La adopción de una arquitectura hexagonal con Domain-Driven Design y bounded contexts permitió aislar correctamente los dominios de negocio (Identity & Access, Asset Management, Monitoring, Alerts, Reports, Maintenance), facilitando el desarrollo paralelo y la mantenibilidad del código. Cada bounded context cuenta con sus propias capas de dominio, aplicación, infraestructura e interfaces REST.
+2. **Arquitectura escalable basada en DDD:** La adopción de una arquitectura hexagonal con Domain-Driven Design y bounded contexts permitió aislar correctamente los dominios de negocio (Identity & Access, Asset Management, Monitoring, Alerts, Reports, Maintenance), facilitando el desarrollo paralelo y la mantenibilidad del código. Cada bounded context cuenta con sus propias capas de dominio, aplicación, infraestructura e interfaces REST, implementadas con Spring Boot.
 
-3. **Colaboración efectiva del equipo:** El uso de GitFlow con ramas feature, Conventional Commits y Pull Requests revisados permitió una integración ordenada y continua del trabajo de los 5 integrantes del equipo. La organización del trabajo por épicas y Technical Stories aseguró que cada miembro tuviera responsabilidades claras y que el avance fuera medible en cada sprint.
+3. **Colaboración efectiva del equipo:** El uso de GitFlow con ramas feature, Conventional Commits y Pull Requests revisados permitió una integración ordenada y continua del trabajo de los 5 integrantes del equipo. La gestión del backlog mediante Linear App con tickets OPE y la organización del trabajo por Technical Stories aseguró que cada miembro tuviera responsabilidades claras y que el avance fuera medible en cada sprint.
 
 4. **RESTful API completa y desplegada:** La implementación de 16 Technical Stories resultó en 51 operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo los flujos completos de registro de organizaciones, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos y de cumplimiento, y mantenimiento. La API fue desplegada exitosamente en Google Cloud Run con despliegue continuo mediante Google Cloud Build.
 
@@ -6352,7 +6592,7 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 ## 6.2. Video About-the-Team
 
-[Pending content – el video About-the-Team será subido y enlazado próximamente.]
+[Pending content]
 
 ---
 
@@ -6371,8 +6611,6 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 | Organización GitHub | https://github.com/ICEQ2026 |
 
 
-
-
 # Bibliografía
 
 Agraria.pe. (2019, junio 26). *Perú pierde más del 33% de los alimentos que produce por mal uso de la cadena de frío*. Agraria. https://www.agraria.pe/noticias/peru-pierde-mas-del-33-de-los-alimentos-que-produce-por-mal--19324
@@ -6380,5 +6618,3 @@ Agraria.pe. (2019, junio 26). *Perú pierde más del 33% de los alimentos que pr
 FAO. (2021). *Más de 12 millones de toneladas de alimentos se pierden a lo largo de la cadena productiva en el Perú*. Organización de las Naciones Unidas para la Alimentación y la Agricultura. https://www.fao.org/peru/noticias/detail-events/en/c/1712376/
 
 Gestión. (2025, septiembre 21). *Mercado de almacenes en frío en Perú crecerá a US$ 510 millones en 2025: ¿qué lo impulsa?* Gestión. https://gestion.pe/economia/empresas/mercado-de-almacenes-en-frio-en-peru-crecera-a-us-510-millones-en-2025-que-lo-impulsa-noticia/
-
-
