@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 <br>
 <img src="report/assets/common/logo-upc.png" width="180" alt="Logo UPC">
 <br><br>
@@ -232,9 +232,9 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
         - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
         - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
 - [5.3. Validation Interviews](#53-validation-interviews)
-    - [5.3.1. Diseño de Entrevistas de Validación](#531-diseño-de-entrevistas-de-validación)
-    - [5.3.2. Resultados de las Entrevistas de Validación](#532-resultados-de-las-entrevistas-de-validación)
-    - [5.3.3. Conclusiones de las Entrevistas de Validación](#533-conclusiones-de-las-entrevistas-de-validación)
+    - [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
+    - [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
+    - [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
 - [5.4. Video About-the-Product](#54-video-about-the-product)
 
 ## Conclusiones
@@ -6316,7 +6316,7 @@ Con la finalización del Sprint 3, el equipo cuenta con una RESTful API completa
 
 ## 5.3. Validation Interviews
 
-### 5.3.1. Diseño de Entrevistas de Validación
+### 5.3.1. Diseño de Entrevistas
 
 Para la validación de la solución implementada, se diseñaron entrevistas dirigidas a representantes de los segmentos objetivo identificados en las fases iniciales del proyecto. El objetivo fue evaluar la percepción de los usuarios sobre la funcionalidad, usabilidad y pertinencia de la RESTful API de ColdTrace y su integración con la Frontend Web Application.
 
@@ -6333,7 +6333,7 @@ Las entrevistas se estructuraron en torno a los siguientes ejes de validación:
 4. **Reportes y cumplimiento:** Confirmar que la generación de reportes operativos y de cumplimiento sea útil para la toma de decisiones.
 5. **Mantenimiento y servicio técnico:** Evaluar la utilidad de la programación de mantenimiento preventivo y la gestión de solicitudes de servicio técnico.
 
-### 5.3.2. Resultados de las Entrevistas de Validación
+### 5.3.2. Registro de Entrevistas
 
 A continuación se presentan los resultados de las entrevistas realizadas, incluyendo el perfil del entrevistado, los hallazgos principales y las recomendaciones derivadas.
 
@@ -6553,15 +6553,90 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
 </table>
 
 
-### 5.3.3. Conclusiones de las Entrevistas de Validación
+### 5.3.3. Evaluaciones según heurísticas
 
-Las entrevistas de validación confirmaron que la solución ColdTrace responde a las necesidades reales de los segmentos objetivo identificados. Los principales aprendizajes fueron:
+Esta sección contiene el proceso de evaluación de las sesiones de validación basado en heurísticas, considerando heurísticas de usabilidad, arquitectura de información e inclusive design de la experiencia propuesta.
 
-1. La RESTful API implementada con Spring Boot y la arquitectura hexagonal proporcionan una base sólida y extensible para cubrir los flujos operativos identificados.
-2. La gestión de activos, el monitoreo en tiempo real y la generación de reportes de cumplimiento son las funcionalidades de mayor valor percibido.
-3. Existe interés en canales de notificación adicionales y en vistas optimizadas para dispositivos móviles.
-4. La documentación OpenAPI y Swagger UI facilitan la comprensión y prueba de los endpoints por parte de los entrevistados con perfil técnico.
-5. Las recomendaciones recogidas serán consideradas para la evolución futura del producto.
+#### UX Heuristics & Principles Evaluation
+**Usability – Inclusive Design – Information Architecture**
+
+* **CARRERA:** Ingeniería de Software
+* **CURSO:** Desarrollo de Aplicaciones Open Source
+* **SECCIÓN:** 1ASI0729
+* **PROFESORES:** Mori Paiva, Hugo Allan
+* **AUDITOR:** Grupo 3 (ICEQ)
+* **CLIENTE(S):** Entrevistado 1, Entrevistado 2, Entrevistado 3, Entrevistado 4
+
+---
+
+**SITE o APP A EVALUAR:** ColdTrace
+
+**TAREAS A EVALUAR:**
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+1. Registro de una organización y usuario administrador.
+2. Configuración de un activo de refrigeración (congeladora/cámara).
+3. Vinculación de un sensor de temperatura/humedad a un activo.
+4. Visualización de telemetría en tiempo real en el dashboard operacional.
+5. Visualización del historial de alertas y cambio de estado de una alerta a "Reconocida".
+6. Generación y exportación de reportes de cumplimiento diario de la cadena de frío.
+7. Registro de orden de trabajo o mantenimiento preventivo.
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+1. Configuración de alertas en tiempo real vía WhatsApp o SMS (notificaciones externas).
+2. Integración directa con sensores físicos (hardware IoT directo).
+3. Exportación de reportes en formatos PDF y Excel personalizados.
+4. Configuración avanzada de perfiles de usuario corporativos multi-sede.
+
+---
+
+**ESCALA DE SEVERIDAD:**
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|---|---|
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+---
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|---|---|
+| 1 | Falta de un dashboard ejecutivo/resumen que muestre el estado consolidado de todos los activos en una sola vista. | 2 | Usability: Reconocimiento antes que recuerdo / Estética y diseño minimalista |
+| 2 | La exportación de reportes de cumplimiento de la cadena de frío solo está disponible en formato web de datos tabulares, sin opciones portables. | 2 | Usability: Flexibilidad y eficiencia de uso / Information Architecture: Is it usable? |
+| 3 | Las alertas críticas de temperatura fuera de rango solo se notifican en la plataforma web, limitando la reacción oportuna. | 3 | Usability: Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de los errores |
+| 4 | Layout del dashboard y tablas no optimizado para pantallas de smartphones (resolución móvil pequeña). | 2 | Inclusive Design: Proporciona experiencias comparables |
+
+---
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #1: Falta de un dashboard ejecutivo/resumen consolidado**
+* **Severidad:** 2
+* **Heurística violada:** Usabilidad - Reconocimiento antes que recuerdo / Estética y diseño minimalista
+* **Problema:** Actualmente, para conocer la salud general de todos los activos, el usuario debe desplazarse individualmente por cada uno de ellos o verlos en una lista detallada. No existe un gráfico o widget superior que resuma de forma agregada el estado de la cadena de frío (ej. cuántos activos están en estado normal, advertencia o crítico), lo cual incrementa la carga cognitiva y el tiempo de respuesta del usuario.
+* **Recomendación:** Incorporar en la parte superior del dashboard una sección de resumen visual (tipo KPI cards) que muestre el conteo de activos en cada estado (Saludable, Alerta, Crítico) para una rápida evaluación del estado del negocio.
+
+**PROBLEMA #2: Ausencia de formatos portables de exportación para auditorías**
+* **Severidad:** 2
+* **Heurística violada:** Usabilidad - Flexibilidad y eficiencia de uso
+* **Problema:** En el módulo de reportes, los datos de cumplimiento se visualizan únicamente en tablas HTML dinámicas. Ante una inspección de calidad o auditoría sanitaria, el usuario no tiene una forma directa de exportar estos reportes a formatos físicos o estándares de oficina como PDF y Excel sin depender de capturas de pantalla o impresión web del navegador.
+* **Recomendación:** Añadir botones de descarga en la parte superior de cada reporte que generen documentos PDF formateados y hojas de cálculo de Excel con la data limpia y lista para archivo.
+
+**PROBLEMA #3: Alertas de temperatura limitada a la interfaz web**
+* **Severidad:** 3
+* **Heurística violada:** Usabilidad - Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de los errores
+* **Problema:** Si ocurre una ruptura en la cadena de frío fuera del horario de oficina, el administrador no se enterará a menos que tenga el navegador abierto con la sesión iniciada en ColdTrace. Al no existir notificaciones push externas, se incrementa significativamente el riesgo de pérdida de mercadería.
+* **Recomendación:** Integrar un servicio de notificaciones SMS o WhatsApp (utilizando APIs como Twilio) para enviar mensajes críticos automáticos cuando un sensor registre temperaturas críticas por más de un intervalo de tiempo especificado.
+
+**PROBLEMA #4: Dificultad de visualización y control en pantallas móviles pequeñas**
+* **Severidad:** 2
+* **Heurística violada:** Inclusive Design - Proporciona experiencias comparables
+* **Problema:** Al acceder a la Frontend Web Application desde un smartphone, las tablas del dashboard operacional y los gráficos de temperatura sufren desbordamiento horizontal u obligan al usuario a hacer zoom, dificultando que el operador en campo monitoree la cadena de frío cómodamente.
+* **Recomendación:** Implementar layouts adaptables que conviertan las filas de las tablas en tarjetas verticales independientes (cards layout) cuando se detecte un ancho de pantalla móvil, y hacer los gráficos responsivos al ancho del dispositivo.
 
 ---
 

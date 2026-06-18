@@ -104,9 +104,9 @@
         - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
         - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
 - [5.3. Validation Interviews](#53-validation-interviews)
-    - [5.3.1. Diseño de Entrevistas de Validación](#531-diseño-de-entrevistas-de-validación)
-    - [5.3.2. Resultados de las Entrevistas de Validación](#532-resultados-de-las-entrevistas-de-validación)
-    - [5.3.3. Conclusiones de las Entrevistas de Validación](#533-conclusiones-de-las-entrevistas-de-validación)
+    - [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
+    - [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
+    - [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
 - [5.4. Video About-the-Product](#54-video-about-the-product)
 
 ## Conclusiones
