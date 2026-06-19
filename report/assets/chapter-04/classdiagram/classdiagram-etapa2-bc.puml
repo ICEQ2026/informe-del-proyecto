@@ -105,6 +105,7 @@ package "BC Asset Management" #FADBD8 {
   class AssetUuid <<ValueObject>>
   class GatewayUuid <<ValueObject>>
   class IoTDeviceUuid <<ValueObject>>
+  class AssetCreatedEvent <<DomainEvent>>
 
   Location "1" <-- "*" Asset : locationId
   Location "1" <-- "*" Gateway : locationId
@@ -115,6 +116,7 @@ package "BC Asset Management" #FADBD8 {
   Asset *-- AssetUuid
   Gateway *-- GatewayUuid
   IoTDevice *-- IoTDeviceUuid
+  Asset ..> AssetCreatedEvent : publishes
 }
 
 package "BC Monitoring" #D5F5E3 {

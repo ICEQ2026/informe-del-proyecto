@@ -110,6 +110,14 @@ class AssetUuid <<ValueObject>> #FCF3CF
 class GatewayUuid <<ValueObject>> #FCF3CF
 class IoTDeviceUuid <<ValueObject>> #FCF3CF
 
+class AssetCreatedEvent <<DomainEvent>> #FADBD8 {
+  - assetId: Long
+  - organizationId: Long
+  - locationId: Long
+  - uuid: String
+  - name: String
+}
+
 ' Monitoring
 class SensorReading <<Aggregate>> #D5F5E3 {
   - id: Long
@@ -233,6 +241,7 @@ Location *-- LocationName
 Asset *-- AssetUuid
 Gateway *-- GatewayUuid
 IoTDevice *-- IoTDeviceUuid
+Asset ..> AssetCreatedEvent : publishes
 
 Asset "1" <-- "*" SensorReading : assetId
 IoTDevice "1" <-- "*" SensorReading : iotDeviceId

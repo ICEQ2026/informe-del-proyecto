@@ -112,6 +112,14 @@ package "BC Asset Management" #FADBD8 {
     + getValue(): String
   }
 
+  class AssetCreatedEvent <<DomainEvent>> #FADBD8 {
+    - assetId: Long
+    - organizationId: Long
+    - locationId: Long
+    - uuid: String
+    - name: String
+  }
+
   interface LocationRepository <<Repository>>
   interface AssetRepository <<Repository>>
   interface GatewayRepository <<Repository>>
@@ -127,6 +135,7 @@ package "BC Asset Management" #FADBD8 {
   Asset *-- AssetUuid
   Gateway *-- GatewayUuid
   IoTDevice *-- IoTDeviceUuid
+  Asset ..> AssetCreatedEvent : publishes
   LocationRepository ..> Location
   AssetRepository ..> Asset
   GatewayRepository ..> Gateway
