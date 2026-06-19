@@ -1,52 +1,67 @@
-@startuml ColdTrace-Component-Auditoria
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+@startuml
 
-title Component View - ColdTrace - Auditoria Bounded Context
-caption Componentes del BC Auditoria alineados con el BC Auditoria y la entrega de evidencia a auditores externos
+title Component View - ColdTrace - Maintenance Management BC
+caption Current backend package: com.acme.coldtrace.platform.maintenancemanagement
 
-LAYOUT_WITH_LEGEND()
-LAYOUT_TOP_DOWN()
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
 
-' Entradas y actores externos
-Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+actor "Web Application / API Client" as client
+database "MySQL\nmaintenance_schedules\ntechnical_service_requests" as db
 
-Container_Ext(reports_bc, "Reportes Bounded Context", "Spring Boot", "Provee reportes y bitacoras utilizadas como evidencia de cumplimiento")
+component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
+component "AssetManagementContextFacade" as asset_facade <<External ACL>>
+component "AlertsContextFacade" as alerts_facade <<External ACL>>
 
-Person_Ext(auditor, "Auditor Sanitario (DIGESA / MINSA)", "Recibe evidencia de cumplimiento y trazabilidad [BC Auditoria]")
+package "Maintenance Management Bounded Context" #FDEBD0 {
 
-' Componentes del contexto de auditoría
-Container_Boundary(audit, "Auditoria Bounded Context") {
+  [MaintenanceSchedulesController] <<REST Controller>> as schedules_ctrl
+  [TechnicalServiceRequestsController] <<REST Controller>> as requests_ctrl
 
-    Component(aud_ctrl, "Auditoria Controller", "Controller", "Controlador de inicio, seguimiento, cierre y entrega de auditorias [BC Auditoria]")
+  [MaintenanceScheduleCommandServiceImpl] <<Command Service>> as schedule_cmd
+  [TechnicalServiceRequestCommandServiceImpl] <<Command Service>> as request_cmd
+  [MaintenanceScheduleQueryServiceImpl] <<Query Service>> as schedule_query
+  [TechnicalServiceRequestQueryServiceImpl] <<Query Service>> as request_query
 
-    Component(aud_reports_facade, "Auditoria Reportes Context Facade", "ContextFacade", "Recibe reportes y bitacoras desde el BC Reportes como evidencia de cumplimiento")
+  [MaintenanceScheduleCreatedEventHandler] <<Event Handler>> as schedule_event_handler
+  [TechnicalServiceRequestCreatedEventHandler] <<Event Handler>> as request_event_handler
 
-    Component(aud_cmd, "Auditoria Command Service", "Service", "Recibe comandos de inicio, cierre de auditoria y validacion de cumplimiento")
-
-    Component(aud_query, "Auditoria Query Service", "Service", "Recibe consultas de auditorias, evidencias y resultados de cumplimiento")
-
-    Component(aud_repo, "Auditoria Repositorio", "Repository", "Repositorio de auditorias, evidencias y resultados de cumplimiento")
-
-    Component(aud_evidence_ext, "Auditoria Evidence External Service", "ExternalService", "Reenvia evidencia exportable al auditor externo")
+  [MaintenanceScheduleRepository] <<Domain Repository>> as schedule_repo
+  [TechnicalServiceRequestRepository] <<Domain Repository>> as request_repo
+  [JPA repository adapters\nPersistence assemblers\nJPA entities] <<Infrastructure>> as persistence
 }
 
-ContainerDb(db_audit, "DB Auditoria", "PostgreSQL", "Auditorias, evidencias y resultados de cumplimiento")
+client --> schedules_ctrl : /organizations/{id}/maintenance-schedules
+client --> requests_ctrl : /organizations/{id}/technical-service-requests
 
-' Relaciones principales
-Rel(gateway, aud_ctrl, "Redirige a auditoria")
+schedules_ctrl --> schedule_cmd : create / update status
+schedules_ctrl --> schedule_query : list / get
+requests_ctrl --> request_cmd : create / update status
+requests_ctrl --> request_query : list / get
 
-Rel(reports_bc, aud_reports_facade, "Provee reportes y bitacoras como evidencia")
-Rel(aud_reports_facade, aud_cmd, "Entrega evidencia para validacion")
-Rel(aud_reports_facade, aud_query, "Entrega evidencia para consulta")
+schedule_cmd --> identity_facade : validates organization/user
+schedule_cmd --> asset_facade : validates maintained asset
+schedule_query --> identity_facade : validates organization
 
-Rel(aud_ctrl, aud_cmd, "Envia comandos")
-Rel(aud_ctrl, aud_query, "Envia consultas")
+request_cmd --> identity_facade : validates organization
+request_cmd --> asset_facade : fetches asset snapshot
+request_cmd --> alerts_facade : validates related incident
+request_query --> identity_facade : validates organization
 
-Rel(aud_cmd, aud_repo, "Llamada a repositorio")
-Rel(aud_query, aud_repo, "Llamada a repositorio")
-Rel(aud_repo, db_audit, "Lee / Escribe", "JDBC")
+schedule_cmd --> schedule_repo
+schedule_query --> schedule_repo
+request_cmd --> request_repo
+request_query --> request_repo
 
-Rel(aud_cmd, aud_evidence_ext, "Exporta evidencia")
-Rel(aud_evidence_ext, auditor, "Entrega evidencia de cumplimiento", "PDF / CSV")
+schedule_repo --> schedule_event_handler : publishes MaintenanceScheduleCreatedEvent
+request_repo --> request_event_handler : publishes TechnicalServiceRequestCreatedEvent
+schedule_event_handler --> [MaintenanceScheduleCreatedIntegrationEvent]
+request_event_handler --> [TechnicalServiceRequestCreatedIntegrationEvent]
+
+schedule_repo --> persistence
+request_repo --> persistence
+persistence --> db : Spring Data JPA
 
 @enduml

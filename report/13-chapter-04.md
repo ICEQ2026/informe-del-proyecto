@@ -6,13 +6,13 @@ Un Style Guideline constituye un conjunto de normas y directrices destinadas a e
 
 ### 4.1.1. General Style Guidelines.
 
-**Brand Overview**  
+**Brand Overview**
 ColdTrace es una plataforma digital orientada al monitoreo de temperatura y humedad en la cadena de frío alimentaria. La propuesta visual busca transmitir control, claridad y confianza, utilizando una interfaz limpia, moderna y cercana a dashboards operativos.
 
-**Brand Name**  
+**Brand Name**
 El nombre "ColdTrace" combina el concepto de frío ("Cold") con seguimiento y control ("Trace"), reforzando la idea de monitoreo continuo de condiciones térmicas en activos refrigerados.
 
-**Typography**  
+**Typography**
 La landing page utiliza dos tipografías principales para mantener una identidad visual clara y consistente:
 
 - `Varela Round` para títulos, encabezados y elementos de alto impacto visual.
@@ -35,7 +35,7 @@ La paleta parte de una base neutra de blancos y grises suaves, combinada con un 
 | Texto principal     | `#191919`      | Lectura principal                             |
 | Texto secundario    | `#525256`      | Texto descriptivo y apoyo visual              |
 
-**Visual Style**  
+**Visual Style**
 La landing mantiene un estilo visual basado en:
 
 - superficies claras y fondos neutros
@@ -84,11 +84,11 @@ Se ha optado por una estructura jerárquica combinada con organización por tare
 
 **Organización de la Landing Page:**
 
-*Encabezado (Header):*  
+*Encabezado (Header):*
 Logo, menú principal (Inicio, Solución, Cómo Funciona, Beneficios, Contacto) y botones (Iniciar Sesión / Registrarse)
 
-*Sección Introductoria (Hero):*  
-Mensaje: "Monitorea tu cadena de frío en tiempo real y evita pérdidas"  
+*Sección Introductoria (Hero):*
+Mensaje: "Monitorea tu cadena de frío en tiempo real y evita pérdidas"
 Botón CTA: “Solicitar demo”
 
 *Beneficios:*
@@ -96,13 +96,13 @@ Botón CTA: “Solicitar demo”
 - Alertas en tiempo real
 - Cumplimiento sanitario
 
-*Cómo Funciona:*  
+*Cómo Funciona:*
 Sensores → Plataforma → Alertas → Decisión
 
-*Casos de uso:*  
+*Casos de uso:*
 Minimarkets, restaurantes, almacenes, transporte refrigerado
 
-*Pie de Página (Footer):*  
+*Pie de Página (Footer):*
 Enlaces legales, contacto, redes sociales
 
 ---
@@ -111,19 +111,19 @@ Enlaces legales, contacto, redes sociales
 
 -Usuario Operativo / Dueño
 
-*Inicio:* Vista general con estado de activos y alertas  
-*Monitoreo:* Visualización en tiempo real  
-*Alertas:* Incidencias activas  
-*Historial:* Lecturas pasadas  
-*Reportes:* Exportación de datos  
+*Inicio:* Vista general con estado de activos y alertas
+*Monitoreo:* Visualización en tiempo real
+*Alertas:* Incidencias activas
+*Historial:* Lecturas pasadas
+*Reportes:* Exportación de datos
 *Perfil:* Configuración básica
 
 -Responsable de Operaciones / Calidad
 
-*Dashboard:* Vista consolidada de múltiples activos  
-*Activos:* Gestión de equipos y sensores  
-*Incidencias:* Seguimiento y control  
-*Reportes:* Trazabilidad y auditoría  
+*Dashboard:* Vista consolidada de múltiples activos
+*Activos:* Gestión de equipos y sensores
+*Incidents:* Seguimiento y control
+*Reportes:* Trazabilidad y auditoría
 *Configuración:* Parámetros y rangos
 
 ---
@@ -143,8 +143,8 @@ Acción directa y clara:
 
 **2. Etiquetas de Encabezado (Headings):**
 
-H1: Dashboard  
-H2: Alertas activas  
+H1: Dashboard
+H2: Alertas activas
 H3: Detalle del activo
 
 **3. Etiquetas Icónicas (Iconic Labels):**
@@ -165,33 +165,29 @@ H3: Detalle del activo
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-```html
-<title>ColdTrace - Monitoreo de cadena de frío en tiempo real</title>
+| Etiqueta | Contenido |
+| --- | --- |
+| title | ColdTrace - Monitoreo de cadena de frío en tiempo real |
+| description | Plataforma para monitorear temperatura y humedad en negocios alimentarios. Reduce pérdidas y mejora el control sanitario. |
+| keywords | cadena de frío, monitoreo temperatura, sensores IoT, alimentos, trazabilidad, Perú |
+| viewport | width=device-width, initial-scale=1.0 |
+| author | ColdTrace |
+| copyright | © 2026 ColdTrace |
 
-<meta name="description" content="Plataforma para monitorear temperatura y humedad en negocios alimentarios. Reduce pérdidas y mejora el control sanitario.">
-
-<meta name="keywords" content="cadena de frío, monitoreo temperatura, sensores IoT, alimentos, trazabilidad, Perú">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="author" content="ColdTrace">
-
-<meta name="copyright" content="© 2026 ColdTrace">
-```
 ### 4.2.4. Searching Systems.
 
 El sistema de búsqueda de ColdTrace permite localizar de manera rápida y eficiente la información operativa relevante dentro de la plataforma.
 
-- **Búsqueda por activo:**  
+- **Búsqueda por activo:**
   Permite localizar equipos mediante el nombre de la cámara frigorífica, sensor o unidad de transporte.
 
-- **Filtros por estado:**  
+- **Filtros por estado:**
   Clasificación de activos según su condición operativa: normal, alerta o desconectado.
 
-- **Filtros por ubicación:**  
+- **Filtros por ubicación:**
   Segmentación por sucursal, almacén o zona geográfica.
 
-- **Filtros por tipo:**  
+- **Filtros por tipo:**
   Clasificación según el tipo de activo: cámara, sensor o unidad de transporte.
 
 ---
@@ -202,7 +198,7 @@ La plataforma cuenta con un menú lateral (sidebar) adaptable según el disposit
 
 La navegación está orientada a acciones críticas y al flujo operativo del usuario.
 
-**Flujo principal:**  
+**Flujo principal:**
 Registro → Configuración → Monitoreo → Alertas → Reportes
 
 La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta y la toma de decisiones ante incidencias.
@@ -217,13 +213,9 @@ Los wireframes de la Landing Page fueron diseñados con el objetivo de definir l
 En esta etapa se establecieron las principales secciones del sitio, como el encabezado de navegación, la sección principal (hero), características del producto, beneficios, testimonios y formulario de contacto.
 Asimismo, se consideró una versión responsive, adaptando la distribución de los elementos para dispositivos móviles, garantizando una navegación clara y accesible en diferentes tamaños de pantalla.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png"/>
-</p>
+![Wireframe Landing Page](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png"/>
-</p>
+![Wireframe Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
 
 ---
 
@@ -233,13 +225,9 @@ Los mockups de la Landing Page representan la versión visual final del diseño,
 En esta etapa se aplicaron los lineamientos de branding del proyecto, incluyendo el uso de colores principales, jerarquía tipográfica y elementos visuales que refuerzan la identidad del producto.
 Además, se mantuvo consistencia entre la versión desktop y mobile, asegurando una experiencia uniforme para el usuario en cualquier dispositivo.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png"/>
-</p>
+![Mockup Landing Page](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png"/>
-</p>
+![Mockup Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
 
 ---
 
@@ -251,17 +239,11 @@ Los wireframes de la aplicación web fueron diseñados para definir la estructur
 En esta etapa se identificaron los elementos clave de interacción, como paneles de control, visualización de datos, navegación entre secciones y componentes necesarios para la gestión del sistema.
 Estos wireframes permiten validar la distribución de información antes de la implementación visual, asegurando que las funcionalidades respondan a las necesidades del usuario.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png"/>
-</p>
+![Wireframe Web Application 1](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png"/>
-</p>
+![Wireframe Web Application 2](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png"/>
-</p>
+![Wireframe Web Application 3](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
 
 ---
 
@@ -270,9 +252,7 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png"/>
-</p>
+![wireflows diagram](/report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
 
 ---
 
@@ -282,17 +262,12 @@ Los mockups de la aplicación web muestran la representación visual final de la
 En esta etapa se buscó mantener consistencia visual con la Landing Page, asegurando una identidad unificada del producto.
 Asimismo, se priorizó la claridad en la presentación de información y la facilidad de uso, permitiendo que el usuario interactúe de manera intuitiva con las funcionalidades del sistema.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png"/>
-</p>
+![Mockup Web Application 1](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png"/>
-</p>
+![Mockup Web Application 2](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
 
-<p align="center">
-  <img src="/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png"/>
-</p>
+![Mockup Web Application 3](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
+
 ---
 
 ### 4.4.4. Web Applications User Flow Diagrams.
@@ -302,21 +277,15 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram1.png"/>
-</p>
+![userflowdiagram1](/report/assets/chapter-04/userflowdiagram/userflowdiagram1.png)
 
 ### User Flow 2 : Obtener reportes para supervisión y control.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram2.png"/>
-</p>
+![userflowdiagram2](/report/assets/chapter-04/userflowdiagram/userflowdiagram2.png)
 
 ### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
 
-<p align="center">
-  <img src="/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png"/>
-</p>
+![userflowdiagram3](/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png)
 
 ---
 
@@ -326,45 +295,47 @@ En esta sección se presenta el prototipo navegable de la aplicación web de Col
 
 El prototipo integra las pantallas clave del producto, como monitoreo, alertas, reportes y gestión general de la operación, manteniendo coherencia con los lineamientos visuales y funcionales definidos en las etapas anteriores del diseño.
 
-<img src="assets/chapter-04/prototyping/prototype-navigation-sprint-1.png" width="760">
+![prototype navigation sprint 1](assets/chapter-04/prototyping/prototype-navigation-sprint-1.png)
 
 [Ver video demostrativo del prototipo de navegación – ColdTrace](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDF6wu_w86bRIH68kr6ehziAe9K_FC1ARRsa-i6G07RpXk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FXKoP5)
 
 ---
+
 ## 4.6. Domain-Driven Software Architecture.
 
 ### 4.6.1. Design-Level Event Storming.
-<img src="assets/chapter-04/boundedcontext/boundedcontext.png"  width="760">
 
-## 1. Bounded Context: Autenticación
+![boundedcontext](assets/chapter-04/boundedcontext/boundedcontext.png)
+
+## 1. Bounded Context: Identity & Access
 ### Explicación
-Este contexto gestiona el acceso de los usuarios al sistema mediante el inicio y cierre de sesión. Se encarga de validar credenciales, controlar sesiones activas y generar eventos como usuario autenticado o sesión iniciada/cerrada.
+Este contexto gestiona el acceso de los usuarios al sistema mediante creación de cuenta, inicio de sesión, recuperación de contraseña, usuarios internos, roles y permisos. En la implementación frontend actual corresponde al módulo `identity-access`; en la arquitectura backend objetivo se proyecta como un servicio Spring Boot encargado de autenticación, autorización y administración de identidad.
 
 ### Justificación
-Se separa este contexto porque la seguridad es un aspecto crítico y transversal en cualquier sistema. Al aislar la autenticación:
+Se separa este contexto porque la seguridad y la administración de acceso son aspectos críticos y transversales. Al aislar Identity & Access:
 - Se reduce el riesgo de accesos no autorizados.
 - Se facilita la implementación de mecanismos avanzados como OAuth, JWT o autenticación multifactor.
-- Se evita mezclar la lógica de seguridad con la lógica de negocio principal.
+- Se evita mezclar usuarios, roles y permisos con la lógica operativa de activos, monitoreo o reportes.
 - Permite escalar y mantener este módulo de forma independiente.
 
 
-## 2. Bounded Context: Gestión de Sensores
+## 2. Bounded Context: Asset Management
 
 ### Explicación
-Este contexto administra todo el ciclo de vida de los sensores: registro, configuración, activación y vinculación con activos. Además, define parámetros clave como rangos de temperatura, humedad y frecuencia de medición.
+Este contexto administra el ciclo de vida de los activos refrigerados y su infraestructura IoT: cámaras frigoríficas, unidades de transporte, sensores, gateways, estado de calibración, conectividad, rangos de seguridad y parámetros operativos. En la implementación frontend actual corresponde al módulo `asset-management`; en la arquitectura backend objetivo se proyecta como un servicio Spring Boot responsable de persistir y exponer la configuración operativa que consumen monitoreo, alertas y reportes.
 
 ### Justificación
-Se separa porque la configuración de sensores define el comportamiento del sistema. Al aislarlo:
-- Se centraliza la lógica de configuración.
+Se separa porque la configuración de activos y dispositivos define el comportamiento del monitoreo. Al aislarlo:
+- Se centraliza la lógica de activos, sensores, gateways, calibración y rangos.
 - Se reducen errores por parámetros mal definidos.
-- Se permite modificar reglas sin afectar otros contextos.
-- Facilita la reutilización en otros sistemas IoT.
+- Se permite modificar reglas operativas sin afectar la captura de lecturas ni los reportes.
+- Facilita la reutilización del modelo de activos en otras operaciones IoT.
 
 
-## 3. Bounded Context: Monitoreo
+## 3. Bounded Context: Monitoring
 
 ### Explicación
-Es el núcleo del sistema. Aquí se reciben las mediciones del sensor, se registran, validan y se verifica si están dentro o fuera de los rangos definidos. Finalmente, las mediciones se almacenan.
+Es el núcleo operacional del sistema. Aquí se reciben, registran y consultan las lecturas de temperatura, humedad y conectividad. También se evalúa si las mediciones están dentro o fuera de los rangos definidos por Asset Management y se alimentan las vistas de dashboard. En la implementación frontend actual corresponde al módulo `monitoring`; en backend se proyecta como un servicio Spring Boot optimizado para telemetría e historial de lecturas.
 
 ### Justificación
 Se separa porque es el proceso principal del negocio. Este contexto:
@@ -374,7 +345,7 @@ Se separa porque es el proceso principal del negocio. Este contexto:
 - Evita mezclar procesamiento de datos con visualización o alertas.
 
 
-## 4. Bounded Context: Alertas
+## 4. Bounded Context: Alerts
 
 ### Explicación
 Se encarga de generar notificaciones cuando una medición está fuera de los rangos establecidos. También gestiona la visualización de alertas en el sistema.
@@ -386,40 +357,41 @@ Se desacopla para permitir una respuesta rápida ante eventos críticos:
 - Facilita la extensión del sistema sin afectar la lógica principal.
 
 
-## 5. Bounded Context: Reportes
+## 5. Bounded Context: Reports & Compliance
 
 ### Explicación
-Gestiona la generación, visualización y exportación de reportes. Incluye dashboards, historial de mediciones y visualización en tiempo real.
+Gestiona la generación, visualización y exportación de reportes operativos y evidencia de cumplimiento. Incluye bitácora diaria, historial de eventos, reportes sanitarios, reportes mensuales, hallazgos de cumplimiento y evidencia de auditoría. En la implementación frontend actual corresponde al módulo `reports`, incluyendo la vista `audit-evidence`; en backend se proyecta como un servicio Spring Boot encargado de consolidar información histórica y preparar evidencia exportable.
 
 ### Justificación
-Se separa porque el análisis de datos tiene necesidades distintas al procesamiento:
+Se separa porque el análisis, cumplimiento y auditoría tienen necesidades distintas al procesamiento operativo:
 - Requiere consultas complejas y agregaciones.
 - Puede optimizarse con técnicas como caching o data warehousing.
 - Evita afectar el rendimiento del monitoreo en tiempo real.
-- Permite escalar de forma independiente.
+- Permite centralizar evidencia documental sin crear un bounded context de auditoría separado.
 
 
-## 6. Bounded Context: Auditoría
+## 6. Bounded Context: Maintenance Management
 
 ### Explicación
-Este contexto controla el cumplimiento del sistema mediante auditorías. Permite iniciar auditorías, registrar resultados, validar cumplimiento y generar evidencias exportables.
+Este contexto gestiona actividades de mantenimiento preventivo y solicitudes de servicio técnico asociadas a activos y dispositivos. En la implementación frontend actual corresponde al módulo `maintenance-management`; en backend se proyecta como un servicio Spring Boot que registra programación, atención, cierre y evidencia técnica de cada intervención.
 
 ### Justificación
-Se aísla porque la auditoría responde a necesidades de control y cumplimiento:
-- Garantiza trazabilidad de las acciones del sistema.
-- Permite cumplir con normativas o estándares.
-- Facilita la generación de evidencia sin afectar otros procesos.
-- Puede evolucionar hacia automatización completa sin impactar otros contextos.
+Se separa porque el mantenimiento tiene un ciclo operativo propio:
+- Permite planificar actividades preventivas sin mezclar esa lógica con el monitoreo.
+- Conserva historial técnico por activo.
+- Ayuda a relacionar fallas, alertas y acciones de soporte.
+- Puede evolucionar hacia automatización de órdenes de trabajo sin afectar otros contextos.
 
 
 ## Problemas Identificados y Relación con Contextos
 
-- Datos inconsistentes del sensor → Monitoreo  
-- Validación insuficiente → Monitoreo  
-- Configuración manual del sensor → Gestión de Sensores  
-- Parámetros mal definidos → Gestión de Sensores  
-- Generación de reportes lenta → Reportes  
-- Proceso de auditoría manual → Auditoría  
+- Datos inconsistentes del sensor → Monitoring
+- Validación insuficiente → Monitoring
+- Configuración manual del sensor → Asset Management
+- Parámetros mal definidos → Asset Management
+- Generación de reportes lenta → Reports & Compliance
+- Proceso de auditoría manual → Reports & Compliance
+- Seguimiento técnico reactivo → Maintenance Management
 
 ### Justificación General
 Estos problemas evidencian la necesidad de separar responsabilidades. La aplicación de Bounded Contexts permite:
@@ -433,93 +405,73 @@ Estos problemas evidencian la necesidad de separar responsabilidades. La aplicac
 
 El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas.
 
-<p align="center">
-  <img src="assets/chapter-04/contextdiagram/contextdiagram.png" width="760">
-</p>
+![contextdiagram](assets/chapter-04/contextdiagram/contextdiagram.png)
 
-<p align="center">
-  <em>Figura 4.6.2. Context Diagram del sistema ColdTrace siguiendo el modelo C4.</em>
-</p>
+*Figure 4.6.2. ColdTrace System Context Diagram following the C4 model.*
 
-> El código fuente del diagrama en PlantUML se encuentra en [`assets/chapter-04/contextdiagram/contextdiagram.puml`](assets/chapter-04/contextdiagram/contextdiagram.puml). Para regenerar la imagen, se puede renderizar localmente con `plantuml contextdiagram.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+> PlantUML source: [`assets/chapter-04/contextdiagram/contextdiagram.puml`](assets/chapter-04/contextdiagram/contextdiagram.puml).
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
-El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway, los servicios por bounded context y la capa de datos asociada a cada uno.
+El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend.
 
-<p align="center">
-  <img src="assets/chapter-04/containerdiagram/containerdiagram.png" width="760">
-</p>
+![containerdiagram](assets/chapter-04/containerdiagram/containerdiagram.png)
 
-<p align="center">
-  <em>Figura 4.6.3. Container Diagram del sistema ColdTrace.</em>
-</p>
+*Figure 4.6.3. ColdTrace System Container Diagram.*
 
-> El código fuente del diagrama en PlantUML se encuentra en [`assets/chapter-04/containerdiagram/containerdiagram.puml`](assets/chapter-04/containerdiagram/containerdiagram.puml). Para regenerar la imagen, se puede renderizar localmente con `plantuml containerdiagram.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+> PlantUML source: [`assets/chapter-04/containerdiagram/containerdiagram.puml`](assets/chapter-04/containerdiagram/containerdiagram.puml).
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
-En esta sección se presenta la vista de componentes de ColdTrace por bounded context. Cada diagrama muestra los componentes internos principales y sus relaciones dentro del contexto correspondiente.
+En esta sección se presenta la vista de componentes de ColdTrace por bounded context, alineada con el backend Spring Boot actual ubicado en `coldtrace-platform`. Cada diagrama muestra los REST controllers, command/query services, facades ACL, repositorios de dominio, adapters JPA, event handlers y tablas MySQL que existen en el código.
 
-- **Diagrama de componentes - Autenticación:** Muestra los componentes encargados del registro, inicio de sesión, recuperación de contraseña y gestión de roles y permisos.
+- **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
 
-<p align="center">
-  <img src="assets/chapter-04/diagramcomponents/component-autenticacion.png" width="760" alt="Component View Autenticacion BC">
-  <br>
-  <em>Figura 4.6.4.1. Component Diagram del BC Autenticación.</em>
-</p>
+![Component View Identity & Access BC](assets/chapter-04/diagramcomponents/component-autenticacion.png)
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](assets/chapter-04/diagramcomponents/component-autenticacion.puml).
+*Figure 4.6.4.1. Identity & Access BC Component Diagram.*
 
-- **Diagrama de componentes - Gestión de Sensores:** Muestra los componentes encargados del registro y configuración de equipos monitoreados, sensores, gateways y rangos operativos.
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](assets/chapter-04/diagramcomponents/component-autenticacion.puml).
 
-<p align="center">
-  <img src="assets/chapter-04/diagramcomponents/component-sensores.png" width="760" alt="Component View Gestion de Sensores BC">
-  <br>
-  <em>Figura 4.6.4.2. Component Diagram del BC Gestión de Sensores.</em>
-</p>
+- **Component diagram - Asset Management:** Shows locations, assets, gateways, IoT devices, asset settings, organization validation and the facade used by Monitoring, Alerts, Reports and Maintenance.
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-sensores.puml`](assets/chapter-04/diagramcomponents/component-sensores.puml).
+![Component View Asset Management BC](assets/chapter-04/diagramcomponents/component-sensores.png)
 
-- **Diagrama de componentes - Monitoreo:** Muestra los componentes que reciben, validan y consultan las lecturas de temperatura y humedad.
+*Figure 4.6.4.2. Asset Management BC Component Diagram.*
 
-<p align="center">
-  <img src="assets/chapter-04/diagramcomponents/component-monitoreo.png" width="760" alt="Component View Monitoreo BC">
-  <br>
-  <em>Figura 4.6.4.3. Component Diagram del BC Monitoreo.</em>
-</p>
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-sensores.puml`](assets/chapter-04/diagramcomponents/component-sensores.puml).
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](assets/chapter-04/diagramcomponents/component-monitoreo.puml).
+- **Component diagram - Monitoring:** Shows sensor reading registration, demo reading generation, query services, validation through Identity & Access and Asset Management facades, and the published reading snapshots.
 
-- **Diagrama de componentes - Alertas:** Muestra los componentes encargados de generar, enrutar, escalar y cerrar alertas e incidencias.
+![Component View Monitoring BC](assets/chapter-04/diagramcomponents/component-monitoreo.png)
 
-<p align="center">
-  <img src="assets/chapter-04/diagramcomponents/component-alertas.png" width="760" alt="Component View Alertas BC">
-  <br>
-  <em>Figura 4.6.4.4. Component Diagram del BC Alertas.</em>
-</p>
+*Figure 4.6.4.3. Monitoring BC Component Diagram.*
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-alertas.puml`](assets/chapter-04/diagramcomponents/component-alertas.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](assets/chapter-04/diagramcomponents/component-monitoreo.puml).
 
-- **Diagrama de componentes - Reportes:** Muestra los componentes responsables de generar dashboards, históricos, bitácoras y reportes exportables.
+- **Component diagram - Alerts:** Shows incident creation, acknowledgement, escalation, corrective actions, resolution, notification read models and incident snapshots.
 
-<p align="center">
-  <img src="assets/chapter-04/diagramcomponents/component-reportes.png" width="760" alt="Component View Reportes BC">
-  <br>
-  <em>Figura 4.6.4.5. Component Diagram del BC Reportes.</em>
-</p>
+![Component View Alerts BC](assets/chapter-04/diagramcomponents/component-alertas.png)
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-reportes.puml`](assets/chapter-04/diagramcomponents/component-reportes.puml).
+*Figure 4.6.4.4. Alerts BC Component Diagram.*
 
-- **Diagrama de componentes - Auditoría:** Muestra los componentes responsables de iniciar auditorías, validar cumplimiento y gestionar evidencias.
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-alertas.puml`](assets/chapter-04/diagramcomponents/component-alertas.puml).
 
-<p align="center">
-  <img src="assets/chapter-04/diagramcomponents/component-auditoria.png" width="760" alt="Component View Auditoria BC">
-  <br>
-  <em>Figura 4.6.4.6. Component Diagram del BC Auditoría.</em>
-</p>
+- **Component diagram - Reports:** Shows report generation from asset, reading and incident snapshots, persisted summary metrics and report query endpoints.
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](assets/chapter-04/diagramcomponents/component-auditoria.puml).
+![Component View Reports BC](assets/chapter-04/diagramcomponents/component-reportes.png)
+
+*Figure 4.6.4.5. Reports BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-reportes.puml`](assets/chapter-04/diagramcomponents/component-reportes.puml).
+
+- **Component diagram - Maintenance Management:** Shows the components responsible for scheduling preventive maintenance, registering technical service requests, and closing work with evidence.
+
+![Component View Maintenance Management BC](assets/chapter-04/diagramcomponents/component-auditoria.png)
+
+*Figure 4.6.4.6. Maintenance Management BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](assets/chapter-04/diagramcomponents/component-auditoria.puml).
 
 ---
 
@@ -527,126 +479,103 @@ En esta sección se presenta la vista de componentes de ColdTrace por bounded co
 
 ### 4.7.1. Class Diagrams.
 
-La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Cada una muestra el dominio con un nivel de detalle distinto.
+La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases Java existentes en el backend actual.
 
-#### Etapa 1: Diagrama de clases con enfoque DDD
+#### Stage 1: DDD-oriented Class Diagram
 
-En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican las entidades, clases abstractas y enumeraciones principales del sistema.
-
-Se aplican dos patrones de diseño clásicos, visibles mediante la interfaz correspondiente en el diagrama:
-
-- **Builder** — la interfaz `Constructor`, la clase `ActivoBuilder` y el director `ActivoDirector` encapsulan la creación de activos refrigerados compuestos (cámara frigorífica, almacén, unidad de transporte) con sus sensores y ubicación. El director mantiene una referencia al builder y expone métodos de alto nivel (`construirCamaraFrigorifica`, `construirAlmacen`, `construirUnidadTransporte`).
-- **Canales de notificación (interface + implementaciones)** — la interfaz `CanalNotificacion` con las clases `CanalEmail`, `CanalPush` y `CanalWhatsApp` permite entregar alertas por el canal adecuado según la `PreferenciaNotificacion` del usuario y la severidad de la alerta.
-
-Se incluye una única clase de repositorio (`UsuarioRepository`) siguiendo el mismo criterio que el proyecto de referencia, manteniendo el diagrama enfocado en el dominio y dejando la infraestructura de persistencia para las etapas siguientes.
+En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican los aggregates, value objects, enumeraciones y relaciones por identificador que existen en `src/main/java`.
 
 Principales clases por bounded context:
 
-- **BC Autenticación:** `Usuario`, `Sesion`, `Rol`, `Permiso`, `Organizacion`, `Suscripcion` y `PreferenciaNotificacion`. Enums: `EstadoUsuario`, `EstadoSuscripcion` [US007-US011, EP002].
-- **BC Gestión de Sensores:** `Activo` (con el value object `Ubicacion` para activos móviles con latitud/longitud), `Sensor` y `Gateway` como clases independientes (un gateway sirve a múltiples sensores), `RangoTemperatura` y `RangoHumedad` separados por tipo. Enums: `TipoActivo`, `EstadoActivo`, `TipoSensor`, `EstadoSensor`, `EstadoGateway` [EP003, EP007].
-- **BC Monitoreo:** `Medicion` como clase abstracta especializada en `LecturaTemperatura` y `LecturaHumedad`. Enum: `EstadoMedicion` [EP004].
-- **BC Alertas:** `ReglaAlerta` (define umbral, duración y severidad; evalúa mediciones y genera alertas), `Alerta`, `Incidencia` y `Notificacion`. Enums: `TipoAlerta`, `Severidad`, `EstadoAlerta` [EP005].
-- **BC Reportes:** `Reporte` como clase abstracta especializada en `ReporteHistorico`, `ReporteBitacora` y `ReporteCumplimiento`; `Dashboard` con `Widget`. Enums: `TipoReporte`, `FormatoExportacion` [EP006].
-- **BC Auditoría:** `Auditoria`, `Evidencia` y `CriterioCumplimiento`. Enums: `TipoAuditoria`, `EstadoAuditoria`, `EstadoCumplimiento` para el cumplimiento normativo DIGESA / MINSA.
+- **BC Identity & Access:** `Organization`, `User`, `Role`, `EmailAddress`, `RoleName` y `Permission`.
+- **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`.
+- **BC Monitoring:** `SensorReading` como aggregate de telemetría persistida.
+- **BC Alerts:** `Incident`, `Notification`, `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`.
+- **BC Reports:** `Report`, que persiste métricas resumidas de activos, lecturas e incidentes.
+- **BC Maintenance Management:** `MaintenanceSchedule` y `TechnicalServiceRequest`.
 
-Aunque cada clase pertenece a un bounded context específico, el diagrama preserva las **relaciones entre clases de distintos bounded contexts** (siguiendo el estilo aplicado en el ejemplo de referencia). Las referencias cross-BC se mantienen a nivel de identificador `UUID` en los atributos, respetando la frontera de cada contexto, y se muestran como líneas de asociación en el diagrama: `Organizacion` posee `Activo`s y `Gateway`s; `Sensor` genera `Medicion`es; `ReglaAlerta` evalúa una `Medicion` y genera la `Alerta` correspondiente; `Alerta` referencia a `Activo`, `Sensor` y `Medicion`; `Incidencia` y `Alerta` referencian al `Usuario` responsable; `ReporteHistorico` consolida `Medicion`es y `ReporteBitacora` consolida `Incidencia`s; `Evidencia` respalda un `Reporte` y `Auditoria` los usa como evidencia de cumplimiento; `Auditoria`, `Dashboard` y `Reporte` referencian al `Usuario` y a la `Organizacion` correspondiente.
+Las referencias entre bounded contexts se implementan con identificadores `Long` y facades ACL. Por ejemplo, `SensorReading` guarda `assetId`, `iotDeviceId`, `gatewayId` y `locationId`; `Incident` guarda `assetId`, `deviceId` y `readingId`; `TechnicalServiceRequest` puede guardar `incidentId`; `Report` almacena métricas agregadas en lugar de colecciones embebidas.
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png" width="760" alt="Class Diagram Stage 1 DDD">
-  <br>
-  <em>Figura 4.7.1.1. Etapa 1 - Diagrama de Clases con enfoque DDD.</em>
-</p>
+![Class Diagram Stage 1 DDD](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png)
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml). Para regenerar la imagen se puede renderizar localmente con `plantuml classdiagram-etapa1-ddd.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+*Figure 4.7.1.1. Stage 1 - DDD-oriented Class Diagram.*
 
-#### Etapa 2: Agrupar las clases en Bounded Context
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml).
+
+#### Stage 2: Group Classes by Bounded Context
 
 En esta segunda etapa las clases se agrupan según el bounded context al que pertenecen. Esto permite visualizar mejor las fronteras del dominio.
 
 Agrupamiento aplicado en el diagrama:
 
-- **BC Autenticación** (azul claro): `Usuario`, `Sesion`, `Rol`, `Permiso`, `Organizacion`, `Suscripcion`, `PreferenciaNotificacion`, `UsuarioRepository`, junto con los enums `EstadoUsuario` y `EstadoSuscripcion`.
-- **BC Gestión de Sensores** (rosado): `Activo`, `Ubicacion`, `Sensor`, `Gateway`, `RangoTemperatura`, `RangoHumedad`, la interfaz `Constructor` y las clases `ActivoBuilder` / `ActivoDirector`, junto con los enums `TipoActivo`, `EstadoActivo`, `TipoSensor`, `EstadoSensor` y `EstadoGateway`.
-- **BC Monitoreo** (verde): la clase abstracta `Medicion`, las especializaciones `LecturaTemperatura` y `LecturaHumedad`, y el enum `EstadoMedicion`.
-- **BC Alertas** (amarillo): `ReglaAlerta`, `Alerta`, `Incidencia`, `Notificacion`, la interfaz `CanalNotificacion` con sus implementaciones `CanalEmail`, `CanalPush` y `CanalWhatsApp`, y los enums `TipoAlerta`, `Severidad` y `EstadoAlerta`.
-- **BC Reportes** (morado): la clase abstracta `Reporte`, las especializaciones `ReporteHistorico`, `ReporteBitacora` y `ReporteCumplimiento`, junto con `Dashboard`, `Widget` y los enums `TipoReporte` y `FormatoExportacion`.
-- **BC Auditoría** (naranja): `Auditoria`, `Evidencia`, `CriterioCumplimiento` y los enums `TipoAuditoria`, `EstadoAuditoria` y `EstadoCumplimiento`.
+- **BC Identity & Access** (azul claro): `Organization`, `User`, `Role` y sus value objects.
+- **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings` y sus value objects.
+- **BC Monitoring** (verde): `SensorReading`.
+- **BC Alerts** (amarillo): `Incident`, `Notification` y sus enums de severidad, estado y canal.
+- **BC Reports** (morado): `Report`.
+- **BC Maintenance Management** (naranja): `MaintenanceSchedule` y `TechnicalServiceRequest`.
 
-Las relaciones **internas a cada BC** (composiciones, agregaciones, herencias y realizaciones) quedan contenidas dentro del paquete correspondiente, mientras que las **relaciones entre bounded contexts** (por ejemplo, `Organizacion` → `Activo`, `Sensor` → `Medicion`, `ReglaAlerta` → `Medicion`, `Alerta` → `Activo`/`Sensor`, `ReporteHistorico` → `Medicion`, `Evidencia` → `Reporte`, `Auditoria` → `Usuario`/`Organizacion`) aparecen cruzando las fronteras de los paquetes, dejando explícitos los puntos de integración entre contextos y los lugares donde se sostiene la coherencia del dominio.
+Las relaciones **internas a cada BC** quedan contenidas dentro del paquete correspondiente. Las relaciones entre bounded contexts aparecen como asociaciones por identificador, ya que el backend evita navegar objetos de otros contextos directamente.
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png" width="760" alt="Class Diagram Stage 2 Bounded Context">
-  <br>
-  <em>Figura 4.7.1.2. Etapa 2 - Agrupar las clases en Bounded Context.</em>
-</p>
+![Class Diagram Stage 2 Bounded Context](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png)
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml). Para regenerar la imagen se puede renderizar localmente con `plantuml classdiagram-etapa2-bc.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+*Figure 4.7.1.2. Stage 2 - Group classes by Bounded Context.*
 
-#### Etapa 3: Identificación de Value Object, Entity y Aggregate
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml).
 
-En esta tercera etapa las clases se clasifican como **Aggregate**, **Entity** y **Value Object**. Cada bounded context se presenta por separado para facilitar su lectura.
+#### Stage 3: Value Object, Entity and Aggregate Identification
 
-Con esta clasificación se cumple una regla fundamental de DDD: **fuera del aggregate sólo se navega a su raíz mediante un identificador tipado (VO)**, nunca por referencia directa a entidades internas del agregado. Así, por ejemplo, `Alerta` no guarda un puntero directo a `Sensor` sino un `SensorId`, y `Auditoria` se vincula con `Reporte` a través de un `ReporteId` sostenido por cada `Evidencia`. Esta disciplina preserva la consistencia transaccional dentro de cada contexto y deja explícitas las fronteras que cruzan los microservicios definidos en la sección 4.6.
+En esta tercera etapa las clases se clasifican como **Aggregate**, **Value Object**, **enum** y **DomainEvent** según el código actual. Las entidades JPA de persistencia no se mezclan con el modelo de dominio y se documentan en la sección de base de datos.
 
-**BC Autenticación.** Aggregates → `Usuario` (gestiona sus `Sesion`es, `Rol`es y su `PreferenciaNotificacion`) y `Organizacion` (gestiona su `Suscripcion` y los `Usuario`s que la integran). Entities → `Sesion`, `Rol` y `Suscripcion`. Value Objects → `Permiso` (tupla nombre/recurso/acción inmutable) y `PreferenciaNotificacion` (conjunto de canales, horarios y severidad mínima sin identidad propia). Este BC no necesita VO de ID cross-BC porque sus aggregates (`Usuario` y `Organizacion`) son referenciados desde otros contextos, no consumidores de referencias externas.
+Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggregate se referencia a otros contextos por identificadores o por snapshots obtenidos desde facades ACL. En el backend actual esos identificadores son `Long` y algunos identificadores de negocio se modelan como value objects (`AssetUuid`, `GatewayUuid`, `IoTDeviceUuid`, `LocationName`, `EmailAddress`, `RoleName`).
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png" width="720" alt="Class Diagram Stage 3 BC Autenticacion">
-  <br>
-  <em>Figura 4.7.1.3.1. Etapa 3 - BC Autenticación.</em>
-</p>
+**BC Identity & Access.** Aggregates → `Organization`, `User` y `Role`. Value Objects → `EmailAddress`, `RoleName` y `Permission`. No existen clases de dominio `Session`, `Subscription` ni `NotificationPreference` en el backend actual.
 
-> Código PlantUML: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
+![Class Diagram Stage 3 BC Identity & Access](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
 
-**BC Gestión de Sensores.** Aggregates → `Activo` (raíz que contiene su `Ubicacion` y sus `Sensor`es asignados) y `Gateway` (raíz que agrupa los `Sensor`es conectados por red). Entities → `Sensor`, `ActivoBuilder` y `ActivoDirector`. Value Objects → `Ubicacion` (dirección, coordenadas y marcador de movilidad, inmutable), `RangoTemperatura` y `RangoHumedad` (pares min/max sin identidad propia), más el VO de ID `OrganizacionId` que referencia al aggregate `Organizacion` del BC Autenticación.
+*Figure 4.7.1.3.1. Stage 3 - BC Identity & Access.*
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png" width="720" alt="Class Diagram Stage 3 BC Gestion de Sensores">
-  <br>
-  <em>Figura 4.7.1.3.2. Etapa 3 - BC Gestión de Sensores.</em>
-</p>
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
 
-> Código PlantUML: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
+**BC Asset Management.** Aggregates → `Location`, `Asset`, `Gateway`, `IoTDevice` y `AssetSettings`. Value Objects → `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`. El backend actual no contiene `Sensor`, `AssetBuilder`, `AssetDirector`, `TemperatureRange` ni `HumidityRange` como clases de dominio.
 
-**BC Monitoreo.** Aggregate → `Medicion` (abstracto, raíz de las lecturas generadas por un `Sensor`). Entities → `LecturaTemperatura` y `LecturaHumedad` como especializaciones concretas del agregado. Value Object → `SensorId` para referenciar por ID al aggregate `Sensor` del BC Gestión de Sensores, sin acoplamiento directo a su estructura interna.
+![Class Diagram Stage 3 BC Asset Management](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png)
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png" width="720" alt="Class Diagram Stage 3 BC Monitoreo">
-  <br>
-  <em>Figura 4.7.1.3.3. Etapa 3 - BC Monitoreo.</em>
-</p>
+*Figure 4.7.1.3.2. Stage 3 - BC Asset Management.*
 
-> Código PlantUML: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
 
-**BC Alertas.** Aggregates → `Alerta` (gestiona sus `Incidencia`s y `Notificacion`es como parte del mismo agregado transaccional) y `ReglaAlerta` (evalúa las `Medicion`es y genera `Alerta`s). Entities → `Incidencia`, `Notificacion`, `CanalEmail`, `CanalPush` y `CanalWhatsApp`. Value Objects → `SensorId`, `ActivoId`, `MedicionId` y `UsuarioId` para todas las referencias cross-BC, más la interfaz `CanalNotificacion` que abstrae el canal de entrega.
+**BC Monitoring.** Aggregate → `SensorReading`, que persiste una lectura de telemetría con temperatura, humedad, indicador `outOfRange`, batería, señal y referencias al activo, dispositivo IoT, gateway y ubicación. También publica `SensorReadingRecordedEvent`.
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png" width="720" alt="Class Diagram Stage 3 BC Alertas">
-  <br>
-  <em>Figura 4.7.1.3.4. Etapa 3 - BC Alertas.</em>
-</p>
+![Class Diagram Stage 3 BC Monitoring](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png)
 
-> Código PlantUML: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
+*Figure 4.7.1.3.3. Stage 3 - BC Monitoring.*
 
-**BC Reportes.** Aggregates → `Reporte` (abstracto, raíz de los reportes generados en sus tres variantes concretas) y `Dashboard` (raíz que agrupa sus `Widget`s configurables). Entities → `ReporteHistorico`, `ReporteBitacora`, `ReporteCumplimiento` y `Widget`. Value Objects → `UsuarioId`, `OrganizacionId` y `MedicionId` para vincular reportes y dashboards a usuarios, organizaciones y mediciones por ID.
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png" width="720" alt="Class Diagram Stage 3 BC Reportes">
-  <br>
-  <em>Figura 4.7.1.3.5. Etapa 3 - BC Reportes.</em>
-</p>
+**BC Alerts.** Aggregates → `Incident` y `Notification`. Enums → `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`. También publica `IncidentOpenedEvent`. No existen aggregates `Alert` ni `AlertRule` en el backend actual.
 
-> Código PlantUML: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
+![Class Diagram Stage 3 BC Alerts](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png)
 
-**BC Auditoría.** Aggregate → `Auditoria` (raíz que contiene sus `Evidencia`s recopiladas y sus `CriterioCumplimiento`s evaluados). Entities → `Evidencia` y `CriterioCumplimiento`. Value Objects → `UsuarioId`, `OrganizacionId` y `ReporteId` para vincular evidencias a reportes y auditorías a usuarios y organizaciones sin acoplamiento directo a los otros contextos.
+*Figure 4.7.1.3.4. Stage 3 - BC Alerts.*
 
-<p align="center">
-  <img src="assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png" width="720" alt="Class Diagram Stage 3 BC Auditoria">
-  <br>
-  <em>Figura 4.7.1.3.6. Etapa 3 - BC Auditoría.</em>
-</p>
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
 
-> Código PlantUML: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
+**BC Reports.** Aggregate → `Report`, que persiste métricas resumidas del periodo consultado: cantidad de activos, lecturas, lecturas fuera de rango, incidentes, incidentes abiertos, promedios y porcentaje de cumplimiento. También publica `ReportGeneratedEvent`.
+
+![Class Diagram Stage 3 BC Reports](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png)
+
+*Figure 4.7.1.3.5. Stage 3 - BC Reports.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
+
+**BC Maintenance Management.** Aggregates → `MaintenanceSchedule` y `TechnicalServiceRequest`. La evidencia de cierre está modelada como campo `evidence` dentro de `TechnicalServiceRequest`; no existe una clase `ServiceEvidence` independiente.
+
+![Class Diagram Stage 3 BC Maintenance Management](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png)
+
+*Figure 4.7.1.3.6. Stage 3 - BC Maintenance Management.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
 
 ---
 
@@ -654,12 +583,10 @@ Con esta clasificación se cumple una regla fundamental de DDD: **fuera del aggr
 
 ### 4.8.1. Database Diagrams.
 
-Para el planteamiento de la base de datos de ColdTrace se identificaron primero las tablas principales del sistema y luego se agruparon según los bounded contexts definidos previamente. Después se establecieron las relaciones entre ellas y se añadieron tablas intermedias en los casos necesarios para manejar correctamente las relaciones y mantener el modelo en **Tercera Forma Normal (3FN)**. Todo esto da como resultado el siguiente diagrama.
+El diagrama de base de datos se actualizó desde las entidades JPA reales del backend. La configuración actual usa MySQL, Hibernate `ddl-auto=update` y `SnakeCasePhysicalNamingStrategy`, por lo que los nombres de columna se derivan de los atributos Java en `snake_case`. Las relaciones se muestran como **logical FK** cuando el código usa campos `Long` en lugar de anotaciones `@ManyToOne`.
 
-<p align="center">
-  <img src="assets/chapter-04/databasediagram/databasediagram.png" width="760" alt="ColdTrace ERD 3FN">
-  <br>
-  <em>Figura 4.8.1.1. Diagrama Entidad-Relación de ColdTrace normalizado a 3FN.</em>
-</p>
+![ColdTrace ERD 3FN](assets/chapter-04/databasediagram/databasediagram.png)
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/databasediagram/databasediagram.puml`](assets/chapter-04/databasediagram/databasediagram.puml). Para regenerar la imagen se puede renderizar localmente con `plantuml databasediagram.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+*Figure 4.8.1.1. ColdTrace Entity-Relationship Diagram normalized to 3NF.*
+
+> PlantUML source: [`assets/chapter-04/databasediagram/databasediagram.puml`](assets/chapter-04/databasediagram/databasediagram.puml).

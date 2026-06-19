@@ -1,52 +1,52 @@
-@startuml ColdTrace-Stage3-BC-Monitoreo
+@startuml
 
-title Etapa 3 - BC Monitoreo
+title Stage 3 - BC Monitoring
 
 skinparam classAttributeIconSize 0
 skinparam nodesep 45
 skinparam ranksep 55
 skinparam packageStyle rectangle
+skinparam shadowing false
 
-package "BC Monitoreo" #D5F5E3 {
+package "BC Monitoring" #D5F5E3 {
 
-  abstract class Medicion <<Aggregate>> #FADBD8 {
-    # idMedicion: UUID
-    # idSensor: UUID
-    # timestamp: LocalDateTime
-    # valor: double
-    # unidad: String
-    + {abstract} obtenerTipo(): TipoSensor
-    + obtenerEstado(): EstadoMedicion
+  class SensorReading <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - assetId: Long
+    - iotDeviceId: Long
+    - gatewayId: Long
+    - locationId: Long
+    - temperature: Double
+    - humidity: Double
+    - outOfRange: Boolean
+    - recordedAt: OffsetDateTime
+    - motionDetected: Boolean
+    - imageCaptured: Boolean
+    - batteryLevel: Integer
+    - signalStrength: Integer
+    + onRecorded(): void
   }
 
-  class LecturaTemperatura <<Entity>> {
-    - valorCelsius: double
-    + convertirAFahrenheit(): double
-    + validarContra(r: RangoTemperatura): boolean
-    + obtenerTipo(): TipoSensor
+  class SensorReadingRecordedEvent <<DomainEvent>> {
+    + sensorReadingId: Long
+    + organizationId: Long
+    + assetId: Long
+    + iotDeviceId: Long
+    + outOfRange: Boolean
+    + recordedAt: OffsetDateTime
   }
 
-  class LecturaHumedad <<Entity>> {
-    - valorPorcentaje: double
-    + esAmbienteSeco(): boolean
-    + validarContra(r: RangoHumedad): boolean
-    + obtenerTipo(): TipoSensor
-  }
+  interface SensorReadingRepository <<Repository>>
 
-  class SensorId <<ValueObject>> #FCF3CF {
-    - valor: UUID
-  }
-
-  enum EstadoMedicion <<enum>> {
-    NORMAL
-    ADVERTENCIA
-    CRITICA
-  }
-
-  Medicion <|-- LecturaTemperatura
-  Medicion <|-- LecturaHumedad
-  Medicion ..> SensorId
-  Medicion ..> EstadoMedicion
+  SensorReadingRepository ..> SensorReading
+  SensorReading ..> SensorReadingRecordedEvent : publishes
 }
+
+note right of SensorReading
+  The implemented backend stores telemetry
+  as one SensorReading aggregate. There is
+  no abstract Measurement hierarchy.
+end note
 
 @enduml

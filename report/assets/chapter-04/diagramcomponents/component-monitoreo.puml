@@ -1,54 +1,49 @@
-@startuml ColdTrace-Component-Monitoreo
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+@startuml
 
-title Component View - ColdTrace - Monitoreo Bounded Context
-caption Componentes del BC Monitoreo alineados con EP004
+title Component View - ColdTrace - Monitoring BC
+caption Current backend package: com.acme.coldtrace.platform.monitoring
 
-LAYOUT_WITH_LEGEND()
-LAYOUT_TOP_DOWN()
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
 
-' Entradas y contextos externos
-Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+actor "Web Application / API Client" as client
+database "MySQL\nsensor_readings" as db
 
-Container(iot_gateway, "IoT Gateway", "MQTT / HTTP", "Recibe y normaliza lecturas de sensores fisicos antes de enviarlas al BC Monitoreo")
+component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
+component "AssetManagementContextFacade" as asset_facade <<External ACL>>
+component "Reports / Alerts" as other_bcs <<ACL consumers>>
 
-Container_Ext(sensors_bc, "Gestion de Sensores Bounded Context", "Spring Boot", "Provee rangos y configuracion de sensores")
+package "Monitoring Bounded Context" #D5F5E3 {
 
-Container_Ext(alerts_bc, "Alertas Bounded Context", "Spring Boot", "Recibe lecturas fuera de rango para generar alertas")
+  [SensorReadingsController] <<REST Controller>> as readings_ctrl
+  [SensorReadingCommandServiceImpl] <<Command Service>> as reading_cmd
+  [SensorReadingQueryServiceImpl] <<Query Service>> as reading_query
+  [MonitoringContextFacadeImpl] <<ACL Facade>> as monitoring_facade
+  [SensorReadingRecordedEventHandler] <<Event Handler>> as reading_event_handler
 
-' Componentes del contexto de monitoreo
-Container_Boundary(monitor, "Monitoreo Bounded Context") {
-
-    Component(mon_ctrl, "Monitoreo Controller", "Controller", "Controlador de mediciones en tiempo real y consultas de estado [EP004]")
-
-    Component(mon_sensors_facade, "Monitoreo Sensores Context Facade", "ContextFacade", "Recibe configuracion de rangos y sensores desde el BC Gestion de Sensores para validar cada lectura")
-
-    Component(mon_cmd, "Monitoreo Command Service", "Service", "Recibe comandos de registro y validacion de lecturas de temperatura y humedad, verifica rangos y detecta desviaciones")
-
-    Component(mon_query, "Monitoreo Query Service", "Service", "Recibe consultas de lecturas en tiempo real, historicas y estados de activos")
-
-    Component(mon_repo, "Monitoreo Repositorio", "Repository", "Repositorio de serie de tiempo de mediciones de temperatura y humedad")
-
-    Component(mon_alerts_ext, "Monitoreo Alertas External Service", "ExternalService", "Publica eventos de lecturas fuera de rango hacia el BC Alertas")
+  [SensorReadingRepository] <<Domain Repository>> as reading_repo
+  [JPA repository adapter\nPersistence assembler\nSensorReadingPersistenceEntity] <<Infrastructure>> as persistence
 }
 
-ContainerDb(db_monitor, "DB Monitoreo", "PostgreSQL / TimescaleDB", "Serie de tiempo de mediciones de temperatura y humedad")
+client --> readings_ctrl : /organizations/{id}/sensor-readings
+readings_ctrl --> reading_cmd : create reading / demo generation
+readings_ctrl --> reading_query : list / get reading
 
-' Relaciones principales
-Rel(gateway, mon_ctrl, "Redirige consultas de monitoreo")
-Rel(iot_gateway, mon_cmd, "Reenvia lecturas normalizadas", "HTTP / mensajeria interna")
+reading_cmd --> identity_facade : validates organization
+reading_cmd --> asset_facade : validates asset, IoT device,\ngateway and settings
+reading_query --> identity_facade : validates organization
 
-Rel(sensors_bc, mon_sensors_facade, "Envia configuracion de rangos y sensores")
-Rel(mon_sensors_facade, mon_cmd, "Provee rangos para validacion")
+reading_cmd --> reading_repo
+reading_query --> reading_repo
+monitoring_facade --> reading_repo
+other_bcs ..> monitoring_facade : fetch reading snapshots
 
-Rel(mon_ctrl, mon_cmd, "Envia comandos")
-Rel(mon_ctrl, mon_query, "Envia consultas")
+reading_repo --> reading_event_handler : publishes SensorReadingRecordedEvent
+reading_event_handler --> [SensorReadingRecordedIntegrationEvent]
 
-Rel(mon_cmd, mon_repo, "Llamada a repositorio")
-Rel(mon_query, mon_repo, "Llamada a repositorio")
-Rel(mon_repo, db_monitor, "Lee / Escribe", "JDBC")
-
-Rel(mon_cmd, mon_alerts_ext, "Notifica lectura fuera de rango")
-Rel(mon_alerts_ext, alerts_bc, "Envia evento de desviacion")
+reading_repo --> persistence
+persistence --> db : Spring Data JPA
 
 @enduml

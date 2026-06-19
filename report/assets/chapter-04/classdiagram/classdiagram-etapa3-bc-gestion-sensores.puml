@@ -1,151 +1,143 @@
-@startuml ColdTrace-Stage3-BC-Gestion-Sensores
+@startuml
 
-title Etapa 3 - BC Gestion de Sensores
+title Stage 3 - BC Asset Management
 
 skinparam classAttributeIconSize 0
 skinparam nodesep 45
 skinparam ranksep 55
 skinparam packageStyle rectangle
+skinparam shadowing false
 
-package "BC Gestion de Sensores" #FADBD8 {
+package "BC Asset Management" #FADBD8 {
 
-  class Activo <<Aggregate>> #FADBD8 {
-    - idActivo: UUID
-    - idOrganizacion: UUID
-    - nombre: String
-    - descripcion: String
-    - tipo: TipoActivo
-    - estado: EstadoActivo
-    + registrar(): void
-    + asignarSensor(s: Sensor): void
-    + desvincularSensor(id: UUID): void
-    + actualizarUbicacion(u: Ubicacion): void
+  class Location <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - name: LocationName
+    - type: String
+    - address: String
+    - description: String
+    - status: String
+    + update(command: UpdateLocationCommand): void
+    + getName(): String
+    + getNameValue(): LocationName
+  }
+
+  class Asset <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - locationId: Long
+    - uuid: AssetUuid
+    - type: String
+    - name: String
+    - capacity: Double
+    - description: String
+    - status: String
+    + update(command: UpdateAssetCommand): void
+    + getUuid(): String
+    + getUuidValue(): AssetUuid
+    + onCreated(): void
   }
 
   class Gateway <<Aggregate>> #FADBD8 {
-    - idGateway: UUID
-    - idOrganizacion: UUID
-    - modelo: String
-    - ip: String
-    - protocolo: String
-    - estado: EstadoGateway
-    + conectar(): void
-    + desconectar(): void
-    + registrarSensor(s: Sensor): void
+    - id: Long
+    - organizationId: Long
+    - locationId: Long
+    - uuid: GatewayUuid
+    - name: String
+    - network: String
+    - status: String
+    + update(command: UpdateGatewayCommand): void
+    + getUuid(): String
+    + getUuidValue(): GatewayUuid
   }
 
-  class Sensor <<Entity>> {
-    - idSensor: UUID
-    - idActivo: UUID
-    - idGateway: UUID
-    - modelo: String
-    - tipo: TipoSensor
-    - frecuenciaLecturaSeg: int
-    - estado: EstadoSensor
-    + configurarRangoTemperatura(r: RangoTemperatura): void
-    + configurarRangoHumedad(r: RangoHumedad): void
-    + configurarFrecuencia(segundos: int): void
-    + activar(): void
-    + desactivar(): void
+  class IoTDevice <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - gatewayId: Long
+    - uuid: IoTDeviceUuid
+    - deviceType: String
+    - model: String
+    - measurementType: String
+    - measurementParameters: List<String>
+    - readingFrequencySeconds: Integer
+    - assetId: Long
+    - status: String
+    - calibrationStatus: String
+    - lastCalibrationDate: LocalDate
+    - nextCalibrationDate: LocalDate
+    + update(command: UpdateIoTDeviceCommand): void
+    + getUuid(): String
+    + getUuidValue(): IoTDeviceUuid
   }
 
-  class Ubicacion <<ValueObject>> #FCF3CF {
-    - direccion: String
-    - latitud: double
-    - longitud: double
-    - esMovil: boolean
-    + distanciaA(otra: Ubicacion): double
+  class AssetSettings <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - assetId: Long
+    - uuid: String
+    - assetTypes: List<String>
+    - iotDeviceTypes: List<String>
+    - minimumTemperature: Double
+    - maximumTemperature: Double
+    - minimumHumidity: Double
+    - maximumHumidity: Double
+    - calibrationFrequencyDays: Integer
+    - temperatureUnit: String
+    - humidityUnit: String
+    - weightUnit: String
+    - readingFrequencySeconds: Integer
+    - alertThresholdMinutes: Integer
+    + update(command: SaveAssetSettingsCommand): void
   }
 
-  class RangoTemperatura <<ValueObject>> #FCF3CF {
-    - minCelsius: double
-    - maxCelsius: double
-    + validar(valor: double): boolean
+  class LocationName <<ValueObject>> #FCF3CF {
+    - value: String
+    + getValue(): String
   }
 
-  class RangoHumedad <<ValueObject>> #FCF3CF {
-    - minPorcentaje: double
-    - maxPorcentaje: double
-    + validar(valor: double): boolean
+  class AssetUuid <<ValueObject>> #FCF3CF {
+    - value: String
+    + getValue(): String
   }
 
-  class OrganizacionId <<ValueObject>> #FCF3CF {
-    - valor: UUID
+  class GatewayUuid <<ValueObject>> #FCF3CF {
+    - value: String
+    + getValue(): String
   }
 
-  interface Constructor <<interfaz>> {
-    + conNombre(n: String): Constructor
-    + conTipo(t: TipoActivo): Constructor
-    + conUbicacion(u: Ubicacion): Constructor
-    + agregarSensor(s: Sensor): Constructor
-    + construir(): Activo
+  class IoTDeviceUuid <<ValueObject>> #FCF3CF {
+    - value: String
+    + getValue(): String
   }
 
-  class ActivoBuilder <<Entity>> {
-    - nombre: String
-    - tipo: TipoActivo
-    - ubicacion: Ubicacion
-    - sensores: List<Sensor>
-    + conNombre(n: String): Constructor
-    + conTipo(t: TipoActivo): Constructor
-    + conUbicacion(u: Ubicacion): Constructor
-    + agregarSensor(s: Sensor): Constructor
-    + construir(): Activo
-  }
+  interface LocationRepository <<Repository>>
+  interface AssetRepository <<Repository>>
+  interface GatewayRepository <<Repository>>
+  interface IoTDeviceRepository <<Repository>>
+  interface AssetSettingsRepository <<Repository>>
 
-  class ActivoDirector <<Entity>> {
-    - builder: Constructor
-    + setBuilder(b: Constructor): void
-    + construirCamaraFrigorifica(nombre: String, u: Ubicacion): Activo
-    + construirAlmacen(nombre: String, u: Ubicacion): Activo
-    + construirUnidadTransporte(nombre: String, u: Ubicacion): Activo
-  }
-
-  enum TipoActivo <<enum>> {
-    CAMARA_FRIGORIFICA
-    ALMACEN_REFRIGERADO
-    UNIDAD_TRANSPORTE
-    VITRINA
-  }
-
-  enum EstadoActivo <<enum>> {
-    OPERATIVO
-    INACTIVO
-    EN_MANTENIMIENTO
-  }
-
-  enum TipoSensor <<enum>> {
-    TEMPERATURA
-    HUMEDAD
-    TEMPERATURA_HUMEDAD
-  }
-
-  enum EstadoSensor <<enum>> {
-    ACTIVO
-    DESCONECTADO
-    CALIBRANDO
-    FALLA
-  }
-
-  enum EstadoGateway <<enum>> {
-    CONECTADO
-    DESCONECTADO
-  }
-
-  Activo "1" *-- "1" Ubicacion
-  Activo "1" o-- "*" Sensor
-  Gateway "1" o-- "*" Sensor
-  Sensor "1" o-- "0..1" RangoTemperatura
-  Sensor "1" o-- "0..1" RangoHumedad
-  Activo ..> OrganizacionId
-  Gateway ..> OrganizacionId
-  Activo ..> TipoActivo
-  Activo ..> EstadoActivo
-  Sensor ..> TipoSensor
-  Sensor ..> EstadoSensor
-  Gateway ..> EstadoGateway
-  ActivoBuilder ..|> Constructor
-  ActivoDirector o-- Constructor
+  Location "1" <-- "*" Asset : locationId
+  Location "1" <-- "*" Gateway : locationId
+  Gateway "1" <-- "*" IoTDevice : gatewayId
+  Asset "0..1" <-- "*" IoTDevice : assetId
+  Asset "0..1" <-- "*" AssetSettings : assetId
+  Location *-- LocationName
+  Asset *-- AssetUuid
+  Gateway *-- GatewayUuid
+  IoTDevice *-- IoTDeviceUuid
+  LocationRepository ..> Location
+  AssetRepository ..> Asset
+  GatewayRepository ..> Gateway
+  IoTDeviceRepository ..> IoTDevice
+  AssetSettingsRepository ..> AssetSettings
 }
+
+note right of IoTDevice
+  The implemented model uses IoTDevice.
+  There is no Sensor class, SensorType enum,
+  TemperatureRange class or HumidityRange class.
+end note
 
 @enduml

@@ -1,52 +1,105 @@
-@startuml ColdTrace-Component-Sensores
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+@startuml
 
-title Component View - ColdTrace - Gestion de Sensores Bounded Context
-caption Componentes del BC Gestion de Sensores alineados con EP003 y EP007
+title Component View - ColdTrace - Asset Management BC
+caption Current backend package: com.acme.coldtrace.platform.assetmanagement
 
-LAYOUT_WITH_LEGEND()
-LAYOUT_TOP_DOWN()
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
 
-' Entradas y contextos externos
-Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+actor "Web Application / API Client" as client
+database "MySQL\nlocations\nassets\ngateways\niot_devices\nasset_settings" as db
 
-Container_Ext(auth_bc, "Autenticacion Bounded Context", "Spring Boot", "Valida sesion, roles y permisos antes de permitir cambios en activos y sensores")
+component "Identity & Access BC\nOrganizationRepository" as identity_bc <<External dependency>>
+component "Monitoring / Alerts /\nReports / Maintenance" as other_bcs <<ACL consumers>>
 
-Container_Ext(monitor_bc, "Monitoreo Bounded Context", "Spring Boot", "Consume rangos y configuracion para validar lecturas en tiempo real")
+package "Asset Management Bounded Context" #FADBD8 {
 
-' Componentes del contexto de gestión de sensores
-Container_Boundary(sensors, "Gestion de Sensores Bounded Context") {
+  [LocationsController] <<REST Controller>> as locations_ctrl
+  [AssetsController] <<REST Controller>> as assets_ctrl
+  [GatewaysController] <<REST Controller>> as gateways_ctrl
+  [IoTDevicesController] <<REST Controller>> as devices_ctrl
+  [AssetSettingsController] <<REST Controller>> as settings_ctrl
 
-    Component(sen_ctrl, "Sensores Controller", "Controller", "Controlador de registro de activos, sensores, gateways y configuracion de rangos [EP003, EP007]")
+  [LocationCommandServiceImpl] <<Command Service>> as location_cmd
+  [AssetCommandServiceImpl] <<Command Service>> as asset_cmd
+  [GatewayCommandServiceImpl] <<Command Service>> as gateway_cmd
+  [IoTDeviceCommandServiceImpl] <<Command Service>> as device_cmd
+  [AssetSettingsCommandServiceImpl] <<Command Service>> as settings_cmd
 
-    Component(sen_auth_facade, "Sensores Auth Context Facade", "ContextFacade", "Recibe validacion de sesion y permisos desde el BC Autenticacion")
+  [LocationQueryServicesImpl] <<Query Service>> as location_query
+  [AssetQueryServicesImpl] <<Query Service>> as asset_query
+  [GatewayQueryServicesImpl] <<Query Service>> as gateway_query
+  [IoTDeviceQueryServicesImpl] <<Query Service>> as device_query
+  [AssetSettingsQueryServicesImpl] <<Query Service>> as settings_query
 
-    Component(sen_cmd, "Sensores Command Service", "Service", "Recibe comandos de registro, actualizacion y eliminacion de activos, sensores, gateways y rangos")
+  [AssetManagementContextFacadeImpl] <<ACL Facade>> as asset_facade
+  [AssetCreatedEventHandler] <<Event Handler>> as asset_event_handler
 
-    Component(sen_query, "Sensores Query Service", "Service", "Recibe consultas de activos, sensores, gateways y configuraciones registradas")
+  [LocationRepository] <<Domain Repository>> as location_repo
+  [AssetRepository] <<Domain Repository>> as asset_repo
+  [GatewayRepository] <<Domain Repository>> as gateway_repo
+  [IoTDeviceRepository] <<Domain Repository>> as device_repo
+  [AssetSettingsRepository] <<Domain Repository>> as settings_repo
 
-    Component(sen_repo, "Sensores Repositorio", "Repository", "Repositorio de activos, sensores, gateways, rangos y configuraciones")
-
-    Component(sen_monitor_ext, "Sensores Monitoreo External Service", "ExternalService", "Publica cambios de rangos y configuraciones hacia el BC Monitoreo")
+  [JPA repository adapters\nPersistence assemblers\nJPA entities] <<Infrastructure>> as persistence
 }
 
-ContainerDb(db_sensors, "DB Sensores", "PostgreSQL", "Activos, sensores, gateways, rangos y configuraciones")
+client --> locations_ctrl : /organizations/{id}/locations
+client --> assets_ctrl : /organizations/{id}/assets
+client --> gateways_ctrl : /organizations/{id}/gateways
+client --> devices_ctrl : /organizations/{id}/iot-devices
+client --> settings_ctrl : /organizations/{id}/asset-settings
 
-' Relaciones principales
-Rel(gateway, sen_ctrl, "Redirige a gestion de sensores")
+locations_ctrl --> location_cmd
+locations_ctrl --> location_query
+assets_ctrl --> asset_cmd
+assets_ctrl --> asset_query
+gateways_ctrl --> gateway_cmd
+gateways_ctrl --> gateway_query
+devices_ctrl --> device_cmd
+devices_ctrl --> device_query
+settings_ctrl --> settings_cmd
+settings_ctrl --> settings_query
 
-Rel(auth_bc, sen_auth_facade, "Valida sesion y permisos")
-Rel(sen_auth_facade, sen_cmd, "Autoriza comandos")
-Rel(sen_auth_facade, sen_query, "Autoriza consultas")
+location_cmd --> identity_bc : validates organization
+asset_cmd --> identity_bc : validates organization
+gateway_cmd --> identity_bc : validates organization
+device_cmd --> identity_bc : validates organization
+settings_cmd --> identity_bc : validates organization
 
-Rel(sen_ctrl, sen_cmd, "Envia comandos")
-Rel(sen_ctrl, sen_query, "Envia consultas")
+location_cmd --> location_repo
+location_query --> location_repo
+asset_cmd --> asset_repo
+asset_cmd --> location_repo
+asset_query --> asset_repo
+gateway_cmd --> gateway_repo
+gateway_cmd --> location_repo
+gateway_query --> gateway_repo
+device_cmd --> device_repo
+device_cmd --> gateway_repo
+device_cmd --> asset_repo
+device_query --> device_repo
+settings_cmd --> settings_repo
+settings_cmd --> asset_repo
+settings_query --> settings_repo
+settings_query --> asset_repo
 
-Rel(sen_cmd, sen_repo, "Llamada a repositorio")
-Rel(sen_query, sen_repo, "Llamada a repositorio")
-Rel(sen_repo, db_sensors, "Lee / Escribe", "JDBC")
+asset_repo --> asset_event_handler : publishes AssetCreatedEvent
+asset_event_handler --> [AssetCreatedIntegrationEvent]
 
-Rel(sen_cmd, sen_monitor_ext, "Notifica cambio de rangos")
-Rel(sen_monitor_ext, monitor_bc, "Envia nuevos rangos y configuraciones")
+asset_facade --> asset_repo
+asset_facade --> device_repo
+asset_facade --> gateway_repo
+asset_facade --> settings_repo
+other_bcs ..> asset_facade : fetch snapshots/settings
+
+location_repo --> persistence
+asset_repo --> persistence
+gateway_repo --> persistence
+device_repo --> persistence
+settings_repo --> persistence
+persistence --> db : Spring Data JPA
 
 @enduml

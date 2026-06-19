@@ -1,56 +1,48 @@
-@startuml ColdTrace-Component-Reportes
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+@startuml
 
-title Component View - ColdTrace - Reportes Bounded Context
-caption Componentes del BC Reportes alineados con EP006
+title Component View - ColdTrace - Reports BC
+caption Current backend package: com.acme.coldtrace.platform.reports
 
-LAYOUT_WITH_LEGEND()
-LAYOUT_TOP_DOWN()
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
 
-' Entradas y actores externos
-Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+actor "Web Application / API Client" as client
+database "MySQL\nreports" as db
 
-Container_Ext(monitor_bc, "Monitoreo Bounded Context", "Spring Boot", "Provee mediciones historicas de temperatura y humedad")
-Container_Ext(alerts_bc, "Alertas Bounded Context", "Spring Boot", "Provee incidencias y bitacora de alertas")
+component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
+component "AssetManagementContextFacade" as asset_facade <<External ACL>>
+component "MonitoringContextFacade" as monitoring_facade <<External ACL>>
+component "AlertsContextFacade" as alerts_facade <<External ACL>>
 
-Person_Ext(auditor, "Auditor Sanitario (DIGESA / MINSA)", "Recibe reportes exportados [EP006, BC Auditoria]")
+package "Reports Bounded Context" #E8DAEF {
 
-' Componentes del contexto de reportes
-Container_Boundary(reports, "Reportes Bounded Context") {
+  [ReportsController] <<REST Controller>> as reports_ctrl
+  [ReportCommandServiceImpl] <<Command Service>> as report_cmd
+  [ReportQueryServiceImpl] <<Query Service>> as report_query
+  [ReportGeneratedEventHandler] <<Event Handler>> as report_event_handler
 
-    Component(rep_ctrl, "Reportes Controller", "Controller", "Controlador de dashboards, historial, bitacoras y exportacion de reportes [EP006]")
-
-    Component(rep_monitor_facade, "Reportes Monitoreo Context Facade", "ContextFacade", "Recibe mediciones historicas desde el BC Monitoreo")
-
-    Component(rep_alerts_facade, "Reportes Alertas Context Facade", "ContextFacade", "Recibe incidencias y bitacora desde el BC Alertas")
-
-    Component(rep_cmd, "Reportes Command Service", "Service", "Recibe comandos de generacion, programacion y exportacion de reportes")
-
-    Component(rep_query, "Reportes Query Service", "Service", "Recibe consultas de dashboards, historial, bitacoras y reportes generados")
-
-    Component(rep_repo, "Reportes Repositorio", "Repository", "Repositorio de reportes generados, bitacoras y descargas historicas")
-
-    Component(rep_export_ext, "Reportes Export External Service", "ExternalService", "Reenvia reportes exportables en formato PDF y CSV al auditor")
+  [ReportRepository] <<Domain Repository>> as report_repo
+  [JPA repository adapter\nPersistence assembler\nReportPersistenceEntity] <<Infrastructure>> as persistence
 }
 
-ContainerDb(db_reports, "DB Reportes", "PostgreSQL", "Reportes generados, bitacoras y descargas historicas")
+client --> reports_ctrl : /organizations/{id}/reports
+reports_ctrl --> report_cmd : generate report
+reports_ctrl --> report_query : list / get report
 
-' Relaciones principales
-Rel(gateway, rep_ctrl, "Redirige a reportes")
+report_cmd --> identity_facade : validates organization
+report_query --> identity_facade : validates organization
+report_cmd --> asset_facade : asset count
+report_cmd --> monitoring_facade : reading snapshots
+report_cmd --> alerts_facade : incident snapshots
 
-Rel(monitor_bc, rep_monitor_facade, "Provee mediciones historicas")
-Rel(alerts_bc, rep_alerts_facade, "Provee incidencias y bitacora")
-Rel(rep_monitor_facade, rep_query, "Entrega mediciones para reportes")
-Rel(rep_alerts_facade, rep_query, "Entrega incidencias para bitacora")
+report_cmd --> report_repo
+report_query --> report_repo
+report_repo --> report_event_handler : publishes ReportGeneratedEvent
+report_event_handler --> [ReportGeneratedIntegrationEvent]
 
-Rel(rep_ctrl, rep_cmd, "Envia comandos")
-Rel(rep_ctrl, rep_query, "Envia consultas")
-
-Rel(rep_cmd, rep_repo, "Llamada a repositorio")
-Rel(rep_query, rep_repo, "Llamada a repositorio")
-Rel(rep_repo, db_reports, "Lee / Escribe", "JDBC")
-
-Rel(rep_cmd, rep_export_ext, "Exporta reporte")
-Rel(rep_export_ext, auditor, "Entrega reporte", "PDF / CSV")
+report_repo --> persistence
+persistence --> db : Spring Data JPA
 
 @enduml

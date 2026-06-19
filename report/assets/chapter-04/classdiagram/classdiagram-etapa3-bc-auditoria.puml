@@ -1,86 +1,85 @@
-@startuml ColdTrace-Stage3-BC-Auditoria
+@startuml
 
-title Etapa 3 - BC Auditoria
+title Stage 3 - BC Maintenance Management
 
 skinparam classAttributeIconSize 0
 skinparam nodesep 45
 skinparam ranksep 55
 skinparam packageStyle rectangle
+skinparam shadowing false
 
-package "BC Auditoria" #FDEBD0 {
+package "BC Maintenance Management" #FDEBD0 {
 
-  class Auditoria <<Aggregate>> #FADBD8 {
-    - idAuditoria: UUID
-    - idOrganizacion: UUID
-    - idAuditor: UUID
-    - tipo: TipoAuditoria
-    - fechaInicio: LocalDate
-    - fechaFin: LocalDate
-    - estado: EstadoAuditoria
-    - resultado: EstadoCumplimiento
-    + iniciar(): void
-    + validarCumplimiento(): EstadoCumplimiento
-    + cerrar(): void
+  class MaintenanceSchedule <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - uuid: String
+    - assetId: Long
+    - scheduledDate: OffsetDateTime
+    - frequencyDays: Integer
+    - responsibleUserId: Long
+    - observations: String
+    - status: String
+    - registeredAt: OffsetDateTime
+    + isActive(): boolean
+    + canTransitionTo(status: String): boolean
+    + updateStatus(status: String): void
+    + onCreated(): void
   }
 
-  class Evidencia <<Entity>> {
-    - idEvidencia: UUID
-    - idAuditoria: UUID
-    - idReporte: UUID
-    - tipo: String
-    - ruta: String
-    - fechaCaptura: LocalDateTime
-    + adjuntar(): void
-    + exportar(): byte[]
+  class TechnicalServiceRequest <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - code: String
+    - assetId: Long
+    - assetLocationId: Long
+    - assetName: String
+    - incidentId: Long
+    - issueDescription: String
+    - priority: String
+    - status: String
+    - requestedBy: String
+    - requestedAt: OffsetDateTime
+    - closedAt: OffsetDateTime
+    - closureSummary: String
+    - evidence: String
+    - closedBy: String
+    + canTransitionTo(status: String): boolean
+    + isActive(): boolean
+    + updateStatus(command): void
+    + onCreated(): void
   }
 
-  class CriterioCumplimiento <<Entity>> {
-    - idCriterio: UUID
-    - norma: String
-    - descripcion: String
-    - resultado: EstadoCumplimiento
-    + evaluar(): EstadoCumplimiento
+  class MaintenanceScheduleCreatedEvent <<DomainEvent>> {
+    + maintenanceScheduleId: Long
+    + organizationId: Long
+    + assetId: Long
+    + uuid: String
+    + scheduledDate: OffsetDateTime
   }
 
-  class UsuarioId <<ValueObject>> #FCF3CF {
-    - valor: UUID
+  class TechnicalServiceRequestCreatedEvent <<DomainEvent>> {
+    + technicalServiceRequestId: Long
+    + organizationId: Long
+    + assetId: Long
+    + code: String
+    + requestedAt: OffsetDateTime
   }
 
-  class OrganizacionId <<ValueObject>> #FCF3CF {
-    - valor: UUID
-  }
+  interface MaintenanceScheduleRepository <<Repository>>
+  interface TechnicalServiceRequestRepository <<Repository>>
 
-  class ReporteId <<ValueObject>> #FCF3CF {
-    - valor: UUID
-  }
-
-  enum TipoAuditoria <<enum>> {
-    INTERNA
-    DIGESA
-    MINSA
-  }
-
-  enum EstadoAuditoria <<enum>> {
-    PLANIFICADA
-    EN_CURSO
-    CERRADA
-  }
-
-  enum EstadoCumplimiento <<enum>> {
-    CONFORME
-    NO_CONFORME
-    PARCIAL
-    PENDIENTE
-  }
-
-  Auditoria "1" o-- "*" Evidencia
-  Auditoria "1" o-- "*" CriterioCumplimiento
-  Auditoria ..> UsuarioId
-  Auditoria ..> OrganizacionId
-  Evidencia ..> ReporteId
-  Auditoria ..> TipoAuditoria
-  Auditoria ..> EstadoAuditoria
-  Auditoria ..> EstadoCumplimiento
+  MaintenanceSchedule ..> MaintenanceScheduleCreatedEvent : publishes
+  TechnicalServiceRequest ..> TechnicalServiceRequestCreatedEvent : publishes
+  TechnicalServiceRequest ..> MaintenanceSchedule : same asset lifecycle
+  MaintenanceScheduleRepository ..> MaintenanceSchedule
+  TechnicalServiceRequestRepository ..> TechnicalServiceRequest
 }
+
+note right of TechnicalServiceRequest
+  Evidence is currently a String field in
+  TechnicalServiceRequest. There is no
+  ServiceEvidence entity class.
+end note
 
 @enduml

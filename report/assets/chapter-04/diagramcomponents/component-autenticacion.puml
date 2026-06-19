@@ -1,50 +1,73 @@
-@startuml ColdTrace-Component-Autenticacion
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+@startuml
 
-title Component View - ColdTrace - Autenticacion Bounded Context
-caption Componentes del BC Autenticacion alineados con EP002 y US007 - US011
+title Component View - ColdTrace - Identity & Access BC
+caption Current backend package: com.acme.coldtrace.platform.identityaccess
 
-LAYOUT_WITH_LEGEND()
-LAYOUT_TOP_DOWN()
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
 
-' Entradas y servicios externos
-Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+actor "Web Application / API Client" as client
+database "MySQL\norganizations\nusers\nroles\nrole_permissions" as db
 
-System_Ext(email, "Servicio de Correo Electronico", "Verificacion de cuenta [US008] y recuperacion de contrasena [US010]")
-System_Ext(pagos, "Pasarela de Pagos", "Valida y procesa suscripcion mensual SaaS [Cap. I]")
+package "Identity & Access Bounded Context" #D6EAF8 {
 
-' Componentes del contexto de autenticación
-Container_Boundary(auth, "Autenticacion Bounded Context") {
+  [OrganizationSignUpsController] <<REST Controller>> as signup_ctrl
+  [OrganizationsController] <<REST Controller>> as org_ctrl
+  [UsersController] <<REST Controller>> as users_ctrl
+  [RolesController] <<REST Controller>> as roles_ctrl
 
-    Component(auth_ctrl, "Autenticacion Controller", "Controller", "Controlador de registro, verificacion, login, recuperacion, cierre de sesion y gestion de usuarios [US007, US008, US009, US010, US011]")
+  [OrganizationSignUpCommandServiceImpl] <<Command Service>> as signup_cmd
+  [OrganizationCommandServiceImpl] <<Command Service>> as org_cmd
+  [UserCommandServiceImpl] <<Command Service>> as user_cmd
 
-    Component(auth_cmd, "Autenticacion Command Service", "Service", "Recibe comandos de registro, verificacion, login, cierre de sesion y asignacion de roles y permisos")
+  [OrganizationQueryServicesImpl] <<Query Service>> as org_query
+  [UserQueryServicesImpl] <<Query Service>> as user_query
+  [RoleQueryServicesImpl] <<Query Service>> as role_query
 
-    Component(auth_query, "Autenticacion Query Service", "Service", "Recibe consultas de sesion, perfil, roles, permisos y validacion de suscripcion activa")
+  [IdentityAccessContextFacadeImpl] <<ACL Facade>> as identity_facade
 
-    Component(auth_repo, "Autenticacion Repositorio", "Repository", "Repositorio de usuarios, roles, permisos, sesiones y suscripciones")
+  [OrganizationRepository] <<Domain Repository>> as org_repo
+  [UserRepository] <<Domain Repository>> as user_repo
+  [RoleRepository] <<Domain Repository>> as role_repo
 
-    Component(auth_email_ext, "Auth Email External Service", "ExternalService", "Reenvia correos de verificacion y recuperacion hacia el proveedor de correo")
-
-    Component(auth_pagos_ext, "Auth Pagos External Service", "ExternalService", "Reenvia validacion y procesamiento de suscripcion hacia la pasarela de pagos")
+  [JPA repository adapters\nPersistence assemblers\nJPA entities] <<Infrastructure>> as persistence
 }
 
-ContainerDb(db_auth, "DB Autenticacion", "PostgreSQL", "Usuarios, roles, permisos, sesiones y suscripciones")
+component "Other bounded contexts" as other_bcs <<Consumers>>
 
-' Relaciones principales
-Rel(gateway, auth_ctrl, "Redirige a autenticacion")
+client --> signup_ctrl : POST /organization-sign-ups
+client --> org_ctrl : GET/POST /organizations
+client --> users_ctrl : GET/POST/PATCH /organizations/{id}/users
+client --> roles_ctrl : GET /roles
 
-Rel(auth_ctrl, auth_cmd, "Envia comandos")
-Rel(auth_ctrl, auth_query, "Envia consultas")
+signup_ctrl --> signup_cmd
+org_ctrl --> org_cmd
+org_ctrl --> org_query
+users_ctrl --> user_cmd
+users_ctrl --> user_query
+roles_ctrl --> role_query
 
-Rel(auth_cmd, auth_repo, "Llamada a repositorio")
-Rel(auth_query, auth_repo, "Llamada a repositorio")
-Rel(auth_repo, db_auth, "Lee / Escribe", "JDBC")
+signup_cmd --> org_repo
+signup_cmd --> user_repo
+signup_cmd --> role_repo
+org_cmd --> org_repo
+org_query --> org_repo
+user_cmd --> user_repo
+user_cmd --> org_repo
+user_cmd --> role_repo
+user_query --> user_repo
+user_query --> org_repo
+role_query --> role_repo
 
-Rel(auth_cmd, auth_email_ext, "Solicita envio de correo")
-Rel(auth_cmd, auth_pagos_ext, "Solicita validacion de suscripcion")
+identity_facade --> org_repo : organizationExists()
+identity_facade --> user_repo : userExistsByIdAndOrganizationId()
+other_bcs ..> identity_facade : validate organization/user ownership
 
-Rel(auth_email_ext, email, "Envia correo", "SMTP / REST")
-Rel(auth_pagos_ext, pagos, "Procesa suscripcion", "REST / HTTPS")
+org_repo --> persistence
+user_repo --> persistence
+role_repo --> persistence
+persistence --> db : Spring Data JPA
 
 @enduml
