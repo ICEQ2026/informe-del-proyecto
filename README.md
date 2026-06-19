@@ -6333,223 +6333,86 @@ Las entrevistas se estructuraron en torno a los siguientes ejes de validación:
 
 ### 5.3.2. Registro de Entrevistas
 
-A continuación se presentan los resultados de las entrevistas realizadas, incluyendo el perfil del entrevistado, los hallazgos principales y las recomendaciones derivadas.
+Para cada segmento objetivo se registrarán 3 entrevistas. Cada entrevista debe incluir la información personal solicitada, un screenshot del video, el enlace de Microsoft Stream, el timing donde inicia la entrevista, su duración y un resumen descriptivo de las principales apreciaciones del participante.
 
-| Entrevistado | Perfil | Hallazgos principales | Recomendaciones |
-|---|---|---|---|
-| Entrevistado 1 | Dueño de minimarket con cadena de frío propia | La gestión de activos y el monitoreo en tiempo real son las funcionalidades más valoradas. Se identificó la necesidad de alertas más tempranas. | Incorporar un dashboard resumen con indicadores críticos visibles sin necesidad de navegación. |
-| Entrevistado 2 | Jefa de calidad en empresa de distribución de alimentos | La generación de reportes de cumplimiento y la trazabilidad de incidencias fueron destacadas como esenciales para auditorías sanitarias. | Permitir la exportación de reportes en formatos adicionales (PDF, Excel). |
-| Entrevistado 3 | Encargado de operaciones en almacén refrigerado | La configuración de rangos de seguridad y la programación de mantenimiento preventivo fueron consideradas herramientas útiles para la operación diaria. | Desarrollar vistas móviles para consulta rápida de estado de activos. |
-| Entrevistado 4 | Administradora de restaurante con cámaras frigoríficas | La facilidad de uso de la plataforma y la claridad de las alertas fueron bien recibidas. Sugirió incluir notificaciones por WhatsApp. | Integrar canales de notificación adicionales (WhatsApp, SMS). |
+**Video consolidado de entrevistas de validación:** [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
+**Nomenclatura del video:** `upc-pre-202610-1asi0729-10177-ICEQvalidation-sprint-3.mp4`
 
-<br>
+#### Segmento objetivo 1: Dueños, administradores o encargados de pequeños negocios alimentarios
 
-**Registro de Entrevistas de Validación**
+| **Entrevista Nro. 1** |  |
+| --- | --- |
+| Screenshot | <img src="report/assets/chapter-05/validation/vi-s1-01-jean-pool-coaguila.png" alt="Screenshot de entrevista de validación - Jean Pool Coaguila" width="600"> |
+| Nombres y apellidos | Jean Pool Coaguila |
+| Edad | 29 años |
+| Distrito | Lima Norte |
+| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
+| URL de grabación | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| Timing de inicio | 00:00 |
+| Duración | 18:16 |
+| Resumen | Jean Pool evaluó ColdTrace desde el rol de encargado de un minimarket familiar que comercializa productos perecibles. Durante la revisión de la Landing Page, comprendió que la propuesta se enfoca en monitorear equipos refrigerados, recibir alertas y consultar historial, relacionándolo con su necesidad de detectar fallas antes de que la mercadería esté en riesgo. En la Web Application, valoró especialmente el dashboard, la revisión de activos, las alertas y el historial diario, pues estos elementos reemplazan parcialmente el control manual basado en revisar indicadores de refrigeradoras o inspeccionar visualmente los productos. Señaló que la solución sería útil si mantiene una experiencia simple, accesible desde celular y con mensajes de alerta claros. Como oportunidades de mejora, sugirió explicar mejor el costo, la instalación de sensores y agregar recomendaciones concretas de acción ante cada alerta. |
 
-<table style="width:100%; border-collapse:collapse;">
-  <tbody>
-    <tr>
-      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 1</strong></td>
-    </tr>
-    <tr>
-      <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-1.png" alt="Entrevista de Validación 1" height="350">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
-      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
-    </tr>
-    <tr>
-      <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 1</td>
-      <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>Smartphone (Android) y Laptop (Windows)</td>
-    </tr>
-    <tr>
-      <td><strong>Edad</strong></td>
-      <td>45 años</td>
-      <td><strong>Sistema operativo/browser</strong></td>
-      <td>Windows / Google Chrome</td>
-    </tr>
-    <tr>
-      <td><strong>Definición profesional / cargo</strong></td>
-      <td>Dueño de Minimarket "Mendoza & Hijos"</td>
-      <td><strong>Canales digitales de comunicación</strong></td>
-      <td>WhatsApp y llamadas telefónicas</td>
-    </tr>
-    <tr>
-      <td><strong>Residencia / ubicación</strong></td>
-      <td>Santiago de Surco, Lima</td>
-      <td><strong>Software especializado utilizado</strong></td>
-      <td>Microsoft Excel y Apps bancarias</td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong>Duración:</strong> 05:40</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        El entrevistado evaluó la interfaz web de ColdTrace y destacó la facilidad de navegación y la claridad de la información de los activos de refrigeración. Mencionó que la gestión de activos en tiempo real les permitiría reaccionar ante fallas operativas de sus congeladoras. Recomendó incorporar una vista de dashboard tipo resumen rápido (resumen ejecutivo) que permita ver la salud de todos los activos sin tener que entrar al detalle de cada uno.
-      </td>
-    </tr>
-  </tbody>
-</table>
+| **Entrevista Nro. 2** |  |
+| --- | --- |
+| Screenshot | <br><br> |
+| Nombres y apellidos |  |
+| Edad |  |
+| Distrito |  |
+| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
+| URL de grabación |  |
+| Timing de inicio |  |
+| Duración |  |
+| Resumen | <br><br><br> |
 
-<table style="width:100%; border-collapse:collapse;">
-  <tbody>
-    <tr>
-      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 2</strong></td>
-    </tr>
-    <tr>
-      <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-2.png" alt="Entrevista de Validación 2" height="350">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
-      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
-    </tr>
-    <tr>
-      <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 2</td>
-      <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>Laptop Corporativa y Tablet Android</td>
-    </tr>
-    <tr>
-      <td><strong>Edad</strong></td>
-      <td>34 años</td>
-      <td><strong>Sistema operativo/browser</strong></td>
-      <td>Windows / Google Chrome</td>
-    </tr>
-    <tr>
-      <td><strong>Definición profesional / cargo</strong></td>
-      <td>Jefa de Calidad Alimentaria en "Logística del Frío S.A."</td>
-      <td><strong>Canales digitales de comunicación</strong></td>
-      <td>Microsoft Teams y correo corporativo</td>
-    </tr>
-    <tr>
-      <td><strong>Residencia / ubicación</strong></td>
-      <td>Callao</td>
-      <td><strong>Software especializado utilizado</strong></td>
-      <td>Microsoft Excel, Power BI</td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong>Duración:</strong> 06:15</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        La entrevistada se enfocó en el módulo de reportes y cumplimiento de ColdTrace. Valoró la bitácora diaria y el reporte de cumplimiento sanitario, ya que facilita enormemente la consolidación de evidencia para las auditorías de DIGESA. Recomendó que las exportaciones no solo estén disponibles como datos tabulares, sino que se habilite la exportación en formatos amigables como PDF y Excel con plantillas de presentación.
-      </td>
-    </tr>
-  </tbody>
-</table>
+| **Entrevista Nro. 3** |  |
+| --- | --- |
+| Screenshot | <br><br> |
+| Nombres y apellidos |  |
+| Edad |  |
+| Distrito |  |
+| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
+| URL de grabación |  |
+| Timing de inicio |  |
+| Duración |  |
+| Resumen | <br><br><br> |
 
-<table style="width:100%; border-collapse:collapse;">
-  <tbody>
-    <tr>
-      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
-    </tr>
-    <tr>
-      <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-3.png" alt="Entrevista de Validación 3" height="350">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
-      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
-    </tr>
-    <tr>
-      <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 3</td>
-      <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>Tablet corporativa y Laptop Windows</td>
-    </tr>
-    <tr>
-      <td><strong>Edad</strong></td>
-      <td>38 años</td>
-      <td><strong>Sistema operativo/browser</strong></td>
-      <td>Windows / Microsoft Edge</td>
-    </tr>
-    <tr>
-      <td><strong>Definición profesional / cargo</strong></td>
-      <td>Encargado de Operaciones de Almacén Frigorífico "AeroFrío"</td>
-      <td><strong>Canales digitales de comunicación</strong></td>
-      <td>Correo corporativo y WhatsApp</td>
-    </tr>
-    <tr>
-      <td><strong>Residencia / ubicación</strong></td>
-      <td>San Luis, Lima</td>
-      <td><strong>Software especializado utilizado</strong></td>
-      <td>ERP interno y Microsoft Excel</td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong>Duración:</strong> 04:50</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        El entrevistado valoró la vista de configuración de rangos seguros de temperatura y la programación de mantenimientos preventivos para los sensores IoT. Consideró que es de gran utilidad para evitar fallas imprevistas. Sugirió desarrollar una aplicación móvil o una interfaz móvil optimizada que les permita a los operadores en campo verificar rápidamente el estado de los sensores y equipos.
-      </td>
-    </tr>
-  </tbody>
-</table>
+#### Segmento objetivo 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío
 
-<table style="width:100%; border-collapse:collapse;">
-  <tbody>
-    <tr>
-      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
-    </tr>
-    <tr>
-      <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-4.png" alt="Entrevista de Validación 4" height="350">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
-      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
-    </tr>
-    <tr>
-      <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 4</td>
-      <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>iPhone (iOS) y iPad</td>
-    </tr>
-    <tr>
-      <td><strong>Edad</strong></td>
-      <td>31 años</td>
-      <td><strong>Sistema operativo/browser</strong></td>
-      <td>iOS / Safari</td>
-    </tr>
-    <tr>
-      <td><strong>Definición profesional / cargo</strong></td>
-      <td>Administradora de Restaurante "El Buen Gusto"</td>
-      <td><strong>Canales digitales de comunicación</strong></td>
-      <td>WhatsApp y iMessage</td>
-    </tr>
-    <tr>
-      <td><strong>Residencia / ubicación</strong></td>
-      <td>Miraflores, Lima</td>
-      <td><strong>Software especializado utilizado</strong></td>
-      <td>Sistema POS de comandas y Microsoft Excel</td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong>Duración:</strong> 04:10</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
-      </td>
-    </tr>
-  </tbody>
-</table>
+| **Entrevista Nro. 1** |  |
+| --- | --- |
+| Screenshot | <img src="report/assets/chapter-05/validation/vi-s2-01-rodrigo-vasquez.png" alt="Screenshot de entrevista de validación - Rodrigo Vasquez" width="600"> |
+| Nombres y apellidos | Rodrigo Vasquez |
+| Edad | 30 años |
+| Distrito | Lima Metropolitana |
+| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
+| URL de grabación | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| Timing de inicio | 18:16 |
+| Duración | 31:58 |
+| Resumen | Rodrigo evaluó ColdTrace desde el rol de supervisor de operaciones encargado de controlar activos refrigerados y consolidar información operativa. Al revisar la Landing Page, identificó que la propuesta responde a problemas mencionados en la entrevista inicial, como la falta de visibilidad inmediata, la dependencia de registros manuales y la dispersión de información. En la Web Application, destacó el valor del dashboard operacional para priorizar riesgos, la gestión de activos y sensores para mantener trazabilidad de equipos, el módulo de incidentes para reconocer y cerrar alertas con acciones correctivas, y los reportes para auditorías o revisiones internas. Consideró que ColdTrace puede reducir el trabajo manual de consolidación en Excel o Google Sheets, siempre que los reportes sean descargables y la interfaz mantenga filtros claros por sede, activo, severidad y estado. Como mejoras, recomendó reforzar la priorización de alertas, agregar recomendaciones de acción y mejorar la vista por sede o zona para operaciones con varios puntos de control. |
 
+| **Entrevista Nro. 2** |  |
+| --- | --- |
+| Screenshot | <br><br> |
+| Nombres y apellidos |  |
+| Edad |  |
+| Distrito |  |
+| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
+| URL de grabación |  |
+| Timing de inicio |  |
+| Duración |  |
+| Resumen | <br><br><br> |
+
+| **Entrevista Nro. 3** |  |
+| --- | --- |
+| Screenshot | <br><br> |
+| Nombres y apellidos |  |
+| Edad |  |
+| Distrito |  |
+| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
+| URL de grabación |  |
+| Timing de inicio |  |
+| Duración |  |
+| Resumen | <br><br><br> |
 
 ### 5.3.3. Evaluaciones según heurísticas
 
@@ -6563,7 +6426,7 @@ Esta sección contiene el proceso de evaluación de las sesiones de validación 
 * **SECCIÓN:** 1ASI0729
 * **PROFESORES:** Mori Paiva, Hugo Allan
 * **AUDITOR:** Grupo 3 (ICEQ)
-* **CLIENTE(S):** Entrevistado 1, Entrevistado 2, Entrevistado 3, Entrevistado 4
+* **CLIENTE(S):** Participantes de entrevistas de validación
 
 ---
 
