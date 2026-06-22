@@ -1,100 +1,55 @@
-@startuml ColdTrace-Stage3-BC-Reportes
+@startuml
 
-title Etapa 3 - BC Reportes
+title Stage 3 - BC Reports
 
 skinparam classAttributeIconSize 0
 skinparam nodesep 45
 skinparam ranksep 55
 skinparam packageStyle rectangle
+skinparam shadowing false
 
-package "BC Reportes" #E8DAEF {
+package "BC Reports" #E8DAEF {
 
-  abstract class Reporte <<Aggregate>> #FADBD8 {
-    # idReporte: UUID
-    # idOrganizacion: UUID
-    # idUsuarioGenerador: UUID
-    # nombre: String
-    # tipo: TipoReporte
-    # fechaGeneracion: LocalDateTime
-    # rangoDesde: LocalDateTime
-    # rangoHasta: LocalDateTime
-    # formato: FormatoExportacion
-    + {abstract} generar(): void
-    + exportar(): byte[]
+  class Report <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - uuid: String
+    - type: String
+    - title: String
+    - periodStart: OffsetDateTime
+    - periodEnd: OffsetDateTime
+    - generatedAt: OffsetDateTime
+    - assetCount: Integer
+    - readingCount: Integer
+    - outOfRangeReadingCount: Integer
+    - incidentCount: Integer
+    - openIncidentCount: Integer
+    - averageTemperature: Double
+    - averageHumidity: Double
+    - compliancePercentage: Double
+    + onGenerated(): void
   }
 
-  class Dashboard <<Aggregate>> #FADBD8 {
-    - idDashboard: UUID
-    - idOrganizacion: UUID
-    - idUsuario: UUID
-    - nombre: String
-    + agregarWidget(w: Widget): void
-    + actualizar(): void
+  class ReportGeneratedEvent <<DomainEvent>> {
+    + reportId: Long
+    + organizationId: Long
+    + uuid: String
+    + type: String
+    + generatedAt: OffsetDateTime
   }
 
-  class ReporteHistorico <<Entity>> {
-    - idsActivos: List<UUID>
-    - mediciones: List<Medicion>
-    + calcularPromedio(): double
-    + detectarDesviaciones(): List<Medicion>
-    + generar(): void
-  }
+  interface ReportRepository <<Repository>>
 
-  class ReporteBitacora <<Entity>> {
-    - incidencias: List<Incidencia>
-    + agregarIncidencia(i: Incidencia): void
-    + generar(): void
-  }
-
-  class ReporteCumplimiento <<Entity>> {
-    - criterios: List<String>
-    - resultado: EstadoCumplimiento
-    + evaluarCumplimiento(): EstadoCumplimiento
-    + generar(): void
-  }
-
-  class Widget <<Entity>> {
-    - tipo: String
-    - titulo: String
-    - configuracion: Map<String, Object>
-  }
-
-  class UsuarioId <<ValueObject>> #FCF3CF {
-    - valor: UUID
-  }
-
-  class OrganizacionId <<ValueObject>> #FCF3CF {
-    - valor: UUID
-  }
-
-  class MedicionId <<ValueObject>> #FCF3CF {
-    - valor: UUID
-  }
-
-  enum TipoReporte <<enum>> {
-    HISTORICO
-    BITACORA
-    CUMPLIMIENTO
-    DASHBOARD
-  }
-
-  enum FormatoExportacion <<enum>> {
-    PDF
-    CSV
-    EXCEL
-  }
-
-  Reporte <|-- ReporteHistorico
-  Reporte <|-- ReporteBitacora
-  Reporte <|-- ReporteCumplimiento
-  Reporte ..> UsuarioId
-  Reporte ..> OrganizacionId
-  Reporte ..> TipoReporte
-  Reporte ..> FormatoExportacion
-  ReporteHistorico ..> MedicionId
-  Dashboard "1" o-- "*" Widget
-  Dashboard ..> UsuarioId
-  Dashboard ..> OrganizacionId
+  ReportRepository ..> Report
+  Report ..> ReportGeneratedEvent : publishes
 }
+
+note right of Report
+  Reports persist summary metrics generated
+  from Asset Management, Monitoring and Alerts
+  snapshots. AI report summaries reference
+  Report by id and store generated narrative
+  guidance separately from the report metrics.
+end note
 
 @enduml

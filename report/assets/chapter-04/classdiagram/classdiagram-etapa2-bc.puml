@@ -1,582 +1,287 @@
-@startuml ColdTrace-ClassDiagram-Stage2-BC
+@startuml
 
-title Etapa 2: Agrupar las clases en Bounded Context - ColdTrace
+title Stage 2: Classes Grouped by Bounded Context - ColdTrace Backend Target
 
+scale 1800 width
 skinparam classAttributeIconSize 0
-skinparam nodesep 50
-skinparam ranksep 60
+skinparam nodesep 35
+skinparam ranksep 40
 skinparam packageStyle rectangle
+skinparam shadowing false
+hide methods
 
-' Contexto de autenticación
-package "BC Autenticacion" #D6EAF8 {
+package "BC Identity & Access" #D6EAF8 {
 
-  class Usuario {
-    - id: UUID
-    - idOrganizacion: UUID
-    - email: String
-    - nombreUsuario: String
-    - passwordHash: String
-    - estado: EstadoUsuario
-    - fechaCreacion: LocalDateTime
-    - fechaVerificacion: LocalDateTime
-    + registrar(): void
-    + verificarCuenta(token: String): boolean
-    + iniciarSesion(pwd: String): Sesion
-    + cerrarSesion(): void
-    + solicitarRecuperacion(): void
-    + asignarRol(rol: Rol): void
+  class Organization <<Aggregate>> {
+    - id: Long
+    - legalName: String
+    - commercialName: String
+    - taxId: String
+    - contactEmail: EmailAddress
   }
 
-  class Sesion {
-    - idSesion: UUID
-    - token: String
-    - creadaEn: LocalDateTime
-    - expiraEn: LocalDateTime
-    + estaVigente(): boolean
-    + invalidar(): void
+  class User <<Aggregate>> {
+    - id: Long
+    - uuid: String
+    - organizationUserId: Long
+    - firstName: String
+    - lastName: String
+    - email: EmailAddress
+    - organizationId: Long
+    - roleId: Long
   }
 
-  class Rol {
-    - idRol: UUID
-    - nombre: String
-    - descripcion: String
+  class Role <<Aggregate>> {
+    - id: Long
+    - name: RoleName
+    - label: String
+    - permissions: List<Permission>
   }
 
-  class Permiso {
-    - nombre: String
-    - recurso: String
-    - accion: String
-  }
+  class EmailAddress <<ValueObject>>
+  class RoleName <<ValueObject>>
+  class Permission <<ValueObject>>
 
-  enum EstadoUsuario <<enum>> {
-    PENDIENTE_VERIFICACION
-    ACTIVO
-    SUSPENDIDO
-    ELIMINADO
-  }
-
-  class Organizacion {
-    - idOrganizacion: UUID
-    - razonSocial: String
-    - ruc: String
-    - direccion: String
-    + agregarUsuario(u: Usuario): void
-    + eliminarUsuario(id: UUID): void
-  }
-
-  class Suscripcion {
-    - idSuscripcion: UUID
-    - plan: String
-    - estado: EstadoSuscripcion
-    - fechaInicio: LocalDate
-    - fechaFin: LocalDate
-    + estaVigente(): boolean
-    + renovar(): void
-    + cancelar(): void
-  }
-
-  enum EstadoSuscripcion <<enum>> {
-    ACTIVA
-    VENCIDA
-    CANCELADA
-    EN_PRUEBA
-  }
-
-  class PreferenciaNotificacion {
-    - idPreferencia: UUID
-    - canalesHabilitados: Set<String>
-    - horarioInicio: LocalTime
-    - horarioFin: LocalTime
-    - severidadMinima: Severidad
-    + actualizar(): void
-    + aceptaCanal(canal: String): boolean
-  }
-
-  class UsuarioRepository {
-    + buscarPorNombreUsuario(nombre: String): Optional<Usuario>
-    + buscarPorEmail(email: String): Optional<Usuario>
-    + obtenerCredencial(id: UUID): Optional<String>
-    + guardarSesion(s: Sesion): void
-    + invalidarSesion(id: UUID): void
-    + guardar(u: Usuario): void
-  }
-
-  Usuario "1" o-- "*" Sesion
-  Usuario "*" -- "*" Rol
-  Rol "*" o-- "*" Permiso
-  Organizacion "1" *-- "1" Suscripcion
-  Organizacion "1" o-- "*" Usuario
-  Usuario "1" *-- "1" PreferenciaNotificacion
-  Usuario ..> EstadoUsuario
-  Suscripcion ..> EstadoSuscripcion
-  UsuarioRepository ..> Usuario
+  Organization "1" o-- "*" User : organizationId
+  User "*" --> "1" Role : roleId
+  Role "1" *-- "*" Permission
+  Organization *-- EmailAddress
+  User *-- EmailAddress
+  Role *-- RoleName
 }
 
-' Contexto de gestión de sensores
-package "BC Gestion de Sensores" #FADBD8 {
-
-  class Ubicacion {
-    - direccion: String
-    - latitud: double
-    - longitud: double
-    - esMovil: boolean
-    + distanciaA(otra: Ubicacion): double
+package "BC Asset Management" #FADBD8 {
+  class Location <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - name: LocationName
+    - type: String
+    - status: String
   }
 
-  class Activo {
-    - idActivo: UUID
-    - idOrganizacion: UUID
-    - nombre: String
-    - descripcion: String
-    - tipo: TipoActivo
-    - estado: EstadoActivo
-    + registrar(): void
-    + asignarSensor(s: Sensor): void
-    + desvincularSensor(id: UUID): void
-    + actualizarUbicacion(u: Ubicacion): void
+  class Asset <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - locationId: Long
+    - uuid: AssetUuid
+    - type: String
+    - name: String
+    - capacity: Double
+    - status: String
   }
 
-  enum TipoActivo <<enum>> {
-    CAMARA_FRIGORIFICA
-    ALMACEN_REFRIGERADO
-    UNIDAD_TRANSPORTE
-    VITRINA
+  class Gateway <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - locationId: Long
+    - uuid: GatewayUuid
+    - name: String
+    - network: String
+    - status: String
   }
 
-  enum EstadoActivo <<enum>> {
-    OPERATIVO
-    INACTIVO
-    EN_MANTENIMIENTO
+  class IoTDevice <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - gatewayId: Long
+    - uuid: IoTDeviceUuid
+    - deviceType: String
+    - measurementType: String
+    - assetId: Long
+    - status: String
   }
 
-  class Sensor {
-    - idSensor: UUID
-    - idActivo: UUID
-    - idGateway: UUID
-    - modelo: String
-    - tipo: TipoSensor
-    - frecuenciaLecturaSeg: int
-    - estado: EstadoSensor
-    + configurarRangoTemperatura(r: RangoTemperatura): void
-    + configurarRangoHumedad(r: RangoHumedad): void
-    + configurarFrecuencia(segundos: int): void
-    + activar(): void
-    + desactivar(): void
+  class AssetSettings <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - assetId: Long
+    - minimumTemperature: Double
+    - maximumTemperature: Double
+    - minimumHumidity: Double
+    - maximumHumidity: Double
   }
 
-  enum TipoSensor <<enum>> {
-    TEMPERATURA
-    HUMEDAD
-    TEMPERATURA_HUMEDAD
-  }
+  class LocationName <<ValueObject>>
+  class AssetUuid <<ValueObject>>
+  class GatewayUuid <<ValueObject>>
+  class IoTDeviceUuid <<ValueObject>>
 
-  enum EstadoSensor <<enum>> {
-    ACTIVO
-    DESCONECTADO
-    CALIBRANDO
-    FALLA
-  }
-
-  class Gateway {
-    - idGateway: UUID
-    - idOrganizacion: UUID
-    - modelo: String
-    - ip: String
-    - protocolo: String
-    - estado: EstadoGateway
-    + conectar(): void
-    + desconectar(): void
-    + registrarSensor(s: Sensor): void
-  }
-
-  enum EstadoGateway <<enum>> {
-    CONECTADO
-    DESCONECTADO
-  }
-
-  class RangoTemperatura {
-    - minCelsius: double
-    - maxCelsius: double
-    + validar(valor: double): boolean
-  }
-
-  class RangoHumedad {
-    - minPorcentaje: double
-    - maxPorcentaje: double
-    + validar(valor: double): boolean
-  }
-
-  interface Constructor <<interfaz>> {
-    + conNombre(n: String): Constructor
-    + conTipo(t: TipoActivo): Constructor
-    + conUbicacion(u: Ubicacion): Constructor
-    + agregarSensor(s: Sensor): Constructor
-    + construir(): Activo
-  }
-
-  class ActivoBuilder {
-    - nombre: String
-    - tipo: TipoActivo
-    - ubicacion: Ubicacion
-    - sensores: List<Sensor>
-    + conNombre(n: String): Constructor
-    + conTipo(t: TipoActivo): Constructor
-    + conUbicacion(u: Ubicacion): Constructor
-    + agregarSensor(s: Sensor): Constructor
-    + construir(): Activo
-  }
-
-  class ActivoDirector {
-    - builder: Constructor
-    + setBuilder(b: Constructor): void
-    + construirCamaraFrigorifica(nombre: String, u: Ubicacion): Activo
-    + construirAlmacen(nombre: String, u: Ubicacion): Activo
-    + construirUnidadTransporte(nombre: String, u: Ubicacion): Activo
-  }
-
-  Activo "1" *-- "1" Ubicacion
-  Activo "1" o-- "*" Sensor
-  Gateway "1" o-- "*" Sensor
-  Sensor "1" o-- "0..1" RangoTemperatura
-  Sensor "1" o-- "0..1" RangoHumedad
-  Activo ..> TipoActivo
-  Activo ..> EstadoActivo
-  Sensor ..> TipoSensor
-  Sensor ..> EstadoSensor
-  Gateway ..> EstadoGateway
-  ActivoBuilder ..|> Constructor
-  ActivoDirector o-- Constructor
+  Location "1" <-- "*" Asset : locationId
+  Location "1" <-- "*" Gateway : locationId
+  Gateway "1" <-- "*" IoTDevice : gatewayId
+  Asset "0..1" <-- "*" IoTDevice : assetId
+  Asset "0..1" <-- "*" AssetSettings : assetId
+  Location *-- LocationName
+  Asset *-- AssetUuid
+  Gateway *-- GatewayUuid
+  IoTDevice *-- IoTDeviceUuid
 }
 
-' Contexto de monitoreo
-package "BC Monitoreo" #D5F5E3 {
-
-  abstract class Medicion {
-    # idMedicion: UUID
-    # idSensor: UUID
-    # timestamp: LocalDateTime
-    # valor: double
-    # unidad: String
-    + {abstract} obtenerTipo(): TipoSensor
-    + obtenerEstado(): EstadoMedicion
+package "BC Monitoring" #D5F5E3 {
+  class SensorReading <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - assetId: Long
+    - iotDeviceId: Long
+    - gatewayId: Long
+    - locationId: Long
+    - temperature: Double
+    - humidity: Double
+    - outOfRange: Boolean
+    - recordedAt: OffsetDateTime
   }
-
-  class LecturaTemperatura {
-    - valorCelsius: double
-    + convertirAFahrenheit(): double
-    + validarContra(r: RangoTemperatura): boolean
-    + obtenerTipo(): TipoSensor
-  }
-
-  class LecturaHumedad {
-    - valorPorcentaje: double
-    + esAmbienteSeco(): boolean
-    + validarContra(r: RangoHumedad): boolean
-    + obtenerTipo(): TipoSensor
-  }
-
-  enum EstadoMedicion <<enum>> {
-    NORMAL
-    ADVERTENCIA
-    CRITICA
-  }
-
-  Medicion <|-- LecturaTemperatura
-  Medicion <|-- LecturaHumedad
-  Medicion ..> EstadoMedicion
 }
 
-' Contexto de alertas
-package "BC Alertas" #FCF3CF {
-
-  class ReglaAlerta {
-    - idRegla: UUID
-    - idSensor: UUID
-    - tipo: TipoAlerta
-    - umbralValor: double
-    - duracionMinSeg: int
-    - severidad: Severidad
-    - activa: boolean
-    + evaluar(m: Medicion): boolean
-    + generarAlerta(m: Medicion): Alerta
-    + activar(): void
-    + desactivar(): void
+package "BC Alerts" #FCF3CF {
+  class Incident <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - assetId: Long
+    - deviceId: Long
+    - readingId: Long
+    - severity: IncidentSeverity
+    - status: IncidentStatus
   }
 
-  class Alerta {
-    - idAlerta: UUID
-    - idOrganizacion: UUID
-    - idRegla: UUID
-    - idSensor: UUID
-    - idActivo: UUID
-    - idMedicion: UUID
-    - tipo: TipoAlerta
-    - severidad: Severidad
-    - estado: EstadoAlerta
-    - fechaGeneracion: LocalDateTime
-    - fechaCierre: LocalDateTime
-    - mensaje: String
-    + generar(): void
-    + confirmar(idUsuario: UUID): void
-    + escalar(): void
-    + cerrar(accion: String): void
+  class Notification <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - incidentId: Long
+    - channel: NotificationChannel
+    - status: NotificationStatus
   }
 
-  enum TipoAlerta <<enum>> {
-    TEMPERATURA_ALTA
-    TEMPERATURA_BAJA
-    HUMEDAD_ALTA
-    HUMEDAD_BAJA
-    DESCONEXION_SENSOR
-    FALLA_HARDWARE
-  }
+  enum IncidentSeverity
+  enum IncidentStatus
+  enum NotificationChannel
+  enum NotificationStatus
 
-  enum Severidad <<enum>> {
-    BAJA
-    MEDIA
-    ALTA
-    CRITICA
-  }
-
-  enum EstadoAlerta <<enum>> {
-    ACTIVA
-    CONFIRMADA
-    EN_ATENCION
-    CERRADA
-  }
-
-  class Incidencia {
-    - idIncidencia: UUID
-    - idAlerta: UUID
-    - descripcion: String
-    - accionTomada: String
-    - idResponsable: UUID
-    - fechaAccion: LocalDateTime
-    + registrar(): void
-    + cerrar(): void
-  }
-
-  interface CanalNotificacion <<interfaz>> {
-    + enviar(destinatario: String, mensaje: String): boolean
-    + obtenerNombre(): String
-  }
-
-  class CanalEmail {
-    + enviar(destinatario: String, mensaje: String): boolean
-    + obtenerNombre(): String
-  }
-
-  class CanalPush {
-    + enviar(destinatario: String, mensaje: String): boolean
-    + obtenerNombre(): String
-  }
-
-  class CanalWhatsApp {
-    + enviar(destinatario: String, mensaje: String): boolean
-    + obtenerNombre(): String
-  }
-
-  class Notificacion {
-    - destinatario: String
-    - canal: String
-    - mensaje: String
-    - fechaEnvio: LocalDateTime
-    - entregada: boolean
-  }
-
-  Alerta "1" o-- "*" Incidencia
-  Alerta "1" o-- "*" Notificacion
-  Alerta ..> TipoAlerta
-  Alerta ..> Severidad
-  Alerta ..> EstadoAlerta
-  ReglaAlerta ..> TipoAlerta
-  ReglaAlerta ..> Severidad
-  ReglaAlerta ..> Alerta : "genera"
-  CanalEmail ..|> CanalNotificacion
-  CanalPush ..|> CanalNotificacion
-  CanalWhatsApp ..|> CanalNotificacion
+  Incident "1" <-- "*" Notification : incidentId
+  Incident ..> IncidentSeverity
+  Incident ..> IncidentStatus
+  Notification ..> NotificationChannel
+  Notification ..> NotificationStatus
 }
 
-' Contexto de reportes
-package "BC Reportes" #E8DAEF {
-
-  abstract class Reporte {
-    # idReporte: UUID
-    # idOrganizacion: UUID
-    # idUsuarioGenerador: UUID
-    # nombre: String
-    # tipo: TipoReporte
-    # fechaGeneracion: LocalDateTime
-    # rangoDesde: LocalDateTime
-    # rangoHasta: LocalDateTime
-    # formato: FormatoExportacion
-    + {abstract} generar(): void
-    + exportar(): byte[]
+package "BC Maintenance Management" #FDEBD0 {
+  class MaintenanceSchedule <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - assetId: Long
+    - scheduledDate: OffsetDateTime
+    - responsibleUserId: Long
+    - status: String
   }
 
-  class ReporteHistorico {
-    - idsActivos: List<UUID>
-    - mediciones: List<Medicion>
-    + calcularPromedio(): double
-    + detectarDesviaciones(): List<Medicion>
-    + generar(): void
+  class TechnicalServiceRequest <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - assetId: Long
+    - incidentId: Long
+    - priority: String
+    - status: String
+    - evidence: String
   }
-
-  class ReporteBitacora {
-    - incidencias: List<Incidencia>
-    + agregarIncidencia(i: Incidencia): void
-    + generar(): void
-  }
-
-  class ReporteCumplimiento {
-    - criterios: List<String>
-    - resultado: EstadoCumplimiento
-    + evaluarCumplimiento(): EstadoCumplimiento
-    + generar(): void
-  }
-
-  class Dashboard {
-    - idDashboard: UUID
-    - idOrganizacion: UUID
-    - idUsuario: UUID
-    - nombre: String
-    + agregarWidget(w: Widget): void
-    + actualizar(): void
-  }
-
-  class Widget {
-    - tipo: String
-    - titulo: String
-    - configuracion: Map<String, Object>
-  }
-
-  enum FormatoExportacion <<enum>> {
-    PDF
-    CSV
-    EXCEL
-  }
-
-  enum TipoReporte <<enum>> {
-    HISTORICO
-    BITACORA
-    CUMPLIMIENTO
-    DASHBOARD
-  }
-
-  Reporte <|-- ReporteHistorico
-  Reporte <|-- ReporteBitacora
-  Reporte <|-- ReporteCumplimiento
-  Reporte ..> FormatoExportacion
-  Reporte ..> TipoReporte
-  Dashboard "1" o-- "*" Widget
 }
 
-' Contexto de auditoría
-package "BC Auditoria" #FDEBD0 {
-
-  class Auditoria {
-    - idAuditoria: UUID
-    - idOrganizacion: UUID
-    - idAuditor: UUID
-    - tipo: TipoAuditoria
-    - fechaInicio: LocalDate
-    - fechaFin: LocalDate
-    - estado: EstadoAuditoria
-    - resultado: EstadoCumplimiento
-    + iniciar(): void
-    + validarCumplimiento(): EstadoCumplimiento
-    + cerrar(): void
+package "BC Reports" #E8DAEF {
+  class Report <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - uuid: String
+    - type: String
+    - title: String
+    - assetCount: Integer
+    - readingCount: Integer
+    - incidentCount: Integer
+    - compliancePercentage: Double
   }
-
-  class Evidencia {
-    - idEvidencia: UUID
-    - idAuditoria: UUID
-    - idReporte: UUID
-    - tipo: String
-    - ruta: String
-    - fechaCaptura: LocalDateTime
-    + adjuntar(): void
-    + exportar(): byte[]
-  }
-
-  class CriterioCumplimiento {
-    - idCriterio: UUID
-    - norma: String
-    - descripcion: String
-    - resultado: EstadoCumplimiento
-    + evaluar(): EstadoCumplimiento
-  }
-
-  enum TipoAuditoria <<enum>> {
-    INTERNA
-    DIGESA
-    MINSA
-  }
-
-  enum EstadoAuditoria <<enum>> {
-    PLANIFICADA
-    EN_CURSO
-    CERRADA
-  }
-
-  enum EstadoCumplimiento <<enum>> {
-    CONFORME
-    NO_CONFORME
-    PARCIAL
-    PENDIENTE
-  }
-
-  Auditoria "1" o-- "*" Evidencia
-  Auditoria "1" o-- "*" CriterioCumplimiento
-  Auditoria ..> TipoAuditoria
-  Auditoria ..> EstadoAuditoria
-  Auditoria ..> EstadoCumplimiento
 }
 
-' Relaciones entre contextos
+package "BC AI Assistance" #D7BDE2 {
+  class IncidentAiResolutionPlan <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - incidentId: Long
+    - status: AiPlanStatus
+    - generatedSummary: String
+    - probableCause: String
+    - correctiveActionDraft: String
+    - resolutionNotesDraft: String
+  }
 
-' Autenticacion  <-->  Gestion de Sensores
-Organizacion "1" o-- "*" Activo
-Organizacion "1" o-- "*" Gateway
-Usuario "1" --> "*" Activo
+  class AiReportSummary <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - reportId: Long
+    - summary: String
+    - generatedAt: OffsetDateTime
+  }
 
-' Gestion de Sensores  -->  Monitoreo
-Sensor "1" o-- "*" Medicion
-LecturaTemperatura ..> RangoTemperatura
-LecturaHumedad ..> RangoHumedad
+  enum AiPlanStatus
+  IncidentAiResolutionPlan ..> AiPlanStatus
+}
 
-' Monitoreo  -->  Alertas
-ReglaAlerta ..> Medicion
-Alerta "*" --> "1" Medicion
+package "BC Subscription & Billing" #D6DBDF {
+  class SubscriptionPlan <<Aggregate>> {
+    - id: Long
+    - code: PlanCode
+    - name: String
+    - monthlyPriceCents: Integer
+    - maxLocations: Integer
+    - maxAssets: Integer
+    - maxIoTDevices: Integer
+    - allowsAiGuidance: Boolean
+  }
 
-' Gestion de Sensores  <--  Alertas
-Alerta "*" --> "1" Activo
-Alerta "*" --> "1" Sensor
-ReglaAlerta "*" --> "1" Sensor
+  class OrganizationSubscription <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - planCode: PlanCode
+    - status: SubscriptionStatus
+    - providerCustomerId: String
+    - providerSubscriptionId: String
+  }
 
-' Autenticacion  <--  Alertas
-Incidencia "*" --> "1" Usuario
-Alerta "*" --> "0..1" Usuario
-PreferenciaNotificacion ..> CanalNotificacion
+  class BillingWebhookEvent <<Aggregate>> {
+    - id: Long
+    - providerEventId: String
+    - eventType: String
+    - processingStatus: String
+  }
 
-' Monitoreo  <--  Reportes
-ReporteHistorico "*" o-- "*" Medicion
+  class PlanCode <<ValueObject>>
+  enum SubscriptionStatus
+  SubscriptionPlan *-- PlanCode
+  OrganizationSubscription *-- PlanCode
+  OrganizationSubscription ..> SubscriptionStatus
+}
 
-' Alertas  <--  Reportes
-ReporteBitacora "*" o-- "*" Incidencia
+Organization "1" ..> "*" Location : organizationId
+Organization "1" ..> "*" Asset : organizationId
+Organization "1" ..> "*" Gateway : organizationId
+Organization "1" ..> "*" IoTDevice : organizationId
+Organization "1" ..> "*" SensorReading : organizationId
+Organization "1" ..> "*" Incident : organizationId
+Organization "1" ..> "*" MaintenanceSchedule : organizationId
+Organization "1" ..> "*" TechnicalServiceRequest : organizationId
+Organization "1" ..> "*" Report : organizationId
+Organization "1" ..> "*" IncidentAiResolutionPlan : organizationId
+Organization "1" ..> "*" AiReportSummary : organizationId
+Organization "1" ..> "*" OrganizationSubscription : organizationId
 
-' Autenticacion  <--  Reportes
-Reporte "*" --> "1" Usuario
-Reporte "*" --> "1" Organizacion
-Dashboard "*" --> "1" Usuario
-Dashboard "*" --> "1" Organizacion
-
-' Reportes  <--  Auditoria
-Evidencia "*" --> "1" Reporte
-Auditoria "*" ..> "*" ReporteCumplimiento
-
-' Autenticacion  <--  Auditoria
-Auditoria "*" --> "1" Usuario
-Auditoria "*" --> "1" Organizacion
+Asset "1" ..> "*" SensorReading : assetId
+IoTDevice "1" ..> "*" SensorReading : iotDeviceId
+SensorReading "0..1" ..> "*" Incident : readingId
+Incident "0..1" ..> "*" TechnicalServiceRequest : incidentId
+Asset "1" ..> "*" MaintenanceSchedule : assetId
+Asset "1" ..> "*" TechnicalServiceRequest : assetId
+Report ..> SensorReading : metrics
+Report ..> Incident : metrics
+Report ..> Asset : metrics
+IncidentAiResolutionPlan ..> Incident : incidentId
+AiReportSummary ..> Report : reportId
+OrganizationSubscription ..> SubscriptionPlan : planCode
+BillingWebhookEvent ..> OrganizationSubscription : provider ids
 
 @enduml

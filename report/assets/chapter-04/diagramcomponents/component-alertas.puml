@@ -1,62 +1,65 @@
-@startuml ColdTrace-Component-Alertas
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+@startuml
 
-title Component View - ColdTrace - Alertas Bounded Context
-caption Componentes del BC Alertas alineados con EP005
+title Component View - ColdTrace - Alerts BC
+caption Current backend package: com.acme.coldtrace.platform.alerts
 
-LAYOUT_WITH_LEGEND()
-LAYOUT_TOP_DOWN()
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
 
-' Entradas y servicios externos
-Container(gateway, "Gateway", "API Gateway", "Gateway de entrada para microservicios")
+actor "Web Application / API Client" as client
+database "MySQL\nincidents\nnotifications" as db
 
-Container_Ext(monitor_bc, "Monitoreo Bounded Context", "Spring Boot", "Publica lecturas fuera de rango para generar alertas")
+component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
+component "AssetManagementContextFacade" as asset_facade <<External ACL>>
+component "MonitoringContextFacade" as monitoring_facade <<External ACL>>
+component "Reports / Maintenance / AI Assistance" as other_bcs <<ACL consumers>>
 
-System_Ext(email, "Servicio de Correo Electronico", "Canal de alertas por correo [EP005]")
-System_Ext(push, "Servicio de Notificaciones Push", "Canal en tiempo real para alertas criticas [EP005]")
-System_Ext(whatsapp, "Servicio de Mensajeria WhatsApp", "Canal complementario de alertas criticas [EP005, Cap. I]")
+package "Alerts Bounded Context" #FCF3CF {
 
-' Componentes del contexto de alertas
-Container_Boundary(alerts, "Alertas Bounded Context") {
+  [IncidentsController] <<REST Controller>> as incidents_ctrl
+  [NotificationsController] <<REST Controller>> as notifications_ctrl
 
-    Component(ale_ctrl, "Alertas Controller", "Controller", "Controlador de alertas, incidencias y acciones [EP005]")
+  [IncidentCommandServiceImpl] <<Command Service>> as incident_cmd
+  [IncidentQueryServiceImpl] <<Query Service>> as incident_query
+  [NotificationQueryServiceImpl] <<Query Service>> as notification_query
+  [AlertsContextFacadeImpl] <<ACL Facade>> as alerts_facade
+  [IncidentOpenedEventHandler] <<Event Handler>> as incident_event_handler
 
-    Component(ale_monitor_facade, "Alertas Monitoreo Context Facade", "ContextFacade", "Recibe eventos de lecturas fuera de rango desde el BC Monitoreo")
-
-    Component(ale_cmd, "Alertas Command Service", "Service", "Recibe comandos de generacion, confirmacion, escalamiento y cierre de alertas e incidencias")
-
-    Component(ale_query, "Alertas Query Service", "Service", "Recibe consultas de alertas activas, historial, estados y acciones tomadas")
-
-    Component(ale_repo, "Alertas Repositorio", "Repository", "Repositorio de alertas, incidencias, estados y acciones")
-
-    Component(ale_email_ext, "Alertas Email External Service", "ExternalService", "Reenvia alertas criticas por correo")
-
-    Component(ale_push_ext, "Alertas Push External Service", "ExternalService", "Reenvia notificaciones push en tiempo real")
-
-    Component(ale_wa_ext, "Alertas WhatsApp External Service", "ExternalService", "Reenvia alertas criticas por mensajeria WhatsApp")
+  [IncidentRepository] <<Domain Repository>> as incident_repo
+  [NotificationRepository] <<Domain Repository>> as notification_repo
+  [JPA repository adapters\nPersistence assemblers\nJPA entities] <<Infrastructure>> as persistence
 }
 
-ContainerDb(db_alerts, "DB Alertas", "PostgreSQL", "Alertas activas, incidencias, estados y acciones tomadas")
+client --> incidents_ctrl : /organizations/{id}/incidents
+client --> notifications_ctrl : /organizations/{id}/notifications
 
-' Relaciones principales
-Rel(gateway, ale_ctrl, "Redirige a alertas")
+incidents_ctrl --> incident_cmd : create/ack/escalate/correct/resolve
+incidents_ctrl --> incident_query : list / get
+incidents_ctrl --> notification_query : incident notifications
+notifications_ctrl --> notification_query : organization notifications
 
-Rel(monitor_bc, ale_monitor_facade, "Publica desviaciones")
-Rel(ale_monitor_facade, ale_cmd, "Dispara generacion de alerta")
+incident_cmd --> identity_facade : validates organization/user
+incident_cmd --> asset_facade : validates asset/device
+incident_cmd --> monitoring_facade : validates reading
+incident_query --> identity_facade
+notification_query --> identity_facade
 
-Rel(ale_ctrl, ale_cmd, "Envia comandos")
-Rel(ale_ctrl, ale_query, "Envia consultas")
+incident_cmd --> incident_repo
+incident_cmd --> notification_repo : app notification read models
+incident_query --> incident_repo
+notification_query --> notification_repo
+notification_query --> incident_repo
 
-Rel(ale_cmd, ale_repo, "Llamada a repositorio")
-Rel(ale_query, ale_repo, "Llamada a repositorio")
-Rel(ale_repo, db_alerts, "Lee / Escribe", "JDBC")
+incident_repo --> incident_event_handler : publishes IncidentOpenedEvent
+incident_event_handler --> [IncidentOpenedIntegrationEvent]
 
-Rel(ale_cmd, ale_email_ext, "Solicita envio de correo")
-Rel(ale_cmd, ale_push_ext, "Solicita envio push")
-Rel(ale_cmd, ale_wa_ext, "Solicita envio WhatsApp")
+alerts_facade --> incident_repo
+other_bcs ..> alerts_facade : fetch incident snapshots and apply approved lifecycle actions
 
-Rel(ale_email_ext, email, "Envia alerta", "SMTP / REST")
-Rel(ale_push_ext, push, "Envia notificacion", "Web Push / FCM")
-Rel(ale_wa_ext, whatsapp, "Envia mensaje", "REST")
+incident_repo --> persistence
+notification_repo --> persistence
+persistence --> db : Spring Data JPA
 
 @enduml

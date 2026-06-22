@@ -1,384 +1,443 @@
-@startuml ColdTrace-ERD
+@startuml
 
-title ColdTrace - Diagrama Entidad-Relacion (3FN)
-caption Modelo relacional normalizado hasta Tercera Forma Normal, agrupado por Bounded Context
+title ColdTrace - Entity-Relationship Diagram - Backend Target
+caption MySQL schema inferred from current JPA persistence entities and Sprint 4 target entities
 
 hide circle
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 40
 skinparam ranksep 55
+skinparam shadowing false
 
-' Tablas del contexto de autenticación
+' Shared persistence base
+' Every JPA entity extends AuditableAbstractPersistenceEntity:
+' id BIGINT PK, created_at DATETIME(6), updated_at DATETIME(6)
 
-entity "organizaciones" as organizaciones #D6EAF8 {
-  * id_organizacion : UUID <<PK>>
+' Identity & Access
+entity "organizations" as organizations #D6EAF8 {
+  * id : BIGINT <<PK>>
   --
-  razon_social : VARCHAR(150) NOT NULL
-  ruc : VARCHAR(11) NOT NULL <<UK>>
-  direccion : VARCHAR(255)
-  fecha_registro : TIMESTAMP NOT NULL
-}
-
-entity "suscripciones" as suscripciones #D6EAF8 {
-  * id_suscripcion : UUID <<PK>>
-  --
-  # id_organizacion : UUID <<FK, UK>>
-  plan : VARCHAR(50) NOT NULL
-  estado : VARCHAR(20) NOT NULL
-  fecha_inicio : DATE NOT NULL
-  fecha_fin : DATE
-}
-
-entity "usuarios" as usuarios #D6EAF8 {
-  * id_usuario : UUID <<PK>>
-  --
-  # id_organizacion : UUID <<FK>>
-  email : VARCHAR(100) NOT NULL <<UK>>
-  nombre_usuario : VARCHAR(50) NOT NULL <<UK>>
-  password_hash : VARCHAR(255) NOT NULL
-  estado : VARCHAR(30) NOT NULL
-  fecha_creacion : TIMESTAMP NOT NULL
-  fecha_verificacion : TIMESTAMP
-}
-
-entity "sesiones" as sesiones #D6EAF8 {
-  * id_sesion : UUID <<PK>>
-  --
-  # id_usuario : UUID <<FK>>
-  token : VARCHAR(255) NOT NULL <<UK>>
-  creada_en : TIMESTAMP NOT NULL
-  expira_en : TIMESTAMP NOT NULL
-  activa : BOOLEAN NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  legal_name : VARCHAR NOT NULL
+  commercial_name : VARCHAR NOT NULL
+  tax_id : VARCHAR
+  contact_email : VARCHAR NOT NULL
 }
 
 entity "roles" as roles #D6EAF8 {
-  * id_rol : UUID <<PK>>
+  * id : BIGINT <<PK>>
   --
-  nombre : VARCHAR(50) NOT NULL <<UK>>
-  descripcion : VARCHAR(255)
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  name : VARCHAR NOT NULL <<UK>>
+  label : VARCHAR NOT NULL
 }
 
-entity "permisos" as permisos #D6EAF8 {
-  * id_permiso : UUID <<PK>>
+entity "role_permissions" as role_permissions #D6EAF8 {
+  * role_id : BIGINT <<FK>>
+  * id : BIGINT
   --
-  recurso : VARCHAR(50) NOT NULL
-  accion : VARCHAR(30) NOT NULL
-  descripcion : VARCHAR(255)
-  --
-  UK (recurso, accion)
+  resource : VARCHAR
+  action : VARCHAR
+  description : VARCHAR
 }
 
-entity "usuario_rol" as usuario_rol #D6EAF8 {
-  * # id_usuario : UUID <<PK, FK>>
-  * # id_rol : UUID <<PK, FK>>
+entity "users" as users #D6EAF8 {
+  * id : BIGINT <<PK>>
   --
-  fecha_asignacion : TIMESTAMP NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  uuid : VARCHAR
+  organization_user_id : BIGINT
+  first_name : VARCHAR NOT NULL
+  last_name : VARCHAR NOT NULL
+  email : VARCHAR NOT NULL <<UK>>
+  organization_id : BIGINT <<logical FK>>
+  role_id : BIGINT <<logical FK>>
 }
 
-entity "rol_permiso" as rol_permiso #D6EAF8 {
-  * # id_rol : UUID <<PK, FK>>
-  * # id_permiso : UUID <<PK, FK>>
-}
-
-entity "preferencias_notificacion" as preferencias_notificacion #D6EAF8 {
-  * id_preferencia : UUID <<PK>>
+' Asset Management
+entity "locations" as locations #FADBD8 {
+  * id : BIGINT <<PK>>
   --
-  # id_usuario : UUID <<FK, UK>>
-  horario_inicio : TIME NOT NULL
-  horario_fin : TIME NOT NULL
-  severidad_minima : VARCHAR(20) NOT NULL
-}
-
-entity "preferencia_canal" as preferencia_canal #D6EAF8 {
-  * # id_preferencia : UUID <<PK, FK>>
-  * canal : VARCHAR(20) <<PK>>
-}
-
-' Tablas del contexto de gestión de sensores
-
-entity "activos" as activos #FADBD8 {
-  * id_activo : UUID <<PK>>
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  name : VARCHAR NOT NULL
+  type : VARCHAR NOT NULL
+  address : VARCHAR
+  description : VARCHAR
+  status : VARCHAR NOT NULL
   --
-  # id_organizacion : UUID <<FK>>
-  nombre : VARCHAR(100) NOT NULL
-  descripcion : VARCHAR(255)
-  tipo : VARCHAR(30) NOT NULL
-  estado : VARCHAR(30) NOT NULL
-  ubic_direccion : VARCHAR(255)
-  ubic_latitud : DECIMAL(9,6)
-  ubic_longitud : DECIMAL(9,6)
-  ubic_es_movil : BOOLEAN NOT NULL
+  UK (organization_id, name)
+}
+
+entity "assets" as assets #FADBD8 {
+  * id : BIGINT <<PK>>
+  --
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  location_id : BIGINT <<logical FK>>
+  uuid : VARCHAR NOT NULL
+  type : VARCHAR NOT NULL
+  name : VARCHAR NOT NULL
+  capacity : DOUBLE NOT NULL
+  description : VARCHAR
+  status : VARCHAR NOT NULL
+  --
+  UK (organization_id, uuid)
 }
 
 entity "gateways" as gateways #FADBD8 {
-  * id_gateway : UUID <<PK>>
+  * id : BIGINT <<PK>>
   --
-  modelo : VARCHAR(50) NOT NULL
-  ip : VARCHAR(45)
-  protocolo : VARCHAR(20) NOT NULL
-  estado : VARCHAR(20) NOT NULL
-}
-
-entity "sensores" as sensores #FADBD8 {
-  * id_sensor : UUID <<PK>>
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  location_id : BIGINT <<logical FK>>
+  uuid : VARCHAR NOT NULL
+  name : VARCHAR NOT NULL
+  network : VARCHAR NOT NULL
+  status : VARCHAR NOT NULL
   --
-  # id_activo : UUID <<FK>>
-  # id_gateway : UUID <<FK>>
-  modelo : VARCHAR(50) NOT NULL
-  tipo : VARCHAR(30) NOT NULL
-  frecuencia_lectura_seg : INT NOT NULL
-  estado : VARCHAR(20) NOT NULL
+  UK (organization_id, uuid)
 }
 
-entity "sensor_rango_temperatura" as sensor_rango_temperatura #FADBD8 {
-  * # id_sensor : UUID <<PK, FK>>
+entity "iot_devices" as iot_devices #FADBD8 {
+  * id : BIGINT <<PK>>
   --
-  min_celsius : DECIMAL(5,2) NOT NULL
-  max_celsius : DECIMAL(5,2) NOT NULL
-}
-
-entity "sensor_rango_humedad" as sensor_rango_humedad #FADBD8 {
-  * # id_sensor : UUID <<PK, FK>>
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  gateway_id : BIGINT <<logical FK>>
+  uuid : VARCHAR NOT NULL
+  device_type : VARCHAR NOT NULL
+  model : VARCHAR NOT NULL
+  measurement_type : VARCHAR NOT NULL
+  reading_frequency_seconds : INT NOT NULL
+  asset_id : BIGINT <<logical FK, NULL>>
+  status : VARCHAR NOT NULL
+  calibration_status : VARCHAR NOT NULL
+  last_calibration_date : DATE NOT NULL
+  next_calibration_date : DATE NOT NULL
   --
-  min_porcentaje : DECIMAL(5,2) NOT NULL
-  max_porcentaje : DECIMAL(5,2) NOT NULL
+  UK (organization_id, uuid)
 }
 
-' Tablas del contexto de monitoreo
+entity "iot_device_measurement_parameters" as iot_device_measurement_parameters #FADBD8 {
+  * iot_device_id : BIGINT <<FK>>
+  * measurement_parameter : VARCHAR
+}
 
-entity "mediciones" as mediciones #D5F5E3 {
-  * id_medicion : UUID <<PK>>
+entity "asset_settings" as asset_settings #FADBD8 {
+  * id : BIGINT <<PK>>
   --
-  # id_sensor : UUID <<FK>>
-  timestamp : TIMESTAMP NOT NULL
-  tipo : VARCHAR(20) NOT NULL
-  valor : DECIMAL(8,3) NOT NULL
-  estado : VARCHAR(20) NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  asset_id : BIGINT <<logical FK, NULL>>
+  uuid : VARCHAR NOT NULL
+  minimum_temperature : DOUBLE NOT NULL
+  maximum_temperature : DOUBLE NOT NULL
+  minimum_humidity : DOUBLE NOT NULL
+  maximum_humidity : DOUBLE NOT NULL
+  calibration_frequency_days : INT NOT NULL
+  temperature_unit : VARCHAR NOT NULL
+  humidity_unit : VARCHAR NOT NULL
+  weight_unit : VARCHAR NOT NULL
+  reading_frequency_seconds : INT NOT NULL
+  alert_threshold_minutes : INT NOT NULL
 }
 
-' Tablas del contexto de alertas
+entity "asset_settings_asset_types" as asset_settings_asset_types #FADBD8 {
+  * asset_settings_id : BIGINT <<FK>>
+  * asset_type : VARCHAR
+}
 
-entity "reglas_alerta" as reglas_alerta #FCF3CF {
-  * id_regla : UUID <<PK>>
+entity "asset_settings_iot_device_types" as asset_settings_iot_device_types #FADBD8 {
+  * asset_settings_id : BIGINT <<FK>>
+  * iot_device_type : VARCHAR
+}
+
+' Monitoring
+entity "sensor_readings" as sensor_readings #D5F5E3 {
+  * id : BIGINT <<PK>>
   --
-  # id_sensor : UUID <<FK>>
-  tipo : VARCHAR(30) NOT NULL
-  umbral_valor : DECIMAL(8,3) NOT NULL
-  duracion_min_seg : INT NOT NULL
-  severidad : VARCHAR(20) NOT NULL
-  activa : BOOLEAN NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  asset_id : BIGINT <<logical FK>>
+  iot_device_id : BIGINT <<logical FK>>
+  gateway_id : BIGINT <<logical FK>>
+  location_id : BIGINT <<logical FK>>
+  temperature : DOUBLE
+  humidity : DOUBLE
+  out_of_range : BOOLEAN NOT NULL
+  recorded_at : DATETIME NOT NULL
+  motion_detected : BOOLEAN
+  image_captured : BOOLEAN
+  battery_level : INT
+  signal_strength : INT
 }
 
-entity "evaluacion_alerta" as evaluacion_alerta #FCF3CF {
-  * id_evaluacion : UUID <<PK>>
+' Alerts
+entity "incidents" as incidents #FCF3CF {
+  * id : BIGINT <<PK>>
   --
-  # id_regla : UUID <<FK, NOT NULL>>
-  # id_medicion : UUID <<FK, NOT NULL>>
-  fecha_evaluacion : TIMESTAMP NOT NULL
-  cumple_regla : BOOLEAN NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  asset_id : BIGINT <<logical FK, NULL>>
+  device_id : BIGINT <<logical FK, NULL>>
+  reading_id : BIGINT <<logical FK, NULL>>
+  asset_name : VARCHAR
+  device_name : VARCHAR
+  type : VARCHAR NOT NULL
+  severity : VARCHAR NOT NULL
+  status : VARCHAR NOT NULL
+  value : VARCHAR
+  detected_at : DATETIME NOT NULL
+  acknowledged_at : DATETIME
+  acknowledged_by : VARCHAR
+  escalated_at : DATETIME
+  escalated_by : VARCHAR
+  escalation_reason : VARCHAR
+  corrective_action_registered_at : DATETIME
+  corrective_action_registered_by : VARCHAR
+  corrective_action : VARCHAR
+  resolved_at : DATETIME
+  resolved_by : VARCHAR
+  resolution_notes : VARCHAR
+  last_notification_status : VARCHAR
+  last_notification_at : DATETIME
+  notification_count : INT
 }
 
-entity "alertas" as alertas #FCF3CF {
-  * id_alerta : UUID <<PK>>
+entity "notifications" as notifications #FCF3CF {
+  * id : BIGINT <<PK>>
   --
-  # id_evaluacion : UUID <<FK, UK, NOT NULL>>
-  # id_usuario_confirmacion : UUID <<FK, NULL>>
-  tipo : VARCHAR(30) NOT NULL
-  severidad : VARCHAR(20) NOT NULL
-  estado : VARCHAR(20) NOT NULL
-  fecha_generacion : TIMESTAMP NOT NULL
-  fecha_cierre : TIMESTAMP
-  mensaje : VARCHAR(500)
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  incident_id : BIGINT <<logical FK>>
+  channel : VARCHAR NOT NULL
+  recipient : VARCHAR
+  message : VARCHAR NOT NULL
+  status : VARCHAR NOT NULL
+  delivered_at : DATETIME
+  failure_reason : VARCHAR
 }
 
-entity "incidencias" as incidencias #FCF3CF {
-  * id_incidencia : UUID <<PK>>
+' Maintenance Management
+entity "maintenance_schedules" as maintenance_schedules #FDEBD0 {
+  * id : BIGINT <<PK>>
   --
-  # id_alerta : UUID <<FK>>
-  # id_responsable : UUID <<FK>>
-  descripcion : VARCHAR(500) NOT NULL
-  accion_tomada : VARCHAR(500)
-  fecha_accion : TIMESTAMP NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  uuid : VARCHAR NOT NULL
+  asset_id : BIGINT <<logical FK>>
+  scheduled_date : DATETIME NOT NULL
+  frequency_days : INT
+  responsible_user_id : BIGINT <<logical FK, NULL>>
+  observations : VARCHAR(1000)
+  status : VARCHAR NOT NULL
+  registered_at : DATETIME NOT NULL
 }
 
-entity "notificaciones" as notificaciones #FCF3CF {
-  * id_notificacion : UUID <<PK>>
+entity "technical_service_requests" as technical_service_requests #FDEBD0 {
+  * id : BIGINT <<PK>>
   --
-  # id_alerta : UUID <<FK>>
-  destinatario : VARCHAR(100) NOT NULL
-  canal : VARCHAR(20) NOT NULL
-  mensaje : VARCHAR(500) NOT NULL
-  fecha_envio : TIMESTAMP NOT NULL
-  entregada : BOOLEAN NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  code : VARCHAR NOT NULL
+  asset_id : BIGINT <<logical FK>>
+  asset_location_id : BIGINT <<logical FK>>
+  asset_name : VARCHAR NOT NULL
+  incident_id : BIGINT <<logical FK, NULL>>
+  issue_description : VARCHAR(1000) NOT NULL
+  priority : VARCHAR NOT NULL
+  status : VARCHAR NOT NULL
+  requested_by : VARCHAR
+  requested_at : DATETIME NOT NULL
+  closed_at : DATETIME
+  closure_summary : VARCHAR(1000)
+  evidence : VARCHAR(1000)
+  closed_by : VARCHAR
 }
 
-' Tablas del contexto de reportes
-
-entity "reportes" as reportes #E8DAEF {
-  * id_reporte : UUID <<PK>>
+' Reports
+entity "reports" as reports #E8DAEF {
+  * id : BIGINT <<PK>>
   --
-  # id_organizacion : UUID <<FK>>
-  nombre : VARCHAR(100) NOT NULL
-  tipo : VARCHAR(20) NOT NULL
-  rango_desde : TIMESTAMP NOT NULL
-  rango_hasta : TIMESTAMP NOT NULL
-  formato : VARCHAR(10) NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  uuid : VARCHAR NOT NULL
+  type : VARCHAR NOT NULL
+  title : VARCHAR NOT NULL
+  period_start : DATETIME NOT NULL
+  period_end : DATETIME NOT NULL
+  generated_at : DATETIME NOT NULL
+  asset_count : INT NOT NULL
+  reading_count : INT NOT NULL
+  out_of_range_reading_count : INT NOT NULL
+  incident_count : INT NOT NULL
+  open_incident_count : INT NOT NULL
+  average_temperature : DOUBLE
+  average_humidity : DOUBLE
+  compliance_percentage : DOUBLE
 }
 
-entity "reporte_generacion" as reporte_generacion #E8DAEF {
-  * # id_reporte : UUID <<PK, FK>>
+' AI Assistance
+entity "incident_ai_resolution_plans" as incident_ai_resolution_plans #D7BDE2 {
+  * id : BIGINT <<PK>>
   --
-  # id_usuario : UUID <<FK>>
-  fecha_generacion : TIMESTAMP NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  incident_id : BIGINT <<logical FK>>
+  status : VARCHAR NOT NULL
+  generated_summary : VARCHAR(2000) NOT NULL
+  probable_cause : VARCHAR(1000)
+  recommended_steps : JSON
+  corrective_action_draft : VARCHAR(1000)
+  resolution_notes_draft : VARCHAR(1000)
+  escalation_recommendation : VARCHAR(1000)
+  required_evidence : JSON
+  uncertainty_notes : VARCHAR(1000)
+  model_provider : VARCHAR NOT NULL
+  model_name : VARCHAR
+  generated_at : DATETIME NOT NULL
+  approved_by : VARCHAR
+  approved_at : DATETIME
+  final_corrective_action : VARCHAR(1000)
+  final_resolution_notes : VARCHAR(1000)
+  rejected_by : VARCHAR
+  rejected_at : DATETIME
+  rejection_reason : VARCHAR(1000)
 }
 
-entity "reportes_cumplimiento" as reportes_cumplimiento #E8DAEF {
-  * # id_reporte : UUID <<PK, FK>>
+entity "ai_report_summaries" as ai_report_summaries #D7BDE2 {
+  * id : BIGINT <<PK>>
   --
-  resultado : VARCHAR(20) NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  report_id : BIGINT <<logical FK>>
+  summary : VARCHAR(2000) NOT NULL
+  risks : JSON
+  recommended_follow_up : JSON
+  model_provider : VARCHAR NOT NULL
+  model_name : VARCHAR
+  generated_at : DATETIME NOT NULL
 }
 
-entity "reporte_activo" as reporte_activo #E8DAEF {
-  * # id_reporte : UUID <<PK, FK>>
-  * # id_activo : UUID <<PK, FK>>
-}
-
-entity "reporte_medicion" as reporte_medicion #E8DAEF {
-  * # id_reporte : UUID <<PK, FK>>
-  * # id_medicion : UUID <<PK, FK>>
-}
-
-entity "reporte_incidencia" as reporte_incidencia #E8DAEF {
-  * # id_reporte : UUID <<PK, FK>>
-  * # id_incidencia : UUID <<PK, FK>>
-}
-
-entity "reporte_criterio" as reporte_criterio #E8DAEF {
-  * # id_reporte : UUID <<PK, FK>>
-  * criterio : VARCHAR(100) <<PK>>
-}
-
-entity "dashboards" as dashboards #E8DAEF {
-  * id_dashboard : UUID <<PK>>
+' Subscription & Billing
+entity "subscription_plans" as subscription_plans #D6DBDF {
+  * id : BIGINT <<PK>>
   --
-  # id_usuario : UUID <<FK>>
-  nombre : VARCHAR(100) NOT NULL
-  fecha_creacion : TIMESTAMP NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  code : VARCHAR NOT NULL <<UK>>
+  name : VARCHAR NOT NULL
+  description : VARCHAR(1000)
+  currency : VARCHAR NOT NULL
+  monthly_price_cents : INT NOT NULL
+  stripe_price_id : VARCHAR
+  recommended : BOOLEAN NOT NULL
+  active : BOOLEAN NOT NULL
+  max_locations : INT
+  max_assets : INT
+  max_iot_devices : INT
+  max_users : INT
+  history_retention_days : INT
+  allows_exports : BOOLEAN NOT NULL
+  allows_maintenance : BOOLEAN NOT NULL
+  allows_ai_guidance : BOOLEAN NOT NULL
+  allows_ai_report_summary : BOOLEAN NOT NULL
 }
 
-entity "widgets" as widgets #E8DAEF {
-  * id_widget : UUID <<PK>>
+entity "organization_subscriptions" as organization_subscriptions #D6DBDF {
+  * id : BIGINT <<PK>>
   --
-  # id_dashboard : UUID <<FK>>
-  tipo : VARCHAR(30) NOT NULL
-  titulo : VARCHAR(100) NOT NULL
-  configuracion : JSON
-  orden : INT NOT NULL
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  plan_code : VARCHAR <<logical FK>>
+  status : VARCHAR NOT NULL
+  provider : VARCHAR NOT NULL
+  provider_customer_id : VARCHAR
+  provider_subscription_id : VARCHAR
+  current_period_start : DATETIME
+  current_period_end : DATETIME
+  cancel_at_period_end : BOOLEAN NOT NULL
 }
 
-' Tablas del contexto de auditoría
-
-entity "auditorias" as auditorias #FDEBD0 {
-  * id_auditoria : UUID <<PK>>
+entity "billing_webhook_events" as billing_webhook_events #D6DBDF {
+  * id : BIGINT <<PK>>
   --
-  # id_organizacion : UUID <<FK>>
-  tipo : VARCHAR(20) NOT NULL
-  fecha_inicio : DATE NOT NULL
-  fecha_fin : DATE
-  estado : VARCHAR(20) NOT NULL
-  resultado : VARCHAR(20)
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  provider : VARCHAR NOT NULL
+  provider_event_id : VARCHAR NOT NULL <<UK>>
+  event_type : VARCHAR NOT NULL
+  received_at : DATETIME NOT NULL
+  processed_at : DATETIME
+  processing_status : VARCHAR NOT NULL
 }
 
-entity "auditoria_responsable" as auditoria_responsable #FDEBD0 {
-  * # id_auditoria : UUID <<PK, FK>>
-  --
-  # id_usuario : UUID <<FK>>
-  fecha_asignacion : TIMESTAMP NOT NULL
-}
+organizations ||..o{ users : organization_id
+roles ||..o{ users : role_id
+roles ||--o{ role_permissions : role_id
 
-entity "evidencias" as evidencias #FDEBD0 {
-  * id_evidencia : UUID <<PK>>
-  --
-  # id_auditoria : UUID <<FK>>
-  # id_reporte : UUID <<FK>>
-  tipo : VARCHAR(30) NOT NULL
-  ruta : VARCHAR(500) NOT NULL
-  fecha_captura : TIMESTAMP NOT NULL
-}
+organizations ||..o{ locations : organization_id
+organizations ||..o{ assets : organization_id
+locations ||..o{ assets : location_id
+organizations ||..o{ gateways : organization_id
+locations ||..o{ gateways : location_id
+organizations ||..o{ iot_devices : organization_id
+gateways ||..o{ iot_devices : gateway_id
+assets ||..o{ iot_devices : asset_id
+iot_devices ||--o{ iot_device_measurement_parameters : iot_device_id
+organizations ||..o{ asset_settings : organization_id
+assets ||..o{ asset_settings : asset_id
+asset_settings ||--o{ asset_settings_asset_types : asset_settings_id
+asset_settings ||--o{ asset_settings_iot_device_types : asset_settings_id
 
-entity "criterios_cumplimiento" as criterios_cumplimiento #FDEBD0 {
-  * id_criterio : UUID <<PK>>
-  --
-  # id_auditoria : UUID <<FK>>
-  norma : VARCHAR(100) NOT NULL
-  descripcion : VARCHAR(500)
-  resultado : VARCHAR(20) NOT NULL
-}
+organizations ||..o{ sensor_readings : organization_id
+assets ||..o{ sensor_readings : asset_id
+iot_devices ||..o{ sensor_readings : iot_device_id
+gateways ||..o{ sensor_readings : gateway_id
+locations ||..o{ sensor_readings : location_id
 
-' Relaciones entre tablas
+organizations ||..o{ incidents : organization_id
+assets ||..o{ incidents : asset_id
+iot_devices ||..o{ incidents : device_id
+sensor_readings ||..o{ incidents : reading_id
+organizations ||..o{ notifications : organization_id
+incidents ||..o{ notifications : incident_id
 
-' Relaciones del contexto de autenticación
-organizaciones ||--|| suscripciones
-organizaciones ||--o{ usuarios
-usuarios ||--o{ sesiones
-usuarios ||--|| preferencias_notificacion
-preferencias_notificacion ||--o{ preferencia_canal
-usuarios ||--o{ usuario_rol
-roles ||--o{ usuario_rol
-roles ||--o{ rol_permiso
-permisos ||--o{ rol_permiso
+organizations ||..o{ maintenance_schedules : organization_id
+assets ||..o{ maintenance_schedules : asset_id
+users ||..o{ maintenance_schedules : responsible_user_id
+organizations ||..o{ technical_service_requests : organization_id
+assets ||..o{ technical_service_requests : asset_id
+locations ||..o{ technical_service_requests : asset_location_id
+incidents ||..o{ technical_service_requests : incident_id
 
-' Relaciones del contexto de gestión de sensores
-organizaciones ||--o{ activos
-activos ||--o{ sensores
-gateways ||--o{ sensores
-sensores ||--o| sensor_rango_temperatura
-sensores ||--o| sensor_rango_humedad
+organizations ||..o{ reports : organization_id
 
-' Relaciones del contexto de monitoreo
-sensores ||--o{ mediciones
+organizations ||..o{ incident_ai_resolution_plans : organization_id
+incidents ||..o{ incident_ai_resolution_plans : incident_id
+organizations ||..o{ ai_report_summaries : organization_id
+reports ||..o{ ai_report_summaries : report_id
 
-' Relaciones del contexto de alertas
-sensores ||--o{ reglas_alerta
-reglas_alerta ||--o{ evaluacion_alerta
-mediciones ||--o{ evaluacion_alerta
-evaluacion_alerta ||--o| alertas
-usuarios ||--o{ alertas
-alertas ||--o{ incidencias
-usuarios ||--o{ incidencias
-alertas ||--o{ notificaciones
-
-' Relaciones del contexto de reportes
-organizaciones ||--o{ reportes
-reportes ||--|| reporte_generacion
-usuarios ||--o{ reporte_generacion
-reportes ||--o| reportes_cumplimiento
-reportes ||--o{ reporte_activo
-activos ||--o{ reporte_activo
-reportes ||--o{ reporte_medicion
-mediciones ||--o{ reporte_medicion
-reportes ||--o{ reporte_incidencia
-incidencias ||--o{ reporte_incidencia
-reportes ||--o{ reporte_criterio
-usuarios ||--o{ dashboards
-dashboards ||--o{ widgets
-
-' Relaciones del contexto de auditoría
-organizaciones ||--o{ auditorias
-auditorias ||--|| auditoria_responsable
-usuarios ||--o{ auditoria_responsable
-auditorias ||--o{ evidencias
-reportes ||--o{ evidencias
-auditorias ||--o{ criterios_cumplimiento
-
-note right of evaluacion_alerta
-Regla de integridad de dominio:
-la regla y la medicion de una
-evaluacion deben corresponder
-al mismo sensor.
-Se valida en la capa de dominio
-o con soporte especifico del motor.
-end note
+organizations ||..o{ organization_subscriptions : organization_id
+subscription_plans ||..o{ organization_subscriptions : plan_code
 
 @enduml

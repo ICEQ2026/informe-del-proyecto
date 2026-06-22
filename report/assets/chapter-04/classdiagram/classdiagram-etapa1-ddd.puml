@@ -1,571 +1,356 @@
-@startuml ColdTrace-ClassDiagram-Stage1-DDD
+@startuml
 
-title Etapa 1: Diagrama de Clases con enfoque DDD - ColdTrace
+title Stage 1: DDD-oriented Class Diagram - ColdTrace Backend Target
 
 skinparam classAttributeIconSize 0
-skinparam nodesep 50
-skinparam ranksep 50
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+skinparam shadowing false
 
-' Contexto de autenticación
-
-class Usuario {
-  - id: UUID
-  - idOrganizacion: UUID
-  - email: String
-  - nombreUsuario: String
-  - passwordHash: String
-  - estado: EstadoUsuario
-  - fechaCreacion: LocalDateTime
-  - fechaVerificacion: LocalDateTime
-  + registrar(): void
-  + verificarCuenta(token: String): boolean
-  + iniciarSesion(pwd: String): Sesion
-  + cerrarSesion(): void
-  + solicitarRecuperacion(): void
-  + asignarRol(rol: Rol): void
+' Identity & Access
+class Organization <<Aggregate>> #D6EAF8 {
+  - id: Long
+  - legalName: String
+  - commercialName: String
+  - taxId: String
+  - contactEmail: EmailAddress
 }
 
-class Sesion {
-  - idSesion: UUID
-  - token: String
-  - creadaEn: LocalDateTime
-  - expiraEn: LocalDateTime
-  + estaVigente(): boolean
-  + invalidar(): void
+class User <<Aggregate>> #D6EAF8 {
+  - id: Long
+  - uuid: String
+  - organizationUserId: Long
+  - firstName: String
+  - lastName: String
+  - email: EmailAddress
+  - organizationId: Long
+  - roleId: Long
+  + assignRole(command): void
 }
 
-class Rol {
-  - idRol: UUID
-  - nombre: String
-  - descripcion: String
+class Role <<Aggregate>> #D6EAF8 {
+  - id: Long
+  - name: RoleName
+  - label: String
+  - permissions: List<Permission>
 }
 
-class Permiso {
-  - nombre: String
-  - recurso: String
-  - accion: String
+class EmailAddress <<ValueObject>> #FCF3CF
+class RoleName <<ValueObject>> #FCF3CF
+class Permission <<ValueObject>> #FCF3CF {
+  - id: Long
+  - resource: String
+  - action: String
+  - description: String
 }
 
-enum EstadoUsuario <<enum>> {
-  PENDIENTE_VERIFICACION
-  ACTIVO
-  SUSPENDIDO
-  ELIMINADO
+' Asset Management
+class Location <<Aggregate>> #FADBD8 {
+  - id: Long
+  - organizationId: Long
+  - name: LocationName
+  - type: String
+  - address: String
+  - description: String
+  - status: String
 }
 
-class Organizacion {
-  - idOrganizacion: UUID
-  - razonSocial: String
-  - ruc: String
-  - direccion: String
-  + agregarUsuario(u: Usuario): void
-  + eliminarUsuario(id: UUID): void
+class Asset <<Aggregate>> #FADBD8 {
+  - id: Long
+  - organizationId: Long
+  - locationId: Long
+  - uuid: AssetUuid
+  - type: String
+  - name: String
+  - capacity: Double
+  - description: String
+  - status: String
 }
 
-class Suscripcion {
-  - idSuscripcion: UUID
-  - plan: String
-  - estado: EstadoSuscripcion
-  - fechaInicio: LocalDate
-  - fechaFin: LocalDate
-  + estaVigente(): boolean
-  + renovar(): void
-  + cancelar(): void
+class Gateway <<Aggregate>> #FADBD8 {
+  - id: Long
+  - organizationId: Long
+  - locationId: Long
+  - uuid: GatewayUuid
+  - name: String
+  - network: String
+  - status: String
 }
 
-enum EstadoSuscripcion <<enum>> {
-  ACTIVA
-  VENCIDA
-  CANCELADA
-  EN_PRUEBA
+class IoTDevice <<Aggregate>> #FADBD8 {
+  - id: Long
+  - organizationId: Long
+  - gatewayId: Long
+  - uuid: IoTDeviceUuid
+  - deviceType: String
+  - model: String
+  - measurementType: String
+  - measurementParameters: List<String>
+  - readingFrequencySeconds: Integer
+  - assetId: Long
+  - status: String
+  - calibrationStatus: String
 }
 
-class PreferenciaNotificacion {
-  - idPreferencia: UUID
-  - canalesHabilitados: Set<String>
-  - horarioInicio: LocalTime
-  - horarioFin: LocalTime
-  - severidadMinima: Severidad
-  + actualizar(): void
-  + aceptaCanal(canal: String): boolean
+class AssetSettings <<Aggregate>> #FADBD8 {
+  - id: Long
+  - organizationId: Long
+  - assetId: Long
+  - minimumTemperature: Double
+  - maximumTemperature: Double
+  - minimumHumidity: Double
+  - maximumHumidity: Double
+  - readingFrequencySeconds: Integer
+  - alertThresholdMinutes: Integer
 }
 
-class UsuarioRepository {
-  + buscarPorNombreUsuario(nombre: String): Optional<Usuario>
-  + buscarPorEmail(email: String): Optional<Usuario>
-  + obtenerCredencial(id: UUID): Optional<String>
-  + guardarSesion(s: Sesion): void
-  + invalidarSesion(id: UUID): void
-  + guardar(u: Usuario): void
+class LocationName <<ValueObject>> #FCF3CF
+class AssetUuid <<ValueObject>> #FCF3CF
+class GatewayUuid <<ValueObject>> #FCF3CF
+class IoTDeviceUuid <<ValueObject>> #FCF3CF
+
+' Monitoring
+class SensorReading <<Aggregate>> #D5F5E3 {
+  - id: Long
+  - organizationId: Long
+  - assetId: Long
+  - iotDeviceId: Long
+  - gatewayId: Long
+  - locationId: Long
+  - temperature: Double
+  - humidity: Double
+  - outOfRange: Boolean
+  - recordedAt: OffsetDateTime
 }
 
-Usuario "1" o-- "*" Sesion
-Usuario "*" -- "*" Rol
-Rol "*" o-- "*" Permiso
-Organizacion "1" *-- "1" Suscripcion
-Organizacion "1" o-- "*" Usuario
-Usuario "1" *-- "1" PreferenciaNotificacion
-Usuario ..> EstadoUsuario
-Suscripcion ..> EstadoSuscripcion
-UsuarioRepository ..> Usuario
-
-' Contexto de gestión de sensores
-
-class Ubicacion {
-  - direccion: String
-  - latitud: double
-  - longitud: double
-  - esMovil: boolean
-  + distanciaA(otra: Ubicacion): double
+' Alerts
+class Incident <<Aggregate>> #FCF3CF {
+  - id: Long
+  - organizationId: Long
+  - assetId: Long
+  - deviceId: Long
+  - readingId: Long
+  - type: String
+  - severity: IncidentSeverity
+  - status: IncidentStatus
+  - value: String
+  + acknowledge(command): void
+  + escalate(command): void
+  + resolve(command): void
 }
 
-class Activo {
-  - idActivo: UUID
-  - idOrganizacion: UUID
-  - nombre: String
-  - descripcion: String
-  - tipo: TipoActivo
-  - estado: EstadoActivo
-  + registrar(): void
-  + asignarSensor(s: Sensor): void
-  + desvincularSensor(id: UUID): void
-  + actualizarUbicacion(u: Ubicacion): void
+class Notification <<Aggregate>> #FCF3CF {
+  - id: Long
+  - organizationId: Long
+  - incidentId: Long
+  - channel: NotificationChannel
+  - message: String
+  - status: NotificationStatus
 }
 
-enum TipoActivo <<enum>> {
-  CAMARA_FRIGORIFICA
-  ALMACEN_REFRIGERADO
-  UNIDAD_TRANSPORTE
-  VITRINA
+enum IncidentSeverity <<enum>> {
+  WARNING
+  CRITICAL
 }
 
-enum EstadoActivo <<enum>> {
-  OPERATIVO
-  INACTIVO
-  EN_MANTENIMIENTO
+enum IncidentStatus <<enum>> {
+  OPEN
+  ACKNOWLEDGED
+  RESOLVED
 }
 
-class Sensor {
-  - idSensor: UUID
-  - idActivo: UUID
-  - idGateway: UUID
-  - modelo: String
-  - tipo: TipoSensor
-  - frecuenciaLecturaSeg: int
-  - estado: EstadoSensor
-  + configurarRangoTemperatura(r: RangoTemperatura): void
-  + configurarRangoHumedad(r: RangoHumedad): void
-  + configurarFrecuencia(segundos: int): void
-  + activar(): void
-  + desactivar(): void
+enum NotificationChannel <<enum>> {
+  APP
+  EMAIL
+  SMS
 }
 
-enum TipoSensor <<enum>> {
-  TEMPERATURA
-  HUMEDAD
-  TEMPERATURA_HUMEDAD
+enum NotificationStatus <<enum>> {
+  PENDING
+  SENT
+  FAILED
 }
 
-enum EstadoSensor <<enum>> {
-  ACTIVO
-  DESCONECTADO
-  CALIBRANDO
-  FALLA
+' Maintenance
+class MaintenanceSchedule <<Aggregate>> #FDEBD0 {
+  - id: Long
+  - organizationId: Long
+  - uuid: String
+  - assetId: Long
+  - scheduledDate: OffsetDateTime
+  - frequencyDays: Integer
+  - responsibleUserId: Long
+  - status: String
 }
 
-class Gateway {
-  - idGateway: UUID
-  - idOrganizacion: UUID
-  - modelo: String
-  - ip: String
-  - protocolo: String
-  - estado: EstadoGateway
-  + conectar(): void
-  + desconectar(): void
-  + registrarSensor(s: Sensor): void
+class TechnicalServiceRequest <<Aggregate>> #FDEBD0 {
+  - id: Long
+  - organizationId: Long
+  - code: String
+  - assetId: Long
+  - assetLocationId: Long
+  - assetName: String
+  - incidentId: Long
+  - issueDescription: String
+  - priority: String
+  - status: String
+  - evidence: String
 }
 
-enum EstadoGateway <<enum>> {
-  CONECTADO
-  DESCONECTADO
+' Reports
+class Report <<Aggregate>> #E8DAEF {
+  - id: Long
+  - organizationId: Long
+  - uuid: String
+  - type: String
+  - title: String
+  - periodStart: OffsetDateTime
+  - periodEnd: OffsetDateTime
+  - assetCount: Integer
+  - readingCount: Integer
+  - incidentCount: Integer
+  - compliancePercentage: Double
 }
 
-class RangoTemperatura {
-  - minCelsius: double
-  - maxCelsius: double
-  + validar(valor: double): boolean
+' AI Assistance
+class IncidentAiResolutionPlan <<Aggregate>> #D7BDE2 {
+  - id: Long
+  - organizationId: Long
+  - incidentId: Long
+  - status: AiPlanStatus
+  - generatedSummary: String
+  - probableCause: String
+  - recommendedSteps: List<String>
+  - correctiveActionDraft: String
+  - resolutionNotesDraft: String
+  - requiredEvidence: List<String>
+  - escalationRecommendation: String
+  - uncertaintyNotes: String
+  - approvedBy: String
+  - approvedAt: OffsetDateTime
+  - rejectedBy: String
+  - rejectedAt: OffsetDateTime
+  + approve(command): void
+  + reject(command): void
 }
 
-class RangoHumedad {
-  - minPorcentaje: double
-  - maxPorcentaje: double
-  + validar(valor: double): boolean
+class AiReportSummary <<Aggregate>> #D7BDE2 {
+  - id: Long
+  - organizationId: Long
+  - reportId: Long
+  - summary: String
+  - risks: List<String>
+  - recommendations: List<String>
+  - generatedAt: OffsetDateTime
 }
 
-' Patron Builder para construccion de Activos
-interface Constructor <<interfaz>> {
-  + conNombre(n: String): Constructor
-  + conTipo(t: TipoActivo): Constructor
-  + conUbicacion(u: Ubicacion): Constructor
-  + agregarSensor(s: Sensor): Constructor
-  + construir(): Activo
+enum AiPlanStatus <<enum>> {
+  PENDING
+  APPROVED
+  REJECTED
 }
 
-class ActivoBuilder {
-  - nombre: String
-  - tipo: TipoActivo
-  - ubicacion: Ubicacion
-  - sensores: List<Sensor>
-  + conNombre(n: String): Constructor
-  + conTipo(t: TipoActivo): Constructor
-  + conUbicacion(u: Ubicacion): Constructor
-  + agregarSensor(s: Sensor): Constructor
-  + construir(): Activo
+' Subscription & Billing
+class SubscriptionPlan <<Aggregate>> #D6DBDF {
+  - id: Long
+  - code: PlanCode
+  - name: String
+  - monthlyPriceCents: Integer
+  - currency: String
+  - maxLocations: Integer
+  - maxAssets: Integer
+  - maxIoTDevices: Integer
+  - maxUsers: Integer
+  - allowsAiGuidance: Boolean
 }
 
-class ActivoDirector {
-  - builder: Constructor
-  + setBuilder(b: Constructor): void
-  + construirCamaraFrigorifica(nombre: String, u: Ubicacion): Activo
-  + construirAlmacen(nombre: String, u: Ubicacion): Activo
-  + construirUnidadTransporte(nombre: String, u: Ubicacion): Activo
+class OrganizationSubscription <<Aggregate>> #D6DBDF {
+  - id: Long
+  - organizationId: Long
+  - planCode: PlanCode
+  - status: SubscriptionStatus
+  - providerCustomerId: String
+  - providerSubscriptionId: String
+  - currentPeriodEnd: OffsetDateTime
+  - cancelAtPeriodEnd: Boolean
 }
 
-Activo "1" *-- "1" Ubicacion
-Activo "1" o-- "*" Sensor
-Gateway "1" o-- "*" Sensor
-Sensor "1" o-- "0..1" RangoTemperatura
-Sensor "1" o-- "0..1" RangoHumedad
-Activo ..> TipoActivo
-Activo ..> EstadoActivo
-Sensor ..> TipoSensor
-Sensor ..> EstadoSensor
-Gateway ..> EstadoGateway
-ActivoBuilder ..|> Constructor
-ActivoDirector o-- Constructor
-
-' Contexto de monitoreo
-
-abstract class Medicion {
-  # idMedicion: UUID
-  # idSensor: UUID
-  # timestamp: LocalDateTime
-  # valor: double
-  # unidad: String
-  + {abstract} obtenerTipo(): TipoSensor
-  + obtenerEstado(): EstadoMedicion
+class BillingWebhookEvent <<Aggregate>> #D6DBDF {
+  - id: Long
+  - providerEventId: String
+  - eventType: String
+  - processingStatus: String
+  - receivedAt: OffsetDateTime
+  - processedAt: OffsetDateTime
 }
 
-class LecturaTemperatura {
-  - valorCelsius: double
-  + convertirAFahrenheit(): double
-  + validarContra(r: RangoTemperatura): boolean
-  + obtenerTipo(): TipoSensor
+class PlanCode <<ValueObject>> #FCF3CF
+
+enum SubscriptionStatus <<enum>> {
+  FREE
+  ACTIVE
+  PAST_DUE
+  CANCELED
 }
 
-class LecturaHumedad {
-  - valorPorcentaje: double
-  + esAmbienteSeco(): boolean
-  + validarContra(r: RangoHumedad): boolean
-  + obtenerTipo(): TipoSensor
-}
+Organization "1" o-- "*" User : organizationId
+User "*" --> "1" Role : roleId
+Role "1" *-- "*" Permission
+Organization *-- EmailAddress
+User *-- EmailAddress
+Role *-- RoleName
 
-enum EstadoMedicion <<enum>> {
-  NORMAL
-  ADVERTENCIA
-  CRITICA
-}
+Organization "1" o-- "*" Location : organizationId
+Organization "1" o-- "*" Asset : organizationId
+Organization "1" o-- "*" Gateway : organizationId
+Organization "1" o-- "*" IoTDevice : organizationId
+Location "1" <-- "*" Asset : locationId
+Location "1" <-- "*" Gateway : locationId
+Gateway "1" <-- "*" IoTDevice : gatewayId
+Asset "0..1" <-- "*" IoTDevice : assetId
+Asset "0..1" <-- "*" AssetSettings : assetId
+Location *-- LocationName
+Asset *-- AssetUuid
+Gateway *-- GatewayUuid
+IoTDevice *-- IoTDeviceUuid
 
-Medicion <|-- LecturaTemperatura
-Medicion <|-- LecturaHumedad
-Medicion ..> EstadoMedicion
+Asset "1" <-- "*" SensorReading : assetId
+IoTDevice "1" <-- "*" SensorReading : iotDeviceId
+Gateway "1" <-- "*" SensorReading : gatewayId
+Location "1" <-- "*" SensorReading : locationId
 
-' Contexto de alertas
+SensorReading "0..1" <-- "*" Incident : readingId
+Asset "0..1" <-- "*" Incident : assetId
+IoTDevice "0..1" <-- "*" Incident : deviceId
+Incident "1" <-- "*" Notification : incidentId
+Incident ..> IncidentSeverity
+Incident ..> IncidentStatus
+Incident ..> NotificationStatus
+Notification ..> NotificationChannel
+Notification ..> NotificationStatus
 
-class ReglaAlerta {
-  - idRegla: UUID
-  - idSensor: UUID
-  - tipo: TipoAlerta
-  - umbralValor: double
-  - duracionMinSeg: int
-  - severidad: Severidad
-  - activa: boolean
-  + evaluar(m: Medicion): boolean
-  + generarAlerta(m: Medicion): Alerta
-  + activar(): void
-  + desactivar(): void
-}
+Asset "1" <-- "*" MaintenanceSchedule : assetId
+Asset "1" <-- "*" TechnicalServiceRequest : assetId
+Incident "0..1" <-- "*" TechnicalServiceRequest : incidentId
+User "0..1" <-- "*" MaintenanceSchedule : responsibleUserId
 
-class Alerta {
-  - idAlerta: UUID
-  - idOrganizacion: UUID
-  - idRegla: UUID
-  - idSensor: UUID
-  - idActivo: UUID
-  - idMedicion: UUID
-  - tipo: TipoAlerta
-  - severidad: Severidad
-  - estado: EstadoAlerta
-  - fechaGeneracion: LocalDateTime
-  - fechaCierre: LocalDateTime
-  - mensaje: String
-  + generar(): void
-  + confirmar(idUsuario: UUID): void
-  + escalar(): void
-  + cerrar(accion: String): void
-}
+Report ..> Organization : organizationId
+Report ..> Asset : asset metrics
+Report ..> SensorReading : reading metrics
+Report ..> Incident : incident metrics
 
-enum TipoAlerta <<enum>> {
-  TEMPERATURA_ALTA
-  TEMPERATURA_BAJA
-  HUMEDAD_ALTA
-  HUMEDAD_BAJA
-  DESCONEXION_SENSOR
-  FALLA_HARDWARE
-}
+Incident "1" <-- "*" IncidentAiResolutionPlan : incidentId
+Report "1" <-- "*" AiReportSummary : reportId
+IncidentAiResolutionPlan ..> AiPlanStatus
+IncidentAiResolutionPlan ..> Incident : approved plan resolves
+AiReportSummary ..> Report : summarized report
 
-enum Severidad <<enum>> {
-  BAJA
-  MEDIA
-  ALTA
-  CRITICA
-}
-
-enum EstadoAlerta <<enum>> {
-  ACTIVA
-  CONFIRMADA
-  EN_ATENCION
-  CERRADA
-}
-
-class Incidencia {
-  - idIncidencia: UUID
-  - idAlerta: UUID
-  - descripcion: String
-  - accionTomada: String
-  - idResponsable: UUID
-  - fechaAccion: LocalDateTime
-  + registrar(): void
-  + cerrar(): void
-}
-
-' Canales de notificacion (similar a la interfaz Alerta de Ecomind)
-interface CanalNotificacion <<interfaz>> {
-  + enviar(destinatario: String, mensaje: String): boolean
-  + obtenerNombre(): String
-}
-
-class CanalEmail {
-  + enviar(destinatario: String, mensaje: String): boolean
-  + obtenerNombre(): String
-}
-
-class CanalPush {
-  + enviar(destinatario: String, mensaje: String): boolean
-  + obtenerNombre(): String
-}
-
-class CanalWhatsApp {
-  + enviar(destinatario: String, mensaje: String): boolean
-  + obtenerNombre(): String
-}
-
-class Notificacion {
-  - destinatario: String
-  - canal: String
-  - mensaje: String
-  - fechaEnvio: LocalDateTime
-  - entregada: boolean
-}
-
-Alerta "1" o-- "*" Incidencia
-Alerta "1" o-- "*" Notificacion
-Alerta ..> TipoAlerta
-Alerta ..> Severidad
-Alerta ..> EstadoAlerta
-ReglaAlerta ..> TipoAlerta
-ReglaAlerta ..> Severidad
-ReglaAlerta ..> Alerta : "genera"
-CanalEmail ..|> CanalNotificacion
-CanalPush ..|> CanalNotificacion
-CanalWhatsApp ..|> CanalNotificacion
-
-' Contexto de reportes
-
-abstract class Reporte {
-  # idReporte: UUID
-  # idOrganizacion: UUID
-  # idUsuarioGenerador: UUID
-  # nombre: String
-  # tipo: TipoReporte
-  # fechaGeneracion: LocalDateTime
-  # rangoDesde: LocalDateTime
-  # rangoHasta: LocalDateTime
-  # formato: FormatoExportacion
-  + {abstract} generar(): void
-  + exportar(): byte[]
-}
-
-class ReporteHistorico {
-  - idsActivos: List<UUID>
-  - mediciones: List<Medicion>
-  + calcularPromedio(): double
-  + detectarDesviaciones(): List<Medicion>
-  + generar(): void
-}
-
-class ReporteBitacora {
-  - incidencias: List<Incidencia>
-  + agregarIncidencia(i: Incidencia): void
-  + generar(): void
-}
-
-class ReporteCumplimiento {
-  - criterios: List<String>
-  - resultado: EstadoCumplimiento
-  + evaluarCumplimiento(): EstadoCumplimiento
-  + generar(): void
-}
-
-class Dashboard {
-  - idDashboard: UUID
-  - idOrganizacion: UUID
-  - idUsuario: UUID
-  - nombre: String
-  + agregarWidget(w: Widget): void
-  + actualizar(): void
-}
-
-class Widget {
-  - tipo: String
-  - titulo: String
-  - configuracion: Map<String, Object>
-}
-
-enum FormatoExportacion <<enum>> {
-  PDF
-  CSV
-  EXCEL
-}
-
-enum TipoReporte <<enum>> {
-  HISTORICO
-  BITACORA
-  CUMPLIMIENTO
-  DASHBOARD
-}
-
-Reporte <|-- ReporteHistorico
-Reporte <|-- ReporteBitacora
-Reporte <|-- ReporteCumplimiento
-Reporte ..> FormatoExportacion
-Reporte ..> TipoReporte
-Dashboard "1" o-- "*" Widget
-
-' Contexto de auditoría
-
-class Auditoria {
-  - idAuditoria: UUID
-  - idOrganizacion: UUID
-  - idAuditor: UUID
-  - tipo: TipoAuditoria
-  - fechaInicio: LocalDate
-  - fechaFin: LocalDate
-  - estado: EstadoAuditoria
-  - resultado: EstadoCumplimiento
-  + iniciar(): void
-  + validarCumplimiento(): EstadoCumplimiento
-  + cerrar(): void
-}
-
-class Evidencia {
-  - idEvidencia: UUID
-  - idAuditoria: UUID
-  - idReporte: UUID
-  - tipo: String
-  - ruta: String
-  - fechaCaptura: LocalDateTime
-  + adjuntar(): void
-  + exportar(): byte[]
-}
-
-class CriterioCumplimiento {
-  - idCriterio: UUID
-  - norma: String
-  - descripcion: String
-  - resultado: EstadoCumplimiento
-  + evaluar(): EstadoCumplimiento
-}
-
-enum TipoAuditoria <<enum>> {
-  INTERNA
-  DIGESA
-  MINSA
-}
-
-enum EstadoAuditoria <<enum>> {
-  PLANIFICADA
-  EN_CURSO
-  CERRADA
-}
-
-enum EstadoCumplimiento <<enum>> {
-  CONFORME
-  NO_CONFORME
-  PARCIAL
-  PENDIENTE
-}
-
-Auditoria "1" o-- "*" Evidencia
-Auditoria "1" o-- "*" CriterioCumplimiento
-Auditoria ..> TipoAuditoria
-Auditoria ..> EstadoAuditoria
-Auditoria ..> EstadoCumplimiento
-
-' Relaciones entre contextos
-
-' Autenticacion  <-->  Gestion de Sensores
-Organizacion "1" o-- "*" Activo
-Organizacion "1" o-- "*" Gateway
-Usuario "1" --> "*" Activo
-
-' Gestion de Sensores  -->  Monitoreo
-Sensor "1" o-- "*" Medicion
-LecturaTemperatura ..> RangoTemperatura
-LecturaHumedad ..> RangoHumedad
-
-' Monitoreo  -->  Alertas  (via ReglaAlerta)
-ReglaAlerta ..> Medicion
-Alerta "*" --> "1" Medicion
-
-' Gestion de Sensores  <--  Alertas
-Alerta "*" --> "1" Activo
-Alerta "*" --> "1" Sensor
-ReglaAlerta "*" --> "1" Sensor
-
-' Autenticacion  <--  Alertas
-Incidencia "*" --> "1" Usuario
-Alerta "*" --> "0..1" Usuario
-PreferenciaNotificacion ..> CanalNotificacion
-
-' Monitoreo  <--  Reportes
-ReporteHistorico "*" o-- "*" Medicion
-
-' Alertas  <--  Reportes
-ReporteBitacora "*" o-- "*" Incidencia
-
-' Autenticacion  <--  Reportes
-Reporte "*" --> "1" Usuario
-Reporte "*" --> "1" Organizacion
-Dashboard "*" --> "1" Usuario
-Dashboard "*" --> "1" Organizacion
-
-' Reportes  <--  Auditoria
-Evidencia "*" --> "1" Reporte
-Auditoria "*" ..> "*" ReporteCumplimiento
-
-' Autenticacion  <--  Auditoria
-Auditoria "*" --> "1" Usuario
-Auditoria "*" --> "1" Organizacion
+Organization "1" <-- "*" OrganizationSubscription : organizationId
+SubscriptionPlan "1" <-- "*" OrganizationSubscription : planCode
+SubscriptionPlan *-- PlanCode
+OrganizationSubscription *-- PlanCode
+OrganizationSubscription ..> SubscriptionStatus
+BillingWebhookEvent ..> OrganizationSubscription : reconciles provider state
 
 @enduml
