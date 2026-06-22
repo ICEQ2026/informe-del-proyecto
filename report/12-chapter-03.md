@@ -78,7 +78,7 @@ La especificación de requerimientos se actualizó tomando como referencia las p
 | US049 | EP014 | **Como** administrador de organización, **quiero** gestionar mi facturación desde un portal seguro, **para** actualizar método de pago, revisar facturas o cancelar la suscripción. | **Scenario: Portal de facturación abierto**<br>**Given** la organización tiene un cliente de Stripe asociado.<br>**When** el administrador solicita gestionar facturación.<br>**Then** el backend crea una sesión de Customer Portal y redirige al usuario al portal del proveedor. | Sprint 4 / Planned |
 | US050 | EP014 | **Como** usuario operativo, **quiero** que las funciones no incluidas en mi plan aparezcan bloqueadas con una explicación clara, **para** entender qué debo actualizar sin perder el contexto de trabajo. | **Scenario: Límite de plan aplicado**<br>**Given** la organización alcanzó el límite de activos o intenta usar una función no incluida.<br>**When** el usuario ejecuta la acción.<br>**Then** el sistema bloquea la operación, explica el límite y ofrece actualizar el plan si corresponde. | Sprint 4 / Planned |
 
-### 3.1.3 Technical Stories for API and AI Implementation
+### 3.1.3 Technical Stories
 
 Las historias técnicas se actualizan para AV2 con un enfoque de contrato de API consumible por la Frontend Web Application. Cada historia identifica el endpoint principal, el propósito de integración y criterios observables mediante respuestas HTTP, validaciones y persistencia de datos.
 
