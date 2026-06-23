@@ -2065,11 +2065,11 @@ Las ramas identificadas en el repositorio son:
 
 Se utilizó una convención de nombres basada en el contenido desarrollado, lo cual se evidencia en las siguientes ramas:
 
-- feature/14-chapter-05  
-- feature/13-chapter-04  
-- feature/12-chapter-03  
-- feature/15-chapter-06  
-- feature/99-bibliography  
+- feature/14-chapter-05
+- feature/13-chapter-04
+- feature/12-chapter-03
+- feature/15-chapter-06
+- feature/99-bibliography
 
 Cada rama representa un capítulo o sección del informe, permitiendo que los integrantes trabajen de forma paralela sin interferir en el trabajo de otros.
 
@@ -2089,10 +2089,10 @@ Para estandarizar los mensajes de commits, se utilizó la convención de Convent
 
 Los tipos de commits utilizados incluyen:
 
-- **feat**: incorporación de nuevo contenido  
-- **docs**: modificaciones en la documentación  
-- **fix**: corrección de errores  
-- **chore**: tareas de mantenimiento  
+- **feat**: incorporación de nuevo contenido
+- **docs**: modificaciones en la documentación
+- **fix**: corrección de errores
+- **chore**: tareas de mantenimiento
 
 El uso de estas convenciones facilita la comprensión del historial de cambios y mejora la colaboración entre los integrantes del equipo.
 
@@ -2201,7 +2201,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
 
 <p align="center">
   Uso de ramas para el desarrollo e integración de cambios antes del despliegue.
-</p>   
+</p>
 
 3. Se crearon branches para la actualización continua del repositorio, donde cada cambio realizado por el equipo eventualmente será agregado a la rama principal.
 
@@ -4815,7 +4815,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-1.png" alt="Entrevista de Validación 1" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s1-01-jean-pool-coaguila.png" alt="Entrevista de Validación 1" height="350">
       </td>
     </tr>
     <tr>
@@ -4866,7 +4866,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-2.png" alt="Entrevista de Validación 2" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s2-01-rodrigo-vasquez.png" alt="Entrevista de Validación 2" height="350">
       </td>
     </tr>
     <tr>
@@ -4916,11 +4916,6 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
     </tr>
     <tr>
-      <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-3.png" alt="Entrevista de Validación 3" height="350">
-      </td>
-    </tr>
-    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
@@ -4965,11 +4960,6 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
   <tbody>
     <tr>
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
-    </tr>
-    <tr>
-      <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/validation-interview-4.png" alt="Entrevista de Validación 4" height="350">
-      </td>
     </tr>
     <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
