@@ -14,7 +14,7 @@ database "MySQL\nincidents\nnotifications" as db
 component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
 component "AssetManagementContextFacade" as asset_facade <<External ACL>>
 component "MonitoringContextFacade" as monitoring_facade <<External ACL>>
-component "Reports / Maintenance" as other_bcs <<ACL consumers>>
+component "Reports / Maintenance / AI Assistance" as other_bcs <<ACL consumers>>
 
 package "Alerts Bounded Context" #FCF3CF {
 
@@ -56,7 +56,7 @@ incident_repo --> incident_event_handler : publishes IncidentOpenedEvent
 incident_event_handler --> [IncidentOpenedIntegrationEvent]
 
 alerts_facade --> incident_repo
-other_bcs ..> alerts_facade : fetch incident snapshots
+other_bcs ..> alerts_facade : fetch incident snapshots and apply approved lifecycle actions
 
 incident_repo --> persistence
 notification_repo --> persistence

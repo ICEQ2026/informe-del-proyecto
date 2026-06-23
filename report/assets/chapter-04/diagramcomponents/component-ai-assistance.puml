@@ -1,0 +1,79 @@
+@startuml
+
+title Component View - ColdTrace - AI Assistance BC
+caption Sprint 4 target package: com.acme.coldtrace.platform.aiassistance
+
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Web Application / API Client" as client
+database "MySQL\nincident_ai_resolution_plans\nai_report_summaries" as db
+
+component "AI Model Provider\nOllama gemma3:4b local\nOpenAI gpt-5.4-mini deployed" as ai_provider <<External System>>
+
+component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
+component "AlertsContextFacade" as alerts_facade <<External ACL>>
+component "MonitoringContextFacade" as monitoring_facade <<External ACL>>
+component "AssetManagementContextFacade" as asset_facade <<External ACL>>
+component "MaintenanceManagementContextFacade" as maintenance_facade <<External ACL>>
+component "ReportsContextFacade" as reports_facade <<External ACL>>
+component "SubscriptionBillingContextFacade" as billing_facade <<External ACL>>
+
+package "AI Assistance Bounded Context" #D7BDE2 {
+
+  [AiIncidentResolutionPlansController] <<REST Controller>> as plans_ctrl
+  [AiReportSummariesController] <<REST Controller>> as summaries_ctrl
+
+  [AiResolutionPlanCommandServiceImpl] <<Command Service>> as plan_cmd
+  [AiResolutionPlanQueryServiceImpl] <<Query Service>> as plan_query
+  [AiReportSummaryCommandServiceImpl] <<Command Service>> as summary_cmd
+  [AiPromptContextAssembler] <<Application Service>> as context_assembler
+  [AiModelProviderProperties] <<Configuration>> as provider_props
+  [SpringAiGuidanceClient] <<Infrastructure Adapter>> as spring_ai_client
+  [AiAssistanceContextFacadeImpl] <<ACL Facade>> as ai_facade
+
+  [AiResolutionPlanRepository] <<Domain Repository>> as plan_repo
+  [AiReportSummaryRepository] <<Domain Repository>> as summary_repo
+  [JPA repository adapters\nPersistence assemblers\nJPA entities] <<Infrastructure>> as persistence
+}
+
+client --> plans_ctrl : /organizations/{id}/incidents/{incidentId}/ai-resolution-plans
+client --> summaries_ctrl : /organizations/{id}/reports/{reportId}/ai-summary
+
+plans_ctrl --> plan_cmd : generate / approve / reject
+plans_ctrl --> plan_query : list / get pending plan
+summaries_ctrl --> summary_cmd : generate summary
+
+plan_cmd --> billing_facade : verifies AI guidance entitlement
+summary_cmd --> billing_facade : verifies AI summary entitlement
+plan_cmd --> identity_facade : validates organization/operator
+summary_cmd --> identity_facade : validates organization/operator
+
+plan_cmd --> context_assembler : builds bounded incident context
+summary_cmd --> context_assembler : builds bounded report context
+context_assembler --> alerts_facade : incident lifecycle snapshot
+context_assembler --> monitoring_facade : linked reading and recent telemetry
+context_assembler --> asset_facade : asset, device, gateway, location, ranges
+context_assembler --> maintenance_facade : related maintenance history
+context_assembler --> reports_facade : report metrics and compliance context
+
+plan_cmd --> spring_ai_client : structured incident guidance prompt
+summary_cmd --> spring_ai_client : structured report summary prompt
+spring_ai_client --> provider_props : selects provider and model by environment
+spring_ai_client --> ai_provider : HTTPS through Spring AI
+
+plan_cmd --> plan_repo
+plan_query --> plan_repo
+summary_cmd --> summary_repo
+ai_facade --> plan_repo
+ai_facade --> summary_repo
+
+plan_cmd --> alerts_facade : approved plan applies corrective action and resolution
+
+plan_repo --> persistence
+summary_repo --> persistence
+persistence --> db : Spring Data JPA
+
+@enduml

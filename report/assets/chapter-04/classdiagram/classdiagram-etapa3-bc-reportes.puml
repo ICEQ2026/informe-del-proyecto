@@ -47,9 +47,9 @@ package "BC Reports" #E8DAEF {
 note right of Report
   Reports persist summary metrics generated
   from Asset Management, Monitoring and Alerts
-  snapshots. There are no Dashboard,
-  HistoricalReport, LogReport or ComplianceReport
-  classes in the current backend.
+  snapshots. AI report summaries reference
+  Report by id and store generated narrative
+  guidance separately from the report metrics.
 end note
 
 @enduml

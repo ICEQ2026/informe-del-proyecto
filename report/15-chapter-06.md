@@ -13,6 +13,8 @@
 
 5. **Plataforma desplegada en tres frentes:** ColdTrace cuenta con una Landing Page informativa en GitHub Pages, una Frontend Web Application funcional en Vercel y una RESTful API con documentación OpenAPI en Google Cloud Run. Esta arquitectura de tres capas permite una experiencia de usuario completa, desde la captación de visitantes hasta la operación diaria de monitoreo de cadena de frío.
 
+6. **Evolución del producto hacia IA y monetización SaaS:** Los requerimientos de Sprint 4 amplían la propuesta de ColdTrace más allá del monitoreo y la trazabilidad base. La asistencia inteligente para resolución de incidencias aporta valor operacional siempre que mantenga aprobación humana, mientras que los planes de suscripción permiten convertir el modelo de negocio en una experiencia concreta de pricing, límites y upgrades.
+
 ### Recomendaciones
 
 1. **Implementar autenticación y autorización:** Como siguiente paso, se recomienda integrar Spring Security con JWT para asegurar los endpoints de la API y gestionar sesiones de usuario de forma segura, cerrando el ciclo de seguridad de la plataforma.
@@ -24,6 +26,10 @@
 4. **Conexión frontend-backend:** Como parte del trabajo futuro, se recomienda completar la integración de la Frontend Web Application con la RESTful API backend, reemplazando el servidor JSON provisional por los endpoints reales desplegados en Cloud Run.
 
 5. **Monitoreo y observabilidad:** Para la versión productiva, se recomienda implementar herramientas de monitoreo (Cloud Monitoring, Sentry) y logging estructurado que permitan detectar y diagnosticar incidentes operativos en la plataforma de forma proactiva.
+
+6. **Implementar IA con control humano:** Se recomienda desarrollar la asistencia inteligente como una herramienta de guía y no como automatización autónoma. Todo plan generado por IA debe ser revisado, editado y aprobado por un operador antes de cerrar una incidencia o modificar datos persistidos.
+
+7. **Validar pagos y planes en modo de prueba:** Para la monetización SaaS, se recomienda iniciar con un catálogo local de planes y una integración de Stripe en modo test, usando Checkout y Customer Portal para evitar almacenar datos de tarjeta en ColdTrace. La validación debe enfocarse en límites por plan, sincronización de estado de suscripción y claridad de la experiencia de upgrade.
 
 ## 6.2. Video About-the-Team
 

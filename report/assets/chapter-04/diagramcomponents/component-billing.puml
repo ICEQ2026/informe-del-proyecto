@@ -1,0 +1,77 @@
+@startuml
+
+title Component View - ColdTrace - Subscription & Billing BC
+caption Sprint 4 target package: com.acme.coldtrace.platform.billing
+
+left to right direction
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Web Application / API Client" as client
+component "Stripe" as stripe <<External System>>
+database "MySQL\nsubscription_plans\norganization_subscriptions\nbilling_webhook_events" as db
+
+component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
+component "AssetManagementContextFacade" as asset_facade <<External ACL>>
+component "AI Assistance / Other BCs" as other_bcs <<ACL consumers>>
+
+package "Subscription & Billing Bounded Context" #D6DBDF {
+
+  [SubscriptionPlansController] <<REST Controller>> as plans_ctrl
+  [OrganizationBillingController] <<REST Controller>> as billing_ctrl
+  [StripeWebhooksController] <<REST Controller>> as webhooks_ctrl
+
+  [SubscriptionPlanQueryServiceImpl] <<Query Service>> as plan_query
+  [OrganizationSubscriptionQueryServiceImpl] <<Query Service>> as subscription_query
+  [CheckoutSessionCommandServiceImpl] <<Command Service>> as checkout_cmd
+  [CustomerPortalCommandServiceImpl] <<Command Service>> as portal_cmd
+  [BillingWebhookCommandServiceImpl] <<Command Service>> as webhook_cmd
+  [EntitlementPolicyService] <<Domain Service>> as entitlement_policy
+  [StripeBillingGatewayAdapter] <<Infrastructure Adapter>> as stripe_adapter
+  [SubscriptionBillingContextFacadeImpl] <<ACL Facade>> as billing_facade
+
+  [SubscriptionPlanRepository] <<Domain Repository>> as plan_repo
+  [OrganizationSubscriptionRepository] <<Domain Repository>> as subscription_repo
+  [BillingWebhookEventRepository] <<Domain Repository>> as webhook_repo
+  [JPA repository adapters\nPersistence assemblers\nJPA entities] <<Infrastructure>> as persistence
+}
+
+client --> plans_ctrl : /subscription-plans
+client --> billing_ctrl : /organizations/{id}/billing
+stripe --> webhooks_ctrl : /billing/stripe/webhooks
+
+plans_ctrl --> plan_query : public active plans
+billing_ctrl --> subscription_query : current subscription
+billing_ctrl --> checkout_cmd : create checkout session
+billing_ctrl --> portal_cmd : create customer portal session
+webhooks_ctrl --> webhook_cmd : reconcile provider event
+
+plan_query --> plan_repo
+subscription_query --> subscription_repo
+checkout_cmd --> identity_facade : validates organization/admin
+portal_cmd --> identity_facade : validates organization/admin
+checkout_cmd --> asset_facade : checks current usage vs selected plan
+checkout_cmd --> plan_repo
+checkout_cmd --> subscription_repo
+checkout_cmd --> stripe_adapter : create Checkout Session
+portal_cmd --> subscription_repo
+portal_cmd --> stripe_adapter : create Customer Portal Session
+
+webhook_cmd --> webhook_repo : idempotency by provider_event_id
+webhook_cmd --> subscription_repo : activate / past due / cancel
+webhook_cmd --> stripe_adapter : validates signature and event payload
+
+billing_facade --> subscription_repo
+billing_facade --> plan_repo
+billing_facade --> entitlement_policy : plan limits and feature flags
+other_bcs ..> billing_facade : checks entitlements before gated actions
+
+stripe_adapter --> stripe : Stripe API / HTTPS
+
+plan_repo --> persistence
+subscription_repo --> persistence
+webhook_repo --> persistence
+persistence --> db : Spring Data JPA
+
+@enduml

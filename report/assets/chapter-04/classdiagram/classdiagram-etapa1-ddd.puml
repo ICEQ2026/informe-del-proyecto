@@ -1,6 +1,6 @@
 @startuml
 
-title Stage 1: DDD-oriented Class Diagram - ColdTrace Current Backend
+title Stage 1: DDD-oriented Class Diagram - ColdTrace Backend Target
 
 skinparam classAttributeIconSize 0
 skinparam nodesep 45
@@ -213,6 +213,87 @@ class Report <<Aggregate>> #E8DAEF {
   - compliancePercentage: Double
 }
 
+' AI Assistance
+class IncidentAiResolutionPlan <<Aggregate>> #D7BDE2 {
+  - id: Long
+  - organizationId: Long
+  - incidentId: Long
+  - status: AiPlanStatus
+  - generatedSummary: String
+  - probableCause: String
+  - recommendedSteps: List<String>
+  - correctiveActionDraft: String
+  - resolutionNotesDraft: String
+  - requiredEvidence: List<String>
+  - escalationRecommendation: String
+  - uncertaintyNotes: String
+  - approvedBy: String
+  - approvedAt: OffsetDateTime
+  - rejectedBy: String
+  - rejectedAt: OffsetDateTime
+  + approve(command): void
+  + reject(command): void
+}
+
+class AiReportSummary <<Aggregate>> #D7BDE2 {
+  - id: Long
+  - organizationId: Long
+  - reportId: Long
+  - summary: String
+  - risks: List<String>
+  - recommendations: List<String>
+  - generatedAt: OffsetDateTime
+}
+
+enum AiPlanStatus <<enum>> {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+' Subscription & Billing
+class SubscriptionPlan <<Aggregate>> #D6DBDF {
+  - id: Long
+  - code: PlanCode
+  - name: String
+  - monthlyPriceCents: Integer
+  - currency: String
+  - maxLocations: Integer
+  - maxAssets: Integer
+  - maxIoTDevices: Integer
+  - maxUsers: Integer
+  - allowsAiGuidance: Boolean
+}
+
+class OrganizationSubscription <<Aggregate>> #D6DBDF {
+  - id: Long
+  - organizationId: Long
+  - planCode: PlanCode
+  - status: SubscriptionStatus
+  - providerCustomerId: String
+  - providerSubscriptionId: String
+  - currentPeriodEnd: OffsetDateTime
+  - cancelAtPeriodEnd: Boolean
+}
+
+class BillingWebhookEvent <<Aggregate>> #D6DBDF {
+  - id: Long
+  - providerEventId: String
+  - eventType: String
+  - processingStatus: String
+  - receivedAt: OffsetDateTime
+  - processedAt: OffsetDateTime
+}
+
+class PlanCode <<ValueObject>> #FCF3CF
+
+enum SubscriptionStatus <<enum>> {
+  FREE
+  ACTIVE
+  PAST_DUE
+  CANCELED
+}
+
 Organization "1" o-- "*" User : organizationId
 User "*" --> "1" Role : roleId
 Role "1" *-- "*" Permission
@@ -258,5 +339,18 @@ Report ..> Organization : organizationId
 Report ..> Asset : asset metrics
 Report ..> SensorReading : reading metrics
 Report ..> Incident : incident metrics
+
+Incident "1" <-- "*" IncidentAiResolutionPlan : incidentId
+Report "1" <-- "*" AiReportSummary : reportId
+IncidentAiResolutionPlan ..> AiPlanStatus
+IncidentAiResolutionPlan ..> Incident : approved plan resolves
+AiReportSummary ..> Report : summarized report
+
+Organization "1" <-- "*" OrganizationSubscription : organizationId
+SubscriptionPlan "1" <-- "*" OrganizationSubscription : planCode
+SubscriptionPlan *-- PlanCode
+OrganizationSubscription *-- PlanCode
+OrganizationSubscription ..> SubscriptionStatus
+BillingWebhookEvent ..> OrganizationSubscription : reconciles provider state
 
 @enduml

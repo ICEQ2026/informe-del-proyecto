@@ -112,8 +112,10 @@ package "BC Alerts" #FCF3CF {
 
 note right of Incident
   The implemented backend models incidents
-  directly. It does not include Alert or
-  AlertRule aggregate classes.
+  directly. AI-assisted resolution plans
+  reference Incident by id and execute
+  final closure through the incident
+  lifecycle service after human approval.
 end note
 
 @enduml

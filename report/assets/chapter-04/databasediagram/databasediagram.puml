@@ -1,7 +1,7 @@
 @startuml
 
-title ColdTrace - Entity-Relationship Diagram - Current Backend
-caption MySQL schema inferred from JPA persistence entities and Hibernate snake_case naming
+title ColdTrace - Entity-Relationship Diagram - Backend Target
+caption MySQL schema inferred from current JPA persistence entities and Sprint 4 target entities
 
 hide circle
 skinparam linetype ortho
@@ -293,6 +293,104 @@ entity "reports" as reports #E8DAEF {
   compliance_percentage : DOUBLE
 }
 
+' AI Assistance
+entity "incident_ai_resolution_plans" as incident_ai_resolution_plans #D7BDE2 {
+  * id : BIGINT <<PK>>
+  --
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  incident_id : BIGINT <<logical FK>>
+  status : VARCHAR NOT NULL
+  generated_summary : VARCHAR(2000) NOT NULL
+  probable_cause : VARCHAR(1000)
+  recommended_steps : JSON
+  corrective_action_draft : VARCHAR(1000)
+  resolution_notes_draft : VARCHAR(1000)
+  escalation_recommendation : VARCHAR(1000)
+  required_evidence : JSON
+  uncertainty_notes : VARCHAR(1000)
+  model_provider : VARCHAR NOT NULL
+  model_name : VARCHAR
+  generated_at : DATETIME NOT NULL
+  approved_by : VARCHAR
+  approved_at : DATETIME
+  final_corrective_action : VARCHAR(1000)
+  final_resolution_notes : VARCHAR(1000)
+  rejected_by : VARCHAR
+  rejected_at : DATETIME
+  rejection_reason : VARCHAR(1000)
+}
+
+entity "ai_report_summaries" as ai_report_summaries #D7BDE2 {
+  * id : BIGINT <<PK>>
+  --
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  report_id : BIGINT <<logical FK>>
+  summary : VARCHAR(2000) NOT NULL
+  risks : JSON
+  recommended_follow_up : JSON
+  model_provider : VARCHAR NOT NULL
+  model_name : VARCHAR
+  generated_at : DATETIME NOT NULL
+}
+
+' Subscription & Billing
+entity "subscription_plans" as subscription_plans #D6DBDF {
+  * id : BIGINT <<PK>>
+  --
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  code : VARCHAR NOT NULL <<UK>>
+  name : VARCHAR NOT NULL
+  description : VARCHAR(1000)
+  currency : VARCHAR NOT NULL
+  monthly_price_cents : INT NOT NULL
+  stripe_price_id : VARCHAR
+  recommended : BOOLEAN NOT NULL
+  active : BOOLEAN NOT NULL
+  max_locations : INT
+  max_assets : INT
+  max_iot_devices : INT
+  max_users : INT
+  history_retention_days : INT
+  allows_exports : BOOLEAN NOT NULL
+  allows_maintenance : BOOLEAN NOT NULL
+  allows_ai_guidance : BOOLEAN NOT NULL
+  allows_ai_report_summary : BOOLEAN NOT NULL
+}
+
+entity "organization_subscriptions" as organization_subscriptions #D6DBDF {
+  * id : BIGINT <<PK>>
+  --
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  organization_id : BIGINT <<logical FK>>
+  plan_code : VARCHAR <<logical FK>>
+  status : VARCHAR NOT NULL
+  provider : VARCHAR NOT NULL
+  provider_customer_id : VARCHAR
+  provider_subscription_id : VARCHAR
+  current_period_start : DATETIME
+  current_period_end : DATETIME
+  cancel_at_period_end : BOOLEAN NOT NULL
+}
+
+entity "billing_webhook_events" as billing_webhook_events #D6DBDF {
+  * id : BIGINT <<PK>>
+  --
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  provider : VARCHAR NOT NULL
+  provider_event_id : VARCHAR NOT NULL <<UK>>
+  event_type : VARCHAR NOT NULL
+  received_at : DATETIME NOT NULL
+  processed_at : DATETIME
+  processing_status : VARCHAR NOT NULL
+}
+
 organizations ||..o{ users : organization_id
 roles ||..o{ users : role_id
 roles ||--o{ role_permissions : role_id
@@ -333,5 +431,13 @@ locations ||..o{ technical_service_requests : asset_location_id
 incidents ||..o{ technical_service_requests : incident_id
 
 organizations ||..o{ reports : organization_id
+
+organizations ||..o{ incident_ai_resolution_plans : organization_id
+incidents ||..o{ incident_ai_resolution_plans : incident_id
+organizations ||..o{ ai_report_summaries : organization_id
+reports ||..o{ ai_report_summaries : report_id
+
+organizations ||..o{ organization_subscriptions : organization_id
+subscription_plans ||..o{ organization_subscriptions : plan_code
 
 @enduml

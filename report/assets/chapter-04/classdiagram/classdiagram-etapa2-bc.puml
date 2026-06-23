@@ -1,6 +1,6 @@
 @startuml
 
-title Stage 2: Classes Grouped by Bounded Context - ColdTrace Current Backend
+title Stage 2: Classes Grouped by Bounded Context - ColdTrace Backend Target
 
 scale 1800 width
 skinparam classAttributeIconSize 0
@@ -198,6 +198,65 @@ package "BC Reports" #E8DAEF {
   }
 }
 
+package "BC AI Assistance" #D7BDE2 {
+  class IncidentAiResolutionPlan <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - incidentId: Long
+    - status: AiPlanStatus
+    - generatedSummary: String
+    - probableCause: String
+    - correctiveActionDraft: String
+    - resolutionNotesDraft: String
+  }
+
+  class AiReportSummary <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - reportId: Long
+    - summary: String
+    - generatedAt: OffsetDateTime
+  }
+
+  enum AiPlanStatus
+  IncidentAiResolutionPlan ..> AiPlanStatus
+}
+
+package "BC Subscription & Billing" #D6DBDF {
+  class SubscriptionPlan <<Aggregate>> {
+    - id: Long
+    - code: PlanCode
+    - name: String
+    - monthlyPriceCents: Integer
+    - maxLocations: Integer
+    - maxAssets: Integer
+    - maxIoTDevices: Integer
+    - allowsAiGuidance: Boolean
+  }
+
+  class OrganizationSubscription <<Aggregate>> {
+    - id: Long
+    - organizationId: Long
+    - planCode: PlanCode
+    - status: SubscriptionStatus
+    - providerCustomerId: String
+    - providerSubscriptionId: String
+  }
+
+  class BillingWebhookEvent <<Aggregate>> {
+    - id: Long
+    - providerEventId: String
+    - eventType: String
+    - processingStatus: String
+  }
+
+  class PlanCode <<ValueObject>>
+  enum SubscriptionStatus
+  SubscriptionPlan *-- PlanCode
+  OrganizationSubscription *-- PlanCode
+  OrganizationSubscription ..> SubscriptionStatus
+}
+
 Organization "1" ..> "*" Location : organizationId
 Organization "1" ..> "*" Asset : organizationId
 Organization "1" ..> "*" Gateway : organizationId
@@ -207,6 +266,9 @@ Organization "1" ..> "*" Incident : organizationId
 Organization "1" ..> "*" MaintenanceSchedule : organizationId
 Organization "1" ..> "*" TechnicalServiceRequest : organizationId
 Organization "1" ..> "*" Report : organizationId
+Organization "1" ..> "*" IncidentAiResolutionPlan : organizationId
+Organization "1" ..> "*" AiReportSummary : organizationId
+Organization "1" ..> "*" OrganizationSubscription : organizationId
 
 Asset "1" ..> "*" SensorReading : assetId
 IoTDevice "1" ..> "*" SensorReading : iotDeviceId
@@ -217,5 +279,9 @@ Asset "1" ..> "*" TechnicalServiceRequest : assetId
 Report ..> SensorReading : metrics
 Report ..> Incident : metrics
 Report ..> Asset : metrics
+IncidentAiResolutionPlan ..> Incident : incidentId
+AiReportSummary ..> Report : reportId
+OrganizationSubscription ..> SubscriptionPlan : planCode
+BillingWebhookEvent ..> OrganizationSubscription : provider ids
 
 @enduml
