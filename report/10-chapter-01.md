@@ -38,7 +38,7 @@ Con ColdTrace, los usuarios pueden:
 - Solicitar planes de resolución asistidos por IA para incidencias térmicas, siempre sujetos a revisión y aprobación del operador antes de cerrar el caso.
 - Administrar planes de suscripción con límites de uso, funcionalidades disponibles y actualización a planes superiores cuando la operación lo requiera.
 
-El modelo de negocio propuesto es de suscripción mensual escalonada. El plan **Base** permite adopción inicial sin costo para pequeños negocios; el plan **Operaciones** habilita mayor capacidad de monitoreo, reportes y mantenimiento; y el plan **Compliance AI** incorpora capacidades avanzadas como asistencia inteligente, resúmenes de cumplimiento y límites ampliados. Para los planes pagados se plantea integrar un proveedor externo de pagos, como Stripe en modo de prueba académico, evitando que ColdTrace almacene datos sensibles de tarjetas.
+El modelo de negocio propuesto es de suscripción mensual escalonada. El plan **Base** permite adopción inicial sin costo para pequeños negocios; el plan **Operaciones** habilita mayor capacidad de monitoreo, reportes y mantenimiento; y el plan **Compliance AI** incorpora capacidades avanzadas como asistencia inteligente, resúmenes de cumplimiento y límites ampliados. Para los planes pagados se plantea integrar un proveedor externo de pagos, como Stripe en modo de prueba académico, evitando que ColdTrace almacene datos sensibles de tarjetas. Esta decisión se apoya en el uso de Checkout Sessions, Customer Portal y webhooks de Stripe, que permiten delegar pago, autoservicio de facturación y sincronización de eventos al proveedor externo (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
 
 ### 1.2.1 Antecedentes y problemática
 

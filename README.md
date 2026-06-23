@@ -372,7 +372,7 @@ Con ColdTrace, los usuarios pueden:
 - Solicitar planes de resolución asistidos por IA para incidencias térmicas, siempre sujetos a revisión y aprobación del operador antes de cerrar el caso.
 - Administrar planes de suscripción con límites de uso, funcionalidades disponibles y actualización a planes superiores cuando la operación lo requiera.
 
-El modelo de negocio propuesto es de suscripción mensual escalonada. El plan **Base** permite adopción inicial sin costo para pequeños negocios; el plan **Operaciones** habilita mayor capacidad de monitoreo, reportes y mantenimiento; y el plan **Compliance AI** incorpora capacidades avanzadas como asistencia inteligente, resúmenes de cumplimiento y límites ampliados. Para los planes pagados se plantea integrar un proveedor externo de pagos, como Stripe en modo de prueba académico, evitando que ColdTrace almacene datos sensibles de tarjetas.
+El modelo de negocio propuesto es de suscripción mensual escalonada. El plan **Base** permite adopción inicial sin costo para pequeños negocios; el plan **Operaciones** habilita mayor capacidad de monitoreo, reportes y mantenimiento; y el plan **Compliance AI** incorpora capacidades avanzadas como asistencia inteligente, resúmenes de cumplimiento y límites ampliados. Para los planes pagados se plantea integrar un proveedor externo de pagos, como Stripe en modo de prueba académico, evitando que ColdTrace almacene datos sensibles de tarjetas. Esta decisión se apoya en el uso de Checkout Sessions, Customer Portal y webhooks de Stripe, que permiten delegar pago, autoservicio de facturación y sincronización de eventos al proveedor externo (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
 
 ### 1.2.1 Antecedentes y problemática
 
@@ -1157,7 +1157,11 @@ Las historias técnicas se actualizan para AV2 con un enfoque de contrato de API
 
 Para el Sprint 4 se agregan historias técnicas asociadas a las épicas EP013, EP014 y EP008. Los identificadores continúan desde TS18 porque TS16 y TS17 quedaron documentadas en el Sprint 3 como Organizations API Base y Locations API.
 
-Para mantener la integración alineada con el material de Spring AI del curso, ColdTrace no acopla la lógica de negocio a un proveedor específico. La estrategia definida es usar Spring AI como capa de abstracción: en desarrollo local se propone Ollama con el modelo `gemma3:4b`, mientras que en el entorno desplegado académico se propone OpenAI con el modelo `gpt-5.4-mini`. Esta decisión permite probar sin costo localmente y mantener una versión desplegada liviana en Cloud Run, ya que el backend solo invoca un proveedor externo mediante HTTPS y conserva `modelProvider` y `modelName` como configuración por entorno.
+Para mantener la integración alineada con el material de Spring AI del curso, ColdTrace no acopla la lógica de negocio a un proveedor específico. La estrategia definida es usar Spring AI como capa de abstracción: en desarrollo local se propone Ollama con el modelo `gemma3:4b`, mientras que en el entorno desplegado académico se propone OpenAI con el modelo `gpt-5.4-mini`. Esta decisión permite probar sin costo localmente y mantener una versión desplegada liviana en Cloud Run, ya que el backend solo invoca un proveedor externo mediante HTTPS y conserva `modelProvider` y `modelName` como configuración por entorno. La propuesta se fundamenta en la API portable de `ChatModel`/`ChatClient` de Spring AI, el soporte oficial de Spring AI para Ollama y OpenAI, la disponibilidad del modelo `gemma3` en Ollama y la documentación de modelos/precios de OpenAI (Spring AI, s. f.-a; Spring AI, s. f.-b; Spring AI, s. f.-c; Ollama, s. f.; OpenAI, s. f.-a; OpenAI, s. f.-b).
+
+Las historias de autenticación social se fundamentan en los flujos oficiales de Google OpenID Connect/OAuth 2.0 para aplicaciones web de servidor y en Sign in with Apple, donde el backend debe validar la identidad externa antes de emitir una sesión propia de ColdTrace. Por ello, Google y Apple se tratan como proveedores de identidad, no como fuentes de autorización interna, roles o pertenencia a organización (Google Developers, s. f.-a; Google Developers, s. f.-b; Apple Developer, s. f.-a; Apple Developer, s. f.-b).
+
+Las historias de billing se sustentan en Stripe Checkout, Customer Portal y webhooks. Checkout permite crear sesiones de pago o suscripción desde backend, Customer Portal delega la gestión de facturación al proveedor, y los webhooks permiten sincronizar cambios de suscripción sin que ColdTrace almacene datos sensibles de tarjeta (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
 
 | **ID** | **Epic** | **Endpoint principal** | **Technical Story** | **Acceptance Criteria** | **Estado actual** |
 | --- | --- | --- | --- | --- | --- |
@@ -1729,12 +1733,12 @@ Se separa porque la IA no debe modificar directamente el estado del negocio ni m
 - Se facilita cambiar el proveedor LLM mediante Spring AI sin afectar los bounded contexts principales.
 
 ### Estrategia de proveedor de IA
-La integración sigue el enfoque del material de Spring AI: el dominio de ColdTrace depende de un cliente de asistencia (`ChatClient`/`ChatModel` a través de un adapter) y no de un proveedor concreto. Para desarrollo local se propone `AI_MODEL_PROVIDER=ollama` con `AI_MODEL_NAME=gemma3:4b`, ejecutado mediante Ollama en la máquina del equipo. Para el despliegue académico en Cloud Run se propone `AI_MODEL_PROVIDER=openai` con `AI_MODEL_NAME=gpt-5.4-mini`, evitando cargar un modelo local dentro del contenedor. En ambos casos, las credenciales y URLs se configuran por entorno y nunca se registran en el repositorio.
+La integración sigue el enfoque del material de Spring AI: el dominio de ColdTrace depende de un cliente de asistencia (`ChatClient`/`ChatModel` a través de un adapter) y no de un proveedor concreto. Para desarrollo local se propone `AI_MODEL_PROVIDER=ollama` con `AI_MODEL_NAME=gemma3:4b`, ejecutado mediante Ollama en la máquina del equipo. Para el despliegue académico en Cloud Run se propone `AI_MODEL_PROVIDER=openai` con `AI_MODEL_NAME=gpt-5.4-mini`, evitando cargar un modelo local dentro del contenedor. En ambos casos, las credenciales y URLs se configuran por entorno y nunca se registran en el repositorio. Esta arquitectura se apoya en la abstracción portable de Spring AI, su soporte para Ollama y OpenAI, la disponibilidad del modelo `gemma3` en Ollama y la documentación oficial de modelos/precios de OpenAI para controlar proveedor y costo por entorno (Spring AI, s. f.-a; Spring AI, s. f.-b; Spring AI, s. f.-c; Ollama, s. f.; OpenAI, s. f.-a; OpenAI, s. f.-b).
 
 ## 8. Bounded Context: Subscription & Billing
 
 ### Explicación
-Este contexto administra planes SaaS, límites por plan, suscripciones de organizaciones, integración con Stripe, portal de cliente, sesiones de checkout y webhooks de ciclo de vida de pagos. También expone la política de entitlements que otros bounded contexts consultan para habilitar funcionalidades como reportes exportables, mantenimiento avanzado o asistencia de IA.
+Este contexto administra planes SaaS, límites por plan, suscripciones de organizaciones, integración con Stripe, portal de cliente, sesiones de checkout y webhooks de ciclo de vida de pagos. También expone la política de entitlements que otros bounded contexts consultan para habilitar funcionalidades como reportes exportables, mantenimiento avanzado o asistencia de IA. La integración se fundamenta en Checkout Sessions para pagos/suscripciones alojadas, Customer Portal para autoservicio de facturación y webhooks para recibir eventos asincrónicos de Stripe (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
 
 ### Justificación
 Se separa porque monetización y pagos tienen reglas, riesgos e integración externa propios. Al aislar Subscription & Billing:
@@ -1767,7 +1771,7 @@ Estos problemas evidencian la necesidad de separar responsabilidades. La aplicac
 
 ### 4.6.2. Software Architecture Context Diagram.
 
-El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas, incluyendo sensores IoT, servicios de notificación, proveedor de modelo de IA consumido mediante Spring AI y Stripe para el ciclo de vida de suscripciones. El proveedor de IA se mantiene intercambiable: Ollama local para desarrollo y OpenAI en el despliegue académico.
+El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas, incluyendo sensores IoT, servicios de notificación, proveedores de identidad Google/Apple, proveedor de modelo de IA consumido mediante Spring AI y Stripe para el ciclo de vida de suscripciones. El proveedor de IA se mantiene intercambiable: Ollama local para desarrollo y OpenAI en el despliegue académico. La separación de Google/Apple como sistemas externos responde a que los flujos OpenID Connect/OAuth y Sign in with Apple validan identidad, mientras que ColdTrace conserva la autorización interna mediante organización, rol, permisos y JWT propio (Google Developers, s. f.-a; Google Developers, s. f.-b; Apple Developer, s. f.-a; Apple Developer, s. f.-b).
 
 ![contextdiagram](report/assets/chapter-04/contextdiagram/contextdiagram.png)
 
@@ -1777,7 +1781,7 @@ El diagrama de contexto de ColdTrace muestra, de forma general, a los actores qu
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
-El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC, Subscription & Billing BC y la integración de Identity & Access con proveedores externos de identidad Google/Apple, manteniendo a ColdTrace como responsable de organización, rol, permisos y JWT. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend.
+El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC, Subscription & Billing BC y la integración de Identity & Access con proveedores externos de identidad Google/Apple, manteniendo a ColdTrace como responsable de organización, rol, permisos y JWT. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend. Las dependencias externas de identidad, IA y pagos se documentan con referencias oficiales de Google, Apple, Spring AI, Ollama, OpenAI y Stripe para sustentar el diseño objetivo y sus restricciones de seguridad (Google Developers, s. f.-a; Apple Developer, s. f.-b; Spring AI, s. f.-a; Ollama, s. f.; OpenAI, s. f.-a; Stripe, s. f.-a).
 
 ![containerdiagram](report/assets/chapter-04/containerdiagram/containerdiagram.png)
 
@@ -5167,6 +5171,32 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 Agraria.pe. (2019, junio 26). *Perú pierde más del 33% de los alimentos que produce por mal uso de la cadena de frío*. Agraria. https://www.agraria.pe/noticias/peru-pierde-mas-del-33-de-los-alimentos-que-produce-por-mal--19324
 
+Apple Developer. (s. f.-a). *Authenticating users with Sign in with Apple*. Apple Developer Documentation. https://developer.apple.com/documentation/signinwithapple/authenticating-users-with-sign-in-with-apple
+
+Apple Developer. (s. f.-b). *Verifying a user*. Apple Developer Documentation. https://developer.apple.com/documentation/signinwithapple/verifying-a-user
+
 FAO. (2021). *Más de 12 millones de toneladas de alimentos se pierden a lo largo de la cadena productiva en el Perú*. Organización de las Naciones Unidas para la Alimentación y la Agricultura. https://www.fao.org/peru/noticias/detail-events/en/c/1712376/
 
 Gestión. (2025, septiembre 21). *Mercado de almacenes en frío en Perú crecerá a US$ 510 millones en 2025: ¿qué lo impulsa?* Gestión. https://gestion.pe/economia/empresas/mercado-de-almacenes-en-frio-en-peru-crecera-a-us-510-millones-en-2025-que-lo-impulsa-noticia/
+
+Google Developers. (s. f.-a). *OpenID Connect: Sign in with Google*. Google Identity. https://developers.google.com/identity/openid-connect/openid-connect
+
+Google Developers. (s. f.-b). *Using OAuth 2.0 for Web Server Applications*. Google Identity. https://developers.google.com/identity/protocols/oauth2/web-server
+
+Ollama. (s. f.). *gemma3*. Ollama Model Library. https://ollama.com/library/gemma3
+
+OpenAI. (s. f.-a). *Models*. OpenAI API Documentation. https://developers.openai.com/api/docs/models
+
+OpenAI. (s. f.-b). *Pricing*. OpenAI API Documentation. https://developers.openai.com/api/docs/pricing
+
+Spring AI. (s. f.-a). *Chat Client API*. Spring AI Reference. https://docs.spring.io/spring-ai/reference/api/chatclient.html
+
+Spring AI. (s. f.-b). *Ollama Chat*. Spring AI Reference. https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html
+
+Spring AI. (s. f.-c). *OpenAI Chat*. Spring AI Reference. https://docs.spring.io/spring-ai/reference/api/chat/openai-chat.html
+
+Stripe. (s. f.-a). *Checkout Sessions*. Stripe API Reference. https://docs.stripe.com/api/checkout/sessions
+
+Stripe. (s. f.-b). *Customer Portal Session*. Stripe API Reference. https://docs.stripe.com/api/customer_portal/sessions
+
+Stripe. (s. f.-c). *Receive Stripe events in your webhook endpoint*. Stripe Documentation. https://docs.stripe.com/webhooks
