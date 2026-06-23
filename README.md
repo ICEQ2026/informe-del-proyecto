@@ -1,80 +1,45 @@
-﻿<div align="center">
-<br>
-<img src="report/assets/common/logo-upc.png" width="180" alt="Logo UPC">
-<br><br>
+![Logo UPC](report/assets/common/logo-upc.png)
+
 
 # UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS
 
-<br>
 
 ### Facultad de Ingeniería
 ### Carrera de Ingeniería de Software
 
-<br>
 
 **Ciclo Académico 2026-10**
 
-<br>
 
-**Código:** 1ASI0729 &nbsp; | &nbsp; **Curso:** Desarrollo de Aplicaciones Open Source &nbsp; | &nbsp; **NRC:** 10177
+**Código:** 1ASI0729   |   **Curso:** Desarrollo de Aplicaciones Open Source   |   **NRC:** 10177
 
-<br>
 
 **Docente:** Mori Paiva, Hugo Allan
 
-<br>
 
 # Informe de Trabajo Final
 
-<br>
 
 ### **Nombre de la Startup:**
 **ICEQ (Ice Quality Monitoring)**
 
-<br>
 
 ### **Nombre del Producto:**
 **ColdTrace**
 
-<br>
 
 ### Relación de integrantes
 
-<table align="center" style="margin: 0 auto; font-size: 15px;">
-<thead>
-    <tr>
-      <th align="center">Código</th>
-      <th align="center">Apellidos y Nombres</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center">U202415820</td>
-      <td align="left">Cabrera Novoa, Leonardo Moisés</td>
-    </tr>
-    <tr>
-      <td align="center">U200815121</td>
-      <td align="left">Espinoza Paredes, Frezzia</td>
-    </tr>
-    <tr>
-      <td align="center">U20231B504</td>
-      <td align="left">Morales Venegas, David Joel</td>
-    </tr>
-    <tr>
-      <td align="center">U202410093</td>
-      <td align="left">Pajés León, Mauricio Luis</td>
-    </tr>
-    <tr>
-      <td align="center">U202220648</td>
-      <td align="left">Videla Ventura, Jorge Joseph</td>
-    </tr>
-  </tbody>
-</table>
+| Código | Apellidos y Nombres |
+| --- | --- |
+| U202415820 | Cabrera Novoa, Leonardo Moisés |
+| U200815121 | Espinoza Paredes, Frezzia |
+| U20231B504 | Morales Venegas, David Joel |
+| U202410093 | Pajés León, Mauricio Luis |
+| U202220648 | Videla Ventura, Jorge Joseph |
 
-<br><br>
 
 **Lima, abril de 2026**
-</div>
 
 
 # Registro de versiones del informe
@@ -88,7 +53,6 @@
 | 1.5.0 | 23/04/26 | Espinoza Paredes, Frezzia / Pajés León, Mauricio Luis / Videla Ventura, Jorge Joseph | Consolidación de arquitectura y diseño técnico: event storming, diagramas C4, diagramas de componentes, diagramas de clases, diseño de base de datos y cierre final del informe. |
 | 1.6.0 | 13/05/26 | Pajés León, Mauricio Luis | Actualización del README del informe, incluyendo ajustes de user stories, documentación técnica y Student Outcome de TB1 según las responsabilidades reales asumidas por épica. |
 | 1.7.0 | 17/06/26 | Pajés León, Mauricio Luis / Morales Venegas, David Joel | Adición del Sprint 3 con tickets de Linear (OPE), assignees y estimaciones, commits del backend y URLs de Cloud Run actualizadas. Actualización de Collaboration Insights y adición de secciones AV2. |
-| 1.8.0 | 19/06/26 | Pajés León, Mauricio Luis | Actualización de diagramas de componentes, clases y base de datos según el backend real de ColdTrace Platform. |
 
 
 
@@ -114,9 +78,9 @@ El proceso de desarrollo del informe se realizó de manera incremental, integran
 
 Asimismo, todos los integrantes participaron activamente en la elaboración del informe, realizando aportes continuos que permitieron consolidar una documentación coherente y alineada entre sus distintas secciones. Esta colaboración se evidencia en los analíticos de contribución y commits, los cuales reflejan la participación distribuida del equipo.
 
-<img src="report/assets/common/collaboration-insights/tb1-pulse-overview.png" width="900" alt="GitHub Pulse - Overview TB1">
+![GitHub Pulse - Overview TB1](report/assets/common/collaboration-insights/tb1-pulse-overview.png)
 
-<img src="report/assets/common/collaboration-insights/tb1-contributors.png" width="900" alt="GitHub Contributors - Commits over time TB1">
+![GitHub Contributors - Commits over time TB1](report/assets/common/collaboration-insights/tb1-contributors.png)
 
 ## AV2
 
@@ -135,7 +99,238 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
 
-#
+## Capítulo I: Introducción
+- [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+- [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [1.2.2 Lean UX Process.](#122-lean-ux-process)
+        - [1.2.2.1. Lean UX Problem Statements.](#1221-lean-ux-problem-statements)
+        - [1.2.2.2. Lean UX Assumptions.](#1222-lean-ux-assumptions)
+        - [1.2.2.3. Lean UX Hypothesis Statements.](#1223-lean-ux-hypothesis-statements)
+        - [1.2.2.4. Lean UX Canvas.](#1224-lean-ux-canvas)
+- [1.3. Segmentos objetivo.](#13-segmentos-objetivo)
+
+## Capítulo II: Requirements Elicitation & Analysis
+- [2.1. Competidores.](#21-competidores)
+    - [2.1.1. Análisis competitivo.](#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores.](#212-estrategias-y-tácticas-frente-a-competidores)
+- [2.2. Entrevistas.](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas.](#221-diseño-de-entrevistas)
+    - [2.2.2. Registro de entrevistas.](#222-registro-de-entrevistas)
+    - [2.2.3. Análisis de entrevistas.](#223-análisis-de-entrevistas)
+- [2.3. Needfinding.](#23-needfinding)
+    - [2.3.1. User Personas.](#231-user-personas)
+    - [2.3.2. User Task Matrix.](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping.](#233-user-journey-mapping)
+    - [2.3.4. Empathy Mapping.](#234-empathy-mapping)
+- [2.4. Big Picture EventStorming.](#24-big-picture-eventstorming)
+- [2.5. Ubiquitous Language.](#25-ubiquitous-language)
+
+## Capítulo III: Requirements Specification
+- [3.1. User Stories.](#31-user-stories)
+- [3.2. Impact Mapping.](#32-impact-mapping)
+- [3.3. Product Backlog.](#33-product-backlog)
+
+## Capítulo IV: Product Design
+- [4.1. Style Guidelines.](#41-style-guidelines)
+    - [4.1.1. General Style Guidelines.](#411-general-style-guidelines)
+    - [4.1.2. Web Style Guidelines.](#412-web-style-guidelines)
+- [4.2. Information Architecture.](#42-information-architecture)
+    - [4.2.1. Organization Systems.](#421-organization-systems)
+    - [4.2.2. Labeling Systems.](#422-labeling-systems)
+    - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+    - [4.2.4. Searching Systems.](#424-searching-systems)
+    - [4.2.5. Navigation Systems.](#425-navigation-systems)
+- [4.3. Landing Page UI Design.](#43-landing-page-ui-design)
+    - [4.3.1. Landing Page Wireframe.](#431-landing-page-wireframe)
+    - [4.3.2. Landing Page Mock-up.](#432-landing-page-mock-up)
+- [4.4. Web Applications UX/UI Design.](#44-web-applications-uxui-design)
+    - [4.4.1. Web Applications Wireframes.](#441-web-applications-wireframes)
+    - [4.4.2. Web Applications Wireflow Diagrams.](#442-web-applications-wireflow-diagrams)
+    - [4.4.2. Web Applications Mock-ups.](#442-web-applications-mock-ups)
+    - [4.4.3. Web Applications User Flow Diagrams.](#443-web-applications-user-flow-diagrams)
+- [4.5. Web Applications Prototyping.](#45-web-applications-prototyping)
+- [4.6. Domain-Driven Software Architecture.](#46-domain-driven-software-architecture)
+    - [4.6.1. Design-Level EventStorming.](#461-design-level-eventstorming)
+    - [4.6.2. Software Architecture Context Diagram.](#462-software-architecture-context-diagram)
+    - [4.6.3. Software Architecture Container Diagrams.](#463-software-architecture-container-diagrams)
+    - [4.6.4. Software Architecture Components Diagrams.](#464-software-architecture-components-diagrams)
+- [4.7. Software Object-Oriented Design.](#47-software-object-oriented-design)
+    - [4.7.1. Class Diagrams.](#471-class-diagrams)
+- [4.8. Database Design.](#48-database-design)
+    - [4.8.1. Database Diagrams.](#481-database-diagrams)
+
+## Capítulo V: Product Implementation, Validation & Deployment
+- [5.1. Software Configuration Management.](#51-software-configuration-management)
+    - [5.1.1. Software Development Environment Configuration.](#511-software-development-environment-configuration)
+    - [5.1.2. Source Code Management.](#512-source-code-management)
+    - [5.1.3. Source Code Style Guide & Conventions.](#513-source-code-style-guide--conventions)
+    - [5.1.4. Software Deployment Configuration.](#514-software-deployment-configuration)
+- [5.2. Landing Page, Services & Applications Implementation.](#52-landing-page-services--applications-implementation)
+    - [5.2.1. Sprint 1](#521-sprint-1)
+        - [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
+        - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+        - [5.2.1.3. Sprint Backlog 1](#5213-sprint-backlog-1)
+        - [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
+        - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+        - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+        - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+        - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+    - [5.2.2. Sprint 2](#522-sprint-2)
+        - [5.2.2.1. Sprint Planning 2](#5221-sprint-planning-2)
+        - [5.2.2.2. Aspect Leaders and Collaborators](#5222-aspect-leaders-and-collaborators)
+        - [5.2.2.3. Sprint Backlog 2](#5223-sprint-backlog-2)
+        - [5.2.2.4. Development Evidence for Sprint Review](#5224-development-evidence-for-sprint-review)
+        - [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review)
+        - [5.2.2.6. Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
+        - [5.2.2.7. Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
+        - [5.2.2.8. Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
+    - [5.2.3. Sprint 3](#523-sprint-3)
+        - [5.2.3.1. Sprint Planning 3](#5231-sprint-planning-3)
+        - [5.2.3.2. Aspect Leaders and Collaborators](#5232-aspect-leaders-and-collaborators)
+        - [5.2.3.3. Sprint Backlog 3](#5233-sprint-backlog-3)
+        - [5.2.3.4. Development Evidence for Sprint Review](#5234-development-evidence-for-sprint-review)
+        - [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review)
+        - [5.2.3.6. Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
+        - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
+        - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
+- [5.3. Validation Interviews](#53-validation-interviews)
+    - [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
+    - [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
+    - [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
+- [5.4. Video About-the-Product](#54-video-about-the-product)
+
+## Conclusiones
+- [Conclusiones y recomendaciones.](#conclusiones-y-recomendaciones)
+- [Video About-the-Team.](#video-about-the-team)
+
+## Bibliografía
+- [Bibliografía.](#bibliografía)
+
+# Student Outcome
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+**ABET – EAC - Student Outcome 3**
+
+**Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
+
+En el siguiente cuadro se describen las acciones realizadas y las conclusiones del equipo, que permiten sustentar el logro del ABET – EAC - Student Outcome 3.
+
+---
+
+## Tabla de Student Outcome
+
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th style="width:25%;">Criterio específico</th>
+    <th style="width:45%;">Acciones realizadas</th>
+    <th style="width:30%;">Conclusiones</th>
+  </tr>
+  <tr>
+    <td>
+      Comunica oralmente con efectividad a diferentes rangos de audiencia
+    </td>
+    <td>
+      <strong>Videla Ventura, Jorge Joseph</strong><br>
+      <strong>AV1</strong><br>
+      Explicó el contexto de la startup, la problemática, los segmentos objetivo, el análisis competitivo, las entrevistas, el needfinding y el Big Picture Event Storming del proyecto.<br><br>
+      <strong>TB1</strong><br>
+      Sustentó la épica de alertas e incidencias, explicando cómo ColdTrace identifica eventos críticos, permite reconocer alertas, registrar acciones correctivas y mantener trazabilidad sobre incidentes operativos.<br><br>
+      <strong>AV2</strong><br>
+      Sustentó la implementación de la IoT Devices API (TS05) en el backend Spring Boot, explicando el registro y administración de dispositivos IoT, los endpoints REST expuestos y la integración con el dominio de gestión de activos.<br><br>
+      <strong>Pajés León, Mauricio Luis</strong><br>
+      <strong>AV1</strong><br>
+      Sustentó los requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, además de la landing page del producto.<br><br>
+      <strong>TB1</strong><br>
+      Expuso las épicas de gestión de usuarios, acceso, equipos y sensores, detallando la autenticación, roles, permisos, registro de activos, sensores y gateways, además de la relación entre gateway, ubicación y activo dentro de la fake API.<br><br>
+      <strong>AV2</strong><br>
+      Sustentó la arquitectura general del backend Spring Boot, la fundación del proyecto, la implementación de los Technical Stories TS01 (Org Sign-Up), TS03 (Users), TS09 (Incident Lifecycle), TS13 (Gateways), TS16 (Org Base) y TS17 (Locations), así como el despliegue en Google Cloud Run, la documentación OpenAPI y la internacionalización de errores.<br><br>
+      <strong>Espinoza Paredes, Frezzia</strong><br>
+      <strong>AV1</strong><br>
+      Explicó los diagramas de arquitectura de software, los diagramas de clases, el diseño de base de datos y participó también en la sustentación de la landing page.<br><br>
+      <strong>TB1</strong><br>
+      Presentó la épica de configuración operativa y mantenimiento, explicando la configuración de rangos seguros, parámetros operativos, mantenimiento preventivo y servicio técnico como soporte para adaptar ColdTrace a cada operación.<br><br>
+      <strong>AV2</strong><br>
+      Sustentó la revisión de endpoints REST y la documentación del Sprint Backlog 3.<br><br>
+      <strong>Morales Venegas, David Joel</strong><br>
+      <strong>AV1</strong><br>
+      Sustentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Expuso la épica de monitoreo de temperatura y humedad, detallando las vistas de monitoreo operacional y por activo, la lectura de temperatura, humedad, conectividad, estado de sensores y consistencia visual con el layout principal de la aplicación.<br><br>
+      <strong>AV2</strong><br>
+      Sustentó la implementación de los Technical Stories TS04 (Assets), TS06 (Asset Settings), TS08 (Incidents & Notifications), TS10 (Reports) y TS12 (Role Assignment), explicando los endpoints REST implementados, la arquitectura hexagonal y la integración entre bounded contexts en el backend Spring Boot.<br><br>
+      <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
+      <strong>AV1</strong><br>
+      Explicó los mockups finales de la aplicación, el prototipado, la configuración del entorno de desarrollo y los aspectos de implementación del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Sustentó la épica de reportes, historial de eventos y cumplimiento, explicando la generación de bitácoras diarias, reportes históricos, reportes mensuales y evidencia descargable para auditoría y toma de decisiones.<br><br>
+      <strong>AV2</strong><br>
+      Sustentó la implementación de los Technical Stories TS07 (Sensor Readings), TS14 (Maintenance Schedules) y TS15 (Technical Service Requests), explicando los endpoints REST, el modelo de dominio y la persistencia JPA de cada bounded context en el backend Spring Boot.
+    </td>
+    <td>
+      <strong>AV1:</strong><br>
+       El equipo logró comunicar de manera clara y estructurada los componentes principales del proyecto, adaptando la explicación según el tipo de contenido presentado, ya sea de negocio, UX o técnico. Se evidenció coherencia en la exposición y dominio progresivo del alcance del producto.<br><br>
+       <strong>TB1:</strong><br>
+       El equipo demostró capacidad para comunicar oralmente el avance funcional de ColdTrace por responsabilidades de épica, explicando autenticación, gestión de activos, monitoreo, alertas, reportes y configuración operativa de forma comprensible para audiencias técnicas y no técnicas.<br><br>
+       <strong>AV2:</strong><br>
+       El equipo demostró capacidad para comunicar oralmente la implementación técnica del backend Spring Boot, explicando la arquitectura hexagonal, los bounded contexts, los endpoints REST, el despliegue en Cloud Run y la documentación OpenAPI. Cada integrante sustentó sus Technical Stories asignados, evidenciando comprensión del dominio y de las decisiones técnicas adoptadas.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Comunica por escrito con efectividad a diferentes rangos de audiencia
+    </td>
+    <td>
+      <strong>Videla Ventura, Jorge Joseph</strong><br>
+      <strong>AV1</strong><br>
+      Redactó el contexto de la startup, la problemática, los segmentos objetivo, el análisis competitivo, las entrevistas, el needfinding y la documentación asociada al Event Storming del proyecto.<br><br>
+      <strong>TB1</strong><br>
+      Documentó la épica de alertas e incidencias, incluyendo el flujo de detección de eventos críticos, reconocimiento de alertas, cierre con acciones correctivas y evidencia de seguimiento operativo.<br><br>
+      <strong>AV2</strong><br>
+      Documentó la implementación de la IoT Devices API (TS05), incluyendo el modelo de dominio, los endpoints REST y la integración con el bounded context de Asset Management en el backend Spring Boot.<br><br>
+      <strong>Pajés León, Mauricio Luis</strong><br>
+      <strong>AV1</strong><br>
+      Elaboró la documentación de requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, y participó en la documentación y desarrollo de la landing page.<br><br>
+      <strong>TB1</strong><br>
+      Documentó las épicas de gestión de usuarios, acceso, equipos y sensores, incluyendo autenticación, roles, permisos, activos, sensores, gateways, ubicación derivada y criterios de consistencia de datos desde la fake API.<br><br>
+      <strong>AV2</strong><br>
+      Documentó la arquitectura general del backend Spring Boot, la fundación del proyecto, los Technical Stories TS01, TS03, TS09, TS13, TS16 y TS17, el despliegue en Cloud Run, la documentación OpenAPI y la internacionalización de errores.<br><br>
+      <strong>Espinoza Paredes, Frezzia</strong><br>
+      <strong>AV1</strong><br>
+      Redactó la documentación de arquitectura de software, diagramas de clases y diseño de base de datos, y participó también en la documentación de la landing page.<br><br>
+      <strong>TB1</strong><br>
+      Redactó la documentación de configuración operativa y mantenimiento, abarcando rangos seguros, frecuencia de lectura, criterios de evaluación, mantenimiento preventivo y solicitudes de servicio técnico.<br><br>
+      <strong>AV2</strong><br>
+      Colaboró en la revisión de endpoints REST y en la documentación del Sprint Backlog 3.<br><br>
+      <strong>Morales Venegas, David Joel</strong><br>
+      <strong>AV1</strong><br>
+      Documentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Registró la documentación de monitoreo de temperatura y humedad, incluyendo lecturas actuales, historial de mediciones, conectividad de sensores y gateways, y sincronización de datos simulados.<br><br>
+      <strong>AV2</strong><br>
+      Documentó la implementación de los Technical Stories TS04 (Assets), TS06 (Asset Settings), TS08 (Incidents & Notifications), TS10 (Reports) y TS12 (Role Assignment), describiendo los endpoints REST, la arquitectura hexagonal y la integración entre bounded contexts en el backend.<br><br>
+      <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
+      <strong>AV1</strong><br>
+      Redactó el contenido relacionado con mockups finales, prototipado, configuración del entorno de desarrollo e implementación del sistema.<br><br>
+      <strong>TB1</strong><br>
+      Elaboró la documentación de reportes, historial de eventos y cumplimiento, incluyendo bitácoras diarias, reportes históricos, reportes mensuales, exportación de evidencias y trazabilidad de datos para auditoría.<br><br>
+      <strong>AV2</strong><br>
+      Documentó la implementación de los Technical Stories TS07 (Sensor Readings), TS14 (Maintenance Schedules) y TS15 (Technical Service Requests), incluyendo el modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST de cada bounded context.
+    </td>
+    <td>
+      <strong>AV1:</strong><br>
+       El equipo desarrolló documentación escrita clara, organizada y consistente, cubriendo aspectos de negocio, experiencia de usuario y arquitectura técnica. La redacción mantuvo coherencia entre secciones y permitió sustentar adecuadamente la propuesta del proyecto.<br><br>
+       <strong>TB1:</strong><br>
+       El equipo produjo documentación funcional y técnica organizada para TB1, evidenciando la distribución real de trabajo por épicas, la implementación de los bounded contexts principales y la relación entre responsabilidades individuales, evidencias funcionales y criterios técnicos verificables.<br><br>
+       <strong>AV2:</strong><br>
+        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 15 Technical Stories más tareas transversales con sus endpoints REST, estimaciones y responsables asignados.
+    </td>
+  </tr>
+</table>
+
 
 # Capítulo I: Introducción
 
@@ -155,11 +350,11 @@ La solución integra sensores IoT con una aplicación web accesible desde navega
 
 | Foto | Código | Nombre completo | Carrera | Perfil y habilidades |
 |:-----|:-------|:----------------|:--------|:---------------------|
-| ![Leonardo](/report/assets/chapter-01/team/thumbnails/leonardo.png) | U202415820 | **Cabrera Novoa, Leonardo Moisés** | Ingeniería de Software | Estudiante de 5to ciclo con experiencia en C++ y recientemente en C#. Se enfoca en el desarrollo colaborativo, aportando compromiso y adaptabilidad para lograr los objetivos de cada sprint. |
-| ![Frezzia](/report/assets/chapter-01/team/thumbnails/frezzia.jpg) | U200815121 | **Espinoza Paredes, Frezzia** | Ingeniería de Software | Estudiante de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Tiene habilidades en prototipado, user experience, HTML, CSS, JavaScript, Python y C++. |
+| ![Leonardo](report/assets/chapter-01/team/thumbnails/leonardo.png) | U202415820 | **Cabrera Novoa, Leonardo Moisés** | Ingeniería de Software | Estudiante de 5to ciclo con experiencia en C++ y recientemente en C#. Se enfoca en el desarrollo colaborativo, aportando compromiso y adaptabilidad para lograr los objetivos de cada sprint. |
+| ![Frezzia](report/assets/chapter-01/team/thumbnails/frezzia.jpg) | U200815121 | **Espinoza Paredes, Frezzia** | Ingeniería de Software | Estudiante de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Tiene habilidades en prototipado, user experience, HTML, CSS, JavaScript, Python y C++. |
 | Pendiente | U20231B504 | **Morales Venegas, David Joel** | Ingeniería de Software | Estudiante de Ingeniería de Software con formación intermedia en desarrollo de aplicaciones web. Se adapta al trabajo técnico del equipo, priorizando código funcional, entendible y alineado a los requerimientos del proyecto. |
-| ![Mauricio](/report/assets/chapter-01/team/thumbnails/mauricio.png) | U202410093 | **Pajés León, Mauricio Luis** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC, con experiencia en C++ y Python, diseño y patrones de software, bases de datos SQL y NoSQL, desarrollo backend con Java Spring Boot y Node.js, comunicación y trabajo en equipo. |
-| ![Jorge](/report/assets/chapter-01/team/thumbnails/jorge.png) | U202220648 | **Videla Ventura, Jorge Joseph** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC (4.º ciclo), con experiencia en C++ y Python. Responsable, comprometido y orientado al trabajo en equipo. |
+| ![Mauricio](report/assets/chapter-01/team/thumbnails/mauricio.png) | U202410093 | **Pajés León, Mauricio Luis** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC, con experiencia en C++ y Python, diseño y patrones de software, bases de datos SQL y NoSQL, desarrollo backend con Java Spring Boot y Node.js, comunicación y trabajo en equipo. |
+| ![Jorge](report/assets/chapter-01/team/thumbnails/jorge.png) | U202220648 | **Videla Ventura, Jorge Joseph** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC (4.º ciclo), con experiencia en C++ y Python. Responsable, comprometido y orientado al trabajo en equipo. |
 
 ## 1.2 Solution Profile
 
@@ -275,6 +470,7 @@ En función de la problemática identificada y del tipo de solución que propone
 **Ubicación:** centros de distribución, almacenes, supermercados, cámaras frigoríficas y operadores logísticos en zonas urbanas.
 **Interés:** centralizar el monitoreo de la cadena de frío, responder con rapidez ante incidencias, mejorar trazabilidad, facilitar auditorías y tomar decisiones operativas con base en datos históricos. | Según la FAO (2021), en el Perú se desperdician más de 12 millones de toneladas de alimentos a lo largo de la cadena productiva. Esto refuerza la necesidad de que las áreas de operaciones, calidad y logística cuenten con herramientas de monitoreo continuo para prevenir pérdidas y elevar el control sobre la cadena de frío. |
 
+
 # Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1 Competidores
@@ -289,7 +485,7 @@ Este análisis permite identificar cómo se posiciona ColdTrace frente a platafo
 
 | Categoría | Criterio | ColdTrace (ICEQ) | SmartSense by Digi | Monnit | Cooltrax |
 |:----------|:---------|:-----------------|:-------------------|:-------|:---------|
-| Logotipos | Software | **ColdTrace (ICEQ)** | ![SmartSense by Digi](assets/chapter-02/competitors/thumbnails/smartsense.png) | ![Monnit](assets/chapter-02/competitors/thumbnails/monnit.png) | ![Cooltrax](assets/chapter-02/competitors/thumbnails/cooltrax.png) |
+| Logotipos | Software | **ColdTrace (ICEQ)** | ![SmartSense by Digi](report/assets/chapter-02/competitors/thumbnails/smartsense.png) | ![Monnit](report/assets/chapter-02/competitors/thumbnails/monnit.png) | ![Cooltrax](report/assets/chapter-02/competitors/thumbnails/cooltrax.png) |
 | Perfil | Overview | Startup peruana orientada al monitoreo web de temperatura y humedad para la cadena de frío alimentaria en negocios pequeños y medianos, con evolución hacia planes SaaS y asistencia inteligente para incidencias. | Plataforma enterprise de food safety y temperature monitoring con sensores, workflows y compliance para restaurantes, grocery, schools y hospitality. | Plataforma de remote monitoring con 80+ sensores IoT, software iMonnit y soluciones de food service monitoring. | Plataforma industrial IoT para visibilidad y control de cadena de frío en transporte, warehouses, cold rooms y pallets. |
 | Perfil | Ventaja competitiva | Adaptación al contexto peruano, menor complejidad de adopción, planes claros para pymes y apoyo de IA bajo aprobación humana para resolver incidencias. | Escala enterprise, automatización de cumplimiento, analytics avanzados y workflows guiados para operaciones multisede. | Costo accesible, despliegue rápido, catálogo amplio de sensores y flexibilidad cloud / on-premises. | Monitoreo a nivel de producto, ubicación y temperatura con fuerte foco en control de flotas y distribución refrigerada. |
 | Perfil de Marketing | Mercado objetivo | Minimarkets, puestos de mercado, carnicerías, pescaderías, restaurantes, almacenes y operadores medianos en Perú. | Large restaurants, grocery chains, convenience stores, schools, hospitality y food manufacturing. | Food service, producción, restaurantes y negocios que necesitan monitoreo remoto sin gran infraestructura. | Enterprise fleets, grocery store fleets, food & beverage fleets, warehouses y cold storage operations. |
@@ -380,7 +576,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/1-1-interview.png" alt="Entrevista 1" width="900">
+        <img src="report/assets/chapter-02/interviews/1-1-interview.png" alt="Entrevista 1" width="900">
       </td>
     </tr>
     <tr>
@@ -432,7 +628,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/1-2-interview.png" alt="Entrevista 2" width="900">
+        <img src="report/assets/chapter-02/interviews/1-2-interview.png" alt="Entrevista 2" width="900">
       </td>
     </tr>
     <tr>
@@ -484,7 +680,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/1-3-interview.png" alt="Entrevista 3" width="900">
+        <img src="report/assets/chapter-02/interviews/1-3-interview.png" alt="Entrevista 3" width="900">
       </td>
     </tr>
     <tr>
@@ -538,7 +734,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/2-1-interview.png" alt="Entrevista 4" width="900">
+        <img src="report/assets/chapter-02/interviews/2-1-interview.png" alt="Entrevista 4" width="900">
       </td>
     </tr>
     <tr>
@@ -590,7 +786,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/2-2-interview.png" alt="Entrevista 5" width="900">
+        <img src="report/assets/chapter-02/interviews/2-2-interview.png" alt="Entrevista 5" width="900">
       </td>
     </tr>
     <tr>
@@ -642,7 +838,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/2-3-interview.png" alt="Entrevista 6" width="900">
+        <img src="report/assets/chapter-02/interviews/2-3-interview.png" alt="Entrevista 6" width="900">
       </td>
     </tr>
     <tr>
@@ -771,11 +967,11 @@ La creación de User Personas permite humanizar los datos recopilados durante la
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
-![User Persona Gustavo Fernández](assets/chapter-02/user-personas/segmento-1-gustavo-fernandez.png)
+![User Persona Gustavo Fernández](report/assets/chapter-02/user-personas/segmento-1-gustavo-fernandez.png)
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
-![User Persona Sofía Ramírez](assets/chapter-02/user-personas/segmento-2-sofia-ramirez.png)
+![User Persona Sofía Ramírez](report/assets/chapter-02/user-personas/segmento-2-sofia-ramirez.png)
 
 ### 2.3.2 User Task Matrix
 
@@ -814,11 +1010,11 @@ El User Journey Mapping representa el flujo de pasos, necesidades y emociones qu
 
 **User Journey Map: Gustavo Fernández (As-Is)**
 
-![User Journey Map de Gustavo Fernández](assets/chapter-02/journey-maps/journey-map1.png)
+![User Journey Map de Gustavo Fernández](report/assets/chapter-02/journey-maps/journey-map1.png)
 
 **User Journey Map: Sofía Ramírez (As-Is)**
 
-![User Journey Map de Sofía Ramírez](assets/chapter-02/journey-maps/journey-map2.png)
+![User Journey Map de Sofía Ramírez](report/assets/chapter-02/journey-maps/journey-map2.png)
 
 ### 2.3.4 Empathy Mapping
 
@@ -826,11 +1022,11 @@ El Empathy Map permite profundizar en el mundo interno y sensorial del usuario, 
 
 **Empathy Map: Gustavo Fernández**
 
-![Empathy Map de Gustavo Fernández](assets/chapter-02/empathy-maps/empathy-map1.png)
+![Empathy Map de Gustavo Fernández](report/assets/chapter-02/empathy-maps/empathy-map1.png)
 
 **Empathy Map: Sofía Ramírez**
 
-![Empathy Map de Sofía Ramírez](assets/chapter-02/empathy-maps/empathy-map2.png)
+![Empathy Map de Sofía Ramírez](report/assets/chapter-02/empathy-maps/empathy-map2.png)
 
 ---
 
@@ -838,7 +1034,7 @@ El Empathy Map permite profundizar en el mundo interno y sensorial del usuario, 
 
 Para diseñar un sistema robusto, primero es necesario entender el negocio como un todo, dejando de lado los tecnicismos para enfocarnos en la lógica pura del dominio. El Big Picture EventStorming es una técnica colaborativa que permite visualizar todos los eventos significativos que ocurren en la cadena de frío alimentaria. Al organizar estos eventos de manera cronológica, se logra identificar los flujos críticos del negocio y los puntos exactos donde la información suele perderse o donde la falta de monitoreo genera pérdidas.
 
-![Big Picture EventStorming](assets/chapter-02/eventstorming/eventstorming.png)
+![Big Picture EventStorming](report/assets/chapter-02/eventstorming/eventstorming.png)
 
 ---
 
@@ -871,6 +1067,7 @@ Para diseñar un sistema robusto, primero es necesario entender el negocio como 
 - Improves technical alignment: Ensures that database tables, REST resources, UI labels, and pricing content match the business reality.
 - Avoids ambiguities: Clearly distinguishes incidents, AI-assisted plans, subscriptions, entitlements, and payment-provider responsibilities.
 - Ensures consistency: Guarantees that documentation, web interfaces, project reports, and future prototypes use the same professional terminology.
+
 
 # Chapter III: Requirements Specification
 
@@ -1001,11 +1198,11 @@ El Impact Mapping se mantiene como técnica de alineamiento entre objetivos de n
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
-![Impact map del segmento de minimarkets o pequeños negocios con productos perecibles](assets/chapter-03/impact maps/impact-map1.png)
+![Impact map del segmento de minimarkets o pequeños negocios con productos perecibles](report/assets/chapter-03/impact%20maps/impact-map1.png)
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
-![Impact map del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío](assets/chapter-03/impact maps/impact-map2.png)
+![Impact map del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío](report/assets/chapter-03/impact%20maps/impact-map2.png)
 
 ## 3.3 Product Backlog
 
@@ -1095,6 +1292,7 @@ El Product Backlog prioriza historias visibles para usuarios finales y mantiene 
 | 80 | TS32 | Pricing actualizado en landing page | EP014 | 3 | Sprint 4 / Planned |
 | 81 | US051 | Abrir asistente IA para interpretar dashboard | EP013 | 5 | Sprint 4 / Planned |
 | 82 | TS33 | Panel frontend de AI insights para dashboard | EP013 | 3 | Sprint 4 / Planned |
+
 
 # CAPÍTULO IV. PRODUCT UX/UI DESIGN
 
@@ -1311,9 +1509,9 @@ Los wireframes de la Landing Page fueron diseñados con el objetivo de definir l
 En esta etapa se establecieron las principales secciones del sitio, como el encabezado de navegación, la sección principal (hero), características del producto, beneficios, testimonios y formulario de contacto.
 Asimismo, se consideró una versión responsive, adaptando la distribución de los elementos para dispositivos móviles, garantizando una navegación clara y accesible en diferentes tamaños de pantalla.
 
-![Wireframe Landing Page](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
+![Wireframe Landing Page](report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
 
-![Wireframe Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
+![Wireframe Landing Page Mobile](report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
 
 ---
 
@@ -1323,9 +1521,9 @@ Los mockups de la Landing Page representan la versión visual final del diseño,
 En esta etapa se aplicaron los lineamientos de branding del proyecto, incluyendo el uso de colores principales, jerarquía tipográfica y elementos visuales que refuerzan la identidad del producto.
 Además, se mantuvo consistencia entre la versión desktop y mobile, asegurando una experiencia uniforme para el usuario en cualquier dispositivo.
 
-![Mockup Landing Page](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
+![Mockup Landing Page](report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
 
-![Mockup Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
+![Mockup Landing Page Mobile](report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
 
 ---
 
@@ -1337,11 +1535,11 @@ Los wireframes de la aplicación web fueron diseñados para definir la estructur
 En esta etapa se identificaron los elementos clave de interacción, como paneles de control, visualización de datos, navegación entre secciones y componentes necesarios para la gestión del sistema.
 Estos wireframes permiten validar la distribución de información antes de la implementación visual, asegurando que las funcionalidades respondan a las necesidades del usuario.
 
-![Wireframe Web Application 1](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
+![Wireframe Web Application 1](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
 
-![Wireframe Web Application 2](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
+![Wireframe Web Application 2](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
 
-![Wireframe Web Application 3](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
+![Wireframe Web Application 3](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
 
 ---
 
@@ -1350,7 +1548,7 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
-![wireflows diagram](/report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
+![wireflows diagram](report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
 
 ---
 
@@ -1360,11 +1558,11 @@ Los mockups de la aplicación web muestran la representación visual final de la
 En esta etapa se buscó mantener consistencia visual con la Landing Page, asegurando una identidad unificada del producto.
 Asimismo, se priorizó la claridad en la presentación de información y la facilidad de uso, permitiendo que el usuario interactúe de manera intuitiva con las funcionalidades del sistema.
 
-![Mockup Web Application 1](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
+![Mockup Web Application 1](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
 
-![Mockup Web Application 2](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
+![Mockup Web Application 2](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
 
-![Mockup Web Application 3](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
+![Mockup Web Application 3](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
 
 ---
 
@@ -1375,15 +1573,15 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
 
-![userflowdiagram1](/report/assets/chapter-04/userflowdiagram/userflowdiagram1.png)
+![userflowdiagram1](report/assets/chapter-04/userflowdiagram/userflowdiagram1.png)
 
 ### User Flow 2 : Obtener reportes para supervisión y control.
 
-![userflowdiagram2](/report/assets/chapter-04/userflowdiagram/userflowdiagram2.png)
+![userflowdiagram2](report/assets/chapter-04/userflowdiagram/userflowdiagram2.png)
 
 ### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
 
-![userflowdiagram3](/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png)
+![userflowdiagram3](report/assets/chapter-04/userflowdiagram/userflowdiagram3.png)
 
 ---
 
@@ -1397,29 +1595,31 @@ El prototipo integra las pantallas clave del producto, como monitoreo, alertas, 
 
 ### Sprint 4 Prototype: AI Assistance and SaaS Billing
 
-Como parte de la ampliación del prototipo para el Sprint 4, se incorporan pantallas que representan las nuevas capacidades de asistencia inteligente, monetización SaaS y análisis del dashboard principal. Estas vistas mantienen el mismo estilo visual del frontend actual y muestran el comportamiento esperado antes de la implementación completa con backend persistente.
+Para el Sprint 4 se amplió el prototipo de la Web Application con funcionalidades orientadas a asistencia inteligente, monetización SaaS y análisis operacional bajo demanda. Estas pantallas permiten validar el valor de IA dentro del producto sin convertirla en un agente autónomo: la IA propone interpretaciones, resúmenes o planes, mientras que el usuario mantiene la decisión final y el backend objetivo conserva la responsabilidad de actualizar el estado real de la operación.
 
-- **AI Guidance para incidencias:** presenta un plan de resolución generado por IA, causa probable, acciones sugeridas, evidencia requerida y aprobación humana antes de cerrar la incidencia.
-- **AI Compliance Summary:** resume métricas de cumplimiento, riesgos, activos críticos y próximos pasos a partir de reportes operativos.
-- **Billing y suscripciones:** muestra plan actual, consumo de límites, comparación de planes y acciones de upgrade o portal de facturación.
-- **Pricing en landing page:** comunica los planes Base, Operations y Compliance AI con límites y CTA diferenciados.
+El prototipo considera cinco puntos de interacción principales:
+
+- **AI Guidance para incidencias:** muestra la generación de un plan de resolución con causa probable, pasos sugeridos, evidencia requerida y aprobación o rechazo por parte del operador.
+- **AI Compliance Summary:** resume reportes de cumplimiento y explica riesgos, métricas relevantes y próximos pasos en lenguaje operativo.
+- **Billing y suscripciones:** presenta plan actual, consumo de límites, acciones de upgrade, simulación de checkout y funciones bloqueadas por plan.
+- **Pricing en landing page:** comunica los planes Base, Operations y Compliance AI con límites, beneficios y llamadas a la acción.
 - **AI Insights en dashboard:** se mantiene cerrado por defecto como botón flotante y se abre bajo demanda como panel superpuesto para interpretar KPIs y responder preguntas sobre los gráficos sin agrandar permanentemente el dashboard.
 
 ![Sprint 4 AI Guidance resolution plan](report/assets/chapter-04/prototyping/sprint-4-ai-billing/ai-guidance-resolution-plan.png)
 
-*Figure 4.5.1. AI Guidance prototype for an AI-generated incident resolution plan.*
+*Figure 4.5.1. AI Guidance prototype for incident resolution planning.*
 
 ![Sprint 4 AI Compliance Summary](report/assets/chapter-04/prototyping/sprint-4-ai-billing/ai-compliance-summary.png)
 
-*Figure 4.5.2. AI Compliance Summary prototype for operational report interpretation.*
+*Figure 4.5.2. AI Compliance Summary prototype for report interpretation.*
 
 ![Sprint 4 Billing and Subscription Plans](report/assets/chapter-04/prototyping/sprint-4-ai-billing/billing-subscription-plans.png)
 
-*Figure 4.5.3. Billing prototype with current plan, usage and upgrade actions.*
+*Figure 4.5.3. In-app Billing prototype for SaaS subscription management.*
 
 ![Sprint 4 Landing Pricing Plans](report/assets/chapter-04/prototyping/sprint-4-ai-billing/landing-pricing-plans.png)
 
-*Figure 4.5.4. Landing page pricing prototype with SaaS plan tiers.*
+*Figure 4.5.4. Landing page pricing prototype with plan comparison.*
 
 ![Sprint 4 Dashboard AI Insights Panel](report/assets/chapter-04/prototyping/sprint-4-ai-billing/dashboard-ai-insights-panel.png)
 
@@ -1433,7 +1633,7 @@ Como parte de la ampliación del prototipo para el Sprint 4, se incorporan panta
 
 ### 4.6.1. Design-Level Event Storming.
 
-![boundedcontext](assets/chapter-04/boundedcontext/boundedcontext.png)
+![boundedcontext](report/assets/chapter-04/boundedcontext/boundedcontext.png)
 
 ## 1. Bounded Context: Identity & Access
 ### Explicación
@@ -1563,21 +1763,21 @@ Estos problemas evidencian la necesidad de separar responsabilidades. La aplicac
 
 El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas, incluyendo sensores IoT, servicios de notificación, proveedor de modelo de IA consumido mediante Spring AI y Stripe para el ciclo de vida de suscripciones. El proveedor de IA se mantiene intercambiable: Ollama local para desarrollo y OpenAI en el despliegue académico.
 
-![contextdiagram](assets/chapter-04/contextdiagram/contextdiagram.png)
+![contextdiagram](report/assets/chapter-04/contextdiagram/contextdiagram.png)
 
 *Figure 4.6.2. ColdTrace System Context Diagram following the C4 model.*
 
-> PlantUML source: [`assets/chapter-04/contextdiagram/contextdiagram.puml`](assets/chapter-04/contextdiagram/contextdiagram.puml).
+> PlantUML source: [`assets/chapter-04/contextdiagram/contextdiagram.puml`](report/assets/chapter-04/contextdiagram/contextdiagram.puml).
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
 El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC y Subscription & Billing BC, manteniendo la aprobación humana para resolver incidencias y aislando la integración con Stripe. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend.
 
-![containerdiagram](assets/chapter-04/containerdiagram/containerdiagram.png)
+![containerdiagram](report/assets/chapter-04/containerdiagram/containerdiagram.png)
 
 *Figure 4.6.3. ColdTrace System Container Diagram.*
 
-> PlantUML source: [`assets/chapter-04/containerdiagram/containerdiagram.puml`](assets/chapter-04/containerdiagram/containerdiagram.puml).
+> PlantUML source: [`assets/chapter-04/containerdiagram/containerdiagram.puml`](report/assets/chapter-04/containerdiagram/containerdiagram.puml).
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
@@ -1585,67 +1785,67 @@ En esta sección se presenta la vista de componentes de ColdTrace por bounded co
 
 - **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
 
-![Component View Identity & Access BC](assets/chapter-04/diagramcomponents/component-autenticacion.png)
+![Component View Identity & Access BC](report/assets/chapter-04/diagramcomponents/component-autenticacion.png)
 
 *Figure 4.6.4.1. Identity & Access BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](assets/chapter-04/diagramcomponents/component-autenticacion.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](report/assets/chapter-04/diagramcomponents/component-autenticacion.puml).
 
 - **Component diagram - Asset Management:** Shows locations, assets, gateways, IoT devices, asset settings, organization validation and the facade used by Monitoring, Alerts, Reports and Maintenance.
 
-![Component View Asset Management BC](assets/chapter-04/diagramcomponents/component-sensores.png)
+![Component View Asset Management BC](report/assets/chapter-04/diagramcomponents/component-sensores.png)
 
 *Figure 4.6.4.2. Asset Management BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-sensores.puml`](assets/chapter-04/diagramcomponents/component-sensores.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-sensores.puml`](report/assets/chapter-04/diagramcomponents/component-sensores.puml).
 
 - **Component diagram - Monitoring:** Shows sensor reading registration, demo reading generation, query services, validation through Identity & Access and Asset Management facades, and the published reading snapshots.
 
-![Component View Monitoring BC](assets/chapter-04/diagramcomponents/component-monitoreo.png)
+![Component View Monitoring BC](report/assets/chapter-04/diagramcomponents/component-monitoreo.png)
 
 *Figure 4.6.4.3. Monitoring BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](assets/chapter-04/diagramcomponents/component-monitoreo.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](report/assets/chapter-04/diagramcomponents/component-monitoreo.puml).
 
 - **Component diagram - Alerts:** Shows incident creation, acknowledgement, escalation, corrective actions, resolution, notification read models and incident snapshots.
 
-![Component View Alerts BC](assets/chapter-04/diagramcomponents/component-alertas.png)
+![Component View Alerts BC](report/assets/chapter-04/diagramcomponents/component-alertas.png)
 
 *Figure 4.6.4.4. Alerts BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-alertas.puml`](assets/chapter-04/diagramcomponents/component-alertas.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-alertas.puml`](report/assets/chapter-04/diagramcomponents/component-alertas.puml).
 
 - **Component diagram - Reports:** Shows report generation from asset, reading and incident snapshots, persisted summary metrics and report query endpoints.
 
-![Component View Reports BC](assets/chapter-04/diagramcomponents/component-reportes.png)
+![Component View Reports BC](report/assets/chapter-04/diagramcomponents/component-reportes.png)
 
 *Figure 4.6.4.5. Reports BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-reportes.puml`](assets/chapter-04/diagramcomponents/component-reportes.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-reportes.puml`](report/assets/chapter-04/diagramcomponents/component-reportes.puml).
 
 - **Component diagram - Maintenance Management:** Shows the components responsible for scheduling preventive maintenance, registering technical service requests, and closing work with evidence.
 
-![Component View Maintenance Management BC](assets/chapter-04/diagramcomponents/component-auditoria.png)
+![Component View Maintenance Management BC](report/assets/chapter-04/diagramcomponents/component-auditoria.png)
 
 *Figure 4.6.4.6. Maintenance Management BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](assets/chapter-04/diagramcomponents/component-auditoria.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](report/assets/chapter-04/diagramcomponents/component-auditoria.puml).
 
 - **Component diagram - AI Assistance:** Shows AI resolution-plan generation, report summaries, bounded context assembly, Spring AI integration, environment-based provider selection, entitlement validation and the approval flow that applies incident changes only after operator confirmation.
 
-![Component View AI Assistance BC](assets/chapter-04/diagramcomponents/component-ai-assistance.png)
+![Component View AI Assistance BC](report/assets/chapter-04/diagramcomponents/component-ai-assistance.png)
 
 *Figure 4.6.4.7. AI Assistance BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-ai-assistance.puml`](assets/chapter-04/diagramcomponents/component-ai-assistance.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-ai-assistance.puml`](report/assets/chapter-04/diagramcomponents/component-ai-assistance.puml).
 
 - **Component diagram - Subscription & Billing:** Shows plan queries, organization subscriptions, Stripe checkout, customer portal sessions, webhook reconciliation and the entitlement facade consumed by gated features.
 
-![Component View Subscription & Billing BC](assets/chapter-04/diagramcomponents/component-billing.png)
+![Component View Subscription & Billing BC](report/assets/chapter-04/diagramcomponents/component-billing.png)
 
 *Figure 4.6.4.8. Subscription & Billing BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-billing.puml`](assets/chapter-04/diagramcomponents/component-billing.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-billing.puml`](report/assets/chapter-04/diagramcomponents/component-billing.puml).
 
 ---
 
@@ -1672,11 +1872,11 @@ Principales clases por bounded context:
 
 Las referencias entre bounded contexts se implementan con identificadores `Long` y facades ACL. Por ejemplo, `SensorReading` guarda `assetId`, `iotDeviceId`, `gatewayId` y `locationId`; `Incident` guarda `assetId`, `deviceId` y `readingId`; `TechnicalServiceRequest` puede guardar `incidentId`; `Report` almacena métricas agregadas en lugar de colecciones embebidas; `IncidentAiResolutionPlan` referencia la incidencia sin poseerla; y `OrganizationSubscription` referencia el plan por `PlanCode`.
 
-![Class Diagram Stage 1 DDD](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png)
+![Class Diagram Stage 1 DDD](report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png)
 
 *Figure 4.7.1.1. Stage 1 - DDD-oriented Class Diagram.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml).
 
 #### Stage 2: Group Classes by Bounded Context
 
@@ -1695,11 +1895,11 @@ Agrupamiento aplicado en el diagrama:
 
 Las relaciones **internas a cada BC** quedan contenidas dentro del paquete correspondiente. Las relaciones entre bounded contexts aparecen como asociaciones por identificador o dependencias de facade ACL, ya que el backend evita navegar objetos de otros contextos directamente.
 
-![Class Diagram Stage 2 Bounded Context](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png)
+![Class Diagram Stage 2 Bounded Context](report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png)
 
 *Figure 4.7.1.2. Stage 2 - Group classes by Bounded Context.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml).
 
 #### Stage 3: Value Object, Entity and Aggregate Identification
 
@@ -1709,67 +1909,67 @@ Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggreg
 
 **BC Identity & Access.** Aggregates → `Organization`, `User` y `Role`. Value Objects → `EmailAddress`, `RoleName` y `Permission`. No existen clases de dominio `Session`, `Subscription` ni `NotificationPreference` en el backend actual.
 
-![Class Diagram Stage 3 BC Identity & Access](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
+![Class Diagram Stage 3 BC Identity & Access](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
 
 *Figure 4.7.1.3.1. Stage 3 - BC Identity & Access.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
 
 **BC Asset Management.** Aggregates → `Location`, `Asset`, `Gateway`, `IoTDevice` y `AssetSettings`. Value Objects → `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`. El backend actual no contiene `Sensor`, `AssetBuilder`, `AssetDirector`, `TemperatureRange` ni `HumidityRange` como clases de dominio.
 
-![Class Diagram Stage 3 BC Asset Management](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png)
+![Class Diagram Stage 3 BC Asset Management](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png)
 
 *Figure 4.7.1.3.2. Stage 3 - BC Asset Management.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
 
 **BC Monitoring.** Aggregate → `SensorReading`, que persiste una lectura de telemetría con temperatura, humedad, indicador `outOfRange`, batería, señal y referencias al activo, dispositivo IoT, gateway y ubicación. También publica `SensorReadingRecordedEvent`.
 
-![Class Diagram Stage 3 BC Monitoring](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png)
+![Class Diagram Stage 3 BC Monitoring](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png)
 
 *Figure 4.7.1.3.3. Stage 3 - BC Monitoring.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
 
 **BC Alerts.** Aggregates → `Incident` y `Notification`. Enums → `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`. También publica `IncidentOpenedEvent`. No existen aggregates `Alert` ni `AlertRule` en el backend actual.
 
-![Class Diagram Stage 3 BC Alerts](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png)
+![Class Diagram Stage 3 BC Alerts](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png)
 
 *Figure 4.7.1.3.4. Stage 3 - BC Alerts.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
 
 **BC Reports.** Aggregate → `Report`, que persiste métricas resumidas del periodo consultado: cantidad de activos, lecturas, lecturas fuera de rango, incidentes, incidentes abiertos, promedios y porcentaje de cumplimiento. También publica `ReportGeneratedEvent`.
 
-![Class Diagram Stage 3 BC Reports](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png)
+![Class Diagram Stage 3 BC Reports](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png)
 
 *Figure 4.7.1.3.5. Stage 3 - BC Reports.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
 
 **BC Maintenance Management.** Aggregates → `MaintenanceSchedule` y `TechnicalServiceRequest`. La evidencia de cierre está modelada como campo `evidence` dentro de `TechnicalServiceRequest`; no existe una clase `ServiceEvidence` independiente.
 
-![Class Diagram Stage 3 BC Maintenance Management](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png)
+![Class Diagram Stage 3 BC Maintenance Management](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png)
 
 *Figure 4.7.1.3.6. Stage 3 - BC Maintenance Management.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
 
 **BC AI Assistance.** Aggregates objetivo → `IncidentAiResolutionPlan` y `AiReportSummary`. `IncidentAiResolutionPlan` conserva el plan generado por IA, el estado pendiente/aprobado/rechazado, el borrador de acción correctiva, notas de resolución, evidencia requerida y auditoría de aprobación. La regla principal es que la IA no cierra una incidencia de forma autónoma: solo genera un plan pendiente y la aprobación del operador ejecuta el comando real del BC Alerts.
 
-![Class Diagram Stage 3 BC AI Assistance](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.png)
+![Class Diagram Stage 3 BC AI Assistance](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.png)
 
 *Figure 4.7.1.3.7. Stage 3 - BC AI Assistance.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml).
 
 **BC Subscription & Billing.** Aggregates objetivo → `SubscriptionPlan`, `OrganizationSubscription` y `BillingWebhookEvent`. `SubscriptionPlan` define límites y funcionalidades habilitadas; `OrganizationSubscription` conserva el estado vigente de la organización frente al proveedor; y `BillingWebhookEvent` permite procesar eventos de Stripe con idempotencia. El value object `PlanCode` evita depender de identificadores internos para enlazar el plan contratado.
 
-![Class Diagram Stage 3 BC Subscription & Billing](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.png)
+![Class Diagram Stage 3 BC Subscription & Billing](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.png)
 
 *Figure 4.7.1.3.8. Stage 3 - BC Subscription & Billing.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml).
 
 ---
 
@@ -1781,11 +1981,14 @@ El diagrama de base de datos se actualizó desde las entidades JPA reales del ba
 
 La ampliación agrega `incident_ai_resolution_plans` y `ai_report_summaries` para conservar salidas de IA con auditoría de aprobación, además de `subscription_plans`, `organization_subscriptions` y `billing_webhook_events` para soportar planes SaaS, entitlements y sincronización con Stripe sin almacenar datos sensibles de pago en ColdTrace.
 
-![ColdTrace ERD 3FN](assets/chapter-04/databasediagram/databasediagram.png)
+![ColdTrace ERD 3FN](report/assets/chapter-04/databasediagram/databasediagram.png)
 
 *Figure 4.8.1.1. ColdTrace Entity-Relationship Diagram normalized to 3NF.*
 
-> PlantUML source: [`assets/chapter-04/databasediagram/databasediagram.puml`](assets/chapter-04/databasediagram/databasediagram.puml).
+> PlantUML source: [`assets/chapter-04/databasediagram/databasediagram.puml`](report/assets/chapter-04/databasediagram/databasediagram.puml).
+
+
+# Capítulo V: Product Implementation, Validation & Deployment
 
 ## 5.1. Software Configuration Management
 
@@ -4592,86 +4795,223 @@ Las entrevistas se estructuraron en torno a los siguientes ejes de validación:
 
 ### 5.3.2. Registro de Entrevistas
 
-Para cada segmento objetivo se registrarán 3 entrevistas. Cada entrevista debe incluir la información personal solicitada, un screenshot del video, el enlace de Microsoft Stream, el timing donde inicia la entrevista, su duración y un resumen descriptivo de las principales apreciaciones del participante.
+A continuación se presentan los resultados de las entrevistas realizadas, incluyendo el perfil del entrevistado, los hallazgos principales y las recomendaciones derivadas.
 
-**Video consolidado de entrevistas de validación:** [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
-**Nomenclatura del video:** `upc-pre-202610-1asi0729-10177-ICEQvalidation-sprint-3.mp4`
+| Entrevistado | Perfil | Hallazgos principales | Recomendaciones |
+|---|---|---|---|
+| Entrevistado 1 | Dueño de minimarket con cadena de frío propia | La gestión de activos y el monitoreo en tiempo real son las funcionalidades más valoradas. Se identificó la necesidad de alertas más tempranas. | Incorporar un dashboard resumen con indicadores críticos visibles sin necesidad de navegación. |
+| Entrevistado 2 | Jefa de calidad en empresa de distribución de alimentos | La generación de reportes de cumplimiento y la trazabilidad de incidencias fueron destacadas como esenciales para auditorías sanitarias. | Permitir la exportación de reportes en formatos adicionales (PDF, Excel). |
+| Entrevistado 3 | Encargado de operaciones en almacén refrigerado | La configuración de rangos de seguridad y la programación de mantenimiento preventivo fueron consideradas herramientas útiles para la operación diaria. | Desarrollar vistas móviles para consulta rápida de estado de activos. |
+| Entrevistado 4 | Administradora de restaurante con cámaras frigoríficas | La facilidad de uso de la plataforma y la claridad de las alertas fueron bien recibidas. Sugirió incluir notificaciones por WhatsApp. | Integrar canales de notificación adicionales (WhatsApp, SMS). |
 
-#### Segmento objetivo 1: Dueños, administradores o encargados de pequeños negocios alimentarios
+<br>
 
-| **Entrevista Nro. 1** |  |
-| --- | --- |
-| Screenshot | <img src="report/assets/chapter-05/validation/vi-s1-01-jean-pool-coaguila.png" alt="Screenshot de entrevista de validación - Jean Pool Coaguila" width="600"> |
-| Nombres y apellidos | Jean Pool Coaguila |
-| Edad | 29 años |
-| Distrito | Lima Norte |
-| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
-| URL de grabación | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
-| Timing de inicio | 00:00 |
-| Duración | 18:16 |
-| Resumen | Jean Pool evaluó ColdTrace desde el rol de encargado de un minimarket familiar que comercializa productos perecibles. Durante la revisión de la Landing Page, comprendió que la propuesta se enfoca en monitorear equipos refrigerados, recibir alertas y consultar historial, relacionándolo con su necesidad de detectar fallas antes de que la mercadería esté en riesgo. En la Web Application, valoró especialmente el dashboard, la revisión de activos, las alertas y el historial diario, pues estos elementos reemplazan parcialmente el control manual basado en revisar indicadores de refrigeradoras o inspeccionar visualmente los productos. Señaló que la solución sería útil si mantiene una experiencia simple, accesible desde celular y con mensajes de alerta claros. Como oportunidades de mejora, sugirió explicar mejor el costo, la instalación de sensores y agregar recomendaciones concretas de acción ante cada alerta. |
+**Registro de Entrevistas de Validación**
 
-| **Entrevista Nro. 2** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 1</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-1.png" alt="Entrevista de Validación 1" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Entrevistado 1</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Smartphone (Android) y Laptop (Windows)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>45 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Dueño de Minimarket "Mendoza & Hijos"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y llamadas telefónicas</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Santiago de Surco, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel y Apps bancarias</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 05:40</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        El entrevistado evaluó la interfaz web de ColdTrace y destacó la facilidad de navegación y la claridad de la información de los activos de refrigeración. Mencionó que la gestión de activos en tiempo real les permitiría reaccionar ante fallas operativas de sus congeladoras. Recomendó incorporar una vista de dashboard tipo resumen rápido (resumen ejecutivo) que permita ver la salud de todos los activos sin tener que entrar al detalle de cada uno.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-| **Entrevista Nro. 3** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 2</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-2.png" alt="Entrevista de Validación 2" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Entrevistado 2</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop Corporativa y Tablet Android</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>34 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Jefa de Calidad Alimentaria en "Logística del Frío S.A."</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Microsoft Teams y correo corporativo</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Callao</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel, Power BI</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 06:15</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        La entrevistada se enfocó en el módulo de reportes y cumplimiento de ColdTrace. Valoró la bitácora diaria y el reporte de cumplimiento sanitario, ya que facilita enormemente la consolidación de evidencia para las auditorías de DIGESA. Recomendó que las exportaciones no solo estén disponibles como datos tabulares, sino que se habilite la exportación en formatos amigables como PDF y Excel con plantillas de presentación.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-#### Segmento objetivo 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-3.png" alt="Entrevista de Validación 3" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Entrevistado 3</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Tablet corporativa y Laptop Windows</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>38 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Microsoft Edge</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Encargado de Operaciones de Almacén Frigorífico "AeroFrío"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Correo corporativo y WhatsApp</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>San Luis, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>ERP interno y Microsoft Excel</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 04:50</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        El entrevistado valoró la vista de configuración de rangos seguros de temperatura y la programación de mantenimientos preventivos para los sensores IoT. Consideró que es de gran utilidad para evitar fallas imprevistas. Sugirió desarrollar una aplicación móvil o una interfaz móvil optimizada que les permita a los operadores en campo verificar rápidamente el estado de los sensores y equipos.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-| **Entrevista Nro. 1** |  |
-| --- | --- |
-| Screenshot | <img src="report/assets/chapter-05/validation/vi-s2-01-rodrigo-vasquez.png" alt="Screenshot de entrevista de validación - Rodrigo Vasquez" width="600"> |
-| Nombres y apellidos | Rodrigo Vasquez |
-| Edad | 30 años |
-| Distrito | Lima Metropolitana |
-| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
-| URL de grabación | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
-| Timing de inicio | 18:16 |
-| Duración | 31:58 |
-| Resumen | Rodrigo evaluó ColdTrace desde el rol de supervisor de operaciones encargado de controlar activos refrigerados y consolidar información operativa. Al revisar la Landing Page, identificó que la propuesta responde a problemas mencionados en la entrevista inicial, como la falta de visibilidad inmediata, la dependencia de registros manuales y la dispersión de información. En la Web Application, destacó el valor del dashboard operacional para priorizar riesgos, la gestión de activos y sensores para mantener trazabilidad de equipos, el módulo de incidentes para reconocer y cerrar alertas con acciones correctivas, y los reportes para auditorías o revisiones internas. Consideró que ColdTrace puede reducir el trabajo manual de consolidación en Excel o Google Sheets, siempre que los reportes sean descargables y la interfaz mantenga filtros claros por sede, activo, severidad y estado. Como mejoras, recomendó reforzar la priorización de alertas, agregar recomendaciones de acción y mejorar la vista por sede o zona para operaciones con varios puntos de control. |
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/validation-interview-4.png" alt="Entrevista de Validación 4" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Entrevistado 4</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>iPhone (iOS) y iPad</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>31 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>iOS / Safari</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Administradora de Restaurante "El Buen Gusto"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y iMessage</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Miraflores, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Sistema POS de comandas y Microsoft Excel</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 04:10</td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-| **Entrevista Nro. 2** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
-
-| **Entrevista Nro. 3** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
 
 ### 5.3.3. Evaluaciones según heurísticas
 
@@ -4772,6 +5112,7 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 **Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
+
 # Capítulo VI: Conclusions
 ## 6.1. Conclusiones y recomendaciones
 
@@ -4824,3 +5165,12 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 | Repositorio Backend | https://github.com/ICEQ2026/coldtrace-platform |
 | Repositorio Informe | https://github.com/ICEQ2026/informe-del-proyecto |
 | Organización GitHub | https://github.com/ICEQ2026 |
+
+
+# Bibliografía
+
+Agraria.pe. (2019, junio 26). *Perú pierde más del 33% de los alimentos que produce por mal uso de la cadena de frío*. Agraria. https://www.agraria.pe/noticias/peru-pierde-mas-del-33-de-los-alimentos-que-produce-por-mal--19324
+
+FAO. (2021). *Más de 12 millones de toneladas de alimentos se pierden a lo largo de la cadena productiva en el Perú*. Organización de las Naciones Unidas para la Alimentación y la Agricultura. https://www.fao.org/peru/noticias/detail-events/en/c/1712376/
+
+Gestión. (2025, septiembre 21). *Mercado de almacenes en frío en Perú crecerá a US$ 510 millones en 2025: ¿qué lo impulsa?* Gestión. https://gestion.pe/economia/empresas/mercado-de-almacenes-en-frio-en-peru-crecera-a-us-510-millones-en-2025-que-lo-impulsa-noticia/

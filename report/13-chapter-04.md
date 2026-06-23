@@ -213,9 +213,9 @@ Los wireframes de la Landing Page fueron diseñados con el objetivo de definir l
 En esta etapa se establecieron las principales secciones del sitio, como el encabezado de navegación, la sección principal (hero), características del producto, beneficios, testimonios y formulario de contacto.
 Asimismo, se consideró una versión responsive, adaptando la distribución de los elementos para dispositivos móviles, garantizando una navegación clara y accesible en diferentes tamaños de pantalla.
 
-![Wireframe Landing Page](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
+![Wireframe Landing Page](assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
 
-![Wireframe Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
+![Wireframe Landing Page Mobile](assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
 
 ---
 
@@ -225,9 +225,9 @@ Los mockups de la Landing Page representan la versión visual final del diseño,
 En esta etapa se aplicaron los lineamientos de branding del proyecto, incluyendo el uso de colores principales, jerarquía tipográfica y elementos visuales que refuerzan la identidad del producto.
 Además, se mantuvo consistencia entre la versión desktop y mobile, asegurando una experiencia uniforme para el usuario en cualquier dispositivo.
 
-![Mockup Landing Page](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
+![Mockup Landing Page](assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
 
-![Mockup Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
+![Mockup Landing Page Mobile](assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
 
 ---
 
@@ -239,11 +239,11 @@ Los wireframes de la aplicación web fueron diseñados para definir la estructur
 En esta etapa se identificaron los elementos clave de interacción, como paneles de control, visualización de datos, navegación entre secciones y componentes necesarios para la gestión del sistema.
 Estos wireframes permiten validar la distribución de información antes de la implementación visual, asegurando que las funcionalidades respondan a las necesidades del usuario.
 
-![Wireframe Web Application 1](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
+![Wireframe Web Application 1](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
 
-![Wireframe Web Application 2](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
+![Wireframe Web Application 2](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
 
-![Wireframe Web Application 3](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
+![Wireframe Web Application 3](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
 
 ---
 
@@ -252,7 +252,7 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
-![wireflows diagram](/report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
+![wireflows diagram](assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
 
 ---
 
@@ -262,11 +262,11 @@ Los mockups de la aplicación web muestran la representación visual final de la
 En esta etapa se buscó mantener consistencia visual con la Landing Page, asegurando una identidad unificada del producto.
 Asimismo, se priorizó la claridad en la presentación de información y la facilidad de uso, permitiendo que el usuario interactúe de manera intuitiva con las funcionalidades del sistema.
 
-![Mockup Web Application 1](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
+![Mockup Web Application 1](assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
 
-![Mockup Web Application 2](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
+![Mockup Web Application 2](assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
 
-![Mockup Web Application 3](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
+![Mockup Web Application 3](assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
 
 ---
 
@@ -277,15 +277,15 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
 
-![userflowdiagram1](/report/assets/chapter-04/userflowdiagram/userflowdiagram1.png)
+![userflowdiagram1](assets/chapter-04/userflowdiagram/userflowdiagram1.png)
 
 ### User Flow 2 : Obtener reportes para supervisión y control.
 
-![userflowdiagram2](/report/assets/chapter-04/userflowdiagram/userflowdiagram2.png)
+![userflowdiagram2](assets/chapter-04/userflowdiagram/userflowdiagram2.png)
 
 ### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
 
-![userflowdiagram3](/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png)
+![userflowdiagram3](assets/chapter-04/userflowdiagram/userflowdiagram3.png)
 
 ---
 
