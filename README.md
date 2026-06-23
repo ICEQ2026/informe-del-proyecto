@@ -1080,13 +1080,13 @@ La especificación de requerimientos se actualizó tomando como referencia las p
 | **Código** | **Epic** | **Objetivo funcional** | **Alcance** |
 | --- | --- | --- | --- |
 | EP001 | Landing page y captación de visitantes | Presentar la propuesta de valor de ColdTrace y conducir al visitante hacia registro o contacto. | Hero, navegación, features, showcase del producto, proceso, contacto, footer, responsive e i18n. |
-| EP002 | Gestión de usuarios y acceso | Permitir registro, autenticación, recuperación de contraseña y administración básica de usuarios, roles y permisos. | Sign-up, sign-in, password recovery, reset password, lista de usuarios, formulario de usuario y matriz de roles/permisos. |
+| EP002 | Gestión de usuarios y acceso | Permitir registro, autenticación, autenticación social, recuperación de contraseña y administración básica de usuarios, roles y permisos. | Sign-up, sign-in, social login con Google/Apple, password recovery, reset password, lista de usuarios, formulario de usuario y matriz de roles/permisos. |
 | EP003 | Gestión de activos e infraestructura IoT | Registrar y mantener activos refrigerados, sensores, gateways, calibración, conectividad y parámetros asociados. | Listado y gestión de cámaras/unidades, vinculación de sensores, emparejamiento de gateways y configuración operativa de activos. |
 | EP004 | Monitoreo operacional | Mostrar telemetría, KPIs, estado de activos, tendencias y condiciones fuera de rango. | Dashboard operacional, dashboard por activos, tarjetas de estado, gráficos, alertas recientes y sincronización simulada. |
 | EP005 | Alertas e incidencias | Gestionar notificaciones, incidentes térmicos, reconocimiento y cierre con trazabilidad. | Vistas de incidentes y notificaciones, reconocimiento de alertas críticas, cierre con acción correctiva y seguimiento de escalamiento. |
 | EP006 | Reportes, historial y cumplimiento | Consultar bitácoras, historiales, reportes y evidencias para control operativo y auditoría. | Daily log, historial operacional, cumplimiento sanitario, reporte mensual, hallazgos y evidencia de auditoría. |
 | EP007 | Configuración operativa y mantenimiento | Ajustar rangos, parámetros y actividades de mantenimiento vinculadas a la operación. | Rangos de seguridad, parámetros operativos, mantenimiento preventivo y seguimiento de servicio técnico. |
-| EP008 | RESTful API - Autenticación y acceso | Proveer endpoints reales para registro, inicio de sesión, recuperación y autorización por roles. | Registro, autenticación, sesión/token, usuarios, roles y permisos. |
+| EP008 | RESTful API - Autenticación y acceso | Proveer endpoints reales para registro, inicio de sesión, recuperación, proveedores externos de identidad y autorización por roles. | Registro, autenticación, sesión/token, OAuth/OIDC con Google y Apple, usuarios, roles y permisos. |
 | EP009 | RESTful API - Activos e infraestructura IoT | Persistir activos, sensores, gateways, calibración y parámetros operativos en backend propio. | Activos, sensores, gateways, calibración, rangos y parámetros operativos. |
 | EP010 | RESTful API - Lecturas y monitoreo | Recibir, consultar y sincronizar lecturas de temperatura, humedad y conectividad. | Lecturas de sensores, telemetría, historial y sincronización. |
 | EP011 | RESTful API - Alertas e incidencias | Gestionar incidentes, notificaciones, reconocimiento, cierre y escalamiento desde backend. | Incidentes, notificaciones, reconocimiento, cierre y escalamiento. |
@@ -1149,12 +1149,13 @@ La especificación de requerimientos se actualizó tomando como referencia las p
 | US049 | EP014 | **Como** administrador de organización, **quiero** gestionar mi facturación desde un portal seguro, **para** actualizar método de pago, revisar facturas o cancelar la suscripción. | **Scenario: Portal de facturación abierto**<br>**Given** la organización tiene un cliente de Stripe asociado.<br>**When** el administrador solicita gestionar facturación.<br>**Then** el backend crea una sesión de Customer Portal y redirige al usuario al portal del proveedor. | Sprint 4 / Planned |
 | US050 | EP014 | **Como** usuario operativo, **quiero** que las funciones no incluidas en mi plan aparezcan bloqueadas con una explicación clara, **para** entender qué debo actualizar sin perder el contexto de trabajo. | **Scenario: Límite de plan aplicado**<br>**Given** la organización alcanzó el límite de activos o intenta usar una función no incluida.<br>**When** el usuario ejecuta la acción.<br>**Then** el sistema bloquea la operación, explica el límite y ofrece actualizar el plan si corresponde. | Sprint 4 / Planned |
 | US051 | EP013 | **Como** gerente de operaciones, **quiero** abrir un asistente de IA desde el dashboard principal, **para** interpretar los KPIs y gráficos generales sin ocupar espacio permanente en la vista. | **Scenario: Panel de insights abierto bajo demanda**<br>**Given** el dashboard operacional muestra KPIs, gráficos, incidencias y mantenimiento.<br>**When** el usuario activa el botón flotante de AI insights.<br>**Then** se abre un panel superpuesto con lectura general, señales prioritarias y respuestas a preguntas sobre los datos visibles, sin desplazar el layout principal. | Sprint 4 / Planned |
+| US052 | EP002 | **Como** usuario de ColdTrace, **quiero** crear o iniciar sesión con Google o Apple, **para** acceder más rápido sin gestionar una contraseña específica de ColdTrace y manteniendo mi organización, rol y permisos. | **Scenario: Google/Apple conectado a ColdTrace**<br>**Given** el usuario tiene una identidad de Google o Apple vinculada a una cuenta de ColdTrace.<br>**When** inicia sesión con el proveedor externo.<br>**Then** el backend valida la identidad externa y emite una sesión JWT propia de ColdTrace con organización, rol y permisos.<br><br>**Scenario: Identidad social sin organización**<br>**Given** la identidad externa es válida pero no pertenece a una organización de ColdTrace.<br>**When** termina el flujo OAuth/OIDC.<br>**Then** el sistema guía al usuario a completar el registro de organización o invitación antes de permitir acceso operativo. | Sprint 4 / Planned |
 
 ### 3.1.3 Technical Stories
 
 Las historias técnicas se actualizan para AV2 con un enfoque de contrato de API consumible por la Frontend Web Application. Cada historia identifica el endpoint principal, el propósito de integración y criterios observables mediante respuestas HTTP, validaciones y persistencia de datos.
 
-Para el Sprint 4 se agregan historias técnicas asociadas a la épica EP013. Los identificadores continúan desde TS18 porque TS16 y TS17 quedaron documentadas en el Sprint 3 como Organizations API Base y Locations API.
+Para el Sprint 4 se agregan historias técnicas asociadas a las épicas EP013, EP014 y EP008. Los identificadores continúan desde TS18 porque TS16 y TS17 quedaron documentadas en el Sprint 3 como Organizations API Base y Locations API.
 
 Para mantener la integración alineada con el material de Spring AI del curso, ColdTrace no acopla la lógica de negocio a un proveedor específico. La estrategia definida es usar Spring AI como capa de abstracción: en desarrollo local se propone Ollama con el modelo `gemma3:4b`, mientras que en el entorno desplegado académico se propone OpenAI con el modelo `gpt-5.4-mini`. Esta decisión permite probar sin costo localmente y mantener una versión desplegada liviana en Cloud Run, ya que el backend solo invoca un proveedor externo mediante HTTPS y conserva `modelProvider` y `modelName` como configuración por entorno.
 
@@ -1191,10 +1192,12 @@ Para mantener la integración alineada con el material de Spring AI del curso, C
 | TS31 | EP014 | Frontend `/settings/billing` y guards de funcionalidades | **Como** frontend developer, **quiero** mostrar la suscripción, consumo y acciones de upgrade en la aplicación, **para** que el administrador gestione su plan desde ColdTrace. | **Scenario: Billing visible en aplicación**<br>**Given** el administrador abre configuración de organización.<br>**When** ingresa a Billing.<br>**Then** visualiza plan, consumo, botones de upgrade, portal de facturación y funciones bloqueadas. | Sprint 4 / Planned |
 | TS32 | EP014 | Landing pricing section | **Como** frontend developer, **quiero** actualizar la sección de precios de la landing, **para** comunicar planes, límites y CTA de registro o upgrade con consistencia visual e i18n. | **Scenario: Pricing actualizado**<br>**Given** un visitante entra a la landing.<br>**When** navega a Planes y precios.<br>**Then** ve tres tarjetas comparables, etiquetas de recomendación y CTA hacia registro o contacto. | Sprint 4 / Planned |
 | TS33 | EP013 | `POST /api/v1/organizations/{organizationId}/dashboard/ai-insights` y frontend launcher | **Como** frontend developer, **quiero** incorporar un asistente de interpretación en el dashboard principal, **para** explicar KPIs, gráficos e incidencias bajo demanda sin saturar la vista operacional. | **Scenario: Insights del dashboard generados**<br>**Given** existen métricas de activos, lecturas, incidencias, cumplimiento térmico y mantenimiento.<br>**When** el usuario solicita AI insights desde el dashboard.<br>**Then** el backend o prototipo de frontend construye una lectura estructurada con estado general, señales prioritarias y respuestas a preguntas frecuentes.<br><br>**Scenario: Panel cerrado por defecto**<br>**Given** el usuario ingresa al dashboard.<br>**When** no ha activado el asistente.<br>**Then** solo se muestra el launcher flotante y la grilla del dashboard conserva su tamaño original. | Sprint 4 / Planned |
+| TS34 | EP008 | `POST /api/v1/auth/social/{provider}` y callbacks OAuth/OIDC | **Como** backend developer, **quiero** autenticar o vincular cuentas con Google y Apple desde el backend, **para** validar la identidad externa sin ceder a los proveedores la autorización de ColdTrace. | **Scenario: Identidad externa validada**<br>**Given** Google o Apple retorna una identidad válida.<br>**When** el backend valida tokens, subject y estado del flujo.<br>**Then** vincula la identidad externa con el usuario ColdTrace y emite el JWT propio de la plataforma.<br><br>**Scenario: Identidad nueva requiere onboarding**<br>**Given** la identidad externa no está vinculada a una organización.<br>**When** termina la autenticación externa.<br>**Then** la API responde que el usuario debe completar registro o invitación antes de acceder al dashboard. | Sprint 4 / Planned |
+| TS35 | EP002 | Frontend sign-in/sign-up social auth buttons | **Como** frontend developer, **quiero** conectar los botones existentes de Google y Apple al flujo OAuth/OIDC soportado por backend, **para** ofrecer autenticación social sin exponer secretos en Angular. | **Scenario: Botones sociales conectados**<br>**Given** el usuario está en sign-in o sign-up.<br>**When** selecciona Google o Apple.<br>**Then** el frontend inicia el flujo configurado y maneja éxito, cancelación, error o onboarding requerido con mensajes i18n.<br><br>**Scenario: Vista conserva diseño**<br>**Given** los botones sociales ya existen en la UI.<br>**When** se conectan a la lógica real.<br>**Then** se mantiene la composición visual actual y el backend sigue siendo responsable de validar proveedor y emitir JWT. | Sprint 4 / Planned |
 
 ## 3.2 Impact Mapping
 
-El Impact Mapping se mantiene como técnica de alineamiento entre objetivos de negocio, actores y entregables. Para esta versión, los entregables del mapa se conectan con las épicas implementadas y con la evolución planificada del Sprint 4: captación por landing page, gestión de acceso, activos IoT, monitoreo operacional, alertas, reportes, mantenimiento, asistencia inteligente para incidencias, interpretación inteligente del dashboard y monetización SaaS mediante planes y suscripciones.
+El Impact Mapping se mantiene como técnica de alineamiento entre objetivos de negocio, actores y entregables. Para esta versión, los entregables del mapa se conectan con las épicas implementadas y con la evolución planificada del Sprint 4: captación por landing page, gestión de acceso con autenticación social, activos IoT, monitoreo operacional, alertas, reportes, mantenimiento, asistencia inteligente para incidencias, interpretación inteligente del dashboard y monetización SaaS mediante planes y suscripciones.
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
@@ -1292,6 +1295,9 @@ El Product Backlog prioriza historias visibles para usuarios finales y mantiene 
 | 80 | TS32 | Pricing actualizado en landing page | EP014 | 3 | Sprint 4 / Planned |
 | 81 | US051 | Abrir asistente IA para interpretar dashboard | EP013 | 5 | Sprint 4 / Planned |
 | 82 | TS33 | Panel frontend de AI insights para dashboard | EP013 | 3 | Sprint 4 / Planned |
+| 83 | US052 | Crear o iniciar sesión con Google/Apple | EP002 | 5 | Sprint 4 / Planned |
+| 84 | TS34 | Google and Apple OAuth/OIDC Authentication API | EP008 | 5 | Sprint 4 / Planned |
+| 85 | TS35 | Angular Social Login UI Integration | EP002 | 3 | Sprint 4 / Planned |
 
 
 # CAPÍTULO IV. PRODUCT UX/UI DESIGN
@@ -1771,7 +1777,7 @@ El diagrama de contexto de ColdTrace muestra, de forma general, a los actores qu
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
-El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC y Subscription & Billing BC, manteniendo la aprobación humana para resolver incidencias y aislando la integración con Stripe. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend.
+El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC, Subscription & Billing BC y la integración de Identity & Access con proveedores externos de identidad Google/Apple, manteniendo a ColdTrace como responsable de organización, rol, permisos y JWT. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend.
 
 ![containerdiagram](report/assets/chapter-04/containerdiagram/containerdiagram.png)
 
@@ -1783,7 +1789,7 @@ El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales
 
 En esta sección se presenta la vista de componentes de ColdTrace por bounded context, alineada con el backend Spring Boot actual ubicado en `coldtrace-platform` y con la ampliación objetivo del Sprint 4. Cada diagrama muestra REST controllers, command/query services, facades ACL, repositorios de dominio, adapters JPA, event handlers, adapters externos y tablas MySQL. Los componentes de AI Assistance y Subscription & Billing se documentan como diseño objetivo para implementar la guía inteligente de incidencias, los resúmenes de reportes y la monetización SaaS.
 
-- **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
+- **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, social authentication with Google/Apple, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
 
 ![Component View Identity & Access BC](report/assets/chapter-04/diagramcomponents/component-autenticacion.png)
 
@@ -1861,7 +1867,7 @@ En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y ti
 
 Principales clases por bounded context:
 
-- **BC Identity & Access:** `Organization`, `User`, `Role`, `EmailAddress`, `RoleName` y `Permission`.
+- **BC Identity & Access:** `Organization`, `User`, `ExternalIdentity`, `Role`, `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`.
 - **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`.
 - **BC Monitoring:** `SensorReading` como aggregate de telemetría persistida.
 - **BC Alerts:** `Incident`, `Notification`, `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`.
@@ -1884,7 +1890,7 @@ En esta segunda etapa las clases se agrupan según el bounded context al que per
 
 Agrupamiento aplicado en el diagrama:
 
-- **BC Identity & Access** (azul claro): `Organization`, `User`, `Role` y sus value objects.
+- **BC Identity & Access** (azul claro): `Organization`, `User`, `ExternalIdentity`, `Role` y sus value objects/enums.
 - **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings` y sus value objects.
 - **BC Monitoring** (verde): `SensorReading`.
 - **BC Alerts** (amarillo): `Incident`, `Notification` y sus enums de severidad, estado y canal.
@@ -1907,7 +1913,7 @@ En esta tercera etapa las clases se clasifican como **Aggregate**, **Value Objec
 
 Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggregate se referencia a otros contextos por identificadores o por snapshots obtenidos desde facades ACL. En el backend actual esos identificadores son `Long` y algunos identificadores de negocio se modelan como value objects (`AssetUuid`, `GatewayUuid`, `IoTDeviceUuid`, `LocationName`, `EmailAddress`, `RoleName`).
 
-**BC Identity & Access.** Aggregates → `Organization`, `User` y `Role`. Value Objects → `EmailAddress`, `RoleName` y `Permission`. No existen clases de dominio `Session`, `Subscription` ni `NotificationPreference` en el backend actual.
+**BC Identity & Access.** Aggregates → `Organization`, `User`, `ExternalIdentity` y `Role`. Value Objects / enums → `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`. `ExternalIdentity` es la extensión objetivo de Sprint 4 para vincular Google/Apple mediante `provider + providerSubject`; no reemplaza la pertenencia a organización ni la asignación de roles de ColdTrace.
 
 ![Class Diagram Stage 3 BC Identity & Access](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
 
@@ -1979,7 +1985,7 @@ Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggreg
 
 El diagrama de base de datos se actualizó desde las entidades JPA reales del backend y el diseño objetivo del Sprint 4. La configuración actual usa MySQL, Hibernate `ddl-auto=update` y `SnakeCasePhysicalNamingStrategy`, por lo que los nombres de columna se derivan de los atributos Java en `snake_case`. Las relaciones se muestran como **logical FK** cuando el código usa campos `Long` en lugar de anotaciones `@ManyToOne`.
 
-La ampliación agrega `incident_ai_resolution_plans` y `ai_report_summaries` para conservar salidas de IA con auditoría de aprobación, además de `subscription_plans`, `organization_subscriptions` y `billing_webhook_events` para soportar planes SaaS, entitlements y sincronización con Stripe sin almacenar datos sensibles de pago en ColdTrace.
+La ampliación agrega `external_identities` para vincular identidades Google/Apple a usuarios internos sin usar el email como única llave permanente. También agrega `incident_ai_resolution_plans` y `ai_report_summaries` para conservar salidas de IA con auditoría de aprobación, además de `subscription_plans`, `organization_subscriptions` y `billing_webhook_events` para soportar planes SaaS, entitlements y sincronización con Stripe sin almacenar datos sensibles de pago en ColdTrace.
 
 ![ColdTrace ERD 3FN](report/assets/chapter-04/databasediagram/databasediagram.png)
 

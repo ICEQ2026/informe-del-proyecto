@@ -21,6 +21,10 @@ System_Ext(sensors, "IoT Sensors", "Physical devices installed in cold rooms, wa
 
 System_Ext(email, "Email Service", "SendGrid / Mailgun. Recovery, account communication, and alerts [EP002, EP005].")
 
+System_Ext(google_identity, "Google Identity", "OAuth 2.0 / OpenID Connect provider for Google social login [US052, EP008].")
+
+System_Ext(apple_identity, "Apple Identity", "Sign in with Apple provider for Apple social login [US052, EP008].")
+
 System_Ext(push, "Push Notification Service", "Web Push / FCM. Real-time alerts [EP005].")
 
 System_Ext(whatsapp, "Messaging Service (WhatsApp Business API)", "Complementary alert channel [EP005].")
@@ -43,7 +47,7 @@ System_Boundary(coldtrace, "ColdTrace System") {
     Container(iotgateway, "IoT Gateway", "MQTT / HTTP", "Receives and normalizes physical sensor readings before forwarding them to the Monitoring BC.")
 
     ' Bounded-context services
-    Container(auth_svc, "Identity & Access BC", "Spring Boot / JWT / OAuth2", "Registration, sign-in, recovery, users, roles, permissions, and subscription validation [EP002, EP008].")
+    Container(auth_svc, "Identity & Access BC", "Spring Boot / JWT / OAuth2", "Registration, sign-in, social identity links, recovery, users, roles, permissions, and subscription validation [EP002, EP008].")
 
     Container(assets_svc, "Asset Management BC", "Spring Boot", "Assets, sensors, gateways, calibration, safety ranges, and operational parameters [EP003, EP007, EP009].")
 
@@ -60,7 +64,7 @@ System_Boundary(coldtrace, "ColdTrace System") {
     Container(billing_svc, "Subscription & Billing BC", "Spring Boot + Stripe SDK", "Manages subscription plans, organization subscriptions, entitlements, Checkout, Customer Portal, and Stripe webhooks [EP014].")
 
     ' Databases by context
-    ContainerDb(db_auth, "DB Identity & Access", "MySQL", "Users, roles, permissions, and sessions.")
+    ContainerDb(db_auth, "DB Identity & Access", "MySQL", "Users, roles, permissions, external identity links, and sessions.")
 
     ContainerDb(db_assets, "DB Asset Management", "MySQL", "Assets, sensors, gateways, ranges, and configurations.")
 
@@ -122,6 +126,8 @@ Rel(billing_svc, assets_svc, "Checks usage for locations, assets, devices, and u
 Rel(billing_svc, ai_svc, "Provides AI feature entitlements", "HTTP / ACL")
 
 Rel(auth_svc, email, "Sends recovery and account emails [EP002]", "SMTP / REST")
+Rel(auth_svc, google_identity, "Validates Google identity and exchanges OAuth/OIDC responses [US052]", "HTTPS")
+Rel(auth_svc, apple_identity, "Validates Apple identity and authorization responses [US052]", "HTTPS")
 Rel(alerts_svc, email, "Sends email alerts", "SMTP / REST")
 Rel(alerts_svc, push, "Sends push notifications", "Web Push / FCM")
 Rel(alerts_svc, whatsapp, "Sends messaging alerts", "REST")

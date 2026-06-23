@@ -31,6 +31,14 @@ package "BC Identity & Access" #D6EAF8 {
     - roleId: Long
   }
 
+  class ExternalIdentity <<Aggregate>> {
+    - id: Long
+    - userId: Long
+    - provider: ExternalIdentityProvider
+    - providerSubject: String
+    - email: EmailAddress
+  }
+
   class Role <<Aggregate>> {
     - id: Long
     - name: RoleName
@@ -40,13 +48,17 @@ package "BC Identity & Access" #D6EAF8 {
 
   class EmailAddress <<ValueObject>>
   class RoleName <<ValueObject>>
+  enum ExternalIdentityProvider <<enum>>
   class Permission <<ValueObject>>
 
   Organization "1" o-- "*" User : organizationId
   User "*" --> "1" Role : roleId
+  User "1" o-- "*" ExternalIdentity : userId
+  ExternalIdentity "*" --> "1" ExternalIdentityProvider
   Role "1" *-- "*" Permission
   Organization *-- EmailAddress
   User *-- EmailAddress
+  ExternalIdentity *-- EmailAddress
   Role *-- RoleName
 }
 

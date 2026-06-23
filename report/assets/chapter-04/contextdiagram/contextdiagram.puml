@@ -24,6 +24,10 @@ System_Ext(sensors, "IoT Sensors", "Physical devices installed in cold rooms, wa
 
 System_Ext(email, "Email Service", "External provider such as SendGrid or Mailgun. Handles password recovery, account communication, and alerts [EP002, EP005].")
 
+System_Ext(google_identity, "Google Identity", "External identity provider for Google sign-in through OAuth 2.0 / OpenID Connect [US052, EP008].")
+
+System_Ext(apple_identity, "Apple Identity", "External identity provider for Sign in with Apple and identity tokens [US052, EP008].")
+
 System_Ext(push, "Push Notification Service", "Delivers critical real-time alerts to the user's browser and mobile device [EP005].")
 
 System_Ext(whatsapp, "Messaging Service (WhatsApp Business API)", "Complementary critical-alert channel based on the stakeholders' usual communication habits [EP005].")
@@ -42,6 +46,8 @@ Rel(coldtrace, auditor, "Delivers compliance reports and traceability evidence",
 Rel(sensors, coldtrace, "Sends temperature and humidity readings", "MQTT / HTTP")
 
 Rel(coldtrace, email, "Sends recovery, account, and alert emails", "SMTP / REST API")
+Rel(coldtrace, google_identity, "Validates Google identity and exchanges OAuth/OIDC responses", "HTTPS / OAuth 2.0")
+Rel(coldtrace, apple_identity, "Validates Apple identity and authorization responses", "HTTPS / Sign in with Apple")
 Rel(coldtrace, push, "Delivers real-time deviation notifications", "Web Push / FCM")
 Rel(coldtrace, whatsapp, "Sends critical alerts through messaging", "REST API")
 

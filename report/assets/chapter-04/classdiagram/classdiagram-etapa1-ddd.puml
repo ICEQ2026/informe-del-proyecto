@@ -29,6 +29,14 @@ class User <<Aggregate>> #D6EAF8 {
   + assignRole(command): void
 }
 
+class ExternalIdentity <<Aggregate>> #D6EAF8 {
+  - id: Long
+  - userId: Long
+  - provider: ExternalIdentityProvider
+  - providerSubject: String
+  - email: EmailAddress
+}
+
 class Role <<Aggregate>> #D6EAF8 {
   - id: Long
   - name: RoleName
@@ -38,6 +46,10 @@ class Role <<Aggregate>> #D6EAF8 {
 
 class EmailAddress <<ValueObject>> #FCF3CF
 class RoleName <<ValueObject>> #FCF3CF
+enum ExternalIdentityProvider <<enum>> #FCF3CF {
+  GOOGLE
+  APPLE
+}
 class Permission <<ValueObject>> #FCF3CF {
   - id: Long
   - resource: String
@@ -296,9 +308,12 @@ enum SubscriptionStatus <<enum>> {
 
 Organization "1" o-- "*" User : organizationId
 User "*" --> "1" Role : roleId
+User "1" o-- "*" ExternalIdentity : userId
+ExternalIdentity "*" --> "1" ExternalIdentityProvider
 Role "1" *-- "*" Permission
 Organization *-- EmailAddress
 User *-- EmailAddress
+ExternalIdentity *-- EmailAddress
 Role *-- RoleName
 
 Organization "1" o-- "*" Location : organizationId

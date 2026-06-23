@@ -34,6 +34,17 @@ package "BC Identity & Access" #D6EAF8 {
     + assignRole(command: AssignUserRoleCommand): void
   }
 
+  class ExternalIdentity <<Aggregate>> #FADBD8 {
+    - id: Long
+    - userId: Long
+    - provider: ExternalIdentityProvider
+    - providerSubject: String
+    - email: EmailAddress
+    - emailVerified: Boolean
+    - linkedAt: LocalDateTime
+    - lastLoginAt: LocalDateTime
+  }
+
   class Role <<Aggregate>> #FADBD8 {
     - id: Long
     - name: RoleName
@@ -53,6 +64,11 @@ package "BC Identity & Access" #D6EAF8 {
     + getValue(): String
   }
 
+  enum ExternalIdentityProvider <<Enum>> #FCF3CF {
+    GOOGLE
+    APPLE
+  }
+
   class Permission <<ValueObject>> #FCF3CF {
     - id: Long
     - resource: String
@@ -62,23 +78,29 @@ package "BC Identity & Access" #D6EAF8 {
 
   interface OrganizationRepository <<Repository>>
   interface UserRepository <<Repository>>
+  interface ExternalIdentityRepository <<Repository>>
   interface RoleRepository <<Repository>>
 
   Organization "1" o-- "*" User : organizationId
   User "*" --> "1" Role : roleId
+  User "1" o-- "*" ExternalIdentity : userId
+  ExternalIdentity "*" --> "1" ExternalIdentityProvider
   Role "1" *-- "*" Permission
   Organization *-- EmailAddress
   User *-- EmailAddress
+  ExternalIdentity *-- EmailAddress
   Role *-- RoleName
   OrganizationRepository ..> Organization
   UserRepository ..> User
+  ExternalIdentityRepository ..> ExternalIdentity
   RoleRepository ..> Role
 }
 
 note right of Organization
-  The current backend does not implement
-  Session, Subscription, password recovery
-  or login aggregate classes in this BC.
+  Social login is a Sprint 4 target.
+  Google and Apple validate identity,
+  but ColdTrace still owns user,
+  organization, role, and JWT state.
 end note
 
 @enduml

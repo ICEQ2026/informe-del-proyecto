@@ -58,6 +58,22 @@ entity "users" as users #D6EAF8 {
   role_id : BIGINT <<logical FK>>
 }
 
+entity "external_identities" as external_identities #D6EAF8 {
+  * id : BIGINT <<PK>>
+  --
+  created_at : DATETIME(6) NOT NULL
+  updated_at : DATETIME(6) NOT NULL
+  user_id : BIGINT <<logical FK>>
+  provider : VARCHAR NOT NULL
+  provider_subject : VARCHAR NOT NULL
+  email : VARCHAR
+  email_verified : BOOLEAN
+  linked_at : DATETIME(6) NOT NULL
+  last_login_at : DATETIME(6)
+  --
+  UK (provider, provider_subject)
+}
+
 ' Asset Management
 entity "locations" as locations #FADBD8 {
   * id : BIGINT <<PK>>
@@ -394,6 +410,7 @@ entity "billing_webhook_events" as billing_webhook_events #D6DBDF {
 organizations ||..o{ users : organization_id
 roles ||..o{ users : role_id
 roles ||--o{ role_permissions : role_id
+users ||..o{ external_identities : user_id
 
 organizations ||..o{ locations : organization_id
 organizations ||..o{ assets : organization_id
