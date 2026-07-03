@@ -2784,6 +2784,583 @@ Con la finalización del Sprint 3, el equipo cuenta con una RESTful API completa
 
 ---
 
+### 5.2.4. Sprint 4
+
+#### 5.2.4.1. Sprint Planning 4
+
+El Sprint 4 tuvo como objetivo principal ampliar ColdTrace con capacidades avanzadas de autenticación, asistencia basada en inteligencia artificial y monetización SaaS. A partir de la RESTful API consolidada en el Sprint 3, el equipo priorizó la evolución de tres frentes técnicos: Identity & Access, AI Assistance y SaaS Plans & Billing.
+
+El trabajo fue planificado y verificado en Linear App mediante tres proyectos específicos: **ColdTrace Sprint 4 - Identity and Access**, **ColdTrace Sprint 4 - AI Assistance** y **ColdTrace Sprint 4 - SaaS Plans and Billing**. Esta división permitió separar las tareas de seguridad, inteligencia artificial y pagos, manteniendo trazabilidad entre épicas, user stories y technical stories.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Sprint</th>
+    <td>Sprint 4</td>
+  </tr>
+  <tr>
+    <th>Sprint Goal</th>
+    <td>Extender ColdTrace con autenticación segura mediante JWT y proveedores OAuth/OIDC, asistencia inteligente para resolución de incidentes y reportes, y soporte backend para planes SaaS, suscripciones y validación de límites.</td>
+  </tr>
+  <tr>
+    <th>Periodo</th>
+    <td>Junio 2026</td>
+  </tr>
+  <tr>
+    <th>Herramienta de seguimiento</th>
+    <td>Linear App</td>
+  </tr>
+  <tr>
+    <th>Repositorios involucrados</th>
+    <td>`ICEQ2026/coldtrace-platform`, `ICEQ2026/coldtrace-frontend`, `ICEQ2026/landingpage-coldtrace`</td>
+  </tr>
+  <tr>
+    <th>Alcance completado verificado</th>
+    <td>Implementación principalmente backend de autenticación JWT/OAuth, asistencia IA con Spring AI y servicios SaaS/Billing con Stripe.</td>
+  </tr>
+  <tr>
+    <th>Alcance pendiente</th>
+    <td>Historias frontend y de experiencia visual asociadas a AI Assistance, Billing, pricing y algunos flujos de producto permanecen registradas como pendientes en Linear.</td>
+  </tr>
+</table>
+
+El enfoque del Sprint 4 no consistió en reemplazar los módulos existentes, sino en agregar capacidades transversales sobre la plataforma ya desplegada. La autenticación refuerza el acceso seguro al sistema, la asistencia IA apoya la toma de decisiones operativas frente a incidencias de cadena de frío, y el módulo de planes SaaS permite orientar el producto hacia un modelo comercial escalable.
+
+La planificación del sprint tomó como punto de partida los resultados del Sprint 3: una API Spring Boot desplegada, documentada con Swagger UI y organizada por bounded contexts. Sobre esa base, el equipo decidió no abrir nuevos módulos operativos principales, sino reforzar capacidades que atraviesan toda la plataforma: seguridad de sesión, automatización inteligente y control comercial por plan. Esto permitió que las tareas del Sprint 4 se registraran como incrementos sobre servicios existentes y no como una reescritura de la solución.
+
+El avance verificado en Linear muestra una entrega técnica importante en backend y una separación clara de trabajo pendiente en frontend. La siguiente tabla resume el estado por proyecto al momento de documentar el sprint:
+
+| Proyecto Linear | Épica principal | Avance completado | Pendiente visible en Linear |
+|---|---|---|---|
+| ColdTrace Sprint 4 - Identity and Access | EP002 / EP008 | 7 tickets cerrados relacionados con JWT, rutas protegidas, recuperación de contraseña, OAuth/OIDC y sesión frontend con JWT. | Las épicas de seguimiento permanecen abiertas para consolidación final de IAM. |
+| ColdTrace Sprint 4 - AI Assistance | EP013 | 7 technical stories backend cerradas: Spring AI, planes de resolución, aprobación, rechazo, historial, resumen de reportes e interpretación de dashboard. | 8 historias frontend o de experiencia de usuario continúan en Todo. |
+| ColdTrace Sprint 4 - SaaS Plans and Billing | EP014 | 6 technical stories backend cerradas: catálogo, suscripciones, entitlements, Stripe Checkout, webhooks, Customer Portal y validación de límites. | 8 historias frontend o de experiencia comercial continúan en Todo. |
+
+De esta manera, el Sprint 4 se documenta como una entrega de infraestructura funcional avanzada. El criterio usado para la revisión fue no considerar una épica como totalmente finalizada mientras sus historias visuales o de experiencia permanezcan abiertas en Linear.
+
+#### 5.2.4.2. Aspect Leaders and Collaborators
+
+Durante el Sprint 4, la coordinación se organizó por dominio funcional. Linear evidencia a Mauricio Pajés como responsable principal de las tareas backend completadas en autenticación, inteligencia artificial y billing. Las historias frontend y de producto se mantuvieron registradas para integración visual y validación posterior.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Aspecto</th>
+    <th>Responsable principal</th>
+    <th>Colaboración</th>
+    <th>Resultado documentado</th>
+  </tr>
+  <tr>
+    <td>Identity & Access</td>
+    <td>Mauricio Pajés</td>
+    <td>Equipo ColdTrace</td>
+    <td>JWT, rutas protegidas, endurecimiento CORS, recuperación de contraseña y autenticación OAuth/OIDC con Google y Apple.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>Mauricio Pajés</td>
+    <td>Equipo ColdTrace</td>
+    <td>Fundación con Spring AI, generación de planes de resolución, aprobación/rechazo humano, trazabilidad, historial, resumen inteligente de reportes e interpretación del dashboard.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans & Billing</td>
+    <td>Mauricio Pajés</td>
+    <td>Equipo ColdTrace</td>
+    <td>Catálogo de planes, suscripciones por organización, entitlements, Stripe Checkout, webhooks, Customer Portal y validación de límites.</td>
+  </tr>
+  <tr>
+    <td>Frontend y experiencia de usuario</td>
+    <td>Equipo ColdTrace</td>
+    <td>Equipo ColdTrace</td>
+    <td>Historias de interfaz registradas para AI Assistance, Billing, pricing y autenticación social; parte del alcance permanece pendiente según Linear.</td>
+  </tr>
+</table>
+
+#### 5.2.4.3. Sprint Backlog 4
+
+El Sprint Backlog 4 fue gestionado en Linear App. A diferencia del Sprint 3, enfocado en completar la RESTful API base, este sprint se orientó a capacidades avanzadas y transversales. La tabla siguiente resume los tickets verificados por proyecto y estado.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Proyecto Linear</th>
+    <th>ID</th>
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Estado</th>
+    <th>Resultado</th>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-58</td>
+    <td>Technical Story</td>
+    <td>TS02 - Authentication API with JWT</td>
+    <td>Done</td>
+    <td>API de autenticación con emisión y validación de tokens JWT.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-70</td>
+    <td>Technical Story</td>
+    <td>T-58 - JWT, Protected Routes and CORS Hardening</td>
+    <td>Done</td>
+    <td>Rutas protegidas y configuración CORS reforzada para consumo seguro desde frontend.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-71</td>
+    <td>Technical Story</td>
+    <td>T-59 / TS11 - Password Reset Request API</td>
+    <td>Done</td>
+    <td>API para solicitud de recuperación de contraseña.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-110</td>
+    <td>Technical Story</td>
+    <td>TS30 - Google and Apple OAuth/OIDC Authentication API</td>
+    <td>Done</td>
+    <td>Integración backend para autenticación social con Google y Apple.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-111</td>
+    <td>User Story</td>
+    <td>US057 - Start Google/Apple sign-in from the UI</td>
+    <td>Done</td>
+    <td>Inicio del flujo de autenticación social desde la interfaz.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-112</td>
+    <td>User Story</td>
+    <td>US052 - Create or sign in with Google/Apple</td>
+    <td>Done</td>
+    <td>Creación o inicio de sesión mediante proveedores OAuth/OIDC.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-113</td>
+    <td>User Story</td>
+    <td>US058 - Sign in with backend JWT session</td>
+    <td>Done</td>
+    <td>Integración del inicio de sesión frontend con sesión JWT emitida por backend.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-87</td>
+    <td>Technical Story</td>
+    <td>TS18 - Spring AI foundation and structured output</td>
+    <td>Done</td>
+    <td>Base técnica de Spring AI y respuestas estructuradas para casos de uso inteligentes.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-88</td>
+    <td>Technical Story</td>
+    <td>TS19 - Resolution plan generation with real context</td>
+    <td>Done</td>
+    <td>Generación de planes de resolución para incidentes usando contexto real de ColdTrace.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-89</td>
+    <td>Technical Story</td>
+    <td>TS20 - Human approval and backend resolution</td>
+    <td>Done</td>
+    <td>Flujo de aprobación humana antes de aplicar una resolución asistida.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-90</td>
+    <td>Technical Story</td>
+    <td>TS21 - Plan rejection and traceability</td>
+    <td>Done</td>
+    <td>Rechazo de planes IA con trazabilidad de la decisión.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-91</td>
+    <td>Technical Story</td>
+    <td>TS22 - AI plan persistence and history</td>
+    <td>Done</td>
+    <td>Persistencia e historial de planes generados por IA.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-92</td>
+    <td>Technical Story</td>
+    <td>TS23 - Intelligent report summary</td>
+    <td>Done</td>
+    <td>Resumen inteligente de reportes de cumplimiento.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-114</td>
+    <td>Technical Story</td>
+    <td>TS31 - Dashboard AI interpretation API</td>
+    <td>Done</td>
+    <td>Interpretación automática del dashboard operacional mediante IA.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-100</td>
+    <td>Technical Story</td>
+    <td>TS24 - Backend plan and pricing catalog</td>
+    <td>Done</td>
+    <td>Catálogo backend de planes, precios y características disponibles.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-101</td>
+    <td>Technical Story</td>
+    <td>TS25 - Organization subscription and entitlements</td>
+    <td>Done</td>
+    <td>Modelo de suscripción por organización y permisos asociados al plan.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-102</td>
+    <td>Technical Story</td>
+    <td>TS26 - Stripe Checkout session creation</td>
+    <td>Done</td>
+    <td>Creación de sesiones de pago con Stripe Checkout.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-103</td>
+    <td>Technical Story</td>
+    <td>TS27 - Stripe webhooks and subscription sync</td>
+    <td>Done</td>
+    <td>Sincronización de estados de suscripción mediante webhooks de Stripe.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-104</td>
+    <td>Technical Story</td>
+    <td>TS28 - Stripe Customer Portal sessions</td>
+    <td>Done</td>
+    <td>Sesiones del portal de cliente para gestión de suscripción.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-105</td>
+    <td>Technical Story</td>
+    <td>TS29 - Backend plan-limit validation</td>
+    <td>Done</td>
+    <td>Validación backend de límites según plan contratado.</td>
+  </tr>
+</table>
+
+Los tickets frontend y de experiencia asociados a AI Assistance, Billing, pricing y pantallas de suscripción se mantienen como alcance pendiente o en progreso dentro de Linear. Por ello, la documentación de este sprint diferencia entre las capacidades backend completadas y las interfaces que requieren integración visual posterior.
+
+Además del backlog completado, Linear mantiene abiertas historias de usuario que representan la integración visual y la experiencia final del producto. Estas tareas no se consideran evidencia de entrega cerrada, pero sí forman parte del contexto del Sprint 4 porque explican cómo se consumen las APIs ya implementadas.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Proyecto Linear</th>
+    <th>ID</th>
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Estado</th>
+    <th>Relación con el Sprint 4</th>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-80</td>
+    <td>Epic</td>
+    <td>EP013 - AI-assisted incident resolution</td>
+    <td>In Progress</td>
+    <td>Épica que agrupa asistencia IA para incidentes, reportes y dashboard.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-82</td>
+    <td>User Story</td>
+    <td>US040 - Generate an AI-assisted plan for an incident</td>
+    <td>Todo</td>
+    <td>Consumo frontend de la generación de planes IA para incidencias.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-83</td>
+    <td>User Story</td>
+    <td>US041 - Approve an AI plan and close the incident</td>
+    <td>Todo</td>
+    <td>Interfaz para aprobar un plan IA y cerrar la incidencia desde el flujo operativo.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-84</td>
+    <td>User Story</td>
+    <td>US042 - Reject an AI plan with a reason</td>
+    <td>Todo</td>
+    <td>Interfaz para rechazar recomendaciones IA con motivo auditable.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-85</td>
+    <td>User Story</td>
+    <td>US043 - Review AI plan history</td>
+    <td>Todo</td>
+    <td>Consulta visual del historial de planes generados, aprobados o rechazados.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-86</td>
+    <td>User Story</td>
+    <td>US044 - Generate an intelligent compliance summary</td>
+    <td>Todo</td>
+    <td>Experiencia frontend para solicitar y mostrar resúmenes inteligentes de reportes.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-93</td>
+    <td>User Story</td>
+    <td>US053 - Use AI Guidance panel in incidents</td>
+    <td>Todo</td>
+    <td>Panel de guía IA dentro del módulo de incidencias.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-108 / OPE-109</td>
+    <td>User Story</td>
+    <td>US051 / US056 - Dashboard AI interpretation</td>
+    <td>Todo</td>
+    <td>Apertura e integración del asistente IA para interpretar el dashboard operacional.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-81</td>
+    <td>Epic</td>
+    <td>EP014 - SaaS plans, pricing, and subscriptions</td>
+    <td>In Progress</td>
+    <td>Épica que agrupa planes, precios, suscripciones, Stripe y límites por plan.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-94 / OPE-107</td>
+    <td>User Story</td>
+    <td>US045 / US055 - Compare plans from the landing page</td>
+    <td>Todo</td>
+    <td>Comparación de planes en landing page usando el catálogo backend.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-95 / OPE-96</td>
+    <td>User Story</td>
+    <td>US046 / US047 - Select plan and view usage</td>
+    <td>Todo</td>
+    <td>Selección de plan, visualización de plan actual y uso de límites.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-97 / OPE-98</td>
+    <td>User Story</td>
+    <td>US048 / US049 - Stripe Checkout and Customer Portal</td>
+    <td>Todo</td>
+    <td>Flujos frontend para upgrade mediante Checkout y gestión de billing en Customer Portal.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-99 / OPE-106</td>
+    <td>User Story</td>
+    <td>US050 / US054 - Plan guards and billing management</td>
+    <td>Todo</td>
+    <td>Bloqueo visual de funcionalidades no incluidas y administración de upgrades dentro de la app.</td>
+  </tr>
+</table>
+
+Esta lectura del backlog evita sobreestimar el alcance del sprint. Los tickets `Done` representan capacidades listas a nivel de servicio o integración validada; los tickets `Todo` representan la capa de experiencia que debe cerrar el flujo de usuario en una iteración posterior.
+
+#### 5.2.4.4. Development Evidence for Sprint Review
+
+Durante el Sprint 4 se extendió la RESTful API de ColdTrace sobre la arquitectura Spring Boot ya desarrollada en Sprint 3. El trabajo se concentró en nuevos casos de uso transversales que complementan los bounded contexts existentes.
+
+**Identity & Access.** Se reforzó la capa de autenticación mediante JWT, rutas protegidas y configuración CORS. Además, se agregó soporte para autenticación OAuth/OIDC con Google y Apple, permitiendo que el usuario pueda crear una cuenta o iniciar sesión con proveedores externos y recibir una sesión gestionada por el backend de ColdTrace.
+
+El trabajo de autenticación se organizó alrededor de una línea base de seguridad. `OPE-58` implementó la autenticación con emisión de JWT; `OPE-70` protegió rutas y ajustó CORS para el consumo desde la aplicación frontend; `OPE-71` agregó recuperación de contraseña; y `OPE-110`, `OPE-111`, `OPE-112` y `OPE-113` completaron el flujo de autenticación social y sesión JWT desde la interfaz. Esta secuencia permite que ColdTrace mantenga propiedad backend sobre usuarios, organizaciones, roles y sesiones, incluso cuando el usuario inicia sesión mediante Google o Apple.
+
+**AI Assistance.** Se incorporó una base técnica con Spring AI para generar respuestas estructuradas. Sobre esta base se implementaron planes de resolución de incidentes con contexto real, flujos de aprobación o rechazo humano, persistencia del historial de planes, resúmenes inteligentes de reportes e interpretación del dashboard operacional. Estas capacidades buscan apoyar al usuario en la toma de decisiones ante desviaciones de temperatura, cumplimiento sanitario y análisis de estado operativo.
+
+La implementación de AI Assistance siguió un enfoque backend-first. `OPE-87` estableció configuración por variables de entorno y salida estructurada; `OPE-88` generó planes a partir de contexto real de incidencias; `OPE-89` permitió convertir un plan aprobado en una resolución backend; `OPE-90` registró rechazos con trazabilidad; `OPE-91` persistió historial de planes; `OPE-92` produjo resúmenes inteligentes de reportes; y `OPE-114` expuso interpretación IA del dashboard. En todos los casos, la IA se trató como asistencia y no como autoridad automática: el usuario conserva la aprobación final en decisiones operativas.
+
+<p align="center">
+  <img src="assets/chapter-04/prototyping/sprint-4-ai-billing/ai-guidance-resolution-plan.png" alt="Prototipo de plan de resolución asistido por IA" width="900">
+</p>
+
+*Figura 5.2.4.4.1: Prototipo de generación de plan de resolución asistido por IA para incidencias.*
+
+<p align="center">
+  <img src="assets/chapter-04/prototyping/sprint-4-ai-billing/ai-compliance-summary.png" alt="Prototipo de resumen inteligente de cumplimiento" width="900">
+</p>
+
+*Figura 5.2.4.4.2: Prototipo de resumen inteligente de cumplimiento generado por IA.*
+
+<p align="center">
+  <img src="assets/chapter-04/prototyping/sprint-4-ai-billing/dashboard-ai-insights-panel.png" alt="Prototipo de interpretación IA del dashboard" width="900">
+</p>
+
+*Figura 5.2.4.4.3: Prototipo del panel de interpretación IA del dashboard operacional.*
+
+**SaaS Plans & Billing.** Se implementó el soporte backend para monetización SaaS: catálogo de planes y precios, suscripciones por organización, entitlements, creación de sesiones de pago con Stripe Checkout, sincronización mediante webhooks, acceso al Stripe Customer Portal y validación de límites según plan. Esto permite proyectar ColdTrace como una plataforma comercial con planes diferenciados.
+
+El trabajo de Billing se separó en dos bloques: catálogo/entitlements y flujos Stripe. `OPE-100` expuso el catálogo backend de planes; `OPE-101` modeló la suscripción activa por organización y sus permisos; `OPE-102` creó sesiones de Stripe Checkout; `OPE-103` sincronizó eventos de suscripción mediante webhooks firmados; `OPE-104` habilitó sesiones de Customer Portal; y `OPE-105` validó límites de plan desde servicios backend. Con esto, las reglas comerciales dejan de depender únicamente de controles visuales y pasan a estar protegidas por la API.
+
+<p align="center">
+  <img src="assets/chapter-04/prototyping/sprint-4-ai-billing/billing-subscription-plans.png" alt="Prototipo de planes de suscripción" width="900">
+</p>
+
+*Figura 5.2.4.4.4: Prototipo de planes de suscripción dentro de la aplicación ColdTrace.*
+
+<p align="center">
+  <img src="assets/chapter-04/prototyping/sprint-4-ai-billing/landing-pricing-plans.png" alt="Prototipo de pricing en landing page" width="900">
+</p>
+
+*Figura 5.2.4.4.5: Prototipo de comparación de planes en la Landing Page.*
+
+El desarrollo mantuvo el criterio de separar la lógica de aplicación de los controladores REST, siguiendo la estructura de servicios, persistencia y documentación OpenAPI consolidada en el Sprint 3.
+
+#### 5.2.4.5. Execution Evidence for Sprint Review
+
+La ejecución del Sprint 4 se valida a partir de los flujos funcionales registrados en Linear como completados. El resultado permite demostrar que ColdTrace no solo conserva las funcionalidades operativas previas, sino que incorpora mecanismos de acceso seguro, asistencia inteligente y control comercial por plan.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Flujo validado</th>
+    <th>Resultado esperado</th>
+    <th>Estado según Linear</th>
+  </tr>
+  <tr>
+    <td>Inicio de sesión con credenciales</td>
+    <td>El backend valida las credenciales y emite una sesión JWT para consumir rutas protegidas.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Inicio de sesión social</td>
+    <td>El usuario puede iniciar el flujo con Google o Apple y recibir una sesión backend compatible con ColdTrace.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Generación de plan IA para incidencias</td>
+    <td>La API genera un plan de resolución usando información contextual del incidente y del entorno operativo.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Aprobación o rechazo de plan IA</td>
+    <td>El usuario conserva control humano sobre la recomendación, dejando trazabilidad de la decisión.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Resumen inteligente de reportes</td>
+    <td>La API genera una síntesis comprensible del reporte de cumplimiento.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Interpretación IA del dashboard</td>
+    <td>El sistema interpreta el estado operacional y comunica hallazgos relevantes para la toma de decisiones.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Checkout y suscripción SaaS</td>
+    <td>La organización puede iniciar un checkout, sincronizar su suscripción y aplicar límites según el plan.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+Las capturas de interfaz y evidencias visuales de los flujos frontend deben complementarse cuando las historias de UI registradas en Linear pasen de estado pendiente a completado. En esta versión del informe, la evidencia principal corresponde al avance técnico y funcional del backend.
+
+Para la revisión del sprint, los flujos se agruparon en tres recorridos demostrables. El primero corresponde a seguridad: el usuario inicia sesión, obtiene token JWT y accede a rutas protegidas sin exponer credenciales ni estado sensible al cliente. El segundo corresponde a asistencia IA: un incidente o reporte existente se usa como fuente factual y el backend devuelve una recomendación estructurada que puede ser aprobada, rechazada o consultada luego en historial. El tercero corresponde a monetización: la organización consulta planes, inicia checkout externo en Stripe y el backend sincroniza el estado de suscripción para aplicar límites.
+
+Estos recorridos muestran que Sprint 4 no solo agrega pantallas, sino reglas de negocio transversales. La autenticación protege la plataforma, AI Assistance reduce tiempo de análisis operativo y Billing prepara el producto para segmentar capacidades por plan.
+
+#### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+Los servicios del Sprint 4 mantienen el enfoque de documentación REST mediante OpenAPI/Swagger UI utilizado en Sprint 3. Las operaciones se agrupan por dominio funcional para facilitar su revisión.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Grupo de servicios</th>
+    <th>Operaciones documentadas</th>
+    <th>Propósito</th>
+  </tr>
+  <tr>
+    <td>Authentication</td>
+    <td>Login, emisión de JWT, validación de sesión, recuperación de contraseña y protección de rutas.</td>
+    <td>Asegurar que solo usuarios autenticados puedan acceder a recursos operativos de ColdTrace.</td>
+  </tr>
+  <tr>
+    <td>OAuth/OIDC</td>
+    <td>Inicio de flujo con Google/Apple, callback de proveedor y creación o vinculación de cuenta.</td>
+    <td>Permitir autenticación social manteniendo una sesión compatible con el backend de ColdTrace.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>Generación de planes, aprobación, rechazo, historial, resumen de reportes e interpretación de dashboard.</td>
+    <td>Apoyar decisiones operativas mediante asistencia IA con trazabilidad humana.</td>
+  </tr>
+  <tr>
+    <td>Plans and Billing</td>
+    <td>Listado de planes, suscripción de organización, Checkout, webhooks, Customer Portal y validación de límites.</td>
+    <td>Gestionar monetización SaaS y restricciones por plan contratado.</td>
+  </tr>
+</table>
+
+La documentación de servicios debe reflejar los contratos finales disponibles en Swagger UI, incluyendo códigos de respuesta, validaciones y errores de negocio. Para Sprint 4, los grupos más sensibles son los endpoints protegidos por JWT, los callbacks OAuth/OIDC, los webhooks de Stripe y las operaciones que consumen servicios de IA.
+
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+Sprint 4 se apoya en la infraestructura de despliegue implementada en Sprint 3 para la RESTful API de ColdTrace. La aplicación backend continúa orientada a ejecución en Google Cloud Run, con contenedorización Docker y configuración por variables de entorno.
+
+Para habilitar las capacidades agregadas en Sprint 4, el despliegue requiere variables y secretos adicionales:
+
+| Categoría | Configuración requerida | Uso |
+|---|---|---|
+| JWT | Secreto de firma, expiración de token y configuración de rutas protegidas. | Emitir y validar sesiones seguras. |
+| OAuth/OIDC | Client ID, Client Secret, redirect URIs y configuración de proveedores Google/Apple. | Completar autenticación social. |
+| AI Assistance | API key del proveedor de IA y configuración de Spring AI. | Generar planes, resúmenes e interpretaciones inteligentes. |
+| Stripe Billing | Stripe Secret Key, Price IDs, webhook secret y URLs de retorno. | Crear checkout, sincronizar suscripciones y abrir Customer Portal. |
+
+No se registra en este capítulo un nuevo despliegue independiente para Sprint 4. La evidencia disponible se documenta como extensión funcional sobre la API desplegada previamente, quedando pendiente adjuntar capturas específicas de Cloud Run, Swagger UI o flujos frontend cuando se genere una validación visual de Sprint 4.
+
+Las configuraciones de Sprint 4 incrementan la sensibilidad del entorno de despliegue porque incluyen secretos de autenticación, proveedores externos y webhooks. Por ello, la documentación del sprint considera como buena práctica mantener estos valores fuera del repositorio, cargarlos mediante variables de entorno del servicio desplegado y validar los callbacks con URLs controladas por el equipo. Este criterio mantiene consistencia con el despliegue en Cloud Run usado en Sprint 3.
+
+#### 5.2.4.8. Team Collaboration Insights during Sprint
+
+La colaboración del Sprint 4 se organizó mediante Linear App, separando el trabajo en tres proyectos funcionales. Esta estructura permitió controlar mejor el avance de capacidades con dependencias externas, como proveedores OAuth/OIDC, servicios de IA y Stripe.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Proyecto Linear</th>
+    <th>Estado del proyecto</th>
+    <th>Avance principal</th>
+    <th>Riesgo o pendiente</th>
+  </tr>
+  <tr>
+    <td>ColdTrace Sprint 4 - Identity and Access</td>
+    <td>In Progress</td>
+    <td>JWT, rutas protegidas, CORS, recuperación de contraseña y OAuth/OIDC completados.</td>
+    <td>Validación visual completa del flujo en frontend y documentación final de evidencias.</td>
+  </tr>
+  <tr>
+    <td>ColdTrace Sprint 4 - AI Assistance</td>
+    <td>In Progress</td>
+    <td>Servicios backend de asistencia IA completados para incidentes, reportes y dashboard.</td>
+    <td>Integración final de pantallas y componentes frontend asociados a las historias de usuario pendientes.</td>
+  </tr>
+  <tr>
+    <td>ColdTrace Sprint 4 - SaaS Plans and Billing</td>
+    <td>In Progress</td>
+    <td>Technical Stories backend completadas para catálogo, suscripciones, Stripe y límites por plan.</td>
+    <td>Construcción o cierre de pantallas de pricing, checkout y gestión de suscripción en frontend.</td>
+  </tr>
+</table>
+
+El principal aprendizaje del Sprint 4 fue la necesidad de separar con claridad la evidencia técnica backend de la evidencia visual frontend. Linear muestra un avance importante en servicios y lógica de plataforma, pero también evidencia que varias historias de experiencia de usuario deben completarse antes de presentar el Sprint 4 como una entrega totalmente cerrada desde la perspectiva del producto final.
+
+En términos de colaboración, Linear permitió visualizar dependencias entre technical stories y user stories. Las tareas backend cerradas desbloquean las historias frontend, porque definen contratos reales para consumir desde la aplicación web y la landing page. La revisión del tablero también permitió identificar que los proyectos de AI Assistance y Billing no deben reportarse como completados a nivel de producto mientras sus historias de experiencia permanezcan en Todo, aunque sus servicios principales ya estén disponibles.
+
+La distribución del trabajo evidencia un patrón de avance por capas: primero se cerraron servicios críticos de backend, luego se dejaron preparadas las interfaces para consumir esos contratos. Para el siguiente ciclo, la prioridad natural será cerrar las historias frontend de AI Guidance, dashboard interpretation, pricing, checkout y administración de suscripción, usando como base los endpoints ya implementados.
+
+---
+
 ## 5.3. Validation Interviews
 
 ### 5.3.1. Diseño de Entrevistas
