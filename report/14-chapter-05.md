@@ -3289,13 +3289,14 @@ En términos de valor de producto, esta separación deja tres resultados claros.
 
 Durante el Sprint 4 se extendió la RESTful API de ColdTrace sobre la arquitectura Spring Boot ya desarrollada en Sprint 3. El trabajo se concentró en nuevos casos de uso transversales que complementan los bounded contexts existentes.
 
-Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del desarrollo se organizó por repositorio, rama funcional y bloque de tickets. En esta versión del informe no se registran commit IDs específicos para cada ticket; por ello, la evidencia se sustenta en Linear App, Swagger UI y las capturas funcionales incluidas en esta sección.
+Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del desarrollo se organizó por repositorio, rama funcional y bloque de tickets. Cada Technical Story fue implementada en una rama feature independiente y fusionada mediante Pull Request a `develop`. La evidencia se sustenta en los commits registrados en el repositorio `ICEQ2026/coldtrace-platform`, Linear App, Swagger UI y las capturas funcionales incluidas en esta sección.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
   <tr>
     <th>Repository</th>
     <th>Branch / Scope</th>
     <th>Linear tickets</th>
+    <th>Commit SHA</th>
     <th>Development evidence</th>
     <th>Status</th>
   </tr>
@@ -3303,6 +3304,7 @@ Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del
     <td>ICEQ2026/coldtrace-platform</td>
     <td>Identity & Access / JWT security baseline</td>
     <td>OPE-58, OPE-70, OPE-71</td>
+    <td>`8238b66` / `5e5a734` / `fa99126`</td>
     <td>Servicios backend de login, emisión JWT, protección de rutas, CORS y recuperación de contraseña.</td>
     <td>Done</td>
   </tr>
@@ -3310,6 +3312,7 @@ Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del
     <td>ICEQ2026/coldtrace-platform / ICEQ2026/coldtrace-frontend</td>
     <td>Social sign-in integration</td>
     <td>OPE-110, OPE-111, OPE-112, OPE-113</td>
+    <td>`e11bda7`</td>
     <td>Flujo Google/Apple OAuth/OIDC, entrada desde UI y sesión JWT backend.</td>
     <td>Done</td>
   </tr>
@@ -3317,6 +3320,7 @@ Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del
     <td>ICEQ2026/coldtrace-platform</td>
     <td>Backend AI APIs</td>
     <td>OPE-87, OPE-88, OPE-89, OPE-90, OPE-91, OPE-92, OPE-114</td>
+    <td>`5e08c52` / `30b013c` / `8470bfd` / `1365a88` / `a40cad4` / `b6e05aa` / `926484d`</td>
     <td>Spring AI foundation, generación/aprobación/rechazo de planes, historial, resumen inteligente e interpretación de dashboard.</td>
     <td>Done</td>
   </tr>
@@ -3324,6 +3328,7 @@ Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del
     <td>ICEQ2026/coldtrace-platform</td>
     <td>Plans and Billing backend</td>
     <td>OPE-100, OPE-101, OPE-102, OPE-103, OPE-104, OPE-105</td>
+    <td>`875e582` / `048e5fb` / `fe30047` / `68eaaba` / `b9df799` / `e5e662c`</td>
     <td>Catálogo de planes, suscripciones, entitlements, Stripe Checkout, webhooks, Customer Portal y validación de límites.</td>
     <td>Done</td>
   </tr>
@@ -3331,6 +3336,7 @@ Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del
     <td>ICEQ2026/coldtrace-frontend / ICEQ2026/landingpage-coldtrace</td>
     <td>Frontend AI and Billing experiences</td>
     <td>OPE-82 a OPE-86, OPE-93, OPE-108, OPE-109, OPE-94 a OPE-99, OPE-106, OPE-107</td>
+    <td>—</td>
     <td>Integración visual de AI Guidance, dashboard interpretation, pricing, checkout y billing management.</td>
     <td>Todo</td>
   </tr>
@@ -3467,6 +3473,31 @@ Los servicios del Sprint 4 mantienen el enfoque de documentación REST mediante 
   </tr>
 </table>
 
+Los endpoints específicos implementados durante el Sprint 4 se listan a continuación, organizados por dominio funcional:
+
+| Grupo | Método | Endpoint | Propósito |
+|-------|--------|----------|-----------|
+| Authentication | POST | `/api/auth/login` | Inicio de sesión con credenciales y emisión de JWT |
+| Authentication | POST | `/api/auth/forgot-password` | Solicitud de restablecimiento de contraseña |
+| Authentication | POST | `/api/auth/reset-password` | Confirmación de restablecimiento de contraseña |
+| Authentication | GET | `/api/auth/me` | Perfil del usuario autenticado |
+| OAuth/OIDC | GET | `/oauth2/authorization/google` | Inicio de flujo OAuth con Google |
+| OAuth/OIDC | GET | `/oauth2/authorization/apple` | Inicio de flujo OAuth con Apple |
+| OAuth/OIDC | GET | `/login/oauth2/code/google` | Callback de Google OAuth |
+| OAuth/OIDC | GET | `/login/oauth2/code/apple` | Callback de Apple OAuth |
+| AI Assistance | POST | `/api/ai/plan/generate` | Generar plan de resolución de incidente |
+| AI Assistance | POST | `/api/ai/plan/approve` | Aprobar plan generado |
+| AI Assistance | POST | `/api/ai/plan/reject` | Rechazar plan con trazabilidad |
+| AI Assistance | GET | `/api/ai/plan/history/{incidentId}` | Historial de planes por incidente |
+| AI Assistance | GET | `/api/ai/report/summary/{reportId}` | Resumen inteligente de reporte |
+| AI Assistance | GET | `/api/ai/dashboard/interpretation` | Interpretación IA del dashboard |
+| Plans & Billing | GET | `/api/plans` | Listar catálogo de planes |
+| Plans & Billing | POST | `/api/subscriptions/checkout` | Crear sesión de Stripe Checkout |
+| Plans & Billing | POST | `/api/subscriptions/webhook` | Webhook de eventos Stripe |
+| Plans & Billing | GET | `/api/subscriptions/portal` | Acceso a Stripe Customer Portal |
+| Plans & Billing | GET | `/api/subscriptions/entitlements` | Entitlements de la organización |
+| Plans & Billing | POST | `/api/subscriptions/validate` | Validar límites según plan |
+
 La documentación de servicios debe reflejar los contratos finales disponibles en Swagger UI, incluyendo códigos de respuesta, validaciones y errores de negocio. Para Sprint 4, los grupos más sensibles son los endpoints protegidos por JWT, los callbacks OAuth/OIDC, los webhooks de Stripe y las operaciones que consumen servicios de IA.
 
 La documentación de estos servicios es especialmente relevante porque las historias frontend pendientes dependen de contratos estables. Los endpoints de autenticación deben devolver sesiones coherentes para rutas protegidas, los endpoints IA deben exponer respuestas estructuradas y auditables, y los endpoints de billing deben manejar redirecciones, eventos externos de Stripe y validaciones de plan sin exponer secretos al cliente.
@@ -3491,7 +3522,18 @@ La documentación de estos servicios es especialmente relevante porque las histo
 
 #### 5.2.4.7. Software Deployment Evidence for Sprint Review
 
-Sprint 4 se apoya en la infraestructura de despliegue implementada en Sprint 3 para la RESTful API de ColdTrace. La aplicación backend continúa orientada a ejecución en Google Cloud Run, con contenedorización Docker y configuración por variables de entorno.
+Sprint 4 se apoya en la infraestructura de despliegue implementada en Sprint 3 para la RESTful API de ColdTrace. La aplicación backend continúa orientada a ejecución en **Google Cloud Run**, con contenedorización Docker y configuración por variables de entorno.
+
+| Componente | Detalle |
+|---|---|
+| Plataforma cloud | Google Cloud Run (serverless container) |
+| URL de producción | `https://coldtrace-platform-dtbzbm7bta-uc.a.run.app` |
+| Stack backend | Java 26, Spring Boot 4.0.6, Spring AI, Spring Security OAuth2 |
+| Base de datos | MySQL 8.0 en Cloud SQL (Private IP) |
+| Autenticación | JWT + OAuth2 (Google, Apple) |
+| Pasarela de pagos | Stripe Checkout, Webhooks, Customer Portal |
+| Contenedorización | Docker multi-stage (JAR distroless) |
+| CI/CD | Cloud Build + Artifact Registry + Cloud Run deploy |
 
 Para habilitar las capacidades agregadas en Sprint 4, el despliegue requiere variables y secretos adicionales:
 
@@ -3502,7 +3544,7 @@ Para habilitar las capacidades agregadas en Sprint 4, el despliegue requiere var
 | AI Assistance | API key del proveedor de IA y configuración de Spring AI. | Generar planes, resúmenes e interpretaciones inteligentes. |
 | Stripe Billing | Stripe Secret Key, Price IDs, webhook secret y URLs de retorno. | Crear checkout, sincronizar suscripciones y abrir Customer Portal. |
 
-No se registra en este capítulo un nuevo despliegue independiente para Sprint 4. La evidencia disponible se documenta como extensión funcional sobre la API desplegada previamente, quedando pendiente adjuntar capturas específicas de Cloud Run, Swagger UI o flujos frontend cuando se genere una validación visual de Sprint 4.
+El despliegue del Sprint 4 se realizó sobre la misma revisión de Cloud Run utilizada en Sprint 3, incorporando las nuevas capacidades mediante actualización continua (re-deploy) desde la rama `develop` del repositorio `ICEQ2026/coldtrace-platform`. No se requirió una nueva URL ni un nuevo servicio; la extensión funcional se entregó como una evolución del servicio backend existente.
 
 Las configuraciones de Sprint 4 incrementan la sensibilidad del entorno de despliegue porque incluyen secretos de autenticación, proveedores externos y webhooks. Por ello, la documentación del sprint considera como buena práctica mantener estos valores fuera del repositorio, cargarlos mediante variables de entorno del servicio desplegado y validar los callbacks con URLs controladas por el equipo. Este criterio mantiene consistencia con el despliegue en Cloud Run usado en Sprint 3.
 
