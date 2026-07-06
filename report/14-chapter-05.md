@@ -2691,19 +2691,83 @@ Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace e
 - **Repositorio frontend (Vercel):** https://coldtrace-frontend-liard.vercel.app
 - **Landing Page (GitHub Pages):** https://iceq2026.github.io/landingpage-coldtrace
 
-A continuación se presenta la evidencia del flujo de despliegue continuo en Google Cloud Build y el estado activo del servicio en Google Cloud Run:
+A continuación se documenta el procedimiento realizado en la consola de Google Cloud para aprovisionar la base de datos administrada y publicar la RESTful API.
+
+**Creación de la instancia Cloud SQL para MySQL**
+
+Se aprovisionó una instancia administrada de Cloud SQL seleccionando MySQL 8.4 como motor de base de datos, asignándole el identificador `coldtrace-mysql` en la región `us-central1`. Esta instancia actúa como el almacenamiento persistente al que se conecta el backend desplegado en Cloud Run.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/creacion_intancia_cloudSQL_figura1.png" alt="Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace" width="900">
+</p>
+
+*Figura 5.2.3.7.1: Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace.*
+
+**Verificación de la instancia `coldtrace-mysql` disponible**
+
+Se confirmó que la instancia `coldtrace-mysql` quedó creada correctamente en la región configurada (`us-central1`, MySQL 8.4) y disponible para recibir bases de datos, usuarios y conexiones desde el servicio de aplicación.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/intancia_cloud_sql_figura2.png" alt="Instancia Cloud SQL coldtrace-mysql creada y disponible" width="900">
+</p>
+
+*Figura 5.2.3.7.2: Instancia Cloud SQL `coldtrace-mysql` creada en Google Cloud y disponible para configuración.*
+
+**Creación de la base de datos `coldtrace_platform`**
+
+Dentro de la instancia Cloud SQL se registró el esquema `coldtrace_platform`, que actúa como base de datos principal donde el backend Spring Boot persiste la información de organizaciones, activos, sensores, reportes y monitoreo. El esquema se creó con codificación `utf8mb4` para dar soporte consistente a la internacionalización de contenidos.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/base_de_datos_coldtrace_figura3.png" alt="Base de datos coldtrace_platform registrada en la instancia Cloud SQL" width="900">
+</p>
+
+*Figura 5.2.3.7.3: Base de datos `coldtrace_platform` registrada en la instancia Cloud SQL.*
+
+**Configuración del usuario de base de datos**
+
+Se creó un usuario de aplicación dedicado (`coldtrace_user`) para que el servicio Cloud Run acceda a MySQL sin utilizar la cuenta administrativa `root` durante la operación del backend. Esta separación reduce la superficie de riesgo y mantiene las credenciales operativas aisladas de las credenciales de administración.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/usuario_base_de_datos_figura4.png" alt="Usuario de base de datos configurado para la conexión del backend" width="900">
+</p>
+
+*Figura 5.2.3.7.4: Usuario de base de datos `coldtrace_user` configurado para la conexión del backend.*
+
+**Configuración del servicio Cloud Run**
+
+Se creó el servicio Cloud Run `coldtrace-platform` conectado al repositorio del backend en GitHub, utilizando la rama principal como fuente de despliegue continuo mediante Cloud Build. Se seleccionó la compilación a partir del `Dockerfile` del repositorio y se configuró el puerto de contenedor `8080`, requerido por Cloud Run para enrutar el tráfico HTTP hacia la aplicación Spring Boot.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/configuracion_cloud_run_backend_figura5.png" alt="Configuración de Cloud Run con repositorio del backend, rama principal y compilación mediante Dockerfile" width="900">
+</p>
+
+*Figura 5.2.3.7.5: Configuración de Cloud Run con el repositorio del backend, la rama principal y la compilación mediante Dockerfile.*
+
+**Configuración de variables de entorno en Cloud Run**
+
+Se registraron las variables de entorno de producción para separar la configuración del código fuente, evitando exponer host, usuario, contraseña o nombre del esquema en el repositorio. Entre ellas se incluyen la conexión a la instancia Cloud SQL (`DATABASE_URL`, `DATABASE_USER`, `DATABASE_PASSWORD`, `DATABASE_SCHEMA`), el perfil activo de Spring Boot (`SPRING_PROFILES_ACTIVE=prod`) y los orígenes permitidos para CORS que habilitan la integración con la Frontend Web Application. Estas variables son resueltas en tiempo de ejecución por `application-prod.properties`, manteniéndose fuera del control de versiones.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-3/variable_de_entorno_figura6.png" alt="Variables de entorno del servicio Cloud Run para conectar Spring Boot con Cloud SQL y el frontend" width="900">
+</p>
+
+*Figura 5.2.3.7.6: Variables de entorno del servicio Cloud Run para conectar el backend con Cloud SQL y el frontend.*
+
+**Despliegue continuo y estado del servicio**
+
+Una vez configurados la base de datos, el usuario, el servicio y sus variables de entorno, Cloud Build ejecutó el build y despliegue automático ante cada push a la rama principal, publicando una revisión activa del servicio en Cloud Run con su panel de métricas para monitorear solicitudes, latencia y uso de recursos.
 
 <p align="center">
   <img src="assets/chapter-05/sprint-3/cloud-build-deployment-pipeline.png" alt="Google Cloud Build Deployment Pipeline" width="900">
 </p>
 
-*Figura 5.2.3.7.1: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
+*Figura 5.2.3.7.7: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
 
 <p align="center">
   <img src="assets/chapter-05/sprint-3/cloud-run-deployment-status.png" alt="Google Cloud Run Service Status" width="900">
 </p>
 
-*Figura 5.2.3.7.2: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
+*Figura 5.2.3.7.8: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
 
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
