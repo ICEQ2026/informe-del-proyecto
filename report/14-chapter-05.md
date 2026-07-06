@@ -3544,6 +3544,63 @@ Para habilitar las capacidades agregadas en Sprint 4, el despliegue requiere var
 | AI Assistance | API key del proveedor de IA y configuración de Spring AI. | Generar planes, resúmenes e interpretaciones inteligentes. |
 | Stripe Billing | Stripe Secret Key, Price IDs, webhook secret y URLs de retorno. | Crear checkout, sincronizar suscripciones y abrir Customer Portal. |
 
+Como evidencia de la configuración real de los proveedores externos utilizados en el
+Sprint 4, se documentan las consolas de administración de cada servicio integrado.
+
+**Google — OAuth 2.0 / OpenID Connect**
+
+Se configuró un OAuth Client de tipo Web Application en Google Cloud, registrando los
+Authorized JavaScript origins y los Authorized redirect URIs correspondientes a los
+entornos local y desplegado del frontend de ColdTrace.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-4/google_oauth_client.png" alt="Configuración del OAuth Client de Google" width="900">
+</p>
+
+*Figura 5.2.4.7.1: OAuth Client Web configurado en Google Cloud con origins y redirect URIs de ColdTrace.*
+
+**Apple — Sign in with Apple**
+
+Se registró el Identifier `com.coldtrace.web` en Apple Developer para habilitar el flujo
+de Sign in with Apple como proveedor de identidad externo.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-4/apple_identifier.png" alt="Identifier de Apple Developer" width="900">
+</p>
+
+*Figura 5.2.4.7.2: Identifier de Sign in with Apple registrado en Apple Developer.*
+
+**OpenAI — AI Assistance**
+
+Se generó una API key de producción (`coldtrace-platform-prod`) en la consola de OpenAI,
+consumida por Spring AI en el entorno desplegado para las capacidades de asistencia
+inteligente. La clave se enmascara y se gestiona mediante variables de entorno del
+servicio, sin registrarse en el repositorio.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-4/openai_apikey.png" alt="API key de OpenAI para ColdTrace" width="900">
+</p>
+
+*Figura 5.2.4.7.3: API key de producción configurada en OpenAI para AI Assistance.*
+
+**Stripe — Subscription & Billing**
+
+Se configuró el catálogo de productos y planes de suscripción en el entorno de prueba de
+Stripe, incluyendo los planes ColdTrace Operations y ColdTrace Compliance AI con su
+precio mensual recurrente en PEN.
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-4/stripe_catalog.png" alt="Catálogo de productos en Stripe" width="900">
+</p>
+
+*Figura 5.2.4.7.4: Catálogo de planes de suscripción configurado en Stripe.*
+
+<p align="center">
+  <img src="assets/chapter-05/sprint-4/stripe_compliance_ai.png" alt="Plan Compliance AI en Stripe" width="900">
+</p>
+
+*Figura 5.2.4.7.5: Configuración del plan Compliance AI y su tarifa recurrente en Stripe.*
+
 El despliegue del Sprint 4 se realizó sobre la misma revisión de Cloud Run utilizada en Sprint 3, incorporando las nuevas capacidades mediante actualización continua (re-deploy) desde la rama `develop` del repositorio `ICEQ2026/coldtrace-platform`. No se requirió una nueva URL ni un nuevo servicio; la extensión funcional se entregó como una evolución del servicio backend existente.
 
 Las configuraciones de Sprint 4 incrementan la sensibilidad del entorno de despliegue porque incluyen secretos de autenticación, proveedores externos y webhooks. Por ello, la documentación del sprint considera como buena práctica mantener estos valores fuera del repositorio, cargarlos mediante variables de entorno del servicio desplegado y validar los callbacks con URLs controladas por el equipo. Este criterio mantiene consistencia con el despliegue en Cloud Run usado en Sprint 3.
