@@ -3807,8 +3807,8 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td>Microsoft Excel y Apps bancarias</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 05:40</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>Timing:</strong> 00:00 – 15:29 (Duración: 15:29)</td>
+<td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=0s">Ver video (inicia 00:00)</a></td>
     </tr>
     <tr>
       <td colspan="4">
@@ -3858,8 +3858,8 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td>Microsoft Excel, Power BI</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 06:15</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>Timing:</strong> 15:29 – 32:19 (Duración: 16:50)</td>
+<td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=929s">Ver video (inicia 15:29)</a></td>
     </tr>
     <tr>
       <td colspan="4">
@@ -3876,41 +3876,46 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
     </tr>
     <tr>
+      <td colspan="4" align="center">
+        <img src="assets/chapter-05/validation/vi-s4-01-marcela-rojas.png" alt="Entrevista de Validación 3" height="350">
+      </td>
+    </tr>
+    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 3</td>
+      <td>Marcela Rojas Cárdenas</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>Tablet corporativa y Laptop Windows</td>
+      <td>Laptop (Windows) y Smartphone (Android)</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>38 años</td>
+      <td>30 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>Windows / Microsoft Edge</td>
+      <td>Windows / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>Encargado de Operaciones de Almacén Frigorífico "AeroFrío"</td>
+      <td>Jefa de Operaciones y Control de Calidad en "FríoAndino Distribución S.A.C."</td>
       <td><strong>Canales digitales de comunicación</strong></td>
       <td>Correo corporativo y WhatsApp</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
-      <td>San Luis, Lima</td>
+      <td>Ate, Lima</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>ERP interno y Microsoft Excel</td>
+      <td>Microsoft Excel y sistema de gestión de almacén</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 04:50</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>Timing:</strong> 32:19 – 46:10 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=1939s">Ver video (inicia 32:19)</a></td>
     </tr>
     <tr>
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
-        El entrevistado valoró la vista de configuración de rangos seguros de temperatura y la programación de mantenimientos preventivos para los sensores IoT. Consideró que es de gran utilidad para evitar fallas imprevistas. Sugirió desarrollar una aplicación móvil o una interfaz móvil optimizada que les permita a los operadores en campo verificar rápidamente el estado de los sensores y equipos.
+        Marcela validó ColdTrace desde la perspectiva de una operación con múltiples cámaras frigoríficas y necesidades de auditoría sanitaria. Al inicio planteó sus tres principales dolores: no enterarse a tiempo de una falla de refrigeración, la pérdida de producto por reacción tardía y la dificultad para armar el historial de temperaturas ante auditorías de DIGESA. Sobre la Landing Page, indicó que la propuesta de valor se comprende de inmediato y que, por el tamaño de su operación, optaría por un plan superior con reportes avanzados. En la Frontend Web Application destacó el dashboard operacional y el monitoreo en tiempo real de temperatura y humedad como la funcionalidad que resuelve su falta de visibilidad actual, valorando el historial de lecturas como insumo directo para auditorías. En el módulo de alertas apreció la trazabilidad de detección y reconocimiento de incidencias, sugiriendo como mejora la notificación por WhatsApp o SMS. En reportes de cumplimiento, identificó la bitácora diaria exportable como la solución a su necesidad de trazabilidad, recomendando habilitar exportación en PDF y Excel. Concluyó que adoptaría la herramienta y la recomendaría a colegas del sector.
       </td>
     </tr>
   </tbody>
@@ -3950,7 +3955,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td>Sistema POS de comandas y Microsoft Excel</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 04:10</td>
+      <td colspan="2"><strong>Duración:</strong> 46:10 - 62:23 </td>
       <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
