@@ -12,3 +12,5 @@
 | 1.8.0 | 19/06/26 | Pajés León, Mauricio Luis | Actualización de diagramas de componentes, clases y base de datos según el backend real de ColdTrace Platform. |
 | 1.8.1 | 19/06/26 | Pajés León, Mauricio Luis | Sincronización de la sección de diagramas de clases del README con los diagramas actualizados del informe. |
 | 1.8.2 | 19/06/26 | Pajés León, Mauricio Luis | Incorporación de `AssetCreatedEvent` en los diagramas de clase de Asset Management según el backend real. |
+| 1.9.0 | 04/07/26 | Videla Ventura, Jorge Joseph | Adición del Sprint 4 con documentación expandida, capturas de Swagger UI, frontend y evidencia colaborativa del sprint. |
+| 1.10.0 | 08/07/26 | Pajés León, Mauricio Luis | Actualización del contrato REST final de Sprint 4, normalización de endpoints bajo `/api/v1`, documentación de operaciones DELETE y ajuste de conclusiones sobre autenticación e integración frontend-backend. |

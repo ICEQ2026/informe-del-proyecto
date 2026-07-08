@@ -1,81 +1,45 @@
-﻿<div align="center">
-<br>
-<img src="report/assets/common/logo-upc.png" width="180" alt="Logo UPC">
-<br><br>
+![Logo UPC](report/assets/common/logo-upc.png)
+
 
 # UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS
 
-<br>
 
 ### Facultad de Ingeniería
 ### Carrera de Ingeniería de Software
 
-<br>
 
 **Ciclo Académico 2026-10**
 
-<br>
 
-**Código:** 1ASI0729 &nbsp; | &nbsp; **Curso:** Desarrollo de Aplicaciones Open Source &nbsp; | &nbsp; **NRC:** 10177
+**Código:** 1ASI0729   |   **Curso:** Desarrollo de Aplicaciones Open Source   |   **NRC:** 10177
 
-<br>
 
 **Docente:** Mori Paiva, Hugo Allan
 
-<br>
 
 # Informe de Trabajo Final
 
-<br>
 
 ### **Nombre de la Startup:**
 **ICEQ (Ice Quality Monitoring)**
 
-<br>
 
 ### **Nombre del Producto:**
 **ColdTrace**
 
-<br>
 
 ### Relación de integrantes
 
-<table align="center" style="margin: 0 auto; font-size: 15px;">
-<thead>
-    <tr>
-      <th align="center">Código</th>
-      <th align="center">Apellidos y Nombres</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center">U202415820</td>
-      <td align="left">Cabrera Novoa, Leonardo Moisés</td>
-    </tr>
-    <tr>
-      <td align="center">U200815121</td>
-      <td align="left">Espinoza Paredes, Frezzia</td>
-    </tr>
-    <tr>
-      <td align="center">U20231B504</td>
-      <td align="left">Morales Venegas, David Joel</td>
-    </tr>
-    <tr>
-      <td align="center">U202410093</td>
-      <td align="left">Pajés León, Mauricio Luis</td>
-    </tr>
-    <tr>
-      <td align="center">U202220648</td>
-      <td align="left">Videla Ventura, Jorge Joseph</td>
-    </tr>
-  </tbody>
-</table>
+| Código | Apellidos y Nombres |
+| --- | --- |
+| U202415820 | Cabrera Novoa, Leonardo Moisés |
+| U200815121 | Espinoza Paredes, Frezzia |
+| U20231B504 | Morales Venegas, David Joel |
+| U202410093 | Pajés León, Mauricio Luis |
+| U202220648 | Videla Ventura, Jorge Joseph |
 
-<br><br>
 
 **Lima, abril de 2026**
-</div>
-
 
 # Registro de versiones del informe
 | Versión | Fecha | Autores | Descripción              |
@@ -91,8 +55,8 @@
 | 1.8.0 | 19/06/26 | Pajés León, Mauricio Luis | Actualización de diagramas de componentes, clases y base de datos según el backend real de ColdTrace Platform. |
 | 1.8.1 | 19/06/26 | Pajés León, Mauricio Luis | Sincronización de la sección de diagramas de clases del README con los diagramas actualizados del informe. |
 | 1.8.2 | 19/06/26 | Pajés León, Mauricio Luis | Incorporación de `AssetCreatedEvent` en los diagramas de clase de Asset Management según el backend real. |
-
-
+| 1.9.0 | 04/07/26 | Videla Ventura, Jorge Joseph | Adición del Sprint 4 con documentación expandida, capturas de Swagger UI, frontend y evidencia colaborativa del sprint. |
+| 1.10.0 | 08/07/26 | Pajés León, Mauricio Luis | Actualización del contrato REST final de Sprint 4, normalización de endpoints bajo `/api/v1`, documentación de operaciones DELETE y ajuste de conclusiones sobre autenticación e integración frontend-backend. |
 
 # Project Report Collaboration Insights
 
@@ -116,9 +80,9 @@ El proceso de desarrollo del informe se realizó de manera incremental, integran
 
 Asimismo, todos los integrantes participaron activamente en la elaboración del informe, realizando aportes continuos que permitieron consolidar una documentación coherente y alineada entre sus distintas secciones. Esta colaboración se evidencia en los analíticos de contribución y commits, los cuales reflejan la participación distribuida del equipo.
 
-<img src="report/assets/common/collaboration-insights/tb1-pulse-overview.png" width="900" alt="GitHub Pulse - Overview TB1">
+![GitHub Pulse - Overview TB1](report/assets/common/collaboration-insights/tb1-pulse-overview.png)
 
-<img src="report/assets/common/collaboration-insights/tb1-contributors.png" width="900" alt="GitHub Contributors - Commits over time TB1">
+![GitHub Contributors - Commits over time TB1](report/assets/common/collaboration-insights/tb1-contributors.png)
 
 ## AV2
 
@@ -127,7 +91,6 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 ## TB2
 
 [pending content]
-
 
 # Contenido
 ## Tabla de contenidos
@@ -234,6 +197,15 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
         - [5.2.3.6. Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
         - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
         - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
+    - [5.2.4. Sprint 4](#524-sprint-4)
+        - [5.2.4.1. Sprint Planning 4](#5241-sprint-planning-4)
+        - [5.2.4.2. Aspect Leaders and Collaborators](#5242-aspect-leaders-and-collaborators)
+        - [5.2.4.3. Sprint Backlog 4](#5243-sprint-backlog-4)
+        - [5.2.4.4. Development Evidence for Sprint Review](#5244-development-evidence-for-sprint-review)
+        - [5.2.4.5. Execution Evidence for Sprint Review](#5245-execution-evidence-for-sprint-review)
+        - [5.2.4.6. Services Documentation Evidence for Sprint Review](#5246-services-documentation-evidence-for-sprint-review)
+        - [5.2.4.7. Software Deployment Evidence for Sprint Review](#5247-software-deployment-evidence-for-sprint-review)
+        - [5.2.4.8. Team Collaboration Insights during Sprint](#5248-team-collaboration-insights-during-sprint)
 - [5.3. Validation Interviews](#53-validation-interviews)
     - [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
     - [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
@@ -251,7 +223,8 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
-**ABET – EAC - Student Outcome 3**  
+**ABET – EAC - Student Outcome 3**
+
 **Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
 
 En el siguiente cuadro se describen las acciones realizadas y las conclusiones del equipo, que permiten sustentar el logro del ABET – EAC - Student Outcome 3.
@@ -368,36 +341,35 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
   </tr>
 </table>
 
-
 # Capítulo I: Introducción
 
 ## 1.1 Startup Profile
 
 ### 1.1.1 Descripción de la Startup
 
-ICEQ (Ice Quality Monitoring) es una startup tecnológica enfocada en mejorar el control de la cadena de frío dentro del sector alimentario. Su propuesta principal es **ColdTrace**, una plataforma web de monitoreo inteligente que centraliza la supervisión de temperatura y humedad en cámaras frigoríficas, almacenes y unidades de transporte refrigerado.
+ICEQ (Ice Quality Monitoring) es una startup tecnológica enfocada en mejorar el control de la cadena de frío dentro del sector alimentario mediante una propuesta SaaS accesible y escalable. Su producto principal es **ColdTrace**, una plataforma web de monitoreo inteligente que centraliza la supervisión de temperatura y humedad en cámaras frigoríficas, almacenes y unidades de transporte refrigerado.
 
-La solución integra sensores IoT con una aplicación web accesible desde navegador, lo que permite a supermercados, restaurantes, operadores logísticos y centros de distribución visualizar el estado de sus activos en tiempo real, recibir alertas ante desviaciones críticas y consultar reportes históricos para auditoría y trazabilidad. A diferencia de esquemas manuales o aislados, ColdTrace se plantea como una solución digital escalable, apoyada en tecnologías open source, que busca reducir pérdidas, elevar la capacidad de respuesta operativa y reforzar el cumplimiento sanitario.
+La solución integra sensores IoT con una aplicación web accesible desde navegador, lo que permite a supermercados, restaurantes, operadores logísticos y centros de distribución visualizar el estado de sus activos en tiempo real, recibir alertas ante desviaciones críticas, consultar reportes históricos y recibir asistencia inteligente para resolver incidencias bajo aprobación humana. A diferencia de esquemas manuales o aislados, ColdTrace se plantea como una solución digital escalable, apoyada en tecnologías open source, con planes de suscripción por nivel de operación para reducir pérdidas, elevar la capacidad de respuesta operativa y reforzar el cumplimiento sanitario.
 
-**Misión:** Brindar a las empresas del sector alimentario una plataforma confiable y accesible para vigilar la cadena de frío en tiempo real, anticiparse a fallas de refrigeración y tomar decisiones mejor informadas basadas en datos.
+**Misión:** Brindar a las empresas del sector alimentario una plataforma confiable, accesible y escalable para vigilar la cadena de frío en tiempo real, anticiparse a fallas de refrigeración, tomar decisiones mejor informadas basadas en datos y adoptar progresivamente funcionalidades avanzadas según su plan.
 
-**Visión:** Consolidarnos como una referencia regional en monitoreo digital de cadena de frío, impulsando operaciones alimentarias más seguras, eficientes y sostenibles mediante soluciones web modernas y abiertas a integración.
+**Visión:** Consolidarnos como una referencia regional en monitoreo digital de cadena de frío, impulsando operaciones alimentarias más seguras, eficientes y sostenibles mediante soluciones web modernas, abiertas a integración, con asistencia inteligente supervisada y un modelo SaaS viable para negocios de distintos tamaños.
 
 ### 1.1.2 Perfiles de integrantes del equipo
 
-| Foto de perfil | Nombre Completo                          | Carrera                 | Habilidades |
-|:--------------:|:------------------------------------------|:------------------------|:------------|
-| <img src="report/assets/chapter-01/team/Leonardo.png" width=280/>    | **Cabrera Novoa, Leonardo Moisés**        | Ingeniería de Software  | **(U202415820)**<br>Estudiante de 5to ciclo con experiencia en C++ y recientemente en C#.<br> Me enfoco en el desarrollo colaborativo, aportando compromiso y adaptabilidad para lograr los objetivos de cada sprint.  |
-| <img src="report/assets/chapter-01/team/frezzia.jpg" width=280/>    | **Espinoza Paredes, Frezzia**             | Ingeniería de Software  | **(U200815121)**<br>Estudiante de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC).<br>Tengo habilidades en prototipado, user experience, HTML, CSS, JavaScript, Python y C++. |
-| [pendiente]    | **Morales Venegas, David Joel**           | Ingeniería de Software  | **(U20231B504)**<br>Estudiante de Ingeniería de Software con formación intermedia en el desarrollo de aplicaciones web.<br>Me adapto al trabajo técnico del equipo, priorizando código funcional, entendible y alineado a los requerimientos del proyecto, con disposición para mejorar y corregir en función de pruebas y resultados. |
-| <img src="report/assets/chapter-01/team/Mauricio.png" width=280/>    | **Pajés León, Mauricio Luis**             | Ingeniería de Software  | **(U202410093)**<br>Soy estudiante de Ingeniería de Software en la UPC, con experiencia en C++ y Python, y conocimientos en diseño y patrones de software, bases de datos SQL como PostgreSQL y NoSQL como MongoDB, así como en desarrollo backend con Java mediante Spring Boot y con Node.js.<br>Además, destaco por mis habilidades de comunicación y trabajo en equipo, lo que me permite colaborar de forma efectiva en entornos productivos y colaborativos. |
-| <img src="report/assets/chapter-01/team/Jorge.png"/> | **Videla Ventura, Jorge Joseph** | Ingeniería de Software | **(U202220648)**<br>Estudiante de Ingeniería de Software en la UPC (4.º ciclo), con experiencia en C++ y Python.<br>Responsable, comprometido y orientado al trabajo en equipo. |
+| Foto | Código | Nombre completo | Carrera | Perfil y habilidades |
+|:-----|:-------|:----------------|:--------|:---------------------|
+| ![Leonardo](report/assets/chapter-01/team/thumbnails/leonardo.png) | U202415820 | **Cabrera Novoa, Leonardo Moisés** | Ingeniería de Software | Estudiante de 5to ciclo con experiencia en C++ y recientemente en C#. Se enfoca en el desarrollo colaborativo, aportando compromiso y adaptabilidad para lograr los objetivos de cada sprint. |
+| ![Frezzia](report/assets/chapter-01/team/thumbnails/frezzia.jpg) | U200815121 | **Espinoza Paredes, Frezzia** | Ingeniería de Software | Estudiante de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Tiene habilidades en prototipado, user experience, HTML, CSS, JavaScript, Python y C++. |
+| Pendiente | U20231B504 | **Morales Venegas, David Joel** | Ingeniería de Software | Estudiante de Ingeniería de Software con formación intermedia en desarrollo de aplicaciones web. Se adapta al trabajo técnico del equipo, priorizando código funcional, entendible y alineado a los requerimientos del proyecto. |
+| ![Mauricio](report/assets/chapter-01/team/thumbnails/mauricio.png) | U202410093 | **Pajés León, Mauricio Luis** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC, con experiencia en C++ y Python, diseño y patrones de software, bases de datos SQL y NoSQL, desarrollo backend con Java Spring Boot y Node.js, comunicación y trabajo en equipo. |
+| ![Jorge](report/assets/chapter-01/team/thumbnails/jorge.png) | U202220648 | **Videla Ventura, Jorge Joseph** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC (4.º ciclo), con experiencia en C++ y Python. Responsable, comprometido y orientado al trabajo en equipo. |
 
 ## 1.2 Solution Profile
 
 ICEQ aborda una problemática crítica del sector alimentario peruano: la pérdida de productos perecibles por fallas en la cadena de frío y la escasa trazabilidad de las condiciones de almacenamiento. Distintas fuentes señalan que en el Perú se pierden millones de toneladas de alimentos cada año y que una porción importante de estas mermas está vinculada a deficiencias en refrigeración, transporte y control operativo.
 
-En ese contexto, **ColdTrace** se propone como una plataforma web de monitoreo inteligente que conecta sensores IoT instalados en puntos críticos de almacenamiento y traslado para entregar visibilidad continua, alertas oportunas y evidencia histórica de las condiciones de temperatura y humedad.
+En ese contexto, **ColdTrace** se propone como una plataforma web de monitoreo inteligente que conecta sensores IoT instalados en puntos críticos de almacenamiento y traslado para entregar visibilidad continua, alertas oportunas, evidencia histórica de las condiciones de temperatura y humedad, planes de respuesta asistidos por IA y una administración comercial basada en suscripciones.
 
 Con ColdTrace, los usuarios pueden:
 
@@ -406,8 +378,10 @@ Con ColdTrace, los usuarios pueden:
 - Recibir alertas automáticas por correo electrónico o mensajería cuando exista una desviación relevante.
 - Consultar históricos de medición para trazabilidad, control interno y auditorías.
 - Generar reportes de incidencias que respalden la toma de decisiones y el cumplimiento normativo.
+- Solicitar planes de resolución asistidos por IA para incidencias térmicas, siempre sujetos a revisión y aprobación del operador antes de cerrar el caso.
+- Administrar planes de suscripción con límites de uso, funcionalidades disponibles y actualización a planes superiores cuando la operación lo requiera.
 
-El modelo de negocio propuesto es de suscripción mensual, complementado con integraciones de hardware IoT y una arquitectura escalable que facilite adopción progresiva en empresas de distintos tamaños.
+El modelo de negocio propuesto es de suscripción mensual escalonada. El plan **Base** permite adopción inicial sin costo para pequeños negocios; el plan **Operaciones** habilita mayor capacidad de monitoreo, reportes y mantenimiento; y el plan **Compliance AI** incorpora capacidades avanzadas como asistencia inteligente, resúmenes de cumplimiento y límites ampliados. Para los planes pagados se plantea integrar un proveedor externo de pagos, como Stripe en modo de prueba académico, evitando que ColdTrace almacene datos sensibles de tarjetas. Esta decisión se apoya en el uso de Checkout Sessions, Customer Portal y webhooks de Stripe, que permiten delegar pago, autoservicio de facturación y sincronización de eventos al proveedor externo (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
 
 ### 1.2.1 Antecedentes y problemática
 
@@ -435,11 +409,11 @@ Frente a esta realidad, ICEQ plantea ColdTrace como una plataforma que permita s
 
 #### 1.2.2.1 Lean UX Problem Statements
 
-En el sector alimentario peruano, muchas empresas aún supervisan la cadena de frío mediante registros manuales o herramientas desconectadas entre sí. Esto ocasiona que incidentes de temperatura y humedad sean detectados demasiado tarde, cuando la pérdida del producto o el riesgo sanitario ya es significativo. Aunque existe necesidad de control y trazabilidad, no todas las organizaciones cuentan con una plataforma sencilla, accesible y centralizada que reúna monitoreo en tiempo real, alertas y evidencia histórica en un mismo entorno.
+En el sector alimentario peruano, muchas empresas aún supervisan la cadena de frío mediante registros manuales o herramientas desconectadas entre sí. Esto ocasiona que incidentes de temperatura y humedad sean detectados demasiado tarde, cuando la pérdida del producto o el riesgo sanitario ya es significativo. Aunque existe necesidad de control y trazabilidad, no todas las organizaciones cuentan con una plataforma sencilla, accesible y centralizada que reúna monitoreo en tiempo real, alertas, evidencia histórica, guía operativa ante incidencias y un modelo de contratación ajustado a su tamaño.
 
 A partir de ello, la pregunta de negocio es la siguiente:
 
-> **¿Cómo podemos ofrecer a las empresas del sector alimentario una plataforma web de monitoreo en tiempo real que reduzca pérdidas por fallas de refrigeración y fortalezca el control sanitario de sus operaciones?**
+> **¿Cómo podemos ofrecer a las empresas del sector alimentario una plataforma web de monitoreo en tiempo real que reduzca pérdidas por fallas de refrigeración, fortalezca el control sanitario, guíe la resolución de incidencias y se adapte comercialmente a empresas de distintos tamaños?**
 
 #### 1.2.2.2 Lean UX Assumptions
 
@@ -448,18 +422,24 @@ A partir de ello, la pregunta de negocio es la siguiente:
 1. Existe una demanda real por herramientas digitales que permitan reducir mermas y mejorar el control de la cadena de frío.
 2. Las empresas están dispuestas a pagar una suscripción si la solución demuestra ahorro operativo, trazabilidad y capacidad de reacción.
 3. Es viable integrar la plataforma con dispositivos IoT y con procesos ya existentes en almacenes, transporte y puntos de control.
+4. Los responsables de operación valorarán recomendaciones asistidas por IA si estas se presentan como apoyo a la decisión y no como cierre automático de incidencias.
+5. Un modelo de planes escalonados reducirá la barrera de adopción para pequeños negocios y permitirá monetizar funcionalidades avanzadas en operaciones de mayor escala.
 
 **Business Outcomes**
 
 1. Generar ingresos recurrentes mediante un modelo SaaS escalonado según instalaciones, sensores o usuarios.
 2. Posicionar a ColdTrace como una solución confiable para el monitoreo de cadena de frío en el mercado peruano.
 3. Validar la propuesta de valor a través de una disminución medible de incidentes y pérdidas en clientes piloto.
+4. Incrementar la conversión desde la landing page mediante una sección de planes y precios clara.
+5. Aumentar la adopción de funcionalidades avanzadas mediante upgrades a planes de mayor capacidad.
 
 **User Benefits**
 
 1. Acceso a información en tiempo real desde cualquier dispositivo con navegador.
 2. Respuesta más rápida frente a desvíos de temperatura o humedad gracias a alertas automáticas.
 3. Mayor trazabilidad para auditorías, control interno y cumplimiento normativo.
+4. Guía estructurada para resolver incidencias críticas con revisión humana y evidencia auditada.
+5. Transparencia sobre límites, precios y funcionalidades disponibles según el plan contratado.
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
 
@@ -471,307 +451,60 @@ A partir de ello, la pregunta de negocio es la siguiente:
 
 **Hypothesis 4:** Creemos que, si el modelo de suscripción es accesible y escalable, la retención de clientes durante la etapa inicial será suficientemente alta como para validar la viabilidad comercial del producto.
 
+**Hypothesis 5:** Creemos que, si ColdTrace ofrece planes claramente diferenciados entre Base, Operaciones y Compliance AI, los visitantes podrán identificar con mayor facilidad qué alternativa corresponde a su operación y aumentará la intención de registro.
+
+**Hypothesis 6:** Creemos que, si el sistema propone planes de resolución asistidos por IA pero exige aprobación del operador antes de cerrar una incidencia, los responsables de calidad percibirán mayor valor sin perder control sobre sus decisiones operativas.
+
 #### 1.2.2.4 Lean UX Canvas
 
-<table>
-  <tr>
-    <td valign="top">
-      <strong>Business problem</strong><br><br>
-      Las empresas del sector alimentario todavía dependen de controles manuales o herramientas desconectadas para vigilar la temperatura de cámaras frigoríficas, almacenes y unidades de transporte.<br><br>
-      Esto ocasiona que los incidentes de refrigeración sean detectados tarde, provocando pérdidas de producto, riesgos sanitarios y poca capacidad para sustentar trazabilidad frente a auditorías.<br><br>
-      En el Perú, esta situación se relaciona con el mal manejo de la cadena de frío y con los altos niveles de desperdicio de alimentos reportados por la FAO (2021) y Agraria.pe (2019).
-    </td>
-    <td rowspan="2" valign="top">
-      <strong>Solution ideas</strong><br><br>
-      - Dashboard web centralizado con sensores IoT de temperatura y humedad<br><br>
-      - Alertas automáticas por correo y mensajería ante desviaciones del rango seguro<br><br>
-      - Historial descargable de condiciones de almacenamiento para control y auditorías<br><br>
-      - Reportes de incidencias para apoyar decisiones operativas y seguimiento<br><br>
-      - Modelo SaaS por suscripción mensual, sin inversión inicial elevada en infraestructura
-    </td>
-    <td valign="top">
-      <strong>Business Outcomes</strong><br><br>
-      - Ingresos recurrentes por una suscripción escalonada según sensores y usuarios.<br><br>
-      - Tasa de retención mensual alta durante los primeros meses de uso.<br><br>
-      - Posicionar a ColdTrace como una plataforma confiable para monitoreo de cadena de frío en Perú.<br><br>
-      - Reducir mermas en clientes piloto y convertir ese resultado en evidencia de valor.
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <strong>Users and customers</strong><br><br>
-      - Jefes de calidad<br>
-      - Operadores logísticos<br>
-      - Gerentes de supermercados<br>
-      - Administradores de restaurantes<br>
-      - Transportistas de productos perecibles<br>
-      - Empresas del sector alimentario de distintos tamaños
-    </td>
-    <td valign="top">
-      <strong>User benefits</strong><br><br>
-      - Visibilidad en tiempo real desde cualquier dispositivo con navegador<br>
-      - Respuesta más rápida ante fallas antes de que ocurran pérdidas mayores<br>
-      - Trazabilidad completa para auditorías de DIGESA y MINSA<br>
-      - Menor exposición a sanciones y daño reputacional por incumplimiento operativo
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <strong>Hypotheses</strong><br><br>
-      - Si ofrecemos monitoreo IoT en tiempo real, una parte importante de los clientes piloto reducirá pérdidas dentro de los primeros meses.<br><br>
-      - Si implementamos alertas automáticas, el tiempo de respuesta frente a incidentes bajará frente al control manual.<br><br>
-      - Si brindamos historial descargable y trazabilidad completa, las empresas podrán sustentar mejor sus auditorías.<br><br>
-      - Si el modelo SaaS es accesible y escalable, lograremos una retención mensual sólida en la etapa inicial.
-    </td>
-    <td valign="top">
-      <strong>What's the most important thing we need to learn first?</strong><br><br>
-      ¿Los operadores del sector alimentario están realmente dispuestos a pagar por una solución SaaS de monitoreo, y cuánto valor le asignan frente a otros problemas operativos más urgentes?
-    </td>
-    <td valign="top">
-      <strong>What's the least amount of work we need to do to learn the next most important thing?</strong><br><br>
-      Realizar entrevistas con responsables de calidad y logística, y mostrar un prototipo de baja fidelidad del dashboard para validar el modelo de precios por suscripción, la utilidad de las alertas y la disposición de pago.
-    </td>
-  </tr>
-</table>
+| **Business problem** Las empresas del sector alimentario todavía dependen de controles manuales o herramientas desconectadas para vigilar la temperatura de cámaras frigoríficas, almacenes y unidades de transporte. Esto ocasiona que los incidentes de refrigeración sean detectados tarde, provocando pérdidas de producto, riesgos sanitarios y poca capacidad para sustentar trazabilidad frente a auditorías. Además, cuando ocurre una incidencia, los equipos no siempre tienen una guía clara para decidir qué acción correctiva aplicar y muchas pymes necesitan una forma de adopción gradual que no exija inversión inicial elevada. En el Perú, esta situación se relaciona con el mal manejo de la cadena de frío y con los altos niveles de desperdicio de alimentos reportados por la FAO (2021) y Agraria.pe (2019). | **Solution ideas** - Dashboard web centralizado con sensores IoT de temperatura y humedad - Alertas automáticas por correo y mensajería ante desviaciones del rango seguro - Historial descargable de condiciones de almacenamiento para control y auditorías - Reportes de incidencias para apoyar decisiones operativas y seguimiento - Planes asistidos por IA para resolución de incidencias con aprobación humana - Modelo SaaS con planes Base, Operaciones y Compliance AI, sin inversión inicial elevada en infraestructura | **Business Outcomes** - Ingresos recurrentes por una suscripción escalonada según sensores, activos, usuarios y funcionalidades. - Tasa de retención mensual alta durante los primeros meses de uso. - Posicionar a ColdTrace como una plataforma confiable para monitoreo de cadena de frío en Perú. - Reducir mermas en clientes piloto y convertir ese resultado en evidencia de valor. - Validar conversión desde plan gratuito hacia planes pagados por mayor capacidad y funcionalidades avanzadas. |
+| --- | --- | --- |
+| **Users and customers** - Jefes de calidad - Operadores logísticos - Gerentes de supermercados - Administradores de restaurantes - Transportistas de productos perecibles - Empresas del sector alimentario de distintos tamaños - Administradores de organización responsables de elegir y gestionar el plan de suscripción | **User benefits** - Visibilidad en tiempo real desde cualquier dispositivo con navegador - Respuesta más rápida ante fallas antes de que ocurran pérdidas mayores - Trazabilidad completa para auditorías de DIGESA y MINSA - Menor exposición a sanciones y daño reputacional por incumplimiento operativo - Recomendaciones estructuradas para resolver incidencias sin perder aprobación humana - Planes y precios claros según tamaño de operación |  |
+| **Hypotheses** - Si ofrecemos monitoreo IoT en tiempo real, una parte importante de los clientes piloto reducirá pérdidas dentro de los primeros meses. - Si implementamos alertas automáticas, el tiempo de respuesta frente a incidentes bajará frente al control manual. - Si brindamos historial descargable y trazabilidad completa, las empresas podrán sustentar mejor sus auditorías. - Si el modelo SaaS es accesible y escalable, lograremos una retención mensual sólida en la etapa inicial. - Si agregamos asistencia inteligente con aprobación humana, aumentará la confianza del responsable de calidad en el cierre de incidencias. - Si la landing explica planes y límites, mejorará la intención de registro y upgrade. | **What's the most important thing we need to learn first?** ¿Los operadores del sector alimentario están realmente dispuestos a pagar por una solución SaaS de monitoreo, y cuánto valor le asignan a funciones avanzadas como asistencia inteligente, reportes ampliados y mayor capacidad de sensores? | **What's the least amount of work we need to do to learn the next most important thing?** Realizar entrevistas con responsables de calidad y logística, mostrar un prototipo de dashboard con panel de asistencia de IA y presentar una sección de planes y precios para validar disposición de pago, utilidad de alertas, límites aceptables y preferencia de upgrade. |
 
 ---
 
 ## 1.3 Segmentos Objetivos
 
-En función de la problemática identificada y del tipo de solución que propone ColdTrace, se reconocen dos segmentos objetivo principales. El primero está compuesto por pequeños negocios alimentarios que necesitan controlar mejor su refrigeración diaria. El segundo está conformado por responsables de operaciones, calidad o logística dentro de negocios y empresas que manejan productos perecibles y requieren trazabilidad, monitoreo continuo y reacción oportuna ante incidentes.
+En función de la problemática identificada y del tipo de solución que propone ColdTrace, se reconocen dos segmentos objetivo principales. El primero está compuesto por pequeños negocios alimentarios que necesitan controlar mejor su refrigeración diaria y podrían iniciar con un plan Base. El segundo está conformado por responsables de operaciones, calidad o logística dentro de negocios y empresas que manejan productos perecibles, requieren trazabilidad, monitoreo continuo, reacción oportuna ante incidentes y pueden adoptar planes superiores con reportes avanzados o asistencia inteligente.
 
 | Segmento objetivo | Características demográficas | Información estadística de sustento |
 |:------------------|:-----------------------------|:------------------------------------|
-| **Minimarkets o puestos de mercado** | **Edad:** adultos de 25 años a más.<br>**Cargo:** dueños, administradores o encargados de minimarkets, carnicerías, pescaderías, verdulerías y otros comercios minoristas con productos perecibles y sistemas de refrigeración.<br>**Ubicación:** zonas urbanas o comerciales con alta rotación de productos frescos.<br>**Interés:** reducir merma, asegurar la inocuidad de los alimentos, evitar observaciones de DIGESA o MINSA y contar con una solución simple para monitorear refrigeración. | Según Agraria.pe (2019), en el Perú se pierde más del 33% de los alimentos producidos por deficiencias en la cadena de frío. Para pequeños comercios alimentarios, una falla de refrigeración puede traducirse en pérdida inmediata de mercadería y en menor rentabilidad del negocio. |
-| **Responsables de operaciones y control de calidad** | **Edad:** adultos de 21 años a más.<br>**Cargo:** jefes de operaciones, responsables de calidad, supervisores logísticos, encargados de almacén e ingenieros industriales en empresas que manipulan productos refrigerados.<br>**Ubicación:** centros de distribución, almacenes, supermercados, cámaras frigoríficas y operadores logísticos en zonas urbanas.<br>**Interés:** centralizar el monitoreo de la cadena de frío, responder con rapidez ante incidencias, mejorar trazabilidad, facilitar auditorías y tomar decisiones operativas con base en datos históricos. | Según la FAO (2021), en el Perú se desperdician más de 12 millones de toneladas de alimentos a lo largo de la cadena productiva. Esto refuerza la necesidad de que las áreas de operaciones, calidad y logística cuenten con herramientas de monitoreo continuo para prevenir pérdidas y elevar el control sobre la cadena de frío. |
-
+| **Minimarkets o puestos de mercado** | **Edad:** adultos de 25 años a más.
+**Cargo:** dueños, administradores o encargados de minimarkets, carnicerías, pescaderías, verdulerías y otros comercios minoristas con productos perecibles y sistemas de refrigeración.
+**Ubicación:** zonas urbanas o comerciales con alta rotación de productos frescos.
+**Interés:** reducir merma, asegurar la inocuidad de los alimentos, evitar observaciones de DIGESA o MINSA y contar con una solución simple para monitorear refrigeración. | Según Agraria.pe (2019), en el Perú se pierde más del 33% de los alimentos producidos por deficiencias en la cadena de frío. Para pequeños comercios alimentarios, una falla de refrigeración puede traducirse en pérdida inmediata de mercadería y en menor rentabilidad del negocio. |
+| **Responsables de operaciones y control de calidad** | **Edad:** adultos de 21 años a más.
+**Cargo:** jefes de operaciones, responsables de calidad, supervisores logísticos, encargados de almacén e ingenieros industriales en empresas que manipulan productos refrigerados.
+**Ubicación:** centros de distribución, almacenes, supermercados, cámaras frigoríficas y operadores logísticos en zonas urbanas.
+**Interés:** centralizar el monitoreo de la cadena de frío, responder con rapidez ante incidencias, mejorar trazabilidad, facilitar auditorías y tomar decisiones operativas con base en datos históricos. | Según la FAO (2021), en el Perú se desperdician más de 12 millones de toneladas de alimentos a lo largo de la cadena productiva. Esto refuerza la necesidad de que las áreas de operaciones, calidad y logística cuenten con herramientas de monitoreo continuo para prevenir pérdidas y elevar el control sobre la cadena de frío. |
 
 # Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1 Competidores
 
-Este análisis permite identificar cómo se posiciona ColdTrace frente a plataformas enterprise, soluciones modulares de sensores y propuestas especializadas en transporte refrigerado. A partir de ello, se define una ventaja competitiva basada en simplicidad, adaptación local y menor barrera de entrada.
+Este análisis permite identificar cómo se posiciona ColdTrace frente a plataformas enterprise, soluciones modulares de sensores y propuestas especializadas en transporte refrigerado. A partir de ello, se define una ventaja competitiva basada en simplicidad, adaptación local, menor barrera de entrada, planes de suscripción transparentes y asistencia inteligente orientada a la resolución de incidencias.
 
 ### 2.1.1 Análisis Competitivo
 
-<table style="text-align: center; width: 100%;">
-  <tbody>
-    <tr>
-      <td colspan="6"><strong>Competitive Analysis Landscape</strong></td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong>¿Por qué llevar a cabo este análisis?</strong></td>
-      <td colspan="4">Este análisis permite identificar cómo se posiciona ColdTrace frente a plataformas enterprise, soluciones modulares de sensores y propuestas especializadas en transporte refrigerado. A partir de ello, se puede definir una ventaja competitiva basada en simplicidad, adaptación local y menor barrera de entrada.</td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong>Logotipos</strong></td>
-      <td><strong>ColdTrace (ICEQ)</strong></td>
-      <td><img src="report/assets/chapter-02/competitors/Smart Sense Logo.svg" alt="SmartSense by Digi" height="50"></td>
-      <td><img src="report/assets/chapter-02/competitors/Monnit Logo.webp" alt="Monnit" height="50"></td>
-      <td><img src="report/assets/chapter-02/competitors/Cooltrax Logo.svg" alt="Cooltrax" height="50"></td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong>Software</strong></td>
-      <td><strong>ColdTrace (ICEQ)</strong></td>
-      <td><strong>SmartSense by Digi</strong></td>
-      <td><strong>Monnit</strong></td>
-      <td><strong>Cooltrax</strong></td>
-    </tr>
-    <tr>
-      <td rowspan="2"><strong>Perfil</strong></td>
-      <td>Overview</td>
-      <td>Startup peruana orientada al monitoreo web de temperatura y humedad para la cadena de frío alimentaria en negocios pequeños y medianos.</td>
-      <td>Plataforma enterprise de food safety y temperature monitoring con sensores, workflows y compliance para restaurantes, grocery, schools y hospitality.</td>
-      <td>Plataforma de remote monitoring con 80+ sensores IoT, software iMonnit y soluciones de food service monitoring.</td>
-      <td>Plataforma industrial IoT para visibilidad y control de cadena de frío en transporte, warehouses, cold rooms y pallets.</td>
-    </tr>
-    <tr>
-      <td>Ventaja competitiva, ¿Qué valor ofrece a los clientes?</td>
-      <td>Adaptación al contexto peruano, menor complejidad de adopción y foco en usuarios que hoy siguen trabajando con controles manuales.</td>
-      <td>Escala enterprise, automatización de cumplimiento, analytics avanzados y workflows guiados para operaciones multisede.</td>
-      <td>Costo accesible, despliegue rápido, catálogo amplio de sensores y flexibilidad cloud / on-premises.</td>
-      <td>Monitoreo a nivel de producto, ubicación y temperatura con fuerte foco en control de flotas y distribución refrigerada.</td>
-    </tr>
-    <tr>
-      <td rowspan="2"><strong>Perfil de Marketing</strong></td>
-      <td>Mercado objetivo</td>
-      <td>Minimarkets, puestos de mercado, carnicerías, pescaderías, restaurantes, almacenes y operadores medianos en Perú.</td>
-      <td>Large restaurants, grocery chains, convenience stores, schools, hospitality y food manufacturing.</td>
-      <td>Food service, producción, restaurantes y negocios que necesitan monitoreo remoto sin gran infraestructura.</td>
-      <td>Enterprise fleets, grocery store fleets, food & beverage fleets, warehouses y cold storage operations.</td>
-    </tr>
-    <tr>
-      <td>Estrategias de marketing</td>
-      <td>Venta consultiva local, posicionamiento por reducción de merma, cumplimiento sanitario y facilidad de uso con onboarding simple.</td>
-      <td>Demos personalizadas, customer stories, mensaje de ROI y compliance, acompañamiento por customer success.</td>
-      <td>Combinación de venta directa, demo, catálogo amplio, mensaje de bajo costo y facilidad de instalación.</td>
-      <td>Venta consultiva B2B, technology consultation, casos de éxito y foco en ahorro operativo, visibilidad y control.</td>
-    </tr>
-    <tr>
-      <td rowspan="3"><strong>Perfil de Producto</strong></td>
-      <td>Productos & Servicios</td>
-      <td>Dashboard web, integración con sensores IoT, alertas, historial, reportes, trazabilidad y monitoreo continuo.</td>
-      <td>Sensores, gateways celulares, cloud dashboard, alertas automáticas, digital workflows, reporting y APIs.</td>
-      <td>Wireless sensors, gateways, iMonnit cloud/app, alertas, HACCP logging y opciones cloud u on-premises.</td>
-      <td>Fresh InTransit, Fresh InStorage, sensores inalámbricos, door sensors, reefer integration y dashboard de inteligencia operativa.</td>
-    </tr>
-    <tr>
-      <td>Precios & Costos</td>
-      <td>Suscripción mensual escalable y más accesible que suites enterprise, orientada a pymes y operaciones medianas según la cantidad de equipos monitoreados.</td>
-      <td>Cotización personalizada bajo modelo per-asset pricing all-inclusive; no publica tarifa estándar.</td>
-      <td>iMonnit Basic gratis; iMonnit Premiere desde US$45/año hasta 6 sensores y US$325/año hasta 100 sensores.</td>
-      <td>Cotización personalizada y contacto comercial; no muestra precios públicos en el sitio oficial.</td>
-    </tr>
-    <tr>
-      <td>Canales de distribución (Web y/o Móvil)</td>
-      <td>Web responsive con alertas remotas e integración con sensores IoT.</td>
-      <td>Web y mobile apps, además de APIs e integraciones con plataformas empresariales.</td>
-      <td>Web, app móvil, ecommerce y venta directa de sensores y software.</td>
-      <td>Plataforma web con alertas remotas e implementación consultiva para operaciones de cadena de frío.</td>
-    </tr>
-    <tr>
-      <td rowspan="4"><strong>Análisis SWOT</strong></td>
-      <td>Fortalezas</td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Enfoque local y contextual.</li>
-          <li>Simplicidad de adopción.</li>
-          <li>Personalización para pymes.</li>
-          <li>Menor barrera de entrada.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Marca consolidada.</li>
-          <li>Fuerte capacidad de compliance.</li>
-          <li>Despliegue multisede.</li>
-          <li>Analítica avanzada.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Bajo costo de entrada.</li>
-          <li>Instalación rápida.</li>
-          <li>Amplitud de sensores.</li>
-          <li>Flexibilidad tecnológica.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Alta especialización en transporte frío.</li>
-          <li>Monitoreo product-level.</li>
-          <li>Control de operaciones logísticas.</li>
-          <li>Visibilidad de flota.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Debilidades</td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Startup en etapa temprana.</li>
-          <li>Menor reconocimiento de marca.</li>
-          <li>Menos integraciones maduras.</li>
-          <li>Depende de adopción del usuario.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Mayor complejidad de uso.</li>
-          <li>Costo elevado para pymes.</li>
-          <li>Difícil de adoptar en negocios pequeños.</li>
-          <li>Requiere más soporte técnico.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Menor especialización vertical.</li>
-          <li>No tan enfocado en inocuidad alimentaria.</li>
-          <li>Interfaz más genérica.</li>
-          <li>Menor profundidad en trazabilidad.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Orientado a flotas, no a negocios fijos.</li>
-          <li>Poco accesible para operaciones pequeñas.</li>
-          <li>Sin precio público.</li>
-          <li>Complejidad de implementación.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Oportunidades</td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Digitalización de negocios alimentarios en Perú.</li>
-          <li>Presión por inocuidad y reducción de merma.</li>
-          <li>Mercado con poca solución local.</li>
-          <li>Crecimiento del sector refrigerado.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Expandirse en más verticales y geografías.</li>
-          <li>Mayor exigencia de trazabilidad.</li>
-          <li>Demanda de automatización.</li>
-          <li>Captar mid-market en LatAm.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Captar SMBs con monitoreo asequible.</li>
-          <li>Expandir en negocios sin infraestructura.</li>
-          <li>Mayor adopción IoT en sector alimentos.</li>
-          <li>Necesidad de flexibilidad cloud.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Crecimiento de logística refrigerada.</li>
-          <li>Trazabilidad en tránsito.</li>
-          <li>Control warehouse en expansión.</li>
-          <li>Demanda de visibilidad operativa.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Amenazas</td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Competidores globales con más recursos.</li>
-          <li>Resistencia al cambio en negocios tradicionales.</li>
-          <li>Dependencia del hardware IoT.</li>
-          <li>Dificultad para demostrar valor temprano.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Soluciones más económicas o locales.</li>
-          <li>Competencia en el segmento mid-market.</li>
-          <li>Preferencia por herramientas ligeras.</li>
-          <li>Riesgo de pérdida de usuarios nuevos.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Plataformas verticales más especializadas.</li>
-          <li>Workflows más profundos en nichos.</li>
-          <li>Competencia por precio en SMBs.</li>
-          <li>Mayor presión por automatización.</li>
-        </ul>
-      </td>
-      <td>
-        <ul style="text-align: left; margin: 0; padding-left: 18px;">
-          <li>Suites telemáticas con funciones similares.</li>
-          <li>IoT industrial con visibilidad equivalente.</li>
-          <li>Competencia por escala.</li>
-          <li>Plataformas ya posicionadas en logística.</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+**Competitive Analysis Landscape**
+
+Este análisis permite identificar cómo se posiciona ColdTrace frente a plataformas enterprise, soluciones modulares de sensores y propuestas especializadas en transporte refrigerado. A partir de ello, se puede definir una ventaja competitiva basada en simplicidad, adaptación local, menor barrera de entrada, planes escalonados y soporte inteligente para la toma de decisiones operativas.
+
+| Categoría | Criterio | ColdTrace (ICEQ) | SmartSense by Digi | Monnit | Cooltrax |
+|:----------|:---------|:-----------------|:-------------------|:-------|:---------|
+| Logotipos | Software | **ColdTrace (ICEQ)** | ![SmartSense by Digi](report/assets/chapter-02/competitors/thumbnails/smartsense.png) | ![Monnit](report/assets/chapter-02/competitors/thumbnails/monnit.png) | ![Cooltrax](report/assets/chapter-02/competitors/thumbnails/cooltrax.png) |
+| Perfil | Overview | Startup peruana orientada al monitoreo web de temperatura y humedad para la cadena de frío alimentaria en negocios pequeños y medianos, con evolución hacia planes SaaS y asistencia inteligente para incidencias. | Plataforma enterprise de food safety y temperature monitoring con sensores, workflows y compliance para restaurantes, grocery, schools y hospitality. | Plataforma de remote monitoring con 80+ sensores IoT, software iMonnit y soluciones de food service monitoring. | Plataforma industrial IoT para visibilidad y control de cadena de frío en transporte, warehouses, cold rooms y pallets. |
+| Perfil | Ventaja competitiva | Adaptación al contexto peruano, menor complejidad de adopción, planes claros para pymes y apoyo de IA bajo aprobación humana para resolver incidencias. | Escala enterprise, automatización de cumplimiento, analytics avanzados y workflows guiados para operaciones multisede. | Costo accesible, despliegue rápido, catálogo amplio de sensores y flexibilidad cloud / on-premises. | Monitoreo a nivel de producto, ubicación y temperatura con fuerte foco en control de flotas y distribución refrigerada. |
+| Perfil de Marketing | Mercado objetivo | Minimarkets, puestos de mercado, carnicerías, pescaderías, restaurantes, almacenes y operadores medianos en Perú. | Large restaurants, grocery chains, convenience stores, schools, hospitality y food manufacturing. | Food service, producción, restaurantes y negocios que necesitan monitoreo remoto sin gran infraestructura. | Enterprise fleets, grocery store fleets, food & beverage fleets, warehouses y cold storage operations. |
+| Perfil de Marketing | Estrategias de marketing | Venta consultiva local, posicionamiento por reducción de merma, cumplimiento sanitario, facilidad de uso, plan gratuito de entrada y upgrades por capacidad o cumplimiento avanzado. | Demos personalizadas, customer stories, mensaje de ROI y compliance, acompañamiento por customer success. | Combinación de venta directa, demo, catálogo amplio, mensaje de bajo costo y facilidad de instalación. | Venta consultiva B2B, technology consultation, casos de éxito y foco en ahorro operativo, visibilidad y control. |
+| Perfil de Producto | Productos y servicios | Dashboard web, integración con sensores IoT, alertas, historial, reportes, trazabilidad, monitoreo continuo, planes de suscripción, asistencia inteligente para incidencias y resúmenes de cumplimiento. | Sensores, gateways celulares, cloud dashboard, alertas automáticas, digital workflows, reporting y APIs. | Wireless sensors, gateways, iMonnit cloud/app, alertas, HACCP logging y opciones cloud u on-premises. | Fresh InTransit, Fresh InStorage, sensores inalámbricos, door sensors, reefer integration y dashboard de inteligencia operativa. |
+| Perfil de Producto | Precios y costos | Plan Base gratuito, plan Operaciones para pymes y plan Compliance AI para organizaciones con reportes avanzados e IA. Suscripción mensual con pagos gestionados por proveedor externo como Stripe en modo de prueba académico. | Cotización personalizada bajo modelo per-asset pricing all-inclusive; no publica tarifa estándar. | iMonnit Basic gratis; iMonnit Premiere desde US$45/año hasta 6 sensores y US$325/año hasta 100 sensores. | Cotización personalizada y contacto comercial; no muestra precios públicos en el sitio oficial. |
+| Perfil de Producto | Canales de distribución | Landing page responsive, Web Application, checkout externo para planes pagados, portal de facturación y alertas remotas con integración IoT. | Web y mobile apps, además de APIs e integraciones con plataformas empresariales. | Web, app móvil, ecommerce y venta directa de sensores y software. | Plataforma web con alertas remotas e implementación consultiva para operaciones de cadena de frío. |
+| Análisis SWOT | Fortalezas | Enfoque local y contextual; simplicidad de adopción; personalización para pymes; menor barrera de entrada; planes transparentes; asistencia inteligente supervisada. | Marca consolidada; fuerte capacidad de compliance; despliegue multisede; analítica avanzada. | Bajo costo de entrada; instalación rápida; amplitud de sensores; flexibilidad tecnológica. | Alta especialización en transporte frío; monitoreo product-level; control de operaciones logísticas; visibilidad de flota. |
+| Análisis SWOT | Debilidades | Startup en etapa temprana; menor reconocimiento de marca; menos integraciones maduras; depende de adopción del usuario. | Mayor complejidad de uso; costo elevado para pymes; difícil de adoptar en negocios pequeños; requiere más soporte técnico. | Menor especialización vertical; no tan enfocado en inocuidad alimentaria; interfaz más genérica; menor profundidad en trazabilidad. | Orientado a flotas, no a negocios fijos; poco accesible para operaciones pequeñas; sin precio público; complejidad de implementación. |
+| Análisis SWOT | Oportunidades | Digitalización de negocios alimentarios en Perú; presión por inocuidad y reducción de merma; mercado con poca solución local; crecimiento del sector refrigerado; conversión de plan gratuito a planes pagados; demanda de guía operativa y cumplimiento asistido. | Expandirse en más verticales y geografías; mayor exigencia de trazabilidad; demanda de automatización; captar mid-market en LatAm. | Captar SMBs con monitoreo asequible; expandir en negocios sin infraestructura; mayor adopción IoT en sector alimentos; necesidad de flexibilidad cloud. | Crecimiento de logística refrigerada; trazabilidad en tránsito; control warehouse en expansión; demanda de visibilidad operativa. |
+| Análisis SWOT | Amenazas | Competidores globales con más recursos; resistencia al cambio en negocios tradicionales; dependencia del hardware IoT; dificultad para demostrar valor temprano. | Soluciones más económicas o locales; competencia en el segmento mid-market; preferencia por herramientas ligeras; riesgo de pérdida de usuarios nuevos. | Plataformas verticales más especializadas; workflows más profundos en nichos; competencia por precio en SMBs; mayor presión por automatización. | Suites telemáticas con funciones similares; IoT industrial con visibilidad equivalente; competencia por escala; plataformas ya posicionadas en logística. |
 
 ### 2.1.2 Estrategias y tácticas frente a competidores
 
@@ -782,12 +515,14 @@ A diferencia de SmartSense, orientado a operaciones enterprise de gran escala, C
 
 - **Onboarding simplificado:** Diseñar un proceso de activación rápido que no requiera soporte técnico especializado, reduciendo la barrera de entrada para minimarkets, carnicerías y restaurantes.
 - **Precio accesible:** Ofrecer un modelo de suscripción mensual ajustado al contexto de las pymes peruanas, sin inversión inicial elevada en infraestructura o licencias.
+- **Planes escalonados:** Presentar un plan Base gratuito, un plan Operaciones para negocios en crecimiento y un plan Compliance AI para organizaciones que requieran IA, reportes avanzados y mayor capacidad.
 
 #### Competitividad en accesibilidad y despliegue frente a Monnit
 Frente a Monnit, más modular y generalista, ColdTrace buscará ofrecer una experiencia más enfocada en la cadena de frío alimentaria y con menor complejidad de configuración para el usuario final.
 
 - **Especialización vertical:** Posicionar ColdTrace como una solución diseñada específicamente para el sector alimentario peruano, no una herramienta IoT genérica.
 - **Interfaz orientada al negocio:** Traducir los datos de sensores en información accionable para responsables de calidad y dueños de negocio, no solo para perfiles técnicos.
+- **Asistencia inteligente supervisada:** Diferenciar la propuesta mediante planes de resolución sugeridos por IA, siempre revisados y aprobados por el operador antes de modificar una incidencia.
 
 #### Enfoque territorial y contextual
 Aprovechar la falta de soluciones específicamente adaptadas al mercado peruano, priorizando negocios y operaciones que todavía dependen de controles manuales.
@@ -800,6 +535,7 @@ Frente a soluciones más orientadas a flotas, ColdTrace destacará por traducir 
 
 - **Datos para auditorías:** Utilizar los históricos de temperatura, alertas e incidencias como insumo para auditorías de DIGESA y MINSA, generando un diferencial claro.
 - **Campañas digitales:** Impulsar demostraciones prácticas dirigidas a responsables de operaciones, destacando reducción de merma, cumplimiento sanitario y facilidad de uso.
+- **Monetización transparente:** Comunicar límites por plan y beneficios de upgrade desde la landing, evitando que el precio sea una barrera incierta para negocios pequeños.
 
 ---
 
@@ -821,6 +557,8 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
 6. ¿Qué tan útil le resultaría recibir alertas en tiempo real desde su celular o computadora cuando la temperatura sale del rango seguro?
 7. ¿Qué dificultades cree que tendría su negocio para implementar una solución digital de monitoreo como ColdTrace?
 8. ¿Qué expectativas tendría de una plataforma que le ayude a monitorear temperatura, registrar incidencias y contar con historial para control o auditoría?
+9. Para una versión con planes, ¿qué límite gratuito de activos o sensores consideraría suficiente para probar la solución?
+10. ¿Le daría confianza recibir una recomendación asistida por IA para resolver una incidencia si usted mantiene la decisión final?
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
@@ -832,19 +570,21 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
 6. ¿De qué manera una herramienta como ColdTrace podría ayudar a mejorar la toma de decisiones, las auditorías o la trazabilidad de su operación?
 7. ¿Qué condiciones o características debería tener una solución de monitoreo para que su organización decida adoptarla o evaluarla seriamente?
 8. ¿Qué beneficios esperaría obtener su organización al implementar un sistema digital de monitoreo de temperatura y control de cadena de frío?
+9. ¿Qué funcionalidades justificarían pagar por un plan superior, como más sedes, más sensores, reportes avanzados o asistencia inteligente?
+10. ¿Cómo debería presentarse una recomendación asistida por IA para que sea útil sin reemplazar el criterio del responsable de calidad?
 
 ### 2.2.2 Registro de entrevistas
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
-<table style="width:100%; border-collapse:collapse;">
+<table>
   <tbody>
     <tr>
       <td colspan="4" align="center"><strong>Entrevista N.° 1</strong></td>
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-02/interviews/1-1-interview.png" alt="Entrevista 1" height="350">
+        <img src="report/assets/chapter-02/interviews/1-1-interview.png" alt="Entrevista 1" width="900">
       </td>
     </tr>
     <tr>
@@ -877,26 +617,26 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 05:30</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        La entrevistada es una microempresaria que gestiona un negocio de productos perecibles que dependen del correcto funcionamiento de equipos de refrigeración. Actualmente, el control de temperatura se realiza de forma manual y basada en la experiencia, sin registros ni monitoreo constante, lo que evidencia una falta de herramientas tecnológicas. Los problemas no son diarios, pero ocurren ante fallas técnicas o cortes de energía, y suelen detectarse tarde, cuando los productos ya han sido afectados.<br><br>
-        Estas situaciones generan pérdidas económicas y riesgos para la salud de los clientes, por lo que la entrevistada actúa de manera reactiva, descartando productos dañados y recurriendo a técnicos. Asimismo, valora soluciones simples e intuitivas que le permitan recibir alertas en tiempo real, tener información clara y organizada, identificar patrones de fallas y contar con respaldo para auditorías, lo que refleja la necesidad de un sistema de monitoreo eficiente.
+        <strong>Resumen de la entrevista</strong>
+        <p>La entrevistada es una microempresaria que gestiona un negocio de productos perecibles que dependen del correcto funcionamiento de equipos de refrigeración. Actualmente, el control de temperatura se realiza de forma manual y basada en la experiencia, sin registros ni monitoreo constante, lo que evidencia una falta de herramientas tecnológicas. Los problemas no son diarios, pero ocurren ante fallas técnicas o cortes de energía, y suelen detectarse tarde, cuando los productos ya han sido afectados.</p>
+        <p>Estas situaciones generan pérdidas económicas y riesgos para la salud de los clientes, por lo que la entrevistada actúa de manera reactiva, descartando productos dañados y recurriendo a técnicos. Asimismo, valora soluciones simples e intuitivas que le permitan recibir alertas en tiempo real, tener información clara y organizada, identificar patrones de fallas y contar con respaldo para auditorías, lo que refleja la necesidad de un sistema de monitoreo eficiente.</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-<table style="width:100%; border-collapse:collapse;">
+<table>
   <tbody>
     <tr>
       <td colspan="4" align="center"><strong>Entrevista N.° 2</strong></td>
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-02/interviews/1-2-interview.png" alt="Entrevista 1" height="350">
+        <img src="report/assets/chapter-02/interviews/1-2-interview.png" alt="Entrevista 2" width="900">
       </td>
     </tr>
     <tr>
@@ -929,26 +669,26 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 6:45</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        Sebastian gestiona un negocio con productos críticos como embutidos, lácteos y helados, cuya rentabilidad depende de una cadena de frío ininterrumpida. Actualmente, el monitoreo se realiza de forma manual y empírica ("al tanteo"), verificando la firmeza de los productos o la escarcha en los equipos, lo que genera una detección tardía de fallas, especialmente durante el verano.<br><br>
-        El entrevistado describe una respuesta reactiva ante emergencias, trasladando mercadería a equipos no aptos. Valora la propuesta de ColdTrace principalmente por la tranquilidad que le brindaría recibir alertas en tiempo real en su celular, permitiéndole actuar antes de perder su inversión mensual. Identifica como principales barreras el costo de los sensores para un negocio pequeño y la complejidad de la configuración técnica, pero destaca que contar con un historial digital le facilitaría el cumplimiento de auditorías municipales.
+        <strong>Resumen de la entrevista</strong>
+        <p>Sebastian gestiona un negocio con productos críticos como embutidos, lácteos y helados, cuya rentabilidad depende de una cadena de frío ininterrumpida. Actualmente, el monitoreo se realiza de forma manual y empírica ("al tanteo"), verificando la firmeza de los productos o la escarcha en los equipos, lo que genera una detección tardía de fallas, especialmente durante el verano.</p>
+        <p>El entrevistado describe una respuesta reactiva ante emergencias, trasladando mercadería a equipos no aptos. Valora la propuesta de ColdTrace principalmente por la tranquilidad que le brindaría recibir alertas en tiempo real en su celular, permitiéndole actuar antes de perder su inversión mensual. Identifica como principales barreras el costo de los sensores para un negocio pequeño y la complejidad de la configuración técnica, pero destaca que contar con un historial digital le facilitaría el cumplimiento de auditorías municipales.</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-<table style="width:100%; border-collapse:collapse;">
+<table>
   <tbody>
     <tr>
       <td colspan="4" align="center"><strong>Entrevista N.° 3</strong></td>
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-02/interviews/1-3-interview.png" alt="Entrevista 3" height="350">
+        <img src="report/assets/chapter-02/interviews/1-3-interview.png" alt="Entrevista 3" width="900">
       </td>
     </tr>
     <tr>
@@ -981,13 +721,13 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 03:51</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        Jean Pool administra un minimarket familiar que comercializa lácteos, embutidos, bebidas frías y productos congelados. El control de la temperatura en sus equipos se realiza de forma manual, revisando los indicadores de las refrigeradoras o inspeccionando visualmente el estado de los productos, sin contar con alertas automáticas ni historial digital de mediciones. Las fallas suelen originarse por cortes de luz, puertas mal cerradas o problemas técnicos en los equipos, y normalmente se detectan cuando la mercadería ya está en riesgo.<br><br>
-        El entrevistado señala que estas incidencias generan pérdidas económicas y desorden operativo, ya que debe mover productos entre equipos o recurrir a soporte técnico de forma reactiva. Valora especialmente la posibilidad de recibir alertas en tiempo real y consultar un historial simple desde el celular, aunque advierte que el costo y la facilidad de uso serán factores decisivos para adoptar una solución como ColdTrace en un negocio pequeño.
+        <strong>Resumen de la entrevista</strong>
+        <p>Jean Pool administra un minimarket familiar que comercializa lácteos, embutidos, bebidas frías y productos congelados. El control de la temperatura en sus equipos se realiza de forma manual, revisando los indicadores de las refrigeradoras o inspeccionando visualmente el estado de los productos, sin contar con alertas automáticas ni historial digital de mediciones. Las fallas suelen originarse por cortes de luz, puertas mal cerradas o problemas técnicos en los equipos, y normalmente se detectan cuando la mercadería ya está en riesgo.</p>
+        <p>El entrevistado señala que estas incidencias generan pérdidas económicas y desorden operativo, ya que debe mover productos entre equipos o recurrir a soporte técnico de forma reactiva. Valora especialmente la posibilidad de recibir alertas en tiempo real y consultar un historial simple desde el celular, aunque advierte que el costo y la facilidad de uso serán factores decisivos para adoptar una solución como ColdTrace en un negocio pequeño.</p>
       </td>
     </tr>
   </tbody>
@@ -995,14 +735,14 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
-<table style="width:100%; border-collapse:collapse;">
+<table>
   <tbody>
     <tr>
       <td colspan="4" align="center"><strong>Entrevista N.° 4</strong></td>
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-02/interviews/2-1-interview.png" alt="Entrevista 4" height="350">
+        <img src="report/assets/chapter-02/interviews/2-1-interview.png" alt="Entrevista 4" width="900">
       </td>
     </tr>
     <tr>
@@ -1035,26 +775,26 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 06:43</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        Rodrigo supervisa operaciones de almacenamiento y despacho de productos perecibles en un entorno donde la cadena de frío es crítica. Actualmente, la verificación de temperaturas se realiza mediante controles manuales y registros periódicos que luego se consolidan en archivos internos, lo que reduce la visibilidad inmediata del estado de cada equipo o ambiente monitoreado. Señala que una parte importante del riesgo operativo surge cuando la información llega tarde o no se concentra en un solo punto de consulta.<br><br>
-        Desde su perspectiva, una plataforma como ColdTrace sería útil si centraliza alertas, historial de temperatura e incidencias en un solo lugar, permitiendo reaccionar más rápido y revisar los eventos con mayor orden. También considera clave que la solución sea clara de usar y no agregue fricción a la operación diaria, ya que el valor principal está en reducir pérdidas y mejorar el control frente a auditorías o revisiones internas.
+        <strong>Resumen de la entrevista</strong>
+        <p>Rodrigo supervisa operaciones de almacenamiento y despacho de productos perecibles en un entorno donde la cadena de frío es crítica. Actualmente, la verificación de temperaturas se realiza mediante controles manuales y registros periódicos que luego se consolidan en archivos internos, lo que reduce la visibilidad inmediata del estado de cada equipo o ambiente monitoreado. Señala que una parte importante del riesgo operativo surge cuando la información llega tarde o no se concentra en un solo punto de consulta.</p>
+        <p>Desde su perspectiva, una plataforma como ColdTrace sería útil si centraliza alertas, historial de temperatura e incidencias en un solo lugar, permitiendo reaccionar más rápido y revisar los eventos con mayor orden. También considera clave que la solución sea clara de usar y no agregue fricción a la operación diaria, ya que el valor principal está en reducir pérdidas y mejorar el control frente a auditorías o revisiones internas.</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-<table style="width:100%; border-collapse:collapse;">
+<table>
   <tbody>
     <tr>
       <td colspan="4" align="center"><strong>Entrevista N.° 5</strong></td>
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-02/interviews/2-2-interview.png" alt="Entrevista 5" height="350">
+        <img src="report/assets/chapter-02/interviews/2-2-interview.png" alt="Entrevista 5" width="900">
       </td>
     </tr>
     <tr>
@@ -1087,26 +827,26 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 03:59</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        Kamil participa en el control de calidad de una operación con productos perecibles y trabaja de forma constante con registros térmicos, incidencias y revisiones internas. Explica que la principal dificultad del proceso actual es la dispersión de la información, ya que los registros se mantienen en distintos formatos y eso complica detectar de forma rápida desviaciones o consolidar evidencia cuando se requiere una revisión formal.<br><br>
-        Considera que ColdTrace aportaría valor si centraliza alertas, historial de temperatura e incidencias en una sola plataforma, con información clara y exportable para auditorías y seguimiento interno. Destaca que la solución debe ser confiable, fácil de revisar y útil para generar evidencia estructurada sin incrementar la carga administrativa del equipo.
+        <strong>Resumen de la entrevista</strong>
+        <p>Kamil participa en el control de calidad de una operación con productos perecibles y trabaja de forma constante con registros térmicos, incidencias y revisiones internas. Explica que la principal dificultad del proceso actual es la dispersión de la información, ya que los registros se mantienen en distintos formatos y eso complica detectar de forma rápida desviaciones o consolidar evidencia cuando se requiere una revisión formal.</p>
+        <p>Considera que ColdTrace aportaría valor si centraliza alertas, historial de temperatura e incidencias en una sola plataforma, con información clara y exportable para auditorías y seguimiento interno. Destaca que la solución debe ser confiable, fácil de revisar y útil para generar evidencia estructurada sin incrementar la carga administrativa del equipo.</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-<table style="width:100%; border-collapse:collapse;">
+<table>
   <tbody>
     <tr>
       <td colspan="4" align="center"><strong>Entrevista N.° 6</strong></td>
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="report/assets/chapter-02/interviews/2-3-interview.png" alt="Entrevista 6" height="350">
+        <img src="report/assets/chapter-02/interviews/2-3-interview.png" alt="Entrevista 6" width="900">
       </td>
     </tr>
     <tr>
@@ -1139,18 +879,17 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="2"><strong>Duración:</strong> 03:25</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Resumen de la entrevista</strong><br><br>
-        Zayd coordina actividades logísticas vinculadas a productos perecibles y debe supervisar distintos puntos donde la cadena de frío puede verse afectada. Señala que actualmente la información se registra en formatos dispersos y que el control depende de verificaciones periódicas, lo cual dificulta detectar problemas de forma oportuna y revisar con claridad qué ocurrió en cada momento de la operación.<br><br>
-        Para él, una solución como ColdTrace sería valiosa si permite centralizar alertas, historial de eventos y registros de temperatura, facilitando el seguimiento operativo y la documentación frente a incidencias. También considera importante que la herramienta se integre con rapidez al flujo de trabajo actual y reduzca la dependencia de controles manuales para mejorar la visibilidad del proceso.
+        <strong>Resumen de la entrevista</strong>
+        <p>Zayd coordina actividades logísticas vinculadas a productos perecibles y debe supervisar distintos puntos donde la cadena de frío puede verse afectada. Señala que actualmente la información se registra en formatos dispersos y que el control depende de verificaciones periódicas, lo cual dificulta detectar problemas de forma oportuna y revisar con claridad qué ocurrió en cada momento de la operación.</p>
+        <p>Para él, una solución como ColdTrace sería valiosa si permite centralizar alertas, historial de eventos y registros de temperatura, facilitando el seguimiento operativo y la documentación frente a incidencias. También considera importante que la herramienta se integre con rapidez al flujo de trabajo actual y reduzca la dependencia de controles manuales para mejorar la visibilidad del proceso.</p>
       </td>
     </tr>
   </tbody>
 </table>
-
 ### 2.2.3 Análisis de entrevistas
 
 #### Análisis por segmento objetivo
@@ -1236,11 +975,11 @@ La creación de User Personas permite humanizar los datos recopilados durante la
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
-<img src="report/assets/chapter-02/user-personas/segmento-1-gustavo-fernandez.png" alt="User Persona Gustavo Fernández" width="760">
+![User Persona Gustavo Fernández](report/assets/chapter-02/user-personas/segmento-1-gustavo-fernandez.png)
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
-<img src="report/assets/chapter-02/user-personas/segmento-2-sofia-ramirez.png" alt="User Persona Sofía Ramírez" width="760">
+![User Persona Sofía Ramírez](report/assets/chapter-02/user-personas/segmento-2-sofia-ramirez.png)
 
 ### 2.3.2 User Task Matrix
 
@@ -1256,6 +995,7 @@ El User Task Matrix presenta las tareas clave que realizan los User Persona para
 | Configurar el rango seguro según el tipo de producto almacenado | Baja | Alta |
 | Generar un reporte básico para una inspección sanitaria | Baja | Alta |
 | Consultar desde el celular el estado de la refrigeradora cuando no está en el local | Media | Media |
+| Comparar planes y elegir una opción accesible para iniciar el monitoreo | Baja | Alta |
 
 **Persona 2: Sofía Ramírez — Segmento 2**
 
@@ -1267,6 +1007,8 @@ El User Task Matrix presenta las tareas clave que realizan los User Persona para
 | Revisar el historial de incidencias por equipo, área o sede | Alta | Alta |
 | Configurar rangos de temperatura y humedad según el tipo de producto o ambiente | Baja | Alta |
 | Consultar un dashboard consolidado para tomar decisiones operativas | Media | Alta |
+| Revisar recomendaciones asistidas para cerrar incidencias críticas con evidencia | Media | Alta |
+| Administrar plan, límites y facturación de la organización | Baja | Media |
 
 **Análisis del Task Matrix:** Se observa una complementariedad entre ambos perfiles. Para Gustavo, las tareas de mayor peso son el monitoreo básico y las alertas en tiempo real desde dispositivo móvil. Para Sofía, las prioridades son la visibilidad centralizada, los reportes de trazabilidad y el historial de incidencias. Esto confirma que ColdTrace debe priorizar una interfaz móvil simple para el primer segmento y un dashboard de control más completo para el segundo, conectando ambas experiencias en una misma plataforma.
 
@@ -1276,11 +1018,11 @@ El User Journey Mapping representa el flujo de pasos, necesidades y emociones qu
 
 **User Journey Map: Gustavo Fernández (As-Is)**
 
-<img src="report/assets/chapter-02/journey-maps/journey-map1.png" alt="User Journey Map de Gustavo Fernández" width="760">
+![User Journey Map de Gustavo Fernández](report/assets/chapter-02/journey-maps/journey-map1.png)
 
 **User Journey Map: Sofía Ramírez (As-Is)**
 
-<img src="report/assets/chapter-02/journey-maps/journey-map2.png" alt="User Journey Map de Sofía Ramírez" width="760">
+![User Journey Map de Sofía Ramírez](report/assets/chapter-02/journey-maps/journey-map2.png)
 
 ### 2.3.4 Empathy Mapping
 
@@ -1288,11 +1030,11 @@ El Empathy Map permite profundizar en el mundo interno y sensorial del usuario, 
 
 **Empathy Map: Gustavo Fernández**
 
-<img src="report/assets/chapter-02/empathy-maps/empathy-map1.png" alt="Empathy Map de Gustavo Fernández" width="760">
+![Empathy Map de Gustavo Fernández](report/assets/chapter-02/empathy-maps/empathy-map1.png)
 
 **Empathy Map: Sofía Ramírez**
 
-<img src="report/assets/chapter-02/empathy-maps/empathy-map2.png" alt="Empathy Map de Sofía Ramírez" width="760">
+![Empathy Map de Sofía Ramírez](report/assets/chapter-02/empathy-maps/empathy-map2.png)
 
 ---
 
@@ -1300,7 +1042,7 @@ El Empathy Map permite profundizar en el mundo interno y sensorial del usuario, 
 
 Para diseñar un sistema robusto, primero es necesario entender el negocio como un todo, dejando de lado los tecnicismos para enfocarnos en la lógica pura del dominio. El Big Picture EventStorming es una técnica colaborativa que permite visualizar todos los eventos significativos que ocurren en la cadena de frío alimentaria. Al organizar estos eventos de manera cronológica, se logra identificar los flujos críticos del negocio y los puntos exactos donde la información suele perderse o donde la falta de monitoreo genera pérdidas.
 
-<img src="report/assets/chapter-02/eventstorming/eventstorming.png" alt="Big Picture EventStorming" width="760">
+![Big Picture EventStorming](report/assets/chapter-02/eventstorming/eventstorming.png)
 
 ---
 
@@ -1320,1549 +1062,255 @@ Para diseñar un sistema robusto, primero es necesario entender el negocio como 
 | **Auditoría** | Proceso de verificación de condiciones de almacenamiento o transporte, respaldado por el historial y los reportes de ColdTrace. |
 | **Dashboard** | Panel centralizado que muestra en tiempo real el estado de todos los activos monitoreados, alertas activas e indicadores clave. |
 | **Trazabilidad** | Capacidad de reconstruir y documentar las condiciones de temperatura y humedad a lo largo del tiempo para un activo o lote de productos. |
+| **Plan de suscripción** | Nivel comercial contratado por una organización, como Base, Operaciones o Compliance AI, que define límites y funcionalidades disponibles. |
+| **Suscripción** | Relación vigente entre una organización y un plan, incluyendo estado de pago, periodo de renovación y capacidad habilitada. |
+| **Entitlement** | Permiso o capacidad derivada del plan que determina si una organización puede usar una función o crear más recursos. |
+| **Checkout** | Flujo externo de pago utilizado para iniciar o actualizar una suscripción sin que ColdTrace almacene datos de tarjeta. |
+| **Portal de facturación** | Sitio externo del proveedor de pagos donde el administrador puede gestionar método de pago, facturas o cancelación. |
+| **Plan asistido por IA** | Recomendación estructurada generada por inteligencia artificial para atender una incidencia, siempre pendiente de revisión y aprobación humana. |
 
 **Expected benefits of the ubiquitous language:**
 
-- Facilitates communication: Bridges the gap between developers, field engineers, and financial administrators.
-- Improves technical alignment: Ensures that database tables and UI labels match the business reality.
-- Avoids ambiguities: Clearly distinguishes between an internal "Requisition" and an external "Purchase Order," preventing procurement errors.
-- Ensures consistency: Guarantees that documentation, mobile interfaces, and project reports use the same professional terminology.
-
+- Facilitates communication: Bridges the gap between operators, quality leads, administrators, developers, and billing stakeholders.
+- Improves technical alignment: Ensures that database tables, REST resources, UI labels, and pricing content match the business reality.
+- Avoids ambiguities: Clearly distinguishes incidents, AI-assisted plans, subscriptions, entitlements, and payment-provider responsibilities.
+- Ensures consistency: Guarantees that documentation, web interfaces, project reports, and future prototypes use the same professional terminology.
 
 # Chapter III: Requirements Specification
 
+La especificación de requerimientos se actualizó tomando como referencia las prácticas del kit de revisión del curso: las funcionalidades se organizan desde épicas hacia historias de usuario, cada historia se redacta con estructura de usuario, necesidad y beneficio, y los criterios de aceptación se expresan con escenarios en formato Given/When/Then. El alcance documentado cubre la landing page, la Frontend Web Application de ColdTrace, la RESTful API y las historias técnicas necesarias para soportar la evolución del producto hacia asistencia inteligente, planes SaaS y suscripciones.
+
 ## 3.1 User Stories
-<table style="width: 100%; table-layout: fixed;">
-  <colgroup>
-    <col style="width: 14%;">
-    <col style="width: 24%;">
-    <col style="width: 62%;">
-  </colgroup>
-  <tr>
-    <td><strong>Código</strong></td>
-    <td><strong>Título</strong></td>
-    <td><strong>Epic</strong></td>
-  </tr>
-  <tr>
-    <td>EP001</td>
-    <td>Landing page y captación de visitantes</td>
-    <td>Como visitante de ColdTrace, <strong>Quiero</strong> recorrer la landing page y comprender la propuesta de valor del producto, <strong>Para</strong> evaluar si la solución es relevante para mi negocio antes de registrarme o contactarme.</td>
-  </tr>
-  <tr>
-    <td>EP002</td>
-    <td>Gestión de usuarios y acceso</td>
-    <td>Como usuario o administrador de la plataforma, <strong>Quiero</strong> registrar cuentas, autenticar accesos y gestionar permisos dentro del sistema, <strong>Para</strong> asegurar que cada persona utilice ColdTrace de acuerdo con su rol y pueda ingresar de forma segura a la operación.</td>
-  </tr>
-  <tr>
-    <td>EP003</td>
-    <td>Gestión de equipos y sensores</td>
-    <td>Como responsable de la operación, <strong>Quiero</strong> registrar cámaras frigoríficas, unidades de transporte, sensores y gateways dentro del sistema, <strong>Para</strong> mantener organizada la infraestructura de monitoreo y asociar correctamente cada activo con su ubicación y estado.</td>
-  </tr>
-  <tr>
-    <td>EP004</td>
-    <td>Monitoreo de temperatura y humedad</td>
-    <td>Como usuario de la plataforma, <strong>Quiero</strong> visualizar en tiempo real la temperatura, humedad y estado de mis equipos o ambientes monitoreados, <strong>Para</strong> detectar variaciones oportunamente y reducir el riesgo de pérdida de productos perecibles.</td>
-  </tr>
-  <tr>
-    <td>EP005</td>
-    <td>Alertas e incidencias</td>
-    <td>Como encargado de negocio o responsable de operaciones, <strong>Quiero</strong> recibir alertas automáticas y registrar incidencias cuando ocurra una desviación térmica o un evento crítico, <strong>Para</strong> actuar rápidamente y minimizar el impacto operativo o económico.</td>
-  </tr>
-  <tr>
-    <td>EP006</td>
-    <td>Reportes, historial de eventos y cumplimiento</td>
-    <td>Como responsable de operaciones y control de calidad, <strong>Quiero</strong> consultar historiales de lecturas, alertas e incidencias, exportar reportes y reunir evidencia operativa, <strong>Para</strong> facilitar auditorías, demostrar cumplimiento y mejorar la toma de decisiones basadas en datos.</td>
-  </tr>
-  <tr>
-    <td>EP007</td>
-    <td>Configuración operativa y mantenimiento</td>
-    <td>Como usuario administrativo de la plataforma, <strong>Quiero</strong> configurar rangos de seguridad, gestionar parámetros operativos y dar seguimiento a necesidades de mantenimiento, <strong>Para</strong> asegurar el funcionamiento continuo del sistema y adaptar ColdTrace al contexto real de cada operación.</td>
-  </tr>
-  <tr>
-    <td>EP008</td>
-    <td>RESTful API - Autenticación</td>
-    <td>Como developer, <strong>Quiero</strong> contar con endpoints de autenticación y acceso, <strong>Para</strong> permitir que el frontend gestione el registro, inicio de sesión y validación de usuarios dentro de ColdTrace.</td>
-  </tr>
-  <tr>
-    <td>EP009</td>
-    <td>RESTful API - Equipos y sensores</td>
-    <td>Como developer, <strong>Quiero</strong> exponer endpoints para registrar y administrar equipos monitoreados y sensores, <strong>Para</strong> permitir que el frontend configure la infraestructura de monitoreo de la operación.</td>
-  </tr>
-  <tr>
-    <td>EP010</td>
-    <td>RESTful API - Lecturas y monitoreo</td>
-    <td>Como developer, <strong>Quiero</strong> disponer de endpoints para registrar y consultar lecturas de monitoreo, <strong>Para</strong> soportar la visualización histórica y el seguimiento térmico en la plataforma.</td>
-  </tr>
-  <tr>
-    <td>EP011</td>
-    <td>RESTful API - Alertas e incidencias</td>
-    <td>Como developer, <strong>Quiero</strong> implementar endpoints para consultar alertas y gestionar incidencias, <strong>Para</strong> permitir que el frontend responda a eventos críticos dentro de la operación.</td>
-  </tr>
-  <tr>
-    <td>EP012</td>
-    <td>RESTful API - Reportes y cumplimiento</td>
-    <td>Como developer, <strong>Quiero</strong> ofrecer endpoints para generar bitácoras y reportes de cumplimiento, <strong>Para</strong> facilitar la consulta, descarga y uso documental de la información operativa.</td>
-  </tr>
-</table>
 
-Luego de definir las épicas principales del sistema, se desarrollan las historias de usuario correspondientes a cada una de ellas. A continuación, se presentan las user stories del proyecto, organizadas según las épicas definidas para ColdTrace.
+### 3.1.1 Epics
 
-<table style="width: 100%; table-layout: fixed;">
-  <colgroup>
-    <col style="width: 12%;">
-    <col style="width: 18%;">
-    <col style="width: 25%;">
-    <col style="width: 33%;">
-    <col style="width: 12%;">
-  </colgroup>
-  <tr>
-    <td><strong>ID de Historia de Usuario</strong></td>
-    <td><strong>Título de User Story</strong></td>
-    <td><strong>Descripción</strong></td>
-    <td><strong>Criterios de Aceptación con Escenarios</strong></td>
-    <td><strong>ID de Épica</strong></td>
-  </tr>
-  <tr>
-    <td>US001</td>
-    <td>Ver propuesta de valor en la landing page</td>
-    <td>
-      <strong>Como</strong> visitante,<br>
-      <strong>Quiero</strong> ver en la página principal qué problema resuelve ColdTrace y cómo lo soluciona,<br>
-      <strong>Para</strong> evaluar si es relevante para mi negocio antes de registrarme.
-    </td>
-    <td>
-      <strong>Escenario 1: Carga exitosa de la propuesta de valor.</strong><br>
-      <strong>Given</strong> el visitante accede a la landing page de ColdTrace.<br>
-      <strong>When</strong> la página carga correctamente.<br>
-      <strong>Then</strong> el sistema muestra el problema, la solución y los beneficios clave del producto en la sección principal.
-    </td>
-    <td>EP001</td>
-  </tr>
-  <tr>
-    <td>US002</td>
-    <td>Ver sección de funcionalidades</td>
-    <td>
-      <strong>Como</strong> visitante,<br>
-      <strong>Quiero</strong> ver una sección con las funcionalidades del producto,<br>
-      <strong>Para</strong> entender qué incluye ColdTrace antes de tomar una decisión de registro o contacto.
-    </td>
-    <td>
-      <strong>Escenario 1: Sección visible al hacer scroll.</strong><br>
-      <strong>Given</strong> el visitante está en la landing page.<br>
-      <strong>When</strong> hace scroll hacia la sección de funcionalidades.<br>
-      <strong>Then</strong> el sistema muestra bloques con cada funcionalidad principal y su descripción breve.
-    </td>
-    <td>EP001</td>
-  </tr>
-  <tr>
-    <td>US003</td>
-    <td>Ver sección de plataforma y funcionamiento</td>
-    <td>
-      <strong>Como</strong> visitante,<br>
-      <strong>Quiero</strong> ver cómo se presenta la plataforma y cómo funciona ColdTrace,<br>
-      <strong>Para</strong> comprender de manera general cómo opera la solución antes de continuar.
-    </td>
-    <td>
-      <strong>Escenario 1: Visualización de la sección del producto.</strong><br>
-      <strong>Given</strong> el visitante navega por la landing page.<br>
-      <strong>When</strong> llega a la sección de plataforma y funcionamiento.<br>
-      <strong>Then</strong> el sistema muestra una explicación general del funcionamiento de ColdTrace y una vista representativa de la plataforma.
-    </td>
-    <td>EP001</td>
-  </tr>
-  <tr>
-    <td>US004</td>
-    <td>Acceder a la sección de contacto o registro</td>
-    <td>
-      <strong>Como</strong> visitante,<br>
-      <strong>Quiero</strong> acceder fácilmente a la sección de contacto o registro desde la landing page,<br>
-      <strong>Para</strong> continuar con el proceso de interés en la solución.
-    </td>
-    <td>
-      <strong>Escenario 1: Acceso exitoso a la sección de contacto o registro.</strong><br>
-      <strong>Given</strong> el visitante se encuentra navegando en la landing page.<br>
-      <strong>When</strong> selecciona la opción de contacto, registro o llamada a la acción correspondiente.<br>
-      <strong>Then</strong> el sistema lo dirige correctamente a la sección o flujo asociado.
-    </td>
-    <td>EP001</td>
-  </tr>
-  <tr>
-    <td>US005</td>
-    <td>Navegar con menú fijo</td>
-    <td>
-      <strong>Como</strong> visitante,<br>
-      <strong>Quiero</strong> que el menú de navegación permanezca visible al hacer scroll,<br>
-      <strong>Para</strong> poder acceder a cualquier sección de la landing en cualquier momento sin tener que volver al inicio.
-    </td>
-    <td>
-      <strong>Escenario 1: Menú fijo durante el scroll.</strong><br>
-      <strong>Given</strong> el visitante hace scroll hacia abajo en la landing page.<br>
-      <strong>When</strong> el menú llega al borde superior de la pantalla.<br>
-      <strong>Then</strong> el sistema mantiene el menú fijo y visible durante todo el desplazamiento de la página.
-    </td>
-    <td>EP001</td>
-  </tr>
-  <tr>
-    <td>US006</td>
-    <td>Ver landing page en dispositivo móvil</td>
-    <td>
-      <strong>Como</strong> visitante que accede desde un celular,<br>
-      <strong>Quiero</strong> que la landing page se adapte correctamente a mi pantalla,<br>
-      <strong>Para</strong> poder navegar y leer el contenido sin problemas.
-    </td>
-    <td>
-      <strong>Escenario 1: Visualización correcta en móvil.</strong><br>
-      <strong>Given</strong> el visitante accede a la landing page desde un dispositivo móvil.<br>
-      <strong>When</strong> la página carga.<br>
-      <strong>Then</strong> el sistema muestra el contenido adaptado a la resolución del dispositivo sin elementos cortados ni superpuestos.
-    </td>
-    <td>EP001</td>
-  </tr>
-  <tr>
-    <td>US007</td>
-    <td>Crear cuenta de usuario</td>
-    <td>
-      <strong>Como</strong> usuario nuevo de la plataforma,<br>
-      <strong>Quiero</strong> registrar una cuenta asociada a una organización,<br>
-      <strong>Para</strong> ingresar a ColdTrace como usuario fundador y comenzar a operar con permisos administrativos.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario completa correctamente el formulario de registro con datos de organización y acceso.<br>
-      <strong>When</strong> envía sus datos para crear la cuenta.<br>
-      <strong>Then</strong> el sistema registra la organización, crea el usuario fundador con rol de super administrador y muestra una confirmación de creación exitosa.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta registrarse con un correo ya existente.<br>
-      <strong>When</strong> envía el formulario de registro.<br>
-      <strong>Then</strong> el sistema muestra un mensaje indicando que el correo ya se encuentra registrado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario deja campos obligatorios vacíos, no acepta los términos o ingresa contraseñas que no coinciden.<br>
-      <strong>When</strong> intenta completar el registro.<br>
-      <strong>Then</strong> el sistema valida la información y solicita corregir los campos antes de continuar.
-    </td>
-    <td>EP002</td>
-  </tr>
-  <tr>
-    <td>US008</td>
-    <td>Representar verificación de cuenta por correo</td>
-    <td>
-      <strong>Como</strong> usuario registrado,<br>
-      <strong>Quiero</strong> visualizar el estado de verificación de mi cuenta,<br>
-      <strong>Para</strong> entender si mi acceso está habilitado sin depender de un envío real de correo durante la versión frontend del proyecto.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario crea una cuenta en el alcance actual del frontend.<br>
-      <strong>When</strong> el registro se completa correctamente.<br>
-      <strong>Then</strong> la cuenta queda habilitada para iniciar sesión y el sistema trata la verificación como completada para efectos de la demostración.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario consulta un estado de verificación pendiente o expirado simulado.<br>
-      <strong>When</strong> intenta continuar desde ese estado.<br>
-      <strong>Then</strong> la plataforma muestra el mensaje correspondiente y evita prometer un envío real de correo.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> ocurre un error al consultar los datos locales de cuenta.<br>
-      <strong>When</strong> el usuario intenta validar su estado.<br>
-      <strong>Then</strong> el sistema informa que no pudo completar la verificación simulada.
-    </td>
-    <td>EP002</td>
-  </tr>
-  <tr>
-    <td>US009</td>
-    <td>Iniciar sesión</td>
-    <td>
-      <strong>Como</strong> usuario registrado,<br>
-      <strong>Quiero</strong> iniciar sesión con mi correo y una contraseña de demostración,<br>
-      <strong>Para</strong> acceder a la experiencia principal de ColdTrace con la organización y rol asociados a mi cuenta.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario existe en los datos locales y usa credenciales válidas de demostración.<br>
-      <strong>When</strong> ingresa su correo y contraseña y selecciona la opción de iniciar sesión.<br>
-      <strong>Then</strong> el sistema carga su organización, rol y permisos y lo redirige al dashboard.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario ingresa una contraseña incorrecta o un correo no reconocido.<br>
-      <strong>When</strong> intenta iniciar sesión.<br>
-      <strong>Then</strong> el sistema rechaza el acceso y muestra un mensaje de credenciales inválidas.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el acceso del usuario ha sido revocado o simulado como bloqueado.<br>
-      <strong>When</strong> intenta ingresar a la plataforma.<br>
-      <strong>Then</strong> el sistema bloquea el acceso e informa que la cuenta no tiene permisos vigentes.
-    </td>
-    <td>EP002</td>
-  </tr>
-  <tr>
-    <td>US010</td>
-    <td>Recuperar contraseña</td>
-    <td>
-      <strong>Como</strong> usuario de la plataforma,<br>
-      <strong>Quiero</strong> solicitar un flujo de recuperación de contraseña desde mi correo registrado,<br>
-      <strong>Para</strong> validar la experiencia de restablecimiento sin requerir envío real de correos ni tokens backend.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario recuerda un correo registrado en la plataforma.<br>
-      <strong>When</strong> solicita el restablecimiento de contraseña.<br>
-      <strong>Then</strong> el sistema confirma visualmente el envío simulado del enlace de recuperación.<br><br>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario accede a la pantalla de nueva contraseña con un enlace válido simulado.<br>
-      <strong>When</strong> registra una nueva contraseña válida y coincidente.<br>
-      <strong>Then</strong> el sistema confirma el cambio dentro del flujo frontend.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario ingresa un correo no asociado a ninguna cuenta local.<br>
-      <strong>When</strong> solicita recuperar la contraseña.<br>
-      <strong>Then</strong> el sistema informa que no existe una cuenta vinculada a ese correo.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el enlace de recuperación ha expirado de forma simulada.<br>
-      <strong>When</strong> el usuario intenta usarlo.<br>
-      <strong>Then</strong> el sistema solicita generar un nuevo proceso de recuperación.
-    </td>
-    <td>EP002</td>
-  </tr>
-  <tr>
-    <td>US011</td>
-    <td>Asignar roles y permisos</td>
-    <td>
-      <strong>Como</strong> administrador de la organización,<br>
-      <strong>Quiero</strong> gestionar usuarios, roles y permisos dentro de la organización activa,<br>
-      <strong>Para</strong> controlar qué acciones puede realizar cada persona dentro de ColdTrace según su responsabilidad operativa.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el administrador visualiza la lista de usuarios registrados de su organización.<br>
-      <strong>When</strong> crea un usuario interno o asigna un rol válido a un usuario existente.<br>
-      <strong>Then</strong> el sistema actualiza sus permisos y habilita el acceso correspondiente dentro de la organización activa.<br><br>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> un rol operativo tiene permisos configurables.<br>
-      <strong>When</strong> el administrador ajusta su matriz de permisos.<br>
-      <strong>Then</strong> el sistema refleja los cambios en la interfaz sin afectar el rol fundador de super administrador.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el administrador intenta asignar un rol no permitido, incompleto o duplicar un correo existente.<br>
-      <strong>When</strong> guarda la configuración de acceso.<br>
-      <strong>Then</strong> el sistema rechaza la operación y solicita corregir los datos.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> un usuario sin privilegios administrativos intenta modificar usuarios, roles o permisos.<br>
-      <strong>When</strong> accede a esa funcionalidad.<br>
-      <strong>Then</strong> el sistema muestra la información en modo de solo lectura o restringe la acción.
-    </td>
-    <td>EP002</td>
-  </tr>
-  <tr>
-    <td>US012</td>
-    <td>Registrar cámara frigorífica</td>
-    <td>
-      <strong>Como</strong> responsable de la operación,<br>
-      <strong>Quiero</strong> registrar una cámara frigorífica en la plataforma con sus datos principales,<br>
-      <strong>Para</strong> monitorear su funcionamiento y asociarla correctamente a la operación de la organización.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario cuenta con permisos para gestionar activos.<br>
-      <strong>When</strong> registra una cámara frigorífica con datos válidos como nombre, capacidad, ubicación y descripción.<br>
-      <strong>Then</strong> el sistema guarda el activo y lo muestra dentro del inventario de equipos registrados.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario omite campos obligatorios o ingresa información inconsistente.<br>
-      <strong>When</strong> intenta guardar la cámara frigorífica.<br>
-      <strong>Then</strong> el sistema rechaza el registro y solicita completar o corregir los datos requeridos.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> ya existe un equipo registrado con el mismo identificador interno.<br>
-      <strong>When</strong> el usuario intenta crear un nuevo registro duplicado.<br>
-      <strong>Then</strong> el sistema informa que el activo ya existe y evita la duplicidad.
-    </td>
-    <td>EP003</td>
-  </tr>
-  <tr>
-    <td>US013</td>
-    <td>Registrar unidad de transporte</td>
-    <td>
-      <strong>Como</strong> responsable logístico,<br>
-      <strong>Quiero</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace,<br>
-      <strong>Para</strong> monitorear sus condiciones térmicas y conservar un historial de mediciones e incidencias durante su operación.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario tiene acceso al módulo de activos.<br>
-      <strong>When</strong> registra una unidad de transporte con sus datos de identificación y operación.<br>
-      <strong>Then</strong> el sistema crea el registro y lo deja disponible para asociar sensores y monitoreo.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la información de la unidad está incompleta o no cumple las validaciones mínimas.<br>
-      <strong>When</strong> el usuario intenta guardar el registro.<br>
-      <strong>Then</strong> el sistema muestra errores y no permite completar la operación.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario no tiene permisos para registrar activos logísticos.<br>
-      <strong>When</strong> intenta crear la unidad de transporte.<br>
-      <strong>Then</strong> el sistema restringe la acción y muestra un mensaje de acceso denegado.
-    </td>
-    <td>EP003</td>
-  </tr>
-  <tr>
-    <td>US014</td>
-    <td>Vincular sensor IoT a un activo</td>
-    <td>
-      <strong>Como</strong> responsable de la configuración del sistema,<br>
-      <strong>Quiero</strong> vincular un sensor IoT a una cámara frigorífica o unidad de transporte,<br>
-      <strong>Para</strong> comenzar a capturar datos de temperatura y humedad del activo correcto.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existe un activo previamente registrado y un sensor disponible para configuración.<br>
-      <strong>When</strong> el usuario selecciona ambos elementos y confirma la vinculación.<br>
-      <strong>Then</strong> el sistema asocia el sensor al activo y habilita su uso para monitoreo.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el sensor ya se encuentra vinculado a otro activo.<br>
-      <strong>When</strong> el usuario intenta asociarlo nuevamente.<br>
-      <strong>Then</strong> el sistema informa el conflicto y no permite duplicar la vinculación.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el activo seleccionado no existe o fue desactivado.<br>
-      <strong>When</strong> el usuario intenta completar la asociación.<br>
-      <strong>Then</strong> el sistema impide la operación y solicita elegir un activo válido.
-    </td>
-    <td>EP003</td>
-  </tr>
-  <tr>
-    <td>US015</td>
-    <td>Emparejar gateway de red</td>
-    <td>
-      <strong>Como</strong> usuario administrativo de la plataforma,<br>
-      <strong>Quiero</strong> emparejar un gateway de red con los sensores de mi operación,<br>
-      <strong>Para</strong> asegurar la transmisión de datos desde los activos hacia el sistema.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el gateway se encuentra disponible y el sensor está listo para configuración.<br>
-      <strong>When</strong> el usuario realiza el proceso de emparejamiento correctamente.<br>
-      <strong>Then</strong> el sistema confirma la conexión entre gateway y sensor.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el gateway no responde o presenta fallas de conectividad.<br>
-      <strong>When</strong> el usuario intenta completar el emparejamiento.<br>
-      <strong>Then</strong> el sistema informa el error y deja el sensor sin conexión activa.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el gateway ya fue asignado a una configuración incompatible.<br>
-      <strong>When</strong> el usuario intenta reutilizarlo sin realizar ajustes previos.<br>
-      <strong>Then</strong> el sistema advierte la incompatibilidad y solicita revisar la configuración.
-    </td>
-    <td>EP003</td>
-  </tr>
-  <tr>
-    <td>US016</td>
-    <td>Verificar calibración del sensor</td>
-    <td>
-      <strong>Como</strong> responsable de calidad u operación,<br>
-      <strong>Quiero</strong> verificar el estado de calibración de los sensores instalados,<br>
-      <strong>Para</strong> asegurar que las lecturas registradas sean confiables y útiles para control y cumplimiento.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el sensor cuenta con información de calibración vigente.<br>
-      <strong>When</strong> el usuario consulta el estado del sensor.<br>
-      <strong>Then</strong> el sistema muestra que la calibración es válida y permite continuar con su uso normal.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el certificado de calibración está vencido.<br>
-      <strong>When</strong> el usuario revisa el estado del sensor.<br>
-      <strong>Then</strong> el sistema alerta que el sensor requiere mantenimiento o recalibración.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> no existe información registrada sobre la calibración del sensor.<br>
-      <strong>When</strong> el usuario intenta validarlo dentro del sistema.<br>
-      <strong>Then</strong> la plataforma indica que el estado del sensor no puede considerarse conforme.
-    </td>
-    <td>EP003</td>
-  </tr>
-  <tr>
-    <td>US017</td>
-    <td>Actualizar ubicación y estado del activo</td>
-    <td>
-      <strong>Como</strong> responsable de la operación,<br>
-      <strong>Quiero</strong> actualizar la ubicación física y el estado operativo de un activo registrado,<br>
-      <strong>Para</strong> mantener información precisa sobre su disponibilidad, condición y contexto de uso.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo ya se encuentra registrado en la plataforma.<br>
-      <strong>When</strong> el usuario modifica su ubicación o cambia su estado operativo a activo, inactivo o en mantenimiento.<br>
-      <strong>Then</strong> el sistema guarda la actualización y refleja el cambio en el inventario de activos.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta asignar una ubicación inexistente o inválida.<br>
-      <strong>When</strong> guarda la modificación del activo.<br>
-      <strong>Then</strong> el sistema rechaza la operación y solicita una ubicación válida.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el activo tiene una incidencia abierta que restringe su cambio de estado.<br>
-      <strong>When</strong> el usuario intenta modificarlo manualmente.<br>
-      <strong>Then</strong> el sistema advierte la restricción y evita una actualización inconsistente.
-    </td>
-    <td>EP003</td>
-  </tr>
-  <tr>
-    <td>US018</td>
-    <td>Visualizar temperatura en tiempo real</td>
-    <td>
-      <strong>Como</strong> usuario de la plataforma,<br>
-      <strong>Quiero</strong> visualizar en tiempo real la temperatura de mis equipos o ambientes monitoreados,<br>
-      <strong>Para</strong> detectar rápidamente cualquier variación que pueda comprometer la conservación de los productos.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo cuenta con un sensor correctamente vinculado y con transmisión activa.<br>
-      <strong>When</strong> el usuario accede al panel de monitoreo.<br>
-      <strong>Then</strong> el sistema muestra la temperatura actual del activo en tiempo real.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> no existe una lectura reciente disponible para el activo seleccionado.<br>
-      <strong>When</strong> el usuario intenta visualizar la temperatura.<br>
-      <strong>Then</strong> el sistema informa que no hay datos actualizados en ese momento.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el activo no tiene sensores configurados.<br>
-      <strong>When</strong> el usuario accede al monitoreo del equipo.<br>
-      <strong>Then</strong> la plataforma indica que el activo aún no puede ser monitoreado.
-    </td>
-    <td>EP004</td>
-  </tr>
-  <tr>
-    <td>US019</td>
-    <td>Visualizar humedad en tiempo real</td>
-    <td>
-      <strong>Como</strong> usuario de la plataforma,<br>
-      <strong>Quiero</strong> visualizar en tiempo real los valores de humedad de mis ambientes o equipos monitoreados,<br>
-      <strong>Para</strong> complementar el control de conservación y evaluar mejor las condiciones del activo.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el sensor del activo transmite datos de humedad de forma correcta.<br>
-      <strong>When</strong> el usuario consulta el detalle del monitoreo.<br>
-      <strong>Then</strong> el sistema presenta el valor actual de humedad junto con el resto de variables monitoreadas.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el sensor no soporta medición de humedad.<br>
-      <strong>When</strong> el usuario intenta consultar dicha variable.<br>
-      <strong>Then</strong> el sistema informa que esa lectura no se encuentra disponible.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la lectura de humedad no pudo ser capturada correctamente.<br>
-      <strong>When</strong> el usuario revisa el panel de monitoreo.<br>
-      <strong>Then</strong> el sistema muestra el estado de dato no disponible o inconsistente.
-    </td>
-    <td>EP004</td>
-  </tr>
-  <tr>
-    <td>US020</td>
-    <td>Consultar historial de lecturas</td>
-    <td>
-      <strong>Como</strong> encargado de negocio o responsable de operaciones,<br>
-      <strong>Quiero</strong> consultar el historial de lecturas de temperatura y humedad de un activo,<br>
-      <strong>Para</strong> revisar su comportamiento en el tiempo y analizar incidencias pasadas.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo tiene lecturas almacenadas en el sistema.<br>
-      <strong>When</strong> el usuario selecciona un rango de fechas para la consulta.<br>
-      <strong>Then</strong> el sistema muestra el historial registrado dentro del periodo solicitado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el activo no tiene información histórica disponible en el rango consultado.<br>
-      <strong>When</strong> el usuario ejecuta la búsqueda.<br>
-      <strong>Then</strong> el sistema informa que no existen registros para ese periodo.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario ingresa un rango de fechas inválido.<br>
-      <strong>When</strong> intenta consultar el historial.<br>
-      <strong>Then</strong> la plataforma solicita corregir los criterios de búsqueda antes de procesar la consulta.
-    </td>
-    <td>EP004</td>
-  </tr>
-  <tr>
-    <td>US021</td>
-    <td>Detectar temperatura fuera de rango</td>
-    <td>
-      <strong>Como</strong> usuario de la plataforma,<br>
-      <strong>Quiero</strong> que el sistema identifique automáticamente cuando la temperatura de un activo salga del rango seguro,<br>
-      <strong>Para</strong> reconocer oportunamente una condición de riesgo dentro de la operación.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo tiene configurado un rango válido de temperatura.<br>
-      <strong>When</strong> el sistema recibe una lectura que supera los límites establecidos.<br>
-      <strong>Then</strong> la plataforma marca la condición como fuera de rango.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el activo no tiene un rango configurado previamente.<br>
-      <strong>When</strong> se recibe una nueva lectura de temperatura.<br>
-      <strong>Then</strong> el sistema no puede evaluar el cumplimiento y advierte que falta configuración.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la lectura recibida presenta valores corruptos o inconsistentes.<br>
-      <strong>When</strong> el sistema intenta procesarla.<br>
-      <strong>Then</strong> la lectura es descartada y queda registrada como inválida.
-    </td>
-    <td>EP004</td>
-  </tr>
-  <tr>
-    <td>US022</td>
-    <td>Visualizar estado de conectividad</td>
-    <td>
-      <strong>Como</strong> responsable de monitoreo,<br>
-      <strong>Quiero</strong> visualizar el estado de conectividad de los sensores y gateways,<br>
-      <strong>Para</strong> identificar si un activo está enviando información de forma continua o si existe un problema de transmisión.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el sensor y el gateway mantienen transmisión normal de datos.<br>
-      <strong>When</strong> el usuario revisa el estado del activo dentro del sistema.<br>
-      <strong>Then</strong> la plataforma muestra que la conectividad se encuentra activa y estable.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la conexión entre el sensor, gateway o red se ha interrumpido.<br>
-      <strong>When</strong> el usuario accede al monitoreo del activo.<br>
-      <strong>Then</strong> el sistema indica que la conectividad está perdida o inestable.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> no existe información suficiente para determinar el estado de conexión.<br>
-      <strong>When</strong> el usuario consulta el panel.<br>
-      <strong>Then</strong> la plataforma muestra el estado como desconocido o pendiente de actualización.
-    </td>
-    <td>EP004</td>
-  </tr>
-  <tr>
-    <td>US023</td>
-    <td>Sincronizar datos almacenados offline</td>
-    <td>
-      <strong>Como</strong> usuario de la plataforma,<br>
-      <strong>Quiero</strong> que los datos capturados durante una pérdida de conexión se sincronicen cuando el sistema recupere conectividad,<br>
-      <strong>Para</strong> conservar el historial completo de las lecturas registradas durante ese periodo.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> hubo una interrupción de red y el dispositivo almacenó lecturas de forma local.<br>
-      <strong>When</strong> la conectividad se restablece.<br>
-      <strong>Then</strong> el sistema sincroniza los datos pendientes con la plataforma central.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la conexión vuelve de forma intermitente o inestable.<br>
-      <strong>When</strong> se intenta sincronizar la información acumulada.<br>
-      <strong>Then</strong> el sistema conserva los datos pendientes y reintenta la sincronización posteriormente.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> parte de los datos offline presenta errores de integridad.<br>
-      <strong>When</strong> el sistema procesa la sincronización.<br>
-      <strong>Then</strong> la plataforma registra los paquetes inválidos y sincroniza únicamente la información válida.
-    </td>
-    <td>EP004</td>
-  </tr>
-  <tr>
-    <td>US024</td>
-    <td>Crear incidencia térmica</td>
-    <td>
-      <strong>Como</strong> usuario de la plataforma,<br>
-      <strong>Quiero</strong> que el sistema cree una incidencia térmica cuando detecte una condición crítica en un activo,<br>
-      <strong>Para</strong> iniciar el seguimiento formal del evento y evitar que el problema pase desapercibido.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el sistema detecta una lectura fuera del rango seguro configurado.<br>
-      <strong>When</strong> la condición supera los criterios establecidos para riesgo operativo.<br>
-      <strong>Then</strong> la plataforma crea automáticamente una incidencia térmica asociada al activo afectado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el activo no tiene configuración suficiente para evaluar la condición detectada.<br>
-      <strong>When</strong> el sistema intenta crear la incidencia.<br>
-      <strong>Then</strong> la plataforma registra el evento como inconsistente y advierte que falta configuración.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> ya existe una incidencia abierta por la misma condición y el mismo activo.<br>
-      <strong>When</strong> se procesa una nueva lectura equivalente.<br>
-      <strong>Then</strong> el sistema evita crear una duplicidad y actualiza la incidencia ya existente.
-    </td>
-    <td>EP005</td>
-  </tr>
-  <tr>
-    <td>US025</td>
-    <td>Disparar notificaciones de alerta</td>
-    <td>
-      <strong>Como</strong> encargado de negocio o responsable de operaciones,<br>
-      <strong>Quiero</strong> recibir notificaciones automáticas cuando ocurra una incidencia crítica,<br>
-      <strong>Para</strong> reaccionar de manera oportuna antes de que el problema afecte los productos o la operación.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existe una incidencia térmica activa clasificada como crítica.<br>
-      <strong>When</strong> el sistema procesa las reglas de notificación configuradas.<br>
-      <strong>Then</strong> la plataforma envía alertas al usuario por los canales definidos, como push, correo o SMS.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> uno de los canales de notificación no está disponible o falla.<br>
-      <strong>When</strong> el sistema intenta despachar la alerta.<br>
-      <strong>Then</strong> la plataforma registra el fallo e intenta continuar con los demás canales disponibles.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario no tiene configurados canales de contacto válidos.<br>
-      <strong>When</strong> se dispara una alerta crítica.<br>
-      <strong>Then</strong> el sistema informa que la notificación no pudo completarse correctamente.
-    </td>
-    <td>EP005</td>
-  </tr>
-  <tr>
-    <td>US026</td>
-    <td>Escalar alerta no atendida</td>
-    <td>
-      <strong>Como</strong> responsable de la operación,<br>
-      <strong>Quiero</strong> que el sistema escale una alerta que no ha sido atendida en el tiempo esperado,<br>
-      <strong>Para</strong> asegurar que el incidente reciba seguimiento y no quede sin respuesta.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> una alerta crítica permanece sin reconocimiento dentro del tiempo de espera configurado.<br>
-      <strong>When</strong> se cumple el umbral de escalamiento.<br>
-      <strong>Then</strong> el sistema escala la alerta hacia un nivel superior de atención o hacia más responsables.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la alerta ya fue reconocida antes de que venza el tiempo definido.<br>
-      <strong>When</strong> el sistema evalúa la necesidad de escalamiento.<br>
-      <strong>Then</strong> la plataforma no ejecuta la escalada.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> no existe una política de escalamiento configurada para ese tipo de alerta.<br>
-      <strong>When</strong> el sistema intenta aplicar la regla.<br>
-      <strong>Then</strong> la plataforma registra la ausencia de configuración y mantiene el incidente en seguimiento.
-    </td>
-    <td>EP005</td>
-  </tr>
-  <tr>
-    <td>US027</td>
-    <td>Reconocer alerta crítica</td>
-    <td>
-      <strong>Como</strong> usuario responsable del monitoreo,<br>
-      <strong>Quiero</strong> reconocer una alerta crítica dentro de la plataforma,<br>
-      <strong>Para</strong> dejar constancia de que el incidente está siendo atendido por una persona responsable.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existe una alerta activa asociada a una incidencia térmica.<br>
-      <strong>When</strong> el usuario la revisa y marca la alerta como reconocida.<br>
-      <strong>Then</strong> el sistema actualiza su estado y registra quién asumió la atención del caso.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la alerta ya fue reconocida por otro usuario.<br>
-      <strong>When</strong> un segundo usuario intenta reconocerla nuevamente.<br>
-      <strong>Then</strong> la plataforma muestra que la atención ya fue asumida y evita ambigüedad operativa.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario no tiene permisos para gestionar incidencias.<br>
-      <strong>When</strong> intenta reconocer la alerta.<br>
-      <strong>Then</strong> el sistema rechaza la acción e informa acceso denegado.
-    </td>
-    <td>EP005</td>
-  </tr>
-  <tr>
-    <td>US028</td>
-    <td>Registrar acción correctiva y cerrar incidencia</td>
-    <td>
-      <strong>Como</strong> usuario responsable de la atención de incidencias,<br>
-      <strong>Quiero</strong> registrar la acción correctiva aplicada y cerrar la incidencia cuando la condición se estabilice,<br>
-      <strong>Para</strong> dejar registro de la medida aplicada, confirmar que el riesgo fue resuelto y conservar el historial del caso.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existe una incidencia abierta y el usuario ya tomó una medida correctiva sobre el activo afectado.<br>
-      <strong>When</strong> registra la acción ejecutada y el sistema confirma la estabilización de la temperatura.<br>
-      <strong>Then</strong> la incidencia se cierra satisfactoriamente y queda almacenada en el historial.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta cerrar la incidencia sin registrar la acción tomada.<br>
-      <strong>When</strong> confirma el cierre del caso.<br>
-      <strong>Then</strong> la plataforma solicita completar la evidencia mínima antes de finalizar la incidencia.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la temperatura aún no ha regresado a un rango estable.<br>
-      <strong>When</strong> el usuario intenta cerrar la incidencia manualmente.<br>
-      <strong>Then</strong> el sistema advierte que el evento sigue activo y evita un cierre inconsistente.
-    </td>
-    <td>EP005</td>
-  </tr>
-  <tr>
-    <td>US029</td>
-    <td>Generar bitácora diaria</td>
-    <td>
-      <strong>Como</strong> responsable de operaciones o calidad,<br>
-      <strong>Quiero</strong> generar una bitácora diaria por fecha y activo monitoreado,<br>
-      <strong>Para</strong> contar con evidencia ordenada del control térmico realizado en la operación y detectar lecturas incompletas.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existen lecturas registradas para la organización durante el día seleccionado.<br>
-      <strong>When</strong> el usuario filtra por fecha y, opcionalmente, por activo y solicita la generación de la bitácora diaria.<br>
-      <strong>Then</strong> el sistema consolida lecturas, promedios, desviaciones, cumplimiento y estado de completitud por activo.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> no existen datos suficientes para el día consultado.<br>
-      <strong>When</strong> el usuario intenta generar la bitácora.<br>
-      <strong>Then</strong> la plataforma informa que no es posible completar el registro diario por ausencia de datos.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> algunos activos tienen menos lecturas que las esperadas según su frecuencia operativa.<br>
-      <strong>When</strong> se ejecuta la generación de la bitácora.<br>
-      <strong>Then</strong> el sistema marca los activos incompletos, muestra lecturas faltantes y conserva la observación en el resumen.
-    </td>
-    <td>EP006</td>
-  </tr>
-  <tr>
-    <td>US030</td>
-    <td>Consultar historial de eventos operativos</td>
-    <td>
-      <strong>Como</strong> responsable de operaciones y control de calidad,<br>
-      <strong>Quiero</strong> consultar el historial de lecturas, alertas e incidencias por activo, periodo y tipo de evento,<br>
-      <strong>Para</strong> reconstruir eventos pasados y verificar cómo evolucionó una situación dentro del sistema.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el sistema dispone de lecturas, alertas e incidencias asociadas al activo consultado.<br>
-      <strong>When</strong> el usuario filtra por periodo, activo y tipo de evento.<br>
-      <strong>Then</strong> la plataforma muestra una línea histórica ordenada con totales, severidad y detalle de cada evento.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> no existen eventos registrados para el criterio solicitado.<br>
-      <strong>When</strong> el usuario intenta consultar el historial.<br>
-      <strong>Then</strong> el sistema indica que no hay información disponible para ese caso.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario no tiene permisos suficientes para acceder a esa información histórica.<br>
-      <strong>When</strong> intenta visualizar el historial.<br>
-      <strong>Then</strong> la plataforma restringe el acceso y muestra un mensaje de autorización insuficiente.
-    </td>
-    <td>EP006</td>
-  </tr>
-  <tr>
-    <td>US031</td>
-    <td>Exportar reporte de cumplimiento sanitario</td>
-    <td>
-      <strong>Como</strong> responsable de calidad,<br>
-      <strong>Quiero</strong> exportar un reporte de cumplimiento sanitario filtrado por periodo y activo,<br>
-      <strong>Para</strong> utilizar evidencia descargable de monitoreo y control en procesos internos o auditorías vinculadas al control sanitario.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el usuario selecciona un periodo y un activo con información suficiente para reportar.<br>
-      <strong>When</strong> solicita la exportación del reporte de cumplimiento sanitario.<br>
-      <strong>Then</strong> el sistema genera un archivo CSV con nombre basado en la organización, el periodo y el activo cuando corresponda.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el rango seleccionado no contiene información mínima para construir el reporte.<br>
-      <strong>When</strong> el usuario intenta exportarlo.<br>
-      <strong>Then</strong> la plataforma informa que no es posible generar el reporte solicitado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta exportar el reporte sin permisos de consulta o descarga.<br>
-      <strong>When</strong> ejecuta la acción.<br>
-      <strong>Then</strong> el sistema bloquea la operación y notifica la restricción de acceso.
-    </td>
-    <td>EP006</td>
-  </tr>
-  <tr>
-    <td>US032</td>
-    <td>Descargar reporte mensual</td>
-    <td>
-      <strong>Como</strong> usuario administrativo de la plataforma,<br>
-      <strong>Quiero</strong> descargar reportes mensuales consolidados y acceder rápidamente al reporte del mes actual,<br>
-      <strong>Para</strong> evaluar el desempeño de la operación y tomar decisiones basadas en datos históricos.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existe información consolidada del mes seleccionado.<br>
-      <strong>When</strong> el usuario solicita la descarga desde la vista mensual o desde el acceso directo del dashboard.<br>
-      <strong>Then</strong> el sistema genera un archivo CSV con nombre basado en la organización y el mes consultado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el periodo solicitado aún no cuenta con información consolidada suficiente.<br>
-      <strong>When</strong> el usuario intenta descargar el reporte.<br>
-      <strong>Then</strong> la plataforma informa que el documento todavía no puede ser generado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> ocurre un error durante el proceso de exportación del archivo.<br>
-      <strong>When</strong> el sistema intenta construir el reporte.<br>
-      <strong>Then</strong> la plataforma informa el fallo y solicita intentar nuevamente.
-    </td>
-    <td>EP006</td>
-  </tr>
-  <tr>
-    <td>US033</td>
-    <td>Detectar faltantes o incumplimientos</td>
-    <td>
-      <strong>Como</strong> responsable de calidad y cumplimiento,<br>
-      <strong>Quiero</strong> identificar registros faltantes, observaciones y posibles incumplimientos por activo y periodo,<br>
-      <strong>Para</strong> corregirlos oportunamente antes de una revisión o auditoría formal.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el sistema evalúa los registros de monitoreo frente a las reglas de control definidas.<br>
-      <strong>When</strong> detecta faltantes de temperatura, vacíos en la bitácora, incidencias abiertas o inconsistencias documentales.<br>
-      <strong>Then</strong> la plataforma marca la situación como observación o incumplimiento potencial y permite filtrarla por estado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la información del periodo es incompleta y no puede evaluarse con certeza.<br>
-      <strong>When</strong> el sistema intenta verificar el cumplimiento.<br>
-      <strong>Then</strong> la plataforma registra la limitación e informa que el análisis no pudo completarse totalmente.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta cerrar la observación sin permisos apropiados.<br>
-      <strong>When</strong> realiza la acción sobre el hallazgo.<br>
-      <strong>Then</strong> el sistema restringe la modificación y conserva la evidencia registrada.
-    </td>
-    <td>EP006</td>
-  </tr>
-  <tr>
-    <td>US034</td>
-    <td>Preparar evidencia para auditoría</td>
-    <td>
-      <strong>Como</strong> responsable de auditoría interna o control de calidad,<br>
-      <strong>Quiero</strong> reunir y exportar evidencia documental de monitoreo, reportes, hallazgos e incidencias,<br>
-      <strong>Para</strong> sustentar el cumplimiento de la operación ante revisiones internas o externas.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> existen registros históricos, incidencias, hallazgos y reportes generados en el sistema.<br>
-      <strong>When</strong> el usuario filtra por periodo y activo y solicita preparar la evidencia para auditoría.<br>
-      <strong>Then</strong> la plataforma consolida un checklist de completitud y permite exportar la evidencia disponible en CSV.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> faltan documentos clave o registros obligatorios para el periodo evaluado.<br>
-      <strong>When</strong> el usuario intenta preparar la evidencia.<br>
-      <strong>Then</strong> el sistema advierte qué elementos faltan y señala que la evidencia está incompleta.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario selecciona un criterio de auditoría fuera del alcance de sus permisos.<br>
-      <strong>When</strong> intenta consolidar la evidencia.<br>
-      <strong>Then</strong> la plataforma restringe la operación y conserva la seguridad de acceso.
-    </td>
-    <td>EP006</td>
-  </tr>
-  <tr>
-    <td>US035</td>
-    <td>Configurar rangos de seguridad</td>
-    <td>
-      <strong>Como</strong> usuario administrativo de la plataforma,<br>
-      <strong>Quiero</strong> configurar rangos seguros de temperatura y humedad por defecto o por activo monitoreado,<br>
-      <strong>Para</strong> adaptar la evaluación del monitoreo a las condiciones reales de conservación que requiere la operación.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> la organización cuenta con activos registrados y datos de monitoreo.<br>
-      <strong>When</strong> el usuario define límites válidos de temperatura y humedad para el alcance seleccionado y guarda la configuración.<br>
-      <strong>Then</strong> el sistema registra el perfil de seguridad y lo utiliza como referencia para evaluar futuras lecturas y reportes.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario ingresa valores inconsistentes, como temperatura mínima mayor que la máxima o humedad fuera del rango permitido.<br>
-      <strong>When</strong> intenta guardar la configuración.<br>
-      <strong>Then</strong> la plataforma rechaza los datos y solicita corregir los parámetros ingresados.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario no tiene permisos de configuración sobre los activos.<br>
-      <strong>When</strong> intenta modificar los rangos definidos.<br>
-      <strong>Then</strong> el sistema bloquea la acción y muestra un mensaje de acceso restringido.
-    </td>
-    <td>EP007</td>
-  </tr>
-  <tr>
-    <td>US036</td>
-    <td>Actualizar parámetros operativos</td>
-    <td>
-      <strong>Como</strong> responsable de la operación,<br>
-      <strong>Quiero</strong> actualizar la frecuencia de lectura y los criterios de evaluación de un dispositivo asociado a un activo,<br>
-      <strong>Para</strong> ajustar el comportamiento del monitoreo al contexto y nivel de criticidad de cada activo.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo dispone de un dispositivo IoT asociado y una configuración operativa activa.<br>
-      <strong>When</strong> el usuario modifica la frecuencia de lectura y selecciona criterios compatibles de evaluación.<br>
-      <strong>Then</strong> la plataforma actualiza la configuración y muestra el nuevo perfil operativo en la tabla de dispositivos configurados.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario define una frecuencia fuera del rango permitido o deja criterios obligatorios sin seleccionar.<br>
-      <strong>When</strong> intenta guardar los cambios.<br>
-      <strong>Then</strong> el sistema rechaza la actualización y solicita corregir los parámetros.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario selecciona criterios incompatibles con las capacidades del sensor o gateway.<br>
-      <strong>When</strong> confirma la actualización.<br>
-      <strong>Then</strong> la plataforma informa la incompatibilidad y mantiene los parámetros operativos anteriores.
-    </td>
-    <td>EP007</td>
-  </tr>
-  <tr>
-    <td>US037</td>
-    <td>Programar mantenimiento preventivo</td>
-    <td>
-      <strong>Como</strong> responsable de calidad u operación,<br>
-      <strong>Quiero</strong> programar mantenimientos preventivos para activos o dispositivos IoT,<br>
-      <strong>Para</strong> reducir el riesgo de fallas operativas y mantener la confiabilidad del monitoreo.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo o dispositivo requiere seguimiento periódico.<br>
-      <strong>When</strong> el usuario registra una programación de mantenimiento preventivo con fecha futura y observaciones.<br>
-      <strong>Then</strong> el sistema agenda la intervención, la muestra en la tabla de mantenimientos y marca el activo para seguimiento.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta programar mantenimiento para un activo inexistente, inactivo o con fecha inválida.<br>
-      <strong>When</strong> guarda la solicitud.<br>
-      <strong>Then</strong> la plataforma rechaza la operación y solicita seleccionar datos válidos.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> ya existe un mantenimiento pendiente para el mismo activo o dispositivo en el mismo periodo.<br>
-      <strong>When</strong> el usuario intenta registrar una nueva programación equivalente.<br>
-      <strong>Then</strong> el sistema advierte la duplicidad y evita generar un seguimiento redundante.
-    </td>
-    <td>EP007</td>
-  </tr>
-  <tr>
-    <td>US038</td>
-    <td>Solicitar y cerrar servicio técnico</td>
-    <td>
-      <strong>Como</strong> usuario responsable del activo,<br>
-      <strong>Quiero</strong> registrar solicitudes de servicio técnico y cerrar la atención con evidencia de intervención,<br>
-      <strong>Para</strong> conservar el historial técnico y devolver el equipo a operación de forma controlada.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el activo presenta una falla o requiere atención técnica correctiva.<br>
-      <strong>When</strong> el usuario registra una solicitud con prioridad y descripción, y posteriormente documenta intervención, resultado y prueba funcional exitosa.<br>
-      <strong>Then</strong> el sistema crea el seguimiento del servicio y permite cerrar el caso correctamente.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el usuario intenta cerrar el servicio sin registrar intervención, resultado o evidencia mínima.<br>
-      <strong>When</strong> confirma el cierre del caso.<br>
-      <strong>Then</strong> la plataforma exige completar la información antes de finalizar el ticket.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> la prueba de funcionamiento posterior al mantenimiento resulta fallida.<br>
-      <strong>When</strong> el usuario intenta cerrar la atención técnica.<br>
-      <strong>Then</strong> el sistema mantiene el servicio abierto y marca el activo como pendiente de nueva revisión.
-    </td>
-    <td>EP007</td>
-  </tr>
-  <tr>
-    <td>TS01</td>
-    <td>Endpoint de registro de usuario</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint POST para registrar usuarios,<br>
-      <strong>Para</strong> que el frontend pueda crear nuevas cuentas desde el formulario de registro.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud POST con datos válidos de usuario.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 201 y el objeto del usuario creado sin incluir la contraseña.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud POST con un correo ya existente.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 400 y un mensaje indicando que el correo ya está en uso.
-    </td>
-    <td>EP008</td>
-  </tr>
-  <tr>
-    <td>TS02</td>
-    <td>Endpoint de inicio de sesión</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint POST para autenticar usuarios,<br>
-      <strong>Para</strong> que el frontend pueda iniciar sesión y recibir un token de acceso.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía credenciales válidas.<br>
-      <strong>When</strong> el servidor las valida.<br>
-      <strong>Then</strong> responde con status 200 y un token junto con los datos básicos del usuario.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía credenciales inválidas.<br>
-      <strong>When</strong> el servidor las valida.<br>
-      <strong>Then</strong> responde con status 401 y un mensaje indicando que las credenciales son incorrectas.
-    </td>
-    <td>EP008</td>
-  </tr>
-  <tr>
-    <td>TS03</td>
-    <td>Endpoint para registrar equipo monitoreado</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint POST para registrar equipos monitoreados,<br>
-      <strong>Para</strong> que el frontend pueda crear cámaras frigoríficas o unidades de operación dentro del sistema.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud POST con nombre, tipo y ubicación válidos.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 201 y el objeto del equipo creado con su identificador generado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud POST sin algún campo obligatorio.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 400 y un mensaje indicando los campos requeridos.
-    </td>
-    <td>EP009</td>
-  </tr>
-  <tr>
-    <td>TS04</td>
-    <td>Endpoint para registrar y vincular sensores</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint POST para registrar sensores y asociarlos a un equipo monitoreado,<br>
-      <strong>Para</strong> que el frontend pueda configurar dispositivos de monitoreo dentro de la operación.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud POST con datos válidos del sensor y un equipo existente.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 201 y confirma la asociación del sensor al equipo.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud con un equipo inexistente.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 404 y un mensaje indicando que el equipo no fue encontrado.
-    </td>
-    <td>EP009</td>
-  </tr>
-  <tr>
-    <td>TS05</td>
-    <td>Endpoint para registrar lecturas de sensor</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint POST para registrar lecturas de temperatura y humedad enviadas por los sensores,<br>
-      <strong>Para</strong> que el sistema pueda almacenarlas y procesarlas para monitoreo y alertas.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud POST con sensor, temperatura y humedad válidos.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 201 y el objeto de la lectura creada con su timestamp.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud POST con un sensor inexistente.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 404 y un mensaje indicando que el sensor no fue encontrado.
-    </td>
-    <td>EP010</td>
-  </tr>
-  <tr>
-    <td>TS06</td>
-    <td>Endpoint para obtener historial de lecturas</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint GET para obtener el historial de lecturas por equipo y rango de fechas,<br>
-      <strong>Para</strong> que el frontend pueda mostrar gráficos y datos históricos al usuario.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud GET con un equipo válido y fechas correctas.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 200 y un arreglo con las lecturas ordenadas por fecha.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud GET con parámetros de fecha inconsistentes.<br>
-      <strong>When</strong> el servidor valida los parámetros.<br>
-      <strong>Then</strong> responde con status 400 y un mensaje indicando el error en la consulta.
-    </td>
-    <td>EP010</td>
-  </tr>
-  <tr>
-    <td>TS07</td>
-    <td>Endpoint para obtener alertas activas</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint GET para obtener las alertas activas de una organización,<br>
-      <strong>Para</strong> que el frontend pueda mostrarlas dentro del panel de monitoreo.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud GET con una organización válida.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 200 y un arreglo con las alertas activas registradas.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud GET para una organización sin alertas activas.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 200 y un arreglo vacío.
-    </td>
-    <td>EP011</td>
-  </tr>
-  <tr>
-    <td>TS08</td>
-    <td>Endpoint para reconocer y cerrar incidencias</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint PUT para actualizar el estado de una incidencia y registrar su atención,<br>
-      <strong>Para</strong> que el frontend pueda reconocer alertas, documentar acciones correctivas y cerrar casos.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud PUT con un identificador de incidencia válido y un estado permitido.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 200 y la incidencia actualizada con su nuevo estado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud PUT con una incidencia inexistente.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 404 y un mensaje indicando que la incidencia no fue encontrada.
-    </td>
-    <td>EP011</td>
-  </tr>
-  <tr>
-    <td>TS09</td>
-    <td>Endpoint para generar bitácora diaria</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint GET para generar la bitácora diaria de monitoreo,<br>
-      <strong>Para</strong> que el frontend pueda consultar y descargar el consolidado operativo del día.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud GET con una fecha válida y datos disponibles.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 200 y la bitácora generada para el periodo consultado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud para un periodo sin información consolidada.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 404 o 400 indicando que no se pudo generar la bitácora.
-    </td>
-    <td>EP012</td>
-  </tr>
-  <tr>
-    <td>TS10</td>
-    <td>Endpoint para exportar reporte de cumplimiento sanitario</td>
-    <td>
-      <strong>Como</strong> developer,<br>
-      <strong>Quiero</strong> un endpoint GET para exportar reportes de cumplimiento sanitario,<br>
-      <strong>Para</strong> que el frontend pueda solicitar evidencia documental lista para descarga o auditoría.
-    </td>
-    <td>
-      <strong>Happy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud GET con un periodo y criterios válidos.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 200 y el archivo o recurso del reporte generado.<br><br>
-      <strong>Unhappy Path:</strong><br>
-      <strong>Given</strong> el developer envía una solicitud con parámetros inválidos o sin información suficiente.<br>
-      <strong>When</strong> el servidor procesa la solicitud.<br>
-      <strong>Then</strong> responde con status 400 o 404 indicando que no fue posible exportar el reporte.
-    </td>
-    <td>EP012</td>
-  </tr>
-</table>
+| **Código** | **Epic** | **Objetivo funcional** | **Alcance** |
+| --- | --- | --- | --- |
+| EP001 | Landing page y captación de visitantes | Presentar la propuesta de valor de ColdTrace y conducir al visitante hacia registro o contacto. | Hero, navegación, features, showcase del producto, proceso, contacto, footer, responsive e i18n. |
+| EP002 | Gestión de usuarios y acceso | Permitir registro, autenticación, autenticación social, recuperación de contraseña y administración básica de usuarios, roles y permisos. | Sign-up, sign-in, social login con Google/Apple, password recovery, reset password, lista de usuarios, formulario de usuario y matriz de roles/permisos. |
+| EP003 | Gestión de activos e infraestructura IoT | Registrar y mantener activos refrigerados, sensores, gateways, calibración, conectividad y parámetros asociados. | Listado y gestión de cámaras/unidades, vinculación de sensores, emparejamiento de gateways y configuración operativa de activos. |
+| EP004 | Monitoreo operacional | Mostrar telemetría, KPIs, estado de activos, tendencias y condiciones fuera de rango. | Dashboard operacional, dashboard por activos, tarjetas de estado, gráficos, alertas recientes y sincronización simulada. |
+| EP005 | Alertas e incidencias | Gestionar notificaciones, incidentes térmicos, reconocimiento y cierre con trazabilidad. | Vistas de incidentes y notificaciones, reconocimiento de alertas críticas, cierre con acción correctiva y seguimiento de escalamiento. |
+| EP006 | Reportes, historial y cumplimiento | Consultar bitácoras, historiales, reportes y evidencias para control operativo y auditoría. | Daily log, historial operacional, cumplimiento sanitario, reporte mensual, hallazgos y evidencia de auditoría. |
+| EP007 | Configuración operativa y mantenimiento | Ajustar rangos, parámetros y actividades de mantenimiento vinculadas a la operación. | Rangos de seguridad, parámetros operativos, mantenimiento preventivo y seguimiento de servicio técnico. |
+| EP008 | RESTful API - Autenticación y acceso | Proveer endpoints reales para registro, inicio de sesión, recuperación, proveedores externos de identidad y autorización por roles. | Registro, autenticación, sesión/token, OAuth/OIDC con Google y Apple, usuarios, roles y permisos. |
+| EP009 | RESTful API - Activos e infraestructura IoT | Persistir activos, sensores, gateways, calibración y parámetros operativos en backend propio. | Activos, sensores, gateways, calibración, rangos y parámetros operativos. |
+| EP010 | RESTful API - Lecturas y monitoreo | Recibir, consultar y sincronizar lecturas de temperatura, humedad y conectividad. | Lecturas de sensores, telemetría, historial y sincronización. |
+| EP011 | RESTful API - Alertas e incidencias | Gestionar incidentes, notificaciones, reconocimiento, cierre y escalamiento desde backend. | Incidentes, notificaciones, reconocimiento, cierre y escalamiento. |
+| EP012 | RESTful API - Reportes, cumplimiento y mantenimiento | Generar reportes, evidencias, mantenimientos y servicios técnicos desde datos persistentes. | Reportes, auditoría, mantenimiento preventivo y servicio técnico. |
+| EP013 | Asistencia inteligente para resolución de incidencias | Guiar al operador desde una incidencia térmica hasta un plan de respuesta aprobado, manteniendo control humano, trazabilidad y evidencia para auditoría. | Generación de plan con IA, revisión y aprobación del operador, registro de acción correctiva, resolución asistida, historial de planes, resumen inteligente de cumplimiento e interpretación conversacional del dashboard operacional. |
+| EP014 | Planes, precios y suscripciones SaaS | Permitir que ColdTrace opere con planes escalonados, límites de uso y pagos de suscripción gestionados mediante un proveedor externo. | Catálogo de planes, pricing en landing, selección de plan, suscripción por organización, límites por plan, checkout, portal de facturación y sincronización de estado de pago. |
+
+### 3.1.2 User Stories and Acceptance Criteria
+
+| **ID** | **Epic** | **User Story** | **Acceptance Criteria** | **Estado actual** |
+| --- | --- | --- | --- | --- |
+| US001 | EP001 | **Como** visitante, **quiero** ver la propuesta de valor de ColdTrace, **para** evaluar si la solución resuelve el control de cadena de frío de mi negocio. | **Scenario: Landing carga la propuesta principal**<br>**Given** el visitante abre la landing page.<br>**When** la página termina de cargar.<br>**Then** se muestra el hero con el problema, el beneficio principal y llamadas a la acción. | Done |
+| US002 | EP001 | **Como** visitante, **quiero** revisar las funcionalidades principales, **para** entender qué incluye ColdTrace antes de registrarme. | **Scenario: Features visibles al navegar**<br>**Given** el visitante está en la landing.<br>**When** navega a la sección de funcionalidades.<br>**Then** se muestran monitoreo, historial, alertas y cumplimiento. | Done |
+| US003 | EP001 | **Como** visitante, **quiero** ver capturas y explicación de la plataforma, **para** comprender cómo opera ColdTrace en una situación real. | **Scenario: Showcase del producto visible**<br>**Given** el visitante llega a la sección de plataforma.<br>**When** revisa los paneles de producto.<br>**Then** observa ejemplos de dashboard, alertas, historial y vista multi-sede. | Done |
+| US004 | EP001 | **Como** visitante, **quiero** acceder al registro o contacto, **para** continuar con el interés comercial en la solución. | **Scenario: CTA dirige al registro**<br>**Given** el visitante selecciona una llamada a la acción.<br>**When** activa el formulario o enlace de registro.<br>**Then** la landing lo conduce al flujo de sign-up del frontend. | Done |
+| US005 | EP001 | **Como** visitante, **quiero** navegar por secciones desde un menú claro, **para** encontrar información sin regresar al inicio manualmente. | **Scenario: Navegación por anclas**<br>**Given** el visitante usa el navbar.<br>**When** selecciona Home, Features, Platform, Reviews, Workflow o Contact.<br>**Then** la página se desplaza a la sección correspondiente. | Done |
+| US006 | EP001 | **Como** visitante móvil, **quiero** que la landing se adapte a mi pantalla, **para** leer y navegar sin elementos cortados. | **Scenario: Vista responsive**<br>**Given** el visitante accede desde un celular.<br>**When** abre el menú móvil y recorre la página.<br>**Then** los contenidos, botones e idioma se mantienen usables. | Done |
+| US007 | EP002 | **Como** visitante autorizado, **quiero** crear una cuenta vinculada a una organización, **para** iniciar ColdTrace como administrador fundador. | **Scenario: Registro válido**<br>**Given** el visitante completa datos de organización y cuenta.<br>**When** envía el formulario de sign-up.<br>**Then** se crea la organización y el usuario fundador.<br><br>**Scenario: Email duplicado**<br>**Given** ya existe una cuenta con el correo ingresado.<br>**When** el visitante intenta registrarse.<br>**Then** el sistema muestra el error correspondiente. | Done |
+| US008 | EP002 | **Como** usuario registrado, **quiero** iniciar sesión, **para** acceder al dashboard con mi organización, rol y permisos. | **Scenario: Credenciales válidas**<br>**Given** el usuario existe en la fuente local de datos.<br>**When** ingresa correo y contraseña válidos.<br>**Then** accede al dashboard operacional.<br><br>**Scenario: Credenciales inválidas**<br>**Given** el correo o contraseña no coincide.<br>**When** intenta iniciar sesión.<br>**Then** el acceso es bloqueado y se muestra un mensaje de error. | Done |
+| US009 | EP002 | **Como** usuario registrado, **quiero** solicitar recuperación de contraseña, **para** validar el flujo de restablecimiento sin depender de email real. | **Scenario: Solicitud de recuperación**<br>**Given** el usuario ingresa un correo registrado.<br>**When** solicita recuperar contraseña.<br>**Then** se muestra la confirmación simulada del proceso. | Done |
+| US010 | EP002 | **Como** administrador, **quiero** gestionar roles y permisos, **para** controlar qué puede hacer cada usuario en la plataforma. | **Scenario: Actualización de permisos**<br>**Given** el administrador abre la matriz de permisos.<br>**When** modifica permisos de un rol.<br>**Then** la interfaz refleja los permisos actualizados para ese rol. | Done |
+| US011 | EP002 | **Como** administrador, **quiero** crear y mantener usuarios internos, **para** asignar responsabilidades operativas dentro de la organización. | **Scenario: Crear usuario interno**<br>**Given** el administrador completa datos de usuario y rol.<br>**When** guarda el formulario.<br>**Then** el usuario aparece en la lista de accesos de la organización. | Done |
+| US012 | EP003 | **Como** responsable de operación, **quiero** registrar cámaras frigoríficas, **para** monitorear activos críticos de almacenamiento. | **Scenario: Registro de cámara**<br>**Given** el usuario tiene permisos de activos.<br>**When** registra una cámara con datos válidos.<br>**Then** el activo aparece en el listado de cámaras frigoríficas. | Done |
+| US013 | EP003 | **Como** responsable logístico, **quiero** registrar unidades de transporte refrigerado, **para** controlar condiciones térmicas en traslado. | **Scenario: Registro de unidad**<br>**Given** el usuario ingresa datos válidos de la unidad.<br>**When** guarda el registro.<br>**Then** la unidad queda disponible para monitoreo y configuración. | Done |
+| US014 | EP003 | **Como** responsable de configuración, **quiero** vincular sensores IoT a activos, **para** capturar lecturas del equipo correcto. | **Scenario: Vinculación exitosa**<br>**Given** existe un activo y un sensor disponible.<br>**When** el usuario confirma la vinculación.<br>**Then** el sensor queda asociado al activo seleccionado. | Done |
+| US015 | EP003 | **Como** administrador operativo, **quiero** emparejar gateways, **para** asegurar transmisión de datos desde sensores hacia ColdTrace. | **Scenario: Gateway conectado**<br>**Given** el gateway está disponible.<br>**When** el usuario lo empareja con la infraestructura IoT.<br>**Then** el sistema muestra estado de conectividad asociado. | Done |
+| US016 | EP003 | **Como** responsable de calidad, **quiero** revisar calibración de sensores, **para** confiar en las lecturas usadas en monitoreo y reportes. | **Scenario: Calibración visible**<br>**Given** los sensores tienen datos de calibración.<br>**When** el usuario consulta el activo.<br>**Then** se muestra vigencia o alerta de calibración. | Done |
+| US017 | EP003 | **Como** responsable de operación, **quiero** actualizar estado y parámetros de un activo, **para** mantener su configuración alineada a la operación real. | **Scenario: Configuración de activo actualizada**<br>**Given** el activo existe.<br>**When** el usuario modifica datos, estado o parámetros IoT.<br>**Then** la información queda visible en la gestión de activos. | Done |
+| US018 | EP004 | **Como** usuario operativo, **quiero** visualizar temperatura actual, **para** detectar desviaciones que puedan comprometer productos. | **Scenario: Temperatura disponible**<br>**Given** existen lecturas para el activo.<br>**When** el usuario abre monitoreo.<br>**Then** se muestra temperatura actual y tendencia. | Done |
+| US019 | EP004 | **Como** usuario operativo, **quiero** visualizar humedad actual, **para** complementar el control de conservación. | **Scenario: Humedad disponible**<br>**Given** existen lecturas de humedad.<br>**When** el usuario revisa el dashboard de activo.<br>**Then** se muestra el valor de humedad y su condición. | Done |
+| US020 | EP004 | **Como** responsable de operación, **quiero** consultar historial de lecturas, **para** analizar comportamiento térmico en el tiempo. | **Scenario: Historial filtrado**<br>**Given** hay lecturas registradas.<br>**When** el usuario revisa gráficos o historial.<br>**Then** el sistema muestra datos por activo y periodo. | Done |
+| US021 | EP004 | **Como** usuario operativo, **quiero** identificar valores fuera de rango, **para** actuar antes de que ocurra una pérdida. | **Scenario: Lectura fuera de rango**<br>**Given** una lectura excede el rango configurado.<br>**When** el dashboard evalúa la condición.<br>**Then** se marca como alerta o riesgo operativo. | Done |
+| US022 | EP004 | **Como** responsable de monitoreo, **quiero** ver conectividad de sensores y gateways, **para** saber si los datos llegan de forma continua. | **Scenario: Estado de conectividad**<br>**Given** existen dispositivos vinculados.<br>**When** el usuario abre monitoreo por activo.<br>**Then** se muestra estado conectado, degradado o sin conexión. | Done |
+| US023 | EP004 | **Como** usuario operativo, **quiero** sincronizar datos pendientes, **para** conservar lecturas generadas durante interrupciones de conexión. | **Scenario: Sincronización simulada**<br>**Given** existen lecturas pendientes.<br>**When** el usuario ejecuta la sincronización.<br>**Then** el sistema actualiza el estado de las lecturas. | Done |
+| US024 | EP005 | **Como** responsable de operación, **quiero** visualizar incidencias térmicas, **para** dar seguimiento formal a eventos críticos. | **Scenario: Incidencias listadas**<br>**Given** existen incidentes en la organización.<br>**When** el usuario abre Alertas e Incidencias.<br>**Then** se muestra la lista con estado, activo y severidad. | Done |
+| US025 | EP005 | **Como** responsable de operación, **quiero** revisar notificaciones de alerta, **para** conocer mensajes enviados o pendientes por incidente. | **Scenario: Notificaciones visibles**<br>**Given** existen notificaciones registradas.<br>**When** el usuario abre la vista de notificaciones.<br>**Then** se muestra mensaje, canal, estado e incidente relacionado. | Done |
+| US026 | EP005 | **Como** responsable de operación, **quiero** revisar escalamiento de alertas no atendidas, **para** asegurar que ningún incidente quede sin respuesta. | **Scenario: Incidente escalado**<br>**Given** un incidente cumple criterios de escalamiento.<br>**When** el usuario revisa la incidencia.<br>**Then** el sistema muestra su estado de escalamiento. | Backlog |
+| US027 | EP005 | **Como** usuario responsable, **quiero** reconocer una alerta crítica, **para** dejar constancia de que está siendo atendida. | **Scenario: Reconocimiento registrado**<br>**Given** existe una alerta crítica abierta.<br>**When** el usuario la reconoce.<br>**Then** se registra responsable y momento de reconocimiento. | Done |
+| US028 | EP005 | **Como** usuario responsable, **quiero** cerrar una incidencia con acción correctiva, **para** conservar evidencia de la respuesta aplicada. | **Scenario: Cierre con evidencia**<br>**Given** el incidente fue revisado.<br>**When** el usuario registra acción correctiva y cierra el caso.<br>**Then** la incidencia cambia de estado y conserva la trazabilidad. | Done |
+| US029 | EP006 | **Como** responsable de calidad, **quiero** generar una bitácora diaria, **para** revisar lecturas esperadas, registradas y faltantes. | **Scenario: Bitácora diaria generada**<br>**Given** existen lecturas para una fecha.<br>**When** el usuario abre Daily Log.<br>**Then** se agrupan lecturas por activo con estado de completitud. | Done |
+| US030 | EP006 | **Como** responsable de operación, **quiero** consultar historial de eventos, **para** reconstruir lecturas, alertas e incidencias pasadas. | **Scenario: Historial operacional**<br>**Given** existen eventos registrados.<br>**When** el usuario filtra por periodo o activo.<br>**Then** se muestra una línea de tiempo y métricas de resumen. | Done |
+| US031 | EP006 | **Como** responsable de calidad, **quiero** exportar reporte de cumplimiento sanitario, **para** sustentar revisiones internas o auditorías. | **Scenario: Reporte de cumplimiento**<br>**Given** hay datos para el periodo seleccionado.<br>**When** el usuario genera el reporte.<br>**Then** se presenta información de cumplimiento y opción de descarga. | Done |
+| US032 | EP006 | **Como** usuario administrativo, **quiero** descargar un reporte mensual, **para** evaluar el desempeño consolidado de la operación. | **Scenario: Reporte mensual**<br>**Given** hay información del mes.<br>**When** el usuario abre Monthly Report.<br>**Then** se muestra el resumen mensual descargable. | Done |
+| US033 | EP006 | **Como** responsable de cumplimiento, **quiero** detectar faltantes o incumplimientos, **para** corregirlos antes de una auditoría. | **Scenario: Hallazgos visibles**<br>**Given** existen brechas o registros incompletos.<br>**When** el usuario abre Compliance Findings.<br>**Then** se listan hallazgos con prioridad y estado. | Done |
+| US034 | EP006 | **Como** responsable de auditoría, **quiero** preparar evidencia documental, **para** sustentar el cumplimiento operativo de ColdTrace. | **Scenario: Evidencia preparada**<br>**Given** existen reportes, hallazgos e incidencias.<br>**When** el usuario abre Audit Evidence.<br>**Then** se muestra checklist y registros descargables. | Done |
+| US035 | EP007 | **Como** administrador operativo, **quiero** configurar rangos de seguridad, **para** adaptar alertas a cada activo o tipo de producto. | **Scenario: Rango configurado**<br>**Given** existe un activo monitoreado.<br>**When** el usuario define límites de temperatura y humedad.<br>**Then** los dashboards evalúan lecturas contra esos límites. | Done |
+| US036 | EP007 | **Como** responsable de operación, **quiero** actualizar parámetros operativos, **para** ajustar frecuencia y criterios de monitoreo. | **Scenario: Parámetro actualizado**<br>**Given** el usuario abre Operational Parameters.<br>**When** modifica frecuencia o tolerancia.<br>**Then** el sistema muestra la configuración actualizada. | Done |
+| US037 | EP007 | **Como** responsable de mantenimiento, **quiero** programar mantenimiento preventivo, **para** reducir fallas de activos y sensores. | **Scenario: Mantenimiento programado**<br>**Given** existe un activo registrado.<br>**When** el usuario agenda una actividad preventiva.<br>**Then** la actividad queda listada con fecha, activo y estado. | Done |
+| US038 | EP007 | **Como** responsable técnico, **quiero** registrar y cerrar solicitudes de servicio, **para** conservar historial de intervención del activo. | **Scenario: Servicio técnico cerrado**<br>**Given** existe una solicitud abierta.<br>**When** el usuario registra resultado y cierre.<br>**Then** la solicitud conserva evidencia y estado final. | Done |
+| US039 | EP004 | **Como** gerente de operaciones, **quiero** visualizar un dashboard operacional consolidado, **para** conocer KPIs, alertas, distribución de activos y mantenimiento en una sola vista. | **Scenario: Dashboard operativo cargado**<br>**Given** existen activos, lecturas, alertas y mantenimiento.<br>**When** el usuario abre `/monitoring/operational` o el dashboard inicial.<br>**Then** se muestran KPIs, gráficos, alertas recientes y estado operativo. | Done |
+| US040 | EP013 | **Como** responsable de operación, **quiero** generar un plan asistido por IA para una incidencia térmica abierta, **para** entender rápidamente la causa probable y las acciones recomendadas. | **Scenario: Plan de respuesta generado**<br>**Given** existe una incidencia abierta con activo, lectura, rango seguro e historial operativo disponible.<br>**When** el usuario solicita asistencia inteligente.<br>**Then** el sistema muestra un plan estructurado con resumen, causa probable, pasos recomendados, evidencia requerida y borrador de acción correctiva. | Sprint 4 / Planned |
+| US041 | EP013 | **Como** operador responsable, **quiero** aprobar o editar el plan sugerido por IA, **para** registrar una acción correctiva validada antes de cerrar la incidencia. | **Scenario: Plan aprobado por operador**<br>**Given** existe un plan generado para una incidencia abierta o reconocida.<br>**When** el operador revisa, edita si corresponde y aprueba el plan.<br>**Then** el backend registra la acción correctiva, guarda la aprobación y resuelve la incidencia con trazabilidad. | Sprint 4 / Planned |
+| US042 | EP013 | **Como** operador responsable, **quiero** rechazar un plan de IA con un motivo, **para** evitar que una recomendación inadecuada quede como decisión operativa. | **Scenario: Plan rechazado**<br>**Given** existe un plan generado que no corresponde a la operación real.<br>**When** el operador rechaza el plan e ingresa el motivo.<br>**Then** el sistema conserva el rechazo y mantiene la incidencia sin resolver. | Sprint 4 / Planned |
+| US043 | EP013 | **Como** responsable de calidad, **quiero** revisar el historial de planes generados, aprobados o rechazados para una incidencia, **para** sustentar la toma de decisiones ante auditorías. | **Scenario: Historial de asistencia visible**<br>**Given** una incidencia tiene planes de IA asociados.<br>**When** el responsable de calidad abre el detalle de la incidencia.<br>**Then** se muestran estado del plan, usuario aprobador o rechazador, fecha, acción final y evidencia solicitada. | Sprint 4 / Planned |
+| US044 | EP013 | **Como** responsable de cumplimiento, **quiero** generar un resumen inteligente de cumplimiento desde reportes e incidencias, **para** explicar brechas, riesgos y acciones correctivas en lenguaje claro. | **Scenario: Resumen de cumplimiento generado**<br>**Given** existe un reporte de cumplimiento con lecturas, incidentes y hallazgos del periodo.<br>**When** el usuario solicita el resumen inteligente.<br>**Then** el sistema presenta una síntesis con riesgos, activos críticos, cumplimiento del periodo y recomendaciones de seguimiento. | Sprint 4 / Planned |
+| US045 | EP014 | **Como** visitante, **quiero** comparar los planes Base, Operaciones y Compliance AI en la landing, **para** entender qué funcionalidades y límites incluye cada alternativa antes de registrarme. | **Scenario: Planes visibles en landing**<br>**Given** el visitante llega a la sección de precios.<br>**When** revisa los planes disponibles.<br>**Then** se muestran precio referencial, límites de sedes, activos, sensores, reportes, IA y llamadas a la acción diferenciadas. | Sprint 4 / Planned |
+| US046 | EP014 | **Como** administrador fundador, **quiero** seleccionar un plan al crear o configurar mi organización, **para** iniciar ColdTrace con un alcance acorde al tamaño de mi operación. | **Scenario: Plan asociado a organización**<br>**Given** el administrador completa el registro de organización.<br>**When** selecciona un plan gratuito o pagado.<br>**Then** el backend registra la suscripción inicial de la organización con estado y límites correspondientes. | Sprint 4 / Planned |
+| US047 | EP014 | **Como** administrador de organización, **quiero** ver mi plan actual, estado de pago y consumo de límites, **para** saber cuándo necesito ampliar mi suscripción. | **Scenario: Uso del plan visible**<br>**Given** la organización tiene una suscripción activa o gratuita.<br>**When** el administrador abre la vista de billing.<br>**Then** se muestran plan, estado, próxima renovación, uso de sedes, activos, sensores, usuarios y funcionalidades disponibles. | Sprint 4 / Planned |
+| US048 | EP014 | **Como** administrador de organización, **quiero** actualizar a un plan pagado mediante Stripe Checkout, **para** habilitar más capacidad sin que ColdTrace almacene datos de tarjeta. | **Scenario: Checkout iniciado**<br>**Given** el administrador elige un plan pagado.<br>**When** solicita actualizar la suscripción.<br>**Then** el backend crea una sesión de checkout y redirige al usuario a Stripe para completar el pago. | Sprint 4 / Planned |
+| US049 | EP014 | **Como** administrador de organización, **quiero** gestionar mi facturación desde un portal seguro, **para** actualizar método de pago, revisar facturas o cancelar la suscripción. | **Scenario: Portal de facturación abierto**<br>**Given** la organización tiene un cliente de Stripe asociado.<br>**When** el administrador solicita gestionar facturación.<br>**Then** el backend crea una sesión de Customer Portal y redirige al usuario al portal del proveedor. | Sprint 4 / Planned |
+| US050 | EP014 | **Como** usuario operativo, **quiero** que las funciones no incluidas en mi plan aparezcan bloqueadas con una explicación clara, **para** entender qué debo actualizar sin perder el contexto de trabajo. | **Scenario: Límite de plan aplicado**<br>**Given** la organización alcanzó el límite de activos o intenta usar una función no incluida.<br>**When** el usuario ejecuta la acción.<br>**Then** el sistema bloquea la operación, explica el límite y ofrece actualizar el plan si corresponde. | Sprint 4 / Planned |
+| US051 | EP013 | **Como** gerente de operaciones, **quiero** abrir un asistente de IA desde el dashboard principal, **para** interpretar los KPIs y gráficos generales sin ocupar espacio permanente en la vista. | **Scenario: Panel de insights abierto bajo demanda**<br>**Given** el dashboard operacional muestra KPIs, gráficos, incidencias y mantenimiento.<br>**When** el usuario activa el botón flotante de AI insights.<br>**Then** se abre un panel superpuesto con lectura general, señales prioritarias y respuestas a preguntas sobre los datos visibles, sin desplazar el layout principal. | Sprint 4 / Planned |
+| US052 | EP002 | **Como** usuario de ColdTrace, **quiero** crear o iniciar sesión con Google o Apple, **para** acceder más rápido sin gestionar una contraseña específica de ColdTrace y manteniendo mi organización, rol y permisos. | **Scenario: Google/Apple conectado a ColdTrace**<br>**Given** el usuario tiene una identidad de Google o Apple vinculada a una cuenta de ColdTrace.<br>**When** inicia sesión con el proveedor externo.<br>**Then** el backend valida la identidad externa y emite una sesión JWT propia de ColdTrace con organización, rol y permisos.<br><br>**Scenario: Identidad social sin organización**<br>**Given** la identidad externa es válida pero no pertenece a una organización de ColdTrace.<br>**When** termina el flujo OAuth/OIDC.<br>**Then** el sistema guía al usuario a completar el registro de organización o invitación antes de permitir acceso operativo. | Sprint 4 / Planned |
+| US053 | EP013 | **Como** operador responsable, **quiero** usar un panel de AI Guidance dentro del detalle de una incidencia, **para** generar, revisar, editar, aprobar o rechazar un plan asistido sin salir del flujo de alertas. | **Scenario: Panel usado desde incidencia**<br>**Given** el operador visualiza una incidencia abierta.<br>**When** abre AI Guidance y solicita un plan.<br>**Then** la vista muestra el plan pendiente, permite aprobar o rechazar y conserva la incidencia sin resolver hasta la aprobación explícita. | Sprint 4 / Planned |
+| US054 | EP014 | **Como** administrador de organización, **quiero** gestionar mi plan, consumo, upgrade y acceso al portal de facturación desde ColdTrace, **para** controlar la capacidad de mi suscripción sin salir del contexto operativo. | **Scenario: Billing gestionado en aplicación**<br>**Given** el administrador abre la vista de billing.<br>**When** existen datos de suscripción.<br>**Then** visualiza plan, estado, consumo, acciones de upgrade, portal de facturación y funciones bloqueadas según corresponda. | Sprint 4 / Planned |
+| US055 | EP014 | **Como** visitante, **quiero** comparar los planes de ColdTrace desde la landing page, **para** entender precios, límites y llamadas a la acción antes de crear una cuenta. | **Scenario: Planes comparados en landing**<br>**Given** el visitante revisa la sección de precios.<br>**When** se muestran los planes Base, Operaciones y Compliance AI.<br>**Then** cada plan presenta límites comparables, precio referencial y CTA sin desbordes en mobile o desktop. | Sprint 4 / Planned |
+| US056 | EP013 | **Como** gerente de operaciones, **quiero** consultar una interpretación de IA del dashboard bajo demanda, **para** entender KPIs, gráficos, incidencias, cumplimiento y mantenimiento sin ampliar permanentemente la vista. | **Scenario: Interpretación abierta bajo demanda**<br>**Given** el dashboard está visible y el panel de IA está cerrado.<br>**When** el gerente activa el launcher de IA.<br>**Then** se abre un panel superpuesto con lectura operacional, señales prioritarias y preguntas sugeridas, sin desplazar el layout. | Sprint 4 / Planned |
+| US057 | EP002 | **Como** usuario de ColdTrace, **quiero** iniciar el acceso con Google o Apple desde las pantallas de autenticación existentes, **para** ingresar más rápido manteniendo las reglas de organización, rol y permisos. | **Scenario: Botón social inicia autenticación**<br>**Given** el usuario está en sign-in o sign-up.<br>**When** selecciona Google o Apple.<br>**Then** el frontend inicia el flujo soportado por backend y maneja éxito, cancelación, error u onboarding requerido sin exponer secretos del proveedor. | Sprint 4 / Planned |
+
+### 3.1.3 Technical Stories
+
+Las historias técnicas se actualizan para AV2 con un enfoque de contrato de API consumible por la Frontend Web Application. Cada historia identifica el endpoint principal, el propósito de integración y criterios observables mediante respuestas HTTP, validaciones y persistencia de datos.
+
+Para el Sprint 4 se agregan historias técnicas asociadas a las épicas EP013, EP014 y EP008. Los identificadores continúan desde TS18 porque TS16 y TS17 quedaron documentadas en el Sprint 3 como Organizations API Base y Locations API.
+
+Para mantener la integración alineada con el material de Spring AI del curso, ColdTrace no acopla la lógica de negocio a un proveedor específico. La estrategia definida es usar Spring AI como capa de abstracción: en desarrollo local se propone Ollama con el modelo `gemma3:4b`, mientras que en el entorno desplegado académico se propone OpenAI con el modelo `gpt-5.4-mini`. Esta decisión permite probar sin costo localmente y mantener una versión desplegada liviana en Cloud Run, ya que el backend solo invoca un proveedor externo mediante HTTPS y conserva `modelProvider` y `modelName` como configuración por entorno. La propuesta se fundamenta en la API portable de `ChatModel`/`ChatClient` de Spring AI, el soporte oficial de Spring AI para Ollama y OpenAI, la disponibilidad del modelo `gemma3` en Ollama y la documentación de modelos/precios de OpenAI (Spring AI, s. f.-a; Spring AI, s. f.-b; Spring AI, s. f.-c; Ollama, s. f.; OpenAI, s. f.-a; OpenAI, s. f.-b).
+
+Las historias de autenticación social se fundamentan en los flujos oficiales de Google OpenID Connect/OAuth 2.0 para aplicaciones web de servidor y en Sign in with Apple, donde el backend debe validar la identidad externa antes de emitir una sesión propia de ColdTrace. Por ello, Google y Apple se tratan como proveedores de identidad, no como fuentes de autorización interna, roles o pertenencia a organización (Google Developers, s. f.-a; Google Developers, s. f.-b; Apple Developer, s. f.-a; Apple Developer, s. f.-b).
+
+Las historias de billing se sustentan en Stripe Checkout, Customer Portal y webhooks. Checkout permite crear sesiones de pago o suscripción desde backend, Customer Portal delega la gestión de facturación al proveedor, y los webhooks permiten sincronizar cambios de suscripción sin que ColdTrace almacene datos sensibles de tarjeta (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
+
+| **ID** | **Epic** | **Endpoint principal** | **Technical Story** | **Acceptance Criteria** | **Estado actual** |
+| --- | --- | --- | --- | --- | --- |
+| TS01 | EP008 | `POST /api/v1/organizations`, `POST /api/v1/users`, `GET /api/v1/roles` | **Como** frontend developer, **quiero** registrar una organización y su usuario fundador desde la API, **para** reemplazar el registro simulado del frontend por persistencia real. | **Scenario: Registro exitoso**<br>**Given** el request incluye datos válidos de organización y usuario fundador.<br>**When** la API persiste la organización y el usuario fundador.<br>**Then** responde con los recursos creados y el rol fundador correspondiente.<br><br>**Scenario: Datos inválidos**<br>**Given** el request omite campos requeridos o envía valores inválidos.<br>**When** la API valida el recurso.<br>**Then** responde `400 Bad Request` con detalle de campos inválidos.<br><br>**Scenario: Correo duplicado**<br>**Given** ya existe un usuario con el mismo correo.<br>**When** se intenta registrar nuevamente.<br>**Then** responde `409 Conflict` sin crear registros duplicados. | Sprint 3 / Planned |
+| TS02 | EP008 | `POST /api/v1/authentication/sign-in` | **Como** frontend developer, **quiero** autenticar usuarios contra la API, **para** iniciar sesión con una respuesta usable por la aplicación web. | **Scenario: Login válido**<br>**Given** el usuario existe y las credenciales son correctas.<br>**When** el frontend envía la solicitud de inicio de sesión.<br>**Then** la API responde `200 OK` con datos del usuario, organización, rol, permisos y credencial de acceso.<br><br>**Scenario: Credenciales incorrectas**<br>**Given** el correo o contraseña no coincide.<br>**When** la API evalúa el acceso.<br>**Then** responde `401 Unauthorized` con mensaje controlado.<br><br>**Scenario: Request inválido**<br>**Given** faltan credenciales requeridas.<br>**When** la API valida el recurso.<br>**Then** responde `400 Bad Request`. | Backlog / Deferred |
+| TS03 | EP008 | `GET /api/v1/users`, `POST /api/v1/users`, `PUT /api/v1/users/{userId}`, `DELETE /api/v1/users/{userId}`, `GET /api/v1/organizations`, `GET /api/v1/roles` | **Como** frontend developer, **quiero** administrar usuarios internos desde la API, **para** soportar la vista de accesos de ColdTrace. | **Scenario: Usuarios consultados**<br>**Given** existen usuarios en una organización.<br>**When** el frontend consulta la lista de accesos.<br>**Then** la API responde `200 OK` con usuarios, organización y rol asociado.<br><br>**Scenario: Usuario interno creado o actualizado**<br>**Given** el request incluye datos válidos y un rol existente.<br>**When** la API registra o actualiza al usuario.<br>**Then** responde con el usuario persistido.<br><br>**Scenario: Usuario inexistente**<br>**Given** el request usa un usuario no registrado.<br>**When** la API valida la solicitud.<br>**Then** responde `404 Not Found`. | Sprint 3 / Planned |
+| TS04 | EP009 | `GET /api/v1/assets`, `POST /api/v1/assets`, `PUT /api/v1/assets/{assetId}`, `DELETE /api/v1/assets/{assetId}` | **Como** frontend developer, **quiero** administrar activos refrigerados mediante la API, **para** persistir cámaras frigoríficas y unidades de transporte usadas por monitoreo. | **Scenario: Activo creado**<br>**Given** el request incluye nombre, tipo, ubicación y estado operativo.<br>**When** la API registra el activo.<br>**Then** responde `201 Created` con el recurso persistido.<br><br>**Scenario: Listado filtrado**<br>**Given** existen activos por tipo, ubicación o estado.<br>**When** el frontend consulta con filtros.<br>**Then** la API responde `200 OK` con la colección correspondiente.<br><br>**Scenario: Activo no encontrado**<br>**Given** se actualiza o elimina un `assetId` inexistente.<br>**When** la API procesa la solicitud.<br>**Then** responde `404 Not Found`. | Sprint 3 / Planned |
+| TS05 | EP009 | `GET /api/v1/iot-devices`, `POST /api/v1/iot-devices`, `PUT /api/v1/iot-devices/{iotDeviceId}`, `DELETE /api/v1/iot-devices/{iotDeviceId}` | **Como** frontend developer, **quiero** registrar sensores y vinculaciones a activos, **para** configurar dispositivos IoT desde el backend. | **Scenario: Dispositivo vinculado**<br>**Given** existe un activo y un sensor disponible.<br>**When** el frontend actualiza el dispositivo con el `assetId` correspondiente.<br>**Then** la API persiste la asociación.<br><br>**Scenario: Parámetros actualizados**<br>**Given** el sensor existe.<br>**When** el frontend modifica frecuencia, calibración o conectividad.<br>**Then** la API persiste los cambios.<br><br>**Scenario: Dispositivo ya asignado**<br>**Given** el sensor ya está vinculado a otro activo activo.<br>**When** se intenta vincular nuevamente.<br>**Then** responde `409 Conflict`. | Sprint 3 / Planned |
+| TS06 | EP009 | `GET /api/v1/asset-settings`, `POST /api/v1/asset-settings`, `PUT /api/v1/asset-settings/{assetSettingsId}`, `DELETE /api/v1/asset-settings/{assetSettingsId}` | **Como** frontend developer, **quiero** consultar y actualizar rangos seguros, **para** que monitoreo y alertas usen configuración persistente. | **Scenario: Configuración consultada**<br>**Given** un activo tiene rangos configurados.<br>**When** el frontend consulta sus parámetros.<br>**Then** la API responde `200 OK` con límites de temperatura y humedad.<br><br>**Scenario: Configuración actualizada**<br>**Given** el request contiene límites coherentes de temperatura y humedad.<br>**When** la API guarda los cambios.<br>**Then** responde `200 OK` con la nueva configuración.<br><br>**Scenario: Rango inválido**<br>**Given** el mínimo es mayor al máximo o faltan valores requeridos.<br>**When** la API valida el recurso.<br>**Then** responde `400 Bad Request`. | Sprint 3 / Planned |
+| TS07 | EP010 | `POST /api/v1/sensor-readings`, `GET /api/v1/sensor-readings` | **Como** frontend developer, **quiero** registrar y consultar lecturas de sensores, **para** alimentar dashboards, historial y reportes desde datos persistentes. | **Scenario: Lectura registrada**<br>**Given** el request contiene activo, sensor, temperatura, humedad, conectividad y timestamp.<br>**When** la API persiste la lectura.<br>**Then** responde `201 Created` con la lectura registrada.<br><br>**Scenario: Historial filtrado**<br>**Given** existen lecturas para un activo y periodo.<br>**When** el frontend consulta por `assetId`, rango de fechas y ordenamiento.<br>**Then** la API responde `200 OK` con lecturas ordenadas.<br><br>**Scenario: Sensor inexistente**<br>**Given** la lectura referencia un sensor no registrado.<br>**When** la API valida la relación.<br>**Then** responde `404 Not Found`. | Sprint 3 / Planned |
+| TS08 | EP011 | `GET /api/v1/incidents`, `POST /api/v1/incidents`, `PUT /api/v1/incidents/{incidentId}`, `GET /api/v1/notifications`, `POST /api/v1/notifications` | **Como** frontend developer, **quiero** gestionar incidentes y notificaciones desde la API, **para** reemplazar alertas simuladas por eventos operativos trazables. | **Scenario: Incidente creado**<br>**Given** una lectura o solicitud indica desviación de rango.<br>**When** la API registra el incidente.<br>**Then** responde `201 Created` con severidad, estado y activo relacionado.<br><br>**Scenario: Incidentes activos consultados o actualizados**<br>**Given** existen incidentes abiertos o en seguimiento.<br>**When** el frontend consulta o actualiza el incidente.<br>**Then** la API responde con la colección o recurso persistido.<br><br>**Scenario: Notificaciones creadas o consultadas**<br>**Given** un incidente tiene notificaciones asociadas.<br>**When** el frontend crea o consulta sus mensajes.<br>**Then** la API responde con canal, estado y fecha de entrega. | Sprint 3 / Planned |
+| TS09 | EP011 | `PUT /api/v1/incidents/{incidentId}` | **Como** frontend developer, **quiero** actualizar el ciclo de vida de una incidencia, **para** registrar reconocimiento, acción correctiva, cierre y escalamiento. | **Scenario: Reconocimiento registrado**<br>**Given** existe una incidencia abierta.<br>**When** el usuario responsable la reconoce.<br>**Then** la API persiste responsable y fecha de reconocimiento.<br><br>**Scenario: Cierre con acción correctiva**<br>**Given** la incidencia está reconocida y el request incluye acción correctiva.<br>**When** la API actualiza la incidencia.<br>**Then** persiste estado final, evidencia y fecha de cierre.<br><br>**Scenario: Escalamiento aplicado**<br>**Given** una incidencia no fue atendida dentro del tiempo configurado.<br>**When** se actualizan los campos de escalamiento.<br>**Then** la API responde con nuevo nivel de prioridad y trazabilidad. | Sprint 3 / Planned |
+| TS10 | EP012 | `GET /api/v1/reports`, `POST /api/v1/reports` | **Como** frontend developer, **quiero** consultar reportes y evidencia desde la API, **para** generar vistas de cumplimiento con datos consolidados. | **Scenario: Reporte creado o consultado**<br>**Given** existen datos de lecturas, incidentes y cumplimiento.<br>**When** el frontend consulta o crea reportes.<br>**Then** la API responde con recursos persistidos para las vistas de reportes.<br><br>**Scenario: Tipo de reporte preservado**<br>**Given** el frontend crea bitácora, reporte mensual, cumplimiento o evidencia.<br>**When** la API persiste el recurso.<br>**Then** conserva el tipo y la relación con la organización. | Sprint 3 / Planned |
+| TS11 | EP008 | `GET /api/v1/password-reset-requests`, `POST /api/v1/password-reset-requests`, `PUT /api/v1/password-reset-requests/{passwordResetRequestId}` | **Como** frontend developer, **quiero** gestionar solicitudes de recuperación de contraseña desde la API, **para** soportar el flujo existente del frontend cuando el curso cubra autenticación. | **Scenario: Solicitud creada**<br>**Given** existe un usuario registrado.<br>**When** el frontend solicita recuperación.<br>**Then** la API responde `201 Created` con estado y expiración.<br><br>**Scenario: Correo inexistente**<br>**Given** el correo no pertenece a un usuario registrado.<br>**When** se solicita recuperación.<br>**Then** la API responde con error controlado.<br><br>**Scenario: Solicitud completada o expirada**<br>**Given** existe una solicitud pendiente.<br>**When** se actualiza su estado.<br>**Then** la API persiste el cambio. | Backlog / Deferred |
+| TS12 | EP008 | `GET /api/v1/roles`, `PUT /api/v1/roles/{roleId}` | **Como** frontend developer, **quiero** actualizar roles y permisos desde la API, **para** soportar la matriz de permisos de ColdTrace. | **Scenario: Roles consultados**<br>**Given** existen roles configurados.<br>**When** el frontend abre permisos.<br>**Then** la API devuelve roles y permisos disponibles.<br><br>**Scenario: Permisos actualizados**<br>**Given** un rol existe.<br>**When** el frontend guarda permisos.<br>**Then** la API persiste la matriz actualizada. | Sprint 3 / Planned |
+| TS13 | EP009 | `GET /api/v1/gateways`, `POST /api/v1/gateways`, `PUT /api/v1/gateways/{gatewayId}`, `DELETE /api/v1/gateways/{gatewayId}` | **Como** frontend developer, **quiero** administrar gateways desde la API, **para** mantener conectividad y ubicación de la infraestructura IoT. | **Scenario: Gateway creado o consultado**<br>**Given** el request contiene datos válidos.<br>**When** la API crea o lista gateways.<br>**Then** responde con estado, ubicación y organización.<br><br>**Scenario: Gateway actualizado o eliminado**<br>**Given** el gateway existe.<br>**When** el frontend modifica o elimina el recurso.<br>**Then** la API persiste el cambio o retorna conflicto controlado. | Sprint 3 / Planned |
+| TS14 | EP012 | `GET /api/v1/maintenance-schedules`, `POST /api/v1/maintenance-schedules`, `PUT /api/v1/maintenance-schedules/{maintenanceScheduleId}` | **Como** frontend developer, **quiero** gestionar mantenimientos preventivos desde la API, **para** soportar la vista de mantenimiento y los dashboards. | **Scenario: Mantenimiento programado**<br>**Given** existe un activo.<br>**When** el frontend crea una programación.<br>**Then** la API persiste fecha, estado y responsable.<br><br>**Scenario: Estado actualizado**<br>**Given** una programación existe.<br>**When** el frontend cambia su estado.<br>**Then** la API retorna el mantenimiento actualizado. | Sprint 3 / Planned |
+| TS15 | EP012 | `GET /api/v1/technical-service-requests`, `POST /api/v1/technical-service-requests`, `PUT /api/v1/technical-service-requests/{technicalServiceRequestId}` | **Como** frontend developer, **quiero** gestionar solicitudes de servicio técnico desde la API, **para** registrar atención y cierre de intervenciones. | **Scenario: Solicitud técnica creada**<br>**Given** existe un activo.<br>**When** el frontend registra una solicitud.<br>**Then** la API persiste prioridad, estado y responsable.<br><br>**Scenario: Solicitud cerrada**<br>**Given** la solicitud existe.<br>**When** el frontend guarda cierre y evidencia textual.<br>**Then** la API persiste estado final y metadatos de cierre. | Sprint 3 / Planned |
+| TS18 | EP013 | Configuración Spring AI | **Como** backend developer, **quiero** configurar Spring AI y un proveedor de modelo con salida estructurada, **para** generar planes de resolución sin acoplar el dominio a un proveedor específico. | **Scenario: Cliente de IA disponible**<br>**Given** el backend cuenta con configuración de modelo y credenciales por entorno.<br>**When** un servicio de aplicación solicita asistencia.<br>**Then** utiliza `ChatClient`, plantillas de prompt y conversión a un recurso Java tipado sin exponer secretos.<br><br>**Scenario: Proveedor intercambiable por entorno**<br>**Given** el entorno local define `AI_MODEL_PROVIDER=ollama` y `AI_MODEL_NAME=gemma3:4b`, o el entorno desplegado define `AI_MODEL_PROVIDER=openai` y `AI_MODEL_NAME=gpt-5.4-mini`.<br>**When** el backend inicia la capa de asistencia inteligente.<br>**Then** selecciona el adaptador configurado sin modificar la lógica de dominio ni exponer claves en el repositorio. | Sprint 4 / Planned |
+| TS19 | EP013 | `POST /api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans` | **Como** backend developer, **quiero** generar un plan de resolución de incidencia con contexto real de ColdTrace, **para** entregar recomendaciones basadas en datos persistidos. | **Scenario: Plan generado desde contexto real**<br>**Given** existe una incidencia abierta o reconocida.<br>**When** se solicita un plan asistido por IA.<br>**Then** el backend recopila incidente, activo, dispositivo, lectura, rango seguro, historial reciente y mantenimiento antes de llamar al modelo.<br><br>**Scenario: Incidencia no válida**<br>**Given** la incidencia no pertenece a la organización o ya está resuelta.<br>**When** se solicita el plan.<br>**Then** la API responde con error controlado sin llamar al modelo. | Sprint 4 / Planned |
+| TS20 | EP013 | `POST /api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans/{planId}/approvals` | **Como** backend developer, **quiero** aprobar un plan generado por IA y ejecutar la resolución real de la incidencia, **para** mantener el control humano y actualizar la base de datos mediante reglas de dominio. | **Scenario: Aprobación ejecuta resolución**<br>**Given** existe un plan pendiente y el operador confirma la acción correctiva final.<br>**When** la API recibe la aprobación.<br>**Then** registra la acción correctiva, resuelve la incidencia y conserva quién aprobó el plan y cuándo.<br><br>**Scenario: Plan no pendiente**<br>**Given** el plan ya fue aprobado o rechazado.<br>**When** se intenta aprobar nuevamente.<br>**Then** la API rechaza la transición. | Sprint 4 / Planned |
+| TS21 | EP013 | `POST /api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans/{planId}/rejections` | **Como** backend developer, **quiero** registrar el rechazo de un plan de IA, **para** conservar trazabilidad sin alterar el estado operativo de la incidencia. | **Scenario: Rechazo registrado**<br>**Given** existe un plan pendiente.<br>**When** el operador rechaza el plan con motivo.<br>**Then** el plan queda rechazado, la incidencia permanece abierta o reconocida y el motivo queda disponible para auditoría. | Sprint 4 / Planned |
+| TS22 | EP013 | `GET /api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans` | **Como** backend developer, **quiero** persistir y consultar los planes de IA asociados a una incidencia, **para** soportar auditoría y aprendizaje operativo posterior. | **Scenario: Historial consultado**<br>**Given** una incidencia tiene uno o más planes generados.<br>**When** el frontend consulta el historial.<br>**Then** la API responde con estado, resumen, acciones sugeridas, acción final aprobada o motivo de rechazo. | Sprint 4 / Planned |
+| TS23 | EP013 | `POST /api/v1/organizations/{organizationId}/reports/{reportId}/ai-summaries` | **Como** backend developer, **quiero** generar un resumen inteligente de cumplimiento desde un reporte existente, **para** explicar los riesgos y acciones correctivas del periodo. | **Scenario: Resumen generado**<br>**Given** existe un reporte con métricas de lecturas e incidencias.<br>**When** el usuario solicita un resumen inteligente.<br>**Then** el backend genera una síntesis estructurada con cumplimiento, activos críticos, riesgos y próximos pasos. | Sprint 4 / Planned |
+| TS24 | EP014 | `GET /api/v1/subscription-plans` | **Como** backend developer, **quiero** exponer un catálogo de planes y precios, **para** que la landing y la aplicación muestren una oferta consistente. | **Scenario: Catálogo consultado**<br>**Given** existen planes configurados para ColdTrace.<br>**When** el frontend consulta el catálogo.<br>**Then** la API responde Base, Operaciones y Compliance AI con precios, límites, funcionalidades y estado de visibilidad. | Sprint 4 / Planned |
+| TS25 | EP014 | `GET /api/v1/organizations/{organizationId}/subscription` | **Como** backend developer, **quiero** persistir la suscripción de cada organización y calcular sus permisos, **para** habilitar o bloquear funcionalidades según el plan activo. | **Scenario: Suscripción consultada**<br>**Given** una organización existe.<br>**When** el frontend consulta su suscripción.<br>**Then** la API responde plan actual, estado, límites, consumo y funcionalidades disponibles. | Sprint 4 / Planned |
+| TS26 | EP014 | `POST /api/v1/organizations/{organizationId}/billing/checkout-sessions` | **Como** backend developer, **quiero** crear sesiones de Stripe Checkout desde el backend, **para** iniciar upgrades sin exponer claves secretas ni datos de tarjeta en el frontend. | **Scenario: Sesión creada**<br>**Given** el request referencia un plan pagado vigente.<br>**When** el backend crea la sesión con Stripe.<br>**Then** responde una URL de checkout asociada a la organización y al cliente de facturación. | Sprint 4 / Planned |
+| TS27 | EP014 | `POST /api/v1/billing/stripe/webhooks` | **Como** backend developer, **quiero** procesar webhooks firmados de Stripe, **para** sincronizar altas, renovaciones, cancelaciones y pagos fallidos con la suscripción local. | **Scenario: Evento de suscripción procesado**<br>**Given** Stripe envía un evento firmado de cambio de suscripción.<br>**When** el backend valida la firma y mapea el cliente a una organización.<br>**Then** actualiza estado, plan, periodo y fecha de renovación sin duplicar eventos. | Sprint 4 / Planned |
+| TS28 | EP014 | `POST /api/v1/organizations/{organizationId}/billing/customer-portal-sessions` | **Como** backend developer, **quiero** crear sesiones de Stripe Customer Portal, **para** delegar la gestión de método de pago, facturas y cancelaciones al proveedor. | **Scenario: Portal creado**<br>**Given** la organización tiene un cliente de Stripe asociado.<br>**When** el administrador solicita gestionar facturación.<br>**Then** el backend responde una URL temporal del portal de cliente. | Sprint 4 / Planned |
+| TS29 | EP014 | Servicio de entitlements por plan | **Como** backend developer, **quiero** validar límites de plan antes de crear sedes, activos, sensores, usuarios, reportes o uso de IA, **para** evitar que el frontend pueda saltarse las restricciones comerciales. | **Scenario: Límite bloqueado en backend**<br>**Given** la organización alcanzó su límite de activos.<br>**When** solicita crear otro activo.<br>**Then** la API responde conflicto controlado con el límite excedido y el plan requerido. | Sprint 4 / Planned |
+| TS30 | EP008 | `POST /api/v1/auth/social/{provider}` y callbacks OAuth/OIDC | **Como** backend developer, **quiero** autenticar o vincular cuentas con Google y Apple desde el backend, **para** validar la identidad externa sin ceder a los proveedores la autorización de ColdTrace. | **Scenario: Identidad externa validada**<br>**Given** Google o Apple retorna una identidad válida.<br>**When** el backend valida tokens, subject y estado del flujo.<br>**Then** vincula la identidad externa con el usuario ColdTrace y emite el JWT propio de la plataforma.<br><br>**Scenario: Identidad nueva requiere onboarding**<br>**Given** la identidad externa no está vinculada a una organización.<br>**When** termina la autenticación externa.<br>**Then** la API responde que el usuario debe completar registro o invitación antes de acceder al dashboard. | Sprint 4 / Planned |
+
+Las funcionalidades visibles de Sprint 4 que entregan valor directo al usuario se modelan como User Stories. Por ello, los entregables de interfaz relacionados con AI Guidance, billing, pricing, dashboard insights y social login se registran como `US053`-`US057`, vinculadas a sus historias de negocio y a las TS backend correspondientes.
 
 ## 3.2 Impact Mapping
 
-El Impact Mapping es una técnica de planificación estratégica que permite alinear el desarrollo de ColdTrace con los objetivos de negocio de ICEQ. Este análisis visual permite establecer un puente claro entre las metas de la startup y la entrega de valor real a los usuarios:
+El Impact Mapping se mantiene como técnica de alineamiento entre objetivos de negocio, actores y entregables. Para esta versión, los entregables del mapa se conectan con las épicas implementadas y con la evolución planificada del Sprint 4: captación por landing page, gestión de acceso con autenticación social, activos IoT, monitoreo operacional, alertas, reportes, mantenimiento, asistencia inteligente para incidencias, interpretación inteligente del dashboard y monetización SaaS mediante planes y suscripciones.
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
-   <img src="report/assets/chapter-03/impact maps/impact-map1.png" alt="Impact map del segmento de minimarkets o pequeños negocios con productos perecibles" width="900">
+![Impact map del segmento de minimarkets o pequeños negocios con productos perecibles](report/assets/chapter-03/impact%20maps/impact-map1.png)
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
-   <img src="report/assets/chapter-03/impact maps/impact-map2.png" alt="Impact map del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío" width="900">
+![Impact map del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío](report/assets/chapter-03/impact%20maps/impact-map2.png)
 
 ## 3.3 Product Backlog
 
-<table style="width: 100%; table-layout: fixed;">
-  <colgroup>
-    <col style="width: 8%;">
-    <col style="width: 12%;">
-    <col style="width: 20%;">
-    <col style="width: 50%;">
-    <col style="width: 10%;">
-  </colgroup>
-  <tr>
-    <td><strong>#Order</strong></td>
-    <td><strong>User Story Id</strong></td>
-    <td><strong>Título</strong></td>
-    <td><strong>Descripción</strong></td>
-    <td><strong>Story Points</strong></td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>US001</td>
-    <td>Ver propuesta de valor en la landing page</td>
-    <td><strong>Como</strong> visitante, <strong>deseo</strong> ver en la página principal qué problema resuelve ColdTrace y cómo lo soluciona <strong>para</strong> evaluar si es relevante para mi negocio antes de registrarme.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>US002</td>
-    <td>Ver sección de funcionalidades</td>
-    <td><strong>Como</strong> visitante, <strong>deseo</strong> ver una sección con las funcionalidades del producto <strong>para</strong> entender qué incluye ColdTrace antes de tomar una decisión de registro o contacto.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>US003</td>
-    <td>Ver sección de plataforma y funcionamiento</td>
-    <td><strong>Como</strong> visitante, <strong>deseo</strong> ver cómo se presenta la plataforma y cómo funciona ColdTrace <strong>para</strong> comprender de manera general cómo opera la solución antes de continuar.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>US004</td>
-    <td>Acceder a la sección de contacto o registro</td>
-    <td><strong>Como</strong> visitante, <strong>deseo</strong> acceder fácilmente a la sección de contacto o registro desde la landing page <strong>para</strong> continuar con el proceso de interés en la solución.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>US005</td>
-    <td>Navegar con menú fijo</td>
-    <td><strong>Como</strong> visitante, <strong>deseo</strong> que el menú de navegación permanezca visible al hacer scroll <strong>para</strong> poder acceder a cualquier sección de la landing en cualquier momento sin tener que volver al inicio.</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>US006</td>
-    <td>Ver landing page en dispositivo móvil</td>
-    <td><strong>Como</strong> visitante que accede desde un celular, <strong>deseo</strong> que la landing page se adapte correctamente a mi pantalla <strong>para</strong> poder navegar y leer el contenido sin problemas.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td>US007</td>
-    <td>Crear cuenta de usuario</td>
-    <td><strong>Como</strong> usuario nuevo de la plataforma, <strong>deseo</strong> registrar una cuenta asociada a una organización <strong>para</strong> ingresar a ColdTrace como usuario fundador con permisos administrativos.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>8</td>
-    <td>US008</td>
-    <td>Representar verificación de cuenta por correo</td>
-    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> visualizar el estado de verificación de mi cuenta <strong>para</strong> entender si mi acceso está habilitado sin depender de un envío real de correo durante la versión frontend.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>9</td>
-    <td>US009</td>
-    <td>Iniciar sesión</td>
-    <td><strong>Como</strong> usuario registrado, <strong>deseo</strong> iniciar sesión con mi correo y una contraseña de demostración <strong>para</strong> acceder a la experiencia principal de ColdTrace con la organización y rol asociados a mi cuenta.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>US010</td>
-    <td>Recuperar contraseña</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> solicitar un flujo de recuperación desde mi correo registrado <strong>para</strong> validar la experiencia de restablecimiento sin envío real de correos ni tokens backend.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>11</td>
-    <td>US011</td>
-    <td>Asignar roles y permisos</td>
-    <td><strong>Como</strong> administrador de la organización, <strong>deseo</strong> gestionar usuarios, roles y permisos dentro de la organización activa <strong>para</strong> controlar las acciones disponibles según la responsabilidad operativa de cada persona.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>12</td>
-    <td>US012</td>
-    <td>Registrar cámara frigorífica</td>
-    <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> registrar una cámara frigorífica en la plataforma con sus datos principales <strong>para</strong> monitorear su funcionamiento y asociarla correctamente a la operación de la organización.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>13</td>
-    <td>US014</td>
-    <td>Vincular sensor IoT a un activo</td>
-    <td><strong>Como</strong> responsable de la configuración del sistema, <strong>deseo</strong> vincular un sensor IoT a una cámara frigorífica o unidad de transporte <strong>para</strong> comenzar a capturar datos de temperatura y humedad del activo correcto.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>14</td>
-    <td>US015</td>
-    <td>Emparejar gateway de red</td>
-    <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> emparejar un gateway de red con los sensores de mi operación <strong>para</strong> asegurar la transmisión de datos desde los activos hacia el sistema.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>15</td>
-    <td>US035</td>
-    <td>Configurar rangos de seguridad</td>
-    <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> configurar rangos seguros de temperatura y humedad por defecto o por activo monitoreado <strong>para</strong> adaptar la evaluación del monitoreo a la operación.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>16</td>
-    <td>US018</td>
-    <td>Visualizar temperatura en tiempo real</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> visualizar en tiempo real la temperatura de mis equipos o ambientes monitoreados <strong>para</strong> detectar rápidamente cualquier variación que pueda comprometer la conservación de los productos.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>17</td>
-    <td>US021</td>
-    <td>Detectar temperatura fuera de rango</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que el sistema identifique automáticamente cuando la temperatura de un activo salga del rango seguro <strong>para</strong> reconocer oportunamente una condición de riesgo dentro de la operación.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>18</td>
-    <td>US024</td>
-    <td>Crear incidencia térmica</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que el sistema cree una incidencia térmica cuando detecte una condición crítica en un activo <strong>para</strong> iniciar el seguimiento formal del evento y evitar que el problema pase desapercibido.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>19</td>
-    <td>US025</td>
-    <td>Disparar notificaciones de alerta</td>
-    <td><strong>Como</strong> encargado de negocio o responsable de operaciones, <strong>deseo</strong> recibir notificaciones automáticas cuando ocurra una incidencia crítica <strong>para</strong> reaccionar de manera oportuna antes de que el problema afecte los productos o la operación.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>20</td>
-    <td>US027</td>
-    <td>Reconocer alerta crítica</td>
-    <td><strong>Como</strong> usuario responsable del monitoreo, <strong>deseo</strong> reconocer una alerta crítica dentro de la plataforma <strong>para</strong> dejar constancia de que el incidente está siendo atendido por una persona responsable.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>21</td>
-    <td>US028</td>
-    <td>Registrar acción correctiva y cerrar incidencia</td>
-    <td><strong>Como</strong> usuario responsable de la atención de incidencias, <strong>deseo</strong> registrar la acción correctiva aplicada y cerrar la incidencia cuando la condición se estabilice <strong>para</strong> dejar registro de la medida aplicada, confirmar que el riesgo fue resuelto y conservar el historial del caso.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>22</td>
-    <td>US020</td>
-    <td>Consultar historial de lecturas</td>
-    <td><strong>Como</strong> encargado de negocio o responsable de operaciones, <strong>deseo</strong> consultar el historial de lecturas de temperatura y humedad de un activo <strong>para</strong> revisar su comportamiento en el tiempo y analizar incidencias pasadas.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>23</td>
-    <td>US030</td>
-    <td>Consultar historial de eventos operativos</td>
-    <td><strong>Como</strong> responsable de operaciones y control de calidad, <strong>deseo</strong> consultar el historial de lecturas, alertas e incidencias por activo, periodo y tipo de evento <strong>para</strong> reconstruir eventos pasados.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>24</td>
-    <td>US029</td>
-    <td>Generar bitácora diaria</td>
-    <td><strong>Como</strong> responsable de operaciones o calidad, <strong>deseo</strong> generar una bitácora diaria por fecha y activo monitoreado <strong>para</strong> contar con evidencia ordenada del control térmico y detectar lecturas incompletas.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>US031</td>
-    <td>Exportar reporte de cumplimiento sanitario</td>
-    <td><strong>Como</strong> responsable de calidad, <strong>deseo</strong> exportar un reporte de cumplimiento sanitario filtrado por periodo y activo <strong>para</strong> utilizar evidencia descargable en procesos internos o auditorías.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>26</td>
-    <td>US034</td>
-    <td>Preparar evidencia para auditoría</td>
-    <td><strong>Como</strong> responsable de auditoría interna o control de calidad, <strong>deseo</strong> reunir y exportar evidencia documental de monitoreo, reportes, hallazgos e incidencias <strong>para</strong> sustentar el cumplimiento operativo.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>27</td>
-    <td>US033</td>
-    <td>Detectar faltantes o incumplimientos</td>
-    <td><strong>Como</strong> responsable de calidad y cumplimiento, <strong>deseo</strong> identificar registros faltantes, observaciones y posibles incumplimientos por activo y periodo <strong>para</strong> corregirlos antes de una auditoría.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>28</td>
-    <td>US017</td>
-    <td>Actualizar ubicación y estado del activo</td>
-    <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> actualizar la ubicación física y el estado operativo de un activo registrado <strong>para</strong> mantener información precisa sobre su disponibilidad, condición y contexto de uso.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>29</td>
-    <td>US016</td>
-    <td>Verificar calibración del sensor</td>
-    <td><strong>Como</strong> responsable de calidad u operación, <strong>deseo</strong> verificar el estado de calibración de los sensores instalados <strong>para</strong> asegurar que las lecturas registradas sean confiables y útiles para control y cumplimiento.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>30</td>
-    <td>US037</td>
-    <td>Programar mantenimiento preventivo</td>
-    <td><strong>Como</strong> responsable de calidad u operación, <strong>deseo</strong> programar mantenimientos preventivos para activos o dispositivos IoT <strong>para</strong> reducir fallas operativas y mantener la confiabilidad del monitoreo.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>31</td>
-    <td>US038</td>
-    <td>Solicitar y cerrar servicio técnico</td>
-    <td><strong>Como</strong> usuario responsable del activo, <strong>deseo</strong> registrar solicitudes de servicio técnico y cerrar la atención con evidencia de intervención <strong>para</strong> conservar el historial técnico del activo.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>32</td>
-    <td>US036</td>
-    <td>Actualizar parámetros operativos</td>
-    <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> actualizar la frecuencia de lectura y los criterios de evaluación de un dispositivo asociado a un activo <strong>para</strong> ajustar el monitoreo a su criticidad.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>33</td>
-    <td>US019</td>
-    <td>Visualizar humedad en tiempo real</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> visualizar en tiempo real los valores de humedad de mis ambientes o equipos monitoreados <strong>para</strong> complementar el control de conservación y evaluar mejor las condiciones del activo.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>34</td>
-    <td>US022</td>
-    <td>Visualizar estado de conectividad</td>
-    <td><strong>Como</strong> responsable de monitoreo, <strong>deseo</strong> visualizar el estado de conectividad de los sensores y gateways <strong>para</strong> identificar si un activo está enviando información de forma continua o si existe un problema de transmisión.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>35</td>
-    <td>US023</td>
-    <td>Sincronizar datos almacenados offline</td>
-    <td><strong>Como</strong> usuario de la plataforma, <strong>deseo</strong> que los datos capturados durante una pérdida de conexión se sincronicen cuando el sistema recupere conectividad <strong>para</strong> conservar el historial completo de las lecturas registradas durante ese periodo.</td>
-    <td>8</td>
-  </tr>
-  <tr>
-    <td>36</td>
-    <td>US026</td>
-    <td>Escalar alerta no atendida</td>
-    <td><strong>Como</strong> responsable de la operación, <strong>deseo</strong> que el sistema escale una alerta que no ha sido atendida en el tiempo esperado <strong>para</strong> asegurar que el incidente reciba seguimiento y no quede sin respuesta.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>37</td>
-    <td>US032</td>
-    <td>Descargar reporte mensual</td>
-    <td><strong>Como</strong> usuario administrativo de la plataforma, <strong>deseo</strong> descargar reportes mensuales consolidados y acceder rápidamente al reporte del mes actual <strong>para</strong> evaluar el desempeño de la operación.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>38</td>
-    <td>US013</td>
-    <td>Registrar unidad de transporte</td>
-    <td><strong>Como</strong> responsable logístico, <strong>deseo</strong> registrar una unidad de transporte refrigerado dentro de ColdTrace <strong>para</strong> monitorear sus condiciones térmicas y conservar un historial de mediciones e incidencias durante su operación.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>39</td>
-    <td>TS01</td>
-    <td>Endpoint de registro de usuario</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar usuarios <strong>para</strong> que el frontend pueda crear nuevas cuentas desde el formulario de registro.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>40</td>
-    <td>TS02</td>
-    <td>Endpoint de inicio de sesión</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para autenticar usuarios <strong>para</strong> que el frontend pueda iniciar sesión y recibir un token de acceso.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>41</td>
-    <td>TS03</td>
-    <td>Endpoint para registrar equipo monitoreado</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar equipos monitoreados <strong>para</strong> que el frontend pueda crear cámaras frigoríficas o unidades de operación dentro del sistema.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>42</td>
-    <td>TS04</td>
-    <td>Endpoint para registrar y vincular sensores</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar sensores y asociarlos a un equipo monitoreado <strong>para</strong> que el frontend pueda configurar dispositivos de monitoreo dentro de la operación.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>43</td>
-    <td>TS05</td>
-    <td>Endpoint para registrar lecturas de sensor</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint POST para registrar lecturas de temperatura y humedad enviadas por los sensores <strong>para</strong> que el sistema pueda almacenarlas y procesarlas para monitoreo y alertas.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>44</td>
-    <td>TS06</td>
-    <td>Endpoint para obtener historial de lecturas</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para obtener el historial de lecturas por equipo y rango de fechas <strong>para</strong> que el frontend pueda mostrar gráficos y datos históricos al usuario.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>45</td>
-    <td>TS07</td>
-    <td>Endpoint para obtener alertas activas</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para obtener las alertas activas de una organización <strong>para</strong> que el frontend pueda mostrarlas dentro del panel de monitoreo.</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>46</td>
-    <td>TS08</td>
-    <td>Endpoint para reconocer y cerrar incidencias</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint PUT para actualizar el estado de una incidencia y registrar su atención <strong>para</strong> que el frontend pueda reconocer alertas, documentar acciones correctivas y cerrar casos.</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>47</td>
-    <td>TS09</td>
-    <td>Endpoint para generar bitácora diaria</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para generar la bitácora diaria de monitoreo <strong>para</strong> que el frontend pueda consultar y descargar el consolidado operativo del día.</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>48</td>
-    <td>TS10</td>
-    <td>Endpoint para exportar reporte de cumplimiento sanitario</td>
-    <td><strong>Como</strong> developer, <strong>deseo</strong> un endpoint GET para exportar reportes de cumplimiento sanitario <strong>para</strong> que el frontend pueda solicitar evidencia documental lista para descarga o auditoría.</td>
-    <td>5</td>
-  </tr>
-</table>
+El Product Backlog prioriza historias visibles para usuarios finales y mantiene al final las historias técnicas para backend. La estimación utiliza Story Points relativos, siguiendo la práctica del curso de estimar historias por complejidad, incertidumbre y esfuerzo comparativo.
 
+| **#Order** | **User Story Id** | **Título** | **Epic** | **Story Points** | **Sprint / Estado** |
+| --- | --- | --- | --- | --- | --- |
+| 1 | US001 | Ver propuesta de valor en la landing page | EP001 | 2 | Sprint 1 / Done |
+| 2 | US002 | Ver sección de funcionalidades | EP001 | 2 | Sprint 1 / Done |
+| 3 | US003 | Ver sección de plataforma y funcionamiento | EP001 | 2 | Sprint 1 / Done |
+| 4 | US004 | Acceder a contacto o registro | EP001 | 2 | Sprint 1 / Done |
+| 5 | US005 | Navegar con menú por secciones | EP001 | 1 | Sprint 1 / Done |
+| 6 | US006 | Ver landing responsive | EP001 | 3 | Sprint 1 / Done |
+| 7 | US007 | Crear cuenta de usuario | EP002 | 3 | Sprint 2 / Done |
+| 8 | US008 | Iniciar sesión | EP002 | 2 | Sprint 2 / Done |
+| 9 | US009 | Recuperar contraseña | EP002 | 3 | Sprint 2 / Done |
+| 10 | US010 | Gestionar roles y permisos | EP002 | 5 | Sprint 2 / Done |
+| 11 | US011 | Gestionar usuarios internos | EP002 | 3 | Sprint 2 / Done |
+| 12 | US012 | Registrar cámara frigorífica | EP003 | 3 | Sprint 2 / Done |
+| 13 | US013 | Registrar unidad de transporte | EP003 | 3 | Sprint 2 / Done |
+| 14 | US014 | Vincular sensor IoT a activo | EP003 | 5 | Sprint 2 / Done |
+| 15 | US015 | Emparejar gateway de red | EP003 | 5 | Sprint 2 / Done |
+| 16 | US016 | Verificar calibración del sensor | EP003 | 2 | Sprint 2 / Done |
+| 17 | US017 | Actualizar estado y parámetros de activo | EP003 | 3 | Sprint 2 / Done |
+| 18 | US018 | Visualizar temperatura en tiempo real | EP004 | 3 | Sprint 2 / Done |
+| 19 | US019 | Visualizar humedad en tiempo real | EP004 | 3 | Sprint 2 / Done |
+| 20 | US020 | Consultar historial de lecturas | EP004 | 3 | Sprint 2 / Done |
+| 21 | US021 | Detectar temperatura fuera de rango | EP004 | 5 | Sprint 2 / Done |
+| 22 | US022 | Visualizar estado de conectividad | EP004 | 2 | Sprint 2 / Done |
+| 23 | US023 | Sincronizar datos offline | EP004 | 8 | Sprint 2 / Done |
+| 24 | US039 | Visualizar dashboard operacional | EP004 | 8 | Sprint 2 / Done |
+| 25 | US024 | Visualizar incidencia térmica | EP005 | 3 | Sprint 2 / Done |
+| 26 | US025 | Revisar notificaciones de alerta | EP005 | 3 | Sprint 2 / Done |
+| 27 | US027 | Reconocer alerta crítica | EP005 | 2 | Sprint 2 / Done |
+| 28 | US028 | Registrar acción correctiva y cerrar incidencia | EP005 | 3 | Sprint 2 / Done |
+| 29 | US029 | Generar bitácora diaria | EP006 | 3 | Sprint 2 / Done |
+| 30 | US030 | Consultar historial de eventos | EP006 | 3 | Sprint 2 / Done |
+| 31 | US031 | Exportar reporte sanitario | EP006 | 5 | Sprint 2 / Done |
+| 32 | US032 | Descargar reporte mensual | EP006 | 3 | Sprint 2 / Done |
+| 33 | US033 | Detectar faltantes o incumplimientos | EP006 | 5 | Sprint 2 / Done |
+| 34 | US034 | Preparar evidencia para auditoría | EP006 | 5 | Sprint 2 / Done |
+| 35 | US035 | Configurar rangos de seguridad | EP007 | 3 | Sprint 2 / Done |
+| 36 | US036 | Actualizar parámetros operativos | EP007 | 3 | Sprint 2 / Done |
+| 37 | US037 | Programar mantenimiento preventivo | EP007 | 3 | Sprint 2 / Done |
+| 38 | US038 | Solicitar y cerrar servicio técnico | EP007 | 5 | Sprint 2 / Done |
+| 39 | US026 | Escalar alerta no atendida | EP005 | 5 | Sprint 3 / Planned |
+| 40 | TS01 | Registro de organizaciones y usuario fundador | EP008 | 3 | Sprint 3 / Planned |
+| 41 | TS02 | Autenticación e inicio de sesión desde API | EP008 | 3 | Backlog / Deferred |
+| 42 | TS03 | Usuarios internos | EP008 | 5 | Sprint 3 / Planned |
+| 43 | TS04 | Administración de activos refrigerados | EP009 | 5 | Sprint 3 / Planned |
+| 44 | TS05 | Sensores IoT y parámetros de dispositivos | EP009 | 5 | Sprint 3 / Planned |
+| 45 | TS06 | Rangos seguros por activo | EP009 | 3 | Sprint 3 / Planned |
+| 46 | TS07 | Lecturas de sensores e historial operativo | EP010 | 5 | Sprint 3 / Planned |
+| 47 | TS08 | Incidentes y notificaciones operativas | EP011 | 5 | Sprint 3 / Planned |
+| 48 | TS09 | Reconocimiento, cierre y escalamiento de incidencias | EP011 | 5 | Sprint 3 / Planned |
+| 49 | TS10 | Reportes y evidencia | EP012 | 5 | Sprint 3 / Planned |
+| 50 | TS11 | Solicitudes de recuperación de contraseña | EP008 | 3 | Backlog / Deferred |
+| 51 | TS12 | Roles y permisos | EP008 | 3 | Sprint 3 / Planned |
+| 52 | TS13 | Gateways | EP009 | 3 | Sprint 3 / Planned |
+| 53 | TS14 | Mantenimientos preventivos | EP012 | 3 | Sprint 3 / Planned |
+| 54 | TS15 | Solicitudes de servicio técnico | EP012 | 3 | Sprint 3 / Planned |
+| 55 | US040 | Generar plan asistido por IA para incidencia | EP013 | 5 | Sprint 4 / Planned |
+| 56 | US041 | Aprobar plan de IA y cerrar incidencia | EP013 | 8 | Sprint 4 / Planned |
+| 57 | US042 | Rechazar plan de IA con motivo | EP013 | 3 | Sprint 4 / Planned |
+| 58 | US043 | Revisar historial de planes de IA | EP013 | 3 | Sprint 4 / Planned |
+| 59 | US044 | Generar resumen inteligente de cumplimiento | EP013 | 5 | Sprint 4 / Planned |
+| 60 | TS18 | Fundación Spring AI y salida estructurada | EP013 | 3 | Sprint 4 / Planned |
+| 61 | TS19 | Generación de plan de resolución con contexto real | EP013 | 5 | Sprint 4 / Planned |
+| 62 | TS20 | Aprobación humana y resolución backend | EP013 | 5 | Sprint 4 / Planned |
+| 63 | TS21 | Rechazo de plan y trazabilidad | EP013 | 3 | Sprint 4 / Planned |
+| 64 | TS22 | Persistencia e historial de planes de IA | EP013 | 5 | Sprint 4 / Planned |
+| 65 | TS23 | Resumen inteligente de reportes | EP013 | 3 | Sprint 4 / Planned |
+| 66 | US053 | Usar panel de AI Guidance en incidencias | EP013 | 5 | Sprint 4 / Planned |
+| 67 | US045 | Comparar planes en landing page | EP014 | 3 | Sprint 4 / Planned |
+| 68 | US046 | Seleccionar plan para una organización | EP014 | 5 | Sprint 4 / Planned |
+| 69 | US047 | Ver plan actual y consumo de límites | EP014 | 3 | Sprint 4 / Planned |
+| 70 | US048 | Actualizar a plan pagado mediante Stripe Checkout | EP014 | 5 | Sprint 4 / Planned |
+| 71 | US049 | Gestionar facturación desde Customer Portal | EP014 | 3 | Sprint 4 / Planned |
+| 72 | US050 | Bloquear funciones no incluidas en el plan | EP014 | 5 | Sprint 4 / Planned |
+| 73 | TS24 | Catálogo backend de planes y precios | EP014 | 3 | Sprint 4 / Planned |
+| 74 | TS25 | Suscripción por organización y entitlements | EP014 | 5 | Sprint 4 / Planned |
+| 75 | TS26 | Creación de sesiones Stripe Checkout | EP014 | 5 | Sprint 4 / Planned |
+| 76 | TS27 | Webhooks Stripe y sincronización de suscripciones | EP014 | 5 | Sprint 4 / Planned |
+| 77 | TS28 | Sesiones Stripe Customer Portal | EP014 | 3 | Sprint 4 / Planned |
+| 78 | TS29 | Validación backend de límites por plan | EP014 | 5 | Sprint 4 / Planned |
+| 79 | US054 | Gestionar billing y upgrade desde la aplicación | EP014 | 5 | Sprint 4 / Planned |
+| 80 | US055 | Comparar planes desde la landing page | EP014 | 3 | Sprint 4 / Planned |
+| 81 | US051 | Abrir asistente IA para interpretar dashboard | EP013 | 5 | Sprint 4 / Planned |
+| 82 | US056 | Consultar interpretación IA del dashboard | EP013 | 3 | Sprint 4 / Planned |
+| 83 | US052 | Crear o iniciar sesión con Google/Apple | EP002 | 5 | Sprint 4 / Planned |
+| 84 | TS30 | Google and Apple OAuth/OIDC Authentication API | EP008 | 5 | Sprint 4 / Planned |
+| 85 | US057 | Iniciar sesión con Google/Apple desde la interfaz | EP002 | 3 | Sprint 4 / Planned |
 
 # CAPÍTULO IV. PRODUCT UX/UI DESIGN
 
@@ -2872,13 +1320,13 @@ Un Style Guideline constituye un conjunto de normas y directrices destinadas a e
 
 ### 4.1.1. General Style Guidelines.
 
-**Brand Overview**  
+**Brand Overview**
 ColdTrace es una plataforma digital orientada al monitoreo de temperatura y humedad en la cadena de frío alimentaria. La propuesta visual busca transmitir control, claridad y confianza, utilizando una interfaz limpia, moderna y cercana a dashboards operativos.
 
-**Brand Name**  
+**Brand Name**
 El nombre "ColdTrace" combina el concepto de frío ("Cold") con seguimiento y control ("Trace"), reforzando la idea de monitoreo continuo de condiciones térmicas en activos refrigerados.
 
-**Typography**  
+**Typography**
 La landing page utiliza dos tipografías principales para mantener una identidad visual clara y consistente:
 
 - `Varela Round` para títulos, encabezados y elementos de alto impacto visual.
@@ -2901,7 +1349,7 @@ La paleta parte de una base neutra de blancos y grises suaves, combinada con un 
 | Texto principal     | `#191919`      | Lectura principal                             |
 | Texto secundario    | `#525256`      | Texto descriptivo y apoyo visual              |
 
-**Visual Style**  
+**Visual Style**
 La landing mantiene un estilo visual basado en:
 
 - superficies claras y fondos neutros
@@ -2950,11 +1398,11 @@ Se ha optado por una estructura jerárquica combinada con organización por tare
 
 **Organización de la Landing Page:**
 
-*Encabezado (Header):*  
+*Encabezado (Header):*
 Logo, menú principal (Inicio, Solución, Cómo Funciona, Beneficios, Contacto) y botones (Iniciar Sesión / Registrarse)
 
-*Sección Introductoria (Hero):*  
-Mensaje: "Monitorea tu cadena de frío en tiempo real y evita pérdidas"  
+*Sección Introductoria (Hero):*
+Mensaje: "Monitorea tu cadena de frío en tiempo real y evita pérdidas"
 Botón CTA: “Solicitar demo”
 
 *Beneficios:*
@@ -2962,13 +1410,13 @@ Botón CTA: “Solicitar demo”
 - Alertas en tiempo real
 - Cumplimiento sanitario
 
-*Cómo Funciona:*  
+*Cómo Funciona:*
 Sensores → Plataforma → Alertas → Decisión
 
-*Casos de uso:*  
+*Casos de uso:*
 Minimarkets, restaurantes, almacenes, transporte refrigerado
 
-*Pie de Página (Footer):*  
+*Pie de Página (Footer):*
 Enlaces legales, contacto, redes sociales
 
 ---
@@ -2977,19 +1425,19 @@ Enlaces legales, contacto, redes sociales
 
 -Usuario Operativo / Dueño
 
-*Inicio:* Vista general con estado de activos y alertas  
-*Monitoreo:* Visualización en tiempo real  
-*Alertas:* Incidencias activas  
-*Historial:* Lecturas pasadas  
-*Reportes:* Exportación de datos  
+*Inicio:* Vista general con estado de activos y alertas
+*Monitoreo:* Visualización en tiempo real
+*Alertas:* Incidencias activas
+*Historial:* Lecturas pasadas
+*Reportes:* Exportación de datos
 *Perfil:* Configuración básica
 
 -Responsable de Operaciones / Calidad
 
-*Dashboard:* Vista consolidada de múltiples activos  
-*Activos:* Gestión de equipos y sensores  
-*Incidencias:* Seguimiento y control  
-*Reportes:* Trazabilidad y auditoría  
+*Dashboard:* Vista consolidada de múltiples activos
+*Activos:* Gestión de equipos y sensores
+*Incidents:* Seguimiento y control
+*Reportes:* Trazabilidad y auditoría
 *Configuración:* Parámetros y rangos
 
 ---
@@ -3009,8 +1457,8 @@ Acción directa y clara:
 
 **2. Etiquetas de Encabezado (Headings):**
 
-H1: Dashboard  
-H2: Alertas activas  
+H1: Dashboard
+H2: Alertas activas
 H3: Detalle del activo
 
 **3. Etiquetas Icónicas (Iconic Labels):**
@@ -3031,33 +1479,29 @@ H3: Detalle del activo
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-```html
-<title>ColdTrace - Monitoreo de cadena de frío en tiempo real</title>
+| Etiqueta | Contenido |
+| --- | --- |
+| title | ColdTrace - Monitoreo de cadena de frío en tiempo real |
+| description | Plataforma para monitorear temperatura y humedad en negocios alimentarios. Reduce pérdidas y mejora el control sanitario. |
+| keywords | cadena de frío, monitoreo temperatura, sensores IoT, alimentos, trazabilidad, Perú |
+| viewport | width=device-width, initial-scale=1.0 |
+| author | ColdTrace |
+| copyright | © 2026 ColdTrace |
 
-<meta name="description" content="Plataforma para monitorear temperatura y humedad en negocios alimentarios. Reduce pérdidas y mejora el control sanitario.">
-
-<meta name="keywords" content="cadena de frío, monitoreo temperatura, sensores IoT, alimentos, trazabilidad, Perú">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="author" content="ColdTrace">
-
-<meta name="copyright" content="© 2026 ColdTrace">
-```
 ### 4.2.4. Searching Systems.
 
 El sistema de búsqueda de ColdTrace permite localizar de manera rápida y eficiente la información operativa relevante dentro de la plataforma.
 
-- **Búsqueda por activo:**  
+- **Búsqueda por activo:**
   Permite localizar equipos mediante el nombre de la cámara frigorífica, sensor o unidad de transporte.
 
-- **Filtros por estado:**  
+- **Filtros por estado:**
   Clasificación de activos según su condición operativa: normal, alerta o desconectado.
 
-- **Filtros por ubicación:**  
+- **Filtros por ubicación:**
   Segmentación por sucursal, almacén o zona geográfica.
 
-- **Filtros por tipo:**  
+- **Filtros por tipo:**
   Clasificación según el tipo de activo: cámara, sensor o unidad de transporte.
 
 ---
@@ -3068,7 +1512,7 @@ La plataforma cuenta con un menú lateral (sidebar) adaptable según el disposit
 
 La navegación está orientada a acciones críticas y al flujo operativo del usuario.
 
-**Flujo principal:**  
+**Flujo principal:**
 Registro → Configuración → Monitoreo → Alertas → Reportes
 
 La experiencia de navegación es intuitiva, priorizando la rapidez de respuesta y la toma de decisiones ante incidencias.
@@ -3083,13 +1527,9 @@ Los wireframes de la Landing Page fueron diseñados con el objetivo de definir l
 En esta etapa se establecieron las principales secciones del sitio, como el encabezado de navegación, la sección principal (hero), características del producto, beneficios, testimonios y formulario de contacto.
 Asimismo, se consideró una versión responsive, adaptando la distribución de los elementos para dispositivos móviles, garantizando una navegación clara y accesible en diferentes tamaños de pantalla.
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png"/>
-</p>
+![Wireframe Landing Page](report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png"/>
-</p>
+![Wireframe Landing Page Mobile](report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
 
 ---
 
@@ -3099,13 +1539,9 @@ Los mockups de la Landing Page representan la versión visual final del diseño,
 En esta etapa se aplicaron los lineamientos de branding del proyecto, incluyendo el uso de colores principales, jerarquía tipográfica y elementos visuales que refuerzan la identidad del producto.
 Además, se mantuvo consistencia entre la versión desktop y mobile, asegurando una experiencia uniforme para el usuario en cualquier dispositivo.
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png"/>
-</p>
+![Mockup Landing Page](report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png"/>
-</p>
+![Mockup Landing Page Mobile](report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
 
 ---
 
@@ -3117,17 +1553,11 @@ Los wireframes de la aplicación web fueron diseñados para definir la estructur
 En esta etapa se identificaron los elementos clave de interacción, como paneles de control, visualización de datos, navegación entre secciones y componentes necesarios para la gestión del sistema.
 Estos wireframes permiten validar la distribución de información antes de la implementación visual, asegurando que las funcionalidades respondan a las necesidades del usuario.
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png"/>
-</p>
+![Wireframe Web Application 1](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png"/>
-</p>
+![Wireframe Web Application 2](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png"/>
-</p>
+![Wireframe Web Application 3](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
 
 ---
 
@@ -3136,9 +1566,7 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
-<p align="center">
-  <img src="report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png"/>
-</p>
+![wireflows diagram](report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
 
 ---
 
@@ -3148,17 +1576,12 @@ Los mockups de la aplicación web muestran la representación visual final de la
 En esta etapa se buscó mantener consistencia visual con la Landing Page, asegurando una identidad unificada del producto.
 Asimismo, se priorizó la claridad en la presentación de información y la facilidad de uso, permitiendo que el usuario interactúe de manera intuitiva con las funcionalidades del sistema.
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png"/>
-</p>
+![Mockup Web Application 1](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png"/>
-</p>
+![Mockup Web Application 2](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
 
-<p align="center">
-  <img src="report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png"/>
-</p>
+![Mockup Web Application 3](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
+
 ---
 
 ### 4.4.4. Web Applications User Flow Diagrams.
@@ -3168,21 +1591,15 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
 
-<p align="center">
-  <img src="report/assets/chapter-04/userflowdiagram/userflowdiagram1.png"/>
-</p>
+![userflowdiagram1](report/assets/chapter-04/userflowdiagram/userflowdiagram1.png)
 
 ### User Flow 2 : Obtener reportes para supervisión y control.
 
-<p align="center">
-  <img src="report/assets/chapter-04/userflowdiagram/userflowdiagram2.png"/>
-</p>
+![userflowdiagram2](report/assets/chapter-04/userflowdiagram/userflowdiagram2.png)
 
 ### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
 
-<p align="center">
-  <img src="report/assets/chapter-04/userflowdiagram/userflowdiagram3.png"/>
-</p>
+![userflowdiagram3](report/assets/chapter-04/userflowdiagram/userflowdiagram3.png)
 
 ---
 
@@ -3192,45 +1609,79 @@ En esta sección se presenta el prototipo navegable de la aplicación web de Col
 
 El prototipo integra las pantallas clave del producto, como monitoreo, alertas, reportes y gestión general de la operación, manteniendo coherencia con los lineamientos visuales y funcionales definidos en las etapas anteriores del diseño.
 
-<img src="report/assets/chapter-04/prototyping/prototype-navigation-sprint-1.png" width="760">
+![prototype navigation sprint 1](report/assets/chapter-04/prototyping/prototype-navigation-sprint-1.png)
+
+### Sprint 4 Prototype: AI Assistance and SaaS Billing
+
+Para el Sprint 4 se amplió el prototipo de la Web Application con funcionalidades orientadas a asistencia inteligente, monetización SaaS y análisis operacional bajo demanda. Estas pantallas permiten validar el valor de IA dentro del producto sin convertirla en un agente autónomo: la IA propone interpretaciones, resúmenes o planes, mientras que el usuario mantiene la decisión final y el backend objetivo conserva la responsabilidad de actualizar el estado real de la operación.
+
+El prototipo considera cinco puntos de interacción principales:
+
+- **AI Guidance para incidencias:** muestra la generación de un plan de resolución con causa probable, pasos sugeridos, evidencia requerida y aprobación o rechazo por parte del operador.
+- **AI Compliance Summary:** resume reportes de cumplimiento y explica riesgos, métricas relevantes y próximos pasos en lenguaje operativo.
+- **Billing y suscripciones:** presenta plan actual, consumo de límites, acciones de upgrade, simulación de checkout y funciones bloqueadas por plan.
+- **Pricing en landing page:** comunica los planes Base, Operations y Compliance AI con límites, beneficios y llamadas a la acción.
+- **AI Insights en dashboard:** se mantiene cerrado por defecto como botón flotante y se abre bajo demanda como panel superpuesto para interpretar KPIs y responder preguntas sobre los gráficos sin agrandar permanentemente el dashboard.
+
+![Sprint 4 AI Guidance resolution plan](report/assets/chapter-04/prototyping/sprint-4-ai-billing/ai-guidance-resolution-plan.png)
+
+*Figure 4.5.1. AI Guidance prototype for incident resolution planning.*
+
+![Sprint 4 AI Compliance Summary](report/assets/chapter-04/prototyping/sprint-4-ai-billing/ai-compliance-summary.png)
+
+*Figure 4.5.2. AI Compliance Summary prototype for report interpretation.*
+
+![Sprint 4 Billing and Subscription Plans](report/assets/chapter-04/prototyping/sprint-4-ai-billing/billing-subscription-plans.png)
+
+*Figure 4.5.3. In-app Billing prototype for SaaS subscription management.*
+
+![Sprint 4 Landing Pricing Plans](report/assets/chapter-04/prototyping/sprint-4-ai-billing/landing-pricing-plans.png)
+
+*Figure 4.5.4. Landing page pricing prototype with plan comparison.*
+
+![Sprint 4 Dashboard AI Insights Panel](report/assets/chapter-04/prototyping/sprint-4-ai-billing/dashboard-ai-insights-panel.png)
+
+*Figure 4.5.5. Dashboard AI Insights prototype opened as an overlay panel.*
 
 [Ver video demostrativo del prototipo de navegación – ColdTrace](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDF6wu_w86bRIH68kr6ehziAe9K_FC1ARRsa-i6G07RpXk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FXKoP5)
 
 ---
+
 ## 4.6. Domain-Driven Software Architecture.
 
 ### 4.6.1. Design-Level Event Storming.
-<img src="report/assets/chapter-04/boundedcontext/boundedcontext.png"  width="760">
 
-## 1. Bounded Context: Autenticación
+![boundedcontext](report/assets/chapter-04/boundedcontext/boundedcontext.png)
+
+## 1. Bounded Context: Identity & Access
 ### Explicación
-Este contexto gestiona el acceso de los usuarios al sistema mediante el inicio y cierre de sesión. Se encarga de validar credenciales, controlar sesiones activas y generar eventos como usuario autenticado o sesión iniciada/cerrada.
+Este contexto gestiona el acceso de los usuarios al sistema mediante creación de cuenta, inicio de sesión, recuperación de contraseña, usuarios internos, roles y permisos. En la implementación frontend actual corresponde al módulo `identity-access`; en la arquitectura backend objetivo se proyecta como un servicio Spring Boot encargado de autenticación, autorización y administración de identidad.
 
 ### Justificación
-Se separa este contexto porque la seguridad es un aspecto crítico y transversal en cualquier sistema. Al aislar la autenticación:
+Se separa este contexto porque la seguridad y la administración de acceso son aspectos críticos y transversales. Al aislar Identity & Access:
 - Se reduce el riesgo de accesos no autorizados.
 - Se facilita la implementación de mecanismos avanzados como OAuth, JWT o autenticación multifactor.
-- Se evita mezclar la lógica de seguridad con la lógica de negocio principal.
+- Se evita mezclar usuarios, roles y permisos con la lógica operativa de activos, monitoreo o reportes.
 - Permite escalar y mantener este módulo de forma independiente.
 
 
-## 2. Bounded Context: Gestión de Sensores
+## 2. Bounded Context: Asset Management
 
 ### Explicación
-Este contexto administra todo el ciclo de vida de los sensores: registro, configuración, activación y vinculación con activos. Además, define parámetros clave como rangos de temperatura, humedad y frecuencia de medición.
+Este contexto administra el ciclo de vida de los activos refrigerados y su infraestructura IoT: cámaras frigoríficas, unidades de transporte, sensores, gateways, estado de calibración, conectividad, rangos de seguridad y parámetros operativos. En la implementación frontend actual corresponde al módulo `asset-management`; en la arquitectura backend objetivo se proyecta como un servicio Spring Boot responsable de persistir y exponer la configuración operativa que consumen monitoreo, alertas y reportes.
 
 ### Justificación
-Se separa porque la configuración de sensores define el comportamiento del sistema. Al aislarlo:
-- Se centraliza la lógica de configuración.
+Se separa porque la configuración de activos y dispositivos define el comportamiento del monitoreo. Al aislarlo:
+- Se centraliza la lógica de activos, sensores, gateways, calibración y rangos.
 - Se reducen errores por parámetros mal definidos.
-- Se permite modificar reglas sin afectar otros contextos.
-- Facilita la reutilización en otros sistemas IoT.
+- Se permite modificar reglas operativas sin afectar la captura de lecturas ni los reportes.
+- Facilita la reutilización del modelo de activos en otras operaciones IoT.
 
 
-## 3. Bounded Context: Monitoreo
+## 3. Bounded Context: Monitoring
 
 ### Explicación
-Es el núcleo del sistema. Aquí se reciben las mediciones del sensor, se registran, validan y se verifica si están dentro o fuera de los rangos definidos. Finalmente, las mediciones se almacenan.
+Es el núcleo operacional del sistema. Aquí se reciben, registran y consultan las lecturas de temperatura, humedad y conectividad. También se evalúa si las mediciones están dentro o fuera de los rangos definidos por Asset Management y se alimentan las vistas de dashboard. En la implementación frontend actual corresponde al módulo `monitoring`; en backend se proyecta como un servicio Spring Boot optimizado para telemetría e historial de lecturas.
 
 ### Justificación
 Se separa porque es el proceso principal del negocio. Este contexto:
@@ -3240,7 +1691,7 @@ Se separa porque es el proceso principal del negocio. Este contexto:
 - Evita mezclar procesamiento de datos con visualización o alertas.
 
 
-## 4. Bounded Context: Alertas
+## 4. Bounded Context: Alerts
 
 ### Explicación
 Se encarga de generar notificaciones cuando una medición está fuera de los rangos establecidos. También gestiona la visualización de alertas en el sistema.
@@ -3252,40 +1703,70 @@ Se desacopla para permitir una respuesta rápida ante eventos críticos:
 - Facilita la extensión del sistema sin afectar la lógica principal.
 
 
-## 5. Bounded Context: Reportes
+## 5. Bounded Context: Reports & Compliance
 
 ### Explicación
-Gestiona la generación, visualización y exportación de reportes. Incluye dashboards, historial de mediciones y visualización en tiempo real.
+Gestiona la generación, visualización y exportación de reportes operativos y evidencia de cumplimiento. Incluye bitácora diaria, historial de eventos, reportes sanitarios, reportes mensuales, hallazgos de cumplimiento y evidencia de auditoría. En la implementación frontend actual corresponde al módulo `reports`, incluyendo la vista `audit-evidence`; en backend se proyecta como un servicio Spring Boot encargado de consolidar información histórica y preparar evidencia exportable.
 
 ### Justificación
-Se separa porque el análisis de datos tiene necesidades distintas al procesamiento:
+Se separa porque el análisis, cumplimiento y auditoría tienen necesidades distintas al procesamiento operativo:
 - Requiere consultas complejas y agregaciones.
 - Puede optimizarse con técnicas como caching o data warehousing.
 - Evita afectar el rendimiento del monitoreo en tiempo real.
-- Permite escalar de forma independiente.
+- Permite centralizar evidencia documental sin crear un bounded context de auditoría separado.
 
 
-## 6. Bounded Context: Auditoría
+## 6. Bounded Context: Maintenance Management
 
 ### Explicación
-Este contexto controla el cumplimiento del sistema mediante auditorías. Permite iniciar auditorías, registrar resultados, validar cumplimiento y generar evidencias exportables.
+Este contexto gestiona actividades de mantenimiento preventivo y solicitudes de servicio técnico asociadas a activos y dispositivos. En la implementación frontend actual corresponde al módulo `maintenance-management`; en backend se proyecta como un servicio Spring Boot que registra programación, atención, cierre y evidencia técnica de cada intervención.
 
 ### Justificación
-Se aísla porque la auditoría responde a necesidades de control y cumplimiento:
-- Garantiza trazabilidad de las acciones del sistema.
-- Permite cumplir con normativas o estándares.
-- Facilita la generación de evidencia sin afectar otros procesos.
-- Puede evolucionar hacia automatización completa sin impactar otros contextos.
+Se separa porque el mantenimiento tiene un ciclo operativo propio:
+- Permite planificar actividades preventivas sin mezclar esa lógica con el monitoreo.
+- Conserva historial técnico por activo.
+- Ayuda a relacionar fallas, alertas y acciones de soporte.
+- Puede evolucionar hacia automatización de órdenes de trabajo sin afectar otros contextos.
+
+## 7. Bounded Context: AI Assistance
+
+### Explicación
+Este contexto incorpora la guía de inteligencia artificial dentro del flujo operativo de ColdTrace. Su función es analizar una incidencia abierta, construir un contexto acotado con datos de activo, lectura, rangos, historial reciente y mantenimiento relacionado, y generar un plan de resolución pendiente de aprobación. También puede sintetizar reportes en lenguaje natural para facilitar la lectura de riesgos y acciones recomendadas.
+
+### Justificación
+Se separa porque la IA no debe modificar directamente el estado del negocio ni mezclarse con las reglas de Alertas, Monitoreo o Reportes. Al aislar AI Assistance:
+- Se mantiene la IA como apoyo operativo y no como autoridad automática.
+- Se exige aprobación humana antes de registrar acciones correctivas o cerrar incidencias.
+- Se controla el contexto enviado al proveedor de modelo, evitando exponer datos innecesarios.
+- Se facilita cambiar el proveedor LLM mediante Spring AI sin afectar los bounded contexts principales.
+
+### Estrategia de proveedor de IA
+La integración sigue el enfoque del material de Spring AI: el dominio de ColdTrace depende de un cliente de asistencia (`ChatClient`/`ChatModel` a través de un adapter) y no de un proveedor concreto. Para desarrollo local se propone `AI_MODEL_PROVIDER=ollama` con `AI_MODEL_NAME=gemma3:4b`, ejecutado mediante Ollama en la máquina del equipo. Para el despliegue académico en Cloud Run se propone `AI_MODEL_PROVIDER=openai` con `AI_MODEL_NAME=gpt-5.4-mini`, evitando cargar un modelo local dentro del contenedor. En ambos casos, las credenciales y URLs se configuran por entorno y nunca se registran en el repositorio. Esta arquitectura se apoya en la abstracción portable de Spring AI, su soporte para Ollama y OpenAI, la disponibilidad del modelo `gemma3` en Ollama y la documentación oficial de modelos/precios de OpenAI para controlar proveedor y costo por entorno (Spring AI, s. f.-a; Spring AI, s. f.-b; Spring AI, s. f.-c; Ollama, s. f.; OpenAI, s. f.-a; OpenAI, s. f.-b).
+
+## 8. Bounded Context: Subscription & Billing
+
+### Explicación
+Este contexto administra planes SaaS, límites por plan, suscripciones de organizaciones, integración con Stripe, portal de cliente, sesiones de checkout y webhooks de ciclo de vida de pagos. También expone la política de entitlements que otros bounded contexts consultan para habilitar funcionalidades como reportes exportables, mantenimiento avanzado o asistencia de IA. La integración se fundamenta en Checkout Sessions para pagos/suscripciones alojadas, Customer Portal para autoservicio de facturación y webhooks para recibir eventos asincrónicos de Stripe (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
+
+### Justificación
+Se separa porque monetización y pagos tienen reglas, riesgos e integración externa propios. Al aislar Subscription & Billing:
+- Se evita mezclar lógica financiera con monitoreo o alertas operativas.
+- Stripe queda encapsulado en un adapter y ColdTrace solo conserva estado de suscripción, identificadores de proveedor y permisos funcionales.
+- Se facilita ofrecer un plan gratuito, un plan operativo y un plan profesional sin duplicar validaciones en todo el backend.
+- Se habilita control de límites de uso por organización de forma consistente.
 
 
 ## Problemas Identificados y Relación con Contextos
 
-- Datos inconsistentes del sensor → Monitoreo  
-- Validación insuficiente → Monitoreo  
-- Configuración manual del sensor → Gestión de Sensores  
-- Parámetros mal definidos → Gestión de Sensores  
-- Generación de reportes lenta → Reportes  
-- Proceso de auditoría manual → Auditoría  
+- Datos inconsistentes del sensor → Monitoring
+- Validación insuficiente → Monitoring
+- Configuración manual del sensor → Asset Management
+- Parámetros mal definidos → Asset Management
+- Generación de reportes lenta → Reports & Compliance
+- Proceso de auditoría manual → Reports & Compliance
+- Seguimiento técnico reactivo → Maintenance Management
+- Resolución manual e inconsistente de incidencias → AI Assistance + Alerts
+- Necesidad de planes, límites y monetización SaaS → Subscription & Billing
 
 ### Justificación General
 Estos problemas evidencian la necesidad de separar responsabilidades. La aplicación de Bounded Contexts permite:
@@ -3293,99 +1774,96 @@ Estos problemas evidencian la necesidad de separar responsabilidades. La aplicac
 - Mejorar la mantenibilidad del sistema.
 - Escalar componentes de forma independiente.
 - Aplicar principios de Domain-Driven Design de manera efectiva.
+- Incorporar IA y monetización como capacidades controladas, auditables y desacopladas.
 
 
 ### 4.6.2. Software Architecture Context Diagram.
 
-El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas.
+El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas, incluyendo sensores IoT, servicios de notificación, proveedores de identidad Google/Apple, proveedor de modelo de IA consumido mediante Spring AI y Stripe para el ciclo de vida de suscripciones. El proveedor de IA se mantiene intercambiable: Ollama local para desarrollo y OpenAI en el despliegue académico. La separación de Google/Apple como sistemas externos responde a que los flujos OpenID Connect/OAuth y Sign in with Apple validan identidad, mientras que ColdTrace conserva la autorización interna mediante organización, rol, permisos y JWT propio (Google Developers, s. f.-a; Google Developers, s. f.-b; Apple Developer, s. f.-a; Apple Developer, s. f.-b).
 
-<p align="center">
-  <img src="report/assets/chapter-04/contextdiagram/contextdiagram.png" width="760">
-</p>
+![contextdiagram](report/assets/chapter-04/contextdiagram/contextdiagram.png)
 
-<p align="center">
-  <em>Figura 4.6.2. Context Diagram del sistema ColdTrace siguiendo el modelo C4.</em>
-</p>
+*Figure 4.6.2. ColdTrace System Context Diagram following the C4 model.*
 
-> El código fuente del diagrama en PlantUML se encuentra en [`assets/chapter-04/contextdiagram/contextdiagram.puml`](report/assets/chapter-04/contextdiagram/contextdiagram.puml). Para regenerar la imagen, se puede renderizar localmente con `plantuml contextdiagram.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+> PlantUML source: [`assets/chapter-04/contextdiagram/contextdiagram.puml`](report/assets/chapter-04/contextdiagram/contextdiagram.puml).
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
-El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway, los servicios por bounded context y la capa de datos asociada a cada uno.
+El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC, Subscription & Billing BC y la integración de Identity & Access con proveedores externos de identidad Google/Apple, manteniendo a ColdTrace como responsable de organización, rol, permisos y JWT. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend. Las dependencias externas de identidad, IA y pagos se documentan con referencias oficiales de Google, Apple, Spring AI, Ollama, OpenAI y Stripe para sustentar el diseño objetivo y sus restricciones de seguridad (Google Developers, s. f.-a; Apple Developer, s. f.-b; Spring AI, s. f.-a; Ollama, s. f.; OpenAI, s. f.-a; Stripe, s. f.-a).
 
-<p align="center">
-  <img src="report/assets/chapter-04/containerdiagram/containerdiagram.png" width="760">
-</p>
+![containerdiagram](report/assets/chapter-04/containerdiagram/containerdiagram.png)
 
-<p align="center">
-  <em>Figura 4.6.3. Container Diagram del sistema ColdTrace.</em>
-</p>
+*Figure 4.6.3. ColdTrace System Container Diagram.*
 
-> El código fuente del diagrama en PlantUML se encuentra en [`assets/chapter-04/containerdiagram/containerdiagram.puml`](report/assets/chapter-04/containerdiagram/containerdiagram.puml). Para regenerar la imagen, se puede renderizar localmente con `plantuml containerdiagram.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+> PlantUML source: [`assets/chapter-04/containerdiagram/containerdiagram.puml`](report/assets/chapter-04/containerdiagram/containerdiagram.puml).
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
-En esta sección se presenta la vista de componentes de ColdTrace por bounded context. Cada diagrama muestra los componentes internos principales y sus relaciones dentro del contexto correspondiente.
+En esta sección se presenta la vista de componentes de ColdTrace por bounded context, alineada con el backend Spring Boot actual ubicado en `coldtrace-platform` y con la ampliación objetivo del Sprint 4. Cada diagrama muestra REST controllers, command/query services, facades ACL, repositorios de dominio, adapters JPA, event handlers, adapters externos y tablas MySQL. Los componentes de AI Assistance y Subscription & Billing se documentan como diseño objetivo para implementar la guía inteligente de incidencias, los resúmenes de reportes y la monetización SaaS.
 
-- **Diagrama de componentes - Autenticación:** Muestra los componentes encargados del registro, inicio de sesión, recuperación de contraseña y gestión de roles y permisos.
+- **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, social authentication with Google/Apple, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
 
-<p align="center">
-  <img src="report/assets/chapter-04/diagramcomponents/component-autenticacion.png" width="760" alt="Component View Autenticacion BC">
-  <br>
-  <em>Figura 4.6.4.1. Component Diagram del BC Autenticación.</em>
-</p>
+![Component View Identity & Access BC](report/assets/chapter-04/diagramcomponents/component-autenticacion.png)
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](report/assets/chapter-04/diagramcomponents/component-autenticacion.puml).
+*Figure 4.6.4.1. Identity & Access BC Component Diagram.*
 
-- **Diagrama de componentes - Gestión de Sensores:** Muestra los componentes encargados del registro y configuración de equipos monitoreados, sensores, gateways y rangos operativos.
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](report/assets/chapter-04/diagramcomponents/component-autenticacion.puml).
 
-<p align="center">
-  <img src="report/assets/chapter-04/diagramcomponents/component-sensores.png" width="760" alt="Component View Gestion de Sensores BC">
-  <br>
-  <em>Figura 4.6.4.2. Component Diagram del BC Gestión de Sensores.</em>
-</p>
+- **Component diagram - Asset Management:** Shows locations, assets, gateways, IoT devices, asset settings, organization validation and the facade used by Monitoring, Alerts, Reports and Maintenance.
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-sensores.puml`](report/assets/chapter-04/diagramcomponents/component-sensores.puml).
+![Component View Asset Management BC](report/assets/chapter-04/diagramcomponents/component-sensores.png)
 
-- **Diagrama de componentes - Monitoreo:** Muestra los componentes que reciben, validan y consultan las lecturas de temperatura y humedad.
+*Figure 4.6.4.2. Asset Management BC Component Diagram.*
 
-<p align="center">
-  <img src="report/assets/chapter-04/diagramcomponents/component-monitoreo.png" width="760" alt="Component View Monitoreo BC">
-  <br>
-  <em>Figura 4.6.4.3. Component Diagram del BC Monitoreo.</em>
-</p>
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-sensores.puml`](report/assets/chapter-04/diagramcomponents/component-sensores.puml).
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](report/assets/chapter-04/diagramcomponents/component-monitoreo.puml).
+- **Component diagram - Monitoring:** Shows sensor reading registration, demo reading generation, query services, validation through Identity & Access and Asset Management facades, and the published reading snapshots.
 
-- **Diagrama de componentes - Alertas:** Muestra los componentes encargados de generar, enrutar, escalar y cerrar alertas e incidencias.
+![Component View Monitoring BC](report/assets/chapter-04/diagramcomponents/component-monitoreo.png)
 
-<p align="center">
-  <img src="report/assets/chapter-04/diagramcomponents/component-alertas.png" width="760" alt="Component View Alertas BC">
-  <br>
-  <em>Figura 4.6.4.4. Component Diagram del BC Alertas.</em>
-</p>
+*Figure 4.6.4.3. Monitoring BC Component Diagram.*
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-alertas.puml`](report/assets/chapter-04/diagramcomponents/component-alertas.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](report/assets/chapter-04/diagramcomponents/component-monitoreo.puml).
 
-- **Diagrama de componentes - Reportes:** Muestra los componentes responsables de generar dashboards, históricos, bitácoras y reportes exportables.
+- **Component diagram - Alerts:** Shows incident creation, acknowledgement, escalation, corrective actions, resolution, notification read models and incident snapshots.
 
-<p align="center">
-  <img src="report/assets/chapter-04/diagramcomponents/component-reportes.png" width="760" alt="Component View Reportes BC">
-  <br>
-  <em>Figura 4.6.4.5. Component Diagram del BC Reportes.</em>
-</p>
+![Component View Alerts BC](report/assets/chapter-04/diagramcomponents/component-alertas.png)
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-reportes.puml`](report/assets/chapter-04/diagramcomponents/component-reportes.puml).
+*Figure 4.6.4.4. Alerts BC Component Diagram.*
 
-- **Diagrama de componentes - Auditoría:** Muestra los componentes responsables de iniciar auditorías, validar cumplimiento y gestionar evidencias.
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-alertas.puml`](report/assets/chapter-04/diagramcomponents/component-alertas.puml).
 
-<p align="center">
-  <img src="report/assets/chapter-04/diagramcomponents/component-auditoria.png" width="760" alt="Component View Auditoria BC">
-  <br>
-  <em>Figura 4.6.4.6. Component Diagram del BC Auditoría.</em>
-</p>
+- **Component diagram - Reports:** Shows report generation from asset, reading and incident snapshots, persisted summary metrics and report query endpoints.
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](report/assets/chapter-04/diagramcomponents/component-auditoria.puml).
+![Component View Reports BC](report/assets/chapter-04/diagramcomponents/component-reportes.png)
+
+*Figure 4.6.4.5. Reports BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-reportes.puml`](report/assets/chapter-04/diagramcomponents/component-reportes.puml).
+
+- **Component diagram - Maintenance Management:** Shows the components responsible for scheduling preventive maintenance, registering technical service requests, and closing work with evidence.
+
+![Component View Maintenance Management BC](report/assets/chapter-04/diagramcomponents/component-auditoria.png)
+
+*Figure 4.6.4.6. Maintenance Management BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](report/assets/chapter-04/diagramcomponents/component-auditoria.puml).
+
+- **Component diagram - AI Assistance:** Shows AI resolution-plan generation, report summaries, bounded context assembly, Spring AI integration, environment-based provider selection, entitlement validation and the approval flow that applies incident changes only after operator confirmation.
+
+![Component View AI Assistance BC](report/assets/chapter-04/diagramcomponents/component-ai-assistance.png)
+
+*Figure 4.6.4.7. AI Assistance BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-ai-assistance.puml`](report/assets/chapter-04/diagramcomponents/component-ai-assistance.puml).
+
+- **Component diagram - Subscription & Billing:** Shows plan queries, organization subscriptions, Stripe checkout, customer portal sessions, webhook reconciliation and the entitlement facade consumed by gated features.
+
+![Component View Subscription & Billing BC](report/assets/chapter-04/diagramcomponents/component-billing.png)
+
+*Figure 4.6.4.8. Subscription & Billing BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-billing.puml`](report/assets/chapter-04/diagramcomponents/component-billing.puml).
 
 ---
 
@@ -3393,32 +1871,32 @@ En esta sección se presenta la vista de componentes de ColdTrace por bounded co
 
 ### 4.7.1. Class Diagrams.
 
-La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases de dominio Java existentes en el backend actual.
+La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases de dominio Java existentes en el backend actual y las clases objetivo definidas para la ampliación del Sprint 4.
 
 El alcance de estos diagramas es el modelo DDD: aggregates, value objects, enums, domain events y repositories. Las clases de soporte de la capa de aplicación e interfaces, como commands, queries, resources, assemblers, failure records, controllers y service interfaces, se representan a nivel de componentes y endpoints en la sección 4.6, no como clases individuales dentro del diagrama de dominio.
 
 #### Stage 1: DDD-oriented Class Diagram
 
-En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican los aggregates, value objects, domain events, enumeraciones y relaciones por identificador que existen en `src/main/java`.
+En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican aggregates, value objects, domain events, enumeraciones y relaciones por identificador del backend actual, además de los aggregates objetivo necesarios para AI Assistance y Subscription & Billing.
 
 Principales clases por bounded context:
 
-- **BC Identity & Access:** `Organization`, `User`, `Role`, `EmailAddress`, `RoleName` y `Permission`.
+- **BC Identity & Access:** `Organization`, `User`, `ExternalIdentity`, `Role`, `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`.
 - **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid`, `IoTDeviceUuid` y `AssetCreatedEvent`.
 - **BC Monitoring:** `SensorReading` como aggregate de telemetría persistida.
 - **BC Alerts:** `Incident`, `Notification`, `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`.
 - **BC Reports:** `Report`, que persiste métricas resumidas de activos, lecturas e incidentes.
 - **BC Maintenance Management:** `MaintenanceSchedule` y `TechnicalServiceRequest`.
+- **BC AI Assistance:** `IncidentAiResolutionPlan`, `AiReportSummary` y `AiPlanStatus`.
+- **BC Subscription & Billing:** `SubscriptionPlan`, `OrganizationSubscription`, `BillingWebhookEvent`, `PlanCode` y `SubscriptionStatus`.
 
-Las referencias entre bounded contexts se implementan con identificadores `Long` y facades ACL. Por ejemplo, `SensorReading` guarda `assetId`, `iotDeviceId`, `gatewayId` y `locationId`; `Incident` guarda `assetId`, `deviceId` y `readingId`; `TechnicalServiceRequest` puede guardar `incidentId`; `Report` almacena métricas agregadas en lugar de colecciones embebidas.
+Las referencias entre bounded contexts se implementan con identificadores `Long` y facades ACL. Por ejemplo, `SensorReading` guarda `assetId`, `iotDeviceId`, `gatewayId` y `locationId`; `Incident` guarda `assetId`, `deviceId` y `readingId`; `TechnicalServiceRequest` puede guardar `incidentId`; `Report` almacena métricas agregadas en lugar de colecciones embebidas; `IncidentAiResolutionPlan` referencia la incidencia sin poseerla; y `OrganizationSubscription` referencia el plan por `PlanCode`.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png" width="760" alt="Class Diagram Stage 1 DDD">
-  <br>
-  <em>Figure 4.7.1.1. Stage 1 - DDD-oriented Class Diagram.</em>
-</p>
+![Class Diagram Stage 1 DDD](report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml).
+*Figure 4.7.1.1. Stage 1 - DDD-oriented Class Diagram.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml).
 
 #### Stage 2: Group Classes by Bounded Context
 
@@ -3426,88 +1904,92 @@ En esta segunda etapa las clases se agrupan según el bounded context al que per
 
 Agrupamiento aplicado en el diagrama:
 
-- **BC Identity & Access** (azul claro): `Organization`, `User`, `Role` y sus value objects.
+- **BC Identity & Access** (azul claro): `Organization`, `User`, `ExternalIdentity`, `Role` y sus value objects/enums.
 - **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, sus value objects y `AssetCreatedEvent`.
 - **BC Monitoring** (verde): `SensorReading`.
 - **BC Alerts** (amarillo): `Incident`, `Notification` y sus enums de severidad, estado y canal.
 - **BC Reports** (morado): `Report`.
 - **BC Maintenance Management** (naranja): `MaintenanceSchedule` y `TechnicalServiceRequest`.
+- **BC AI Assistance** (morado claro): `IncidentAiResolutionPlan`, `AiReportSummary` y `AiPlanStatus`.
+- **BC Subscription & Billing** (gris): `SubscriptionPlan`, `OrganizationSubscription`, `BillingWebhookEvent`, `PlanCode` y `SubscriptionStatus`.
 
-Las relaciones **internas a cada BC** quedan contenidas dentro del paquete correspondiente. Las relaciones entre bounded contexts aparecen como asociaciones por identificador, ya que el backend evita navegar objetos de otros contextos directamente.
+Las relaciones **internas a cada BC** quedan contenidas dentro del paquete correspondiente. Las relaciones entre bounded contexts aparecen como asociaciones por identificador o dependencias de facade ACL, ya que el backend evita navegar objetos de otros contextos directamente.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png" width="760" alt="Class Diagram Stage 2 Bounded Context">
-  <br>
-  <em>Figure 4.7.1.2. Stage 2 - Group classes by Bounded Context.</em>
-</p>
+![Class Diagram Stage 2 Bounded Context](report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml).
+*Figure 4.7.1.2. Stage 2 - Group classes by Bounded Context.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml).
 
 #### Stage 3: Value Object, Entity and Aggregate Identification
 
-En esta tercera etapa las clases se clasifican como **Aggregate**, **Value Object**, **enum** y **DomainEvent** según el código actual. Las entidades JPA de persistencia no se mezclan con el modelo de dominio y se documentan en la sección de base de datos.
+En esta tercera etapa las clases se clasifican como **Aggregate**, **Value Object**, **enum** y **DomainEvent** según el código actual y la extensión objetivo del Sprint 4. Las entidades JPA de persistencia no se mezclan con el modelo de dominio y se documentan en la sección de base de datos.
 
 Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggregate se referencia a otros contextos por identificadores o por snapshots obtenidos desde facades ACL. En el backend actual esos identificadores son `Long` y algunos identificadores de negocio se modelan como value objects (`AssetUuid`, `GatewayUuid`, `IoTDeviceUuid`, `LocationName`, `EmailAddress`, `RoleName`).
 
-**BC Identity & Access.** Aggregates → `Organization`, `User` y `Role`. Value Objects → `EmailAddress`, `RoleName` y `Permission`. No existen clases de dominio `Session`, `Subscription` ni `NotificationPreference` en el backend actual.
+**BC Identity & Access.** Aggregates → `Organization`, `User`, `ExternalIdentity` y `Role`. Value Objects / enums → `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`. `ExternalIdentity` es la extensión objetivo de Sprint 4 para vincular Google/Apple mediante `provider + providerSubject`; no reemplaza la pertenencia a organización ni la asignación de roles de ColdTrace.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png" width="720" alt="Class Diagram Stage 3 BC Identity & Access">
-  <br>
-  <em>Figure 4.7.1.3.1. Stage 3 - BC Identity & Access.</em>
-</p>
+![Class Diagram Stage 3 BC Identity & Access](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
+*Figure 4.7.1.3.1. Stage 3 - BC Identity & Access.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
 
 **BC Asset Management.** Aggregates → `Location`, `Asset`, `Gateway`, `IoTDevice` y `AssetSettings`. Value Objects → `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`. DomainEvent → `AssetCreatedEvent`, publicado por `Asset` cuando se registra un activo nuevo. El backend actual no contiene `Sensor`, `AssetBuilder`, `AssetDirector`, `TemperatureRange` ni `HumidityRange` como clases de dominio.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png" width="720" alt="Class Diagram Stage 3 BC Asset Management">
-  <br>
-  <em>Figure 4.7.1.3.2. Stage 3 - BC Asset Management.</em>
-</p>
+![Class Diagram Stage 3 BC Asset Management](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
+*Figure 4.7.1.3.2. Stage 3 - BC Asset Management.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
 
 **BC Monitoring.** Aggregate → `SensorReading`, que persiste una lectura de telemetría con temperatura, humedad, indicador `outOfRange`, batería, señal y referencias al activo, dispositivo IoT, gateway y ubicación. También publica `SensorReadingRecordedEvent`.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png" width="720" alt="Class Diagram Stage 3 BC Monitoring">
-  <br>
-  <em>Figure 4.7.1.3.3. Stage 3 - BC Monitoring.</em>
-</p>
+![Class Diagram Stage 3 BC Monitoring](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
+*Figure 4.7.1.3.3. Stage 3 - BC Monitoring.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
 
 **BC Alerts.** Aggregates → `Incident` y `Notification`. Enums → `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`. También publica `IncidentOpenedEvent`. No existen aggregates `Alert` ni `AlertRule` en el backend actual.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png" width="720" alt="Class Diagram Stage 3 BC Alerts">
-  <br>
-  <em>Figure 4.7.1.3.4. Stage 3 - BC Alerts.</em>
-</p>
+![Class Diagram Stage 3 BC Alerts](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
+*Figure 4.7.1.3.4. Stage 3 - BC Alerts.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
 
 **BC Reports.** Aggregate → `Report`, que persiste métricas resumidas del periodo consultado: cantidad de activos, lecturas, lecturas fuera de rango, incidentes, incidentes abiertos, promedios y porcentaje de cumplimiento. También publica `ReportGeneratedEvent`.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png" width="720" alt="Class Diagram Stage 3 BC Reports">
-  <br>
-  <em>Figure 4.7.1.3.5. Stage 3 - BC Reports.</em>
-</p>
+![Class Diagram Stage 3 BC Reports](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
+*Figure 4.7.1.3.5. Stage 3 - BC Reports.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
 
 **BC Maintenance Management.** Aggregates → `MaintenanceSchedule` y `TechnicalServiceRequest`. La evidencia de cierre está modelada como campo `evidence` dentro de `TechnicalServiceRequest`; no existe una clase `ServiceEvidence` independiente.
 
-<p align="center">
-  <img src="report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png" width="720" alt="Class Diagram Stage 3 BC Maintenance Management">
-  <br>
-  <em>Figure 4.7.1.3.6. Stage 3 - BC Maintenance Management.</em>
-</p>
+![Class Diagram Stage 3 BC Maintenance Management](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png)
 
-> PlantUML source: [`report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
+*Figure 4.7.1.3.6. Stage 3 - BC Maintenance Management.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
+
+**BC AI Assistance.** Aggregates objetivo → `IncidentAiResolutionPlan` y `AiReportSummary`. `IncidentAiResolutionPlan` conserva el plan generado por IA, el estado pendiente/aprobado/rechazado, el borrador de acción correctiva, notas de resolución, evidencia requerida y auditoría de aprobación. La regla principal es que la IA no cierra una incidencia de forma autónoma: solo genera un plan pendiente y la aprobación del operador ejecuta el comando real del BC Alerts.
+
+![Class Diagram Stage 3 BC AI Assistance](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.png)
+
+*Figure 4.7.1.3.7. Stage 3 - BC AI Assistance.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml).
+
+**BC Subscription & Billing.** Aggregates objetivo → `SubscriptionPlan`, `OrganizationSubscription` y `BillingWebhookEvent`. `SubscriptionPlan` define límites y funcionalidades habilitadas; `OrganizationSubscription` conserva el estado vigente de la organización frente al proveedor; y `BillingWebhookEvent` permite procesar eventos de Stripe con idempotencia. El value object `PlanCode` evita depender de identificadores internos para enlazar el plan contratado.
+
+![Class Diagram Stage 3 BC Subscription & Billing](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.png)
+
+*Figure 4.7.1.3.8. Stage 3 - BC Subscription & Billing.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml).
 
 ---
 
@@ -3515,16 +1997,15 @@ Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggreg
 
 ### 4.8.1. Database Diagrams.
 
-Para el planteamiento de la base de datos de ColdTrace se identificaron primero las tablas principales del sistema y luego se agruparon según los bounded contexts definidos previamente. Después se establecieron las relaciones entre ellas y se añadieron tablas intermedias en los casos necesarios para manejar correctamente las relaciones y mantener el modelo en **Tercera Forma Normal (3FN)**. Todo esto da como resultado el siguiente diagrama.
+El diagrama de base de datos se actualizó desde las entidades JPA reales del backend y el diseño objetivo del Sprint 4. La configuración actual usa MySQL, Hibernate `ddl-auto=update` y `SnakeCasePhysicalNamingStrategy`, por lo que los nombres de columna se derivan de los atributos Java en `snake_case`. Las relaciones se muestran como **logical FK** cuando el código usa campos `Long` en lugar de anotaciones `@ManyToOne`.
 
-<p align="center">
-  <img src="report/assets/chapter-04/databasediagram/databasediagram.png" width="760" alt="ColdTrace ERD 3FN">
-  <br>
-  <em>Figura 4.8.1.1. Diagrama Entidad-Relación de ColdTrace normalizado a 3FN.</em>
-</p>
+La ampliación agrega `external_identities` para vincular identidades Google/Apple a usuarios internos sin usar el email como única llave permanente. También agrega `incident_ai_resolution_plans` y `ai_report_summaries` para conservar salidas de IA con auditoría de aprobación, además de `subscription_plans`, `organization_subscriptions` y `billing_webhook_events` para soportar planes SaaS, entitlements y sincronización con Stripe sin almacenar datos sensibles de pago en ColdTrace.
 
-> El código fuente en PlantUML se encuentra en [`assets/chapter-04/databasediagram/databasediagram.puml`](report/assets/chapter-04/databasediagram/databasediagram.puml). Para regenerar la imagen se puede renderizar localmente con `plantuml databasediagram.puml` o pegando el contenido en [PlantText](https://www.planttext.com/).
+![ColdTrace ERD 3FN](report/assets/chapter-04/databasediagram/databasediagram.png)
 
+*Figure 4.8.1.1. ColdTrace Entity-Relationship Diagram normalized to 3NF.*
+
+> PlantUML source: [`assets/chapter-04/databasediagram/databasediagram.puml`](report/assets/chapter-04/databasediagram/databasediagram.puml).
 
 # Capítulo V: Product Implementation, Validation & Deployment
 
@@ -3603,11 +2084,11 @@ Las ramas identificadas en el repositorio son:
 
 Se utilizó una convención de nombres basada en el contenido desarrollado, lo cual se evidencia en las siguientes ramas:
 
-- feature/14-chapter-05  
-- feature/13-chapter-04  
-- feature/12-chapter-03  
-- feature/15-chapter-06  
-- feature/99-bibliography  
+- feature/14-chapter-05
+- feature/13-chapter-04
+- feature/12-chapter-03
+- feature/15-chapter-06
+- feature/99-bibliography
 
 Cada rama representa un capítulo o sección del informe, permitiendo que los integrantes trabajen de forma paralela sin interferir en el trabajo de otros.
 
@@ -3627,10 +2108,10 @@ Para estandarizar los mensajes de commits, se utilizó la convención de Convent
 
 Los tipos de commits utilizados incluyen:
 
-- **feat**: incorporación de nuevo contenido  
-- **docs**: modificaciones en la documentación  
-- **fix**: corrección de errores  
-- **chore**: tareas de mantenimiento  
+- **feat**: incorporación de nuevo contenido
+- **docs**: modificaciones en la documentación
+- **fix**: corrección de errores
+- **chore**: tareas de mantenimiento
 
 El uso de estas convenciones facilita la comprensión del historial de cambios y mejora la colaboración entre los integrantes del equipo.
 
@@ -3648,10 +2129,10 @@ Se utilizó nomenclatura en inglés para todos los elementos del código. Los ar
 
 Ejemplos del proyecto:
 
-- `navigation.js` → manejo de navegación  
-- `scroll-reveal.js` → animaciones  
-- `variables.css` → variables de diseño  
-- `en-US.json` → traducciones en inglés  
+- `navigation.js` → manejo de navegación
+- `scroll-reveal.js` → animaciones
+- `variables.css` → variables de diseño
+- `en-US.json` → traducciones en inglés
 
 Estas convenciones permiten identificar rápidamente el propósito de cada archivo.
 
@@ -3739,7 +2220,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
 
 <p align="center">
   Uso de ramas para el desarrollo e integración de cambios antes del despliegue.
-</p>   
+</p>
 
 3. Se crearon branches para la actualización continua del repositorio, donde cada cambio realizado por el equipo eventualmente será agregado a la rama principal.
 
@@ -3909,7 +2390,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 Para cumplir con la descomposición de User Stories en Engineering Tasks, los work items del Sprint 1 fueron documentados con estimaciones entre 4 y 8 horas. Esta granularidad permite evidenciar tareas suficientemente pequeñas para seguimiento diario, pero con alcance claro para desarrollo, revisión y cierre dentro del sprint.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
-  
+
   <tr>
     <th>Sprint #</th>
     <td colspan="7">Sprint 1</td>
@@ -6219,19 +4700,83 @@ Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace e
 - **Repositorio frontend (Vercel):** https://coldtrace-frontend-liard.vercel.app
 - **Landing Page (GitHub Pages):** https://iceq2026.github.io/landingpage-coldtrace
 
-A continuación se presenta la evidencia del flujo de despliegue continuo en Google Cloud Build y el estado activo del servicio en Google Cloud Run:
+A continuación se documenta el procedimiento realizado en la consola de Google Cloud para aprovisionar la base de datos administrada y publicar la RESTful API.
+
+**Creación de la instancia Cloud SQL para MySQL**
+
+Se aprovisionó una instancia administrada de Cloud SQL seleccionando MySQL 8.4 como motor de base de datos, asignándole el identificador `coldtrace-mysql` en la región `us-central1`. Esta instancia actúa como el almacenamiento persistente al que se conecta el backend desplegado en Cloud Run.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/creacion_intancia_cloudSQL_figura1.png" alt="Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace" width="900">
+</p>
+
+*Figura 5.2.3.7.1: Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace.*
+
+**Verificación de la instancia `coldtrace-mysql` disponible**
+
+Se confirmó que la instancia `coldtrace-mysql` quedó creada correctamente en la región configurada (`us-central1`, MySQL 8.4) y disponible para recibir bases de datos, usuarios y conexiones desde el servicio de aplicación.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/intancia_cloud_sql_figura2.png" alt="Instancia Cloud SQL coldtrace-mysql creada y disponible" width="900">
+</p>
+
+*Figura 5.2.3.7.2: Instancia Cloud SQL `coldtrace-mysql` creada en Google Cloud y disponible para configuración.*
+
+**Creación de la base de datos `coldtrace_platform`**
+
+Dentro de la instancia Cloud SQL se registró el esquema `coldtrace_platform`, que actúa como base de datos principal donde el backend Spring Boot persiste la información de organizaciones, activos, sensores, reportes y monitoreo. El esquema se creó con codificación `utf8mb4` para dar soporte consistente a la internacionalización de contenidos.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/base_de_datos_coldtrace_figura3.png" alt="Base de datos coldtrace_platform registrada en la instancia Cloud SQL" width="900">
+</p>
+
+*Figura 5.2.3.7.3: Base de datos `coldtrace_platform` registrada en la instancia Cloud SQL.*
+
+**Configuración del usuario de base de datos**
+
+Se creó un usuario de aplicación dedicado (`coldtrace_user`) para que el servicio Cloud Run acceda a MySQL sin utilizar la cuenta administrativa `root` durante la operación del backend. Esta separación reduce la superficie de riesgo y mantiene las credenciales operativas aisladas de las credenciales de administración.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/usuario_base_de_datos_figura4.png" alt="Usuario de base de datos configurado para la conexión del backend" width="900">
+</p>
+
+*Figura 5.2.3.7.4: Usuario de base de datos `coldtrace_user` configurado para la conexión del backend.*
+
+**Configuración del servicio Cloud Run**
+
+Se creó el servicio Cloud Run `coldtrace-platform` conectado al repositorio del backend en GitHub, utilizando la rama principal como fuente de despliegue continuo mediante Cloud Build. Se seleccionó la compilación a partir del `Dockerfile` del repositorio y se configuró el puerto de contenedor `8080`, requerido por Cloud Run para enrutar el tráfico HTTP hacia la aplicación Spring Boot.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/configuracion_cloud_run_backend_figura5.png" alt="Configuración de Cloud Run con repositorio del backend, rama principal y compilación mediante Dockerfile" width="900">
+</p>
+
+*Figura 5.2.3.7.5: Configuración de Cloud Run con el repositorio del backend, la rama principal y la compilación mediante Dockerfile.*
+
+**Configuración de variables de entorno en Cloud Run**
+
+Se registraron las variables de entorno de producción para separar la configuración del código fuente, evitando exponer host, usuario, contraseña o nombre del esquema en el repositorio. Entre ellas se incluyen la conexión a la instancia Cloud SQL (`DATABASE_URL`, `DATABASE_USER`, `DATABASE_PASSWORD`, `DATABASE_SCHEMA`), el perfil activo de Spring Boot (`SPRING_PROFILES_ACTIVE=prod`) y los orígenes permitidos para CORS que habilitan la integración con la Frontend Web Application. Estas variables son resueltas en tiempo de ejecución por `application-prod.properties`, manteniéndose fuera del control de versiones.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/variable_de_entorno_figura6.png" alt="Variables de entorno del servicio Cloud Run para conectar Spring Boot con Cloud SQL y el frontend" width="900">
+</p>
+
+*Figura 5.2.3.7.6: Variables de entorno del servicio Cloud Run para conectar el backend con Cloud SQL y el frontend.*
+
+**Despliegue continuo y estado del servicio**
+
+Una vez configurados la base de datos, el usuario, el servicio y sus variables de entorno, Cloud Build ejecutó el build y despliegue automático ante cada push a la rama principal, publicando una revisión activa del servicio en Cloud Run con su panel de métricas para monitorear solicitudes, latencia y uso de recursos.
 
 <p align="center">
   <img src="report/assets/chapter-05/sprint-3/cloud-build-deployment-pipeline.png" alt="Google Cloud Build Deployment Pipeline" width="900">
 </p>
 
-*Figura 5.2.3.7.1: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
+*Figura 5.2.3.7.7: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
 
 <p align="center">
   <img src="report/assets/chapter-05/sprint-3/cloud-run-deployment-status.png" alt="Google Cloud Run Service Status" width="900">
 </p>
 
-*Figura 5.2.3.7.2: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
+*Figura 5.2.3.7.8: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
 
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
@@ -6312,6 +4857,892 @@ Con la finalización del Sprint 3, el equipo cuenta con una RESTful API completa
 
 ---
 
+### 5.2.4. Sprint 4
+
+#### 5.2.4.1. Sprint Planning 4
+
+El Sprint 4 tuvo como objetivo principal ampliar ColdTrace con capacidades avanzadas de autenticación, asistencia basada en inteligencia artificial y monetización SaaS. A partir de la RESTful API consolidada en el Sprint 3, el equipo priorizó la evolución de tres frentes técnicos: Identity & Access, AI Assistance y SaaS Plans & Billing.
+
+El trabajo fue planificado y verificado en Linear App mediante tres proyectos específicos: **ColdTrace Sprint 4 - Identity and Access**, **ColdTrace Sprint 4 - AI Assistance** y **ColdTrace Sprint 4 - SaaS Plans and Billing**. Esta división permitió separar las tareas de seguridad, inteligencia artificial y pagos, manteniendo trazabilidad entre épicas, user stories y technical stories.
+
+La orientación del Sprint 4 fue transformar ColdTrace de una plataforma operativa funcional a una solución más cercana a un producto SaaS listo para evaluación comercial. Para ello, el sprint se enfocó en tres preguntas de producto: cómo acceden los usuarios de forma segura, cómo reciben apoyo inteligente para resolver eventos críticos de cadena de frío y cómo se diferencian las capacidades del sistema según planes de suscripción.
+
+Desde Linear, el sprint se estructuró en torno a hitos concretos. En Identity & Access se cerraron los hitos **JWT security baseline**, **Social sign-in integration** e **IAM follow-ups**. En AI Assistance, el hito **Backend AI APIs** quedó completado y dejó pendiente la experiencia frontend. En SaaS Plans & Billing se avanzó en catálogo, entitlements y flujos Stripe, mientras que las superficies frontend de pricing y administración de billing permanecen pendientes para un siguiente cierre visual.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Sprint #</th>
+    <td>Sprint 4</td>
+  </tr>
+  <tr>
+    <th colspan="2">Sprint Planning Background</th>
+  </tr>
+  <tr>
+    <th>Date</th>
+    <td>2026-06-23</td>
+  </tr>
+  <tr>
+    <th>Time</th>
+    <td>08:00 PM</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>Reunión virtual vía Google Meet</td>
+  </tr>
+  <tr>
+    <th>Prepared By</th>
+    <td>Pajés León, Mauricio Luis</td>
+  </tr>
+  <tr>
+    <th>Attendees (to planning meeting)</th>
+    <td>Morales Venegas, David Joel / Espinoza Paredes, Frezzia / Cabrera Novoa, Leonardo Moisés / Videla Ventura, Jorge Joseph / Pajés León, Mauricio Luis</td>
+  </tr>
+  <tr>
+    <th>Sprint 3 Review Summary</th>
+    <td>En el Sprint 3 se completó la RESTful API base de ColdTrace con Spring Boot, arquitectura hexagonal y documentación Swagger UI. La API quedó organizada por bounded contexts, desplegada en Google Cloud Run y validada mediante endpoints de Identity & Access, Asset Management, Monitoring, Alerts, Reports y Maintenance. Este resultado dejó una plataforma backend estable para construir capacidades transversales en el Sprint 4.</td>
+  </tr>
+  <tr>
+    <th>Sprint 3 Retrospective Summary</th>
+    <td>El equipo identificó que la API ya cubría los flujos operativos principales, pero todavía faltaban capacidades de producto necesarias para una solución SaaS: autenticación segura con sesiones reales, integración con proveedores externos, asistencia inteligente para decisiones operativas y reglas comerciales por plan. Para el Sprint 4 se acordó priorizar esas capacidades sin reescribir los módulos base.</td>
+  </tr>
+  <tr>
+    <th colspan="2">Sprint Goal & User Stories</th>
+  </tr>
+  <tr>
+    <th>Sprint 4 Goal</th>
+    <td>Our focus is on extending ColdTrace with secure identity, AI-assisted operational guidance, and SaaS monetization capabilities. We believe it delivers a stronger product platform by adding JWT/OAuth authentication, AI support for incident/report/dashboard interpretation, and backend-enforced subscription plans. This will be confirmed when Linear shows the backend technical stories completed, Swagger UI documents the new service groups, and frontend stories are clearly separated as pending product-experience work.</td>
+  </tr>
+  <tr>
+    <th>Sprint 4 Velocity</th>
+    <td>82 Story Points completed across Done tickets verified in Linear.</td>
+  </tr>
+  <tr>
+    <th>Sum of Story Points</th>
+    <td>151 Story Points tracked in Sprint 4 scope: 82 completed and 69 pending in frontend/product stories.</td>
+  </tr>
+  <tr>
+    <th>Herramienta de seguimiento</th>
+    <td>Linear App</td>
+  </tr>
+  <tr>
+    <th>Repositorios involucrados</th>
+    <td>`ICEQ2026/coldtrace-platform`, `ICEQ2026/coldtrace-frontend`, `ICEQ2026/landingpage-coldtrace`</td>
+  </tr>
+  <tr>
+    <th>Alcance completado verificado</th>
+    <td>Implementación principalmente backend de autenticación JWT/OAuth, asistencia IA con Spring AI y servicios SaaS/Billing con Stripe.</td>
+  </tr>
+  <tr>
+    <th>Alcance pendiente</th>
+    <td>Historias frontend y de experiencia visual asociadas a AI Assistance, Billing, pricing y algunos flujos de producto permanecen registradas como pendientes en Linear.</td>
+  </tr>
+</table>
+
+El enfoque del Sprint 4 no consistió en reemplazar los módulos existentes, sino en agregar capacidades transversales sobre la plataforma ya desplegada. La autenticación refuerza el acceso seguro al sistema, la asistencia IA apoya la toma de decisiones operativas frente a incidencias de cadena de frío, y el módulo de planes SaaS permite orientar el producto hacia un modelo comercial escalable.
+
+La planificación también distinguió entre **capacidad técnica completada** y **experiencia de usuario pendiente**. Esto es importante porque varios tickets backend aparecen en estado `Done`, pero sus user stories frontend vinculadas siguen en `Todo`. Por ello, el sprint se presenta como un avance fuerte de plataforma y contratos, no como un cierre total de todas las pantallas del producto.
+
+La planificación del sprint tomó como punto de partida los resultados del Sprint 3: una API Spring Boot desplegada, documentada con Swagger UI y organizada por bounded contexts. Sobre esa base, el equipo decidió no abrir nuevos módulos operativos principales, sino reforzar capacidades que atraviesan toda la plataforma: seguridad de sesión, automatización inteligente y control comercial por plan. Esto permitió que las tareas del Sprint 4 se registraran como incrementos sobre servicios existentes y no como una reescritura de la solución.
+
+El avance verificado en Linear muestra una entrega técnica importante en backend y una separación clara de trabajo pendiente en frontend. La siguiente tabla resume el estado por proyecto al momento de documentar el sprint:
+
+| Proyecto Linear | Épica principal | Avance completado | Pendiente visible en Linear |
+|---|---|---|---|
+| ColdTrace Sprint 4 - Identity and Access | EP002 / EP008 | 7 tickets cerrados relacionados con JWT, rutas protegidas, recuperación de contraseña, OAuth/OIDC y sesión frontend con JWT. | Las épicas de seguimiento permanecen abiertas para consolidación final de IAM. |
+| ColdTrace Sprint 4 - AI Assistance | EP013 | 7 technical stories backend cerradas: Spring AI, planes de resolución, aprobación, rechazo, historial, resumen de reportes e interpretación de dashboard. | 8 historias frontend o de experiencia de usuario continúan en Todo. |
+| ColdTrace Sprint 4 - SaaS Plans and Billing | EP014 | 6 technical stories backend cerradas: catálogo, suscripciones, entitlements, Stripe Checkout, webhooks, Customer Portal y validación de límites. | 8 historias frontend o de experiencia comercial continúan en Todo. |
+
+De esta manera, el Sprint 4 se documenta como una entrega de infraestructura funcional avanzada. El criterio usado para la revisión fue no considerar una épica como totalmente finalizada mientras sus historias visuales o de experiencia permanezcan abiertas en Linear.
+
+| Hito Linear | Proyecto | Orientación | Progreso registrado |
+|---|---|---|---|
+| JWT security baseline | Identity and Access | Inicio de sesión con JWT, protección de rutas y endurecimiento CORS. | 100% |
+| Social sign-in integration | Identity and Access | Autenticación Google/Apple con sesión backend controlada por ColdTrace. | 100% |
+| IAM follow-ups | Identity and Access | Recuperación de contraseña y ajustes posteriores a la línea base de seguridad. | 100% |
+| Backend AI APIs | AI Assistance | Spring AI, ciclo de planes IA, resumen de reportes e interpretación de dashboard. | 100% |
+| Frontend AI experiences | AI Assistance | Panel de guía IA e interpretación del dashboard desde la interfaz. | 0% |
+| Plan catalog and entitlements | SaaS Plans and Billing | Catálogo de planes, suscripción de organización y cálculo de permisos. | 50% |
+| Stripe billing flows | SaaS Plans and Billing | Checkout, webhooks y Customer Portal. | 60% |
+| Billing frontend surfaces | SaaS Plans and Billing | Comparación de planes, upgrades y administración de billing en frontend. | 0% |
+
+#### 5.2.4.2. Aspect Leaders and Collaborators
+
+Durante el Sprint 4, la coordinación se organizó por dominio funcional. Linear evidencia a Mauricio Pajés como responsable principal de las tareas backend completadas en autenticación, inteligencia artificial y billing. Las historias frontend y de producto se mantuvieron registradas para integración visual y validación posterior.
+
+El liderazgo por aspecto se definió a partir de la naturaleza de las dependencias. Identity & Access habilitó la seguridad necesaria para consumir los servicios protegidos; AI Assistance dependió de esa seguridad y de los datos operativos existentes; y Billing necesitó validar límites desde backend para que las reglas comerciales no dependan únicamente de controles visuales del frontend.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Aspecto</th>
+    <th>Responsable principal</th>
+    <th>Colaboración</th>
+    <th>Resultado documentado</th>
+  </tr>
+  <tr>
+    <td>Identity & Access</td>
+    <td>Mauricio Pajés</td>
+    <td>Equipo ColdTrace</td>
+    <td>JWT, rutas protegidas, endurecimiento CORS, recuperación de contraseña y autenticación OAuth/OIDC con Google y Apple.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>Mauricio Pajés</td>
+    <td>Equipo ColdTrace</td>
+    <td>Fundación con Spring AI, generación de planes de resolución, aprobación/rechazo humano, trazabilidad, historial, resumen inteligente de reportes e interpretación del dashboard.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans & Billing</td>
+    <td>Mauricio Pajés</td>
+    <td>Equipo ColdTrace</td>
+    <td>Catálogo de planes, suscripciones por organización, entitlements, Stripe Checkout, webhooks, Customer Portal y validación de límites.</td>
+  </tr>
+  <tr>
+    <td>Frontend y experiencia de usuario</td>
+    <td>Equipo ColdTrace</td>
+    <td>Equipo ColdTrace</td>
+    <td>Historias de interfaz registradas para AI Assistance, Billing, pricing y autenticación social; parte del alcance permanece pendiente según Linear.</td>
+  </tr>
+</table>
+
+#### 5.2.4.3. Sprint Backlog 4
+
+El Sprint Backlog 4 fue gestionado en Linear App. A diferencia del Sprint 3, enfocado en completar la RESTful API base, este sprint se orientó a capacidades avanzadas y transversales. La tabla siguiente resume los tickets verificados por proyecto y estado.
+
+El backlog se organizó con una lógica de dependencias por capas. Primero se cerraron tickets de seguridad e infraestructura, luego servicios inteligentes y finalmente capacidades comerciales. En cada bloque, las Technical Stories definieron contratos backend reales y las User Stories representaron la experiencia que consume esos contratos desde frontend o landing page.
+
+Al igual que en el Sprint 3, Linear App fue utilizado para mantener trazabilidad entre épicas, technical stories, user stories, estimaciones y estados. Para Sprint 4, la lectura del backlog se dividió en dos niveles: tickets completados que sirven como evidencia de implementación y tickets pendientes que delimitan el alcance visual que no debe darse por cerrado.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+  <tr>
+    <th>Sprint #</th>
+    <td colspan="5">Sprint 4</td>
+  </tr>
+  <tr>
+    <th>Proyecto Linear</th>
+    <th>Épica / Bloque</th>
+    <th>Tickets Done</th>
+    <th>Story Points Done</th>
+    <th>Tickets pendientes</th>
+    <th>Story Points pendientes</th>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>EP002 / EP008</td>
+    <td>7</td>
+    <td>29</td>
+    <td>2 épicas de seguimiento abiertas</td>
+    <td>No estimado en Linear</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>EP013</td>
+    <td>7 technical stories backend</td>
+    <td>27</td>
+    <td>8 user stories frontend/product</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>EP014</td>
+    <td>6 technical stories backend</td>
+    <td>26</td>
+    <td>8 user stories frontend/product</td>
+    <td>32</td>
+  </tr>
+  <tr>
+    <th colspan="2">Total tracked scope</th>
+    <th>20 tickets Done</th>
+    <th>82</th>
+    <th>16 user stories pendientes + épicas abiertas</th>
+    <th>69</th>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/linear_sprint4.png" alt="Tablero de Linear App del Sprint 4" width="900">
+</p>
+
+*Figura 5.2.4.3.1: Tablero de Linear App con el seguimiento de tickets del Sprint 4.*
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Proyecto Linear</th>
+    <th>ID</th>
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Estado</th>
+    <th>Resultado</th>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-58</td>
+    <td>Technical Story</td>
+    <td>TS02 - Authentication API with JWT</td>
+    <td>Done</td>
+    <td>API de autenticación con emisión y validación de tokens JWT.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-70</td>
+    <td>Technical Story</td>
+    <td>T-58 - JWT, Protected Routes and CORS Hardening</td>
+    <td>Done</td>
+    <td>Rutas protegidas y configuración CORS reforzada para consumo seguro desde frontend.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-71</td>
+    <td>Technical Story</td>
+    <td>T-59 / TS11 - Password Reset Request API</td>
+    <td>Done</td>
+    <td>API para solicitud de recuperación de contraseña.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-110</td>
+    <td>Technical Story</td>
+    <td>TS30 - Google and Apple OAuth/OIDC Authentication API</td>
+    <td>Done</td>
+    <td>Integración backend para autenticación social con Google y Apple.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-111</td>
+    <td>User Story</td>
+    <td>US057 - Start Google/Apple sign-in from the UI</td>
+    <td>Done</td>
+    <td>Inicio del flujo de autenticación social desde la interfaz.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-112</td>
+    <td>User Story</td>
+    <td>US052 - Create or sign in with Google/Apple</td>
+    <td>Done</td>
+    <td>Creación o inicio de sesión mediante proveedores OAuth/OIDC.</td>
+  </tr>
+  <tr>
+    <td>Identity and Access</td>
+    <td>OPE-113</td>
+    <td>User Story</td>
+    <td>US058 - Sign in with backend JWT session</td>
+    <td>Done</td>
+    <td>Integración del inicio de sesión frontend con sesión JWT emitida por backend.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-87</td>
+    <td>Technical Story</td>
+    <td>TS18 - Spring AI foundation and structured output</td>
+    <td>Done</td>
+    <td>Base técnica de Spring AI y respuestas estructuradas para casos de uso inteligentes.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-88</td>
+    <td>Technical Story</td>
+    <td>TS19 - Resolution plan generation with real context</td>
+    <td>Done</td>
+    <td>Generación de planes de resolución para incidentes usando contexto real de ColdTrace.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-89</td>
+    <td>Technical Story</td>
+    <td>TS20 - Human approval and backend resolution</td>
+    <td>Done</td>
+    <td>Flujo de aprobación humana antes de aplicar una resolución asistida.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-90</td>
+    <td>Technical Story</td>
+    <td>TS21 - Plan rejection and traceability</td>
+    <td>Done</td>
+    <td>Rechazo de planes IA con trazabilidad de la decisión.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-91</td>
+    <td>Technical Story</td>
+    <td>TS22 - AI plan persistence and history</td>
+    <td>Done</td>
+    <td>Persistencia e historial de planes generados por IA.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-92</td>
+    <td>Technical Story</td>
+    <td>TS23 - Intelligent report summary</td>
+    <td>Done</td>
+    <td>Resumen inteligente de reportes de cumplimiento.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-114</td>
+    <td>Technical Story</td>
+    <td>TS31 - Dashboard AI interpretation API</td>
+    <td>Done</td>
+    <td>Interpretación automática del dashboard operacional mediante IA.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-100</td>
+    <td>Technical Story</td>
+    <td>TS24 - Backend plan and pricing catalog</td>
+    <td>Done</td>
+    <td>Catálogo backend de planes, precios y características disponibles.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-101</td>
+    <td>Technical Story</td>
+    <td>TS25 - Organization subscription and entitlements</td>
+    <td>Done</td>
+    <td>Modelo de suscripción por organización y permisos asociados al plan.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-102</td>
+    <td>Technical Story</td>
+    <td>TS26 - Stripe Checkout session creation</td>
+    <td>Done</td>
+    <td>Creación de sesiones de pago con Stripe Checkout.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-103</td>
+    <td>Technical Story</td>
+    <td>TS27 - Stripe webhooks and subscription sync</td>
+    <td>Done</td>
+    <td>Sincronización de estados de suscripción mediante webhooks de Stripe.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-104</td>
+    <td>Technical Story</td>
+    <td>TS28 - Stripe Customer Portal sessions</td>
+    <td>Done</td>
+    <td>Sesiones del portal de cliente para gestión de suscripción.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-105</td>
+    <td>Technical Story</td>
+    <td>TS29 - Backend plan-limit validation</td>
+    <td>Done</td>
+    <td>Validación backend de límites según plan contratado.</td>
+  </tr>
+</table>
+
+Los tickets frontend y de experiencia asociados a AI Assistance, Billing, pricing y pantallas de suscripción se mantienen como alcance pendiente o en progreso dentro de Linear. Por ello, la documentación de este sprint diferencia entre las capacidades backend completadas y las interfaces que requieren integración visual posterior.
+
+Además del backlog completado, Linear mantiene abiertas historias de usuario que representan la integración visual y la experiencia final del producto. Estas tareas no se consideran evidencia de entrega cerrada, pero sí forman parte del contexto del Sprint 4 porque explican cómo se consumen las APIs ya implementadas.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Proyecto Linear</th>
+    <th>ID</th>
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Estado</th>
+    <th>Relación con el Sprint 4</th>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-80</td>
+    <td>Epic</td>
+    <td>EP013 - AI-assisted incident resolution</td>
+    <td>In Progress</td>
+    <td>Épica que agrupa asistencia IA para incidentes, reportes y dashboard.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-82</td>
+    <td>User Story</td>
+    <td>US040 - Generate an AI-assisted plan for an incident</td>
+    <td>Todo</td>
+    <td>Consumo frontend de la generación de planes IA para incidencias.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-83</td>
+    <td>User Story</td>
+    <td>US041 - Approve an AI plan and close the incident</td>
+    <td>Todo</td>
+    <td>Interfaz para aprobar un plan IA y cerrar la incidencia desde el flujo operativo.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-84</td>
+    <td>User Story</td>
+    <td>US042 - Reject an AI plan with a reason</td>
+    <td>Todo</td>
+    <td>Interfaz para rechazar recomendaciones IA con motivo auditable.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-85</td>
+    <td>User Story</td>
+    <td>US043 - Review AI plan history</td>
+    <td>Todo</td>
+    <td>Consulta visual del historial de planes generados, aprobados o rechazados.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-86</td>
+    <td>User Story</td>
+    <td>US044 - Generate an intelligent compliance summary</td>
+    <td>Todo</td>
+    <td>Experiencia frontend para solicitar y mostrar resúmenes inteligentes de reportes.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-93</td>
+    <td>User Story</td>
+    <td>US053 - Use AI Guidance panel in incidents</td>
+    <td>Todo</td>
+    <td>Panel de guía IA dentro del módulo de incidencias.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>OPE-108 / OPE-109</td>
+    <td>User Story</td>
+    <td>US051 / US056 - Dashboard AI interpretation</td>
+    <td>Todo</td>
+    <td>Apertura e integración del asistente IA para interpretar el dashboard operacional.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-81</td>
+    <td>Epic</td>
+    <td>EP014 - SaaS plans, pricing, and subscriptions</td>
+    <td>In Progress</td>
+    <td>Épica que agrupa planes, precios, suscripciones, Stripe y límites por plan.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-94 / OPE-107</td>
+    <td>User Story</td>
+    <td>US045 / US055 - Compare plans from the landing page</td>
+    <td>Todo</td>
+    <td>Comparación de planes en landing page usando el catálogo backend.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-95 / OPE-96</td>
+    <td>User Story</td>
+    <td>US046 / US047 - Select plan and view usage</td>
+    <td>Todo</td>
+    <td>Selección de plan, visualización de plan actual y uso de límites.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-97 / OPE-98</td>
+    <td>User Story</td>
+    <td>US048 / US049 - Stripe Checkout and Customer Portal</td>
+    <td>Todo</td>
+    <td>Flujos frontend para upgrade mediante Checkout y gestión de billing en Customer Portal.</td>
+  </tr>
+  <tr>
+    <td>SaaS Plans and Billing</td>
+    <td>OPE-99 / OPE-106</td>
+    <td>User Story</td>
+    <td>US050 / US054 - Plan guards and billing management</td>
+    <td>Todo</td>
+    <td>Bloqueo visual de funcionalidades no incluidas y administración de upgrades dentro de la app.</td>
+  </tr>
+</table>
+
+Esta lectura del backlog evita sobreestimar el alcance del sprint. Los tickets `Done` representan capacidades listas a nivel de servicio o integración validada; los tickets `Todo` representan la capa de experiencia que debe cerrar el flujo de usuario en una iteración posterior.
+
+En términos de valor de producto, esta separación deja tres resultados claros. Primero, ColdTrace ya puede documentar una línea base de seguridad moderna con JWT y OAuth/OIDC. Segundo, cuenta con contratos backend para asistencia IA aplicada a incidentes, reportes y dashboard. Tercero, dispone de una base de monetización SaaS con planes, suscripciones, Stripe y validación de límites, aunque todavía requiere completar las pantallas que harán visible esa monetización para el usuario final.
+
+#### 5.2.4.4. Development Evidence for Sprint Review
+
+Durante el Sprint 4 se extendió la RESTful API de ColdTrace sobre la arquitectura Spring Boot ya desarrollada en Sprint 3. El trabajo se concentró en nuevos casos de uso transversales que complementan los bounded contexts existentes.
+
+Siguiendo la estructura de evidencia usada en el Sprint 3, la documentación del desarrollo se organizó por repositorio, rama funcional y bloque de tickets. Cada Technical Story fue implementada en una rama feature independiente y fusionada mediante Pull Request a `develop`. La evidencia se sustenta en los commits registrados en el repositorio `ICEQ2026/coldtrace-platform`, Linear App, Swagger UI y las capturas funcionales incluidas en esta sección.
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch / Scope</th>
+    <th>Linear tickets</th>
+    <th>Commit SHA</th>
+    <th>Development evidence</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-platform</td>
+    <td>Identity & Access / JWT security baseline</td>
+    <td>OPE-58, OPE-70, OPE-71</td>
+    <td>`8238b66` / `5e5a734` / `fa99126`</td>
+    <td>Servicios backend de login, emisión JWT, protección de rutas, CORS y recuperación de contraseña.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-platform / ICEQ2026/coldtrace-frontend</td>
+    <td>Social sign-in integration</td>
+    <td>OPE-110, OPE-111, OPE-112, OPE-113</td>
+    <td>`e11bda7`</td>
+    <td>Flujo Google/Apple OAuth/OIDC, entrada desde UI y sesión JWT backend.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-platform</td>
+    <td>Backend AI APIs</td>
+    <td>OPE-87, OPE-88, OPE-89, OPE-90, OPE-91, OPE-92, OPE-114</td>
+    <td>`5e08c52` / `30b013c` / `8470bfd` / `1365a88` / `a40cad4` / `b6e05aa` / `926484d`</td>
+    <td>Spring AI foundation, generación/aprobación/rechazo de planes, historial, resumen inteligente e interpretación de dashboard.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-platform</td>
+    <td>Plans and Billing backend</td>
+    <td>OPE-100, OPE-101, OPE-102, OPE-103, OPE-104, OPE-105</td>
+    <td>`875e582` / `048e5fb` / `fe30047` / `68eaaba` / `b9df799` / `e5e662c`</td>
+    <td>Catálogo de planes, suscripciones, entitlements, Stripe Checkout, webhooks, Customer Portal y validación de límites.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>ICEQ2026/coldtrace-frontend / ICEQ2026/landingpage-coldtrace</td>
+    <td>Frontend AI and Billing experiences</td>
+    <td>OPE-82 a OPE-86, OPE-93, OPE-108, OPE-109, OPE-94 a OPE-99, OPE-106, OPE-107</td>
+    <td>—</td>
+    <td>Integración visual de AI Guidance, dashboard interpretation, pricing, checkout y billing management.</td>
+    <td>Todo</td>
+  </tr>
+</table>
+
+**Identity & Access.** Se reforzó la capa de autenticación mediante JWT, rutas protegidas y configuración CORS. Además, se agregó soporte para autenticación OAuth/OIDC con Google y Apple, permitiendo que el usuario pueda crear una cuenta o iniciar sesión con proveedores externos y recibir una sesión gestionada por el backend de ColdTrace.
+
+El trabajo de autenticación se organizó alrededor de una línea base de seguridad. `OPE-58` implementó la autenticación con emisión de JWT; `OPE-70` protegió rutas y ajustó CORS para el consumo desde la aplicación frontend; `OPE-71` agregó recuperación de contraseña; y `OPE-110`, `OPE-111`, `OPE-112` y `OPE-113` completaron el flujo de autenticación social y sesión JWT desde la interfaz. Esta secuencia permite que ColdTrace mantenga propiedad backend sobre usuarios, organizaciones, roles y sesiones, incluso cuando el usuario inicia sesión mediante Google o Apple.
+
+La decisión técnica más relevante en este bloque fue mantener al backend como dueño de la sesión. Los proveedores externos funcionan como mecanismo de identidad, pero ColdTrace conserva el control sobre organización, rol, permisos y token JWT. Esto evita que el frontend implemente reglas de acceso propias y mantiene la arquitectura alineada con el modelo de IAM del proyecto.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/login_google_applefrontend.png" alt="Frontend de login con Google y Apple" width="900">
+</p>
+
+*Figura 5.2.4.4.1: Interfaz de inicio de sesión con proveedores Google y Apple.*
+
+**AI Assistance.** Se incorporó una base técnica con Spring AI para generar respuestas estructuradas. Sobre esta base se implementaron planes de resolución de incidentes con contexto real, flujos de aprobación o rechazo humano, persistencia del historial de planes, resúmenes inteligentes de reportes e interpretación del dashboard operacional. Estas capacidades buscan apoyar al usuario en la toma de decisiones ante desviaciones de temperatura, cumplimiento sanitario y análisis de estado operativo.
+
+La implementación de AI Assistance siguió un enfoque backend-first. `OPE-87` estableció configuración por variables de entorno y salida estructurada; `OPE-88` generó planes a partir de contexto real de incidencias; `OPE-89` permitió convertir un plan aprobado en una resolución backend; `OPE-90` registró rechazos con trazabilidad; `OPE-91` persistió historial de planes; `OPE-92` produjo resúmenes inteligentes de reportes; y `OPE-114` expuso interpretación IA del dashboard. En todos los casos, la IA se trató como asistencia y no como autoridad automática: el usuario conserva la aprobación final en decisiones operativas.
+
+Esta orientación responde directamente al dominio de cadena de frío: las recomendaciones de IA no se generan como texto genérico, sino a partir de incidentes, reportes, métricas del dashboard y señales operativas persistidas en ColdTrace. El objetivo es reducir el tiempo de análisis del responsable de operaciones sin eliminar la revisión humana sobre decisiones que pueden afectar cumplimiento sanitario, pérdida de mercadería o cierre de incidencias.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/ia_assistantfrontend.png" alt="Frontend de asistencia IA en ColdTrace" width="900">
+</p>
+
+*Figura 5.2.4.4.2: Interfaz frontend del asistente IA para apoyo operativo.*
+
+**SaaS Plans & Billing.** Se implementó el soporte backend para monetización SaaS: catálogo de planes y precios, suscripciones por organización, entitlements, creación de sesiones de pago con Stripe Checkout, sincronización mediante webhooks, acceso al Stripe Customer Portal y validación de límites según plan. Esto permite proyectar ColdTrace como una plataforma comercial con planes diferenciados.
+
+El trabajo de Billing se separó en dos bloques: catálogo/entitlements y flujos Stripe. `OPE-100` expuso el catálogo backend de planes; `OPE-101` modeló la suscripción activa por organización y sus permisos; `OPE-102` creó sesiones de Stripe Checkout; `OPE-103` sincronizó eventos de suscripción mediante webhooks firmados; `OPE-104` habilitó sesiones de Customer Portal; y `OPE-105` validó límites de plan desde servicios backend. Con esto, las reglas comerciales dejan de depender únicamente de controles visuales y pasan a estar protegidas por la API.
+
+El propósito de este bloque fue preparar a ColdTrace para diferenciar planes comerciales sin duplicar lógica entre landing page, frontend y backend. Linear muestra que el backend ya define el catálogo y aplica límites, mientras que las historias pendientes se concentran en mostrar comparación de planes, uso actual, upgrades y administración de suscripción desde la interfaz.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/billingfrontend.png" alt="Frontend de planes y billing" width="900">
+</p>
+
+*Figura 5.2.4.4.3: Interfaz frontend de planes SaaS y billing.*
+
+El desarrollo mantuvo el criterio de separar la lógica de aplicación de los controladores REST, siguiendo la estructura de servicios, persistencia y documentación OpenAPI consolidada en el Sprint 3.
+
+#### 5.2.4.5. Execution Evidence for Sprint Review
+
+La ejecución del Sprint 4 se valida a partir de los flujos funcionales registrados en Linear como completados. El resultado permite demostrar que ColdTrace no solo conserva las funcionalidades operativas previas, sino que incorpora mecanismos de acceso seguro, asistencia inteligente y control comercial por plan.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Flujo validado</th>
+    <th>Resultado esperado</th>
+    <th>Estado según Linear</th>
+  </tr>
+  <tr>
+    <td>Inicio de sesión con credenciales</td>
+    <td>El backend valida las credenciales y emite una sesión JWT para consumir rutas protegidas.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Inicio de sesión social</td>
+    <td>El usuario puede iniciar el flujo con Google o Apple y recibir una sesión backend compatible con ColdTrace.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Generación de plan IA para incidencias</td>
+    <td>La API genera un plan de resolución usando información contextual del incidente y del entorno operativo.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Aprobación o rechazo de plan IA</td>
+    <td>El usuario conserva control humano sobre la recomendación, dejando trazabilidad de la decisión.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Resumen inteligente de reportes</td>
+    <td>La API genera una síntesis comprensible del reporte de cumplimiento.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Interpretación IA del dashboard</td>
+    <td>El sistema interpreta el estado operacional y comunica hallazgos relevantes para la toma de decisiones.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>Checkout y suscripción SaaS</td>
+    <td>La organización puede iniciar un checkout, sincronizar su suscripción y aplicar límites según el plan.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+Las capturas de interfaz y evidencias visuales de los flujos frontend deben complementarse cuando las historias de UI registradas en Linear pasen de estado pendiente a completado. En esta versión del informe, la evidencia principal corresponde al avance técnico y funcional del backend.
+
+Para la revisión del sprint, los flujos se agruparon en tres recorridos demostrables. El primero corresponde a seguridad: el usuario inicia sesión, obtiene token JWT y accede a rutas protegidas sin exponer credenciales ni estado sensible al cliente. El segundo corresponde a asistencia IA: un incidente o reporte existente se usa como fuente factual y el backend devuelve una recomendación estructurada que puede ser aprobada, rechazada o consultada luego en historial. El tercero corresponde a monetización: la organización consulta planes, inicia checkout externo en Stripe y el backend sincroniza el estado de suscripción para aplicar límites.
+
+Estos recorridos muestran que Sprint 4 no solo agrega pantallas, sino reglas de negocio transversales. La autenticación protege la plataforma, AI Assistance reduce tiempo de análisis operativo y Billing prepara el producto para segmentar capacidades por plan.
+
+La revisión de ejecución también evidencia una transición importante en el producto: ColdTrace deja de ser solo una herramienta de monitoreo y gestión operativa para incorporar capacidades de plataforma. A partir de este sprint, el producto empieza a cubrir seguridad de acceso, asistencia para decisiones complejas y preparación comercial para planes diferenciados.
+
+#### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+Los servicios del Sprint 4 mantienen el enfoque de documentación REST mediante OpenAPI/Swagger UI utilizado en Sprint 3. Las operaciones se agrupan por dominio funcional para facilitar su revisión.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/menuswagger.png" alt="Menú Swagger con endpoints del Sprint 4" width="900">
+</p>
+
+*Figura 5.2.4.6.1: Vista general de Swagger UI con grupos de endpoints del Sprint 4.*
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Grupo de servicios</th>
+    <th>Operaciones documentadas</th>
+    <th>Propósito</th>
+  </tr>
+  <tr>
+    <td>Authentication</td>
+    <td>Login, emisión de JWT, validación de sesión, recuperación de contraseña y protección de rutas.</td>
+    <td>Asegurar que solo usuarios autenticados puedan acceder a recursos operativos de ColdTrace.</td>
+  </tr>
+  <tr>
+    <td>OAuth/OIDC</td>
+    <td>Inicio de flujo con Google/Apple, callback de proveedor y creación o vinculación de cuenta.</td>
+    <td>Permitir autenticación social manteniendo una sesión compatible con el backend de ColdTrace.</td>
+  </tr>
+  <tr>
+    <td>AI Assistance</td>
+    <td>Generación de planes, aprobación, rechazo, historial, resumen de reportes e interpretación de dashboard.</td>
+    <td>Apoyar decisiones operativas mediante asistencia IA con trazabilidad humana.</td>
+  </tr>
+  <tr>
+    <td>Plans and Billing</td>
+    <td>Listado de planes, suscripción de organización, Checkout, webhooks, Customer Portal y validación de límites.</td>
+    <td>Gestionar monetización SaaS y restricciones por plan contratado.</td>
+  </tr>
+</table>
+
+Los endpoints específicos implementados durante el Sprint 4 se listan a continuación, organizados por dominio funcional:
+
+| Grupo | Método | Endpoint | Propósito |
+|-------|--------|----------|-----------|
+| Authentication | POST | `/api/v1/authentication/sign-in` | Inicio de sesión con credenciales y emisión de JWT |
+| Authentication | POST | `/api/v1/authentication/social/{provider}/token-exchange` | Validación de identidad Google/Apple y emisión de sesión ColdTrace |
+| Authentication | POST | `/api/v1/authentication/social/{provider}/profile-preview` | Previsualización de perfil externo para completar onboarding |
+| Authentication | POST | `/api/v1/authentication/social/{provider}/organization-sign-up` | Registro de organización desde una identidad social validada |
+| IAM | GET | `/api/v1/roles` | Consulta de roles disponibles para el frontend |
+| IAM | GET | `/api/v1/organizations` | Consulta de organizaciones disponibles para el usuario autenticado |
+| IAM | DELETE | `/api/v1/organizations/{organizationId}/users/{userId}` | Eliminación controlada de usuarios internos por organización |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans` | Generar plan de resolución de incidente con contexto real |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans/{planId}/approvals` | Aprobar plan generado y ejecutar resolución con control humano |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans/{planId}/rejections` | Rechazar plan con trazabilidad sin alterar la incidencia |
+| AI Assistance | GET | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans` | Consultar historial de planes por incidencia |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/reports/{reportId}/ai-summaries` | Generar resumen inteligente de reporte |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/dashboard/ai-interpretation` | Interpretación IA del dashboard operacional |
+| Plans & Billing | GET | `/api/v1/subscription-plans` | Listar catálogo público de planes |
+| Plans & Billing | GET | `/api/v1/organizations/{organizationId}/subscription` | Consultar suscripción, límites y funcionalidades de una organización |
+| Plans & Billing | POST | `/api/v1/organizations/{organizationId}/billing/checkout-sessions` | Crear sesión de Stripe Checkout |
+| Plans & Billing | POST | `/api/v1/organizations/{organizationId}/billing/customer-portal-sessions` | Crear sesión de Stripe Customer Portal |
+| Plans & Billing | POST | `/api/v1/billing/stripe/webhooks` | Procesar webhooks firmados de Stripe |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/assets/{assetId}` | Eliminación controlada de activos cuando no existen dependencias bloqueantes |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/gateways/{gatewayId}` | Eliminación controlada de gateways asociados a la organización |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/iot-devices/{iotDeviceId}` | Eliminación controlada de dispositivos IoT |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/locations/{locationId}` | Eliminación controlada de ubicaciones |
+
+La documentación de servicios refleja los contratos finales disponibles en Swagger UI, incluyendo códigos de respuesta, validaciones y errores de negocio. Para Sprint 4, los grupos más sensibles son los endpoints protegidos por JWT, las operaciones OAuth/OIDC, los webhooks de Stripe, las respuestas estructuradas de IA y las operaciones `DELETE` que pueden devolver `409 Conflict` cuando existen dependencias de negocio.
+
+Como parte del cierre de integración, todos los controladores REST quedaron normalizados bajo el prefijo `/api/v1`. Esto evita rutas duplicadas en Swagger UI, reduce ambigüedad para el frontend desplegado en Vercel y mantiene consistencia con el versionamiento de la RESTful API. El frontend fue ajustado para consumir los mismos paths versionados usados por el backend en Cloud Run.
+
+La documentación de estos servicios es especialmente relevante porque las historias frontend pendientes dependen de contratos estables. Los endpoints de autenticación deben devolver sesiones coherentes para rutas protegidas, los endpoints IA deben exponer respuestas estructuradas y auditables, y los endpoints de billing deben manejar redirecciones, eventos externos de Stripe y validaciones de plan sin exponer secretos al cliente.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/authentication_endpoint.png" alt="Swagger UI de endpoints de autenticación" width="900">
+</p>
+
+*Figura 5.2.4.6.2: Endpoints de autenticación y OAuth/OIDC documentados en Swagger UI.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/ai-assistanceendpoint.png" alt="Swagger UI de endpoints de AI Assistance" width="900">
+</p>
+
+*Figura 5.2.4.6.3: Endpoints de AI Assistance documentados en Swagger UI.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/billing_endpoint.png" alt="Swagger UI de endpoints de Billing" width="900">
+</p>
+
+*Figura 5.2.4.6.4: Endpoints de billing, checkout, Customer Portal y webhooks documentados en Swagger UI.*
+
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+Sprint 4 se apoya en la infraestructura de despliegue implementada en Sprint 3 para la RESTful API de ColdTrace. La aplicación backend continúa orientada a ejecución en **Google Cloud Run**, con contenedorización Docker y configuración por variables de entorno.
+
+| Componente | Detalle |
+|---|---|
+| Plataforma cloud | Google Cloud Run (serverless container) |
+| URL de producción | `https://coldtrace-platform-dtbzbm7bta-uc.a.run.app` |
+| Stack backend | Java 26, Spring Boot 4.0.6, Spring AI, Spring Security OAuth2 |
+| Base de datos | MySQL 8.0 en Cloud SQL (Private IP) |
+| Autenticación | JWT + OAuth2 (Google, Apple) |
+| Pasarela de pagos | Stripe Checkout, Webhooks, Customer Portal |
+| Contenedorización | Docker multi-stage (JAR distroless) |
+| CI/CD | Cloud Build + Artifact Registry + Cloud Run deploy |
+
+Para habilitar las capacidades agregadas en Sprint 4, el despliegue requiere variables y secretos adicionales:
+
+| Categoría | Configuración requerida | Uso |
+|---|---|---|
+| JWT | Secreto de firma, expiración de token y configuración de rutas protegidas. | Emitir y validar sesiones seguras. |
+| OAuth/OIDC | Client ID, Client Secret, redirect URIs y configuración de proveedores Google/Apple. | Completar autenticación social. |
+| AI Assistance | API key del proveedor de IA y configuración de Spring AI. | Generar planes, resúmenes e interpretaciones inteligentes. |
+| Stripe Billing | Stripe Secret Key, Price IDs, webhook secret y URLs de retorno. | Crear checkout, sincronizar suscripciones y abrir Customer Portal. |
+
+Como evidencia de la configuración real de los proveedores externos utilizados en el
+Sprint 4, se documentan las consolas de administración de cada servicio integrado.
+
+**Google — OAuth 2.0 / OpenID Connect**
+
+Se configuró un OAuth Client de tipo Web Application en Google Cloud, registrando los
+Authorized JavaScript origins y los Authorized redirect URIs correspondientes a los
+entornos local y desplegado del frontend de ColdTrace.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/google_oauth_client.png" alt="Configuración del OAuth Client de Google" width="900">
+</p>
+
+*Figura 5.2.4.7.1: OAuth Client Web configurado en Google Cloud con origins y redirect URIs de ColdTrace.*
+
+**Apple — Sign in with Apple**
+
+Se registró el Identifier `com.coldtrace.web` en Apple Developer para habilitar el flujo
+de Sign in with Apple como proveedor de identidad externo.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/apple_identifier.png" alt="Identifier de Apple Developer" width="900">
+</p>
+
+*Figura 5.2.4.7.2: Identifier de Sign in with Apple registrado en Apple Developer.*
+
+**OpenAI — AI Assistance**
+
+Se generó una API key de producción (`coldtrace-platform-prod`) en la consola de OpenAI,
+consumida por Spring AI en el entorno desplegado para las capacidades de asistencia
+inteligente. La clave se enmascara y se gestiona mediante variables de entorno del
+servicio, sin registrarse en el repositorio.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/openai_apikey.png" alt="API key de OpenAI para ColdTrace" width="900">
+</p>
+
+*Figura 5.2.4.7.3: API key de producción configurada en OpenAI para AI Assistance.*
+
+**Stripe — Subscription & Billing**
+
+Se configuró el catálogo de productos y planes de suscripción en el entorno de prueba de
+Stripe, incluyendo los planes ColdTrace Operations y ColdTrace Compliance AI con su
+precio mensual recurrente en PEN.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/stripe_catalog.png" alt="Catálogo de productos en Stripe" width="900">
+</p>
+
+*Figura 5.2.4.7.4: Catálogo de planes de suscripción configurado en Stripe.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/stripe_compliance_ai.png" alt="Plan Compliance AI en Stripe" width="900">
+</p>
+
+*Figura 5.2.4.7.5: Configuración del plan Compliance AI y su tarifa recurrente en Stripe.*
+
+El despliegue del Sprint 4 se realizó sobre la misma revisión de Cloud Run utilizada en Sprint 3, incorporando las nuevas capacidades mediante actualización continua (re-deploy) desde la rama `develop` del repositorio `ICEQ2026/coldtrace-platform`. No se requirió una nueva URL ni un nuevo servicio; la extensión funcional se entregó como una evolución del servicio backend existente.
+
+Las configuraciones de Sprint 4 incrementan la sensibilidad del entorno de despliegue porque incluyen secretos de autenticación, proveedores externos y webhooks. Por ello, la documentación del sprint considera como buena práctica mantener estos valores fuera del repositorio, cargarlos mediante variables de entorno del servicio desplegado y validar los callbacks con URLs controladas por el equipo. Este criterio mantiene consistencia con el despliegue en Cloud Run usado en Sprint 3.
+
+#### 5.2.4.8. Team Collaboration Insights during Sprint
+
+La colaboración del Sprint 4 se organizó mediante Linear App, separando el trabajo en tres proyectos funcionales. Esta estructura permitió controlar mejor el avance de capacidades con dependencias externas, como proveedores OAuth/OIDC, servicios de IA y Stripe.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Proyecto Linear</th>
+    <th>Estado del proyecto</th>
+    <th>Avance principal</th>
+    <th>Riesgo o pendiente</th>
+  </tr>
+  <tr>
+    <td>ColdTrace Sprint 4 - Identity and Access</td>
+    <td>In Progress</td>
+    <td>JWT, rutas protegidas, CORS, recuperación de contraseña y OAuth/OIDC completados.</td>
+    <td>Validación visual completa del flujo en frontend y documentación final de evidencias.</td>
+  </tr>
+  <tr>
+    <td>ColdTrace Sprint 4 - AI Assistance</td>
+    <td>In Progress</td>
+    <td>Servicios backend de asistencia IA completados para incidentes, reportes y dashboard.</td>
+    <td>Integración final de pantallas y componentes frontend asociados a las historias de usuario pendientes.</td>
+  </tr>
+  <tr>
+    <td>ColdTrace Sprint 4 - SaaS Plans and Billing</td>
+    <td>In Progress</td>
+    <td>Technical Stories backend completadas para catálogo, suscripciones, Stripe y límites por plan.</td>
+    <td>Construcción o cierre de pantallas de pricing, checkout y gestión de suscripción en frontend.</td>
+  </tr>
+</table>
+
+El principal aprendizaje del Sprint 4 fue la necesidad de separar con claridad la evidencia técnica backend de la evidencia visual frontend. Linear muestra un avance importante en servicios y lógica de plataforma, pero también evidencia que varias historias de experiencia de usuario deben completarse antes de presentar el Sprint 4 como una entrega totalmente cerrada desde la perspectiva del producto final.
+
+En términos de colaboración, Linear permitió visualizar dependencias entre technical stories y user stories. Las tareas backend cerradas desbloquean las historias frontend, porque definen contratos reales para consumir desde la aplicación web y la landing page. La revisión del tablero también permitió identificar que los proyectos de AI Assistance y Billing no deben reportarse como completados a nivel de producto mientras sus historias de experiencia permanezcan en Todo, aunque sus servicios principales ya estén disponibles.
+
+La distribución del trabajo evidencia un patrón de avance por capas: primero se cerraron servicios críticos de backend, luego se dejaron preparadas las interfaces para consumir esos contratos. Para el siguiente ciclo, la prioridad natural será cerrar las historias frontend de AI Guidance, dashboard interpretation, pricing, checkout y administración de suscripción, usando como base los endpoints ya implementados.
+
+**Resumen de evidencias colaborativas por actividad**
+
+| Actividad colaborativa | Evidencia documentada | Repositorio o herramienta |
+|---|---|---|
+| Development | Implementación de tickets backend para JWT/OAuth, Spring AI y Billing; separación explícita de tickets frontend pendientes. | Linear App, `ICEQ2026/coldtrace-platform`, `ICEQ2026/coldtrace-frontend` |
+| Execution | Validación funcional mediante flujos de login social, panel IA, billing frontend y endpoints documentados en Swagger UI. | Frontend Web Application, Swagger UI |
+| Documentation | Actualización del Sprint Backlog 4, documentación de hitos Linear, evidencias visuales y alcance pendiente. | `ICEQ2026/informe-del-proyecto`, Linear App |
+| Deployment | Uso de la infraestructura previa de Cloud Run, con nuevas variables para JWT, OAuth/OIDC, proveedor IA y Stripe. | Google Cloud Run, configuración por variables de entorno |
+| Agile tracking | Seguimiento de estados Done, In Progress y Todo por proyecto, milestone y ticket OPE del Sprint 4. | Linear App |
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/contributors_gituhb.png" alt="Contribuciones del equipo en GitHub durante Sprint 4" width="900">
+</p>
+
+*Figura 5.2.4.8.1: Contribuciones del equipo en GitHub durante el Sprint 4.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/pulse_github.png" alt="Actividad Pulse de GitHub durante Sprint 4" width="900">
+</p>
+
+*Figura 5.2.4.8.2: Actividad del repositorio en GitHub Pulse para Sprint 4.*
+
+---
+
 ## 5.3. Validation Interviews
 
 ### 5.3.1. Diseño de Entrevistas
@@ -6333,86 +5764,218 @@ Las entrevistas se estructuraron en torno a los siguientes ejes de validación:
 
 ### 5.3.2. Registro de Entrevistas
 
-Para cada segmento objetivo se registrarán 3 entrevistas. Cada entrevista debe incluir la información personal solicitada, un screenshot del video, el enlace de Microsoft Stream, el timing donde inicia la entrevista, su duración y un resumen descriptivo de las principales apreciaciones del participante.
+A continuación se presentan los resultados de las entrevistas realizadas, incluyendo el perfil del entrevistado, los hallazgos principales y las recomendaciones derivadas.
 
-**Video consolidado de entrevistas de validación:** [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
-**Nomenclatura del video:** `upc-pre-202610-1asi0729-10177-ICEQvalidation-sprint-3.mp4`
+| Entrevistado | Perfil | Hallazgos principales | Recomendaciones |
+|---|---|---|---|
+| Entrevistado 1 | Dueño de minimarket con cadena de frío propia | La gestión de activos y el monitoreo en tiempo real son las funcionalidades más valoradas. Se identificó la necesidad de alertas más tempranas. | Incorporar un dashboard resumen con indicadores críticos visibles sin necesidad de navegación. |
+| Entrevistado 2 | Jefa de calidad en empresa de distribución de alimentos | La generación de reportes de cumplimiento y la trazabilidad de incidencias fueron destacadas como esenciales para auditorías sanitarias. | Permitir la exportación de reportes en formatos adicionales (PDF, Excel). |
+| Entrevistado 3 | Encargado de operaciones en almacén refrigerado | La configuración de rangos de seguridad y la programación de mantenimiento preventivo fueron consideradas herramientas útiles para la operación diaria. | Desarrollar vistas móviles para consulta rápida de estado de activos. |
+| Entrevistado 4 | Administradora de restaurante con cámaras frigoríficas | La facilidad de uso de la plataforma y la claridad de las alertas fueron bien recibidas. Sugirió incluir notificaciones por WhatsApp. | Integrar canales de notificación adicionales (WhatsApp, SMS). |
 
-#### Segmento objetivo 1: Dueños, administradores o encargados de pequeños negocios alimentarios
+<br>
 
-| **Entrevista Nro. 1** |  |
-| --- | --- |
-| Screenshot | <img src="report/assets/chapter-05/validation/vi-s1-01-jean-pool-coaguila.png" alt="Screenshot de entrevista de validación - Jean Pool Coaguila" width="600"> |
-| Nombres y apellidos | Jean Pool Coaguila |
-| Edad | 29 años |
-| Distrito | Lima Norte |
-| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
-| URL de grabación | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
-| Timing de inicio | 00:00 |
-| Duración | 18:16 |
-| Resumen | Jean Pool evaluó ColdTrace desde el rol de encargado de un minimarket familiar que comercializa productos perecibles. Durante la revisión de la Landing Page, comprendió que la propuesta se enfoca en monitorear equipos refrigerados, recibir alertas y consultar historial, relacionándolo con su necesidad de detectar fallas antes de que la mercadería esté en riesgo. En la Web Application, valoró especialmente el dashboard, la revisión de activos, las alertas y el historial diario, pues estos elementos reemplazan parcialmente el control manual basado en revisar indicadores de refrigeradoras o inspeccionar visualmente los productos. Señaló que la solución sería útil si mantiene una experiencia simple, accesible desde celular y con mensajes de alerta claros. Como oportunidades de mejora, sugirió explicar mejor el costo, la instalación de sensores y agregar recomendaciones concretas de acción ante cada alerta. |
+**Registro de Entrevistas de Validación**
 
-| **Entrevista Nro. 2** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 1</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/vi-s1-01-jean-pool-coaguila.png" alt="Entrevista de Validación 1" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Entrevistado 1</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Smartphone (Android) y Laptop (Windows)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>45 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Dueño de Minimarket "Mendoza & Hijos"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y llamadas telefónicas</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Santiago de Surco, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel y Apps bancarias</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Timing:</strong> 00:00 – 15:29 (Duración: 15:29)</td>
+<td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=0s">Ver video (inicia 00:00)</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        El entrevistado evaluó la interfaz web de ColdTrace y destacó la facilidad de navegación y la claridad de la información de los activos de refrigeración. Mencionó que la gestión de activos en tiempo real les permitiría reaccionar ante fallas operativas de sus congeladoras. Recomendó incorporar una vista de dashboard tipo resumen rápido (resumen ejecutivo) que permita ver la salud de todos los activos sin tener que entrar al detalle de cada uno.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-| **Entrevista Nro. 3** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Dueños, administradores o encargados de pequeños negocios alimentarios |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 2</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/vi-s2-01-rodrigo-vasquez.png" alt="Entrevista de Validación 2" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Entrevistado 2</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop Corporativa y Tablet Android</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>34 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Jefa de Calidad Alimentaria en "Logística del Frío S.A."</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Microsoft Teams y correo corporativo</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Callao</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel, Power BI</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Timing:</strong> 15:29 – 32:19 (Duración: 16:50)</td>
+<td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=929s">Ver video (inicia 15:29)</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        La entrevistada se enfocó en el módulo de reportes y cumplimiento de ColdTrace. Valoró la bitácora diaria y el reporte de cumplimiento sanitario, ya que facilita enormemente la consolidación de evidencia para las auditorías de DIGESA. Recomendó que las exportaciones no solo estén disponibles como datos tabulares, sino que se habilite la exportación en formatos amigables como PDF y Excel con plantillas de presentación.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-#### Segmento objetivo 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-marcela-rojas.png" alt="Entrevista de Validación 3" height="350">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Marcela Rojas Cárdenas</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop (Windows) y Smartphone (Android)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>30 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Jefa de Operaciones y Control de Calidad en "FríoAndino Distribución S.A.C."</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Correo corporativo y WhatsApp</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Ate, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Microsoft Excel y sistema de gestión de almacén</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Timing:</strong> 32:19 – 46:10 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=1939s">Ver video (inicia 32:19)</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Marcela validó ColdTrace desde la perspectiva de una operación con múltiples cámaras frigoríficas y necesidades de auditoría sanitaria. Al inicio planteó sus tres principales dolores: no enterarse a tiempo de una falla de refrigeración, la pérdida de producto por reacción tardía y la dificultad para armar el historial de temperaturas ante auditorías de DIGESA. Sobre la Landing Page, indicó que la propuesta de valor se comprende de inmediato y que, por el tamaño de su operación, optaría por un plan superior con reportes avanzados. En la Frontend Web Application destacó el dashboard operacional y el monitoreo en tiempo real de temperatura y humedad como la funcionalidad que resuelve su falta de visibilidad actual, valorando el historial de lecturas como insumo directo para auditorías. En el módulo de alertas apreció la trazabilidad de detección y reconocimiento de incidencias, sugiriendo como mejora la notificación por WhatsApp o SMS. En reportes de cumplimiento, identificó la bitácora diaria exportable como la solución a su necesidad de trazabilidad, recomendando habilitar exportación en PDF y Excel. Concluyó que adoptaría la herramienta y la recomendaría a colegas del sector.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-| **Entrevista Nro. 1** |  |
-| --- | --- |
-| Screenshot | <img src="report/assets/chapter-05/validation/vi-s2-01-rodrigo-vasquez.png" alt="Screenshot de entrevista de validación - Rodrigo Vasquez" width="600"> |
-| Nombres y apellidos | Rodrigo Vasquez |
-| Edad | 30 años |
-| Distrito | Lima Metropolitana |
-| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
-| URL de grabación | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDzxmtGoZMES7vutMFjzCRkAXimh9-_K-h2BVM1FMlXjhY?e=hdDtj8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
-| Timing de inicio | 18:16 |
-| Duración | 31:58 |
-| Resumen | Rodrigo evaluó ColdTrace desde el rol de supervisor de operaciones encargado de controlar activos refrigerados y consolidar información operativa. Al revisar la Landing Page, identificó que la propuesta responde a problemas mencionados en la entrevista inicial, como la falta de visibilidad inmediata, la dependencia de registros manuales y la dispersión de información. En la Web Application, destacó el valor del dashboard operacional para priorizar riesgos, la gestión de activos y sensores para mantener trazabilidad de equipos, el módulo de incidentes para reconocer y cerrar alertas con acciones correctivas, y los reportes para auditorías o revisiones internas. Consideró que ColdTrace puede reducir el trabajo manual de consolidación en Excel o Google Sheets, siempre que los reportes sean descargables y la interfaz mantenga filtros claros por sede, activo, severidad y estado. Como mejoras, recomendó reforzar la priorización de alertas, agregar recomendaciones de acción y mejorar la vista por sede o zona para operaciones con varios puntos de control. |
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Entrevistado 4</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>iPhone (iOS) y iPad</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>31 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>iOS / Safari</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Administradora de Restaurante "El Buen Gusto"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp y iMessage</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Miraflores, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Sistema POS de comandas y Microsoft Excel</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 46:10 - 62:23 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-| **Entrevista Nro. 2** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
-
-| **Entrevista Nro. 3** |  |
-| --- | --- |
-| Screenshot | <br><br> |
-| Nombres y apellidos |  |
-| Edad |  |
-| Distrito |  |
-| Segmento objetivo | Responsables de operaciones, calidad o logística en negocios con cadena de frío |
-| URL de grabación |  |
-| Timing de inicio |  |
-| Duración |  |
-| Resumen | <br><br><br> |
 
 ### 5.3.3. Evaluaciones según heurísticas
 
@@ -6426,7 +5989,7 @@ Esta sección contiene el proceso de evaluación de las sesiones de validación 
 * **SECCIÓN:** 1ASI0729
 * **PROFESORES:** Mori Paiva, Hugo Allan
 * **AUDITOR:** Grupo 3 (ICEQ)
-* **CLIENTE(S):** Participantes de entrevistas de validación
+* **CLIENTE(S):** Entrevistado 1, Entrevistado 2, Entrevistado 3, Entrevistado 4
 
 ---
 
@@ -6509,10 +6072,22 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 - Frontend Web Application con autenticación, gestión de activos, monitoreo operacional, alertas e incidencias, reportes de cumplimiento y configuración operativa.
 - RESTful API backend con endpoints documentados en Swagger UI, mostrando los bounded contexts de Identity & Access, Asset Management, Monitoring, Alerts, Reports y Maintenance Management.
 
-**Video About-the-Product (AV2):** [Enlace al video próximamente]
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://youtu.be/jl93ck2hKho">
+          <img src="report/assets/chapter-05/about-the-product/about-the-product-thumbnail.png" alt="Video About-the-Product de ColdTrace" width="700">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Video About-the-Product (AV2):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
+    </tr>
+  </tbody>
+</table>
 
 **Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
-
 
 # Capítulo VI: Conclusions
 ## 6.1. Conclusiones y recomendaciones
@@ -6525,21 +6100,27 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 3. **Colaboración efectiva del equipo:** El uso de GitFlow con ramas feature, Conventional Commits y Pull Requests revisados permitió una integración ordenada y continua del trabajo de los 5 integrantes del equipo. La gestión del backlog mediante Linear App con tickets OPE y la organización del trabajo por Technical Stories aseguró que cada miembro tuviera responsabilidades claras y que el avance fuera medible en cada sprint.
 
-4. **RESTful API completa y desplegada:** La implementación de 15 Technical Stories más tareas transversales resultó en 51 operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo los flujos completos de registro de organizaciones, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos y de cumplimiento, y mantenimiento. La API fue desplegada exitosamente en Google Cloud Run con despliegue continuo mediante Google Cloud Build.
+4. **RESTful API completa y desplegada:** La implementación de la RESTful API resultó en operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo registro de organizaciones, autenticación JWT, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos, mantenimiento, asistencia IA y monetización SaaS. El contrato final quedó versionado bajo `/api/v1` y desplegado exitosamente en Google Cloud Run.
 
 5. **Plataforma desplegada en tres frentes:** ColdTrace cuenta con una Landing Page informativa en GitHub Pages, una Frontend Web Application funcional en Vercel y una RESTful API con documentación OpenAPI en Google Cloud Run. Esta arquitectura de tres capas permite una experiencia de usuario completa, desde la captación de visitantes hasta la operación diaria de monitoreo de cadena de frío.
 
+6. **Evolución del producto hacia IA y monetización SaaS:** Los requerimientos de Sprint 4 amplían la propuesta de ColdTrace más allá del monitoreo y la trazabilidad base. La asistencia inteligente para resolución de incidencias aporta valor operacional siempre que mantenga aprobación humana, mientras que los planes de suscripción permiten convertir el modelo de negocio en una experiencia concreta de pricing, límites y upgrades.
+
 ### Recomendaciones
 
-1. **Implementar autenticación y autorización:** Como siguiente paso, se recomienda integrar Spring Security con JWT para asegurar los endpoints de la API y gestionar sesiones de usuario de forma segura, cerrando el ciclo de seguridad de la plataforma.
+1. **Fortalecer autorización y auditoría:** Como siguiente paso, se recomienda profundizar las reglas de autorización por rol y registrar auditoría detallada para operaciones sensibles como aprobación de planes IA, cambios de suscripción y eliminación de recursos operativos.
 
 2. **Integrar sensores IoT reales:** La plataforma está diseñada para recibir lecturas de sensores IoT físicos. Se recomienda implementar un gateway de ingesta de datos que permita conectar dispositivos reales (Raspberry Pi, ESP32, etc.) para validar la solución en un entorno operativo real.
 
 3. **Pruebas automatizadas:** Se sugiere incrementar la cobertura de pruebas unitarias y de integración tanto en el frontend (Vitest) como en el backend (JUnit), así como implementar pruebas end-to-end con Cypress o Playwright para validar los flujos completos de la aplicación.
 
-4. **Conexión frontend-backend:** Como parte del trabajo futuro, se recomienda completar la integración de la Frontend Web Application con la RESTful API backend, reemplazando el servidor JSON provisional por los endpoints reales desplegados en Cloud Run.
+4. **Consolidar pruebas frontend-backend:** Como parte del trabajo futuro, se recomienda ampliar pruebas end-to-end sobre los endpoints reales desplegados en Cloud Run, especialmente login, navegación protegida, billing, asistencia IA y operaciones CRUD versionadas bajo `/api/v1`.
 
 5. **Monitoreo y observabilidad:** Para la versión productiva, se recomienda implementar herramientas de monitoreo (Cloud Monitoring, Sentry) y logging estructurado que permitan detectar y diagnosticar incidentes operativos en la plataforma de forma proactiva.
+
+6. **Implementar IA con control humano:** Se recomienda desarrollar la asistencia inteligente como una herramienta de guía y no como automatización autónoma. Todo plan generado por IA debe ser revisado, editado y aprobado por un operador antes de cerrar una incidencia o modificar datos persistidos.
+
+7. **Validar pagos y planes en modo de prueba:** Para la monetización SaaS, se recomienda iniciar con un catálogo local de planes y una integración de Stripe en modo test, usando Checkout y Customer Portal para evitar almacenar datos de tarjeta en ColdTrace. La validación debe enfocarse en límites por plan, sincronización de estado de suscripción y claridad de la experiencia de upgrade.
 
 ## 6.2. Video About-the-Team
 
@@ -6561,11 +6142,36 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 | Repositorio Informe | https://github.com/ICEQ2026/informe-del-proyecto |
 | Organización GitHub | https://github.com/ICEQ2026 |
 
-
 # Bibliografía
 
 Agraria.pe. (2019, junio 26). *Perú pierde más del 33% de los alimentos que produce por mal uso de la cadena de frío*. Agraria. https://www.agraria.pe/noticias/peru-pierde-mas-del-33-de-los-alimentos-que-produce-por-mal--19324
 
+Apple Developer. (s. f.-a). *Authenticating users with Sign in with Apple*. Apple Developer Documentation. https://developer.apple.com/documentation/signinwithapple/authenticating-users-with-sign-in-with-apple
+
+Apple Developer. (s. f.-b). *Verifying a user*. Apple Developer Documentation. https://developer.apple.com/documentation/signinwithapple/verifying-a-user
+
 FAO. (2021). *Más de 12 millones de toneladas de alimentos se pierden a lo largo de la cadena productiva en el Perú*. Organización de las Naciones Unidas para la Alimentación y la Agricultura. https://www.fao.org/peru/noticias/detail-events/en/c/1712376/
 
 Gestión. (2025, septiembre 21). *Mercado de almacenes en frío en Perú crecerá a US$ 510 millones en 2025: ¿qué lo impulsa?* Gestión. https://gestion.pe/economia/empresas/mercado-de-almacenes-en-frio-en-peru-crecera-a-us-510-millones-en-2025-que-lo-impulsa-noticia/
+
+Google Developers. (s. f.-a). *OpenID Connect: Sign in with Google*. Google Identity. https://developers.google.com/identity/openid-connect/openid-connect
+
+Google Developers. (s. f.-b). *Using OAuth 2.0 for Web Server Applications*. Google Identity. https://developers.google.com/identity/protocols/oauth2/web-server
+
+Ollama. (s. f.). *gemma3*. Ollama Model Library. https://ollama.com/library/gemma3
+
+OpenAI. (s. f.-a). *Models*. OpenAI API Documentation. https://developers.openai.com/api/docs/models
+
+OpenAI. (s. f.-b). *Pricing*. OpenAI API Documentation. https://developers.openai.com/api/docs/pricing
+
+Spring AI. (s. f.-a). *Chat Client API*. Spring AI Reference. https://docs.spring.io/spring-ai/reference/api/chatclient.html
+
+Spring AI. (s. f.-b). *Ollama Chat*. Spring AI Reference. https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html
+
+Spring AI. (s. f.-c). *OpenAI Chat*. Spring AI Reference. https://docs.spring.io/spring-ai/reference/api/chat/openai-chat.html
+
+Stripe. (s. f.-a). *Checkout Sessions*. Stripe API Reference. https://docs.stripe.com/api/checkout/sessions
+
+Stripe. (s. f.-b). *Customer Portal Session*. Stripe API Reference. https://docs.stripe.com/api/customer_portal/sessions
+
+Stripe. (s. f.-c). *Receive Stripe events in your webhook endpoint*. Stripe Documentation. https://docs.stripe.com/webhooks

@@ -14,16 +14,21 @@ package "BC Identity & Access" #D6EAF8 {
 
   class Organization <<Aggregate>>
   class User <<Aggregate>>
+  class ExternalIdentity <<Aggregate>>
   class Role <<Aggregate>>
   class EmailAddress <<ValueObject>>
   class RoleName <<ValueObject>>
+  enum ExternalIdentityProvider <<enum>>
   class Permission <<ValueObject>>
 
   Organization "1" o-- "*" User
   User "*" --> "1" Role
+  User "1" o-- "*" ExternalIdentity
+  ExternalIdentity "*" --> "1" ExternalIdentityProvider
   Role "1" *-- "*" Permission
   Organization *-- EmailAddress
   User *-- EmailAddress
+  ExternalIdentity *-- EmailAddress
   Role *-- RoleName
 }
 

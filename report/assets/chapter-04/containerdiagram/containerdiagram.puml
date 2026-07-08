@@ -1,118 +1,140 @@
-@startuml ColdTrace-Container-Diagram
+@startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 title Container Diagram - ColdTrace (ICEQ)
-caption Vista de contenedores del sistema ColdTrace alineada con los bounded contexts y user stories
+caption ColdTrace container view aligned with bounded contexts and user stories
 
 LAYOUT_WITH_LEGEND()
 LAYOUT_TOP_DOWN()
 
-' Actores principales
-Person(duenio, "Dueno o Encargado de Negocio", "Segmento 1 (Gustavo). Monitorea desde movil [US009, US016, US024].")
+' Main actors
+Person(owner, "Business Owner or Store Manager", "Segment 1 (Gustavo). Monitors from a mobile device [US009, US016, US024].")
 
-Person(responsable, "Responsable de Operaciones o Calidad", "Segmento 2 (Sofia). Supervisa multiples activos [US016, US020, US031].")
+Person(operations_lead, "Operations or Quality Lead", "Segment 2 (Sofia). Supervises multiple assets [US016, US020, US031].")
 
-Person(admin, "Administrador de la Organizacion", "Gestiona usuarios, roles y permisos [US011].")
+Person(admin, "Organization Administrator", "Manages users, roles, and permissions [US011].")
 
-Person_Ext(auditor, "Auditor Sanitario (DIGESA / MINSA)", "Recibe reportes exportados [EP006, BC Auditoria].")
+Person_Ext(auditor, "Health Auditor (DIGESA / MINSA)", "Receives exported reports and compliance evidence [EP006, Reports & Compliance].")
 
-' Sistemas externos
-System_Ext(sensores, "Sensores IoT", "Dispositivos fisicos en camaras, almacenes y transporte. Capturan temperatura y humedad [EP003, EP004].")
+' External systems
+System_Ext(sensors, "IoT Sensors", "Physical devices installed in cold rooms, warehouses, and transport units. Capture temperature and humidity [EP003, EP004].")
 
-System_Ext(email, "Servicio de Correo Electronico", "SendGrid / Mailgun. Verificacion, recuperacion y alertas [US008, US010, EP005].")
+System_Ext(email, "Email Service", "SendGrid / Mailgun. Recovery, account communication, and alerts [EP002, EP005].")
 
-System_Ext(push, "Servicio de Notificaciones Push", "Web Push / FCM. Alertas en tiempo real [EP005].")
+System_Ext(google_identity, "Google Identity", "OAuth 2.0 / OpenID Connect provider for Google social login [US052, EP008].")
 
-System_Ext(whatsapp, "Servicio de Mensajeria (WhatsApp Business API)", "Canal complementario de alertas [EP005, Cap. I].")
+System_Ext(apple_identity, "Apple Identity", "Sign in with Apple provider for Apple social login [US052, EP008].")
 
-System_Ext(pagos, "Pasarela de Pagos", "Culqi / Stripe / Yape. Cobro de suscripcion mensual [Cap. I modelo SaaS].")
+System_Ext(push, "Push Notification Service", "Web Push / FCM. Real-time alerts [EP005].")
 
-' Contenedores principales de ColdTrace
-System_Boundary(coldtrace, "Sistema ColdTrace") {
+System_Ext(whatsapp, "Messaging Service (WhatsApp Business API)", "Complementary alert channel [EP005].")
 
-    ' Capa de presentación
-    Container(landing, "Landing Page", "HTML, CSS, JavaScript", "Propuesta de valor, funcionalidades, CTA de registro [EP001, US001-US006].")
+System_Ext(ai_provider, "AI Model Provider", "Spring AI target selected by environment: Ollama gemma3:4b locally, OpenAI gpt-5.4-mini in academic deployment [EP013].")
 
-    Container(webapp, "Web Application", "Angular", "Dashboard de monitoreo en tiempo real, gestion de activos, alertas, reportes e historial. Responsive desktop y movil.")
+System_Ext(stripe, "Stripe", "Hosted checkout, customer portal, invoices, and subscription lifecycle events [EP014].")
+
+' Main ColdTrace containers
+System_Boundary(coldtrace, "ColdTrace System") {
+
+    ' Presentation layer
+    Container(landing, "Landing Page", "HTML, CSS, JavaScript", "Value proposition, product capabilities, and registration CTA [EP001, US001-US006].")
+
+    Container(webapp, "Web Application", "Angular", "Real-time monitoring dashboard, asset management, alerts, reports, AI guidance panel, billing settings, and history.")
 
     ' Gateways
-    Container(apigateway, "API Gateway", "Spring Cloud Gateway", "Punto de entrada unico al backend. Enrutamiento, autenticacion y rate limiting.")
+    Container(apigateway, "API Gateway", "Spring Cloud Gateway", "Single backend entry point. Routing, authentication, and rate limiting.")
 
-    Container(iotgateway, "IoT Gateway", "MQTT / HTTP", "Recibe y normaliza lecturas de sensores fisicos antes de reenviarlas al BC de Monitoreo.")
+    Container(iotgateway, "IoT Gateway", "MQTT / HTTP", "Receives and normalizes physical sensor readings before forwarding them to the Monitoring BC.")
 
-    ' Servicios por contexto
-    Container(auth_svc, "Autenticacion BC", "Spring Boot / JWT / OAuth2", "Registro, verificacion, login, roles, permisos y validacion de suscripcion [BC Autenticacion, EP002].")
+    ' Bounded-context services
+    Container(auth_svc, "Identity & Access BC", "Spring Boot / JWT / OAuth2", "Registration, sign-in, social identity links, recovery, users, roles, permissions, and subscription validation [EP002, EP008].")
 
-    Container(sensors_svc, "Gestion de Sensores BC", "Spring Boot", "Registro de activos, sensores y gateways. Configuracion de rangos y frecuencia [BC Gestion de Sensores, EP003, EP007].")
+    Container(assets_svc, "Asset Management BC", "Spring Boot", "Assets, sensors, gateways, calibration, safety ranges, and operational parameters [EP003, EP007, EP009].")
 
-    Container(monitor_svc, "Monitoreo BC", "Spring Boot", "Registra, valida y verifica rangos de mediciones en tiempo real [BC Monitoreo, EP004].")
+    Container(monitor_svc, "Monitoring BC", "Spring Boot", "Stores, validates, and checks real-time measurement ranges [BC Monitoring, EP004].")
 
-    Container(alerts_svc, "Alertas BC", "Spring Boot", "Detecta desviaciones, genera incidencias y enruta alertas por multiples canales [BC Alertas, EP005].")
+    Container(alerts_svc, "Alerts BC", "Spring Boot", "Detects deviations, creates incidents, and routes alerts through multiple channels [BC Alerts, EP005].")
 
-    Container(reports_svc, "Reportes BC", "Spring Boot", "Genera dashboards, historial, bitacoras y reportes exportables [BC Reportes, EP006].")
+    Container(reports_svc, "Reports & Compliance BC", "Spring Boot", "Generates logs, history, reports, findings, and audit evidence [EP006, EP012].")
 
-    Container(audit_svc, "Auditoria BC", "Spring Boot", "Inicia auditorias, valida cumplimiento y genera evidencia exportable [BC Auditoria].")
+    Container(maintenance_svc, "Maintenance Management BC", "Spring Boot", "Manages preventive maintenance, technical service requests, closure, and intervention evidence [EP007, EP012].")
 
-    ' Bases de datos por contexto
-    ContainerDb(db_auth, "DB Autenticacion", "PostgreSQL", "Usuarios, roles, permisos, sesiones, suscripciones.")
+    Container(ai_svc, "AI Assistance BC", "Spring Boot + Spring AI", "Generates incident plans, report summaries, and dashboard insights. Provider is selected through AI_MODEL_PROVIDER and AI_MODEL_NAME [EP013].")
 
-    ContainerDb(db_sensors, "DB Sensores", "PostgreSQL", "Activos, sensores, gateways, rangos, configuraciones.")
+    Container(billing_svc, "Subscription & Billing BC", "Spring Boot + Stripe SDK", "Manages subscription plans, organization subscriptions, entitlements, Checkout, Customer Portal, and Stripe webhooks [EP014].")
 
-    ContainerDb(db_monitor, "DB Monitoreo", "PostgreSQL / TimescaleDB", "Serie de tiempo de mediciones de temperatura y humedad.")
+    ' Databases by context
+    ContainerDb(db_auth, "DB Identity & Access", "MySQL", "Users, roles, permissions, external identity links, and sessions.")
 
-    ContainerDb(db_alerts, "DB Alertas", "PostgreSQL", "Alertas activas, incidencias, estados, acciones tomadas.")
+    ContainerDb(db_assets, "DB Asset Management", "MySQL", "Assets, sensors, gateways, ranges, and configurations.")
 
-    ContainerDb(db_reports, "DB Reportes", "PostgreSQL", "Reportes generados, bitacoras, descargas historicas.")
+    ContainerDb(db_monitor, "DB Monitoring", "MySQL", "Time series of temperature and humidity measurements.")
 
-    ContainerDb(db_audit, "DB Auditoria", "PostgreSQL", "Auditorias, evidencias, resultados de cumplimiento.")
+    ContainerDb(db_alerts, "DB Alerts", "MySQL", "Active alerts, incidents, statuses, and actions taken.")
+
+    ContainerDb(db_reports, "DB Reports & Compliance", "MySQL", "Generated reports, logs, findings, and evidence.")
+
+    ContainerDb(db_maintenance, "DB Maintenance Management", "MySQL", "Maintenance records, technical service requests, closures, and evidence.")
+
+    ContainerDb(db_ai, "DB AI Assistance", "MySQL", "AI resolution plans, approval/rejection audit, and AI report summaries.")
+
+    ContainerDb(db_billing, "DB Subscription & Billing", "MySQL", "Plans, organization subscriptions, entitlements, and processed webhook events.")
 }
 
-' Relaciones principales
+' Main relationships
+Rel(owner, landing, "Visits", "HTTPS")
+Rel(operations_lead, landing, "Visits", "HTTPS")
+Rel(owner, webapp, "Checks status and handles alerts", "HTTPS")
+Rel(operations_lead, webapp, "Monitors, configures, and generates reports", "HTTPS")
+Rel(admin, webapp, "Manages users and permissions", "HTTPS")
 
-' Acceso de usuarios al frontend
-Rel(duenio, landing, "Visita", "HTTPS")
-Rel(responsable, landing, "Visita", "HTTPS")
-Rel(duenio, webapp, "Consulta estado y atiende alertas", "HTTPS")
-Rel(responsable, webapp, "Monitorea, configura y genera reportes", "HTTPS")
-Rel(admin, webapp, "Gestiona usuarios y permisos", "HTTPS")
+Rel(webapp, apigateway, "Consumes REST API", "HTTPS / JSON")
 
-' Comunicación del frontend con el backend
-Rel(webapp, apigateway, "Consume API REST", "HTTPS / JSON")
+Rel(sensors, iotgateway, "Sends readings", "MQTT / HTTP")
+Rel(iotgateway, monitor_svc, "Forwards normalized readings", "HTTP / internal messaging")
 
-' Flujo de lecturas desde dispositivos IoT
-Rel(sensores, iotgateway, "Envia lecturas", "MQTT / HTTP")
-Rel(iotgateway, monitor_svc, "Reenvia mediciones normalizadas", "HTTP / mensajeria interna")
+Rel(apigateway, auth_svc, "Routes authentication requests", "HTTP")
+Rel(apigateway, assets_svc, "Routes asset-management requests", "HTTP")
+Rel(apigateway, monitor_svc, "Routes monitoring queries", "HTTP")
+Rel(apigateway, alerts_svc, "Routes alert-management requests", "HTTP")
+Rel(apigateway, reports_svc, "Routes report-generation requests", "HTTP")
+Rel(apigateway, maintenance_svc, "Routes maintenance and technical-service requests", "HTTP")
+Rel(apigateway, ai_svc, "Routes AI guidance requests", "HTTP")
+Rel(apigateway, billing_svc, "Routes billing and subscription requests", "HTTP")
 
-' Enrutamiento desde el API Gateway
-Rel(apigateway, auth_svc, "Enruta peticiones de autenticacion", "HTTP")
-Rel(apigateway, sensors_svc, "Enruta peticiones de gestion de sensores", "HTTP")
-Rel(apigateway, monitor_svc, "Enruta consultas de monitoreo", "HTTP")
-Rel(apigateway, alerts_svc, "Enruta gestion de alertas", "HTTP")
-Rel(apigateway, reports_svc, "Enruta generacion de reportes", "HTTP")
-Rel(apigateway, audit_svc, "Enruta auditoria y cumplimiento", "HTTP")
+Rel(auth_svc, db_auth, "Reads / writes", "JDBC")
+Rel(assets_svc, db_assets, "Reads / writes", "JDBC")
+Rel(monitor_svc, db_monitor, "Reads / writes", "JDBC")
+Rel(alerts_svc, db_alerts, "Reads / writes", "JDBC")
+Rel(reports_svc, db_reports, "Reads / writes", "JDBC")
+Rel(maintenance_svc, db_maintenance, "Reads / writes", "JDBC")
+Rel(ai_svc, db_ai, "Reads / writes", "JDBC")
+Rel(billing_svc, db_billing, "Reads / writes", "JDBC")
 
-' Persistencia por contexto
-Rel(auth_svc, db_auth, "Lee / Escribe", "JDBC")
-Rel(sensors_svc, db_sensors, "Lee / Escribe", "JDBC")
-Rel(monitor_svc, db_monitor, "Lee / Escribe", "JDBC")
-Rel(alerts_svc, db_alerts, "Lee / Escribe", "JDBC")
-Rel(reports_svc, db_reports, "Lee / Escribe", "JDBC")
-Rel(audit_svc, db_audit, "Lee / Escribe", "JDBC")
+Rel(monitor_svc, alerts_svc, "Notifies out-of-range readings", "Internal events")
+Rel(assets_svc, monitor_svc, "Provides ranges, assets, and devices", "Internal events / HTTP")
+Rel(reports_svc, db_monitor, "Reads historical measurements", "JDBC read-only")
+Rel(reports_svc, db_alerts, "Reads incidents for logs", "JDBC read-only")
+Rel(maintenance_svc, assets_svc, "Checks assets and technical status", "HTTP")
+Rel(ai_svc, alerts_svc, "Loads incident lifecycle and applies approved resolution through domain service", "HTTP / ACL")
+Rel(ai_svc, monitor_svc, "Loads linked reading and recent telemetry context", "HTTP / ACL")
+Rel(ai_svc, assets_svc, "Loads asset, device, gateway, location, and settings context", "HTTP / ACL")
+Rel(ai_svc, maintenance_svc, "Loads related maintenance context", "HTTP / ACL")
+Rel(ai_svc, reports_svc, "Stores or requests AI summaries for reports", "HTTP / ACL")
+Rel(billing_svc, auth_svc, "Associates subscription to organization", "HTTP / ACL")
+Rel(billing_svc, assets_svc, "Checks usage for locations, assets, devices, and users", "HTTP / ACL")
+Rel(billing_svc, ai_svc, "Provides AI feature entitlements", "HTTP / ACL")
 
-' Comunicación entre contextos
-Rel(monitor_svc, alerts_svc, "Notifica lectura fuera de rango", "Eventos internos")
-Rel(reports_svc, db_monitor, "Consulta mediciones historicas", "JDBC read-only")
-Rel(audit_svc, db_reports, "Consulta reportes para evidencia", "JDBC read-only")
+Rel(auth_svc, email, "Sends recovery and account emails [EP002]", "SMTP / REST")
+Rel(auth_svc, google_identity, "Validates Google identity and exchanges OAuth/OIDC responses [US052]", "HTTPS")
+Rel(auth_svc, apple_identity, "Validates Apple identity and authorization responses [US052]", "HTTPS")
+Rel(alerts_svc, email, "Sends email alerts", "SMTP / REST")
+Rel(alerts_svc, push, "Sends push notifications", "Web Push / FCM")
+Rel(alerts_svc, whatsapp, "Sends messaging alerts", "REST")
+Rel(ai_svc, ai_provider, "Requests structured AI output", "Spring AI / HTTPS")
+Rel(billing_svc, stripe, "Creates checkout and customer portal sessions; receives webhooks", "Stripe API / HTTPS")
 
-' Integración con servicios externos
-Rel(auth_svc, email, "Envia correos de verificacion y recuperacion [US008, US010]", "SMTP / REST")
-Rel(auth_svc, pagos, "Valida y procesa suscripcion mensual", "REST / HTTPS")
-Rel(alerts_svc, email, "Envia alertas por correo", "SMTP / REST")
-Rel(alerts_svc, push, "Envia notificaciones push", "Web Push / FCM")
-Rel(alerts_svc, whatsapp, "Envia alertas por mensajeria", "REST")
-
-' Entrega de información al auditor externo
-Rel(reports_svc, auditor, "Entrega reportes exportados", "PDF / CSV")
-Rel(audit_svc, auditor, "Entrega evidencia de cumplimiento", "PDF / CSV")
+Rel(reports_svc, auditor, "Delivers exported reports", "PDF / CSV")
+Rel(reports_svc, auditor, "Delivers compliance evidence", "PDF / CSV")
 
 @enduml

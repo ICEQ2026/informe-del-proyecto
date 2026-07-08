@@ -9,16 +9,20 @@ skinparam packageStyle rectangle
 skinparam shadowing false
 
 actor "Web Application / API Client" as client
-database "MySQL\norganizations\nusers\nroles\nrole_permissions" as db
+component "Google Identity" as google_identity <<External System>>
+component "Apple Identity" as apple_identity <<External System>>
+database "MySQL\norganizations\nusers\nroles\nrole_permissions\nexternal_identities" as db
 
 package "Identity & Access Bounded Context" #D6EAF8 {
 
   [OrganizationSignUpsController] <<REST Controller>> as signup_ctrl
+  [SocialAuthenticationController] <<REST Controller>> as social_ctrl
   [OrganizationsController] <<REST Controller>> as org_ctrl
   [UsersController] <<REST Controller>> as users_ctrl
   [RolesController] <<REST Controller>> as roles_ctrl
 
   [OrganizationSignUpCommandServiceImpl] <<Command Service>> as signup_cmd
+  [SocialAuthenticationCommandServiceImpl] <<Command Service>> as social_cmd
   [OrganizationCommandServiceImpl] <<Command Service>> as org_cmd
   [UserCommandServiceImpl] <<Command Service>> as user_cmd
 
@@ -30,6 +34,7 @@ package "Identity & Access Bounded Context" #D6EAF8 {
 
   [OrganizationRepository] <<Domain Repository>> as org_repo
   [UserRepository] <<Domain Repository>> as user_repo
+  [ExternalIdentityRepository] <<Domain Repository>> as external_identity_repo
   [RoleRepository] <<Domain Repository>> as role_repo
 
   [JPA repository adapters\nPersistence assemblers\nJPA entities] <<Infrastructure>> as persistence
@@ -38,11 +43,13 @@ package "Identity & Access Bounded Context" #D6EAF8 {
 component "Other bounded contexts" as other_bcs <<Consumers>>
 
 client --> signup_ctrl : POST /organization-sign-ups
+client --> social_ctrl : POST /auth/social/{provider}
 client --> org_ctrl : GET/POST /organizations
 client --> users_ctrl : GET/POST/PATCH /organizations/{id}/users
 client --> roles_ctrl : GET /roles
 
 signup_ctrl --> signup_cmd
+social_ctrl --> social_cmd
 org_ctrl --> org_cmd
 org_ctrl --> org_query
 users_ctrl --> user_cmd
@@ -52,6 +59,12 @@ roles_ctrl --> role_query
 signup_cmd --> org_repo
 signup_cmd --> user_repo
 signup_cmd --> role_repo
+social_cmd --> google_identity : validates OAuth/OIDC response
+social_cmd --> apple_identity : validates identity response
+social_cmd --> external_identity_repo
+social_cmd --> user_repo
+social_cmd --> org_repo
+social_cmd --> role_repo
 org_cmd --> org_repo
 org_query --> org_repo
 user_cmd --> user_repo
@@ -67,6 +80,7 @@ other_bcs ..> identity_facade : validate organization/user ownership
 
 org_repo --> persistence
 user_repo --> persistence
+external_identity_repo --> persistence
 role_repo --> persistence
 persistence --> db : Spring Data JPA
 

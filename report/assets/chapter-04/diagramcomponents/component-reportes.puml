@@ -15,12 +15,14 @@ component "IdentityAccessContextFacade" as identity_facade <<External ACL>>
 component "AssetManagementContextFacade" as asset_facade <<External ACL>>
 component "MonitoringContextFacade" as monitoring_facade <<External ACL>>
 component "AlertsContextFacade" as alerts_facade <<External ACL>>
+component "AI Assistance" as ai_bc <<ACL consumer>>
 
 package "Reports Bounded Context" #E8DAEF {
 
   [ReportsController] <<REST Controller>> as reports_ctrl
   [ReportCommandServiceImpl] <<Command Service>> as report_cmd
   [ReportQueryServiceImpl] <<Query Service>> as report_query
+  [ReportsContextFacadeImpl] <<ACL Facade>> as reports_facade
   [ReportGeneratedEventHandler] <<Event Handler>> as report_event_handler
 
   [ReportRepository] <<Domain Repository>> as report_repo
@@ -39,6 +41,8 @@ report_cmd --> alerts_facade : incident snapshots
 
 report_cmd --> report_repo
 report_query --> report_repo
+reports_facade --> report_repo
+ai_bc ..> reports_facade : fetch report metrics for AI summary
 report_repo --> report_event_handler : publishes ReportGeneratedEvent
 report_event_handler --> [ReportGeneratedIntegrationEvent]
 

@@ -1,55 +1,57 @@
-@startuml ColdTrace-Context-Diagram
+@startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
 title System Context Diagram - ColdTrace (ICEQ)
-caption Contexto general del sistema ColdTrace para monitoreo de cadena de frio alimentaria
+caption General system context for food cold-chain monitoring
 
 LAYOUT_WITH_LEGEND()
 LAYOUT_TOP_DOWN()
 
-' Actores principales del sistema
-' Alineados con los segmentos objetivo y con los contextos principales del dominio.
-Person(duenio, "Dueno o Encargado de Negocio", "Segmento 1 (Gustavo). Gestiona minimarkets, carnicerias, pescaderias o restaurantes. Monitorea temperatura y atiende alertas desde el celular.")
+' Main actors
+Person(owner, "Business Owner or Store Manager", "Segment 1 (Gustavo). Manages minimarkets, butcher shops, fish shops, or restaurants. Monitors temperature and handles alerts from a mobile device.")
 
-Person(responsable, "Responsable de Operaciones o Calidad", "Segmento 2 (Sofia). Supervisa multiples activos refrigerados, configura rangos, genera reportes y sustenta auditorias.")
+Person(operations_lead, "Operations or Quality Lead", "Segment 2 (Sofia). Supervises multiple refrigerated assets, configures safety ranges, generates reports, and supports compliance evidence.")
 
-Person(admin, "Administrador de la Organizacion", "Gestiona usuarios, roles y permisos dentro de la cuenta empresarial [US011].")
+Person(admin, "Organization Administrator", "Manages users, roles, and permissions within the business account [US011].")
 
-Person_Ext(auditor, "Auditor Sanitario (DIGESA / MINSA)", "Actor externo que recibe reportes exportados y evidencia de trazabilidad para sustentar el cumplimiento normativo [EP006, BC Auditoria].")
+Person_Ext(auditor, "Health Auditor (DIGESA / MINSA)", "External actor who receives exported reports and traceability evidence to support regulatory compliance [EP006, Reports & Compliance].")
 
-' Sistema principal
-System(coldtrace, "ColdTrace", "Plataforma web de monitoreo en tiempo real de temperatura y humedad para la cadena de frio alimentaria. Centraliza activos, mediciones, alertas, historial y reportes.")
+' Main system
+System(coldtrace, "ColdTrace", "SaaS web monitoring platform for food cold-chain operations. Centralizes assets, readings, alerts, reports, AI-assisted incident guidance, and subscriptions.")
 
-' Servicios y sistemas externos
-System_Ext(sensores, "Sensores IoT", "Dispositivos fisicos en camaras frigorificas, almacenes y unidades de transporte. Capturan temperatura y humedad [EP003, EP004, BC Monitoreo].")
+' External systems
+System_Ext(sensors, "IoT Sensors", "Physical devices installed in cold rooms, warehouses, and transport units. Capture temperature and humidity [EP003, EP004, BC Monitoring].")
 
-System_Ext(email, "Servicio de Correo Electronico", "Proveedor externo (ej. SendGrid / Mailgun). Verificacion de cuenta [US008], recuperacion de contrasena [US010] y alertas [EP005].")
+System_Ext(email, "Email Service", "External provider such as SendGrid or Mailgun. Handles password recovery, account communication, and alerts [EP002, EP005].")
 
-System_Ext(push, "Servicio de Notificaciones Push", "Entrega alertas criticas en tiempo real al navegador y movil del usuario [EP005, container diagram 'Email y Push'].")
+System_Ext(google_identity, "Google Identity", "External identity provider for Google sign-in through OAuth 2.0 / OpenID Connect [US052, EP008].")
 
-System_Ext(whatsapp, "Servicio de Mensajeria (WhatsApp Business API)", "Canal complementario de alertas. Cap. I: 'alertas por correo o mensajeria'. Entrevistas: WhatsApp Business como canal habitual [EP005].")
+System_Ext(apple_identity, "Apple Identity", "External identity provider for Sign in with Apple and identity tokens [US052, EP008].")
 
-System_Ext(pagos, "Pasarela de Pagos", "Procesador externo (ej. Culqi / Stripe / Yape). Gestiona el cobro mensual de la suscripcion SaaS [Cap. I: modelo de negocio por suscripcion].")
+System_Ext(push, "Push Notification Service", "Delivers critical real-time alerts to the user's browser and mobile device [EP005].")
 
-' Relaciones principales
+System_Ext(whatsapp, "Messaging Service (WhatsApp Business API)", "Complementary critical-alert channel based on the stakeholders' usual communication habits [EP005].")
 
-' Actores internos hacia ColdTrace
-Rel(duenio, coldtrace, "Consulta estado de activos y atiende alertas", "HTTPS / Web responsive")
-Rel(responsable, coldtrace, "Monitorea operacion, configura rangos y genera reportes", "HTTPS / Web")
-Rel(admin, coldtrace, "Gestiona usuarios, roles y permisos", "HTTPS / Web")
+System_Ext(ai_provider, "AI Model Provider", "Spring AI target selected by environment: Ollama gemma3:4b locally, OpenAI gpt-5.4-mini in academic deployment [EP013].")
 
-' Entrega de información a actores externos
-Rel(coldtrace, auditor, "Entrega reportes de cumplimiento y evidencia de trazabilidad", "PDF / CSV exportados")
+System_Ext(stripe, "Stripe", "External payment provider. Handles hosted checkout, customer portal, invoices, and subscription lifecycle events [EP014].")
 
-' Ingreso de lecturas desde sensores
-Rel(sensores, coldtrace, "Envia lecturas de temperatura y humedad", "MQTT / HTTP")
+' Main relationships
+Rel(owner, coldtrace, "Checks asset status and handles alerts", "HTTPS / Responsive Web")
+Rel(operations_lead, coldtrace, "Monitors operations, configures ranges, resolves incidents with AI guidance, and generates reports", "HTTPS / Web")
+Rel(admin, coldtrace, "Manages users, roles, permissions, plans, and billing", "HTTPS / Web")
 
-' Salida hacia servicios de notificación
-Rel(coldtrace, email, "Envia correos de verificacion, recuperacion y alertas", "SMTP / API REST")
-Rel(coldtrace, push, "Entrega notificaciones en tiempo real ante desviaciones", "Web Push / FCM")
-Rel(coldtrace, whatsapp, "Envia alertas criticas por mensajeria", "API REST")
+Rel(coldtrace, auditor, "Delivers compliance reports and traceability evidence", "PDF / CSV exports")
 
-' Integración con la pasarela de pagos
-Rel(coldtrace, pagos, "Procesa pagos de suscripcion mensual", "API REST / HTTPS")
+Rel(sensors, coldtrace, "Sends temperature and humidity readings", "MQTT / HTTP")
+
+Rel(coldtrace, email, "Sends recovery, account, and alert emails", "SMTP / REST API")
+Rel(coldtrace, google_identity, "Validates Google identity and exchanges OAuth/OIDC responses", "HTTPS / OAuth 2.0")
+Rel(coldtrace, apple_identity, "Validates Apple identity and authorization responses", "HTTPS / Sign in with Apple")
+Rel(coldtrace, push, "Delivers real-time deviation notifications", "Web Push / FCM")
+Rel(coldtrace, whatsapp, "Sends critical alerts through messaging", "REST API")
+
+Rel(coldtrace, ai_provider, "Requests structured AI guidance with bounded operational context", "Spring AI / HTTPS")
+Rel(coldtrace, stripe, "Creates hosted checkout and billing portal sessions; receives subscription webhooks", "REST API / HTTPS")
 
 @enduml

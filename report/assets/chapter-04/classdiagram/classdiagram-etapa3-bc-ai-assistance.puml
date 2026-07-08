@@ -1,0 +1,86 @@
+@startuml
+
+title Stage 3 - BC AI Assistance
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+package "BC AI Assistance" #D7BDE2 {
+
+  class IncidentAiResolutionPlan <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - incidentId: Long
+    - status: AiPlanStatus
+    - generatedSummary: String
+    - probableCause: String
+    - recommendedSteps: List<String>
+    - correctiveActionDraft: String
+    - resolutionNotesDraft: String
+    - escalationRecommendation: String
+    - requiredEvidence: List<String>
+    - uncertaintyNotes: String
+    - modelProvider: String
+    - modelName: String
+    - generatedAt: OffsetDateTime
+    - approvedBy: String
+    - approvedAt: OffsetDateTime
+    - finalCorrectiveAction: String
+    - finalResolutionNotes: String
+    - rejectedBy: String
+    - rejectedAt: OffsetDateTime
+    - rejectionReason: String
+    + approve(command: ApproveAiResolutionPlanCommand): void
+    + reject(command: RejectAiResolutionPlanCommand): void
+    + isPending(): boolean
+  }
+
+  class AiReportSummary <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - reportId: Long
+    - summary: String
+    - risks: List<String>
+    - recommendedFollowUp: List<String>
+    - modelProvider: String
+    - modelName: String
+    - generatedAt: OffsetDateTime
+  }
+
+  enum AiPlanStatus <<enum>> {
+    PENDING
+    APPROVED
+    REJECTED
+  }
+
+  class IncidentAiContext <<ValueObject>> #FCF3CF {
+    - incidentId: Long
+    - assetId: Long
+    - readingId: Long
+    - currentValue: String
+    - safeRange: String
+    - recentReadingsSummary: String
+    - maintenanceSummary: String
+  }
+
+  interface AiResolutionPlanRepository <<Repository>>
+  interface AiReportSummaryRepository <<Repository>>
+
+  IncidentAiResolutionPlan ..> AiPlanStatus
+  IncidentAiResolutionPlan ..> IncidentAiContext : generated from
+  AiResolutionPlanRepository ..> IncidentAiResolutionPlan
+  AiReportSummaryRepository ..> AiReportSummary
+}
+
+note right of IncidentAiResolutionPlan
+  AI output is advisory. The plan stays PENDING
+  until an operator approves or rejects it.
+  Approval calls the real incident lifecycle
+  command service; the model never closes an
+  incident autonomously.
+end note
+
+@enduml

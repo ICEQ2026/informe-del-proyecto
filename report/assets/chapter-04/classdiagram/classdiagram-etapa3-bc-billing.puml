@@ -1,0 +1,100 @@
+@startuml
+
+title Stage 3 - BC Subscription & Billing
+
+skinparam classAttributeIconSize 0
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+package "BC Subscription & Billing" #D6DBDF {
+
+  class SubscriptionPlan <<Aggregate>> #FADBD8 {
+    - id: Long
+    - code: PlanCode
+    - name: String
+    - description: String
+    - currency: String
+    - monthlyPriceCents: Integer
+    - stripePriceId: String
+    - recommended: Boolean
+    - active: Boolean
+    - maxLocations: Integer
+    - maxAssets: Integer
+    - maxIoTDevices: Integer
+    - maxUsers: Integer
+    - historyRetentionDays: Integer
+    - allowsExports: Boolean
+    - allowsMaintenance: Boolean
+    - allowsAiGuidance: Boolean
+    - allowsAiReportSummary: Boolean
+  }
+
+  class OrganizationSubscription <<Aggregate>> #FADBD8 {
+    - id: Long
+    - organizationId: Long
+    - planCode: PlanCode
+    - status: SubscriptionStatus
+    - provider: BillingProvider
+    - providerCustomerId: String
+    - providerSubscriptionId: String
+    - currentPeriodStart: OffsetDateTime
+    - currentPeriodEnd: OffsetDateTime
+    - cancelAtPeriodEnd: Boolean
+    + activate(plan: SubscriptionPlan): void
+    + markPastDue(): void
+    + cancelAtPeriodEnd(): void
+  }
+
+  class BillingWebhookEvent <<Aggregate>> #FADBD8 {
+    - id: Long
+    - provider: BillingProvider
+    - providerEventId: String
+    - eventType: String
+    - receivedAt: OffsetDateTime
+    - processedAt: OffsetDateTime
+    - processingStatus: String
+  }
+
+  class PlanCode <<ValueObject>> #FCF3CF {
+    - value: String
+    + getValue(): String
+  }
+
+  enum SubscriptionStatus <<enum>> {
+    FREE
+    ACTIVE
+    PAST_DUE
+    CANCELED
+  }
+
+  enum BillingProvider <<enum>> {
+    NONE
+    STRIPE
+  }
+
+  interface SubscriptionPlanRepository <<Repository>>
+  interface OrganizationSubscriptionRepository <<Repository>>
+  interface BillingWebhookEventRepository <<Repository>>
+
+  SubscriptionPlan *-- PlanCode
+  OrganizationSubscription *-- PlanCode
+  OrganizationSubscription ..> SubscriptionStatus
+  OrganizationSubscription ..> BillingProvider
+  BillingWebhookEvent ..> BillingProvider
+  OrganizationSubscription ..> SubscriptionPlan : planCode
+  SubscriptionPlanRepository ..> SubscriptionPlan
+  OrganizationSubscriptionRepository ..> OrganizationSubscription
+  BillingWebhookEventRepository ..> BillingWebhookEvent
+}
+
+note right of OrganizationSubscription
+  Stripe processes card data and invoices.
+  ColdTrace stores only subscription state,
+  provider identifiers, and entitlements
+  needed to enforce plan limits in backend
+  application services.
+end note
+
+@enduml

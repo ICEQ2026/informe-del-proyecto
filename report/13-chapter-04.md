@@ -213,9 +213,9 @@ Los wireframes de la Landing Page fueron diseñados con el objetivo de definir l
 En esta etapa se establecieron las principales secciones del sitio, como el encabezado de navegación, la sección principal (hero), características del producto, beneficios, testimonios y formulario de contacto.
 Asimismo, se consideró una versión responsive, adaptando la distribución de los elementos para dispositivos móviles, garantizando una navegación clara y accesible en diferentes tamaños de pantalla.
 
-![Wireframe Landing Page](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
+![Wireframe Landing Page](assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
 
-![Wireframe Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
+![Wireframe Landing Page Mobile](assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
 
 ---
 
@@ -225,9 +225,9 @@ Los mockups de la Landing Page representan la versión visual final del diseño,
 En esta etapa se aplicaron los lineamientos de branding del proyecto, incluyendo el uso de colores principales, jerarquía tipográfica y elementos visuales que refuerzan la identidad del producto.
 Además, se mantuvo consistencia entre la versión desktop y mobile, asegurando una experiencia uniforme para el usuario en cualquier dispositivo.
 
-![Mockup Landing Page](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
+![Mockup Landing Page](assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
 
-![Mockup Landing Page Mobile](/report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
+![Mockup Landing Page Mobile](assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
 
 ---
 
@@ -239,11 +239,11 @@ Los wireframes de la aplicación web fueron diseñados para definir la estructur
 En esta etapa se identificaron los elementos clave de interacción, como paneles de control, visualización de datos, navegación entre secciones y componentes necesarios para la gestión del sistema.
 Estos wireframes permiten validar la distribución de información antes de la implementación visual, asegurando que las funcionalidades respondan a las necesidades del usuario.
 
-![Wireframe Web Application 1](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
+![Wireframe Web Application 1](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
 
-![Wireframe Web Application 2](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
+![Wireframe Web Application 2](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
 
-![Wireframe Web Application 3](/report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
+![Wireframe Web Application 3](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
 
 ---
 
@@ -252,7 +252,7 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
-![wireflows diagram](/report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
+![wireflows diagram](assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
 
 ---
 
@@ -262,11 +262,11 @@ Los mockups de la aplicación web muestran la representación visual final de la
 En esta etapa se buscó mantener consistencia visual con la Landing Page, asegurando una identidad unificada del producto.
 Asimismo, se priorizó la claridad en la presentación de información y la facilidad de uso, permitiendo que el usuario interactúe de manera intuitiva con las funcionalidades del sistema.
 
-![Mockup Web Application 1](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
+![Mockup Web Application 1](assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
 
-![Mockup Web Application 2](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
+![Mockup Web Application 2](assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
 
-![Mockup Web Application 3](/report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
+![Mockup Web Application 3](assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
 
 ---
 
@@ -277,15 +277,15 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
 
-![userflowdiagram1](/report/assets/chapter-04/userflowdiagram/userflowdiagram1.png)
+![userflowdiagram1](assets/chapter-04/userflowdiagram/userflowdiagram1.png)
 
 ### User Flow 2 : Obtener reportes para supervisión y control.
 
-![userflowdiagram2](/report/assets/chapter-04/userflowdiagram/userflowdiagram2.png)
+![userflowdiagram2](assets/chapter-04/userflowdiagram/userflowdiagram2.png)
 
 ### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
 
-![userflowdiagram3](/report/assets/chapter-04/userflowdiagram/userflowdiagram3.png)
+![userflowdiagram3](assets/chapter-04/userflowdiagram/userflowdiagram3.png)
 
 ---
 
@@ -296,6 +296,38 @@ En esta sección se presenta el prototipo navegable de la aplicación web de Col
 El prototipo integra las pantallas clave del producto, como monitoreo, alertas, reportes y gestión general de la operación, manteniendo coherencia con los lineamientos visuales y funcionales definidos en las etapas anteriores del diseño.
 
 ![prototype navigation sprint 1](assets/chapter-04/prototyping/prototype-navigation-sprint-1.png)
+
+### Sprint 4 Prototype: AI Assistance and SaaS Billing
+
+Para el Sprint 4 se amplió el prototipo de la Web Application con funcionalidades orientadas a asistencia inteligente, monetización SaaS y análisis operacional bajo demanda. Estas pantallas permiten validar el valor de IA dentro del producto sin convertirla en un agente autónomo: la IA propone interpretaciones, resúmenes o planes, mientras que el usuario mantiene la decisión final y el backend objetivo conserva la responsabilidad de actualizar el estado real de la operación.
+
+El prototipo considera cinco puntos de interacción principales:
+
+- **AI Guidance para incidencias:** muestra la generación de un plan de resolución con causa probable, pasos sugeridos, evidencia requerida y aprobación o rechazo por parte del operador.
+- **AI Compliance Summary:** resume reportes de cumplimiento y explica riesgos, métricas relevantes y próximos pasos en lenguaje operativo.
+- **Billing y suscripciones:** presenta plan actual, consumo de límites, acciones de upgrade, simulación de checkout y funciones bloqueadas por plan.
+- **Pricing en landing page:** comunica los planes Base, Operations y Compliance AI con límites, beneficios y llamadas a la acción.
+- **AI Insights en dashboard:** se mantiene cerrado por defecto como botón flotante y se abre bajo demanda como panel superpuesto para interpretar KPIs y responder preguntas sobre los gráficos sin agrandar permanentemente el dashboard.
+
+![Sprint 4 AI Guidance resolution plan](assets/chapter-04/prototyping/sprint-4-ai-billing/ai-guidance-resolution-plan.png)
+
+*Figure 4.5.1. AI Guidance prototype for incident resolution planning.*
+
+![Sprint 4 AI Compliance Summary](assets/chapter-04/prototyping/sprint-4-ai-billing/ai-compliance-summary.png)
+
+*Figure 4.5.2. AI Compliance Summary prototype for report interpretation.*
+
+![Sprint 4 Billing and Subscription Plans](assets/chapter-04/prototyping/sprint-4-ai-billing/billing-subscription-plans.png)
+
+*Figure 4.5.3. In-app Billing prototype for SaaS subscription management.*
+
+![Sprint 4 Landing Pricing Plans](assets/chapter-04/prototyping/sprint-4-ai-billing/landing-pricing-plans.png)
+
+*Figure 4.5.4. Landing page pricing prototype with plan comparison.*
+
+![Sprint 4 Dashboard AI Insights Panel](assets/chapter-04/prototyping/sprint-4-ai-billing/dashboard-ai-insights-panel.png)
+
+*Figure 4.5.5. Dashboard AI Insights prototype opened as an overlay panel.*
 
 [Ver video demostrativo del prototipo de navegación – ColdTrace](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDF6wu_w86bRIH68kr6ehziAe9K_FC1ARRsa-i6G07RpXk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FXKoP5)
 
@@ -382,6 +414,33 @@ Se separa porque el mantenimiento tiene un ciclo operativo propio:
 - Ayuda a relacionar fallas, alertas y acciones de soporte.
 - Puede evolucionar hacia automatización de órdenes de trabajo sin afectar otros contextos.
 
+## 7. Bounded Context: AI Assistance
+
+### Explicación
+Este contexto incorpora la guía de inteligencia artificial dentro del flujo operativo de ColdTrace. Su función es analizar una incidencia abierta, construir un contexto acotado con datos de activo, lectura, rangos, historial reciente y mantenimiento relacionado, y generar un plan de resolución pendiente de aprobación. También puede sintetizar reportes en lenguaje natural para facilitar la lectura de riesgos y acciones recomendadas.
+
+### Justificación
+Se separa porque la IA no debe modificar directamente el estado del negocio ni mezclarse con las reglas de Alertas, Monitoreo o Reportes. Al aislar AI Assistance:
+- Se mantiene la IA como apoyo operativo y no como autoridad automática.
+- Se exige aprobación humana antes de registrar acciones correctivas o cerrar incidencias.
+- Se controla el contexto enviado al proveedor de modelo, evitando exponer datos innecesarios.
+- Se facilita cambiar el proveedor LLM mediante Spring AI sin afectar los bounded contexts principales.
+
+### Estrategia de proveedor de IA
+La integración sigue el enfoque del material de Spring AI: el dominio de ColdTrace depende de un cliente de asistencia (`ChatClient`/`ChatModel` a través de un adapter) y no de un proveedor concreto. Para desarrollo local se propone `AI_MODEL_PROVIDER=ollama` con `AI_MODEL_NAME=gemma3:4b`, ejecutado mediante Ollama en la máquina del equipo. Para el despliegue académico en Cloud Run se propone `AI_MODEL_PROVIDER=openai` con `AI_MODEL_NAME=gpt-5.4-mini`, evitando cargar un modelo local dentro del contenedor. En ambos casos, las credenciales y URLs se configuran por entorno y nunca se registran en el repositorio. Esta arquitectura se apoya en la abstracción portable de Spring AI, su soporte para Ollama y OpenAI, la disponibilidad del modelo `gemma3` en Ollama y la documentación oficial de modelos/precios de OpenAI para controlar proveedor y costo por entorno (Spring AI, s. f.-a; Spring AI, s. f.-b; Spring AI, s. f.-c; Ollama, s. f.; OpenAI, s. f.-a; OpenAI, s. f.-b).
+
+## 8. Bounded Context: Subscription & Billing
+
+### Explicación
+Este contexto administra planes SaaS, límites por plan, suscripciones de organizaciones, integración con Stripe, portal de cliente, sesiones de checkout y webhooks de ciclo de vida de pagos. También expone la política de entitlements que otros bounded contexts consultan para habilitar funcionalidades como reportes exportables, mantenimiento avanzado o asistencia de IA. La integración se fundamenta en Checkout Sessions para pagos/suscripciones alojadas, Customer Portal para autoservicio de facturación y webhooks para recibir eventos asincrónicos de Stripe (Stripe, s. f.-a; Stripe, s. f.-b; Stripe, s. f.-c).
+
+### Justificación
+Se separa porque monetización y pagos tienen reglas, riesgos e integración externa propios. Al aislar Subscription & Billing:
+- Se evita mezclar lógica financiera con monitoreo o alertas operativas.
+- Stripe queda encapsulado en un adapter y ColdTrace solo conserva estado de suscripción, identificadores de proveedor y permisos funcionales.
+- Se facilita ofrecer un plan gratuito, un plan operativo y un plan profesional sin duplicar validaciones en todo el backend.
+- Se habilita control de límites de uso por organización de forma consistente.
+
 
 ## Problemas Identificados y Relación con Contextos
 
@@ -392,6 +451,8 @@ Se separa porque el mantenimiento tiene un ciclo operativo propio:
 - Generación de reportes lenta → Reports & Compliance
 - Proceso de auditoría manual → Reports & Compliance
 - Seguimiento técnico reactivo → Maintenance Management
+- Resolución manual e inconsistente de incidencias → AI Assistance + Alerts
+- Necesidad de planes, límites y monetización SaaS → Subscription & Billing
 
 ### Justificación General
 Estos problemas evidencian la necesidad de separar responsabilidades. La aplicación de Bounded Contexts permite:
@@ -399,11 +460,12 @@ Estos problemas evidencian la necesidad de separar responsabilidades. La aplicac
 - Mejorar la mantenibilidad del sistema.
 - Escalar componentes de forma independiente.
 - Aplicar principios de Domain-Driven Design de manera efectiva.
+- Incorporar IA y monetización como capacidades controladas, auditables y desacopladas.
 
 
 ### 4.6.2. Software Architecture Context Diagram.
 
-El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas.
+El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas, incluyendo sensores IoT, servicios de notificación, proveedores de identidad Google/Apple, proveedor de modelo de IA consumido mediante Spring AI y Stripe para el ciclo de vida de suscripciones. El proveedor de IA se mantiene intercambiable: Ollama local para desarrollo y OpenAI en el despliegue académico. La separación de Google/Apple como sistemas externos responde a que los flujos OpenID Connect/OAuth y Sign in with Apple validan identidad, mientras que ColdTrace conserva la autorización interna mediante organización, rol, permisos y JWT propio (Google Developers, s. f.-a; Google Developers, s. f.-b; Apple Developer, s. f.-a; Apple Developer, s. f.-b).
 
 ![contextdiagram](assets/chapter-04/contextdiagram/contextdiagram.png)
 
@@ -413,7 +475,7 @@ El diagrama de contexto de ColdTrace muestra, de forma general, a los actores qu
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
-El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend.
+El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC, Subscription & Billing BC y la integración de Identity & Access con proveedores externos de identidad Google/Apple, manteniendo a ColdTrace como responsable de organización, rol, permisos y JWT. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend. Las dependencias externas de identidad, IA y pagos se documentan con referencias oficiales de Google, Apple, Spring AI, Ollama, OpenAI y Stripe para sustentar el diseño objetivo y sus restricciones de seguridad (Google Developers, s. f.-a; Apple Developer, s. f.-b; Spring AI, s. f.-a; Ollama, s. f.; OpenAI, s. f.-a; Stripe, s. f.-a).
 
 ![containerdiagram](assets/chapter-04/containerdiagram/containerdiagram.png)
 
@@ -423,9 +485,9 @@ El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
-En esta sección se presenta la vista de componentes de ColdTrace por bounded context, alineada con el backend Spring Boot actual ubicado en `coldtrace-platform`. Cada diagrama muestra los REST controllers, command/query services, facades ACL, repositorios de dominio, adapters JPA, event handlers y tablas MySQL que existen en el código.
+En esta sección se presenta la vista de componentes de ColdTrace por bounded context, alineada con el backend Spring Boot actual ubicado en `coldtrace-platform` y con la ampliación objetivo del Sprint 4. Cada diagrama muestra REST controllers, command/query services, facades ACL, repositorios de dominio, adapters JPA, event handlers, adapters externos y tablas MySQL. Los componentes de AI Assistance y Subscription & Billing se documentan como diseño objetivo para implementar la guía inteligente de incidencias, los resúmenes de reportes y la monetización SaaS.
 
-- **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
+- **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, social authentication with Google/Apple, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
 
 ![Component View Identity & Access BC](assets/chapter-04/diagramcomponents/component-autenticacion.png)
 
@@ -473,30 +535,48 @@ En esta sección se presenta la vista de componentes de ColdTrace por bounded co
 
 > PlantUML source: [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](assets/chapter-04/diagramcomponents/component-auditoria.puml).
 
+- **Component diagram - AI Assistance:** Shows AI resolution-plan generation, report summaries, bounded context assembly, Spring AI integration, environment-based provider selection, entitlement validation and the approval flow that applies incident changes only after operator confirmation.
+
+![Component View AI Assistance BC](assets/chapter-04/diagramcomponents/component-ai-assistance.png)
+
+*Figure 4.6.4.7. AI Assistance BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-ai-assistance.puml`](assets/chapter-04/diagramcomponents/component-ai-assistance.puml).
+
+- **Component diagram - Subscription & Billing:** Shows plan queries, organization subscriptions, Stripe checkout, customer portal sessions, webhook reconciliation and the entitlement facade consumed by gated features.
+
+![Component View Subscription & Billing BC](assets/chapter-04/diagramcomponents/component-billing.png)
+
+*Figure 4.6.4.8. Subscription & Billing BC Component Diagram.*
+
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-billing.puml`](assets/chapter-04/diagramcomponents/component-billing.puml).
+
 ---
 
 ## 4.7. Software Object-Oriented Design.
 
 ### 4.7.1. Class Diagrams.
 
-La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases de dominio Java existentes en el backend actual.
+La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases de dominio Java existentes en el backend actual y las clases objetivo definidas para la ampliación del Sprint 4.
 
 El alcance de estos diagramas es el modelo DDD: aggregates, value objects, enums, domain events y repositories. Las clases de soporte de la capa de aplicación e interfaces, como commands, queries, resources, assemblers, failure records, controllers y service interfaces, se representan a nivel de componentes y endpoints en la sección 4.6, no como clases individuales dentro del diagrama de dominio.
 
 #### Stage 1: DDD-oriented Class Diagram
 
-En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican los aggregates, value objects, domain events, enumeraciones y relaciones por identificador que existen en `src/main/java`.
+En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican aggregates, value objects, domain events, enumeraciones y relaciones por identificador del backend actual, además de los aggregates objetivo necesarios para AI Assistance y Subscription & Billing.
 
 Principales clases por bounded context:
 
-- **BC Identity & Access:** `Organization`, `User`, `Role`, `EmailAddress`, `RoleName` y `Permission`.
+- **BC Identity & Access:** `Organization`, `User`, `ExternalIdentity`, `Role`, `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`.
 - **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid`, `IoTDeviceUuid` y `AssetCreatedEvent`.
 - **BC Monitoring:** `SensorReading` como aggregate de telemetría persistida.
 - **BC Alerts:** `Incident`, `Notification`, `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`.
 - **BC Reports:** `Report`, que persiste métricas resumidas de activos, lecturas e incidentes.
 - **BC Maintenance Management:** `MaintenanceSchedule` y `TechnicalServiceRequest`.
+- **BC AI Assistance:** `IncidentAiResolutionPlan`, `AiReportSummary` y `AiPlanStatus`.
+- **BC Subscription & Billing:** `SubscriptionPlan`, `OrganizationSubscription`, `BillingWebhookEvent`, `PlanCode` y `SubscriptionStatus`.
 
-Las referencias entre bounded contexts se implementan con identificadores `Long` y facades ACL. Por ejemplo, `SensorReading` guarda `assetId`, `iotDeviceId`, `gatewayId` y `locationId`; `Incident` guarda `assetId`, `deviceId` y `readingId`; `TechnicalServiceRequest` puede guardar `incidentId`; `Report` almacena métricas agregadas en lugar de colecciones embebidas.
+Las referencias entre bounded contexts se implementan con identificadores `Long` y facades ACL. Por ejemplo, `SensorReading` guarda `assetId`, `iotDeviceId`, `gatewayId` y `locationId`; `Incident` guarda `assetId`, `deviceId` y `readingId`; `TechnicalServiceRequest` puede guardar `incidentId`; `Report` almacena métricas agregadas en lugar de colecciones embebidas; `IncidentAiResolutionPlan` referencia la incidencia sin poseerla; y `OrganizationSubscription` referencia el plan por `PlanCode`.
 
 ![Class Diagram Stage 1 DDD](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png)
 
@@ -510,14 +590,16 @@ En esta segunda etapa las clases se agrupan según el bounded context al que per
 
 Agrupamiento aplicado en el diagrama:
 
-- **BC Identity & Access** (azul claro): `Organization`, `User`, `Role` y sus value objects.
+- **BC Identity & Access** (azul claro): `Organization`, `User`, `ExternalIdentity`, `Role` y sus value objects/enums.
 - **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, sus value objects y `AssetCreatedEvent`.
 - **BC Monitoring** (verde): `SensorReading`.
 - **BC Alerts** (amarillo): `Incident`, `Notification` y sus enums de severidad, estado y canal.
 - **BC Reports** (morado): `Report`.
 - **BC Maintenance Management** (naranja): `MaintenanceSchedule` y `TechnicalServiceRequest`.
+- **BC AI Assistance** (morado claro): `IncidentAiResolutionPlan`, `AiReportSummary` y `AiPlanStatus`.
+- **BC Subscription & Billing** (gris): `SubscriptionPlan`, `OrganizationSubscription`, `BillingWebhookEvent`, `PlanCode` y `SubscriptionStatus`.
 
-Las relaciones **internas a cada BC** quedan contenidas dentro del paquete correspondiente. Las relaciones entre bounded contexts aparecen como asociaciones por identificador, ya que el backend evita navegar objetos de otros contextos directamente.
+Las relaciones **internas a cada BC** quedan contenidas dentro del paquete correspondiente. Las relaciones entre bounded contexts aparecen como asociaciones por identificador o dependencias de facade ACL, ya que el backend evita navegar objetos de otros contextos directamente.
 
 ![Class Diagram Stage 2 Bounded Context](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png)
 
@@ -527,11 +609,11 @@ Las relaciones **internas a cada BC** quedan contenidas dentro del paquete corre
 
 #### Stage 3: Value Object, Entity and Aggregate Identification
 
-En esta tercera etapa las clases se clasifican como **Aggregate**, **Value Object**, **enum** y **DomainEvent** según el código actual. Las entidades JPA de persistencia no se mezclan con el modelo de dominio y se documentan en la sección de base de datos.
+En esta tercera etapa las clases se clasifican como **Aggregate**, **Value Object**, **enum** y **DomainEvent** según el código actual y la extensión objetivo del Sprint 4. Las entidades JPA de persistencia no se mezclan con el modelo de dominio y se documentan en la sección de base de datos.
 
 Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggregate se referencia a otros contextos por identificadores o por snapshots obtenidos desde facades ACL. En el backend actual esos identificadores son `Long` y algunos identificadores de negocio se modelan como value objects (`AssetUuid`, `GatewayUuid`, `IoTDeviceUuid`, `LocationName`, `EmailAddress`, `RoleName`).
 
-**BC Identity & Access.** Aggregates → `Organization`, `User` y `Role`. Value Objects → `EmailAddress`, `RoleName` y `Permission`. No existen clases de dominio `Session`, `Subscription` ni `NotificationPreference` en el backend actual.
+**BC Identity & Access.** Aggregates → `Organization`, `User`, `ExternalIdentity` y `Role`. Value Objects / enums → `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`. `ExternalIdentity` es la extensión objetivo de Sprint 4 para vincular Google/Apple mediante `provider + providerSubject`; no reemplaza la pertenencia a organización ni la asignación de roles de ColdTrace.
 
 ![Class Diagram Stage 3 BC Identity & Access](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
 
@@ -579,13 +661,31 @@ Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggreg
 
 > PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
 
+**BC AI Assistance.** Aggregates objetivo → `IncidentAiResolutionPlan` y `AiReportSummary`. `IncidentAiResolutionPlan` conserva el plan generado por IA, el estado pendiente/aprobado/rechazado, el borrador de acción correctiva, notas de resolución, evidencia requerida y auditoría de aprobación. La regla principal es que la IA no cierra una incidencia de forma autónoma: solo genera un plan pendiente y la aprobación del operador ejecuta el comando real del BC Alerts.
+
+![Class Diagram Stage 3 BC AI Assistance](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.png)
+
+*Figure 4.7.1.3.7. Stage 3 - BC AI Assistance.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml).
+
+**BC Subscription & Billing.** Aggregates objetivo → `SubscriptionPlan`, `OrganizationSubscription` y `BillingWebhookEvent`. `SubscriptionPlan` define límites y funcionalidades habilitadas; `OrganizationSubscription` conserva el estado vigente de la organización frente al proveedor; y `BillingWebhookEvent` permite procesar eventos de Stripe con idempotencia. El value object `PlanCode` evita depender de identificadores internos para enlazar el plan contratado.
+
+![Class Diagram Stage 3 BC Subscription & Billing](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.png)
+
+*Figure 4.7.1.3.8. Stage 3 - BC Subscription & Billing.*
+
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml).
+
 ---
 
 ## 4.8. Database Design.
 
 ### 4.8.1. Database Diagrams.
 
-El diagrama de base de datos se actualizó desde las entidades JPA reales del backend. La configuración actual usa MySQL, Hibernate `ddl-auto=update` y `SnakeCasePhysicalNamingStrategy`, por lo que los nombres de columna se derivan de los atributos Java en `snake_case`. Las relaciones se muestran como **logical FK** cuando el código usa campos `Long` en lugar de anotaciones `@ManyToOne`.
+El diagrama de base de datos se actualizó desde las entidades JPA reales del backend y el diseño objetivo del Sprint 4. La configuración actual usa MySQL, Hibernate `ddl-auto=update` y `SnakeCasePhysicalNamingStrategy`, por lo que los nombres de columna se derivan de los atributos Java en `snake_case`. Las relaciones se muestran como **logical FK** cuando el código usa campos `Long` en lugar de anotaciones `@ManyToOne`.
+
+La ampliación agrega `external_identities` para vincular identidades Google/Apple a usuarios internos sin usar el email como única llave permanente. También agrega `incident_ai_resolution_plans` y `ai_report_summaries` para conservar salidas de IA con auditoría de aprobación, además de `subscription_plans`, `organization_subscriptions` y `billing_webhook_events` para soportar planes SaaS, entitlements y sincronización con Stripe sin almacenar datos sensibles de pago en ColdTrace.
 
 ![ColdTrace ERD 3FN](assets/chapter-04/databasediagram/databasediagram.png)
 

@@ -20,9 +20,9 @@ El proceso de desarrollo del informe se realizó de manera incremental, integran
 
 Asimismo, todos los integrantes participaron activamente en la elaboración del informe, realizando aportes continuos que permitieron consolidar una documentación coherente y alineada entre sus distintas secciones. Esta colaboración se evidencia en los analíticos de contribución y commits, los cuales reflejan la participación distribuida del equipo.
 
-<img src="../assets/common/collaboration-insights/tb1-pulse-overview.png" width="900" alt="GitHub Pulse - Overview TB1">
+![GitHub Pulse - Overview TB1](../assets/common/collaboration-insights/tb1-pulse-overview.png)
 
-<img src="../assets/common/collaboration-insights/tb1-contributors.png" width="900" alt="GitHub Contributors - Commits over time TB1">
+![GitHub Contributors - Commits over time TB1](../assets/common/collaboration-insights/tb1-contributors.png)
 
 ## AV2
 
