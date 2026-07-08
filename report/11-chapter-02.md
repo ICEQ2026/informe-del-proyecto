@@ -12,7 +12,7 @@ Este análisis permite identificar cómo se posiciona ColdTrace frente a platafo
 
 | Categoría | Criterio | ColdTrace (ICEQ) | SmartSense by Digi | Monnit | Cooltrax |
 |:----------|:---------|:-----------------|:-------------------|:-------|:---------|
-| Logotipos | Software | **ColdTrace (ICEQ)** | ![SmartSense by Digi](assets/chapter-02/competitors/thumbnails/smartsense.png) | ![Monnit](assets/chapter-02/competitors/thumbnails/monnit.png) | ![Cooltrax](assets/chapter-02/competitors/thumbnails/cooltrax.png) |
+| Logotipos | Software | **ColdTrace (ICEQ)** | ![SmartSense by Digi](report/assets/chapter-02/competitors/thumbnails/smartsense.png) | ![Monnit](report/assets/chapter-02/competitors/thumbnails/monnit.png) | ![Cooltrax](report/assets/chapter-02/competitors/thumbnails/cooltrax.png) |
 | Perfil | Overview | Startup peruana orientada al monitoreo web de temperatura y humedad para la cadena de frío alimentaria en negocios pequeños y medianos, con evolución hacia planes SaaS y asistencia inteligente para incidencias. | Plataforma enterprise de food safety y temperature monitoring con sensores, workflows y compliance para restaurantes, grocery, schools y hospitality. | Plataforma de remote monitoring con 80+ sensores IoT, software iMonnit y soluciones de food service monitoring. | Plataforma industrial IoT para visibilidad y control de cadena de frío en transporte, warehouses, cold rooms y pallets. |
 | Perfil | Ventaja competitiva | Adaptación al contexto peruano, menor complejidad de adopción, planes claros para pymes y apoyo de IA bajo aprobación humana para resolver incidencias. | Escala enterprise, automatización de cumplimiento, analytics avanzados y workflows guiados para operaciones multisede. | Costo accesible, despliegue rápido, catálogo amplio de sensores y flexibilidad cloud / on-premises. | Monitoreo a nivel de producto, ubicación y temperatura con fuerte foco en control de flotas y distribución refrigerada. |
 | Perfil de Marketing | Mercado objetivo | Minimarkets, puestos de mercado, carnicerías, pescaderías, restaurantes, almacenes y operadores medianos en Perú. | Large restaurants, grocery chains, convenience stores, schools, hospitality y food manufacturing. | Food service, producción, restaurantes y negocios que necesitan monitoreo remoto sin gran infraestructura. | Enterprise fleets, grocery store fleets, food & beverage fleets, warehouses y cold storage operations. |
@@ -103,7 +103,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/1-1-interview.png" alt="Entrevista 1" width="900">
+        <img src="report/assets/chapter-02/interviews/1-1-interview.png" alt="Entrevista 1" width="900">
       </td>
     </tr>
     <tr>
@@ -155,7 +155,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/1-2-interview.png" alt="Entrevista 2" width="900">
+        <img src="report/assets/chapter-02/interviews/1-2-interview.png" alt="Entrevista 2" width="900">
       </td>
     </tr>
     <tr>
@@ -207,7 +207,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/1-3-interview.png" alt="Entrevista 3" width="900">
+        <img src="report/assets/chapter-02/interviews/1-3-interview.png" alt="Entrevista 3" width="900">
       </td>
     </tr>
     <tr>
@@ -261,7 +261,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/2-1-interview.png" alt="Entrevista 4" width="900">
+        <img src="report/assets/chapter-02/interviews/2-1-interview.png" alt="Entrevista 4" width="900">
       </td>
     </tr>
     <tr>
@@ -313,7 +313,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/2-2-interview.png" alt="Entrevista 5" width="900">
+        <img src="report/assets/chapter-02/interviews/2-2-interview.png" alt="Entrevista 5" width="900">
       </td>
     </tr>
     <tr>
@@ -365,7 +365,7 @@ Para el diseño de entrevistas se plantearon preguntas semiestructuradas orienta
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-02/interviews/2-3-interview.png" alt="Entrevista 6" width="900">
+        <img src="report/assets/chapter-02/interviews/2-3-interview.png" alt="Entrevista 6" width="900">
       </td>
     </tr>
     <tr>
@@ -494,11 +494,11 @@ La creación de User Personas permite humanizar los datos recopilados durante la
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
-![User Persona Gustavo Fernández](assets/chapter-02/user-personas/segmento-1-gustavo-fernandez.png)
+![User Persona Gustavo Fernández](report/assets/chapter-02/user-personas/segmento-1-gustavo-fernandez.png)
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
-![User Persona Sofía Ramírez](assets/chapter-02/user-personas/segmento-2-sofia-ramirez.png)
+![User Persona Sofía Ramírez](report/assets/chapter-02/user-personas/segmento-2-sofia-ramirez.png)
 
 ### 2.3.2 User Task Matrix
 
@@ -537,11 +537,11 @@ El User Journey Mapping representa el flujo de pasos, necesidades y emociones qu
 
 **User Journey Map: Gustavo Fernández (As-Is)**
 
-![User Journey Map de Gustavo Fernández](assets/chapter-02/journey-maps/journey-map1.png)
+![User Journey Map de Gustavo Fernández](report/assets/chapter-02/journey-maps/journey-map1.png)
 
 **User Journey Map: Sofía Ramírez (As-Is)**
 
-![User Journey Map de Sofía Ramírez](assets/chapter-02/journey-maps/journey-map2.png)
+![User Journey Map de Sofía Ramírez](report/assets/chapter-02/journey-maps/journey-map2.png)
 
 ### 2.3.4 Empathy Mapping
 
@@ -549,11 +549,11 @@ El Empathy Map permite profundizar en el mundo interno y sensorial del usuario, 
 
 **Empathy Map: Gustavo Fernández**
 
-![Empathy Map de Gustavo Fernández](assets/chapter-02/empathy-maps/empathy-map1.png)
+![Empathy Map de Gustavo Fernández](report/assets/chapter-02/empathy-maps/empathy-map1.png)
 
 **Empathy Map: Sofía Ramírez**
 
-![Empathy Map de Sofía Ramírez](assets/chapter-02/empathy-maps/empathy-map2.png)
+![Empathy Map de Sofía Ramírez](report/assets/chapter-02/empathy-maps/empathy-map2.png)
 
 ---
 
@@ -561,7 +561,7 @@ El Empathy Map permite profundizar en el mundo interno y sensorial del usuario, 
 
 Para diseñar un sistema robusto, primero es necesario entender el negocio como un todo, dejando de lado los tecnicismos para enfocarnos en la lógica pura del dominio. El Big Picture EventStorming es una técnica colaborativa que permite visualizar todos los eventos significativos que ocurren en la cadena de frío alimentaria. Al organizar estos eventos de manera cronológica, se logra identificar los flujos críticos del negocio y los puntos exactos donde la información suele perderse o donde la falta de monitoreo genera pérdidas.
 
-![Big Picture EventStorming](assets/chapter-02/eventstorming/eventstorming.png)
+![Big Picture EventStorming](report/assets/chapter-02/eventstorming/eventstorming.png)
 
 ---
 

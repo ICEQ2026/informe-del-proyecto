@@ -213,9 +213,9 @@ Los wireframes de la Landing Page fueron diseñados con el objetivo de definir l
 En esta etapa se establecieron las principales secciones del sitio, como el encabezado de navegación, la sección principal (hero), características del producto, beneficios, testimonios y formulario de contacto.
 Asimismo, se consideró una versión responsive, adaptando la distribución de los elementos para dispositivos móviles, garantizando una navegación clara y accesible en diferentes tamaños de pantalla.
 
-![Wireframe Landing Page](assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
+![Wireframe Landing Page](report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page.png)
 
-![Wireframe Landing Page Mobile](assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
+![Wireframe Landing Page Mobile](report/assets/chapter-04/landingpagedesign/Wireframe_Landing_Page_Mobile.png)
 
 ---
 
@@ -225,9 +225,9 @@ Los mockups de la Landing Page representan la versión visual final del diseño,
 En esta etapa se aplicaron los lineamientos de branding del proyecto, incluyendo el uso de colores principales, jerarquía tipográfica y elementos visuales que refuerzan la identidad del producto.
 Además, se mantuvo consistencia entre la versión desktop y mobile, asegurando una experiencia uniforme para el usuario en cualquier dispositivo.
 
-![Mockup Landing Page](assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
+![Mockup Landing Page](report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page.png)
 
-![Mockup Landing Page Mobile](assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
+![Mockup Landing Page Mobile](report/assets/chapter-04/landingpagedesign/Mockup_Landing_Page_Mobile.png)
 
 ---
 
@@ -239,11 +239,11 @@ Los wireframes de la aplicación web fueron diseñados para definir la estructur
 En esta etapa se identificaron los elementos clave de interacción, como paneles de control, visualización de datos, navegación entre secciones y componentes necesarios para la gestión del sistema.
 Estos wireframes permiten validar la distribución de información antes de la implementación visual, asegurando que las funcionalidades respondan a las necesidades del usuario.
 
-![Wireframe Web Application 1](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
+![Wireframe Web Application 1](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-1.png)
 
-![Wireframe Web Application 2](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
+![Wireframe Web Application 2](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-2.png)
 
-![Wireframe Web Application 3](assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
+![Wireframe Web Application 3](report/assets/chapter-04/landingpagedesign/Wireframe_Web_Application-3.png)
 
 ---
 
@@ -252,7 +252,7 @@ Estos wireframes permiten validar la distribución de información antes de la i
 Los wireflow diagrams representan el flujo de interacción del usuario dentro de la aplicación, mostrando la navegación entre pantallas y las acciones que el usuario puede realizar en cada etapa.
 Estos diagramas permiten entender el recorrido del usuario (user flow), facilitando la identificación de puntos clave de interacción y mejorando la experiencia general del sistema.
 
-![wireflows diagram](assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
+![wireflows diagram](report/assets/chapter-04/wireflowdiagram/wireflows-diagram.png)
 
 ---
 
@@ -262,11 +262,11 @@ Los mockups de la aplicación web muestran la representación visual final de la
 En esta etapa se buscó mantener consistencia visual con la Landing Page, asegurando una identidad unificada del producto.
 Asimismo, se priorizó la claridad en la presentación de información y la facilidad de uso, permitiendo que el usuario interactúe de manera intuitiva con las funcionalidades del sistema.
 
-![Mockup Web Application 1](assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
+![Mockup Web Application 1](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-1.png)
 
-![Mockup Web Application 2](assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
+![Mockup Web Application 2](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-2.png)
 
-![Mockup Web Application 3](assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
+![Mockup Web Application 3](report/assets/chapter-04/landingpagedesign/Mockup_Web_Application-3.png)
 
 ---
 
@@ -277,15 +277,15 @@ Estos diagramas integran las vistas principales del sistema con los flujos de na
 
 ### User Flow 1 : Detectar alertas de temperatura a tiempo para evitar pérdidas.
 
-![userflowdiagram1](assets/chapter-04/userflowdiagram/userflowdiagram1.png)
+![userflowdiagram1](report/assets/chapter-04/userflowdiagram/userflowdiagram1.png)
 
 ### User Flow 2 : Obtener reportes para supervisión y control.
 
-![userflowdiagram2](assets/chapter-04/userflowdiagram/userflowdiagram2.png)
+![userflowdiagram2](report/assets/chapter-04/userflowdiagram/userflowdiagram2.png)
 
 ### User Flow 3 : Monitorear el estado general de los equipos en tiempo real.
 
-![userflowdiagram3](assets/chapter-04/userflowdiagram/userflowdiagram3.png)
+![userflowdiagram3](report/assets/chapter-04/userflowdiagram/userflowdiagram3.png)
 
 ---
 
@@ -295,7 +295,7 @@ En esta sección se presenta el prototipo navegable de la aplicación web de Col
 
 El prototipo integra las pantallas clave del producto, como monitoreo, alertas, reportes y gestión general de la operación, manteniendo coherencia con los lineamientos visuales y funcionales definidos en las etapas anteriores del diseño.
 
-![prototype navigation sprint 1](assets/chapter-04/prototyping/prototype-navigation-sprint-1.png)
+![prototype navigation sprint 1](report/assets/chapter-04/prototyping/prototype-navigation-sprint-1.png)
 
 ### Sprint 4 Prototype: AI Assistance and SaaS Billing
 
@@ -309,23 +309,23 @@ El prototipo considera cinco puntos de interacción principales:
 - **Pricing en landing page:** comunica los planes Base, Operations y Compliance AI con límites, beneficios y llamadas a la acción.
 - **AI Insights en dashboard:** se mantiene cerrado por defecto como botón flotante y se abre bajo demanda como panel superpuesto para interpretar KPIs y responder preguntas sobre los gráficos sin agrandar permanentemente el dashboard.
 
-![Sprint 4 AI Guidance resolution plan](assets/chapter-04/prototyping/sprint-4-ai-billing/ai-guidance-resolution-plan.png)
+![Sprint 4 AI Guidance resolution plan](report/assets/chapter-04/prototyping/sprint-4-ai-billing/ai-guidance-resolution-plan.png)
 
 *Figure 4.5.1. AI Guidance prototype for incident resolution planning.*
 
-![Sprint 4 AI Compliance Summary](assets/chapter-04/prototyping/sprint-4-ai-billing/ai-compliance-summary.png)
+![Sprint 4 AI Compliance Summary](report/assets/chapter-04/prototyping/sprint-4-ai-billing/ai-compliance-summary.png)
 
 *Figure 4.5.2. AI Compliance Summary prototype for report interpretation.*
 
-![Sprint 4 Billing and Subscription Plans](assets/chapter-04/prototyping/sprint-4-ai-billing/billing-subscription-plans.png)
+![Sprint 4 Billing and Subscription Plans](report/assets/chapter-04/prototyping/sprint-4-ai-billing/billing-subscription-plans.png)
 
 *Figure 4.5.3. In-app Billing prototype for SaaS subscription management.*
 
-![Sprint 4 Landing Pricing Plans](assets/chapter-04/prototyping/sprint-4-ai-billing/landing-pricing-plans.png)
+![Sprint 4 Landing Pricing Plans](report/assets/chapter-04/prototyping/sprint-4-ai-billing/landing-pricing-plans.png)
 
 *Figure 4.5.4. Landing page pricing prototype with plan comparison.*
 
-![Sprint 4 Dashboard AI Insights Panel](assets/chapter-04/prototyping/sprint-4-ai-billing/dashboard-ai-insights-panel.png)
+![Sprint 4 Dashboard AI Insights Panel](report/assets/chapter-04/prototyping/sprint-4-ai-billing/dashboard-ai-insights-panel.png)
 
 *Figure 4.5.5. Dashboard AI Insights prototype opened as an overlay panel.*
 
@@ -337,7 +337,7 @@ El prototipo considera cinco puntos de interacción principales:
 
 ### 4.6.1. Design-Level Event Storming.
 
-![boundedcontext](assets/chapter-04/boundedcontext/boundedcontext.png)
+![boundedcontext](report/assets/chapter-04/boundedcontext/boundedcontext.png)
 
 ## 1. Bounded Context: Identity & Access
 ### Explicación
@@ -467,21 +467,21 @@ Estos problemas evidencian la necesidad de separar responsabilidades. La aplicac
 
 El diagrama de contexto de ColdTrace muestra, de forma general, a los actores que interactúan con la plataforma y a los sistemas externos de los que depende. En esta vista se ubica a ColdTrace como sistema central y se identifican sus principales entradas y salidas, incluyendo sensores IoT, servicios de notificación, proveedores de identidad Google/Apple, proveedor de modelo de IA consumido mediante Spring AI y Stripe para el ciclo de vida de suscripciones. El proveedor de IA se mantiene intercambiable: Ollama local para desarrollo y OpenAI en el despliegue académico. La separación de Google/Apple como sistemas externos responde a que los flujos OpenID Connect/OAuth y Sign in with Apple validan identidad, mientras que ColdTrace conserva la autorización interna mediante organización, rol, permisos y JWT propio (Google Developers, s. f.-a; Google Developers, s. f.-b; Apple Developer, s. f.-a; Apple Developer, s. f.-b).
 
-![contextdiagram](assets/chapter-04/contextdiagram/contextdiagram.png)
+![contextdiagram](report/assets/chapter-04/contextdiagram/contextdiagram.png)
 
 *Figure 4.6.2. ColdTrace System Context Diagram following the C4 model.*
 
-> PlantUML source: [`assets/chapter-04/contextdiagram/contextdiagram.puml`](assets/chapter-04/contextdiagram/contextdiagram.puml).
+> PlantUML source: [`assets/chapter-04/contextdiagram/contextdiagram.puml`](report/assets/chapter-04/contextdiagram/contextdiagram.puml).
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
 El diagrama de contenedores muestra cómo se divide ColdTrace en sus principales aplicaciones, servicios y bases de datos. En esta vista se identifican la landing page, la web application, el API Gateway, el IoT Gateway y los servicios Spring Boot proyectados por bounded context. Para el Sprint 4 se incorporan AI Assistance BC, Subscription & Billing BC y la integración de Identity & Access con proveedores externos de identidad Google/Apple, manteniendo a ColdTrace como responsable de organización, rol, permisos y JWT. AI Assistance consume Spring AI con selección por entorno (`ollama/gemma3:4b` local y `openai/gpt-5.4-mini` desplegado). Aunque la entrega actual funciona con Angular y `json-server`, este diagrama representa la arquitectura backend objetivo que dará soporte real a los módulos ya validados en frontend. Las dependencias externas de identidad, IA y pagos se documentan con referencias oficiales de Google, Apple, Spring AI, Ollama, OpenAI y Stripe para sustentar el diseño objetivo y sus restricciones de seguridad (Google Developers, s. f.-a; Apple Developer, s. f.-b; Spring AI, s. f.-a; Ollama, s. f.; OpenAI, s. f.-a; Stripe, s. f.-a).
 
-![containerdiagram](assets/chapter-04/containerdiagram/containerdiagram.png)
+![containerdiagram](report/assets/chapter-04/containerdiagram/containerdiagram.png)
 
 *Figure 4.6.3. ColdTrace System Container Diagram.*
 
-> PlantUML source: [`assets/chapter-04/containerdiagram/containerdiagram.puml`](assets/chapter-04/containerdiagram/containerdiagram.puml).
+> PlantUML source: [`assets/chapter-04/containerdiagram/containerdiagram.puml`](report/assets/chapter-04/containerdiagram/containerdiagram.puml).
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
@@ -489,67 +489,67 @@ En esta sección se presenta la vista de componentes de ColdTrace por bounded co
 
 - **Component diagram - Identity & Access:** Shows organization sign-up, organization management, user management, social authentication with Google/Apple, role queries, permission metadata and the ACL facade consumed by other bounded contexts.
 
-![Component View Identity & Access BC](assets/chapter-04/diagramcomponents/component-autenticacion.png)
+![Component View Identity & Access BC](report/assets/chapter-04/diagramcomponents/component-autenticacion.png)
 
 *Figure 4.6.4.1. Identity & Access BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](assets/chapter-04/diagramcomponents/component-autenticacion.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-autenticacion.puml`](report/assets/chapter-04/diagramcomponents/component-autenticacion.puml).
 
 - **Component diagram - Asset Management:** Shows locations, assets, gateways, IoT devices, asset settings, organization validation and the facade used by Monitoring, Alerts, Reports and Maintenance.
 
-![Component View Asset Management BC](assets/chapter-04/diagramcomponents/component-sensores.png)
+![Component View Asset Management BC](report/assets/chapter-04/diagramcomponents/component-sensores.png)
 
 *Figure 4.6.4.2. Asset Management BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-sensores.puml`](assets/chapter-04/diagramcomponents/component-sensores.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-sensores.puml`](report/assets/chapter-04/diagramcomponents/component-sensores.puml).
 
 - **Component diagram - Monitoring:** Shows sensor reading registration, demo reading generation, query services, validation through Identity & Access and Asset Management facades, and the published reading snapshots.
 
-![Component View Monitoring BC](assets/chapter-04/diagramcomponents/component-monitoreo.png)
+![Component View Monitoring BC](report/assets/chapter-04/diagramcomponents/component-monitoreo.png)
 
 *Figure 4.6.4.3. Monitoring BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](assets/chapter-04/diagramcomponents/component-monitoreo.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-monitoreo.puml`](report/assets/chapter-04/diagramcomponents/component-monitoreo.puml).
 
 - **Component diagram - Alerts:** Shows incident creation, acknowledgement, escalation, corrective actions, resolution, notification read models and incident snapshots.
 
-![Component View Alerts BC](assets/chapter-04/diagramcomponents/component-alertas.png)
+![Component View Alerts BC](report/assets/chapter-04/diagramcomponents/component-alertas.png)
 
 *Figure 4.6.4.4. Alerts BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-alertas.puml`](assets/chapter-04/diagramcomponents/component-alertas.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-alertas.puml`](report/assets/chapter-04/diagramcomponents/component-alertas.puml).
 
 - **Component diagram - Reports:** Shows report generation from asset, reading and incident snapshots, persisted summary metrics and report query endpoints.
 
-![Component View Reports BC](assets/chapter-04/diagramcomponents/component-reportes.png)
+![Component View Reports BC](report/assets/chapter-04/diagramcomponents/component-reportes.png)
 
 *Figure 4.6.4.5. Reports BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-reportes.puml`](assets/chapter-04/diagramcomponents/component-reportes.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-reportes.puml`](report/assets/chapter-04/diagramcomponents/component-reportes.puml).
 
 - **Component diagram - Maintenance Management:** Shows the components responsible for scheduling preventive maintenance, registering technical service requests, and closing work with evidence.
 
-![Component View Maintenance Management BC](assets/chapter-04/diagramcomponents/component-auditoria.png)
+![Component View Maintenance Management BC](report/assets/chapter-04/diagramcomponents/component-auditoria.png)
 
 *Figure 4.6.4.6. Maintenance Management BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](assets/chapter-04/diagramcomponents/component-auditoria.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-auditoria.puml`](report/assets/chapter-04/diagramcomponents/component-auditoria.puml).
 
 - **Component diagram - AI Assistance:** Shows AI resolution-plan generation, report summaries, bounded context assembly, Spring AI integration, environment-based provider selection, entitlement validation and the approval flow that applies incident changes only after operator confirmation.
 
-![Component View AI Assistance BC](assets/chapter-04/diagramcomponents/component-ai-assistance.png)
+![Component View AI Assistance BC](report/assets/chapter-04/diagramcomponents/component-ai-assistance.png)
 
 *Figure 4.6.4.7. AI Assistance BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-ai-assistance.puml`](assets/chapter-04/diagramcomponents/component-ai-assistance.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-ai-assistance.puml`](report/assets/chapter-04/diagramcomponents/component-ai-assistance.puml).
 
 - **Component diagram - Subscription & Billing:** Shows plan queries, organization subscriptions, Stripe checkout, customer portal sessions, webhook reconciliation and the entitlement facade consumed by gated features.
 
-![Component View Subscription & Billing BC](assets/chapter-04/diagramcomponents/component-billing.png)
+![Component View Subscription & Billing BC](report/assets/chapter-04/diagramcomponents/component-billing.png)
 
 *Figure 4.6.4.8. Subscription & Billing BC Component Diagram.*
 
-> PlantUML source: [`assets/chapter-04/diagramcomponents/component-billing.puml`](assets/chapter-04/diagramcomponents/component-billing.puml).
+> PlantUML source: [`assets/chapter-04/diagramcomponents/component-billing.puml`](report/assets/chapter-04/diagramcomponents/component-billing.puml).
 
 ---
 
@@ -557,16 +557,18 @@ En esta sección se presenta la vista de componentes de ColdTrace por bounded co
 
 ### 4.7.1. Class Diagrams.
 
-La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases Java existentes en el backend actual y las clases objetivo definidas para la ampliación del Sprint 4.
+La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases de dominio Java existentes en el backend actual y las clases objetivo definidas para la ampliación del Sprint 4.
+
+El alcance de estos diagramas es el modelo DDD: aggregates, value objects, enums, domain events y repositories. Las clases de soporte de la capa de aplicación e interfaces, como commands, queries, resources, assemblers, failure records, controllers y service interfaces, se representan a nivel de componentes y endpoints en la sección 4.6, no como clases individuales dentro del diagrama de dominio.
 
 #### Stage 1: DDD-oriented Class Diagram
 
-En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican aggregates, value objects, enumeraciones y relaciones por identificador del backend actual, además de los aggregates objetivo necesarios para AI Assistance y Subscription & Billing.
+En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican aggregates, value objects, domain events, enumeraciones y relaciones por identificador del backend actual, además de los aggregates objetivo necesarios para AI Assistance y Subscription & Billing.
 
 Principales clases por bounded context:
 
 - **BC Identity & Access:** `Organization`, `User`, `ExternalIdentity`, `Role`, `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`.
-- **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`.
+- **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid`, `IoTDeviceUuid` y `AssetCreatedEvent`.
 - **BC Monitoring:** `SensorReading` como aggregate de telemetría persistida.
 - **BC Alerts:** `Incident`, `Notification`, `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`.
 - **BC Reports:** `Report`, que persiste métricas resumidas de activos, lecturas e incidentes.
@@ -576,11 +578,11 @@ Principales clases por bounded context:
 
 Las referencias entre bounded contexts se implementan con identificadores `Long` y facades ACL. Por ejemplo, `SensorReading` guarda `assetId`, `iotDeviceId`, `gatewayId` y `locationId`; `Incident` guarda `assetId`, `deviceId` y `readingId`; `TechnicalServiceRequest` puede guardar `incidentId`; `Report` almacena métricas agregadas en lugar de colecciones embebidas; `IncidentAiResolutionPlan` referencia la incidencia sin poseerla; y `OrganizationSubscription` referencia el plan por `PlanCode`.
 
-![Class Diagram Stage 1 DDD](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png)
+![Class Diagram Stage 1 DDD](report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.png)
 
 *Figure 4.7.1.1. Stage 1 - DDD-oriented Class Diagram.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa1-ddd.puml).
 
 #### Stage 2: Group Classes by Bounded Context
 
@@ -589,7 +591,7 @@ En esta segunda etapa las clases se agrupan según el bounded context al que per
 Agrupamiento aplicado en el diagrama:
 
 - **BC Identity & Access** (azul claro): `Organization`, `User`, `ExternalIdentity`, `Role` y sus value objects/enums.
-- **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings` y sus value objects.
+- **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, sus value objects y `AssetCreatedEvent`.
 - **BC Monitoring** (verde): `SensorReading`.
 - **BC Alerts** (amarillo): `Incident`, `Notification` y sus enums de severidad, estado y canal.
 - **BC Reports** (morado): `Report`.
@@ -599,11 +601,11 @@ Agrupamiento aplicado en el diagrama:
 
 Las relaciones **internas a cada BC** quedan contenidas dentro del paquete correspondiente. Las relaciones entre bounded contexts aparecen como asociaciones por identificador o dependencias de facade ACL, ya que el backend evita navegar objetos de otros contextos directamente.
 
-![Class Diagram Stage 2 Bounded Context](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png)
+![Class Diagram Stage 2 Bounded Context](report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.png)
 
 *Figure 4.7.1.2. Stage 2 - Group classes by Bounded Context.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa2-bc.puml).
 
 #### Stage 3: Value Object, Entity and Aggregate Identification
 
@@ -613,67 +615,67 @@ Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggreg
 
 **BC Identity & Access.** Aggregates → `Organization`, `User`, `ExternalIdentity` y `Role`. Value Objects / enums → `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`. `ExternalIdentity` es la extensión objetivo de Sprint 4 para vincular Google/Apple mediante `provider + providerSubject`; no reemplaza la pertenencia a organización ni la asignación de roles de ColdTrace.
 
-![Class Diagram Stage 3 BC Identity & Access](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
+![Class Diagram Stage 3 BC Identity & Access](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.png)
 
 *Figure 4.7.1.3.1. Stage 3 - BC Identity & Access.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
 
-**BC Asset Management.** Aggregates → `Location`, `Asset`, `Gateway`, `IoTDevice` y `AssetSettings`. Value Objects → `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`. El backend actual no contiene `Sensor`, `AssetBuilder`, `AssetDirector`, `TemperatureRange` ni `HumidityRange` como clases de dominio.
+**BC Asset Management.** Aggregates → `Location`, `Asset`, `Gateway`, `IoTDevice` y `AssetSettings`. Value Objects → `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`. DomainEvent → `AssetCreatedEvent`, publicado por `Asset` cuando se registra un activo nuevo. El backend actual no contiene `Sensor`, `AssetBuilder`, `AssetDirector`, `TemperatureRange` ni `HumidityRange` como clases de dominio.
 
-![Class Diagram Stage 3 BC Asset Management](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png)
+![Class Diagram Stage 3 BC Asset Management](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png)
 
 *Figure 4.7.1.3.2. Stage 3 - BC Asset Management.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.puml).
 
 **BC Monitoring.** Aggregate → `SensorReading`, que persiste una lectura de telemetría con temperatura, humedad, indicador `outOfRange`, batería, señal y referencias al activo, dispositivo IoT, gateway y ubicación. También publica `SensorReadingRecordedEvent`.
 
-![Class Diagram Stage 3 BC Monitoring](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png)
+![Class Diagram Stage 3 BC Monitoring](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.png)
 
 *Figure 4.7.1.3.3. Stage 3 - BC Monitoring.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-monitoreo.puml).
 
 **BC Alerts.** Aggregates → `Incident` y `Notification`. Enums → `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`. También publica `IncidentOpenedEvent`. No existen aggregates `Alert` ni `AlertRule` en el backend actual.
 
-![Class Diagram Stage 3 BC Alerts](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png)
+![Class Diagram Stage 3 BC Alerts](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.png)
 
 *Figure 4.7.1.3.4. Stage 3 - BC Alerts.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-alertas.puml).
 
 **BC Reports.** Aggregate → `Report`, que persiste métricas resumidas del periodo consultado: cantidad de activos, lecturas, lecturas fuera de rango, incidentes, incidentes abiertos, promedios y porcentaje de cumplimiento. También publica `ReportGeneratedEvent`.
 
-![Class Diagram Stage 3 BC Reports](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png)
+![Class Diagram Stage 3 BC Reports](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.png)
 
 *Figure 4.7.1.3.5. Stage 3 - BC Reports.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-reportes.puml).
 
 **BC Maintenance Management.** Aggregates → `MaintenanceSchedule` y `TechnicalServiceRequest`. La evidencia de cierre está modelada como campo `evidence` dentro de `TechnicalServiceRequest`; no existe una clase `ServiceEvidence` independiente.
 
-![Class Diagram Stage 3 BC Maintenance Management](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png)
+![Class Diagram Stage 3 BC Maintenance Management](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.png)
 
 *Figure 4.7.1.3.6. Stage 3 - BC Maintenance Management.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-auditoria.puml).
 
 **BC AI Assistance.** Aggregates objetivo → `IncidentAiResolutionPlan` y `AiReportSummary`. `IncidentAiResolutionPlan` conserva el plan generado por IA, el estado pendiente/aprobado/rechazado, el borrador de acción correctiva, notas de resolución, evidencia requerida y auditoría de aprobación. La regla principal es que la IA no cierra una incidencia de forma autónoma: solo genera un plan pendiente y la aprobación del operador ejecuta el comando real del BC Alerts.
 
-![Class Diagram Stage 3 BC AI Assistance](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.png)
+![Class Diagram Stage 3 BC AI Assistance](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.png)
 
 *Figure 4.7.1.3.7. Stage 3 - BC AI Assistance.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-ai-assistance.puml).
 
 **BC Subscription & Billing.** Aggregates objetivo → `SubscriptionPlan`, `OrganizationSubscription` y `BillingWebhookEvent`. `SubscriptionPlan` define límites y funcionalidades habilitadas; `OrganizationSubscription` conserva el estado vigente de la organización frente al proveedor; y `BillingWebhookEvent` permite procesar eventos de Stripe con idempotencia. El value object `PlanCode` evita depender de identificadores internos para enlazar el plan contratado.
 
-![Class Diagram Stage 3 BC Subscription & Billing](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.png)
+![Class Diagram Stage 3 BC Subscription & Billing](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.png)
 
 *Figure 4.7.1.3.8. Stage 3 - BC Subscription & Billing.*
 
-> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml`](assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml).
+> PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-billing.puml).
 
 ---
 
@@ -685,8 +687,8 @@ El diagrama de base de datos se actualizó desde las entidades JPA reales del ba
 
 La ampliación agrega `external_identities` para vincular identidades Google/Apple a usuarios internos sin usar el email como única llave permanente. También agrega `incident_ai_resolution_plans` y `ai_report_summaries` para conservar salidas de IA con auditoría de aprobación, además de `subscription_plans`, `organization_subscriptions` y `billing_webhook_events` para soportar planes SaaS, entitlements y sincronización con Stripe sin almacenar datos sensibles de pago en ColdTrace.
 
-![ColdTrace ERD 3FN](assets/chapter-04/databasediagram/databasediagram.png)
+![ColdTrace ERD 3FN](report/assets/chapter-04/databasediagram/databasediagram.png)
 
 *Figure 4.8.1.1. ColdTrace Entity-Relationship Diagram normalized to 3NF.*
 
-> PlantUML source: [`assets/chapter-04/databasediagram/databasediagram.puml`](assets/chapter-04/databasediagram/databasediagram.puml).
+> PlantUML source: [`assets/chapter-04/databasediagram/databasediagram.puml`](report/assets/chapter-04/databasediagram/databasediagram.puml).

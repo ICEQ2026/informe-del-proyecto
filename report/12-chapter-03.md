@@ -136,11 +136,11 @@ El Impact Mapping se mantiene como técnica de alineamiento entre objetivos de n
 
 **Segmento 1: Dueños o encargados de pequeños negocios con productos perecibles**
 
-![Impact map del segmento de minimarkets o pequeños negocios con productos perecibles](assets/chapter-03/impact%20maps/impact-map1.png)
+![Impact map del segmento de minimarkets o pequeños negocios con productos perecibles](report/assets/chapter-03/impact%20maps/impact-map1.png)
 
 **Segmento 2: Responsables de operaciones, calidad o logística en negocios con cadena de frío**
 
-![Impact map del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío](assets/chapter-03/impact%20maps/impact-map2.png)
+![Impact map del segmento de responsables de operaciones y control de calidad en negocios con cadena de frío](report/assets/chapter-03/impact%20maps/impact-map2.png)
 
 ## 3.3 Product Backlog
 

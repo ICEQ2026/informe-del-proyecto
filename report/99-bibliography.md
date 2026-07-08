@@ -31,3 +31,41 @@ Stripe. (s. f.-a). *Checkout Sessions*. Stripe API Reference. https://docs.strip
 Stripe. (s. f.-b). *Customer Portal Session*. Stripe API Reference. https://docs.stripe.com/api/customer_portal/sessions
 
 Stripe. (s. f.-c). *Receive Stripe events in your webhook endpoint*. Stripe Documentation. https://docs.stripe.com/webhooks
+
+# Anexos
+
+## Anexo A: Videos de Exposiciones
+
+En esta sección se registran los enlaces a los videos de exposición del proyecto, publicados en Microsoft Stream. La relación se irá expandiendo con cada entrega.
+
+| Entrega | Video de Exposición |
+|---|---|
+| TB2 (Final) | [Ver video de exposición TB2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQAwQZHCy1x0TYcjN_HmVODzAWBB8sbiYALC3AxLXtJi0n0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=3zIgiK) |
+
+## Anexo B: Videos de Entrevistas
+
+En esta sección se consolidan los enlaces a los videos de entrevistas realizadas durante el proyecto, publicados en Microsoft Stream.
+
+| Tipo de entrevista | Descripción | Video |
+|---|---|---|
+| Needfinding | Entrevistas de investigación a representantes de los segmentos objetivo, base para la construcción de los User Personas. | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDF6wu_w86bRIH68kr6ehziAe9K_FC1ARRsa-i6G07RpXk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FXKoP5) |
+| Validación | Entrevistas de validación en las que usuarios de los segmentos objetivo interactúan con la Landing Page y la Web Application. | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj) |
+
+## Anexo C: Repositorios del Proyecto
+
+| Producto | Repositorio |
+|---|---|
+| Backend (RESTful API) | https://github.com/ICEQ2026/coldtrace-platform |
+| Frontend Web Application | https://github.com/ICEQ2026/coldtrace-frontend |
+| Landing Page | https://github.com/ICEQ2026/landingpage-coldtrace |
+| Informe del Proyecto | https://github.com/ICEQ2026/informe-del-proyecto |
+
+## Anexo D: Recursos Desplegados
+
+| Recurso | URL |
+|---|---|
+| Frontend Web Application (Vercel) | https://coldtrace-frontend-web.vercel.app |
+| RESTful API (Google Cloud Run) | https://coldtrace-platform-dtbzbm7bta-uc.a.run.app |
+| Swagger UI / OpenAPI Docs | https://coldtrace-platform-dtbzbm7bta-uc.a.run.app/swagger-ui/index.html |
+| Video About-the-Product (YouTube) | https://youtu.be/jl93ck2hKho |
+| Video About-the-Team (YouTube) | https://www.youtube.com/watch?v=pStMmrVWDzo |

@@ -41,7 +41,6 @@
 
 **Lima, abril de 2026**
 
-
 # Registro de versiones del informe
 | Versión | Fecha | Autores | Descripción              |
 | :--- | :--- | :--- |:-------------------------|
@@ -53,9 +52,12 @@
 | 1.5.0 | 23/04/26 | Espinoza Paredes, Frezzia / Pajés León, Mauricio Luis / Videla Ventura, Jorge Joseph | Consolidación de arquitectura y diseño técnico: event storming, diagramas C4, diagramas de componentes, diagramas de clases, diseño de base de datos y cierre final del informe. |
 | 1.6.0 | 13/05/26 | Pajés León, Mauricio Luis | Actualización del README del informe, incluyendo ajustes de user stories, documentación técnica y Student Outcome de TB1 según las responsabilidades reales asumidas por épica. |
 | 1.7.0 | 17/06/26 | Pajés León, Mauricio Luis / Morales Venegas, David Joel | Adición del Sprint 3 con tickets de Linear (OPE), assignees y estimaciones, commits del backend y URLs de Cloud Run actualizadas. Actualización de Collaboration Insights y adición de secciones AV2. |
-| 1.8.0 | 04/07/26 | Videla Ventura, Jorge Joseph | Adición del Sprint 4 con documentación expandida, capturas de Swagger UI, frontend y evidencia colaborativa del sprint. |
-| 1.9.0 | 08/07/26 | Pajés León, Mauricio Luis | Actualización del contrato REST final de Sprint 4, normalización de endpoints bajo `/api/v1`, documentación de operaciones DELETE y ajuste de conclusiones sobre autenticación e integración frontend-backend. |
-
+| 1.8.0 | 19/06/26 | Pajés León, Mauricio Luis | Actualización de diagramas de componentes, clases y base de datos según el backend real de ColdTrace Platform. |
+| 1.8.1 | 19/06/26 | Pajés León, Mauricio Luis | Sincronización de la sección de diagramas de clases del README con los diagramas actualizados del informe. |
+| 1.8.2 | 19/06/26 | Pajés León, Mauricio Luis | Incorporación de `AssetCreatedEvent` en los diagramas de clase de Asset Management según el backend real. |
+| 1.9.0 | 04/07/26 | Videla Ventura, Jorge Joseph | Adición del Sprint 4 con documentación expandida, capturas de Swagger UI, frontend y evidencia colaborativa del sprint. |
+| 1.10.0 | 08/07/26 | Pajés León, Mauricio Luis | Actualización del contrato REST final de Sprint 4, normalización de endpoints bajo `/api/v1`, documentación de operaciones DELETE y ajuste de conclusiones sobre autenticación e integración frontend-backend. |
+| 1.11.0 | 08/07/26 | Pajés León, Mauricio Luis | Cierre de TB2: actualización de la sección Student Outcome con las acciones y conclusiones de la entrega final (TBF), incorporación de evidencias de Collaboration Insights de AV2 y TB2, entrevista de validación adicional, sección de Anexos (Videos de Exposiciones, Videos de Entrevistas, Repositorios y Recursos Desplegados), y publicación de los videos About-the-Product y About-the-Team con su resumen, pauta de secuencias y enlaces. |
 
 # Project Report Collaboration Insights
 
@@ -87,10 +89,19 @@ Asimismo, todos los integrantes participaron activamente en la elaboración del 
 
 Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo colaborativo en el informe, enfocándose en la implementación de la RESTful API backend de ColdTrace utilizando Spring Boot con una arquitectura hexagonal y Domain-Driven Design. Esta fase representó la consolidación técnica del proyecto, al implementar 15 Technical Stories más tareas transversales que cubren todos los bounded contexts de la plataforma. La colaboración se evidencia en los analíticos de GitHub del repositorio `ICEQ2026/coldtrace-platform`.
 
+![GitHub Insights AV2 - Repositorio coldtrace-platform](report/assets/chapter-05/sprint-3/github-insights-sprint-3.png)
+
+![GitHub Insights AV2 - Contribuciones coldtrace-platform](report/assets/chapter-05/sprint-3/github-insights2-sprint-3.png)
+
 ## TB2
 
-[pending content]
+Durante el desarrollo de la entrega TB2, el equipo consolidó la versión final del informe integrando las capacidades del Sprint 4 con los módulos base del producto. El trabajo colaborativo se enfocó en documentar las integraciones con servicios externos (asistencia con IA mediante OpenAI, autenticación social con Google y Apple, y facturación SaaS con Stripe), sus experiencias de frontend asociadas y la evidencia de pruebas sobre los endpoints, además de la corrección y mejora de artefactos previamente presentados según la retroalimentación recibida.
 
+La elaboración del informe se distribuyó entre los integrantes, manteniendo la coherencia con el Registro de Versiones del Informe y con la evidencia registrada en Linear y en los repositorios de la organización `ICEQ2026`. Todos los miembros participaron en la documentación final, cubriendo tanto la implementación backend de las integraciones como las secciones de frontend, validación y despliegue. Esta participación distribuida se refleja en los analíticos de contribución y commits del repositorio del informe y de los repositorios de producto (`coldtrace-platform`, `coldtrace-frontend` y `landingpage-coldtrace`).
+
+![GitHub Pulse - Overview TB2](report/assets/chapter-05/sprint-4/pulse_github.png)
+
+![GitHub Contributors - Commits over time TB2](report/assets/chapter-05/sprint-4/contributors_gituhb.png)
 
 # Contenido
 ## Tabla de contenidos
@@ -215,10 +226,14 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 ## Conclusiones
 - [Conclusiones y recomendaciones.](#conclusiones-y-recomendaciones)
 - [Video About-the-Team.](#video-about-the-team)
+- [Anexos](#anexos)
+  - [Anexo A: Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+  - [Anexo B: Videos de Entrevistas](#anexo-b-videos-de-entrevistas)
+  - [Anexo C: Repositorios del Proyecto](#anexo-c-repositorios-del-proyecto)
+  - [Anexo D: Recursos Desplegados](#anexo-d-recursos-desplegados)
 
 ## Bibliografía
 - [Bibliografía.](#bibliografía)
-
 
 # Student Outcome
 
@@ -252,6 +267,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Sustentó la épica de alertas e incidencias, explicando cómo ColdTrace identifica eventos críticos, permite reconocer alertas, registrar acciones correctivas y mantener trazabilidad sobre incidentes operativos.<br><br>
       <strong>AV2</strong><br>
       Sustentó la implementación de la IoT Devices API (TS05) en el backend Spring Boot, explicando el registro y administración de dispositivos IoT, los endpoints REST expuestos y la integración con el dominio de gestión de activos.<br><br>
+      <strong>TB2</strong><br>
+      Sustentó la integración del inicio de sesión social en el frontend (US057), conectando los botones de Google y Apple de las pantallas de sign-in y sign-up con el flujo de autenticación del backend, y explicando el retorno de la sesión al usuario. Participó además en la ejecución de pruebas de los endpoints REST de autenticación y de la solución.<br><br>
       <strong>Pajés León, Mauricio Luis</strong><br>
       <strong>AV1</strong><br>
       Sustentó los requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, además de la landing page del producto.<br><br>
@@ -259,6 +276,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Expuso las épicas de gestión de usuarios, acceso, equipos y sensores, detallando la autenticación, roles, permisos, registro de activos, sensores y gateways, además de la relación entre gateway, ubicación y activo dentro de la fake API.<br><br>
       <strong>AV2</strong><br>
       Sustentó la arquitectura general del backend Spring Boot, la fundación del proyecto, la implementación de los Technical Stories TS01 (Org Sign-Up), TS03 (Users), TS09 (Incident Lifecycle), TS13 (Gateways), TS16 (Org Base) y TS17 (Locations), así como el despliegue en Google Cloud Run, la documentación OpenAPI y la internacionalización de errores.<br><br>
+      <strong>TB2</strong><br>
+      Sustentó la implementación en el backend de las integraciones con servicios externos del Sprint 4: la fundación de Spring AI y la conexión con la API de OpenAI (TS18), la autenticación social con Google y Apple mediante OAuth/OIDC (TS30) y la integración de facturación con Stripe (Checkout, Webhook de sincronización y Customer Portal), explicando la configuración por variables de entorno y la emisión de sesiones JWT compatibles con ColdTrace.<br><br>
       <strong>Espinoza Paredes, Frezzia</strong><br>
       <strong>AV1</strong><br>
       Explicó los diagramas de arquitectura de software, los diagramas de clases, el diseño de base de datos y participó también en la sustentación de la landing page.<br><br>
@@ -266,6 +285,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Presentó la épica de configuración operativa y mantenimiento, explicando la configuración de rangos seguros, parámetros operativos, mantenimiento preventivo y servicio técnico como soporte para adaptar ColdTrace a cada operación.<br><br>
       <strong>AV2</strong><br>
       Sustentó la revisión de endpoints REST y la documentación del Sprint Backlog 3.<br><br>
+      <strong>TB2</strong><br>
+      Sustentó la experiencia de facturación y planes en el frontend: la gestión de suscripción, upgrades y redirección al portal de facturación dentro de la aplicación (US054) y la comparación de planes desde la landing page (US055), explicando cómo la interfaz refleja el plan vigente, los límites y las funcionalidades bloqueadas. Participó además en la ejecución de pruebas de los endpoints REST de la solución.<br><br>
       <strong>Morales Venegas, David Joel</strong><br>
       <strong>AV1</strong><br>
       Sustentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
@@ -273,13 +294,17 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Expuso la épica de monitoreo de temperatura y humedad, detallando las vistas de monitoreo operacional y por activo, la lectura de temperatura, humedad, conectividad, estado de sensores y consistencia visual con el layout principal de la aplicación.<br><br>
       <strong>AV2</strong><br>
       Sustentó la implementación de los Technical Stories TS04 (Assets), TS06 (Asset Settings), TS08 (Incidents & Notifications), TS10 (Reports) y TS12 (Role Assignment), explicando los endpoints REST implementados, la arquitectura hexagonal y la integración entre bounded contexts en el backend Spring Boot.<br><br>
+      <strong>TB2</strong><br>
+      Sustentó, como apoyo a la implementación backend de las integraciones, la asistencia con IA para la resolución de incidencias (EP013): la generación del plan de resolución, su aprobación y rechazo con trazabilidad de la decisión, y cómo se preserva el control humano sobre cada recomendación generada por el modelo.<br><br>
       <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
       <strong>AV1</strong><br>
       Explicó los mockups finales de la aplicación, el prototipado, la configuración del entorno de desarrollo y los aspectos de implementación del sistema.<br><br>
       <strong>TB1</strong><br>
       Sustentó la épica de reportes, historial de eventos y cumplimiento, explicando la generación de bitácoras diarias, reportes históricos, reportes mensuales y evidencia descargable para auditoría y toma de decisiones.<br><br>
       <strong>AV2</strong><br>
-      Sustentó la implementación de los Technical Stories TS07 (Sensor Readings), TS14 (Maintenance Schedules) y TS15 (Technical Service Requests), explicando los endpoints REST, el modelo de dominio y la persistencia JPA de cada bounded context en el backend Spring Boot.
+      Sustentó la implementación de los Technical Stories TS07 (Sensor Readings), TS14 (Maintenance Schedules) y TS15 (Technical Service Requests), explicando los endpoints REST, el modelo de dominio y la persistencia JPA de cada bounded context en el backend Spring Boot.<br><br>
+      <strong>TB2</strong><br>
+      Sustentó la experiencia de IA en el frontend Angular: el panel de AI Guidance en incidencias (US053) para generar, revisar, aprobar y rechazar planes asistidos por IA, y la interpretación con IA del dashboard operacional (US056), explicando cómo la interfaz consume los endpoints del backend y comunica los hallazgos al usuario bajo aprobación humana. Participó además en la ejecución de pruebas de los endpoints REST de la solución.
     </td>
     <td>
       <strong>AV1:</strong><br>
@@ -287,7 +312,9 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
        <strong>TB1:</strong><br>
        El equipo demostró capacidad para comunicar oralmente el avance funcional de ColdTrace por responsabilidades de épica, explicando autenticación, gestión de activos, monitoreo, alertas, reportes y configuración operativa de forma comprensible para audiencias técnicas y no técnicas.<br><br>
        <strong>AV2:</strong><br>
-       El equipo demostró capacidad para comunicar oralmente la implementación técnica del backend Spring Boot, explicando la arquitectura hexagonal, los bounded contexts, los endpoints REST, el despliegue en Cloud Run y la documentación OpenAPI. Cada integrante sustentó sus Technical Stories asignados, evidenciando comprensión del dominio y de las decisiones técnicas adoptadas.
+       El equipo demostró capacidad para comunicar oralmente la implementación técnica del backend Spring Boot, explicando la arquitectura hexagonal, los bounded contexts, los endpoints REST, el despliegue en Cloud Run y la documentación OpenAPI. Cada integrante sustentó sus Technical Stories asignados, evidenciando comprensión del dominio y de las decisiones técnicas adoptadas.<br><br>
+       <strong>TB2:</strong><br>
+       El equipo evidenció capacidad para comunicar oralmente la evolución del producto hacia una plataforma SaaS completa, distribuyendo responsabilidades entre la implementación backend de las integraciones externas (IA con OpenAI, autenticación social con Google y Apple, y facturación con Stripe) y la implementación de las experiencias de frontend que las hacen visibles al usuario, además de la ejecución de pruebas sobre los endpoints. Cada integrante explicó los flujos y decisiones técnicas de su alcance, adaptando el mensaje a audiencias técnicas y de negocio.
     </td>
   </tr>
   <tr>
@@ -302,6 +329,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Documentó la épica de alertas e incidencias, incluyendo el flujo de detección de eventos críticos, reconocimiento de alertas, cierre con acciones correctivas y evidencia de seguimiento operativo.<br><br>
       <strong>AV2</strong><br>
       Documentó la implementación de la IoT Devices API (TS05), incluyendo el modelo de dominio, los endpoints REST y la integración con el bounded context de Asset Management en el backend Spring Boot.<br><br>
+      <strong>TB2</strong><br>
+      Documentó la integración del inicio de sesión social en el frontend (US057), describiendo la conexión de los botones de Google y Apple con el flujo de autenticación del backend y el retorno de la sesión al usuario. Registró además la evidencia de las pruebas de los endpoints de autenticación realizadas por el equipo.<br><br>
       <strong>Pajés León, Mauricio Luis</strong><br>
       <strong>AV1</strong><br>
       Elaboró la documentación de requisitos funcionales del producto, incluyendo épicas, user stories, impact mapping y product backlog, y participó en la documentación y desarrollo de la landing page.<br><br>
@@ -309,6 +338,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Documentó las épicas de gestión de usuarios, acceso, equipos y sensores, incluyendo autenticación, roles, permisos, activos, sensores, gateways, ubicación derivada y criterios de consistencia de datos desde la fake API.<br><br>
       <strong>AV2</strong><br>
       Documentó la arquitectura general del backend Spring Boot, la fundación del proyecto, los Technical Stories TS01, TS03, TS09, TS13, TS16 y TS17, el despliegue en Cloud Run, la documentación OpenAPI y la internacionalización de errores.<br><br>
+      <strong>TB2</strong><br>
+      Documentó la implementación backend de las integraciones externas del Sprint 4: la fundación de Spring AI y la conexión con la API de OpenAI (TS18), la autenticación social con Google y Apple mediante OAuth/OIDC (TS30) y la facturación con Stripe (Checkout, Webhook y Customer Portal), incluyendo la configuración por entorno, la emisión de sesiones JWT y las rutas públicas en la documentación OpenAPI.<br><br>
       <strong>Espinoza Paredes, Frezzia</strong><br>
       <strong>AV1</strong><br>
       Redactó la documentación de arquitectura de software, diagramas de clases y diseño de base de datos, y participó también en la documentación de la landing page.<br><br>
@@ -316,6 +347,8 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Redactó la documentación de configuración operativa y mantenimiento, abarcando rangos seguros, frecuencia de lectura, criterios de evaluación, mantenimiento preventivo y solicitudes de servicio técnico.<br><br>
       <strong>AV2</strong><br>
       Colaboró en la revisión de endpoints REST y en la documentación del Sprint Backlog 3.<br><br>
+      <strong>TB2</strong><br>
+      Documentó la experiencia de facturación y planes en el frontend: la gestión de suscripción y upgrades en la aplicación (US054) y la comparación de planes desde la landing page (US055), describiendo cómo la interfaz refleja el plan vigente, los límites y las funcionalidades bloqueadas. Registró además la evidencia de las pruebas de endpoints realizadas por el equipo.<br><br>
       <strong>Morales Venegas, David Joel</strong><br>
       <strong>AV1</strong><br>
       Documentó los lineamientos de estilo, la arquitectura de información, los wireframes, los wireflows y el diseño inicial de interfaces del sistema.<br><br>
@@ -323,13 +356,17 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
       Registró la documentación de monitoreo de temperatura y humedad, incluyendo lecturas actuales, historial de mediciones, conectividad de sensores y gateways, y sincronización de datos simulados.<br><br>
       <strong>AV2</strong><br>
       Documentó la implementación de los Technical Stories TS04 (Assets), TS06 (Asset Settings), TS08 (Incidents & Notifications), TS10 (Reports) y TS12 (Role Assignment), describiendo los endpoints REST, la arquitectura hexagonal y la integración entre bounded contexts en el backend.<br><br>
+      <strong>TB2</strong><br>
+      Documentó, como apoyo a la implementación backend de las integraciones, la asistencia con IA para resolución de incidencias (EP013): la generación, aprobación y rechazo del plan, la persistencia de la trazabilidad de decisiones y las reglas de aprobación humana obligatoria antes de resolver un incidente.<br><br>
       <strong>Cabrera Novoa, Leonardo Moisés</strong><br>
       <strong>AV1</strong><br>
       Redactó el contenido relacionado con mockups finales, prototipado, configuración del entorno de desarrollo e implementación del sistema.<br><br>
       <strong>TB1</strong><br>
       Elaboró la documentación de reportes, historial de eventos y cumplimiento, incluyendo bitácoras diarias, reportes históricos, reportes mensuales, exportación de evidencias y trazabilidad de datos para auditoría.<br><br>
       <strong>AV2</strong><br>
-      Documentó la implementación de los Technical Stories TS07 (Sensor Readings), TS14 (Maintenance Schedules) y TS15 (Technical Service Requests), incluyendo el modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST de cada bounded context.
+      Documentó la implementación de los Technical Stories TS07 (Sensor Readings), TS14 (Maintenance Schedules) y TS15 (Technical Service Requests), incluyendo el modelo de dominio, servicios de aplicación, persistencia JPA y controladores REST de cada bounded context.<br><br>
+      <strong>TB2</strong><br>
+      Documentó la experiencia de IA en el frontend: el panel de AI Guidance en incidencias (US053) y la interpretación con IA del dashboard operacional (US056), describiendo el consumo de los endpoints del backend, los estados de la interfaz y el flujo de aprobación humana. Registró además la evidencia de las pruebas de endpoints realizadas por el equipo.
     </td>
     <td>
       <strong>AV1:</strong><br>
@@ -337,7 +374,9 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
        <strong>TB1:</strong><br>
        El equipo produjo documentación funcional y técnica organizada para TB1, evidenciando la distribución real de trabajo por épicas, la implementación de los bounded contexts principales y la relación entre responsabilidades individuales, evidencias funcionales y criterios técnicos verificables.<br><br>
        <strong>AV2:</strong><br>
-        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 15 Technical Stories más tareas transversales con sus endpoints REST, estimaciones y responsables asignados.
+        El equipo documentó la implementación completa del backend Spring Boot con arquitectura hexagonal y DDD, incluyendo el Sprint Backlog 3, el registro de commits del repositorio y la documentación de 15 Technical Stories más tareas transversales con sus endpoints REST, estimaciones y responsables asignados.<br><br>
+       <strong>TB2:</strong><br>
+       El equipo produjo la documentación técnica final del ciclo de vida completo, integrando las capacidades del Sprint 4 con los módulos base: la implementación backend de las integraciones con OpenAI, Google/Apple y Stripe, las experiencias de frontend que las exponen al usuario, y la evidencia de las pruebas realizadas sobre los endpoints. La redacción mantuvo consistencia con la evidencia en Linear, los repositorios y la documentación OpenAPI, evidenciando la distribución real de responsabilidades y la trazabilidad entre lo planificado, implementado y probado.
     </td>
   </tr>
 </table>
@@ -363,7 +402,7 @@ La solución integra sensores IoT con una aplicación web accesible desde navega
 |:-----|:-------|:----------------|:--------|:---------------------|
 | ![Leonardo](report/assets/chapter-01/team/thumbnails/leonardo.png) | U202415820 | **Cabrera Novoa, Leonardo Moisés** | Ingeniería de Software | Estudiante de 5to ciclo con experiencia en C++ y recientemente en C#. Se enfoca en el desarrollo colaborativo, aportando compromiso y adaptabilidad para lograr los objetivos de cada sprint. |
 | ![Frezzia](report/assets/chapter-01/team/thumbnails/frezzia.jpg) | U200815121 | **Espinoza Paredes, Frezzia** | Ingeniería de Software | Estudiante de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Tiene habilidades en prototipado, user experience, HTML, CSS, JavaScript, Python y C++. |
-| Pendiente | U20231B504 | **Morales Venegas, David Joel** | Ingeniería de Software | Estudiante de Ingeniería de Software con formación intermedia en desarrollo de aplicaciones web. Se adapta al trabajo técnico del equipo, priorizando código funcional, entendible y alineado a los requerimientos del proyecto. |
+| ![David](report/assets/chapter-01/team/thumbnails/david.png) | U20231B504 | **Morales Venegas, David Joel** | Ingeniería de Software | Estudiante de Ingeniería de Software con formación intermedia en desarrollo de aplicaciones web. Se adapta al trabajo técnico del equipo, priorizando código funcional, entendible y alineado a los requerimientos del proyecto. |
 | ![Mauricio](report/assets/chapter-01/team/thumbnails/mauricio.png) | U202410093 | **Pajés León, Mauricio Luis** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC, con experiencia en C++ y Python, diseño y patrones de software, bases de datos SQL y NoSQL, desarrollo backend con Java Spring Boot y Node.js, comunicación y trabajo en equipo. |
 | ![Jorge](report/assets/chapter-01/team/thumbnails/jorge.png) | U202220648 | **Videla Ventura, Jorge Joseph** | Ingeniería de Software | Estudiante de Ingeniería de Software en la UPC (4.º ciclo), con experiencia en C++ y Python. Responsable, comprometido y orientado al trabajo en equipo. |
 
@@ -480,7 +519,6 @@ En función de la problemática identificada y del tipo de solución que propone
 **Cargo:** jefes de operaciones, responsables de calidad, supervisores logísticos, encargados de almacén e ingenieros industriales en empresas que manipulan productos refrigerados.
 **Ubicación:** centros de distribución, almacenes, supermercados, cámaras frigoríficas y operadores logísticos en zonas urbanas.
 **Interés:** centralizar el monitoreo de la cadena de frío, responder con rapidez ante incidencias, mejorar trazabilidad, facilitar auditorías y tomar decisiones operativas con base en datos históricos. | Según la FAO (2021), en el Perú se desperdician más de 12 millones de toneladas de alimentos a lo largo de la cadena productiva. Esto refuerza la necesidad de que las áreas de operaciones, calidad y logística cuenten con herramientas de monitoreo continuo para prevenir pérdidas y elevar el control sobre la cadena de frío. |
-
 
 # Capítulo II: Requirements Elicitation & Analysis
 
@@ -1079,7 +1117,6 @@ Para diseñar un sistema robusto, primero es necesario entender el negocio como 
 - Avoids ambiguities: Clearly distinguishes incidents, AI-assisted plans, subscriptions, entitlements, and payment-provider responsibilities.
 - Ensures consistency: Guarantees that documentation, web interfaces, project reports, and future prototypes use the same professional terminology.
 
-
 # Chapter III: Requirements Specification
 
 La especificación de requerimientos se actualizó tomando como referencia las prácticas del kit de revisión del curso: las funcionalidades se organizan desde épicas hacia historias de usuario, cada historia se redacta con estructura de usuario, necesidad y beneficio, y los criterios de aceptación se expresan con escenarios en formato Given/When/Then. El alcance documentado cubre la landing page, la Frontend Web Application de ColdTrace, la RESTful API y las historias técnicas necesarias para soportar la evolución del producto hacia asistencia inteligente, planes SaaS y suscripciones.
@@ -1315,7 +1352,6 @@ El Product Backlog prioriza historias visibles para usuarios finales y mantiene 
 | 83 | US052 | Crear o iniciar sesión con Google/Apple | EP002 | 5 | Sprint 4 / Planned |
 | 84 | TS30 | Google and Apple OAuth/OIDC Authentication API | EP008 | 5 | Sprint 4 / Planned |
 | 85 | US057 | Iniciar sesión con Google/Apple desde la interfaz | EP002 | 3 | Sprint 4 / Planned |
-
 
 # CAPÍTULO IV. PRODUCT UX/UI DESIGN
 
@@ -1876,16 +1912,18 @@ En esta sección se presenta la vista de componentes de ColdTrace por bounded co
 
 ### 4.7.1. Class Diagrams.
 
-La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases Java existentes en el backend actual y las clases objetivo definidas para la ampliación del Sprint 4.
+La documentación del diagrama de clases de ColdTrace se presenta en **tres etapas**. Las tres fueron actualizadas según las clases de dominio Java existentes en el backend actual y las clases objetivo definidas para la ampliación del Sprint 4.
+
+El alcance de estos diagramas es el modelo DDD: aggregates, value objects, enums, domain events y repositories. Las clases de soporte de la capa de aplicación e interfaces, como commands, queries, resources, assemblers, failure records, controllers y service interfaces, se representan a nivel de componentes y endpoints en la sección 4.6, no como clases individuales dentro del diagrama de dominio.
 
 #### Stage 1: DDD-oriented Class Diagram
 
-En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican aggregates, value objects, enumeraciones y relaciones por identificador del backend actual, además de los aggregates objetivo necesarios para AI Assistance y Subscription & Billing.
+En esta primera etapa se modela el dominio de ColdTrace con enfoque **DDD** y tipos Java. Aquí se identifican aggregates, value objects, domain events, enumeraciones y relaciones por identificador del backend actual, además de los aggregates objetivo necesarios para AI Assistance y Subscription & Billing.
 
 Principales clases por bounded context:
 
 - **BC Identity & Access:** `Organization`, `User`, `ExternalIdentity`, `Role`, `EmailAddress`, `RoleName`, `ExternalIdentityProvider` y `Permission`.
-- **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`.
+- **BC Asset Management:** `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, `LocationName`, `AssetUuid`, `GatewayUuid`, `IoTDeviceUuid` y `AssetCreatedEvent`.
 - **BC Monitoring:** `SensorReading` como aggregate de telemetría persistida.
 - **BC Alerts:** `Incident`, `Notification`, `IncidentSeverity`, `IncidentStatus`, `NotificationChannel` y `NotificationStatus`.
 - **BC Reports:** `Report`, que persiste métricas resumidas de activos, lecturas e incidentes.
@@ -1908,7 +1946,7 @@ En esta segunda etapa las clases se agrupan según el bounded context al que per
 Agrupamiento aplicado en el diagrama:
 
 - **BC Identity & Access** (azul claro): `Organization`, `User`, `ExternalIdentity`, `Role` y sus value objects/enums.
-- **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings` y sus value objects.
+- **BC Asset Management** (rosado): `Location`, `Asset`, `Gateway`, `IoTDevice`, `AssetSettings`, sus value objects y `AssetCreatedEvent`.
 - **BC Monitoring** (verde): `SensorReading`.
 - **BC Alerts** (amarillo): `Incident`, `Notification` y sus enums de severidad, estado y canal.
 - **BC Reports** (morado): `Report`.
@@ -1938,7 +1976,7 @@ Con esta clasificación se cumple una regla fundamental de DDD: fuera del aggreg
 
 > PlantUML source: [`assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml`](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-autenticacion.puml).
 
-**BC Asset Management.** Aggregates → `Location`, `Asset`, `Gateway`, `IoTDevice` y `AssetSettings`. Value Objects → `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`. El backend actual no contiene `Sensor`, `AssetBuilder`, `AssetDirector`, `TemperatureRange` ni `HumidityRange` como clases de dominio.
+**BC Asset Management.** Aggregates → `Location`, `Asset`, `Gateway`, `IoTDevice` y `AssetSettings`. Value Objects → `LocationName`, `AssetUuid`, `GatewayUuid` e `IoTDeviceUuid`. DomainEvent → `AssetCreatedEvent`, publicado por `Asset` cuando se registra un activo nuevo. El backend actual no contiene `Sensor`, `AssetBuilder`, `AssetDirector`, `TemperatureRange` ni `HumidityRange` como clases de dominio.
 
 ![Class Diagram Stage 3 BC Asset Management](report/assets/chapter-04/classdiagram/classdiagram-etapa3-bc-gestion-sensores.png)
 
@@ -2009,7 +2047,6 @@ La ampliación agrega `external_identities` para vincular identidades Google/App
 *Figure 4.8.1.1. ColdTrace Entity-Relationship Diagram normalized to 3NF.*
 
 > PlantUML source: [`assets/chapter-04/databasediagram/databasediagram.puml`](report/assets/chapter-04/databasediagram/databasediagram.puml).
-
 
 # Capítulo V: Product Implementation, Validation & Deployment
 
@@ -2133,10 +2170,10 @@ Se utilizó nomenclatura en inglés para todos los elementos del código. Los ar
 
 Ejemplos del proyecto:
 
-- `navigation.js` → manejo de navegación  
-- `scroll-reveal.js` → animaciones  
-- `variables.css` → variables de diseño  
-- `en-US.json` → traducciones en inglés  
+- `navigation.js` → manejo de navegación
+- `scroll-reveal.js` → animaciones
+- `variables.css` → variables de diseño
+- `en-US.json` → traducciones en inglés
 
 Estas convenciones permiten identificar rápidamente el propósito de cada archivo.
 
@@ -2394,7 +2431,7 @@ El uso de GitHub como plataforma de control de versiones y despliegue permite ma
 Para cumplir con la descomposición de User Stories en Engineering Tasks, los work items del Sprint 1 fueron documentados con estimaciones entre 4 y 8 horas. Esta granularidad permite evidenciar tareas suficientemente pequeñas para seguimiento diario, pero con alcance claro para desarrollo, revisión y cierre dentro del sprint.
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; text-align: center;">
-  
+
   <tr>
     <th>Sprint #</th>
     <td colspan="7">Sprint 1</td>
@@ -5945,7 +5982,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 4</td>
+      <td>Ana Gutiérrez Rios</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>iPhone (iOS) y iPad</td>
     </tr>
@@ -5975,6 +6012,98 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
         Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 5</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Jean Pool Coaguila</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Smartphone Android (Samsung Galaxy A54)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>28 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Android / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Encargado de Minimarket Familiar "El Éxito"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp (personal y clientes)</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Los Olivos, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Sistema de facturación básica local y cuaderno físico</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 62:23 - 79:21 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Jean Pool maneja embutidos, lácteos y carnes en visicoolers. Comentó que hace seis meses perdió casi S/. 2,000 en mercadería porque una congeladora falló un sábado por la noche y recién lo notaron el lunes por el mal olor. Al revisar la landing entendió el valor de ColdTrace de inmediato. Valoró ver todo el dashboard en una sola pantalla por su simplicidad, pero enfatizó que las alertas obligatoriamente deben sonar fuerte en WhatsApp, ya que no suele revisar correos electrónicos. Validó que pagaría una suscripción si el precio es accesible para un pequeño comercio.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse; margin-top: 20px;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 6</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Zayd Ayasata</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop corporativa HP y iPhone 14</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>36 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Coordinador Logístico y de Cadena de Frío</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Microsoft Teams y Correo Corporativo (Outlook)</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Callao, Lima (Centro de Distribución)</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>SAP ERP (Módulo WM) y Microsoft Excel Avanzado</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 79:21 - 93:54 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Zayd supervisa cámaras frigoríficas grandes y camiones de reparto. Indicó que su dolor crítico ocurre en las auditorías de DIGESA/SENASA, ya que armar el historial de temperaturas manualmente en Excel les toma días enteros. Al evaluar ColdTrace, apuntó directo a los planes corporativos. Le pareció excelente el monitoreo con humedad y el módulo de reportes exportables para cumplimiento legal. Considera clave la trazabilidad de alertas (saber qué operario respondió el aviso) para deslindar responsabilidades. Sugirió agregar una API para poder integrar los datos de temperatura directamente con SAP.
       </td>
     </tr>
   </tbody>
@@ -6070,11 +6199,13 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ## 5.4. Video About-the-Product
 
-El video About-the-Product de ColdTrace presenta una demostración navegada de la plataforma, mostrando la Landing Page, la Frontend Web Application desplegada en Vercel y la RESTful API documentada con Swagger UI. El video recorre las principales funcionalidades implementadas durante los Sprint 1, 2 y 3, incluyendo:
+El video About-the-Product de ColdTrace presenta una demostración navegada de la plataforma, dirigida tanto a los visitantes del Landing Page que desean conocer el modelo de negocio y las características del producto, como a los usuarios de la aplicación que desean realizar tareas relacionadas con los procesos soportados por la solución. El tono de la comunicación es consistente con el tono adoptado para el producto e incluye un testimonio positivo de una usuaria que participó en las entrevistas de validación. El video muestra la Landing Page, la Frontend Web Application desplegada en Vercel y la RESTful API documentada con Swagger UI, recorriendo las principales funcionalidades implementadas, incluyendo:
 
 - Landing Page informativa con propuesta de valor y formulario de contacto.
 - Frontend Web Application con autenticación, gestión de activos, monitoreo operacional, alertas e incidencias, reportes de cumplimiento y configuración operativa.
 - RESTful API backend con endpoints documentados en Swagger UI, mostrando los bounded contexts de Identity & Access, Asset Management, Monitoring, Alerts, Reports y Maintenance Management.
+
+**Duración total:** 1:41
 
 <table style="width:100%; border-collapse:collapse;">
   <tbody>
@@ -6086,13 +6217,12 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
       </td>
     </tr>
     <tr>
-      <td align="center"><strong>Video About-the-Product (AV2):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
+      <td align="center"><strong>Video About-the-Product (YouTube, incrustado en el Landing Page):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
     </tr>
   </tbody>
 </table>
 
 **Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
-
 
 # Capítulo VI: Conclusions
 ## 6.1. Conclusiones y recomendaciones
@@ -6129,7 +6259,39 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 ## 6.2. Video About-the-Team
 
-[Pending content]
+El video About-the-Team resume el proceso de trabajo del equipo ICEQ durante el desarrollo de ColdTrace. A través de escenas de sesiones de trabajo reales complementadas con narración en voz en off, presenta cómo el equipo organizó el proyecto bajo un marco ágil, desde la investigación de usuarios y el diseño, hasta la implementación, el despliegue y la validación de la solución. El video incluye además el testimonio ante cámara de cada integrante, describiendo las actividades realizadas, el logro de los outcomes y el desarrollo de las competencias alcanzadas, en línea con el ABET – EAC - Student Outcome 3.
+
+**Pauta de secuencias de contenido (timing de inicio de cada sección):**
+
+| Timing (hh:mm:ss) | Sección |
+|---|---|
+| 00:00:00 | Introducción del equipo y presentación ante cámara |
+| 00:01:20 | Testimonio individual — Cabrera Novoa, Leonardo Moisés |
+| 00:02:40 | Testimonio individual — Espinoza Paredes, Frezzia |
+| 00:04:00 | Testimonio individual — Morales Venegas, David Joel |
+| 00:05:20 | Testimonio individual — Pajés León, Mauricio Luis |
+| 00:06:40 | Testimonio individual — Videla Ventura, Jorge Joseph |
+| 00:08:00 | Narración del proceso de trabajo (voz en off sobre sesiones reales) |
+| 00:09:30 | Cierre y aprendizajes del equipo |
+
+**Duración total:** 10:04
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">
+          <img src="report/assets/chapter-06/about-the-team/about-the-team-thumbnail.png" alt="Video About-the-Team de ColdTrace" width="700">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Video About-the-Team (YouTube):</strong> <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">https://www.youtube.com/watch?v=pStMmrVWDzo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+> El video se encuentra publicado en YouTube (versión utilizada para incrustarse en el Landing Page).
 
 ---
 
@@ -6146,7 +6308,6 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 | Repositorio Backend | https://github.com/ICEQ2026/coldtrace-platform |
 | Repositorio Informe | https://github.com/ICEQ2026/informe-del-proyecto |
 | Organización GitHub | https://github.com/ICEQ2026 |
-
 
 # Bibliografía
 
@@ -6181,3 +6342,41 @@ Stripe. (s. f.-a). *Checkout Sessions*. Stripe API Reference. https://docs.strip
 Stripe. (s. f.-b). *Customer Portal Session*. Stripe API Reference. https://docs.stripe.com/api/customer_portal/sessions
 
 Stripe. (s. f.-c). *Receive Stripe events in your webhook endpoint*. Stripe Documentation. https://docs.stripe.com/webhooks
+
+# Anexos
+
+## Anexo A: Videos de Exposiciones
+
+En esta sección se registran los enlaces a los videos de exposición del proyecto, publicados en Microsoft Stream. La relación se irá expandiendo con cada entrega.
+
+| Entrega | Video de Exposición |
+|---|---|
+| TB2 (Final) | [Ver video de exposición TB2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQAwQZHCy1x0TYcjN_HmVODzAWBB8sbiYALC3AxLXtJi0n0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=3zIgiK) |
+
+## Anexo B: Videos de Entrevistas
+
+En esta sección se consolidan los enlaces a los videos de entrevistas realizadas durante el proyecto, publicados en Microsoft Stream.
+
+| Tipo de entrevista | Descripción | Video |
+|---|---|---|
+| Needfinding | Entrevistas de investigación a representantes de los segmentos objetivo, base para la construcción de los User Personas. | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDF6wu_w86bRIH68kr6ehziAe9K_FC1ARRsa-i6G07RpXk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FXKoP5) |
+| Validación | Entrevistas de validación en las que usuarios de los segmentos objetivo interactúan con la Landing Page y la Web Application. | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj) |
+
+## Anexo C: Repositorios del Proyecto
+
+| Producto | Repositorio |
+|---|---|
+| Backend (RESTful API) | https://github.com/ICEQ2026/coldtrace-platform |
+| Frontend Web Application | https://github.com/ICEQ2026/coldtrace-frontend |
+| Landing Page | https://github.com/ICEQ2026/landingpage-coldtrace |
+| Informe del Proyecto | https://github.com/ICEQ2026/informe-del-proyecto |
+
+## Anexo D: Recursos Desplegados
+
+| Recurso | URL |
+|---|---|
+| Frontend Web Application (Vercel) | https://coldtrace-frontend-web.vercel.app |
+| RESTful API (Google Cloud Run) | https://coldtrace-platform-dtbzbm7bta-uc.a.run.app |
+| Swagger UI / OpenAPI Docs | https://coldtrace-platform-dtbzbm7bta-uc.a.run.app/swagger-ui/index.html |
+| Video About-the-Product (YouTube) | https://youtu.be/jl93ck2hKho |
+| Video About-the-Team (YouTube) | https://www.youtube.com/watch?v=pStMmrVWDzo |
