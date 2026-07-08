@@ -57,6 +57,7 @@
 | 1.8.2 | 19/06/26 | Pajés León, Mauricio Luis | Incorporación de `AssetCreatedEvent` en los diagramas de clase de Asset Management según el backend real. |
 | 1.9.0 | 04/07/26 | Videla Ventura, Jorge Joseph | Adición del Sprint 4 con documentación expandida, capturas de Swagger UI, frontend y evidencia colaborativa del sprint. |
 | 1.10.0 | 08/07/26 | Pajés León, Mauricio Luis | Actualización del contrato REST final de Sprint 4, normalización de endpoints bajo `/api/v1`, documentación de operaciones DELETE y ajuste de conclusiones sobre autenticación e integración frontend-backend. |
+| 1.11.0 | 08/07/26 | Pajés León, Mauricio Luis | Cierre de TB2: actualización de la sección Student Outcome con las acciones y conclusiones de la entrega final (TBF), incorporación de evidencias de Collaboration Insights de AV2 y TB2, entrevista de validación adicional, sección de Anexos (Videos de Exposiciones, Videos de Entrevistas, Repositorios y Recursos Desplegados), y publicación de los videos About-the-Product y About-the-Team con su resumen, pauta de secuencias y enlaces. |
 
 # Project Report Collaboration Insights
 
@@ -5981,7 +5982,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 4</td>
+      <td>Ana Gutiérrez Rios</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>iPhone (iOS) y iPad</td>
     </tr>
@@ -6011,6 +6012,98 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
         Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 5</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Jean Pool Coaguila</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Smartphone Android (Samsung Galaxy A54)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>28 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Android / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Encargado de Minimarket Familiar "El Éxito"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp (personal y clientes)</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Los Olivos, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Sistema de facturación básica local y cuaderno físico</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 62:23 - 79:21 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Jean Pool maneja embutidos, lácteos y carnes en visicoolers. Comentó que hace seis meses perdió casi S/. 2,000 en mercadería porque una congeladora falló un sábado por la noche y recién lo notaron el lunes por el mal olor. Al revisar la landing entendió el valor de ColdTrace de inmediato. Valoró ver todo el dashboard en una sola pantalla por su simplicidad, pero enfatizó que las alertas obligatoriamente deben sonar fuerte en WhatsApp, ya que no suele revisar correos electrónicos. Validó que pagaría una suscripción si el precio es accesible para un pequeño comercio.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse; margin-top: 20px;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 6</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Zayd Ayasata</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop corporativa HP y iPhone 14</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>36 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Coordinador Logístico y de Cadena de Frío</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Microsoft Teams y Correo Corporativo (Outlook)</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Callao, Lima (Centro de Distribución)</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>SAP ERP (Módulo WM) y Microsoft Excel Avanzado</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 79:21 - 93:54 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Zayd supervisa cámaras frigoríficas grandes y camiones de reparto. Indicó que su dolor crítico ocurre en las auditorías de DIGESA/SENASA, ya que armar el historial de temperaturas manualmente en Excel les toma días enteros. Al evaluar ColdTrace, apuntó directo a los planes corporativos. Le pareció excelente el monitoreo con humedad y el módulo de reportes exportables para cumplimiento legal. Considera clave la trazabilidad de alertas (saber qué operario respondió el aviso) para deslindar responsabilidades. Sugirió agregar una API para poder integrar los datos de temperatura directamente con SAP.
       </td>
     </tr>
   </tbody>
@@ -6106,11 +6199,13 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ## 5.4. Video About-the-Product
 
-El video About-the-Product de ColdTrace presenta una demostración navegada de la plataforma, mostrando la Landing Page, la Frontend Web Application desplegada en Vercel y la RESTful API documentada con Swagger UI. El video recorre las principales funcionalidades implementadas durante los Sprint 1, 2 y 3, incluyendo:
+El video About-the-Product de ColdTrace presenta una demostración navegada de la plataforma, dirigida tanto a los visitantes del Landing Page que desean conocer el modelo de negocio y las características del producto, como a los usuarios de la aplicación que desean realizar tareas relacionadas con los procesos soportados por la solución. El tono de la comunicación es consistente con el tono adoptado para el producto e incluye un testimonio positivo de una usuaria que participó en las entrevistas de validación. El video muestra la Landing Page, la Frontend Web Application desplegada en Vercel y la RESTful API documentada con Swagger UI, recorriendo las principales funcionalidades implementadas, incluyendo:
 
 - Landing Page informativa con propuesta de valor y formulario de contacto.
 - Frontend Web Application con autenticación, gestión de activos, monitoreo operacional, alertas e incidencias, reportes de cumplimiento y configuración operativa.
 - RESTful API backend con endpoints documentados en Swagger UI, mostrando los bounded contexts de Identity & Access, Asset Management, Monitoring, Alerts, Reports y Maintenance Management.
+
+**Duración total:** 1:41
 
 <table style="width:100%; border-collapse:collapse;">
   <tbody>
@@ -6122,7 +6217,7 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
       </td>
     </tr>
     <tr>
-      <td align="center"><strong>Video About-the-Product (AV2):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
+      <td align="center"><strong>Video About-the-Product (YouTube, incrustado en el Landing Page):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
     </tr>
   </tbody>
 </table>
@@ -6164,6 +6259,23 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 ## 6.2. Video About-the-Team
 
+El video About-the-Team resume el proceso de trabajo del equipo ICEQ durante el desarrollo de ColdTrace. A través de escenas de sesiones de trabajo reales complementadas con narración en voz en off, presenta cómo el equipo organizó el proyecto bajo un marco ágil, desde la investigación de usuarios y el diseño, hasta la implementación, el despliegue y la validación de la solución. El video incluye además el testimonio ante cámara de cada integrante, describiendo las actividades realizadas, el logro de los outcomes y el desarrollo de las competencias alcanzadas, en línea con el ABET – EAC - Student Outcome 3.
+
+**Pauta de secuencias de contenido (timing de inicio de cada sección):**
+
+| Timing (hh:mm:ss) | Sección |
+|---|---|
+| 00:00:00 | Introducción del equipo y presentación ante cámara |
+| 00:01:20 | Testimonio individual — Cabrera Novoa, Leonardo Moisés |
+| 00:02:40 | Testimonio individual — Espinoza Paredes, Frezzia |
+| 00:04:00 | Testimonio individual — Morales Venegas, David Joel |
+| 00:05:20 | Testimonio individual — Pajés León, Mauricio Luis |
+| 00:06:40 | Testimonio individual — Videla Ventura, Jorge Joseph |
+| 00:08:00 | Narración del proceso de trabajo (voz en off sobre sesiones reales) |
+| 00:09:30 | Cierre y aprendizajes del equipo |
+
+**Duración total:** 10:04
+
 <table style="width:100%; border-collapse:collapse;">
   <tbody>
     <tr>
@@ -6174,10 +6286,12 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
       </td>
     </tr>
     <tr>
-      <td align="center"><strong>Video About-the-Team:</strong> <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">https://www.youtube.com/watch?v=pStMmrVWDzo</a></td>
+      <td align="center"><strong>Video About-the-Team (YouTube):</strong> <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">https://www.youtube.com/watch?v=pStMmrVWDzo</a></td>
     </tr>
   </tbody>
 </table>
+
+> El video se encuentra publicado en YouTube (versión utilizada para incrustarse en el Landing Page).
 
 ---
 
