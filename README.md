@@ -5977,7 +5977,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
     </tr>
          <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/vi-s4-01-ana-rios.png" alt="Entrevista de Validación 3" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-ana-rios-gutierrez.png" alt="Entrevista de Validación 4" height="350">
       </td>
     <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
@@ -6026,7 +6026,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 5</strong></td>
     </tr>
        <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/vi-s4-01-jean-pool.png" alt="Entrevista de Validación 3" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-jean-pool.png" alt="Entrevista de Validación 5" height="350">
       </td>
     <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
@@ -6075,7 +6075,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 6</strong></td>
     </tr>
          <td colspan="4" align="center">
-        <img src="report/assets/chapter-05/validation/vi-s4-01-zayd-ayasta.png" alt="Entrevista de Validación 3" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-zayd-ayasta.png" alt="Entrevista de Validación 6" height="350">
       </td>
       <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
