@@ -3541,28 +3541,32 @@ Los endpoints específicos implementados durante el Sprint 4 se listan a continu
 
 | Grupo | Método | Endpoint | Propósito |
 |-------|--------|----------|-----------|
-| Authentication | POST | `/api/auth/login` | Inicio de sesión con credenciales y emisión de JWT |
-| Authentication | POST | `/api/auth/forgot-password` | Solicitud de restablecimiento de contraseña |
-| Authentication | POST | `/api/auth/reset-password` | Confirmación de restablecimiento de contraseña |
-| Authentication | GET | `/api/auth/me` | Perfil del usuario autenticado |
-| OAuth/OIDC | GET | `/oauth2/authorization/google` | Inicio de flujo OAuth con Google |
-| OAuth/OIDC | GET | `/oauth2/authorization/apple` | Inicio de flujo OAuth con Apple |
-| OAuth/OIDC | GET | `/login/oauth2/code/google` | Callback de Google OAuth |
-| OAuth/OIDC | GET | `/login/oauth2/code/apple` | Callback de Apple OAuth |
-| AI Assistance | POST | `/api/ai/plan/generate` | Generar plan de resolución de incidente |
-| AI Assistance | POST | `/api/ai/plan/approve` | Aprobar plan generado |
-| AI Assistance | POST | `/api/ai/plan/reject` | Rechazar plan con trazabilidad |
-| AI Assistance | GET | `/api/ai/plan/history/{incidentId}` | Historial de planes por incidente |
-| AI Assistance | GET | `/api/ai/report/summary/{reportId}` | Resumen inteligente de reporte |
-| AI Assistance | GET | `/api/ai/dashboard/interpretation` | Interpretación IA del dashboard |
-| Plans & Billing | GET | `/api/plans` | Listar catálogo de planes |
-| Plans & Billing | POST | `/api/subscriptions/checkout` | Crear sesión de Stripe Checkout |
-| Plans & Billing | POST | `/api/subscriptions/webhook` | Webhook de eventos Stripe |
-| Plans & Billing | GET | `/api/subscriptions/portal` | Acceso a Stripe Customer Portal |
-| Plans & Billing | GET | `/api/subscriptions/entitlements` | Entitlements de la organización |
-| Plans & Billing | POST | `/api/subscriptions/validate` | Validar límites según plan |
+| Authentication | POST | `/api/v1/authentication/sign-in` | Inicio de sesión con credenciales y emisión de JWT |
+| Authentication | POST | `/api/v1/authentication/social/{provider}/token-exchange` | Validación de identidad Google/Apple y emisión de sesión ColdTrace |
+| Authentication | POST | `/api/v1/authentication/social/{provider}/profile-preview` | Previsualización de perfil externo para completar onboarding |
+| Authentication | POST | `/api/v1/authentication/social/{provider}/organization-sign-up` | Registro de organización desde una identidad social validada |
+| IAM | GET | `/api/v1/roles` | Consulta de roles disponibles para el frontend |
+| IAM | GET | `/api/v1/organizations` | Consulta de organizaciones disponibles para el usuario autenticado |
+| IAM | DELETE | `/api/v1/organizations/{organizationId}/users/{userId}` | Eliminación controlada de usuarios internos por organización |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans` | Generar plan de resolución de incidente con contexto real |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans/{planId}/approvals` | Aprobar plan generado y ejecutar resolución con control humano |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans/{planId}/rejections` | Rechazar plan con trazabilidad sin alterar la incidencia |
+| AI Assistance | GET | `/api/v1/organizations/{organizationId}/incidents/{incidentId}/ai-resolution-plans` | Consultar historial de planes por incidencia |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/reports/{reportId}/ai-summaries` | Generar resumen inteligente de reporte |
+| AI Assistance | POST | `/api/v1/organizations/{organizationId}/dashboard/ai-interpretation` | Interpretación IA del dashboard operacional |
+| Plans & Billing | GET | `/api/v1/subscription-plans` | Listar catálogo público de planes |
+| Plans & Billing | GET | `/api/v1/organizations/{organizationId}/subscription` | Consultar suscripción, límites y funcionalidades de una organización |
+| Plans & Billing | POST | `/api/v1/organizations/{organizationId}/billing/checkout-sessions` | Crear sesión de Stripe Checkout |
+| Plans & Billing | POST | `/api/v1/organizations/{organizationId}/billing/customer-portal-sessions` | Crear sesión de Stripe Customer Portal |
+| Plans & Billing | POST | `/api/v1/billing/stripe/webhooks` | Procesar webhooks firmados de Stripe |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/assets/{assetId}` | Eliminación controlada de activos cuando no existen dependencias bloqueantes |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/gateways/{gatewayId}` | Eliminación controlada de gateways asociados a la organización |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/iot-devices/{iotDeviceId}` | Eliminación controlada de dispositivos IoT |
+| Asset Management | DELETE | `/api/v1/organizations/{organizationId}/locations/{locationId}` | Eliminación controlada de ubicaciones |
 
-La documentación de servicios debe reflejar los contratos finales disponibles en Swagger UI, incluyendo códigos de respuesta, validaciones y errores de negocio. Para Sprint 4, los grupos más sensibles son los endpoints protegidos por JWT, los callbacks OAuth/OIDC, los webhooks de Stripe y las operaciones que consumen servicios de IA.
+La documentación de servicios refleja los contratos finales disponibles en Swagger UI, incluyendo códigos de respuesta, validaciones y errores de negocio. Para Sprint 4, los grupos más sensibles son los endpoints protegidos por JWT, las operaciones OAuth/OIDC, los webhooks de Stripe, las respuestas estructuradas de IA y las operaciones `DELETE` que pueden devolver `409 Conflict` cuando existen dependencias de negocio.
+
+Como parte del cierre de integración, todos los controladores REST quedaron normalizados bajo el prefijo `/api/v1`. Esto evita rutas duplicadas en Swagger UI, reduce ambigüedad para el frontend desplegado en Vercel y mantiene consistencia con el versionamiento de la RESTful API. El frontend fue ajustado para consumir los mismos paths versionados usados por el backend en Cloud Run.
 
 La documentación de estos servicios es especialmente relevante porque las historias frontend pendientes dependen de contratos estables. Los endpoints de autenticación deben devolver sesiones coherentes para rutas protegidas, los endpoints IA deben exponer respuestas estructuradas y auditables, y los endpoints de billing deben manejar redirecciones, eventos externos de Stripe y validaciones de plan sin exponer secretos al cliente.
 

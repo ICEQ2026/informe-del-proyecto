@@ -9,7 +9,7 @@
 
 3. **Colaboración efectiva del equipo:** El uso de GitFlow con ramas feature, Conventional Commits y Pull Requests revisados permitió una integración ordenada y continua del trabajo de los 5 integrantes del equipo. La gestión del backlog mediante Linear App con tickets OPE y la organización del trabajo por Technical Stories aseguró que cada miembro tuviera responsabilidades claras y que el avance fuera medible en cada sprint.
 
-4. **RESTful API completa y desplegada:** La implementación de 15 Technical Stories más tareas transversales resultó en 51 operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo los flujos completos de registro de organizaciones, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos y de cumplimiento, y mantenimiento. La API fue desplegada exitosamente en Google Cloud Run con despliegue continuo mediante Google Cloud Build.
+4. **RESTful API completa y desplegada:** La implementación de la RESTful API resultó en operaciones REST documentadas con OpenAPI/Swagger UI, cubriendo registro de organizaciones, autenticación JWT, gestión de usuarios y roles, administración de activos e IoT, monitoreo de sensores, alertas e incidencias, reportes operativos, mantenimiento, asistencia IA y monetización SaaS. El contrato final quedó versionado bajo `/api/v1` y desplegado exitosamente en Google Cloud Run.
 
 5. **Plataforma desplegada en tres frentes:** ColdTrace cuenta con una Landing Page informativa en GitHub Pages, una Frontend Web Application funcional en Vercel y una RESTful API con documentación OpenAPI en Google Cloud Run. Esta arquitectura de tres capas permite una experiencia de usuario completa, desde la captación de visitantes hasta la operación diaria de monitoreo de cadena de frío.
 
@@ -17,13 +17,13 @@
 
 ### Recomendaciones
 
-1. **Implementar autenticación y autorización:** Como siguiente paso, se recomienda integrar Spring Security con JWT para asegurar los endpoints de la API y gestionar sesiones de usuario de forma segura, cerrando el ciclo de seguridad de la plataforma.
+1. **Fortalecer autorización y auditoría:** Como siguiente paso, se recomienda profundizar las reglas de autorización por rol y registrar auditoría detallada para operaciones sensibles como aprobación de planes IA, cambios de suscripción y eliminación de recursos operativos.
 
 2. **Integrar sensores IoT reales:** La plataforma está diseñada para recibir lecturas de sensores IoT físicos. Se recomienda implementar un gateway de ingesta de datos que permita conectar dispositivos reales (Raspberry Pi, ESP32, etc.) para validar la solución en un entorno operativo real.
 
 3. **Pruebas automatizadas:** Se sugiere incrementar la cobertura de pruebas unitarias y de integración tanto en el frontend (Vitest) como en el backend (JUnit), así como implementar pruebas end-to-end con Cypress o Playwright para validar los flujos completos de la aplicación.
 
-4. **Conexión frontend-backend:** Como parte del trabajo futuro, se recomienda completar la integración de la Frontend Web Application con la RESTful API backend, reemplazando el servidor JSON provisional por los endpoints reales desplegados en Cloud Run.
+4. **Consolidar pruebas frontend-backend:** Como parte del trabajo futuro, se recomienda ampliar pruebas end-to-end sobre los endpoints reales desplegados en Cloud Run, especialmente login, navegación protegida, billing, asistencia IA y operaciones CRUD versionadas bajo `/api/v1`.
 
 5. **Monitoreo y observabilidad:** Para la versión productiva, se recomienda implementar herramientas de monitoreo (Cloud Monitoring, Sentry) y logging estructurado que permitan detectar y diagnosticar incidentes operativos en la plataforma de forma proactiva.
 
