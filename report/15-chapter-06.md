@@ -33,7 +33,39 @@
 
 ## 6.2. Video About-the-Team
 
-[Pending content]
+El video About-the-Team resume el proceso de trabajo del equipo ICEQ durante el desarrollo de ColdTrace. A través de escenas de sesiones de trabajo reales complementadas con narración en voz en off, presenta cómo el equipo organizó el proyecto bajo un marco ágil, desde la investigación de usuarios y el diseño, hasta la implementación, el despliegue y la validación de la solución. El video incluye además el testimonio ante cámara de cada integrante, describiendo las actividades realizadas, el logro de los outcomes y el desarrollo de las competencias alcanzadas, en línea con el ABET – EAC - Student Outcome 3.
+
+**Pauta de secuencias de contenido (timing de inicio de cada sección):**
+
+| Timing (hh:mm:ss) | Sección |
+|---|---|
+| 00:00:00 | Introducción del equipo y presentación ante cámara |
+| 00:01:20 | Testimonio individual — Cabrera Novoa, Leonardo Moisés |
+| 00:02:40 | Testimonio individual — Espinoza Paredes, Frezzia |
+| 00:04:00 | Testimonio individual — Morales Venegas, David Joel |
+| 00:05:20 | Testimonio individual — Pajés León, Mauricio Luis |
+| 00:06:40 | Testimonio individual — Videla Ventura, Jorge Joseph |
+| 00:08:00 | Narración del proceso de trabajo (voz en off sobre sesiones reales) |
+| 00:09:30 | Cierre y aprendizajes del equipo |
+
+**Duración total:** 10:04
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">
+          <img src="report/assets/chapter-06/about-the-team/about-the-team-thumbnail.png" alt="Video About-the-Team de ColdTrace" width="700">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Video About-the-Team (YouTube):</strong> <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">https://www.youtube.com/watch?v=pStMmrVWDzo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+> El video se encuentra publicado en YouTube (versión utilizada para incrustarse en el Landing Page).
 
 ---
 

@@ -12,7 +12,7 @@ Plataforma utilizada para guardar las versiones del proyecto y gestionar la cola
 
 [GitHub](https://github.com/)
 
-![GitHub](assets/chapter-05/development_environment/Github.png)
+![GitHub](report/assets/chapter-05/development_environment/Github.png)
 
 
 ### Uxpressia
@@ -21,7 +21,7 @@ Herramienta utilizada para la elaboración de user personas e impact mapping.
 
 [UXPressia](https://uxpressia.com/)
 
-![UXPressia](assets/chapter-05/development_environment/Uxpressia.png)
+![UXPressia](report/assets/chapter-05/development_environment/Uxpressia.png)
 
 ### Miro
 
@@ -29,7 +29,7 @@ Plataforma utilizada para el event storming y la organización visual de ideas d
 
 [Miro](https://miro.com/)
 
-![Miro](assets/chapter-05/development_environment/Miro.png)
+![Miro](report/assets/chapter-05/development_environment/Miro.png)
 
 
 ### Figma
@@ -38,7 +38,7 @@ La herramienta usada para desarrollo conjunto de wireframes y mockups.
 
 [Figma](https://www.figma.com/)
 
-![Figma](assets/chapter-05/development_environment/Figma.png)
+![Figma](report/assets/chapter-05/development_environment/Figma.png)
 
 
 ### 5.1.2. Source Code Management
@@ -64,7 +64,7 @@ Las ramas identificadas en el repositorio son:
 - **feature/**: ramas utilizadas para el desarrollo de secciones específicas del informe.
 
 <p align="center">
-  <img src="assets/chapter-05/development_environment/github-branches.png"/>
+  <img src="report/assets/chapter-05/development_environment/github-branches.png"/>
 </p>
 
 <p align="center">
@@ -90,7 +90,7 @@ Este enfoque facilita la organización del proyecto y permite una integración m
 Para estandarizar los mensajes de commits, se utilizó la convención de Conventional Commits, permitiendo clasificar los cambios realizados y mejorar la trazabilidad del repositorio.
 
 <p align="center">
-  <img src="assets/chapter-05/development_environment/github-commits.png"/>
+  <img src="report/assets/chapter-05/development_environment/github-commits.png"/>
 </p>
 
 <p align="center">
@@ -196,7 +196,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
 1. Para el despliegue de la Landing Page se creó un repositorio en la organización alojada en GitHub, el cual contiene todos los archivos del proyecto desarrollados en HTML, CSS y JavaScript.
 
 <p align="center">
-  <img src="assets/chapter-05/development_environment/repoLanding.png"/>
+  <img src="report/assets/chapter-05/development_environment/repoLanding.png"/>
 </p>
 
 <p align="center">
@@ -206,7 +206,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
 2. Se realizó un push al repositorio con todos los archivos que contenían la Landing Page.
 
 <p align="center">
-  <img src="assets/chapter-05/development_environment/structureLanding.png"/>
+  <img src="report/assets/chapter-05/development_environment/structureLanding.png"/>
 </p>
 
 <p align="center">
@@ -216,7 +216,7 @@ El despliegue de la solución se realizó utilizando GitHub, aprovechando sus fu
 3. Se crearon branches para la actualización continua del repositorio, donde cada cambio realizado por el equipo eventualmente será agregado a la rama principal.
 
 <p align="center">
-  <img src="assets/chapter-05/development_environment/branchesLanding.png"/>
+  <img src="report/assets/chapter-05/development_environment/branchesLanding.png"/>
 </p>
 
 <p align="center">
@@ -594,11 +594,11 @@ A continuación, se presentan evidencias visuales de la implementación:
 
 **Landing Page – Sección principal**
 
-![Landing Hero](assets/chapter-05/development_environment/executionlanding1.png)
+![Landing Hero](report/assets/chapter-05/development_environment/executionlanding1.png)
 
-![Features Section](assets/chapter-05/development_environment/executionlanding2.png)
+![Features Section](report/assets/chapter-05/development_environment/executionlanding2.png)
 
-![Dashboard Alerts](assets/chapter-05/development_environment/executionlanding3.png)
+![Dashboard Alerts](report/assets/chapter-05/development_environment/executionlanding3.png)
 
 La navegación entre secciones se realiza mediante un menú fijo (navbar), facilitando la experiencia del usuario. Asimismo, la interfaz es responsive, adaptándose a distintos dispositivos.
 
@@ -653,7 +653,7 @@ El proceso incluyó la configuración del repositorio, la integración de cambio
 
 ** Deployment en GitHub Pages**
 
-![Deployment](assets/chapter-05/development_environment/deployement.png)
+![Deployment](report/assets/chapter-05/development_environment/deployement.png)
 
 Se evidencia el despliegue exitoso del proyecto en GitHub Pages, mostrando el estado activo del entorno y la publicación reciente de la landing page.
 
@@ -670,7 +670,7 @@ Se utilizaron ramas feature para desarrollar funcionalidades de forma independie
 
 **Analíticos de colaboración en GitHub**
 
-![GitHub Insights](assets/chapter-05/development_environment/insights.png)
+![GitHub Insights](report/assets/chapter-05/development_environment/insights.png)
 
 Se observa la actividad del repositorio, incluyendo commits realizados, pull requests y participación de los integrantes del equipo. Esto evidencia un trabajo colaborativo activo durante el Sprint.
 
@@ -828,7 +828,7 @@ El objetivo principal del Sprint 2 fue implementar y desplegar la primera versi�
 
 A continuación se presenta una captura del backlog gestionado en Linear App:
 
-![Sprint 2 Backlog – Linear App](assets/chapter-05/sprint-2/linear-backlog.png)
+![Sprint 2 Backlog – Linear App](report/assets/chapter-05/sprint-2/linear-backlog.png)
 *Figura 5.2.2.3.1: Sprint Backlog del Sprint 2 en Linear App (46 issues Done, 1 In Progress, 7 Backlog).*
 
 A continuación se presenta la tabla de control de estado del sprint.
@@ -1471,52 +1471,52 @@ Al término del Sprint 2, se desplegó la primera versión funcional de la Front
 
 La plataforma cuenta con vistas de creación de cuenta, inicio de sesión y recuperación de contraseña, así como una pantalla de administración de roles y permisos para usuarios con perfil administrador.
 
-![Sign-In View](assets/chapter-05/sprint-2/sign-in.png)
+![Sign-In View](report/assets/chapter-05/sprint-2/sign-in.png)
 *Figura 5.2.2.5.1: Vista de Inicio de Sesión (Sign-In).*
 
-![Create Account View](assets/chapter-05/sprint-2/create-account.png)
+![Create Account View](report/assets/chapter-05/sprint-2/create-account.png)
 *Figura 5.2.2.5.2: Vista de Registro de Cuenta (Sign-Up).*
 
-![Password Recovery View](assets/chapter-05/sprint-2/password-recovery.png)
+![Password Recovery View](report/assets/chapter-05/sprint-2/password-recovery.png)
 *Figura 5.2.2.5.3: Vista de Recuperación de Contraseña.*
 
-![Roles & Permissions View](assets/chapter-05/sprint-2/roles-permissions.png)
+![Roles & Permissions View](report/assets/chapter-05/sprint-2/roles-permissions.png)
 *Figura 5.2.2.5.4: Administración de Roles y Permisos.*
 
 **Asset Management – Gestión de activos e infraestructura IoT**
 
 Se implementó el módulo completo de gestión de activos, incluyendo el registro de cámaras frigoríficas, unidades de transporte, vinculación de sensores IoT, emparejamiento de gateways, calibración y configuración avanzada de parámetros de dispositivos.
 
-![Cold Room List View](assets/chapter-05/sprint-2/cold-room-list.png)
+![Cold Room List View](report/assets/chapter-05/sprint-2/cold-room-list.png)
 *Figura 5.2.2.5.5: Listado y Gestión de Cámaras Frigoríficas.*
 
-![Transport Unit List View](assets/chapter-05/sprint-2/transport-units.png)
+![Transport Unit List View](report/assets/chapter-05/sprint-2/transport-units.png)
 *Figura 5.2.2.5.6: Registro de Unidades de Transporte.*
 
-![Sensor Linking & Gateway Pairing View](assets/chapter-05/sprint-2/sensor-pairing.png)
+![Sensor Linking & Gateway Pairing View](report/assets/chapter-05/sprint-2/sensor-pairing.png)
 *Figura 5.2.2.5.7: Vinculación de Sensores y Gateways IoT.*
 
-![Asset Settings & IoT Configuration View](assets/chapter-05/sprint-2/asset-settings.png)
+![Asset Settings & IoT Configuration View](report/assets/chapter-05/sprint-2/asset-settings.png)
 *Figura 5.2.2.5.8: Configuración Avanzada y Parámetros Operativos.*
 
 **Monitoring – Dashboard operacional (US039)**
 
 El dashboard operacional muestra en tiempo real el estado de los activos monitoreados, KPIs de temperatura, alertas activas y telemetría de sensores. Los datos se consumen desde el servidor JSON configurado como backend provisional.
 
-![Operational Dashboard View](assets/chapter-05/sprint-2/operational-dashboard.png)
+![Operational Dashboard View](report/assets/chapter-05/sprint-2/operational-dashboard.png)
 *Figura 5.2.2.5.9: Dashboard Operacional con Telemetría en Tiempo Real.*
 
 **Reports – Reportes y cumplimiento normativo (US029–US034)**
 
 El módulo de reportes incluye seis vistas: bitácora diaria, historial de eventos operacionales, exportación de reportes sanitarios, descarga de reportes mensuales, hallazgos de cumplimiento y evidencia de auditoría.
 
-![Reports Daily Log View](assets/chapter-05/sprint-2/daily-log.png)
+![Reports Daily Log View](report/assets/chapter-05/sprint-2/daily-log.png)
 *Figura 5.2.2.5.10: Bitácora Diaria de Operaciones.*
 
-![Operational History View](assets/chapter-05/sprint-2/operational-history.png)
+![Operational History View](report/assets/chapter-05/sprint-2/operational-history.png)
 *Figura 5.2.2.5.11: Historial de Eventos Operacionales.*
 
-![Compliance Findings & Audit Evidence View](assets/chapter-05/sprint-2/compliance-audit.png)
+![Compliance Findings & Audit Evidence View](report/assets/chapter-05/sprint-2/compliance-audit.png)
 *Figura 5.2.2.5.12: Hallazgos de Cumplimiento y Evidencia de Auditoría.*
 
 **Video de navegación del producto:** [upc-pre-202610-1asi0729-10177-coldtrace-productnav-sprint-2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQAb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
@@ -1619,10 +1619,10 @@ https://coldtrace-frontend-liard.vercel.app
 
 A continuación se presenta la evidencia del despliegue en Vercel:
 
-![Vercel Active Branches](assets/chapter-05/sprint-2/vercel-active-branches.png)
+![Vercel Active Branches](report/assets/chapter-05/sprint-2/vercel-active-branches.png)
 *Figura 5.2.2.7.1: Branches activos con sus Preview Deployments en Vercel, mostrando los PRs #16–#28 y los contributors por branch.*
 
-![Vercel Production Deployment](assets/chapter-05/sprint-2/vercel-production-deployment.png)
+![Vercel Production Deployment](report/assets/chapter-05/sprint-2/vercel-production-deployment.png)
 *Figura 5.2.2.7.2: Production Deployment overview en Vercel — Status Ready, dominio coldtrace-frontend-liard.vercel.app.*
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
@@ -1670,7 +1670,7 @@ A continuación se presenta el resumen de participación por integrante basado e
   </tr>
 </table>
 
-![GitHub Contributors Insights](assets/chapter-05/sprint-2/github-insights.png)
+![GitHub Contributors Insights](report/assets/chapter-05/sprint-2/github-insights.png)
 *Figura 5.2.2.8.1: Gráfico de contribuciones por integrante – repositorio coldtrace-frontend (contributors to main branch).*
 
 El equipo utilizó Pull Requests como mecanismo de integración, alcanzando un total de 22 PRs mergeados durante el sprint. El uso de Conventional Commits permitió mantener un historial organizado, diferenciando claramente entre funcionalidades nuevas (`feat`), correcciones (`fix`), configuración (`chore`) y documentación (`docs`).
@@ -2147,7 +2147,7 @@ El objetivo principal del Sprint 3 fue implementar la RESTful API de ColdTrace u
 A continuación, se presenta el tablero de Linear App correspondiente al backlog del Sprint 3:
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/linear-backlog-sprint-3.png" alt="Tablero de Linear App - Sprint 3" width="900">
+  <img src="report/assets/chapter-05/sprint-3/linear-backlog-sprint-3.png" alt="Tablero de Linear App - Sprint 3" width="900">
 </p>
 
 *Figura 5.2.3.3.1: Tablero de backlog de Linear App para el Sprint 3.*
@@ -2391,13 +2391,13 @@ La API sigue una arquitectura hexagonal (puertos y adaptadores) donde cada bound
 A continuación se presenta la evidencia de despliegue en Google Cloud Run, los parámetros activos del contenedor y la instancia de Cloud SQL utilizada por la API:
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/cloud-run-parameters.png" alt="Google Cloud Run Service Settings" width="900">
+  <img src="report/assets/chapter-05/sprint-3/cloud-run-parameters.png" alt="Google Cloud Run Service Settings" width="900">
 </p>
 
 *Figura 5.2.3.5.1: Panel de Google Cloud Run con los parámetros de configuración y variables de entorno del backend de ColdTrace.*
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/cloud-sql-instance.png" alt="Google Cloud SQL MySQL Instance" width="900">
+  <img src="report/assets/chapter-05/sprint-3/cloud-sql-instance.png" alt="Google Cloud SQL MySQL Instance" width="900">
 </p>
 
 *Figura 5.2.3.5.2: Instancia de Google Cloud SQL para MySQL utilizada como base de datos de producción de la RESTful API de ColdTrace.*
@@ -2660,7 +2660,7 @@ La especificación OpenAPI completa está disponible en Swagger UI, permitiendo 
 A continuación se muestra la documentación interactiva de la API disponible en Swagger UI:
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/swagger-ui-endpoints.png" alt="Swagger UI OpenAPI Docs" width="900">
+  <img src="report/assets/chapter-05/sprint-3/swagger-ui-endpoints.png" alt="Swagger UI OpenAPI Docs" width="900">
 </p>
 
 *Figura 5.2.3.6.1: Documentación interactiva de Swagger UI con los endpoints RESTful expuestos.*
@@ -2698,7 +2698,7 @@ A continuación se documenta el procedimiento realizado en la consola de Google 
 Se aprovisionó una instancia administrada de Cloud SQL seleccionando MySQL 8.4 como motor de base de datos, asignándole el identificador `coldtrace-mysql` en la región `us-central1`. Esta instancia actúa como el almacenamiento persistente al que se conecta el backend desplegado en Cloud Run.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/creacion_intancia_cloudSQL_figura1.png" alt="Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace" width="900">
+  <img src="report/assets/chapter-05/sprint-3/creacion_intancia_cloudSQL_figura1.png" alt="Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace" width="900">
 </p>
 
 *Figura 5.2.3.7.1: Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace.*
@@ -2708,7 +2708,7 @@ Se aprovisionó una instancia administrada de Cloud SQL seleccionando MySQL 8.4 
 Se confirmó que la instancia `coldtrace-mysql` quedó creada correctamente en la región configurada (`us-central1`, MySQL 8.4) y disponible para recibir bases de datos, usuarios y conexiones desde el servicio de aplicación.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/intancia_cloud_sql_figura2.png" alt="Instancia Cloud SQL coldtrace-mysql creada y disponible" width="900">
+  <img src="report/assets/chapter-05/sprint-3/intancia_cloud_sql_figura2.png" alt="Instancia Cloud SQL coldtrace-mysql creada y disponible" width="900">
 </p>
 
 *Figura 5.2.3.7.2: Instancia Cloud SQL `coldtrace-mysql` creada en Google Cloud y disponible para configuración.*
@@ -2718,7 +2718,7 @@ Se confirmó que la instancia `coldtrace-mysql` quedó creada correctamente en l
 Dentro de la instancia Cloud SQL se registró el esquema `coldtrace_platform`, que actúa como base de datos principal donde el backend Spring Boot persiste la información de organizaciones, activos, sensores, reportes y monitoreo. El esquema se creó con codificación `utf8mb4` para dar soporte consistente a la internacionalización de contenidos.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/base_de_datos_coldtrace_figura3.png" alt="Base de datos coldtrace_platform registrada en la instancia Cloud SQL" width="900">
+  <img src="report/assets/chapter-05/sprint-3/base_de_datos_coldtrace_figura3.png" alt="Base de datos coldtrace_platform registrada en la instancia Cloud SQL" width="900">
 </p>
 
 *Figura 5.2.3.7.3: Base de datos `coldtrace_platform` registrada en la instancia Cloud SQL.*
@@ -2728,7 +2728,7 @@ Dentro de la instancia Cloud SQL se registró el esquema `coldtrace_platform`, q
 Se creó un usuario de aplicación dedicado (`coldtrace_user`) para que el servicio Cloud Run acceda a MySQL sin utilizar la cuenta administrativa `root` durante la operación del backend. Esta separación reduce la superficie de riesgo y mantiene las credenciales operativas aisladas de las credenciales de administración.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/usuario_base_de_datos_figura4.png" alt="Usuario de base de datos configurado para la conexión del backend" width="900">
+  <img src="report/assets/chapter-05/sprint-3/usuario_base_de_datos_figura4.png" alt="Usuario de base de datos configurado para la conexión del backend" width="900">
 </p>
 
 *Figura 5.2.3.7.4: Usuario de base de datos `coldtrace_user` configurado para la conexión del backend.*
@@ -2738,7 +2738,7 @@ Se creó un usuario de aplicación dedicado (`coldtrace_user`) para que el servi
 Se creó el servicio Cloud Run `coldtrace-platform` conectado al repositorio del backend en GitHub, utilizando la rama principal como fuente de despliegue continuo mediante Cloud Build. Se seleccionó la compilación a partir del `Dockerfile` del repositorio y se configuró el puerto de contenedor `8080`, requerido por Cloud Run para enrutar el tráfico HTTP hacia la aplicación Spring Boot.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/configuracion_cloud_run_backend_figura5.png" alt="Configuración de Cloud Run con repositorio del backend, rama principal y compilación mediante Dockerfile" width="900">
+  <img src="report/assets/chapter-05/sprint-3/configuracion_cloud_run_backend_figura5.png" alt="Configuración de Cloud Run con repositorio del backend, rama principal y compilación mediante Dockerfile" width="900">
 </p>
 
 *Figura 5.2.3.7.5: Configuración de Cloud Run con el repositorio del backend, la rama principal y la compilación mediante Dockerfile.*
@@ -2748,7 +2748,7 @@ Se creó el servicio Cloud Run `coldtrace-platform` conectado al repositorio del
 Se registraron las variables de entorno de producción para separar la configuración del código fuente, evitando exponer host, usuario, contraseña o nombre del esquema en el repositorio. Entre ellas se incluyen la conexión a la instancia Cloud SQL (`DATABASE_URL`, `DATABASE_USER`, `DATABASE_PASSWORD`, `DATABASE_SCHEMA`), el perfil activo de Spring Boot (`SPRING_PROFILES_ACTIVE=prod`) y los orígenes permitidos para CORS que habilitan la integración con la Frontend Web Application. Estas variables son resueltas en tiempo de ejecución por `application-prod.properties`, manteniéndose fuera del control de versiones.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/variable_de_entorno_figura6.png" alt="Variables de entorno del servicio Cloud Run para conectar Spring Boot con Cloud SQL y el frontend" width="900">
+  <img src="report/assets/chapter-05/sprint-3/variable_de_entorno_figura6.png" alt="Variables de entorno del servicio Cloud Run para conectar Spring Boot con Cloud SQL y el frontend" width="900">
 </p>
 
 *Figura 5.2.3.7.6: Variables de entorno del servicio Cloud Run para conectar el backend con Cloud SQL y el frontend.*
@@ -2758,13 +2758,13 @@ Se registraron las variables de entorno de producción para separar la configura
 Una vez configurados la base de datos, el usuario, el servicio y sus variables de entorno, Cloud Build ejecutó el build y despliegue automático ante cada push a la rama principal, publicando una revisión activa del servicio en Cloud Run con su panel de métricas para monitorear solicitudes, latencia y uso de recursos.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/cloud-build-deployment-pipeline.png" alt="Google Cloud Build Deployment Pipeline" width="900">
+  <img src="report/assets/chapter-05/sprint-3/cloud-build-deployment-pipeline.png" alt="Google Cloud Build Deployment Pipeline" width="900">
 </p>
 
 *Figura 5.2.3.7.7: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/cloud-run-deployment-status.png" alt="Google Cloud Run Service Status" width="900">
+  <img src="report/assets/chapter-05/sprint-3/cloud-run-deployment-status.png" alt="Google Cloud Run Service Status" width="900">
 </p>
 
 *Figura 5.2.3.7.8: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
@@ -2820,13 +2820,13 @@ A continuación se presenta el resumen de participación por integrante basado e
 </table>
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/github-insights-sprint-3.png" alt="GitHub Contributors Insights Sprint 3" width="900">
+  <img src="report/assets/chapter-05/sprint-3/github-insights-sprint-3.png" alt="GitHub Contributors Insights Sprint 3" width="900">
 </p>
 
 *Figura 5.2.3.8.1: Gráfico de contribuciones por integrante – repositorio coldtrace-platform.*
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-3/github-insights2-sprint-3.png" alt="GitHub Pulse Commits Sprint 3" width="900">
+  <img src="report/assets/chapter-05/sprint-3/github-insights2-sprint-3.png" alt="GitHub Pulse Commits Sprint 3" width="900">
 </p>
 
 *Figura 5.2.3.8.2: Captura de la sección Pulse de GitHub mostrando los commits activos del Sprint 3.*
@@ -3050,7 +3050,7 @@ Al igual que en el Sprint 3, Linear App fue utilizado para mantener trazabilidad
 </table>
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/linear_sprint4.png" alt="Tablero de Linear App del Sprint 4" width="900">
+  <img src="report/assets/chapter-05/sprint-4/linear_sprint4.png" alt="Tablero de Linear App del Sprint 4" width="900">
 </p>
 
 *Figura 5.2.4.3.1: Tablero de Linear App con el seguimiento de tickets del Sprint 4.*
@@ -3413,7 +3413,7 @@ El trabajo de autenticación se organizó alrededor de una línea base de seguri
 La decisión técnica más relevante en este bloque fue mantener al backend como dueño de la sesión. Los proveedores externos funcionan como mecanismo de identidad, pero ColdTrace conserva el control sobre organización, rol, permisos y token JWT. Esto evita que el frontend implemente reglas de acceso propias y mantiene la arquitectura alineada con el modelo de IAM del proyecto.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/login_google_applefrontend.png" alt="Frontend de login con Google y Apple" width="900">
+  <img src="report/assets/chapter-05/sprint-4/login_google_applefrontend.png" alt="Frontend de login con Google y Apple" width="900">
 </p>
 
 *Figura 5.2.4.4.1: Interfaz de inicio de sesión con proveedores Google y Apple.*
@@ -3425,7 +3425,7 @@ La implementación de AI Assistance siguió un enfoque backend-first. `OPE-87` e
 Esta orientación responde directamente al dominio de cadena de frío: las recomendaciones de IA no se generan como texto genérico, sino a partir de incidentes, reportes, métricas del dashboard y señales operativas persistidas en ColdTrace. El objetivo es reducir el tiempo de análisis del responsable de operaciones sin eliminar la revisión humana sobre decisiones que pueden afectar cumplimiento sanitario, pérdida de mercadería o cierre de incidencias.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/ia_assistantfrontend.png" alt="Frontend de asistencia IA en ColdTrace" width="900">
+  <img src="report/assets/chapter-05/sprint-4/ia_assistantfrontend.png" alt="Frontend de asistencia IA en ColdTrace" width="900">
 </p>
 
 *Figura 5.2.4.4.2: Interfaz frontend del asistente IA para apoyo operativo.*
@@ -3437,7 +3437,7 @@ El trabajo de Billing se separó en dos bloques: catálogo/entitlements y flujos
 El propósito de este bloque fue preparar a ColdTrace para diferenciar planes comerciales sin duplicar lógica entre landing page, frontend y backend. Linear muestra que el backend ya define el catálogo y aplica límites, mientras que las historias pendientes se concentran en mostrar comparación de planes, uso actual, upgrades y administración de suscripción desde la interfaz.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/billingfrontend.png" alt="Frontend de planes y billing" width="900">
+  <img src="report/assets/chapter-05/sprint-4/billingfrontend.png" alt="Frontend de planes y billing" width="900">
 </p>
 
 *Figura 5.2.4.4.3: Interfaz frontend de planes SaaS y billing.*
@@ -3504,7 +3504,7 @@ La revisión de ejecución también evidencia una transición importante en el p
 Los servicios del Sprint 4 mantienen el enfoque de documentación REST mediante OpenAPI/Swagger UI utilizado en Sprint 3. Las operaciones se agrupan por dominio funcional para facilitar su revisión.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/menuswagger.png" alt="Menú Swagger con endpoints del Sprint 4" width="900">
+  <img src="report/assets/chapter-05/sprint-4/menuswagger.png" alt="Menú Swagger con endpoints del Sprint 4" width="900">
 </p>
 
 *Figura 5.2.4.6.1: Vista general de Swagger UI con grupos de endpoints del Sprint 4.*
@@ -3571,19 +3571,19 @@ Como parte del cierre de integración, todos los controladores REST quedaron nor
 La documentación de estos servicios es especialmente relevante porque las historias frontend pendientes dependen de contratos estables. Los endpoints de autenticación deben devolver sesiones coherentes para rutas protegidas, los endpoints IA deben exponer respuestas estructuradas y auditables, y los endpoints de billing deben manejar redirecciones, eventos externos de Stripe y validaciones de plan sin exponer secretos al cliente.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/authentication_endpoint.png" alt="Swagger UI de endpoints de autenticación" width="900">
+  <img src="report/assets/chapter-05/sprint-4/authentication_endpoint.png" alt="Swagger UI de endpoints de autenticación" width="900">
 </p>
 
 *Figura 5.2.4.6.2: Endpoints de autenticación y OAuth/OIDC documentados en Swagger UI.*
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/ai-assistanceendpoint.png" alt="Swagger UI de endpoints de AI Assistance" width="900">
+  <img src="report/assets/chapter-05/sprint-4/ai-assistanceendpoint.png" alt="Swagger UI de endpoints de AI Assistance" width="900">
 </p>
 
 *Figura 5.2.4.6.3: Endpoints de AI Assistance documentados en Swagger UI.*
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/billing_endpoint.png" alt="Swagger UI de endpoints de Billing" width="900">
+  <img src="report/assets/chapter-05/sprint-4/billing_endpoint.png" alt="Swagger UI de endpoints de Billing" width="900">
 </p>
 
 *Figura 5.2.4.6.4: Endpoints de billing, checkout, Customer Portal y webhooks documentados en Swagger UI.*
@@ -3622,7 +3622,7 @@ Authorized JavaScript origins y los Authorized redirect URIs correspondientes a 
 entornos local y desplegado del frontend de ColdTrace.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/google_oauth_client.png" alt="Configuración del OAuth Client de Google" width="900">
+  <img src="report/assets/chapter-05/sprint-4/google_oauth_client.png" alt="Configuración del OAuth Client de Google" width="900">
 </p>
 
 *Figura 5.2.4.7.1: OAuth Client Web configurado en Google Cloud con origins y redirect URIs de ColdTrace.*
@@ -3633,7 +3633,7 @@ Se registró el Identifier `com.coldtrace.web` en Apple Developer para habilitar
 de Sign in with Apple como proveedor de identidad externo.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/apple_identifier.png" alt="Identifier de Apple Developer" width="900">
+  <img src="report/assets/chapter-05/sprint-4/apple_identifier.png" alt="Identifier de Apple Developer" width="900">
 </p>
 
 *Figura 5.2.4.7.2: Identifier de Sign in with Apple registrado en Apple Developer.*
@@ -3646,7 +3646,7 @@ inteligente. La clave se enmascara y se gestiona mediante variables de entorno d
 servicio, sin registrarse en el repositorio.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/openai_apikey.png" alt="API key de OpenAI para ColdTrace" width="900">
+  <img src="report/assets/chapter-05/sprint-4/openai_apikey.png" alt="API key de OpenAI para ColdTrace" width="900">
 </p>
 
 *Figura 5.2.4.7.3: API key de producción configurada en OpenAI para AI Assistance.*
@@ -3658,13 +3658,13 @@ Stripe, incluyendo los planes ColdTrace Operations y ColdTrace Compliance AI con
 precio mensual recurrente en PEN.
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/stripe_catalog.png" alt="Catálogo de productos en Stripe" width="900">
+  <img src="report/assets/chapter-05/sprint-4/stripe_catalog.png" alt="Catálogo de productos en Stripe" width="900">
 </p>
 
 *Figura 5.2.4.7.4: Catálogo de planes de suscripción configurado en Stripe.*
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/stripe_compliance_ai.png" alt="Plan Compliance AI en Stripe" width="900">
+  <img src="report/assets/chapter-05/sprint-4/stripe_compliance_ai.png" alt="Plan Compliance AI en Stripe" width="900">
 </p>
 
 *Figura 5.2.4.7.5: Configuración del plan Compliance AI y su tarifa recurrente en Stripe.*
@@ -3721,13 +3721,13 @@ La distribución del trabajo evidencia un patrón de avance por capas: primero s
 | Agile tracking | Seguimiento de estados Done, In Progress y Todo por proyecto, milestone y ticket OPE del Sprint 4. | Linear App |
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/contributors_gituhb.png" alt="Contribuciones del equipo en GitHub durante Sprint 4" width="900">
+  <img src="report/assets/chapter-05/sprint-4/contributors_gituhb.png" alt="Contribuciones del equipo en GitHub durante Sprint 4" width="900">
 </p>
 
 *Figura 5.2.4.8.1: Contribuciones del equipo en GitHub durante el Sprint 4.*
 
 <p align="center">
-  <img src="assets/chapter-05/sprint-4/pulse_github.png" alt="Actividad Pulse de GitHub durante Sprint 4" width="900">
+  <img src="report/assets/chapter-05/sprint-4/pulse_github.png" alt="Actividad Pulse de GitHub durante Sprint 4" width="900">
 </p>
 
 *Figura 5.2.4.8.2: Actividad del repositorio en GitHub Pulse para Sprint 4.*
@@ -3775,7 +3775,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-05/validation/vi-s1-01-jean-pool-coaguila.png" alt="Entrevista de Validación 1" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s1-01-jean-pool-coaguila.png" alt="Entrevista de Validación 1" height="350">
       </td>
     </tr>
     <tr>
@@ -3826,7 +3826,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-05/validation/vi-s2-01-rodrigo-vasquez.png" alt="Entrevista de Validación 2" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s2-01-rodrigo-vasquez.png" alt="Entrevista de Validación 2" height="350">
       </td>
     </tr>
     <tr>
@@ -3877,7 +3877,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td colspan="4" align="center">
-        <img src="assets/chapter-05/validation/vi-s4-01-marcela-rojas.png" alt="Entrevista de Validación 3" height="350">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-marcela-rojas.png" alt="Entrevista de Validación 3" height="350">
       </td>
     </tr>
     <tr>
@@ -3932,7 +3932,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 4</td>
+      <td>Ana Gutiérrez Rios</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>iPhone (iOS) y iPad</td>
     </tr>
@@ -3962,6 +3962,98 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
         Ana evaluó la facilidad de uso del dashboard de monitoreo de temperatura y el módulo de alertas. Destacó que el flujo de reconocimiento de incidencias es claro e intuitivo para el personal del restaurante. Como recomendación de mejora, sugirió agregar canales de notificación adicionales como alertas directas por WhatsApp o SMS para avisar al administrador de guardia cuando el restaurante esté cerrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 5</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Jean Pool Coaguila</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Smartphone Android (Samsung Galaxy A54)</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>28 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Android / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Encargado de Minimarket Familiar "El Éxito"</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>WhatsApp (personal y clientes)</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Los Olivos, Lima</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>Sistema de facturación básica local y cuaderno físico</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 62:23 - 79:21 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Jean Pool maneja embutidos, lácteos y carnes en visicoolers. Comentó que hace seis meses perdió casi S/. 2,000 en mercadería porque una congeladora falló un sábado por la noche y recién lo notaron el lunes por el mal olor. Al revisar la landing entendió el valor de ColdTrace de inmediato. Valoró ver todo el dashboard en una sola pantalla por su simplicidad, pero enfatizó que las alertas obligatoriamente deben sonar fuerte en WhatsApp, ya que no suele revisar correos electrónicos. Validó que pagaría una suscripción si el precio es accesible para un pequeño comercio.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%; border-collapse:collapse; margin-top: 20px;">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center"><strong>Entrevista de Validación N.° 6</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
+      <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nombre completo</strong></td>
+      <td>Zayd Ayasata</td>
+      <td><strong>Dispositivo de mayor frecuencia</strong></td>
+      <td>Laptop corporativa HP y iPhone 14</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>36 años</td>
+      <td><strong>Sistema operativo/browser</strong></td>
+      <td>Windows / Google Chrome</td>
+    </tr>
+    <tr>
+      <td><strong>Definición profesional / cargo</strong></td>
+      <td>Coordinador Logístico y de Cadena de Frío</td>
+      <td><strong>Canales digitales de comunicación</strong></td>
+      <td>Microsoft Teams y Correo Corporativo (Outlook)</td>
+    </tr>
+    <tr>
+      <td><strong>Residencia / ubicación</strong></td>
+      <td>Callao, Lima (Centro de Distribución)</td>
+      <td><strong>Software especializado utilizado</strong></td>
+      <td>SAP ERP (Módulo WM) y Microsoft Excel Avanzado</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Duración:</strong> 79:21 - 93:54 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Resumen de la entrevista</strong><br><br>
+        Zayd supervisa cámaras frigoríficas grandes y camiones de reparto. Indicó que su dolor crítico ocurre en las auditorías de DIGESA/SENASA, ya que armar el historial de temperaturas manualmente en Excel les toma días enteros. Al evaluar ColdTrace, apuntó directo a los planes corporativos. Le pareció excelente el monitoreo con humedad y el módulo de reportes exportables para cumplimiento legal. Considera clave la trazabilidad de alertas (saber qué operario respondió el aviso) para deslindar responsabilidades. Sugirió agregar una API para poder integrar los datos de temperatura directamente con SAP.
       </td>
     </tr>
   </tbody>
@@ -4057,23 +4149,25 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ## 5.4. Video About-the-Product
 
-El video About-the-Product de ColdTrace presenta una demostración navegada de la plataforma, mostrando la Landing Page, la Frontend Web Application desplegada en Vercel y la RESTful API documentada con Swagger UI. El video recorre las principales funcionalidades implementadas durante los Sprint 1, 2 y 3, incluyendo:
+El video About-the-Product de ColdTrace presenta una demostración navegada de la plataforma, dirigida tanto a los visitantes del Landing Page que desean conocer el modelo de negocio y las características del producto, como a los usuarios de la aplicación que desean realizar tareas relacionadas con los procesos soportados por la solución. El tono de la comunicación es consistente con el tono adoptado para el producto e incluye un testimonio positivo de una usuaria que participó en las entrevistas de validación. El video muestra la Landing Page, la Frontend Web Application desplegada en Vercel y la RESTful API documentada con Swagger UI, recorriendo las principales funcionalidades implementadas, incluyendo:
 
 - Landing Page informativa con propuesta de valor y formulario de contacto.
 - Frontend Web Application con autenticación, gestión de activos, monitoreo operacional, alertas e incidencias, reportes de cumplimiento y configuración operativa.
 - RESTful API backend con endpoints documentados en Swagger UI, mostrando los bounded contexts de Identity & Access, Asset Management, Monitoring, Alerts, Reports y Maintenance Management.
+
+**Duración total:** 1:41
 
 <table style="width:100%; border-collapse:collapse;">
   <tbody>
     <tr>
       <td align="center">
         <a href="https://youtu.be/jl93ck2hKho">
-          <img src="assets/chapter-05/about-the-product/about-the-product-thumbnail.png" alt="Video About-the-Product de ColdTrace" width="700">
+          <img src="report/assets/chapter-05/about-the-product/about-the-product-thumbnail.png" alt="Video About-the-Product de ColdTrace" width="700">
         </a>
       </td>
     </tr>
     <tr>
-      <td align="center"><strong>Video About-the-Product (AV2):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
+      <td align="center"><strong>Video About-the-Product (YouTube, incrustado en el Landing Page):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
     </tr>
   </tbody>
 </table>
