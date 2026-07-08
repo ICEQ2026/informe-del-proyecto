@@ -6124,7 +6124,20 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 
 ## 6.2. Video About-the-Team
 
-[Pending content]
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">
+          <img src="assets/chapter-06/about-the-team/about-the-team-thumbnail.png" alt="Video About-the-Team de ColdTrace" width="700">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Video About-the-Team:</strong> <a href="https://www.youtube.com/watch?v=pStMmrVWDzo">https://www.youtube.com/watch?v=pStMmrVWDzo</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
