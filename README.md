@@ -57,7 +57,6 @@
 | 1.9.0 | 08/07/26 | Pajés León, Mauricio Luis | Actualización del contrato REST final de Sprint 4, normalización de endpoints bajo `/api/v1`, documentación de operaciones DELETE y ajuste de conclusiones sobre autenticación e integración frontend-backend. |
 
 
-
 # Project Report Collaboration Insights
 
 **Project Report URL:** https://github.com/ICEQ2026/informe-del-proyecto
@@ -219,6 +218,7 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 
 ## Bibliografía
 - [Bibliografía.](#bibliografía)
+
 
 # Student Outcome
 
@@ -4704,19 +4704,83 @@ Durante el Sprint 3 se configuró el despliegue de la RESTful API de ColdTrace e
 - **Repositorio frontend (Vercel):** https://coldtrace-frontend-liard.vercel.app
 - **Landing Page (GitHub Pages):** https://iceq2026.github.io/landingpage-coldtrace
 
-A continuación se presenta la evidencia del flujo de despliegue continuo en Google Cloud Build y el estado activo del servicio en Google Cloud Run:
+A continuación se documenta el procedimiento realizado en la consola de Google Cloud para aprovisionar la base de datos administrada y publicar la RESTful API.
+
+**Creación de la instancia Cloud SQL para MySQL**
+
+Se aprovisionó una instancia administrada de Cloud SQL seleccionando MySQL 8.4 como motor de base de datos, asignándole el identificador `coldtrace-mysql` en la región `us-central1`. Esta instancia actúa como el almacenamiento persistente al que se conecta el backend desplegado en Cloud Run.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/creacion_intancia_cloudSQL_figura1.png" alt="Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace" width="900">
+</p>
+
+*Figura 5.2.3.7.1: Creación de la instancia Cloud SQL para MySQL asociada al backend de ColdTrace.*
+
+**Verificación de la instancia `coldtrace-mysql` disponible**
+
+Se confirmó que la instancia `coldtrace-mysql` quedó creada correctamente en la región configurada (`us-central1`, MySQL 8.4) y disponible para recibir bases de datos, usuarios y conexiones desde el servicio de aplicación.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/intancia_cloud_sql_figura2.png" alt="Instancia Cloud SQL coldtrace-mysql creada y disponible" width="900">
+</p>
+
+*Figura 5.2.3.7.2: Instancia Cloud SQL `coldtrace-mysql` creada en Google Cloud y disponible para configuración.*
+
+**Creación de la base de datos `coldtrace_platform`**
+
+Dentro de la instancia Cloud SQL se registró el esquema `coldtrace_platform`, que actúa como base de datos principal donde el backend Spring Boot persiste la información de organizaciones, activos, sensores, reportes y monitoreo. El esquema se creó con codificación `utf8mb4` para dar soporte consistente a la internacionalización de contenidos.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/base_de_datos_coldtrace_figura3.png" alt="Base de datos coldtrace_platform registrada en la instancia Cloud SQL" width="900">
+</p>
+
+*Figura 5.2.3.7.3: Base de datos `coldtrace_platform` registrada en la instancia Cloud SQL.*
+
+**Configuración del usuario de base de datos**
+
+Se creó un usuario de aplicación dedicado (`coldtrace_user`) para que el servicio Cloud Run acceda a MySQL sin utilizar la cuenta administrativa `root` durante la operación del backend. Esta separación reduce la superficie de riesgo y mantiene las credenciales operativas aisladas de las credenciales de administración.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/usuario_base_de_datos_figura4.png" alt="Usuario de base de datos configurado para la conexión del backend" width="900">
+</p>
+
+*Figura 5.2.3.7.4: Usuario de base de datos `coldtrace_user` configurado para la conexión del backend.*
+
+**Configuración del servicio Cloud Run**
+
+Se creó el servicio Cloud Run `coldtrace-platform` conectado al repositorio del backend en GitHub, utilizando la rama principal como fuente de despliegue continuo mediante Cloud Build. Se seleccionó la compilación a partir del `Dockerfile` del repositorio y se configuró el puerto de contenedor `8080`, requerido por Cloud Run para enrutar el tráfico HTTP hacia la aplicación Spring Boot.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/configuracion_cloud_run_backend_figura5.png" alt="Configuración de Cloud Run con repositorio del backend, rama principal y compilación mediante Dockerfile" width="900">
+</p>
+
+*Figura 5.2.3.7.5: Configuración de Cloud Run con el repositorio del backend, la rama principal y la compilación mediante Dockerfile.*
+
+**Configuración de variables de entorno en Cloud Run**
+
+Se registraron las variables de entorno de producción para separar la configuración del código fuente, evitando exponer host, usuario, contraseña o nombre del esquema en el repositorio. Entre ellas se incluyen la conexión a la instancia Cloud SQL (`DATABASE_URL`, `DATABASE_USER`, `DATABASE_PASSWORD`, `DATABASE_SCHEMA`), el perfil activo de Spring Boot (`SPRING_PROFILES_ACTIVE=prod`) y los orígenes permitidos para CORS que habilitan la integración con la Frontend Web Application. Estas variables son resueltas en tiempo de ejecución por `application-prod.properties`, manteniéndose fuera del control de versiones.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-3/variable_de_entorno_figura6.png" alt="Variables de entorno del servicio Cloud Run para conectar Spring Boot con Cloud SQL y el frontend" width="900">
+</p>
+
+*Figura 5.2.3.7.6: Variables de entorno del servicio Cloud Run para conectar el backend con Cloud SQL y el frontend.*
+
+**Despliegue continuo y estado del servicio**
+
+Una vez configurados la base de datos, el usuario, el servicio y sus variables de entorno, Cloud Build ejecutó el build y despliegue automático ante cada push a la rama principal, publicando una revisión activa del servicio en Cloud Run con su panel de métricas para monitorear solicitudes, latencia y uso de recursos.
 
 <p align="center">
   <img src="report/assets/chapter-05/sprint-3/cloud-build-deployment-pipeline.png" alt="Google Cloud Build Deployment Pipeline" width="900">
 </p>
 
-*Figura 5.2.3.7.1: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
+*Figura 5.2.3.7.7: Pipeline de despliegue continuo ejecutado en Google Cloud Build para compilar y desplegar la API en Cloud Run.*
 
 <p align="center">
   <img src="report/assets/chapter-05/sprint-3/cloud-run-deployment-status.png" alt="Google Cloud Run Service Status" width="900">
 </p>
 
-*Figura 5.2.3.7.2: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
+*Figura 5.2.3.7.8: Estado y métricas del servicio de ColdTrace desplegado en Google Cloud Run.*
 
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
@@ -5561,6 +5625,63 @@ Para habilitar las capacidades agregadas en Sprint 4, el despliegue requiere var
 | AI Assistance | API key del proveedor de IA y configuración de Spring AI. | Generar planes, resúmenes e interpretaciones inteligentes. |
 | Stripe Billing | Stripe Secret Key, Price IDs, webhook secret y URLs de retorno. | Crear checkout, sincronizar suscripciones y abrir Customer Portal. |
 
+Como evidencia de la configuración real de los proveedores externos utilizados en el
+Sprint 4, se documentan las consolas de administración de cada servicio integrado.
+
+**Google — OAuth 2.0 / OpenID Connect**
+
+Se configuró un OAuth Client de tipo Web Application en Google Cloud, registrando los
+Authorized JavaScript origins y los Authorized redirect URIs correspondientes a los
+entornos local y desplegado del frontend de ColdTrace.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/google_oauth_client.png" alt="Configuración del OAuth Client de Google" width="900">
+</p>
+
+*Figura 5.2.4.7.1: OAuth Client Web configurado en Google Cloud con origins y redirect URIs de ColdTrace.*
+
+**Apple — Sign in with Apple**
+
+Se registró el Identifier `com.coldtrace.web` en Apple Developer para habilitar el flujo
+de Sign in with Apple como proveedor de identidad externo.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/apple_identifier.png" alt="Identifier de Apple Developer" width="900">
+</p>
+
+*Figura 5.2.4.7.2: Identifier de Sign in with Apple registrado en Apple Developer.*
+
+**OpenAI — AI Assistance**
+
+Se generó una API key de producción (`coldtrace-platform-prod`) en la consola de OpenAI,
+consumida por Spring AI en el entorno desplegado para las capacidades de asistencia
+inteligente. La clave se enmascara y se gestiona mediante variables de entorno del
+servicio, sin registrarse en el repositorio.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/openai_apikey.png" alt="API key de OpenAI para ColdTrace" width="900">
+</p>
+
+*Figura 5.2.4.7.3: API key de producción configurada en OpenAI para AI Assistance.*
+
+**Stripe — Subscription & Billing**
+
+Se configuró el catálogo de productos y planes de suscripción en el entorno de prueba de
+Stripe, incluyendo los planes ColdTrace Operations y ColdTrace Compliance AI con su
+precio mensual recurrente en PEN.
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/stripe_catalog.png" alt="Catálogo de productos en Stripe" width="900">
+</p>
+
+*Figura 5.2.4.7.4: Catálogo de planes de suscripción configurado en Stripe.*
+
+<p align="center">
+  <img src="report/assets/chapter-05/sprint-4/stripe_compliance_ai.png" alt="Plan Compliance AI en Stripe" width="900">
+</p>
+
+*Figura 5.2.4.7.5: Configuración del plan Compliance AI y su tarifa recurrente en Stripe.*
+
 El despliegue del Sprint 4 se realizó sobre la misma revisión de Cloud Run utilizada en Sprint 3, incorporando las nuevas capacidades mediante actualización continua (re-deploy) desde la rama `develop` del repositorio `ICEQ2026/coldtrace-platform`. No se requirió una nueva URL ni un nuevo servicio; la extensión funcional se entregó como una evolución del servicio backend existente.
 
 Las configuraciones de Sprint 4 incrementan la sensibilidad del entorno de despliegue porque incluyen secretos de autenticación, proveedores externos y webhooks. Por ello, la documentación del sprint considera como buena práctica mantener estos valores fuera del repositorio, cargarlos mediante variables de entorno del servicio desplegado y validar los callbacks con URLs controladas por el equipo. Este criterio mantiene consistencia con el despliegue en Cloud Run usado en Sprint 3.
@@ -5699,8 +5820,8 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td>Microsoft Excel y Apps bancarias</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 05:40</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>Timing:</strong> 00:00 – 15:29 (Duración: 15:29)</td>
+<td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=0s">Ver video (inicia 00:00)</a></td>
     </tr>
     <tr>
       <td colspan="4">
@@ -5750,8 +5871,8 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td>Microsoft Excel, Power BI</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 06:15</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>Timing:</strong> 15:29 – 32:19 (Duración: 16:50)</td>
+<td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=929s">Ver video (inicia 15:29)</a></td>
     </tr>
     <tr>
       <td colspan="4">
@@ -5768,41 +5889,46 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 3</strong></td>
     </tr>
     <tr>
+      <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-marcela-rojas.png" alt="Entrevista de Validación 3" height="350">
+      </td>
+    </tr>
+    <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Entrevistado 3</td>
+      <td>Marcela Rojas Cárdenas</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
-      <td>Tablet corporativa y Laptop Windows</td>
+      <td>Laptop (Windows) y Smartphone (Android)</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>38 años</td>
+      <td>30 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
-      <td>Windows / Microsoft Edge</td>
+      <td>Windows / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>Encargado de Operaciones de Almacén Frigorífico "AeroFrío"</td>
+      <td>Jefa de Operaciones y Control de Calidad en "FríoAndino Distribución S.A.C."</td>
       <td><strong>Canales digitales de comunicación</strong></td>
       <td>Correo corporativo y WhatsApp</td>
     </tr>
     <tr>
       <td><strong>Residencia / ubicación</strong></td>
-      <td>San Luis, Lima</td>
+      <td>Ate, Lima</td>
       <td><strong>Software especializado utilizado</strong></td>
-      <td>ERP interno y Microsoft Excel</td>
+      <td>Microsoft Excel y sistema de gestión de almacén</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 04:50</td>
-      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
+      <td colspan="2"><strong>Timing:</strong> 32:19 – 46:10 </td>
+      <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj&t=1939s">Ver video (inicia 32:19)</a></td>
     </tr>
     <tr>
       <td colspan="4">
         <strong>Resumen de la entrevista</strong><br><br>
-        El entrevistado valoró la vista de configuración de rangos seguros de temperatura y la programación de mantenimientos preventivos para los sensores IoT. Consideró que es de gran utilidad para evitar fallas imprevistas. Sugirió desarrollar una aplicación móvil o una interfaz móvil optimizada que les permita a los operadores en campo verificar rápidamente el estado de los sensores y equipos.
+        Marcela validó ColdTrace desde la perspectiva de una operación con múltiples cámaras frigoríficas y necesidades de auditoría sanitaria. Al inicio planteó sus tres principales dolores: no enterarse a tiempo de una falla de refrigeración, la pérdida de producto por reacción tardía y la dificultad para armar el historial de temperaturas ante auditorías de DIGESA. Sobre la Landing Page, indicó que la propuesta de valor se comprende de inmediato y que, por el tamaño de su operación, optaría por un plan superior con reportes avanzados. En la Frontend Web Application destacó el dashboard operacional y el monitoreo en tiempo real de temperatura y humedad como la funcionalidad que resuelve su falta de visibilidad actual, valorando el historial de lecturas como insumo directo para auditorías. En el módulo de alertas apreció la trazabilidad de detección y reconocimiento de incidencias, sugiriendo como mejora la notificación por WhatsApp o SMS. En reportes de cumplimiento, identificó la bitácora diaria exportable como la solución a su necesidad de trazabilidad, recomendando habilitar exportación en PDF y Excel. Concluyó que adoptaría la herramienta y la recomendaría a colegas del sector.
       </td>
     </tr>
   </tbody>
@@ -5842,7 +5968,7 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
       <td>Sistema POS de comandas y Microsoft Excel</td>
     </tr>
     <tr>
-      <td colspan="2"><strong>Duración:</strong> 04:10</td>
+      <td colspan="2"><strong>Duración:</strong> 46:10 - 62:23 </td>
       <td colspan="2"><strong>URL de grabación:</strong> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQBJYgNJwvtfRqy0uHqXB3isAZZnAZqgRG9g19PW-b6JXlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=qZMIiB">Ver video</a></td>
     </tr>
     <tr>
@@ -5950,7 +6076,20 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 - Frontend Web Application con autenticación, gestión de activos, monitoreo operacional, alertas e incidencias, reportes de cumplimiento y configuración operativa.
 - RESTful API backend con endpoints documentados en Swagger UI, mostrando los bounded contexts de Identity & Access, Asset Management, Monitoring, Alerts, Reports y Maintenance Management.
 
-**Video About-the-Product (AV2):** [Enlace al video próximamente]
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://youtu.be/jl93ck2hKho">
+          <img src="report/assets/chapter-05/about-the-product/about-the-product-thumbnail.png" alt="Video About-the-Product de ColdTrace" width="700">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Video About-the-Product (AV2):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
+    </tr>
+  </tbody>
+</table>
 
 **Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
