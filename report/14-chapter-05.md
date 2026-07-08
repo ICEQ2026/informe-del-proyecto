@@ -4054,6 +4054,19 @@ El video About-the-Product de ColdTrace presenta una demostración navegada de l
 - Frontend Web Application con autenticación, gestión de activos, monitoreo operacional, alertas e incidencias, reportes de cumplimiento y configuración operativa.
 - RESTful API backend con endpoints documentados en Swagger UI, mostrando los bounded contexts de Identity & Access, Asset Management, Monitoring, Alerts, Reports y Maintenance Management.
 
-**Video About-the-Product (AV2):** [Enlace al video próximamente]
+<table style="width:100%; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://youtu.be/jl93ck2hKho">
+          <img src="assets/chapter-05/about-the-product/about-the-product-thumbnail.png" alt="Video About-the-Product de ColdTrace" width="700">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Video About-the-Product (AV2):</strong> <a href="https://youtu.be/jl93ck2hKho">https://youtu.be/jl93ck2hKho</a></td>
+    </tr>
+  </tbody>
+</table>
 
 **Video de navegación del producto (Sprint 3):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/EQb3T9DE7AmQ7aOxNsIfCAIAaqlY68Kt3syw7uDil2npvk?e=hlq0YC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
