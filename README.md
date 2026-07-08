@@ -88,9 +88,19 @@ Asimismo, todos los integrantes participaron activamente en la elaboración del 
 
 Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo colaborativo en el informe, enfocándose en la implementación de la RESTful API backend de ColdTrace utilizando Spring Boot con una arquitectura hexagonal y Domain-Driven Design. Esta fase representó la consolidación técnica del proyecto, al implementar 15 Technical Stories más tareas transversales que cubren todos los bounded contexts de la plataforma. La colaboración se evidencia en los analíticos de GitHub del repositorio `ICEQ2026/coldtrace-platform`.
 
+![GitHub Insights AV2 - Repositorio coldtrace-platform](report/assets/chapter-05/sprint-3/github-insights-sprint-3.png)
+
+![GitHub Insights AV2 - Contribuciones coldtrace-platform](report/assets/chapter-05/sprint-3/github-insights2-sprint-3.png)
+
 ## TB2
 
-[pending content]
+Durante el desarrollo de la entrega TB2, el equipo consolidó la versión final del informe integrando las capacidades del Sprint 4 con los módulos base del producto. El trabajo colaborativo se enfocó en documentar las integraciones con servicios externos (asistencia con IA mediante OpenAI, autenticación social con Google y Apple, y facturación SaaS con Stripe), sus experiencias de frontend asociadas y la evidencia de pruebas sobre los endpoints, además de la corrección y mejora de artefactos previamente presentados según la retroalimentación recibida.
+
+La elaboración del informe se distribuyó entre los integrantes, manteniendo la coherencia con el Registro de Versiones del Informe y con la evidencia registrada en Linear y en los repositorios de la organización `ICEQ2026`. Todos los miembros participaron en la documentación final, cubriendo tanto la implementación backend de las integraciones como las secciones de frontend, validación y despliegue. Esta participación distribuida se refleja en los analíticos de contribución y commits del repositorio del informe y de los repositorios de producto (`coldtrace-platform`, `coldtrace-frontend` y `landingpage-coldtrace`).
+
+![GitHub Pulse - Overview TB2](report/assets/chapter-05/sprint-4/pulse_github.png)
+
+![GitHub Contributors - Commits over time TB2](report/assets/chapter-05/sprint-4/contributors_gituhb.png)
 
 # Contenido
 ## Tabla de contenidos
@@ -215,6 +225,11 @@ Durante el desarrollo de la entrega AV2, el equipo continuó con el trabajo cola
 ## Conclusiones
 - [Conclusiones y recomendaciones.](#conclusiones-y-recomendaciones)
 - [Video About-the-Team.](#video-about-the-team)
+- [Anexos](#anexos)
+  - [Anexo A: Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+  - [Anexo B: Videos de Entrevistas](#anexo-b-videos-de-entrevistas)
+  - [Anexo C: Repositorios del Proyecto](#anexo-c-repositorios-del-proyecto)
+  - [Anexo D: Recursos Desplegados](#anexo-d-recursos-desplegados)
 
 ## Bibliografía
 - [Bibliografía.](#bibliografía)
@@ -6213,3 +6228,41 @@ Stripe. (s. f.-a). *Checkout Sessions*. Stripe API Reference. https://docs.strip
 Stripe. (s. f.-b). *Customer Portal Session*. Stripe API Reference. https://docs.stripe.com/api/customer_portal/sessions
 
 Stripe. (s. f.-c). *Receive Stripe events in your webhook endpoint*. Stripe Documentation. https://docs.stripe.com/webhooks
+
+# Anexos
+
+## Anexo A: Videos de Exposiciones
+
+En esta sección se registran los enlaces a los videos de exposición del proyecto, publicados en Microsoft Stream. La relación se irá expandiendo con cada entrega.
+
+| Entrega | Video de Exposición |
+|---|---|
+| TB2 (Final) | [Ver video de exposición TB2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQAwQZHCy1x0TYcjN_HmVODzAWBB8sbiYALC3AxLXtJi0n0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=3zIgiK) |
+
+## Anexo B: Videos de Entrevistas
+
+En esta sección se consolidan los enlaces a los videos de entrevistas realizadas durante el proyecto, publicados en Microsoft Stream.
+
+| Tipo de entrevista | Descripción | Video |
+|---|---|---|
+| Needfinding | Entrevistas de investigación a representantes de los segmentos objetivo, base para la construcción de los User Personas. | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410093_upc_edu_pe/IQDF6wu_w86bRIH68kr6ehziAe9K_FC1ARRsa-i6G07RpXk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FXKoP5) |
+| Validación | Entrevistas de validación en las que usuarios de los segmentos objetivo interactúan con la Landing Page y la Web Application. | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202415820_upc_edu_pe/IQCue8U2wEwWQYCSPjlOcDalAbyikaIiXAIyY3yIUsQvowA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wAuYWj) |
+
+## Anexo C: Repositorios del Proyecto
+
+| Producto | Repositorio |
+|---|---|
+| Backend (RESTful API) | https://github.com/ICEQ2026/coldtrace-platform |
+| Frontend Web Application | https://github.com/ICEQ2026/coldtrace-frontend |
+| Landing Page | https://github.com/ICEQ2026/landingpage-coldtrace |
+| Informe del Proyecto | https://github.com/ICEQ2026/informe-del-proyecto |
+
+## Anexo D: Recursos Desplegados
+
+| Recurso | URL |
+|---|---|
+| Frontend Web Application (Vercel) | https://coldtrace-frontend-web.vercel.app |
+| RESTful API (Google Cloud Run) | https://coldtrace-platform-dtbzbm7bta-uc.a.run.app |
+| Swagger UI / OpenAPI Docs | https://coldtrace-platform-dtbzbm7bta-uc.a.run.app/swagger-ui/index.html |
+| Video About-the-Product (YouTube) | https://youtu.be/jl93ck2hKho |
+| Video About-the-Team (YouTube) | https://www.youtube.com/watch?v=pStMmrVWDzo |
