@@ -5976,13 +5976,16 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     <tr>
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 4</strong></td>
     </tr>
+         <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-marcela-rojas.png" alt="Entrevista de Validación 3" height="350">
+      </td>
     <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
     <tr>
       <td><strong>Nombre completo</strong></td>
-      <td>Ana Gutiérrez Rios</td>
+      <td>Ana Gutierrez Rios</td>
       <td><strong>Dispositivo de mayor frecuencia</strong></td>
       <td>iPhone (iOS) y iPad</td>
     </tr>
@@ -6022,6 +6025,9 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     <tr>
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 5</strong></td>
     </tr>
+       <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-jean-pool.png" alt="Entrevista de Validación 3" height="350">
+      </td>
     <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
@@ -6034,13 +6040,13 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>28 años</td>
+      <td>29 años</td>
       <td><strong>Sistema operativo/browser</strong></td>
       <td>Android / Google Chrome</td>
     </tr>
     <tr>
       <td><strong>Definición profesional / cargo</strong></td>
-      <td>Encargado de Minimarket Familiar "El Éxito"</td>
+      <td>Encargado de Minimarket Familiar </td>
       <td><strong>Canales digitales de comunicación</strong></td>
       <td>WhatsApp (personal y clientes)</td>
     </tr>
@@ -6068,7 +6074,10 @@ A continuación se presentan los resultados de las entrevistas realizadas, inclu
     <tr>
       <td colspan="4" align="center"><strong>Entrevista de Validación N.° 6</strong></td>
     </tr>
-    <tr>
+         <td colspan="4" align="center">
+        <img src="report/assets/chapter-05/validation/vi-s4-01-zayd-ayasta.png" alt="Entrevista de Validación 3" height="350">
+      </td>
+      <tr>
       <td colspan="2" align="center"><strong>Información del entrevistado</strong></td>
       <td colspan="2" align="center"><strong>Contexto tecnológico</strong></td>
     </tr>
